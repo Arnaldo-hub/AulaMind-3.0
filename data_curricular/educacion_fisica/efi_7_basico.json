@@ -1,0 +1,54 @@
+{
+  "asignatura": "efi",
+  "curso": "EFI 7° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades motrices y control corporal",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >>Corren de manera continua, aprendizaje de la unidad, manteniendo el control de su Aplicar, combinar y ajustar las con foco en algunos de los cuerpo. indicadores. Los ejemplos habilidades motrices específicas van acompañados de de locomoción, manipulación y >>Ejecutan secuencias de movimientos criterios de"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Condición física y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 de 7° básico."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Juegos, deportes y estrategias",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 2. Seleccionar y aplicar estrategias y tácticas específicas para la resolución de problemas durante la práctica de juegos o deportes; por ejemplo: ubicar la pelota lejos de un contrincante, utilizar los espacios para recibir un objeto sin oponentes, aplicar un sistema de juego (uno contra uno, tres contra tres, entre otros), entre otros. VIDA ACTIVA SALUDABLE"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 >>Ejecutan un test para valorar su condición"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 >> Ejecutan un calentamiento para preparar al estudiante, en relación con el Objetivo de Aprendizaje organismo antes de cualquier esfuerzo físico mayor. Practicar regularmente una variedad al cual está asociado. de"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Participar en una variedad"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 de 7° básico."
+        }
+      ]
+    }
+  ]
+}

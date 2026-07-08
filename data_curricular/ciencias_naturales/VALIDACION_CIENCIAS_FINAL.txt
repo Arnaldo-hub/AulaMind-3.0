@@ -1,0 +1,6 @@
+AulaMind Enterprise 3.0 — Ciencias Naturales
+Cursos reconstruidos desde Programas de Estudio MINEDUC aportados.
+
+ciencias_6_bas.json: 4 unidades | OA por unidad [6, 4, 4, 4]
+ciencias_7_bas.json: 4 unidades | OA por unidad [7, 13, 9, 18]
+ciencias_1_medio.json: 4 unidades | OA por unidad [2, 6, 3, 20]

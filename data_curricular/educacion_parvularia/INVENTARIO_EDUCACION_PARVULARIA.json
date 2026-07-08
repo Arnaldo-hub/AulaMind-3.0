@@ -1,0 +1,74 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "bloque": "Educación Parvularia",
+  "niveles": [
+    "NT1 / Prekínder",
+    "NT2 / Kínder"
+  ],
+  "ambitos": 3,
+  "nucleos": 8,
+  "archivos_curriculares": 6,
+  "estructura": {
+    "desarrollo_personal_social": {
+      "nombre": "Desarrollo personal y social",
+      "nucleos": [
+        "Identidad y autonomía",
+        "Convivencia y ciudadanía",
+        "Corporalidad y movimiento"
+      ]
+    },
+    "comunicacion_integral": {
+      "nombre": "Comunicación integral",
+      "nucleos": [
+        "Lenguaje verbal",
+        "Lenguajes artísticos"
+      ]
+    },
+    "interaccion_comprension_entorno": {
+      "nombre": "Interacción y comprensión del entorno",
+      "nucleos": [
+        "Exploración del entorno natural",
+        "Comprensión del entorno sociocultural",
+        "Pensamiento matemático"
+      ]
+    }
+  },
+  "detalle": [
+    {
+      "nivel": "NT1 / Prekínder",
+      "ambito": "Desarrollo personal y social",
+      "nucleos": 3,
+      "archivo": "nt1/nt1_desarrollo_personal_social.json"
+    },
+    {
+      "nivel": "NT1 / Prekínder",
+      "ambito": "Comunicación integral",
+      "nucleos": 2,
+      "archivo": "nt1/nt1_comunicacion_integral.json"
+    },
+    {
+      "nivel": "NT1 / Prekínder",
+      "ambito": "Interacción y comprensión del entorno",
+      "nucleos": 3,
+      "archivo": "nt1/nt1_interaccion_comprension_entorno.json"
+    },
+    {
+      "nivel": "NT2 / Kínder",
+      "ambito": "Desarrollo personal y social",
+      "nucleos": 3,
+      "archivo": "nt2/nt2_desarrollo_personal_social.json"
+    },
+    {
+      "nivel": "NT2 / Kínder",
+      "ambito": "Comunicación integral",
+      "nucleos": 2,
+      "archivo": "nt2/nt2_comunicacion_integral.json"
+    },
+    {
+      "nivel": "NT2 / Kínder",
+      "ambito": "Interacción y comprensión del entorno",
+      "nucleos": 3,
+      "archivo": "nt2/nt2_interaccion_comprension_entorno.json"
+    }
+  ]
+}

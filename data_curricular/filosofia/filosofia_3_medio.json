@@ -1,0 +1,33 @@
+{
+  "asignatura": "Filosofía",
+  "curso": "3° medio",
+  "plan": "Formación General",
+  "oa": [
+    {
+      "codigo": "FG-FILO-3M-OAC-01",
+      "descripcion": "Describir las características del quehacer filosófico, considerando el problema de su origen y sentido, e identificando algunas de sus grandes preguntas y temas."
+    },
+    {
+      "codigo": "FG-FILO-3M-OAC-02",
+      "descripcion": "Analizar y fundamentar diversas perspectivas filosóficas, considerando posibles relaciones con la cotidianidad, así como normas, valores, creencias y visiones de mundo de los pensadores que las desarrollaron."
+    },
+    {
+      "codigo": "FG-FILO-3M-OAC-03",
+      "descripcion": "Formular preguntas filosóficas referidas al ser y la naturaleza de la realidad que sean significativas para su vida, considerando conceptos y teorías ontológicas fundamentales."
+    },
+    {
+      "codigo": "FG-FILO-3M-OAC-04",
+      "descripcion": "Formular preguntas filosóficas referidas al conocimiento, la ciencia y la verdad que sean significativas para su vida, considerando conceptos y teorías epistemológicas fundamentales."
+    },
+    {
+      "codigo": "FG-FILO-3M-OAC-05",
+      "descripcion": "Dialogar sobre grandes problemas de la ontología y/o la epistemología, confrontando diversas perspectivas filosóficas y fundamentando visiones personales."
+    },
+    {
+      "codigo": "FG-FILO-3M-OAC-06",
+      "descripcion": "Aplicar principios y herramientas elementales de argumentación en el diálogo, la escritura y diferentes contextos, considerando la consistencia y rigurosidad lógica, la identificación de razonamientos válidos e inválidos y métodos de razonamiento filosófico."
+    }
+  ],
+  "fuente": "Currículum Nacional MINEDUC — Bases Curriculares 3° y 4° medio Filosofía",
+  "estado_curricular": "OA oficiales cargados y separados por curso"
+}

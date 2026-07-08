@@ -1,0 +1,15 @@
+AulaMind Enterprise 3.0 — Lenguaje y Literatura / Lenguaje y Comunicación
+1° básico a 4° medio. OA por unidad extraídos de Programas de Estudio MINEDUC aportados.
+
+leng_1_basico.json: 4 unidades | 44 asignaciones OA
+leng_2_basico.json: 4 unidades | 47 asignaciones OA
+leng_3_basico.json: 4 unidades | 45 asignaciones OA
+leng_4_basico.json: 4 unidades | 48 asignaciones OA
+leng_5_basico.json: 4 unidades | 47 asignaciones OA
+leng_6_basico.json: 4 unidades | 50 asignaciones OA
+leng_7_basico.json: 7 unidades | 90 asignaciones OA
+leng_8_basico.json: 7 unidades | 98 asignaciones OA
+leng_1_medio.json: 4 unidades | 31 asignaciones OA
+leng_2_medio.json: 4 unidades | 42 asignaciones OA
+leng_3_medio.json: 4 unidades | 9 asignaciones OA
+leng_4_medio.json: 4 unidades | 15 asignaciones OA

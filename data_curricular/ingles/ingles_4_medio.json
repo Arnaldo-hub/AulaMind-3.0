@@ -1,0 +1,70 @@
+{
+  "asignatura": "Inglés",
+  "curso": "Inglés 4° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — The media and the message in today's globalized world",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2. Producir"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1. Comprender"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3. Utilizar su"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4. Producir y textos orales y textos orales y textos orales y comprender con escritos claros, con escritos claros en escritos claros, con fluidez textos orales el fin de construir contextos el fin de construir y escritos claros en una postura relacionados con una postura situaciones personal crítica en sus intereses e personal crítica en comunicativas que contextos inquietudes, con el contextos involucren otras relacionados con fin de expresar una relacionados con visiones de mundo y sus intereses e postura personal sus intereses e la propia, con el fin inquietudes. crítica que respeta inquietudes. de interactuar y otras posturas. tomar conciencia de su propia identidad. Unidad de Currículum y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Communicating ideas through science and technology",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1. Comprender"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2. Producir"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — It's business time",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2. Producir"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3. Utilizar su"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Learning about sustainability and contributing with solutions",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1. Comprender"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4. Producir y textos orales y textos orales y textos orales y comprender con escritos claros, con escritos claros en escritos claros, con fluidez textos orales el fin de construir contextos el fin de construir y escritos claros en una postura relacionados con una postura situaciones personal crítica en sus intereses e personal crítica en comunicativas que contextos inquietudes, con el contextos involucren otras relacionados con fin de expresar una relacionados con visiones de mundo y sus intereses e postura personal sus intereses e la propia, con el fin inquietudes. crítica que respeta inquietudes. de interactuar y otras posturas. tomar conciencia de su propia identidad. Unidad de Currículum y"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2. Producir"
+        }
+      ]
+    }
+  ]
+}

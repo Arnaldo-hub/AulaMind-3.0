@@ -1,0 +1,27 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Mecánica de Mantenimiento de Aeronaves",
+  "curso": "3° medio TP",
+  "menciones": [],
+  "modulos": [
+    {
+      "codigo": "MM-MMAE-M01",
+      "nombre": "Fundamentos y documentación técnica aeronáutica"
+    },
+    {
+      "codigo": "MM-MMAE-M02",
+      "nombre": "Materiales y estructuras de aeronaves"
+    },
+    {
+      "codigo": "MM-MMAE-M03",
+      "nombre": "Sistemas eléctricos y electrónicos aeronáuticos"
+    },
+    {
+      "codigo": "MM-MMAE-M04",
+      "nombre": "Mantenimiento básico de sistemas de aeronaves"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

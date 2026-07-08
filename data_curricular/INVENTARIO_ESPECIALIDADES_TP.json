@@ -1,0 +1,271 @@
+[
+  {
+    "sector": "administracion",
+    "especialidad": "Administración",
+    "menciones": [
+      "Logística",
+      "Recursos Humanos"
+    ],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 7
+  },
+  {
+    "sector": "administracion",
+    "especialidad": "Contabilidad",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 7
+  },
+  {
+    "sector": "agropecuario",
+    "especialidad": "Agropecuaria",
+    "menciones": [
+      "Agricultura",
+      "Pecuaria",
+      "Vitivinícola"
+    ],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "alimentacion",
+    "especialidad": "Elaboración Industrial de Alimentos",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "alimentacion",
+    "especialidad": "Gastronomía",
+    "menciones": [
+      "Cocina",
+      "Pastelería y Repostería"
+    ],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "confeccion",
+    "especialidad": "Vestuario y Confección Textil",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 9
+  },
+  {
+    "sector": "construccion",
+    "especialidad": "Construcción",
+    "menciones": [
+      "Edificación",
+      "Terminaciones de la Construcción",
+      "Obras Viales e Infraestructura"
+    ],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 9
+  },
+  {
+    "sector": "construccion",
+    "especialidad": "Instalaciones Sanitarias",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 10
+  },
+  {
+    "sector": "construccion",
+    "especialidad": "Montaje Industrial",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 10
+  },
+  {
+    "sector": "construccion",
+    "especialidad": "Refrigeración y Climatización",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 9
+  },
+  {
+    "sector": "electricidad",
+    "especialidad": "Electricidad",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "electricidad",
+    "especialidad": "Electrónica",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 9
+  },
+  {
+    "sector": "grafico",
+    "especialidad": "Dibujo Técnico",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 10
+  },
+  {
+    "sector": "grafico",
+    "especialidad": "Gráfica",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "hoteleria_turismo",
+    "especialidad": "Servicios de Hotelería",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 9
+  },
+  {
+    "sector": "hoteleria_turismo",
+    "especialidad": "Servicios de Turismo",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 10
+  },
+  {
+    "sector": "maderero",
+    "especialidad": "Forestal",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 10
+  },
+  {
+    "sector": "maderero",
+    "especialidad": "Muebles y Terminaciones en Madera",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 10
+  },
+  {
+    "sector": "metalmecanica",
+    "especialidad": "Construcciones Metálicas",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "metalmecanica",
+    "especialidad": "Mecánica Industrial",
+    "menciones": [
+      "Mantenimiento Electromecánico",
+      "Máquinas-Herramientas",
+      "Matricería"
+    ],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 7
+  },
+  {
+    "sector": "metalmecanica",
+    "especialidad": "Mecánica Automotriz",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "metalmecanica",
+    "especialidad": "Mecánica de Mantenimiento de Aeronaves",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "minero",
+    "especialidad": "Asistencia en Geología",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "minero",
+    "especialidad": "Explotación Minera",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "minero",
+    "especialidad": "Metalurgia Extractiva",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "maritimo",
+    "especialidad": "Acuicultura",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 8
+  },
+  {
+    "sector": "maritimo",
+    "especialidad": "Operaciones Portuarias",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 7
+  },
+  {
+    "sector": "maritimo",
+    "especialidad": "Pesquería",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 9
+  },
+  {
+    "sector": "maritimo",
+    "especialidad": "Tripulación de Naves Mercantes y Especiales",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "quimica_industria",
+    "especialidad": "Química Industrial",
+    "menciones": [
+      "Laboratorio Químico",
+      "Planta Química"
+    ],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "salud_educacion",
+    "especialidad": "Atención de Enfermería",
+    "menciones": [
+      "Enfermería",
+      "Adulto Mayor"
+    ],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "salud_educacion",
+    "especialidad": "Atención de Párvulos",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "tecnologia_comunicaciones",
+    "especialidad": "Conectividad y Redes",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  },
+  {
+    "sector": "tecnologia_comunicaciones",
+    "especialidad": "Programación",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 9
+  },
+  {
+    "sector": "tecnologia_comunicaciones",
+    "especialidad": "Telecomunicaciones",
+    "menciones": [],
+    "archivos_curso": 2,
+    "oa_perfil_extraidos": 0
+  }
+]

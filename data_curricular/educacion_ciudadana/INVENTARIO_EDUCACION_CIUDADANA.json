@@ -1,0 +1,14 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "asignatura": "Educación Ciudadana",
+  "cursos": [
+    "3° medio",
+    "4° medio"
+  ],
+  "archivos": 2,
+  "oa_3_medio": 8,
+  "oa_4_medio": 8,
+  "total_oa": 16,
+  "unidades_3_medio": 4,
+  "unidades_4_medio": 4
+}

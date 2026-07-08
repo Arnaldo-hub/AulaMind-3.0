@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Salud y Educación",
+  "especialidad": "Atención de Párvulos",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "SE-ATPA-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "SE-ATPA-M05",
+      "nombre": "Actividades educativas para párvulos"
+    },
+    {
+      "codigo": "SE-ATPA-M06",
+      "nombre": "Higiene y seguridad de los párvulos"
+    },
+    {
+      "codigo": "SE-ATPA-M07",
+      "nombre": "Alimentación de los párvulos"
+    },
+    {
+      "codigo": "SE-ATPA-M08",
+      "nombre": "Trabajo con familia y comunidad educativa"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

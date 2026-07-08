@@ -1,0 +1,5 @@
+Proyecto único: AulaMind Enterprise 3.0.
+No reescribir módulos que funcionan.
+No cambiar arquitectura.
+Cada cambio debe hacerse sobre código y datos reales.
+Cada bloque debe probarse antes de avanzar o declararse terminado.

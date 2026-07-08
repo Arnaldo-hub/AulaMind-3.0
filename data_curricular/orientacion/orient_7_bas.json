@@ -1,0 +1,74 @@
+{
+  "asignatura": "orient",
+  "curso": "ORIENT 7° BÁS",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crecimiento personal, identidad y bienestar",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 >>Distinguen las formas en que se expresa la afectividad desempeño observable (y, Analizar, considerando humana en los ámbitos corporal y social y las por lo tanto, evaluable) sus experiencias reconocen en su experiencia. de la o el estudiante en relación con el Objetivo de e inquietudes, la >>Diferencian las distintas expresiones de la sexualidad Aprendizaje al cual están importancia que tiene asociándolas con los grados de intimidad en una asociados. Son de carácter para el desarrollo relación. sugerido, por lo que el o la personal la integración docente puede modificarlos >>Explican las contribuciones que tiene la integración o complementarlos. de las distintas de las dimensiones de la sexualidad al desarrollo Cada Objetivo de dimensiones de la afectivo y bienestar personal. Aprendizaje cuenta con sexualidad, el cuidado varios Indicadores, dado >>Reconocen, entre las fuentes de información que están del cuerpo y la intimidad, que existen múltiples a su alcance, aquellas que aportan a su desarrollo discriminando formas de desempeños que integral y las características que las distinguen. pueden demostrar que relacionarse en un marco de respeto y el uso de >>Describen formas de cuidado de sí mismo y de su un aprendizaje ha sido desarrollado. fuentes de información intimidad en relaciones presenciales y virtuales, apropiadas para su distinguiendo conductas violentas o disruptivas de desarrollo personal. la intimidad. Orientación |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Relaciones interpersonales, convivencia y buen trato",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Integrar a su vida cotidiana acciones que favorezcan el bienestar y la vida saludable en el plano personal y en la comunidad escolar, optando por una alimentación saludable, un descanso apropiado, realizando actividad física o practicando deporte, resguardando la intimidad e integridad del cuerpo, incorporando medidas de seguridad en el uso de redes sociales, entre otros. 50 Orientación |"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Analizar sus relaciones, presenciales o virtuales a través de las redes sociales, y las de su entorno inmediato atendiendo a los derechos de las personas involucradas considerando los principios de igualdad, dignidad, inclusión y no discriminación, identificando circunstancias en las que no se ha actuado conforme a estos derechos, y reconociendo el impacto en el bienestar de quienes se vean involucrados."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Resolver conflictos y desacuerdos a través del diálogo, la escucha empática y la búsqueda de soluciones en forma respetuosa y sin violencia, reconociendo que el conflicto es una oportunidad de aprendizaje y desarrollo inherente a las relaciones humanas. EJE PERTENENCIA Y PARTICIPACIÓN DEMOCRÁTICA"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Participación, hábitos de estudio y desarrollo de metas",
+      "oa": [
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Reconocer intereses, inquietudes, problemas o necesidades compartidas con su grupo de pertenencia, ya sea dentro del curso u otros espacios de participación, y colaborar para alcanzar metas comunes valorando el trabajo en equipo y los aportes de cada uno de sus miembros."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Elaborar acuerdos orientados al logro de fines compartidos por el curso, utilizando para esto los espacios de participación disponibles, como Consejo de Curso, asambleas, encuentros u otros, contribuyendo democráticamente a través del diálogo, el debate y el reconocimiento de representantes democráticamente electos; respetando la diversidad de opiniones y el derecho de hombres y mujeres. EJE GESTIÓN Y PROYECCIÓN DEL APRENDIZAJE"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Reconocer sus intereses, motivaciones, necesidades y capacidades, comprendiendo la relevancia del aprendizaje escolar sistemático para la exploración y desarrollo de estos, así como para la elaboración de sus proyectos personales."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Gestionar de manera autónoma su propio proceso de aprendizaje escolar, a través del establecimiento de metas progresivas de aprendizaje, la definición de líneas de acción para lograrlas, el monitoreo de logros y la redefinición de acciones que resulten necesarias. Orientación |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Autocuidado, vida saludable y proyecto personal",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >>Reconocen y describen características personales que asignatura. Se refieren a Construir, en forma valoran positivamente de sí mismos y de sus pares. conocimientos, habilidades individual y colectiva, >>Reconocen y describen la manera en que sus y"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Identificar situaciones que puedan exponer a las y los adolescentes al consumo de sustancias nocivas para el organismo, conductas sexuales riesgosas, conductas violentas, entre otras problemáticas; reconociendo la importancia de desarrollar estrategias para enfrentarlas, y contar con recursos tales como: la comunicación asertiva y la ayuda de personas significativas y/o especializadas, dentro o fuera del establecimiento."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15,"
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "OA 22,"
+        }
+      ]
+    }
+  ]
+}

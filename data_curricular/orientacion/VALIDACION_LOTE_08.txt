@@ -1,0 +1,14 @@
+AulaMind Enterprise 3.0 - Lote 08
+Asignatura: Orientación
+Validación estructural: JSON, asignatura, curso, unidades, nombre de unidad, código OA y descripción OA.
+
+orient_1_medio.json: 1 unidades; 10 OA asignados.
+orient_2_bas.json: 1 unidades; 8 OA asignados.
+orient_2_medio.json: 1 unidades; 10 OA asignados.
+orient_3_bas.json: 1 unidades; 8 OA asignados.
+orient_4_bas.json: 1 unidades; 9 OA asignados.
+orient_5_basi.json: 1 unidades; 9 OA asignados.
+orient_6_bas.json: 1 unidades; 9 OA asignados.
+orient_7_bas.json: 1 unidades; 12 OA asignados.
+orient_8_bas.json: 1 unidades; 13 OA asignados.
+orientacion_1_bas.json: 1 unidades; 8 OA asignados.

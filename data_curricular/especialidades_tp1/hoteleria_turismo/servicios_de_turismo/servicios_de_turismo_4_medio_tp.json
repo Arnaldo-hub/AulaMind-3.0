@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Hotelería y Turismo",
+  "especialidad": "Servicios de Turismo",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "HT-TURI-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "HT-TURI-M05",
+      "nombre": "Conducción de grupos turísticos"
+    },
+    {
+      "codigo": "HT-TURI-M06",
+      "nombre": "Comercialización de productos y servicios turísticos"
+    },
+    {
+      "codigo": "HT-TURI-M07",
+      "nombre": "Coordinación de servicios turísticos"
+    },
+    {
+      "codigo": "HT-TURI-M08",
+      "nombre": "Comunicación en inglés para servicios turísticos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura curricular del lote preparada para auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

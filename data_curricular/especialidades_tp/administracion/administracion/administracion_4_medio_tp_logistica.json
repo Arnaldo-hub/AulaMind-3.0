@@ -1,0 +1,44 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Administración",
+  "especialidad": "Administración",
+  "mencion": "Logística",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AD-LOGS-M00",
+      "nombre": "Emprendimiento y empleabilidad administración mención logística",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AD-LOGS-M01",
+      "nombre": "Operaciones de almacenamiento",
+      "oa_asociados": [
+        "OA 1",
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AD-LOGS-M02",
+      "nombre": "Operaciones de bodega",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "AD-LOGS-M03",
+      "nombre": "Logística y distribución",
+      "oa_asociados": [
+        "OA 1",
+        "OA 4"
+      ]
+    },
+    {
+      "codigo": "AD-LOGS-M04",
+      "nombre": "Seguridad en bodegas",
+      "oa_asociados": [
+        "OA 5"
+      ]
+    }
+  ]
+}

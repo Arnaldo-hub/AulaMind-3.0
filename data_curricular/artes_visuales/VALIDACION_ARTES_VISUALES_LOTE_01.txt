@@ -1,0 +1,11 @@
+AulaMind Enterprise 3.0 — Artes Visuales, Lote 01
+Generado desde los Programas de Estudio MINEDUC aportados al proyecto.
+
+artes_1_basico.json: 4 unidades | OA por unidad [2, 1, 1, 1] | catálogo OA detectado 5
+artes_2_basico.json: 4 unidades | OA por unidad [2, 1, 1, 1] | catálogo OA detectado 5
+artes_3_basico.json: 4 unidades | OA por unidad [2, 1, 1, 1] | catálogo OA detectado 5
+artes_5_basico.json: 4 unidades | OA por unidad [2, 1, 1, 1] | catálogo OA detectado 5
+artes_7_basico.json: 4 unidades | OA por unidad [4, 3, 4, 6] | catálogo OA detectado 6
+artes_8_basico.json: 4 unidades | OA por unidad [4, 4, 3, 6] | catálogo OA detectado 6
+artes_1_medio.json: 4 unidades | OA por unidad [5, 3, 5, 6] | catálogo OA detectado 6
+artes_34_medio.json: 4 unidades | OA por unidad [7, 6, 3, 3] | catálogo OA detectado 7

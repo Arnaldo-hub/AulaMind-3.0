@@ -1,0 +1,58 @@
+{
+  "modalidad": "Humanístico-Científica",
+  "plan": "Formación Diferenciada",
+  "tipo": "Asignatura de profundización",
+  "area": "Lengua y Literatura",
+  "asignatura": "Participación y argumentación en democracia",
+  "curso": "4° medio HC",
+  "nota_curricular": "Los OA corresponden al ciclo 3° y 4° medio HC.",
+  "unidades": [
+    {
+      "numero": 1,
+      "nombre": "Argumentación en distintos ámbitos de participación social"
+    },
+    {
+      "numero": 2,
+      "nombre": "La argumentación situada críticamente"
+    },
+    {
+      "numero": 3,
+      "nombre": "Discusión razonada y rigurosa"
+    },
+    {
+      "numero": 4,
+      "nombre": "Construcción de un discurso sobre una controversia"
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "LL-PADM-3y4-OAC-01",
+      "descripcion": "Construir colectivamente conclusiones, soluciones, preguntas, hipótesis o acuerdos o que surjan de discusiones argumentadas y razonadas, en torno a temas controversiales de la vida y la sociedad actual."
+    },
+    {
+      "codigo": "LL-PADM-3y4-OAC-02",
+      "descripcion": "Dialogar argumentativamente, privilegiando el componente racional de la argumentación, estableciendo relaciones lógicas válidas y extrayendo conclusiones razonadas."
+    },
+    {
+      "codigo": "LL-PADM-3y4-OAC-03",
+      "descripcion": "Evaluar diversas formas en que se legitima el conocimiento contenido en los discursos (investigación científica, autoridad, experiencia personal, entre otras), a partir del análisis crítico de sus modos de generación y su aceptabilidad, suficiencia y pertinencia al ámbito de participación, a la comunidad discursiva, al tema y a los propósitos."
+    },
+    {
+      "codigo": "LL-PADM-3y4-OAC-04",
+      "descripcion": "Elaborar argumentos, basándose en evidencias o información pública legitimada, pertinentes al tema o problema analizado."
+    },
+    {
+      "codigo": "LL-PADM-3y4-OAC-05",
+      "descripcion": "Utilizar formas de argumentación y de legitimación del conocimiento pertinentes al ámbito de participación, a la comunidad discursiva y a los propósitos de sus argumentaciones."
+    },
+    {
+      "codigo": "LL-PADM-3y4-OAC-06",
+      "descripcion": "Evaluar críticamente argumentaciones surgidas en distintos ámbitos de la sociedad, enfocándose en los alcances que tienen en la comunidad, su pertinencia al tema analizado y al propósito perseguido, la legitimidad de las evidencias proporcionadas y las relaciones lógicas establecidas."
+    },
+    {
+      "codigo": "LL-PADM-3y4-OAC-07",
+      "descripcion": "Construir una postura personal sobre diversos temas controversiales y problemáticas de la sociedad, a partir de sus investigaciones y de la evaluación y confrontación de argumentaciones y evidencias en torno a estos."
+    }
+  ],
+  "estado_curricular": "OA y unidades oficiales cargados y validados contra Currículum Nacional MINEDUC."
+}

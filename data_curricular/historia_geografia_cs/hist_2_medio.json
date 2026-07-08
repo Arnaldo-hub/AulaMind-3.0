@@ -1,0 +1,86 @@
+{
+  "asignatura": "Historia, Geografía y Ciencias Sociales",
+  "curso": "2° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crisis, totalitarismos y Segunda Guerra Mundial",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Relacionar la transformación cultural del período de entreguerras con la ruptura de cánones culturales y estéticos tradicionales y la masificación de la cultura."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Analizar la crisis del Estado liberal decimonónico a comienzos del siglo XX, considerando la Gran Depresión y el surgimiento de modelos políticos y económicos alternativos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar la Segunda Guerra Mundial considerando causas, fases, dimensión planetaria, ideologías, violación de derechos humanos y efectos sobre el orden internacional."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Guerra Fría, descolonización y transformaciones globales",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Evaluar las consecuencias de la Segunda Guerra Mundial considerando surgimiento de Estados Unidos y la URSS como superpotencias, pérdida de hegemonía europea, ONU y Declaración Universal de Derechos Humanos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Analizar la Guerra Fría como confrontación ideológica sin guerra directa entre las superpotencias, considerando dimensiones políticas, económicas, tecnológicas y culturales."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar el proceso de descolonización de Asia y África y sus consecuencias políticas y económicas."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Evaluar cómo la movilización social y cultural de la década de 1960 transformó la sociedad occidental, considerando movimientos juveniles, feminismo y defensa de derechos civiles."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Chile en el siglo XX: democratización, crisis y dictadura",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "Analizar la evolución de la economía y sociedad chilena durante el siglo XX, considerando industrialización, urbanización, ampliación de derechos sociales y transformaciones demográficas."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reconocer las transformaciones estructurales de mediados del siglo XX en Chile y su impacto en la sociedad."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Caracterizar el contexto de movilización social y polarización política que precedió al quiebre democrático de 1973."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Analizar las principales transformaciones políticas, económicas y sociales del régimen militar, considerando violaciones a los derechos humanos y cambios institucionales."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Caracterizar el proceso de recuperación de la democracia y los principales desafíos políticos, sociales y económicos de Chile desde 1990."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Formación ciudadana y desafíos del mundo contemporáneo",
+      "oa": [
+        {
+          "codigo": "OA 20",
+          "descripcion": "Analizar el funcionamiento de la democracia y los desafíos de la participación ciudadana en el contexto contemporáneo."
+        },
+        {
+          "codigo": "OA 21",
+          "descripcion": "Analizar problemas y desafíos vinculados con desigualdad, diversidad, derechos humanos y sustentabilidad."
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "Evaluar formas de participación y acción ciudadana en una sociedad democrática, considerando medios institucionales y comunitarios."
+        }
+      ]
+    }
+  ]
+}

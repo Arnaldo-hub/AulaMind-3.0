@@ -1,0 +1,366 @@
+{
+  "area": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "archivo_fuente": "pueblosoriginarios.json",
+  "cursos": [
+    {
+      "curso": "1° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 1° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 1° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "curso": "2° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 2° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 2° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "curso": "3° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 3° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 3° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "curso": "4° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 4° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 4° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "curso": "5° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 5° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 5° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "curso": "6° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 6° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 6° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "curso": "7° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 7° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 7° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "curso": "8° Básico",
+      "nombre_asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+      "programa": "",
+      "unidades": [
+        {
+          "nombre": "Unidad 1: Desarrollo Integral",
+          "semestre": "1",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 8° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 1",
+              "descripcion": "Desarrollar habilidades fundamentales."
+            },
+            {
+              "codigo": "OA 2",
+              "descripcion": "Aplicar conocimientos en actividades prácticas."
+            },
+            {
+              "codigo": "OA 3",
+              "descripcion": "Participar activamente en experiencias de aprendizaje."
+            }
+          ]
+        },
+        {
+          "nombre": "Unidad 2: Expresión y Participación",
+          "semestre": "2",
+          "proposito": "Desarrollar competencias de Lengua y Cultura de los Pueblos Originarios Ancestrales en 8° Básico.",
+          "oa": [
+            {
+              "codigo": "OA 4",
+              "descripcion": "Expresar ideas y emociones."
+            },
+            {
+              "codigo": "OA 5",
+              "descripcion": "Trabajar colaborativamente."
+            },
+            {
+              "codigo": "OA 6",
+              "descripcion": "Reflexionar sobre el aprendizaje."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

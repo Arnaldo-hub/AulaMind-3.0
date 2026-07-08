@@ -1,0 +1,54 @@
+{
+  "asignatura": "Música",
+  "curso": "6° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Escuchar cualidades del Canciones que imitan sonidos sonido (altura, timbre, intensidad, duración) y 1 Actividades elementos del lenguaje El profesor invita a escuchar una canción cuya temática sea imitar musical (pulsos, acentos, patrones, secciones), y sonidos diversos. Se sugieren: › La orquesta de los animales del grupo Zapallo Consisten en un listado de actividades, representarlos de distintas formas. › Guido el guitarrista del grupo Acuarela Luego comentan la canción y los sonidos a los que alude y escritas en un lenguaje simple y cen"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Presentar su trabajo musical al › Participan con responsabilidad en sus presentaciones (traen curso y la comunidad, en forma el material, ensayan sus partes, están concentrados, están individual y grupal, con respon- listos en el momento indicado, etcétera). sabilidad, dominio y musicalidad. › Aplican conocimientos y habilidades aprendidas. › Demuestran naturalidad y seguridad en sus presentaciones musicales. › Cantan y tocan, cuidando su sonoridad y propósito expresivo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Interpretar y crear música",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar, mostrando grados › Se expresan corporalmente a partir de música chilena de crecientes de elaboración y tradición oral y escrita. detalle, las sensaciones, emo- › Relacionan lo escuchado con sensaciones, emociones e ciones e ideas que les sugiere ideas por diversos medios (escrito, oral, corporal, visual) en la música escuchada e interpre- forma clara. tada, usando diversos medios › Se expresan en forma oral y escrita (narración, poema, cuen- expresivos (verbal, corporal, to, entre otros) a partir de la música chilena de tradición oral"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Explicar la relación entre las › Reconocen aspectos expresivos entre músicas de diferentes obras interpretadas y/o es- culturas. cuchadas, con elementos del › Aplican conocimientos adquiridos a sus comentarios. contexto en que surgen. › Identifican elementos de diferentes culturas y contextos. › Identifican funcionalidad de la música en diferentes culturas. * Escuchar apreciativamente al menos 15 músicas variadas de corta y mediana duración al año. 58 Programa de Estudio / 6º básico Ejemplos de actividades"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Cantar al unísono y a más › Cantan y tocan música chilena de tradición oral y escrita. voces y tocar instrumentos de › Cantan con naturalidad, adoptando una postura sin tensio- percusión, melódicos (metaló- nes y cuidando la emisión de la voz (respiración, modulación fono, flauta dulce u otros) y/o y uso de resonadores). armónicos (guitarra, teclado u › Tocan sus instrumentos melódicos o armónicos, cuidando su otros). sonoridad. › Incorporan una postura sin tensiones que facilite el uso del instrumento."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Reflexionar sobre sus fortalezas › Reconocen aspectos positivos y por mejorar en sus interpre- y las áreas en que pueden mejo- taciones y creaciones musicales. rar la audición, la interpretación › Identifican elementos del lenguaje musical, su funcionalidad y la creación, propia y de otros, y propósito en audiciones, interpretaciones y creaciones. con respeto y autocrítica. › Reflexionan en torno a su forma de escuchar. › Fundamenten apropiadamente sus opiniones. 100 Programa de Estudio / 6º básico Ejemplos de actividades"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear ideas mu- › Crean ambientaciones sonoras inspiradas en situaciones, sicales con un propósito dado paisajes o acontecimientos chilenos. y un adecuado dominio del › Participan en la creación y la interpretación de preludios, lenguaje musical. interludios y postludios de música creada o interpretada por ellos. › Incorporan sus instrumentos melódicos (y armónicos) a sus creaciones e improvisaciones con expresividad. › Improvisan a partir de patrones rítmicos inspirados en el folclor chileno. › Fundamentan sus decisiones musicales (“usamos instrumen"
+        }
+      ]
+    }
+  ]
+}

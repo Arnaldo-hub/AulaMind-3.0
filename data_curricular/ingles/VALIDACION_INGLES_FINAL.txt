@@ -1,0 +1,11 @@
+AulaMind Enterprise 3.0 — Inglés 5° básico a 4° medio
+Reconstrucción curricular desde Programas de Estudio MINEDUC aportados.
+
+ingles_1medio.json: 4 unidades | OA por unidad [16, 17, 16, 16]
+ingles_2medio_modificado.json: 4 unidades | OA por unidad [17, 17, 17, 18]
+ingles_3_medio.json: 4 unidades | OA por unidad [5, 4, 3, 3]
+ingles_4_medio.json: 4 unidades | OA por unidad [4, 2, 2, 3]
+ingles_5_basico.json: 4 unidades | OA por unidad [16, 16, 16, 16]
+ingles_6_basico.json: 4 unidades | OA por unidad [16, 16, 16, 16]
+ingles_7_basico.json: 4 unidades | OA por unidad [7, 2, 18, 18]
+ingles_8_basico.json: 4 unidades | OA por unidad [5, 2, 17, 18]

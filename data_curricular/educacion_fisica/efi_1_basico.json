@@ -1,0 +1,70 @@
+{
+  "asignatura": "efi",
+  "curso": "EFI 1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades motrices y control corporal",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Ejecutar movimientos corporales,"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Condición física y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 explicitan los"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Juegos, deportes y estrategias",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Practicar una amplia gama de juegos con actividad física. y sin oposición, con y sin colaboración, de persecución, individuales y colectivos. SEGURIDAD, JUEGO LIMPIO Y LIDERAZGO"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Ejecutar habilidades motrices básicas para aprender a trabajar en equipo, en diferentes entornos, como las plazas asumiendo diferentes roles (respetar al activas, el patio del colegio, parques, otro, recoger los materiales solicitados playas, entre otros. o liderar si se le asigna ese rol)."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Practicar juegos o"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1) › Se desplazan por medio de la carrera en diferentes distancias y direcciones; por ejemplo: hacia la izquierda y la derecha, delante Actividad física y resolución de problemas ("
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2) y atrás. › Lanzan objetos de diferentes formas y tamaños con una o dos Hábitos de higiene, posturales y vida manos hacia un objetivo determinado. saludable ("
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Ejecutar"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Practicar en su vida cotidiana"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 jetivo de Aprendizaje cuenta con varios Reconocer las sensaciones y › Identifican las distintas respuestas corporales provocadas indicadores y la totalidad de los indica- respuestas corporales provoca- por la actividad física, como aumento del ritmo de la respi- das por la práctica de actividad ración, sudor y dificultad al hablar. física, como cambios del color › Identifican, guiados por el docente, qué tipo de actividad dores dan cuenta del aprendizaje. Al ser de la piel, sudor, agitación, ritmo física (baja, moderada o intensa) incrementa más los latidos de respiración, cansancio y difi- del corazón. de carácter sugerido, puede especificar- cultad al hablar. › Identifican las partes del cuerpo que usaron durante la acti- vidad. se con mayor detalle en cada aprendiza- je qué se espera del estudiante.28"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Practicar"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "3° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — La luz y el sonido",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "Distinguir fuentes naturales y artificiales de luz, como el Sol, las ampolletas y el fuego, entre otras."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Investigar experimentalmente y explicar algunas características de la luz; por ejemplo: viaja en línea recta, se refleja, puede ser separada en colores."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Investigar experimentalmente y explicar las características del sonido; por ejemplo: viaja en todas las direcciones, se absorbe o se refleja, se transmite por medio de distintos materiales, tiene tono e intensidad."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — El Sistema solar",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "Describir las características de algunos de los componentes del Sistema Solar (Sol, planetas, lunas, cometas y asteroides) en relación con su tamaño, localización, apariencia y distancia relativa a la Tierra, entre otros."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Explicar, por medio de modelos, los movimientos de rotación y traslación, considerando sus efectos en la Tierra."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Diseñar y construir modelos tecnológicos para explicar eventos del sistema solar, como la sucesión de las fases de la Luna y los eclipses de Luna y de Sol, entre otros."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Importancia de las plantas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Observar y describir, por medio de la investigación experimental, las necesidades de las plantas y su relación con la raíz, el tallo y las hojas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Observar, registrar e identificar variadas plantas de nuestro país, incluyendo vegetales autóctonos y cultivos principales a nivel nacional y regional."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Observar y describir algunos cambios de las plantas con flor durante su ciclo de vida (germinación, crecimiento, reproducción, formación de la flor y del fruto), reconociendo la importancia de la polinización y de la dispersión de la semilla."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Describir la importancia de las plantas para los seres vivos, el ser humano y el medio ambiente (por ejemplo: alimentación, aire para respirar, productos derivados, ornamentación, uso medicinal) proponiendo y comunicando medidas de cuidado."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explicar la importancia de usar adecuadamente los recursos, proponiendo acciones y construyendo instrumentos tecnológicos para reutilizarlos, reducirlos y reciclarlos en la casa y en la escuela."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida saludable",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Clasificar los alimentos, distinguiendo sus efectos sobre la salud y proponer hábitos alimenticios saludables."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Proponer, comunicar y ejercitar buenas prácticas de higiene en la manipulación de alimentos para prevenir enfermedades."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "asignatura": "Educación Física y Salud",
+  "curso": "2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades motrices básicas y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Demostrar habilidades motrices básicas de locomoción, manipulación y estabilidad en diferentes direcciones, alturas y niveles."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Ejecutar actividades físicas de intensidad moderada a vigorosa que incrementen la condición física por medio de juegos y circuitos."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Practicar actividades físicas en forma segura, demostrando la adquisición de hábitos de higiene, postura y vida saludable."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Juegos, equilibrio y orientación espacial",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Ejecutar acciones motrices que presenten una solución a un problema, reconociendo diversos criterios como tiempo, espacio y número de personas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Practicar una amplia gama de juegos con y sin oposición, con y sin colaboración, y juegos tradicionales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Ejecutar movimientos corporales expresivos que comuniquen ideas, estados de ánimo y emociones."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Condición física y autocuidado",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Ejecutar actividades físicas de intensidad moderada a vigorosa que incrementen la condición física por medio de juegos y circuitos."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Practicar en su vida cotidiana actividades físicas de intensidad moderada a vigorosa de forma guiada."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Reconocer las sensaciones y respuestas corporales provocadas por la práctica de actividad física, como cambios en la respiración, sudoración y latidos del corazón."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Convivencia, seguridad y actividad física",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Ejecutar habilidades motrices básicas en diferentes entornos, como plazas, patios, gimnasio y espacios naturales."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Practicar juegos o actividades motrices para aprender a trabajar en equipo, asumiendo diferentes roles y respetando reglas."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Practicar actividades físicas demostrando comportamientos seguros, como realizar calentamiento, escuchar instrucciones y usar implementos bajo supervisión."
+        }
+      ]
+    }
+  ]
+}

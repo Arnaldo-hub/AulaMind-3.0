@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Mecánica de Mantenimiento de Aeronaves",
+  "curso": "4° medio TP",
+  "menciones": [],
+  "modulos": [
+    {
+      "codigo": "MM-MMAE-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MM-MMAE-M05",
+      "nombre": "Mantenimiento de motores de aeronaves"
+    },
+    {
+      "codigo": "MM-MMAE-M06",
+      "nombre": "Inspección y mantenimiento de estructuras"
+    },
+    {
+      "codigo": "MM-MMAE-M07",
+      "nombre": "Diagnóstico de sistemas aeronáuticos"
+    },
+    {
+      "codigo": "MM-MMAE-M08",
+      "nombre": "Procedimientos de mantenimiento y seguridad aeronáutica"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

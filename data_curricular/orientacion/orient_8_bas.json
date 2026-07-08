@@ -1,0 +1,78 @@
+{
+  "asignatura": "orient",
+  "curso": "ORIENT 8° BÁS",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crecimiento personal, identidad y bienestar",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 >>Distinguen las formas en que se expresa la afectividad Analizar, considerando humana en los ámbitos corporal y social y las reconocen Indicadores de sus experiencias en su vida."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Relaciones interpersonales, convivencia y buen trato",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Integrar a su vida cotidiana acciones que favorezcan el bienestar y la vida saludable en el plano personal y en la comunidad escolar, optando por una alimentación saludable, un descanso apropiado, realizando actividad física o practicando deporte, resguardando la intimidad e integridad del cuerpo, incorporando medidas de seguridad en el uso de redes sociales, entre otros. 50 Orientación |"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 ocasiones, un OA puede ser Analizar sus relaciones, presenciales o virtuales a través de las redes sociales, abordado por un conjunto y las de su entorno inmediato atendiendo a los derechos de las personas de"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Resolver conflictos y desacuerdos a través del diálogo, la escucha empática y la búsqueda de soluciones en forma respetuosa y sin violencia, reconociendo que el conflicto es una oportunidad de aprendizaje y desarrollo inherente a las relaciones humanas. EJE PERTENENCIA Y PARTICIPACIÓN DEMOCRÁTICA"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Participación, hábitos de estudio y desarrollo de metas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >>Jerarquizan sus características personales según la Aprendizaje: Construir, en forma valoración personal que hacen de ellas. Son los Objetivos de individual y colectiva, >>Reconocen formas en las que pueden desarrollar sus Aprendizaje de las Bases representaciones características personales positivas. Curriculares que definen positivas de sí >>Proyectan sus características personales a etapas los aprendizajes terminales mismos, incorporando próximas de su vida. del año para cada sus características, asignatura. Se refieren a >>Analizan de qué forma sus motivaciones contribuyen conocimientos, habilidades motivaciones, intereses y al desarrollo de sus capacidades y habilidades. y"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Reconocer intereses, inquietudes, problemas o necesidades compartidas con su grupo de pertenencia, ya sea dentro del curso u otros espacios de participación, y colaborar para alcanzar metas comunes valorando el trabajo en equipo y los aportes de cada uno de sus miembros."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Elaborar acuerdos orientados al logro de fines compartidos por el curso, utilizando para esto los espacios de participación disponibles, como Consejo de Curso, asambleas, encuentros u otros, contribuyendo democráticamente a través del diálogo, el debate y el reconocimiento de representantes democráticamente electos; respetando la diversidad de opiniones y el derecho de hombres y mujeres. EJE GESTIÓN Y PROYECCIÓN DEL APRENDIZAJE"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Reconocer sus intereses, motivaciones, necesidades y capacidades, comprendiendo la relevancia del aprendizaje escolar sistemático para la exploración y desarrollo de estos, así como para la elaboración de sus proyectos personales."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Gestionar de manera autónoma su propio proceso de aprendizaje escolar, a través del establecimiento de metas progresivas de aprendizaje, la definición de líneas de acción para lograrlas, el monitoreo de logros y la redefinición de acciones que resulten necesarias. Orientación |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Autocuidado, vida saludable y proyecto personal",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Identificar situaciones que puedan exponer a las y los adolescentes al consumo de sustancias nocivas para el organismo, conductas sexuales riesgosas, conductas violentas, entre otras problemáticas; reconociendo la importancia de desarrollar estrategias para enfrentarlas, y contar con recursos tales como: la comunicación asertiva y la ayuda de personas significativas y/o especializadas, dentro o fuera del establecimiento."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15, Ciencias Naturales Actividad N°2 Lengua y Literatura"
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "OA 16,"
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "OA 22,"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "bloque": "Electivos de Profundización HC",
+  "areas": 7,
+  "asignaturas": 27,
+  "json": 54,
+  "asignaturas_con_contenido_cargado": 3,
+  "asignaturas_pendientes_carga_oficial": 24,
+  "advertencia": "Carpeta integral de reemplazo, pero NO curricularmente final: solo Lengua y Literatura contiene OA/unidades cargados. Las otras 24 asignaturas permanecen vacías para evitar inventar currículo.",
+  "detalle": [
+    {
+      "area": "artes",
+      "asignatura": "Artes visuales, audiovisuales y multimediales",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/artes_visuales_audiovisuales_y_multimediales/artes_visuales_audiovisuales_y_multimediales_3_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Artes visuales, audiovisuales y multimediales",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/artes_visuales_audiovisuales_y_multimediales/artes_visuales_audiovisuales_y_multimediales_4_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Creación y composición musical",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/creacion_y_composicion_musical/creacion_y_composicion_musical_3_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Creación y composición musical",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/creacion_y_composicion_musical/creacion_y_composicion_musical_4_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Diseño y arquitectura",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/diseno_y_arquitectura/diseno_y_arquitectura_3_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Diseño y arquitectura",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/diseno_y_arquitectura/diseno_y_arquitectura_4_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación musical",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/interpretacion_musical/interpretacion_musical_3_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación musical",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/interpretacion_musical/interpretacion_musical_4_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación y creación en danza",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/interpretacion_y_creacion_en_danza/interpretacion_y_creacion_en_danza_3_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación y creación en danza",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/interpretacion_y_creacion_en_danza/interpretacion_y_creacion_en_danza_4_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación y creación en teatro",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/interpretacion_y_creacion_en_teatro/interpretacion_y_creacion_en_teatro_3_medio_hc.json"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación y creación en teatro",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "artes/interpretacion_y_creacion_en_teatro/interpretacion_y_creacion_en_teatro_4_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Biología celular y molecular",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/biologia_celular_y_molecular/biologia_celular_y_molecular_3_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Biología celular y molecular",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/biologia_celular_y_molecular/biologia_celular_y_molecular_4_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Biología de los ecosistemas",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/biologia_de_los_ecosistemas/biologia_de_los_ecosistemas_3_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Biología de los ecosistemas",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/biologia_de_los_ecosistemas/biologia_de_los_ecosistemas_4_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Ciencias de la salud",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/ciencias_de_la_salud/ciencias_de_la_salud_3_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Ciencias de la salud",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/ciencias_de_la_salud/ciencias_de_la_salud_4_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Física",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/fisica/fisica_3_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Física",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/fisica/fisica_4_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Química",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/quimica/quimica_3_medio_hc.json"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Química",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "ciencias/quimica/quimica_4_medio_hc.json"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Ciencias del ejercicio físico y deportivo",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "educacion_fisica_salud/ciencias_del_ejercicio_fisico_y_deportivo/ciencias_del_ejercicio_fisico_y_deportivo_3_medio_hc.json"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Ciencias del ejercicio físico y deportivo",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "educacion_fisica_salud/ciencias_del_ejercicio_fisico_y_deportivo/ciencias_del_ejercicio_fisico_y_deportivo_4_medio_hc.json"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Expresión corporal",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "educacion_fisica_salud/expresion_corporal/expresion_corporal_3_medio_hc.json"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Expresión corporal",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "educacion_fisica_salud/expresion_corporal/expresion_corporal_4_medio_hc.json"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Promoción de estilos de vida activos y saludables",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "educacion_fisica_salud/promocion_de_estilos_de_vida_activos_y_saludables/promocion_de_estilos_de_vida_activos_y_saludables_3_medio_hc.json"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Promoción de estilos de vida activos y saludables",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "educacion_fisica_salud/promocion_de_estilos_de_vida_activos_y_saludables/promocion_de_estilos_de_vida_activos_y_saludables_4_medio_hc.json"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Comprensión histórica del presente",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "historia_geografia_cs_sociales/comprension_historica_del_presente/comprension_historica_del_presente_3_medio_hc.json"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Comprensión histórica del presente",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "historia_geografia_cs_sociales/comprension_historica_del_presente/comprension_historica_del_presente_4_medio_hc.json"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Economía y sociedad",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "historia_geografia_cs_sociales/economia_y_sociedad/economia_y_sociedad_3_medio_hc.json"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Economía y sociedad",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "historia_geografia_cs_sociales/economia_y_sociedad/economia_y_sociedad_4_medio_hc.json"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Geografía, territorio y desafíos socioambientales",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "historia_geografia_cs_sociales/geografia_territorio_y_desafios_socioambientales/geografia_territorio_y_desafios_socioambientales_3_medio_hc.json"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Geografía, territorio y desafíos socioambientales",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "historia_geografia_cs_sociales/geografia_territorio_y_desafios_socioambientales/geografia_territorio_y_desafios_socioambientales_4_medio_hc.json"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Estética",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "filosofia/estetica/estetica_3_medio_hc.json"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Estética",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "filosofia/estetica/estetica_4_medio_hc.json"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Filosofía política",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "filosofia/filosofia_politica/filosofia_politica_3_medio_hc.json"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Filosofía política",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "filosofia/filosofia_politica/filosofia_politica_4_medio_hc.json"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Seminario de filosofía",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "filosofia/seminario_de_filosofia/seminario_de_filosofia_3_medio_hc.json"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Seminario de filosofía",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "filosofia/seminario_de_filosofia/seminario_de_filosofia_4_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Geometría 3D",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/geometria_3d/geometria_3d_3_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Geometría 3D",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/geometria_3d/geometria_3d_4_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Límites, derivadas e integrales",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/limites_derivadas_e_integrales/limites_derivadas_e_integrales_3_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Límites, derivadas e integrales",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/limites_derivadas_e_integrales/limites_derivadas_e_integrales_4_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Pensamiento computacional y programación",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/pensamiento_computacional_y_programacion/pensamiento_computacional_y_programacion_3_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Pensamiento computacional y programación",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/pensamiento_computacional_y_programacion/pensamiento_computacional_y_programacion_4_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Probabilidades y estadística descriptiva e inferencial",
+      "curso": "3° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/probabilidades_y_estadistica_descriptiva_e_inferencial/probabilidades_y_estadistica_descriptiva_e_inferencial_3_medio_hc.json"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Probabilidades y estadística descriptiva e inferencial",
+      "curso": "4° medio HC",
+      "estado": "PENDIENTE DE CARGA OFICIAL; estructura conservada sin contenido inventado",
+      "archivo": "matematica/probabilidades_y_estadistica_descriptiva_e_inferencial/probabilidades_y_estadistica_descriptiva_e_inferencial_4_medio_hc.json"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Lectura y escritura especializadas",
+      "curso": "3° medio HC",
+      "estado": "CONTENIDO CARGADO",
+      "archivo": "lengua_literatura/lectura_y_escritura_especializadas/lectura_y_escritura_especializadas_3_medio_hc.json"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Lectura y escritura especializadas",
+      "curso": "4° medio HC",
+      "estado": "CONTENIDO CARGADO",
+      "archivo": "lengua_literatura/lectura_y_escritura_especializadas/lectura_y_escritura_especializadas_4_medio_hc.json"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Participación y argumentación en democracia",
+      "curso": "3° medio HC",
+      "estado": "CONTENIDO CARGADO",
+      "archivo": "lengua_literatura/participacion_y_argumentacion_en_democracia/participacion_y_argumentacion_en_democracia_3_medio_hc.json"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Participación y argumentación en democracia",
+      "curso": "4° medio HC",
+      "estado": "CONTENIDO CARGADO",
+      "archivo": "lengua_literatura/participacion_y_argumentacion_en_democracia/participacion_y_argumentacion_en_democracia_4_medio_hc.json"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Taller de literatura",
+      "curso": "3° medio HC",
+      "estado": "CONTENIDO CARGADO",
+      "archivo": "lengua_literatura/taller_de_literatura/taller_de_literatura_3_medio_hc.json"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Taller de literatura",
+      "curso": "4° medio HC",
+      "estado": "CONTENIDO CARGADO",
+      "archivo": "lengua_literatura/taller_de_literatura/taller_de_literatura_4_medio_hc.json"
+    }
+  ]
+}

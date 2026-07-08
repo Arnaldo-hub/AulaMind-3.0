@@ -1,0 +1,46 @@
+{
+  "asignatura": "Artes Visuales",
+  "curso": "1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crear y expresar visualmente",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Expresar y crear trabajos Vida familiar y obra de arte de arte a partir de la ob- servación del: 1 Actividades › entorno natural: paisaje, Los estudiantes observan esculturas de escenas familiares de animales y plantas › entorno cultural: vida Henry Moore, Fernando Botero y Laura Rodig y las describen, relacionándolas con su vida diaria, guiados por el docente con Consisten en un listado de actividades,"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explicar sus preferencias frente › Exponen trabajos de arte, comunicando sus preferencias. al trabajo de arte personal y de › Hablan de los trabajos que más les gustan. sus pares, usando elementos › Describen trabajos de arte en relación con: del lenguaje visual. - las emociones y sensaciones que transmiten - la aplicación de tipos de líneas con diferentes propósitos expresivos › Respetan los comentarios que hacen sus compañeros de"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elementos del lenguaje visual y procesos de creación",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Experimentar y aplicar elemen- › Identifican y dan ejemplos de diversos tipos de líneas (grue- tos del lenguaje visual en sus sa, delgada, recta, ondulada, irregular, otras) en ilustraciones trabajos de arte: y/o su entorno. › línea (gruesa, delgada, recta, › Asocian emociones y sensaciones con diferentes tipos de ondulada e irregular) líneas. › color (puro, mezclado, fríos y › Experimentan con diferentes tipos de líneas en sus trabajos"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Arte, cultura y patrimonio",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Expresar emociones e ideas en › Nombran diferentes emociones y las expresan en sus traba- sus trabajos de arte a partir de jos de arte. la experimentación con: › Usan diferentes materiales y herramientas para dibujar y › materiales de modelado, de pintar (lápiz grafito, lápices de cera, pastel graso, plumones, reciclaje, naturales, pape- témperas, acuarela, témpera con cola fría, entre otros)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentación, apreciación y reflexión artística",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "› ¿se parecen a su familia? ¿por qué? › ¿qué sienten cuando piensan en su familia? ser una guía al docente para diseñar sus › Al representar una escena familiar por medio de un trabajo de Observar y comunicar oral- arte, ¿a quiénes incluirían y qué estarían haciendo? propias actividades. mente sus primeras impre- (Orientación) siones de lo que sienten y piensan de obras de arte 2 Relación con otras asignaturas por variados medios. Los estudiantes observan fotografías de su familia, las comentan y"
+        }
+      ]
+    }
+  ]
+}

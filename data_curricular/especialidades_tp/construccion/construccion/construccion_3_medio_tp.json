@@ -1,0 +1,37 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Construcción",
+  "especialidad": "Construcción",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-CONS-M01",
+      "nombre": "Análisis de muestras de hormigón, suelos y materiales"
+    },
+    {
+      "codigo": "CO-CONS-M02",
+      "nombre": "Carpintería de instalación de faenas"
+    },
+    {
+      "codigo": "CO-CONS-M03",
+      "nombre": "Control y mantenimiento de bodegas y pañoles"
+    },
+    {
+      "codigo": "CO-CONS-M04",
+      "nombre": "Cubicación de materiales e insumos"
+    },
+    {
+      "codigo": "CO-CONS-M05",
+      "nombre": "Interpretación de planos de construcción"
+    },
+    {
+      "codigo": "CO-CONS-M06",
+      "nombre": "Prevención de riesgos en la construcción"
+    },
+    {
+      "codigo": "CO-CONS-M07",
+      "nombre": "Trazado de obras de construcción"
+    }
+  ],
+  "plan": "Plan común de especialidad"
+}

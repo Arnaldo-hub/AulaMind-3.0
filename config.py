@@ -1,0 +1,181 @@
+"""
+===========================================================
+AulaMind Enterprise 3.0
+config.py
+-----------------------------------------------------------
+
+Configuración centralizada de AulaMind.
+
+Modo Desarrollo
+---------------
+SQLite
+
+Modo Producción
+---------------
+PostgreSQL (Render)
+
+Nunca modificar este archivo para cambiar
+entre desarrollo y producción.
+
+===========================================================
+"""
+
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+
+class Config:
+    """
+    Configuración principal de AulaMind.
+    """
+
+    # =====================================================
+    # Directorio Base
+    # =====================================================
+
+    BASE_DIR = Path(__file__).resolve().parent
+
+    # =====================================================
+    # Aplicación
+    # =====================================================
+
+    APP_NAME = "AulaMind Enterprise"
+
+    APP_VERSION = "3.0.0"
+
+    COMPANY = "Biotecno Chile"
+
+    COUNTRY = "Chile"
+
+    DEFAULT_LANGUAGE = "es"
+
+    TIMEZONE = "America/Santiago"
+
+    # =====================================================
+    # Flask
+    # =====================================================
+
+    SECRET_KEY = os.getenv(
+
+        "SECRET_KEY",
+
+        "AulaMind-Development-Secret-Key"
+
+    )
+
+    DEBUG = os.getenv(
+
+        "DEBUG",
+
+        "True"
+
+    ).lower() == "true"
+
+    JSON_SORT_KEYS = False
+
+    TEMPLATES_AUTO_RELOAD = True
+
+    MAX_CONTENT_LENGTH = 20 * 1024 * 1024
+
+    # =====================================================
+    # Base de Datos
+    # =====================================================
+
+    DATABASE_URL = os.getenv("DATABASE_URL")
+
+    if DATABASE_URL:
+
+        # Render / PostgreSQL
+
+        SQLALCHEMY_DATABASE_URI = DATABASE_URL
+
+    else:
+
+        # Desarrollo Local (SQLite)
+
+        SQLALCHEMY_DATABASE_URI = (
+
+            "sqlite:///" +
+
+            str(BASE_DIR / "aulamind.db")
+
+        )
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # =====================================================
+    # OpenAI
+    # =====================================================
+
+    OPENAI_API_KEY = os.getenv(
+
+        "OPENAI_API_KEY",
+
+        ""
+
+    )
+
+    OPENAI_MODEL = os.getenv(
+
+        "OPENAI_MODEL",
+
+        "gpt-4.1"
+
+    )
+
+    # =====================================================
+    # Hugging Face
+    # =====================================================
+
+    HF_TOKEN = os.getenv(
+
+        "HF_TOKEN",
+
+        ""
+
+    )
+
+    # =====================================================
+    # Exportaciones
+    # =====================================================
+
+    EXPORT_FOLDER = BASE_DIR / "exports"
+
+    EXPORT_FOLDER.mkdir(
+
+        exist_ok=True
+
+    )
+
+    # =====================================================
+    # Currículum
+    # =====================================================
+
+    CURRICULUM_FOLDER = BASE_DIR / "data_curricular"
+
+    CURRICULUM_FOLDER.mkdir(
+
+        exist_ok=True
+
+    )
+
+    # =====================================================
+    # Logs
+    # =====================================================
+
+    LOG_LEVEL = os.getenv(
+
+        "LOG_LEVEL",
+
+        "INFO"
+
+    )
+
+    LOG_FOLDER = BASE_DIR / "logs"
+
+    LOG_FOLDER.mkdir(
+
+        exist_ok=True
+
+    )

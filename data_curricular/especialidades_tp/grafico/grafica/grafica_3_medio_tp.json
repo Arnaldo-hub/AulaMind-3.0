@@ -1,0 +1,25 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Gráfico",
+  "especialidad": "Gráfica",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "GR-GRAF-M01",
+      "nombre": "Preparación de archivos digitales para impresión"
+    },
+    {
+      "codigo": "GR-GRAF-M02",
+      "nombre": "Imposición de archivos y preparación de matrices"
+    },
+    {
+      "codigo": "GR-GRAF-M03",
+      "nombre": "Impresión del producto gráfico"
+    },
+    {
+      "codigo": "GR-GRAF-M04",
+      "nombre": "Control de calidad en procesos gráficos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos"
+}

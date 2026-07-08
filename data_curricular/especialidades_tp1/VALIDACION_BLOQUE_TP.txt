@@ -1,0 +1,44 @@
+AulaMind Enterprise 3.0 — Bloque Especialidades TP 3° y 4° medio
+
+Especialidades: 35
+Archivos de curso: 70
+Sectores: 15
+
+Las Bases Curriculares TP definen OA terminales de perfil de egreso para el ciclo 3°-4° medio.
+No se inventó una separación anual de OA. La distribución por módulos debe provenir de los Programas de Estudio oficiales.
+
+administracion | Administración | OA extraídos: 7 | menciones: Logística, Recursos Humanos
+administracion | Contabilidad | OA extraídos: 7 | menciones: sin mención
+agropecuario | Agropecuaria | OA extraídos: 8 | menciones: Agricultura, Pecuaria, Vitivinícola
+alimentacion | Elaboración Industrial de Alimentos | OA extraídos: 8 | menciones: sin mención
+alimentacion | Gastronomía | OA extraídos: 8 | menciones: Cocina, Pastelería y Repostería
+confeccion | Vestuario y Confección Textil | OA extraídos: 9 | menciones: sin mención
+construccion | Construcción | OA extraídos: 9 | menciones: Edificación, Terminaciones de la Construcción, Obras Viales e Infraestructura
+construccion | Instalaciones Sanitarias | OA extraídos: 10 | menciones: sin mención
+construccion | Montaje Industrial | OA extraídos: 10 | menciones: sin mención
+construccion | Refrigeración y Climatización | OA extraídos: 9 | menciones: sin mención
+electricidad | Electricidad | OA extraídos: 8 | menciones: sin mención
+electricidad | Electrónica | OA extraídos: 9 | menciones: sin mención
+grafico | Dibujo Técnico | OA extraídos: 10 | menciones: sin mención
+grafico | Gráfica | OA extraídos: 8 | menciones: sin mención
+hoteleria_turismo | Servicios de Hotelería | OA extraídos: 9 | menciones: sin mención
+hoteleria_turismo | Servicios de Turismo | OA extraídos: 10 | menciones: sin mención
+maderero | Forestal | OA extraídos: 10 | menciones: sin mención
+maderero | Muebles y Terminaciones en Madera | OA extraídos: 10 | menciones: sin mención
+metalmecanica | Construcciones Metálicas | OA extraídos: 8 | menciones: sin mención
+metalmecanica | Mecánica Industrial | OA extraídos: 7 | menciones: Mantenimiento Electromecánico, Máquinas-Herramientas, Matricería
+metalmecanica | Mecánica Automotriz | OA extraídos: 8 | menciones: sin mención
+metalmecanica | Mecánica de Mantenimiento de Aeronaves | OA extraídos: 0 | menciones: sin mención
+minero | Asistencia en Geología | OA extraídos: 0 | menciones: sin mención
+minero | Explotación Minera | OA extraídos: 0 | menciones: sin mención
+minero | Metalurgia Extractiva | OA extraídos: 0 | menciones: sin mención
+maritimo | Acuicultura | OA extraídos: 8 | menciones: sin mención
+maritimo | Operaciones Portuarias | OA extraídos: 7 | menciones: sin mención
+maritimo | Pesquería | OA extraídos: 9 | menciones: sin mención
+maritimo | Tripulación de Naves Mercantes y Especiales | OA extraídos: 0 | menciones: sin mención
+quimica_industria | Química Industrial | OA extraídos: 0 | menciones: Laboratorio Químico, Planta Química
+salud_educacion | Atención de Enfermería | OA extraídos: 0 | menciones: Enfermería, Adulto Mayor
+salud_educacion | Atención de Párvulos | OA extraídos: 0 | menciones: sin mención
+tecnologia_comunicaciones | Conectividad y Redes | OA extraídos: 0 | menciones: sin mención
+tecnologia_comunicaciones | Programación | OA extraídos: 9 | menciones: sin mención
+tecnologia_comunicaciones | Telecomunicaciones | OA extraídos: 0 | menciones: sin mención

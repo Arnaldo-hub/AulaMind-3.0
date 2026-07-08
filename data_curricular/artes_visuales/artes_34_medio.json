@@ -1,0 +1,102 @@
+{
+  "asignatura": "Artes Visuales",
+  "curso": "3° y 4° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Experimentando y decidiendo para crear",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Experimentar con diversidad de soportes, procedimientos y materiales utilizados en la ilustración, las artes audiovisuales y multimediales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Luego, en grupos pequeños, diseñan una obra multimedial sobre temas o hechos representativos de problemas actuales sobre los que desean llamar la atención. Para esto, ayudados por el profesor, seleccionan un tema o hecho de su interés y se ponen de acuerdo en lo que desean expresar. Basados en los propósitos expresivos definidos, desarrollan ideas por diversos medios, considerando la integración de medios digitales con medios artísticos tradicionales. Basados en sus ideas, seleccionan materiales y medios y experimentan con ellos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear obras y proyectos de ilustración, audiovisuales y multimediales, para expresar sensaciones, emociones e ideas, tomando riesgos creativos al seleccionar temas, materiales, soportes y procedimientos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "conceptos multimediales Evaluar críticamente disciplinarios. personales y de sus procesos y resultados pares, considerando"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "creativos al criterios estéticos y"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Diseñar y gestionar colaborativamente proyectos de difusión de obras visuales, audiovisuales y multimediales propios, empleando diversidad de medios o TIC. Unidad de Currículum y Evaluación 102 Ministerio de Educación, febrero 2021 Programa de Estudio Artes Visuales 3° y 4° medio Unidad 4 Formación General"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Argumentar juicios estéticos acerca de obras visuales, audiovisuales y multimediales contemporáneas, considerando propósitos expresivos, criterios estéticos, elementos simbólicos y aspectos contextuales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Referentes para crear",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Luego, en grupos pequeños, diseñan una obra multimedial sobre temas o hechos representativos de problemas actuales sobre los que desean llamar la atención. Para esto, ayudados por el profesor, seleccionan un tema o hecho de su interés y se ponen de acuerdo en lo que desean expresar. Basados en los propósitos expresivos definidos, desarrollan ideas por diversos medios, considerando la integración de medios digitales con medios artísticos tradicionales. Basados en sus ideas, seleccionan materiales y medios y experimentan con ellos"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "creativos al criterios estéticos y"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Argumentar juicios estéticos acerca de obras visuales, audiovisuales y multimediales contemporáneas, considerando propósitos expresivos, criterios estéticos, elementos simbólicos y aspectos contextuales."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "conceptos multimediales Evaluar críticamente disciplinarios. personales y de sus procesos y resultados pares, considerando"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "Experimentar con diversidad de soportes, procedimientos y materiales utilizados en la ilustración, las artes audiovisuales y multimediales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear obras y proyectos de ilustración, audiovisuales y multimediales, para expresar sensaciones, emociones e ideas, tomando riesgos creativos al seleccionar temas, materiales, soportes y procedimientos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Desafíos artísticos interdisciplinarios",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear obras y proyectos de ilustración, audiovisuales y multimediales, para expresar sensaciones, emociones e ideas, tomando riesgos creativos al seleccionar temas, materiales, soportes y procedimientos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "creativos al criterios estéticos y"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "conceptos multimediales Evaluar críticamente disciplinarios. personales y de sus procesos y resultados pares, considerando"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Compartiendo y difundiendo",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "conceptos multimediales Evaluar críticamente disciplinarios. personales y de sus procesos y resultados pares, considerando"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Diseñar y gestionar colaborativamente proyectos de difusión de obras visuales, audiovisuales y multimediales propios, empleando diversidad de medios o TIC. Unidad de Currículum y Evaluación 102 Ministerio de Educación, febrero 2021 Programa de Estudio Artes Visuales 3° y 4° medio Unidad 4 Formación General"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Luego, en grupos pequeños, diseñan una obra multimedial sobre temas o hechos representativos de problemas actuales sobre los que desean llamar la atención. Para esto, ayudados por el profesor, seleccionan un tema o hecho de su interés y se ponen de acuerdo en lo que desean expresar. Basados en los propósitos expresivos definidos, desarrollan ideas por diversos medios, considerando la integración de medios digitales con medios artísticos tradicionales. Basados en sus ideas, seleccionan materiales y medios y experimentan con ellos"
+        }
+      ]
+    }
+  ]
+}

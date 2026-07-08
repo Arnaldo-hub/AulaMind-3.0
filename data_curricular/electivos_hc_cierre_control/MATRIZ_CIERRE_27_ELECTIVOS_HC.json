@@ -1,0 +1,225 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "bloque": "Electivos de profundización HC",
+  "areas": 7,
+  "asignaturas": 27,
+  "regla_curricular": "Las asignaturas del plan diferenciado pueden ofrecerse en 3° o 4° medio HC; los OA son del ciclo 3°-4°.",
+  "matriz_control": [
+    {
+      "area": "artes",
+      "asignatura": "Artes visuales, audiovisuales y multimediales",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Creación y composición musical",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Diseño y arquitectura",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación musical",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación y creación en danza",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "artes",
+      "asignatura": "Interpretación y creación en teatro",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Biología celular y molecular",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Biología de los ecosistemas",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Ciencias de la salud",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Física",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "ciencias",
+      "asignatura": "Química",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Ciencias del ejercicio físico y deportivo",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Expresión corporal",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "educacion_fisica_salud",
+      "asignatura": "Promoción de estilos de vida activos y saludables",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Comprensión histórica del presente",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Economía y sociedad",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "historia_geografia_cs_sociales",
+      "asignatura": "Geografía, territorio y desafíos socioambientales",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Estética",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Filosofía política",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "filosofia",
+      "asignatura": "Seminario de filosofía",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Geometría 3D",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Límites, derivadas e integrales",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Pensamiento computacional y programación",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "matematica",
+      "asignatura": "Probabilidades y estadística descriptiva e inferencial",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Lectura y escritura especializadas",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Participación y argumentación en democracia",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "area": "lengua_literatura",
+      "asignatura": "Taller de literatura",
+      "cobertura": "3° o 4° medio HC",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    }
+  ]
+}

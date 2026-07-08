@@ -1,0 +1,94 @@
+{
+  "asignatura": "Artes Visuales",
+  "curso": "8° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crear y expresar visualmente",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos visuales basados en la apreciación y el análisis de manifestaciones estéticas referidas a la relación entre personas, naturaleza y medioambiente, en diferentes contextos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear trabajos visuales a partir de diferentes desafíos creativos, experimentando con materiales sustentables en técnicas de impresión, papeles y textiles."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "sentimientos e ideas que considerar si el o la Aprendizaje: Analizar manifestaciones visuales patrimoniales les genera la observación estudiante: Son los OA especificados en y contemporáneas, de manifestaciones visuales >> Describe sensaciones e las Bases Curriculares. En contemplando criterios con temas de persona y ideas que le provocan los ocasiones, un OA puede ser medioambiente. evaluado por un conjunto de"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar trabajos visuales personales y de sus pares, considerando criterios como: materialidad, lenguaje visual y propósito expresivo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elementos del lenguaje visual y procesos de creación",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos visuales basados en la apreciación y el análisis de manifestaciones estéticas referidas a la relación entre personas, naturaleza y medioambiente, en diferentes contextos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear trabajos visuales a partir de diferentes desafíos creativos, experimentando con materiales sustentables en técnicas de impresión, papeles y textiles."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "sentimientos e ideas que considerar si el o la Aprendizaje: Analizar manifestaciones visuales patrimoniales les genera la observación estudiante: Son los OA especificados en y contemporáneas, de manifestaciones visuales >> Describe sensaciones e las Bases Curriculares. En contemplando criterios con temas de persona y ideas que le provocan los ocasiones, un OA puede ser medioambiente. evaluado por un conjunto de"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar trabajos visuales personales y de sus pares, considerando criterios como: materialidad, lenguaje visual y propósito expresivo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Arte, cultura y patrimonio",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos visuales a partir de diferentes desafíos creativos, usando medios de expresión contemporáneos como la instalación. EJE APRECIAR Y RESPONDER FRENTE AL ARTE"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "sentimientos e ideas que considerar si el o la Aprendizaje: Analizar manifestaciones visuales patrimoniales les genera la observación estudiante: Son los OA especificados en y contemporáneas, de manifestaciones visuales >> Describe sensaciones e las Bases Curriculares. En contemplando criterios con temas de persona y ideas que le provocan los ocasiones, un OA puede ser medioambiente. evaluado por un conjunto de"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar trabajos visuales personales y de sus pares, considerando criterios como: materialidad, lenguaje visual y propósito expresivo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentación, apreciación y reflexión artística",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos visuales basados en la apreciación y el análisis de manifestaciones estéticas referidas a la relación entre personas, naturaleza y medioambiente, en diferentes contextos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "sentimientos e ideas que considerar si el o la Aprendizaje: Analizar manifestaciones visuales patrimoniales les genera la observación estudiante: Son los OA especificados en y contemporáneas, de manifestaciones visuales >> Describe sensaciones e las Bases Curriculares. En contemplando criterios con temas de persona y ideas que le provocan los ocasiones, un OA puede ser medioambiente. evaluado por un conjunto de"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar trabajos visuales personales y de sus pares, considerando criterios como: materialidad, lenguaje visual y propósito expresivo."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Comparar y valorar espacios de difusión de las artes visuales, considerando: medios de expresión presentes, espacio, montaje, público y aporte a la comunidad. ACTITUDES A. Disfrutar y valorar la diversidad en manifestaciones estéticas provenientes de múltiples contextos. B. Valorar el patrimonio artístico de su comunidad, aportando a su cuidado. C. Demostrar disposición a expresarse visualmente y desarrollar su creatividad, experimentando, imaginando y pensando divergentemente. D. Aportar a la sustentabilidad del medioambiente utilizando y/o reciclando de"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear trabajos visuales a partir de diferentes desafíos creativos, experimentando con materiales sustentables en técnicas de impresión, papeles y textiles."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos visuales a partir de diferentes desafíos creativos, usando medios de expresión contemporáneos como la instalación. EJE APRECIAR Y RESPONDER FRENTE AL ARTE"
+        }
+      ]
+    }
+  ]
+}

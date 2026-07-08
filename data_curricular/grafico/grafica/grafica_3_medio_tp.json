@@ -1,0 +1,43 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "grafico",
+  "especialidad": "Gráfica",
+  "curso": "3° medio TP",
+  "alcance_oa": "Perfil de egreso de la especialidad para el ciclo formativo de 3° y 4° medio TP",
+  "menciones": [],
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Solicitar, recepcionar, almacenar y rotular futuro, y ocurre lo mismo con la oferta alimentaria materias primas, insumos y materiales, aplicando de Chile hacia el exterior y con los aumentos de la los procedimientos establecidos y sistemas demanda por los productos nacionales. digitales y manuales de inventario para responder a los requerimientos de los servicios El sector gastronómico nacional se caracteriza gastronómicos. por presentar una alta diversificación en términos de la oferta de diferentes tradiciones culinarias."
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Higienizar y limpiar materias primas, insumos, Contribuye a ello la distribución geográfica del utensilios, equipos e infraestructura, utilizando país y la creciente apertura a tradiciones productos químicos autorizados y cumpliendo culinarias extranjeras, por ejemplo, de México, con la normativa sanitaria vigente. Perú, China, Japón, aparte de otras ya asentadas como las de España, Italia, Francia y"
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Elaborar productos de baja complejidad Alemania. Esta situación conlleva importantes gastronómica, utilizando equipos y desafíos de perfeccionamiento del recurso utensilios para procesar las materias humano del sector gastronómico, tanto en lo primas y los insumos requeridos. utensilios, de"
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Ordenar, organizar y disponer los productos intermedios, insumos, equipos y 29 AD GASTRONO MÍA acuerdo a sus características organolépticas, al proceso de elaboración gastronómica y a las normativas de higiene e inocuidad."
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Elaborar alimentos de baja complejidad, considerando productos o técnicas base de acuerdo a lo indicado en la ficha técnica y/o en las instrucciones de la jefatura de cocina, aplicando técnicas de corte y cocción, utilizando equipos, y utensilios, controlando los parámetros de temperatura y humedad mediante instrumentos apropiados."
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Monitorear el estado de materias primas, insumos y productos intermedios y finales, apoyándose en análisis físico-químicos, microbiológicos y sensoriales básicos de los mismos, y aplicando técnicas y procedimientos de aseguramiento de calidad que permitan cumplir con los estándares de calidad e inocuidad establecidos, conforme a la normativa vigente. 30"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Armar, decorar y ESPECIALID presentar distintos tipos de productos gastronómicos, servicio a entregar, utilizando técnicas aplicando principios culinarias básicas para estéticos, de higiene y de servirlos, de acuerdo con las calidad. indicaciones de recetas, protocolo y tipo de servicio solicitado."
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion": "Disponer los implementos, ornamentos y utensilios en comedores, bares y salones, de acuerdo con las SECTOR ECONÓMICO características del evento o ALIMENTACIÓN ESPECIALIDAD GASTRONOMÍA MENCIÓN COCINA básica, de preparación rápida y lenta, de acuerdo a los gustos y costumbres culinarias de diversas zonas del país, así como de requerimientos de alimentación saludable, cumpliendo estándares de calidad. Campo Laboral"
+    }
+  ],
+  "nota": "Los OA del perfil de egreso son terminales del ciclo 3°-4° medio. La distribución anual por módulos debe seguir el Programa de Estudio oficial de la especialidad."
+}

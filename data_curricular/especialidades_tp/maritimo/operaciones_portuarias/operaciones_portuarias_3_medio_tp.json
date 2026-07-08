@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Operaciones Portuarias",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-OPOR-M01",
+      "nombre": "Operaciones de carga y descarga"
+    },
+    {
+      "codigo": "MA-OPOR-M02",
+      "nombre": "Estiba, desestiba y trinca de carga"
+    },
+    {
+      "codigo": "MA-OPOR-M03",
+      "nombre": "Manejo de documentación portuaria"
+    },
+    {
+      "codigo": "MA-OPOR-M04",
+      "nombre": "Seguridad y prevención de riesgos en faenas portuarias"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

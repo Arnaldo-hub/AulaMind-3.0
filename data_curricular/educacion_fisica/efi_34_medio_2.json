@@ -1,0 +1,50 @@
+{
+  "asignatura": "efi",
+  "curso": "EFI 3°4° medio -2",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades motrices y control corporal",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Condición física y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Juegos, deportes y estrategias",
+      "oa": [
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 indique los puntos de encuentro, descanso e hidratación. Dependiendo del compromiso y la responsabilidad del grupo organizador –que cuenta con la colaboración del equipo de docentes–, se podrá definir la distancia de recorrido. Pueden incorporar a la actividad profesores, padres y apoderados, directivos. Unidad de Currículum y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3"
+        }
+      ]
+    }
+  ]
+}

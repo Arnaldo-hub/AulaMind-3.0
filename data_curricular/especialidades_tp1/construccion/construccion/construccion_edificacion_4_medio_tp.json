@@ -1,0 +1,29 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Construcción",
+  "especialidad": "Construcción",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-EDIF-M01",
+      "nombre": "Albañilerías estructurales y no estructurales"
+    },
+    {
+      "codigo": "CO-EDIF-M02",
+      "nombre": "Carpintería estructural"
+    },
+    {
+      "codigo": "CO-EDIF-M03",
+      "nombre": "Enfierradura para elementos estructurales"
+    },
+    {
+      "codigo": "CO-EDIF-M04",
+      "nombre": "Estructuras de hormigón"
+    },
+    {
+      "codigo": "CO-EDIF-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    }
+  ],
+  "mencion": "Edificación"
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "especialidad": "Construcciones Metálicas",
+    "menciones": [],
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5
+  },
+  {
+    "especialidad": "Mecánica Industrial",
+    "menciones": [
+      "Mantenimiento Electromecánico",
+      "Máquinas-Herramientas",
+      "Matricería"
+    ],
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5
+  },
+  {
+    "especialidad": "Mecánica Automotriz",
+    "menciones": [],
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5
+  },
+  {
+    "especialidad": "Mecánica de Mantenimiento de Aeronaves",
+    "menciones": [],
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5
+  }
+]

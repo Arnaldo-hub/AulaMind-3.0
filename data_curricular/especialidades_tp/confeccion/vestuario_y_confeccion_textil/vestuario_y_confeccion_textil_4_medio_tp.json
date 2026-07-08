@@ -1,0 +1,39 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Confección",
+  "especialidad": "Vestuario y Confección Textil",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-VEST-M00",
+      "nombre": "Emprendimiento y empleabilidad",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "CO-VEST-M05",
+      "nombre": "Confección industrial de prendas de vestir",
+      "oa_asociados": [
+        "OA 4",
+        "OA 5"
+      ]
+    },
+    {
+      "codigo": "CO-VEST-M06",
+      "nombre": "Terminaciones y control de calidad en productos textiles",
+      "oa_asociados": [
+        "OA 5",
+        "OA 7"
+      ]
+    },
+    {
+      "codigo": "CO-VEST-M07",
+      "nombre": "Diseño y elaboración de productos textiles",
+      "oa_asociados": [
+        "OA 1",
+        "OA 2",
+        "OA 7"
+      ]
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos > OA asociados"
+}

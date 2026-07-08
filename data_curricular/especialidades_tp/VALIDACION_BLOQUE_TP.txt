@@ -1,0 +1,5 @@
+AulaMind Enterprise 3.0
+Sectores: 15
+Especialidades presentes: 35/35
+Archivos curriculares: 78
+Faltantes: Ninguna

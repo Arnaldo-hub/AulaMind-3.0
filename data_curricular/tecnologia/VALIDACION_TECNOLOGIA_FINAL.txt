@@ -1,0 +1,13 @@
+AulaMind Enterprise 3.0 — Tecnología
+Archivos disponibles organizados en 4 unidades temáticas, preservando los OA del catálogo fuente.
+
+tecnol_1_basico.json: 4 unidades | OA por unidad [1, 4, 1, 5]
+tecnol_2_basico.json: 4 unidades | OA por unidad [2, 5, 1, 4]
+tecnol_2_medio.json: 4 unidades | OA por unidad [2, 1, 1, 8]
+tecnol_4_basico.json: 4 unidades | OA por unidad [3, 2, 1, 9]
+tecnol_5_basico.json: 4 unidades | OA por unidad [3, 5, 1, 5]
+tecnol_7_basico.json: 4 unidades | OA por unidad [2, 1, 1, 2]
+tecnol_8_basico.json: 4 unidades | OA por unidad [3, 1, 1, 1]
+tecnologia_1medio.json: 4 unidades | OA por unidad [4, 1, 1, 8]
+tecnologia_3_basico.json: 4 unidades | OA por unidad [3, 4, 1, 5]
+tecnologia_6_basico.json: 4 unidades | OA por unidad [4, 2, 1, 6]

@@ -1,0 +1,150 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "ciencias 1° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Materia y energía, Investigación científica",
+      "oa": [
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Demostrar que comprende, por medio de la creación de modelos y experimentos, que las ondas transmiten energía y que se pueden reflejar, refractar y absorber, explicando y considerando: >>Sus características (amplitud, frecuencia, longitud de onda y velocidad de propagación, entre otras). >>Los criterios para clasificarlas (mecánicas, electromagnéticas, transversales, longitudinales, superficiales)."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Explicar fenómenos del sonido perceptibles por las personas, como el eco, la resonancia y el efecto Doppler, entre otros, utilizando el modelo ondulatorio y por medio de la experimentación, considerando sus: >>Características y cualidades (intensidad, tono, timbre y rapidez). >>Emisiones (en cuerdas vocales, en parlantes e instrumentos musicales). >>Consecuencias (contaminación y medio de comunicación). >>Aplicaciones tecnológicas (ecógrafo, sonar y estetoscopio, entretención, entre otras)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Ciencias de la vida, Materia y energía",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Explicar fenómenos luminosos, como la reflexión, la refracción, la interferencia y el efecto Doppler, entre otros, por medio de la experimentación y el uso de modelos, considerando: >>Los modelos corpuscular y ondulatorio de la luz. >>Las características y la propagación de la luz (viaja en línea recta, formación de sombras y posee rapidez, entre otras). >>La formación de imágenes (espejos y lentes). >>La formación de colores (difracción, colores primarios y secundarios, filtros). >>Sus aplicaciones tecnológicas (lentes, telescopio, prismáticos y focos, entre otros)."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Describir el origen y la propagación, por medio del modelo ondulatorio, de la energía liberada en un sismo, considerando: >>Los parámetros que lo describen (epicentro, hipocentro, área de ruptura, magnitud e intensidad). >>Los tipos de ondas sísmicas (primarias, secundarias y superficiales). >>Su medición y registro (sismógrafo, escalas sísmicas). >>Sus consecuencias directas e indirectas en la superficie de la Tierra (como tsunamis) y en la sociedad. >>Su importancia en geología, por ejemplo, en el estudio de la estructura interna de la Tierra. Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 24",
+          "descripcion": "OA 24 de 1° medio."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Explicar, por medio de una investigación, el rol de la fotosíntesis y la respiración celular en el ecosistema considerando: >>El flujo de la energía. >>El ciclo de la materia."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1, eje >> Utilizando vocabulario disciplinar pertinente. Biología, 1° medio) k. Evaluar la investigación científica* con el fin de perfeccionarla, considerando: >> La validez y confiabilidad de los resultados. >> La replicabilidad de los procedimientos. >> Las explicaciones, las predicciones y las conclusiones. >> Las posibles aplicaciones tecnológicas. >> El desempeño personal y grupal. l. Explicar y argumentar con evidencias provenientes de investigaciones científicas*, en forma oral y escrita, incluyendo tablas, gráficos, modelos y TIC. m. Discutir en forma oral y escrita las ideas para diseñar una investigación científica*, las posibles aplicaciones y soluciones a problemas tecnológicos, las teorías, las predicciones y las conclusiones, utilizando argumentos basados en evidencias y en el conocimiento científico y tecnológico. *Experimental(es), no experimental(es) o documental(es), entre otras. 56 Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Demostrar que comprende, por medio de la creación de modelos y experimentos, que las ondas transmiten energía y que se pueden reflejar, refractar y absorber, explicando y considerando: >>Sus características (amplitud, frecuencia, longitud de onda y velocidad de propagación, entre otras). >>Los criterios para clasificarlas (mecánicas, electromagnéticas, transversales, longitudinales, superficiales)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Ciencias de la vida, Materia y energía",
+      "oa": [
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Explorar y describir el funcionamiento del oído y del ojo humano, considerando: >>La recepción de ondas sonoras y luminosas. >>El espectro sonoro y de la luz visible. >>Sus capacidades, limitaciones y consecuencias sociales. >>La tecnología correctiva (lentes y audífonos). 66 Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Describir el origen y la propagación, por medio del modelo ondulatorio, de la energía liberada en un sismo, considerando: >>Los parámetros que lo describen (epicentro, hipocentro, área de ruptura, magnitud e intensidad). >>Los tipos de ondas sísmicas (primarias, secundarias y superficiales). >>Su medición y registro (sismógrafo, escalas sísmicas). >>Sus consecuencias directas e indirectas en la superficie de la Tierra (como tsunamis) y en la sociedad. >>Su importancia en geología, por ejemplo, en el estudio de la estructura interna de la Tierra. Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Explicar y evaluar los efectos de acciones humanas (conservación ambiental, cultivos, forestación y deforestación, entre otras) y de fenómenos naturales (sequías, erupciones volcánicas, entre otras) en relación con: >>El equilibrio de los ecosistemas. >>La disponibilidad de recursos naturales renovables y no renovables. >>Las posibles medidas para un desarrollo sustentable. Ciencias naturales |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Ciencias de la vida, Materia y energía",
+      "oa": [
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Crear modelos que expliquen los fenómenos astronómicos del sistema solar relacionados con: >>Los movimientos del sistema Tierra-luna y los fenómenos de luz y sombra, como las fases lunares y los eclipses. >>Los movimientos de la Tierra respecto del sol y sus consecuencias, como las estaciones climáticas. >>La comparación de los distintos planetas con la Tierra en cuanto a su distancia al sol, su tamaño, su período orbital, su atmósfera y otros."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Describir y comparar diversas estructuras cósmicas, como meteoros, asteroides, cometas, satélites, planetas, estrellas, nebulosas, galaxias y cúmulo de galaxias, considerando: >>Sus tamaños y formas. >>Sus posiciones en el espacio. >>Temperatura, masa, color y magnitud, entre otros."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "OA 16 >>Explican las ventajas que tiene el Objetivos de cielo de la zona norte de Chile para la Investigar y explicar sobre la investigación Aprendizaje: observación astronómica, considerando astronómica en Chile y el resto del mundo, factores como humedad y transparencia. Son los OA especificados considerando aspectos como: en las Bases Curriculares. >>Identifican características de los >>El clima y las ventajas que ofrece nuestro En ocasiones, un OA principales observatorios astronómicos puede ser evaluado por un país para la observación astronómica. ubicados en Chile, como ubicación, conjunto de sugerencias >>La tecnología utilizada (telescopios, tecnología que utilizan y dependencia de"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Desarrollar modelos que expliquen: >>El ciclo del carbono, el nitrógeno, el agua y el fósforo, y su importancia biológica. >>Los flujos de energía en un ecosistema (redes y pirámides tróficas). >>La trayectoria de contaminantes y su bioacumulación."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Explicar fenómenos del sonido perceptibles por las personas, como el eco, la resonancia y el efecto Doppler, entre otros, utilizando el modelo ondulatorio y por medio de la experimentación, considerando sus: >>Características y cualidades (intensidad, tono, timbre y rapidez). >>Emisiones (en cuerdas vocales, en parlantes e instrumentos musicales). >>Consecuencias (contaminación y medio de comunicación). >>Aplicaciones tecnológicas (ecógrafo, sonar y estetoscopio, entretención, entre otras)."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1, eje >> Utilizando vocabulario disciplinar pertinente. Biología, 1° medio) k. Evaluar la investigación científica* con el fin de perfeccionarla, considerando: >> La validez y confiabilidad de los resultados. >> La replicabilidad de los procedimientos. >> Las explicaciones, las predicciones y las conclusiones. >> Las posibles aplicaciones tecnológicas. >> El desempeño personal y grupal. l. Explicar y argumentar con evidencias provenientes de investigaciones científicas*, en forma oral y escrita, incluyendo tablas, gráficos, modelos y TIC. m. Discutir en forma oral y escrita las ideas para diseñar una investigación científica*, las posibles aplicaciones y soluciones a problemas tecnológicos, las teorías, las predicciones y las conclusiones, utilizando argumentos basados en evidencias y en el conocimiento científico y tecnológico. *Experimental(es), no experimental(es) o documental(es), entre otras. 56 Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Demostrar que comprende, por medio de la creación de modelos y experimentos, que las ondas transmiten energía y que se pueden reflejar, refractar y absorber, explicando y considerando: >>Sus características (amplitud, frecuencia, longitud de onda y velocidad de propagación, entre otras). >>Los criterios para clasificarlas (mecánicas, electromagnéticas, transversales, longitudinales, superficiales)."
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "OA 17 Investigar experimentalmente y explicar, usando evidencias, que la fermentación, la combustión provocada por un motor y un calefactor, y la oxidación de metales, entre otras, son reacciones químicas presentes en la vida diaria, considerando: >>La producción de gas, la formación de precipitados, el cambio de temperatura, color y olor, y la emisión de luz, entre otros. >>La influencia de la cantidad de sustancia, la temperatura, el volumen y la presión en ellas. >>Su representación simbólica en ecuaciones químicas. >>Su impacto en los seres vivos y el entorno."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "OA 18 Desarrollar un modelo que describa cómo el número total de átomos no varía en una reacción química y cómo la masa se conserva aplicando la ley de la conservación de la materia."
+        },
+        {
+          "codigo": "OA 19",
+          "descripcion": "OA 19 Explicar la formación de compuestos binarios y ternarios, considerando las fuerzas eléctricas entre partículas y la nomenclatura inorgánica correspondiente."
+        },
+        {
+          "codigo": "OA 20",
+          "descripcion": "OA 20 Establecer relaciones cuantitativas entre reactantes y productos en reacciones químicas (estequiometría) y explicar la formación de compuestos útiles para los seres vivos, como la formación de la glucosa en la fotosíntesis. 68 Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Explicar, por medio de una investigación, el rol de la fotosíntesis y la respiración celular en el ecosistema considerando: >>El flujo de la energía. >>El ciclo de la materia."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Analizar e interpretar datos para proveer de evidencias que apoyen que la diversidad de organismos es el resultado de la evolución, considerando: >>Evidencias de la evolución (como el registro fósil, las estructuras anatómicas homólogas, la embriología y las secuencias de ADN). >>Los postulados de la teoría de la selección natural. >>Los aportes de científicos como Darwin y Wallace a las teorías evolutivas."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Explicar y evaluar los efectos de acciones humanas (conservación ambiental, cultivos, forestación y deforestación, entre otras) y de fenómenos naturales (sequías, erupciones volcánicas, entre otras) en relación con: >>El equilibrio de los ecosistemas. >>La disponibilidad de recursos naturales renovables y no renovables. >>Las posibles medidas para un desarrollo sustentable. Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Explican la organización de la biodiversidad 1, 2, 3, 4 conocimientos, habilidades y"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Son los OA especificados en las Bases Curriculares. Analizar e interpretar los factores que afectan el tamaño de las poblaciones En ocasiones, un OA (propagación de enfermedades, disponibilidad de energía y de recursos alimentarios, puede ser abordado por un sequías, entre otros) y predecir posibles consecuencias sobre el ecosistema. conjunto de"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Explicar, basándose en evidencias, que la clasificación de la diversidad de organismos se construye a través del tiempo sobre la base de criterios taxonómicos que permiten organizarlos en grupos y subgrupos, identificando sus relaciones de parentesco con ancestros comunes."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Describir el origen y la propagación, por medio del modelo ondulatorio, de la energía liberada en un sismo, considerando: >>Los parámetros que lo describen (epicentro, hipocentro, área de ruptura, magnitud e intensidad). >>Los tipos de ondas sísmicas (primarias, secundarias y superficiales). >>Su medición y registro (sismógrafo, escalas sísmicas). >>Sus consecuencias directas e indirectas en la superficie de la Tierra (como tsunamis) y en la sociedad. >>Su importancia en geología, por ejemplo, en el estudio de la estructura interna de la Tierra. Ciencias naturales |"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Explicar fenómenos luminosos, como la reflexión, la refracción, la interferencia y el efecto Doppler, entre otros, por medio de la experimentación y el uso de modelos, considerando: >>Los modelos corpuscular y ondulatorio de la luz. >>Las características y la propagación de la luz (viaja en línea recta, formación de sombras y posee rapidez, entre otras). >>La formación de imágenes (espejos y lentes). >>La formación de colores (difracción, colores primarios y secundarios, filtros). >>Sus aplicaciones tecnológicas (lentes, telescopio, prismáticos y focos, entre otros)."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Explorar y describir el funcionamiento del oído y del ojo humano, considerando: >>La recepción de ondas sonoras y luminosas. >>El espectro sonoro y de la luz visible. >>Sus capacidades, limitaciones y consecuencias sociales. >>La tecnología correctiva (lentes y audífonos). 66 Ciencias naturales |"
+        }
+      ]
+    }
+  ]
+}

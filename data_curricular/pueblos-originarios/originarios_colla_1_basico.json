@@ -1,0 +1,97 @@
+{
+  "area": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "archivo_fuente": "originarios colla 1° básico.json",
+  "cursos": [
+    {
+      "curso": "1° Básico",
+      "nombre_asignatura": "originarios colla 1° básico",
+      "programa": "MINEDUC",
+      "unidades": [
+        {
+          "nombre": "UNIDAD 1",
+          "semestre": 1,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD 2",
+          "semestre": 1,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD 3",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD 4",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 32",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 44",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 52",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 54",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 56",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 64",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 66",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 68",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 70",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 75",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        }
+      ]
+    }
+  ]
+}

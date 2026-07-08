@@ -1,0 +1,86 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "8° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Biología: Nutrición y salud",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explicar, basados en evidencias, la interacción de sistemas del cuerpo humano y su contribución al equilibrio del organismo."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Investigar experimentalmente y explicar las características de los nutrientes en los alimentos y sus efectos para la salud humana."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Analizar y evaluar factores que contribuyen a mantener un cuerpo saludable, proponiendo un plan de alimentación balanceada, ejercicio regular y prevención del consumo de sustancias."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Biología: Célula",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Explicar que los modelos de la célula han evolucionado sobre la base de evidencias aportadas por diversos científicos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Desarrollar modelos que expliquen la relación entre la función de una célula y sus partes, considerando estructuras, células eucariontes y procariontes y tipos celulares."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Explicar, por medio de la experimentación, mecanismos de intercambio de partículas entre la célula y su ambiente por difusión y osmosis."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Crear modelos que expliquen que las plantas tienen estructuras especializadas para responder a estímulos del medioambiente, considerando transporte de sustancias e intercambio de gases."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Física: Electricidad y calor",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "Analizar las fuerzas eléctricas, considerando tipos de electricidad, métodos de electrización, experimentación, riesgos cotidianos y posibles soluciones."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Investigar, explicar y evaluar tecnologías que permiten la generación de energía eléctrica."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Analizar un circuito eléctrico domiciliario y comparar experimentalmente circuitos en serie y paralelo considerando variables eléctricas y eficiencia energética."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Desarrollar modelos e investigaciones experimentales que expliquen el calor como transferencia de energía térmica, su propagación, efectos, medición y aplicaciones tecnológicas."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Química: Estudio y organización de la materia",
+      "oa": [
+        {
+          "codigo": "OA 12",
+          "descripcion": "Investigar y analizar cómo ha evolucionado el conocimiento de la constitución de la materia, considerando la teoría atómica y los modelos atómicos."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Desarrollar modelos que expliquen que la materia está constituida por átomos que interactúan, generando diversas partículas y sustancias."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Usar la tabla periódica como modelo para predecir propiedades relativas de los elementos químicos basadas en patrones de sus átomos."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Investigar y argumentar, basándose en evidencias, que existen elementos químicos frecuentes en la Tierra que son comunes en los seres vivos y soporte para la vida."
+        }
+      ]
+    }
+  ]
+}

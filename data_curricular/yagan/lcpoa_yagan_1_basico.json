@@ -1,0 +1,91 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Yagán",
+  "curso": "1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Relatos, familia, territorio y memoria del pueblo Yagán",
+      "oa": [
+        {
+          "codigo": "LC01-U1-LS01",
+          "descripcion": "Disfrutar y comprender relatos breves de la tradición oral, reconociendo palabras y expresiones culturalmente significativas."
+        },
+        {
+          "codigo": "LC01-U1-T01",
+          "descripcion": "Reconocer lugares y espacios significativos del territorio Yagán, vinculándolos con experiencias familiares y comunitarias."
+        },
+        {
+          "codigo": "LC01-U1-C01",
+          "descripcion": "Reconocer formas de convivencia familiar y comunitaria basadas en el respeto, la colaboración y la reciprocidad."
+        },
+        {
+          "codigo": "LC01-U1-P01",
+          "descripcion": "Reconocer expresiones del patrimonio cultural y natural presentes en la familia, comunidad y territorio."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Mar, canales, navegación y vida comunitaria Yagán",
+      "oa": [
+        {
+          "codigo": "LC01-U2-LS01",
+          "descripcion": "Escuchar y comunicar experiencias vinculadas con actividades familiares y comunitarias, incorporando palabras culturalmente significativas."
+        },
+        {
+          "codigo": "LC01-U2-T01",
+          "descripcion": "Reconocer prácticas de navegación, desplazamiento, orientación y conocimiento del territorio vinculadas con la memoria del pueblo Yagán."
+        },
+        {
+          "codigo": "LC01-U2-C01",
+          "descripcion": "Valorar prácticas de cooperación, cuidado y ayuda mutua presentes en la vida comunitaria."
+        },
+        {
+          "codigo": "LC01-U2-P01",
+          "descripcion": "Comprender la relación entre las personas, el mar, los canales, los animales y otros elementos de la naturaleza desde conocimientos culturales del pueblo Yagán."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Saberes ancestrales, recursos naturales y patrimonio Yagán",
+      "oa": [
+        {
+          "codigo": "LC01-U3-LS01",
+          "descripcion": "Comprender y comunicar mensajes sencillos relacionados con saberes, actividades y prácticas culturales de la comunidad."
+        },
+        {
+          "codigo": "LC01-U3-T01",
+          "descripcion": "Reconocer conocimientos transmitidos por personas mayores y su importancia para la memoria e identidad del pueblo Yagán."
+        },
+        {
+          "codigo": "LC01-U3-C01",
+          "descripcion": "Reconocer valores comunitarios presentes en actividades de subsistencia, desplazamiento y vida familiar."
+        },
+        {
+          "codigo": "LC01-U3-P01",
+          "descripcion": "Valorar técnicas, conocimientos y expresiones culturales como parte del patrimonio material e inmaterial del pueblo Yagán."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Lengua, espiritualidad, identidad y continuidad cultural",
+      "oa": [
+        {
+          "codigo": "LC01-U4-LS01",
+          "descripcion": "Expresar oralmente ideas y experiencias sobre prácticas culturales del entorno familiar y comunitario."
+        },
+        {
+          "codigo": "LC01-U4-T01",
+          "descripcion": "Reconocer elementos culturales que aportan a la identidad y al sentido de pertenencia al pueblo Yagán."
+        },
+        {
+          "codigo": "LC01-U4-C01",
+          "descripcion": "Reconocer dimensiones espirituales y comunitarias en la relación con la naturaleza y el territorio."
+        },
+        {
+          "codigo": "LC01-U4-P01",
+          "descripcion": "Participar en experiencias de creación y apreciación vinculadas con expresiones culturales y patrimoniales del pueblo Yagán."
+        }
+      ]
+    }
+  ]
+}

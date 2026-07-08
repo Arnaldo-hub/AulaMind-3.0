@@ -1,0 +1,214 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "Ciencias 7° bás",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Comportamiento de la materia y su clasificación",
+      "oa": [
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Describen las magnitudes de presión, volumen 5, 7, 8, 12, 13 habilidades y"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Explican sustancias puras (elemento y 1, 2, 4, 5, 6, 7 sugerido, por lo que el o la compuesto) y mezclas (homogéneas y Investigar docente puede modificarlos heterogéneas) mediante su comportamiento experimentalmente y o complementarlos. y características. explicar la clasificación Cada Objetivo de Aprendizaje cuenta con de la materia en Investigan experimentalmente los 8, 9, 10, 11 varios Indicadores, dado sustancias puras y procedimientos de separación de mezclas, que existen múltiples mezclas (homogéneas (decantación, filtración, tamizado y desempeños que pueden y heterogéneas), los destilación). demostrar que un aprendizaje procedimientos de ha sido desarrollado. separación de mezclas Argumentan el uso de los métodos de 11, 12, 13, 14 (decantación, filtración, separación de mezclas en procesos industriales"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Investigar experimentalmente los cambios de la materia y argumentar con evidencia empírica que estos pueden ser físicos o químicos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Explorar y describir cualitativamente la presión, considerando sus efectos en: >>Sólidos, como en herramientas mecánicas. >>Líquidos, como en máquinas hidráulicas. >>Gases, como en la atmósfera."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Demostrar, por medio de modelos, que comprenden que el clima en la Tierra, tanto local como global, es dinámico y se produce por la interacción de múltiples variables, como la presión, la temperatura y la humedad atmosférica, la circulación de la atmósfera y del agua, la posición geográfica, la rotación y la traslación de la Tierra."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Desarrollar modelos que expliquen las barreras defensivas (primaria, secundaria y terciaria) del cuerpo humano, considerando: >>Agentes patógenos como escherichia coli y el virus de la gripe. >>Uso de vacunas contra infecciones comunes (influenza y meningitis, entre otras). >>Alteraciones en sus respuestas como en las alergias, las enfermedades autoinmunes y los rechazos a trasplantes de órganos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Investigar y explicar el rol de microorganismos (bacterias y hongos) en la biotecnología, como en la: >>Descontaminación ambiental. >>Producción de alimentos y fármacos. >>Obtención del cobre. >>Generación de metano."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Fuerza y ciencias de la Tierra",
+      "oa": [
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Planificar y conducir una investigación experimental para proveer evidencias que expliquen los efectos de las fuerzas gravitacional, de roce y elástica, entre otras, en situaciones cotidianas."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Explorar y describir cualitativamente la presión, considerando sus efectos en: >>Sólidos, como en herramientas mecánicas. >>Líquidos, como en máquinas hidráulicas. >>Gases, como en la atmósfera."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Explicar, con el modelo de la tectónica de placas, los patrones de distribución de la actividad geológica (volcanes y sismos), los tipos de interacción entre las placas (convergente, divergente y transformante) y su importancia en la teoría de la deriva continental."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Explicar, sobre la base de evidencias y por medio de modelos, la actividad volcánica y sus consecuencias en la naturaleza y la sociedad."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Crear modelos que expliquen el ciclo de las rocas, la formación y modificación de las rocas ígneas, metamórficas y sedimentarias, en función de la temperatura, la presión y la erosión."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Demostrar, por medio de modelos, que comprenden que el clima en la Tierra, tanto local como global, es dinámico y se produce por la interacción de múltiples variables, como la presión, la temperatura y la humedad atmosférica, la circulación de la atmósfera y del agua, la posición geográfica, la rotación y la traslación de la Tierra."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Explicar los aspectos biológicos, afectivos y sociales que se integran en la sexualidad, considerando: >>Los cambios físicos que ocurren durante la pubertad. >>La relación afectiva entre dos personas en la intimidad y el respeto mutuo. >>La responsabilidad individual."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Describir, por medio de la investigación, las características de infecciones de transmisión sexual (ITS), como sida y herpes, entre otras, considerando sus: >>Mecanismos de transmisión. >>Medidas de prevención. >>Síntomas generales. >>Consecuencias y posibles secuelas."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Investigar y explicar el rol de microorganismos (bacterias y hongos) en la biotecnología, como en la: >>Descontaminación ambiental. >>Producción de alimentos y fármacos. >>Obtención del cobre. >>Generación de metano."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Investigar experimentalmente los cambios de la materia y argumentar con evidencia empírica que estos pueden ser físicos o químicos."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Explican sustancias puras (elemento y 1, 2, 4, 5, 6, 7 sugerido, por lo que el o la compuesto) y mezclas (homogéneas y Investigar docente puede modificarlos heterogéneas) mediante su comportamiento experimentalmente y o complementarlos. y características. explicar la clasificación Cada Objetivo de Aprendizaje cuenta con de la materia en Investigan experimentalmente los 8, 9, 10, 11 varios Indicadores, dado sustancias puras y procedimientos de separación de mezclas, que existen múltiples mezclas (homogéneas (decantación, filtración, tamizado y desempeños que pueden y heterogéneas), los destilación). demostrar que un aprendizaje procedimientos de ha sido desarrollado. separación de mezclas Argumentan el uso de los métodos de 11, 12, 13, 14 (decantación, filtración, separación de mezclas en procesos industriales"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Comparar, usando modelos, microorganismos como virus, bacterias y hongos, en relación con: >>Características estructurales (tamaño, forma y estructuras). >>Características comunes de los seres vivos (alimentación, reproducción, respiración, etc.). >>Efectos sobre la salud humana (positivos y negativos)."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Describen las magnitudes de presión, volumen 5, 7, 8, 12, 13 habilidades y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Microorganismos y barreras defensivas del cuerpo humano",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Comparar, usando modelos, microorganismos como virus, bacterias y hongos, en relación con: >>Características estructurales (tamaño, forma y estructuras). >>Características comunes de los seres vivos (alimentación, reproducción, respiración, etc.). >>Efectos sobre la salud humana (positivos y negativos)."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Investigar y explicar el rol de microorganismos (bacterias y hongos) en la biotecnología, como en la: >>Descontaminación ambiental. >>Producción de alimentos y fármacos. >>Obtención del cobre. >>Generación de metano."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Desarrollar modelos que expliquen las barreras defensivas (primaria, secundaria y terciaria) del cuerpo humano, considerando: >>Agentes patógenos como escherichia coli y el virus de la gripe. >>Uso de vacunas contra infecciones comunes (influenza y meningitis, entre otras). >>Alteraciones en sus respuestas como en las alergias, las enfermedades autoinmunes y los rechazos a trasplantes de órganos."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Explicar, sobre la base de evidencias y por medio de modelos, la actividad volcánica y sus consecuencias en la naturaleza y la sociedad."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Demostrar, por medio de modelos, que comprenden que el clima en la Tierra, tanto local como global, es dinámico y se produce por la interacción de múltiples variables, como la presión, la temperatura y la humedad atmosférica, la circulación de la atmósfera y del agua, la posición geográfica, la rotación y la traslación de la Tierra."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Investigar experimentalmente los cambios de la materia y argumentar con evidencia empírica que estos pueden ser físicos o químicos."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Explicar, con el modelo de la tectónica de placas, los patrones de distribución de la actividad geológica (volcanes y sismos), los tipos de interacción entre las placas (convergente, divergente y transformante) y su importancia en la teoría de la deriva continental."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Explican sustancias puras (elemento y 1, 2, 4, 5, 6, 7 sugerido, por lo que el o la compuesto) y mezclas (homogéneas y Investigar docente puede modificarlos heterogéneas) mediante su comportamiento experimentalmente y o complementarlos. y características. explicar la clasificación Cada Objetivo de Aprendizaje cuenta con de la materia en Investigan experimentalmente los 8, 9, 10, 11 varios Indicadores, dado sustancias puras y procedimientos de separación de mezclas, que existen múltiples mezclas (homogéneas (decantación, filtración, tamizado y desempeños que pueden y heterogéneas), los destilación). demostrar que un aprendizaje procedimientos de ha sido desarrollado. separación de mezclas Argumentan el uso de los métodos de 11, 12, 13, 14 (decantación, filtración, separación de mezclas en procesos industriales"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Explorar y describir cualitativamente la presión, considerando sus efectos en: >>Sólidos, como en herramientas mecánicas. >>Líquidos, como en máquinas hidráulicas. >>Gases, como en la atmósfera."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Sexualidad y autocuidado",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Explicar los aspectos biológicos, afectivos y sociales que se integran en la sexualidad, considerando: >>Los cambios físicos que ocurren durante la pubertad. >>La relación afectiva entre dos personas en la intimidad y el respeto mutuo. >>La responsabilidad individual."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Explicar la formación de un nuevo individuo, considerando: >>El ciclo menstrual (días fértiles, menstruación y ovulación). >>La participación de espermatozoides y ovocitos. >>Métodos de control de la natalidad. >>La paternidad y la maternidad responsables."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Describir, por medio de la investigación, las características de infecciones de transmisión sexual (ITS), como sida y herpes, entre otras, considerando sus: >>Mecanismos de transmisión. >>Medidas de prevención. >>Síntomas generales. >>Consecuencias y posibles secuelas."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Investigar experimentalmente los cambios de la materia y argumentar con evidencia empírica que estos pueden ser físicos o químicos."
+        },
+        {
+          "codigo": "OA 20",
+          "descripcion": "OA 20 de 7° básico. 264 CIENCIAS NATURALES |"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Explican sustancias puras (elemento y 1, 2, 4, 5, 6, 7 sugerido, por lo que el o la compuesto) y mezclas (homogéneas y Investigar docente puede modificarlos heterogéneas) mediante su comportamiento experimentalmente y o complementarlos. y características. explicar la clasificación Cada Objetivo de Aprendizaje cuenta con de la materia en Investigan experimentalmente los 8, 9, 10, 11 varios Indicadores, dado sustancias puras y procedimientos de separación de mezclas, que existen múltiples mezclas (homogéneas (decantación, filtración, tamizado y desempeños que pueden y heterogéneas), los destilación). demostrar que un aprendizaje procedimientos de ha sido desarrollado. separación de mezclas Argumentan el uso de los métodos de 11, 12, 13, 14 (decantación, filtración, separación de mezclas en procesos industriales"
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "OA 22 y con el"
+        },
+        {
+          "codigo": "OA 25",
+          "descripcion": "OA 25 de 7° básico."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Comparar, usando modelos, microorganismos como virus, bacterias y hongos, en relación con: >>Características estructurales (tamaño, forma y estructuras). >>Características comunes de los seres vivos (alimentación, reproducción, respiración, etc.). >>Efectos sobre la salud humana (positivos y negativos)."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Investigar y explicar el rol de microorganismos (bacterias y hongos) en la biotecnología, como en la: >>Descontaminación ambiental. >>Producción de alimentos y fármacos. >>Obtención del cobre. >>Generación de metano."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Desarrollar modelos que expliquen las barreras defensivas (primaria, secundaria y terciaria) del cuerpo humano, considerando: >>Agentes patógenos como escherichia coli y el virus de la gripe. >>Uso de vacunas contra infecciones comunes (influenza y meningitis, entre otras). >>Alteraciones en sus respuestas como en las alergias, las enfermedades autoinmunes y los rechazos a trasplantes de órganos."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Describen las magnitudes de presión, volumen 5, 7, 8, 12, 13 habilidades y"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Planificar y conducir una investigación experimental para proveer evidencias que expliquen los efectos de las fuerzas gravitacional, de roce y elástica, entre otras, en situaciones cotidianas."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Explorar y describir cualitativamente la presión, considerando sus efectos en: >>Sólidos, como en herramientas mecánicas. >>Líquidos, como en máquinas hidráulicas. >>Gases, como en la atmósfera."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Explicar, con el modelo de la tectónica de placas, los patrones de distribución de la actividad geológica (volcanes y sismos), los tipos de interacción entre las placas (convergente, divergente y transformante) y su importancia en la teoría de la deriva continental."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Explicar, sobre la base de evidencias y por medio de modelos, la actividad volcánica y sus consecuencias en la naturaleza y la sociedad."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Crear modelos que expliquen el ciclo de las rocas, la formación y modificación de las rocas ígneas, metamórficas y sedimentarias, en función de la temperatura, la presión y la erosión."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Demostrar, por medio de modelos, que comprenden que el clima en la Tierra, tanto local como global, es dinámico y se produce por la interacción de múltiples variables, como la presión, la temperatura y la humedad atmosférica, la circulación de la atmósfera y del agua, la posición geográfica, la rotación y la traslación de la Tierra."
+        }
+      ]
+    }
+  ]
+}

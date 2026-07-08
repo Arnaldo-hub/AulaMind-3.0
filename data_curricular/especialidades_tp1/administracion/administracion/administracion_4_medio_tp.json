@@ -1,0 +1,42 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "administracion",
+  "especialidad": "Administración",
+  "curso": "4° medio TP",
+  "alcance_oa": "Perfil de egreso de la especialidad para el ciclo formativo de 3° y 4° medio TP",
+  "menciones": [
+    "Logística",
+    "Recursos Humanos"
+  ],
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Leer y utilizar información contable básica acerca públicas, de comunicación oral y escrita, en de la marcha de la empresa, incluida forma presencial o a distancia, vía teléfono, información sobre importaciones y/o fax, correo electrónico u otro medio. exportaciones, de acuerdo a las normas"
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Organizar y ordenar el lugar de trabajo, de internacionales de contabilidad (NIC) y de acuerdo a técnicas y procedimientos que información financiera (NIIF) y a la legislación permitan disponer y recuperar información u tributaria vigente. objetos de manera oportuna para el desarrollo"
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Elaborar un programa de actividades operativas de las tareas. de un departamento o área de una empresa,"
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Utilizar los equipos y herramientas de acuerdo a orientaciones de la jefatura y/o tecnológicas utilizadas en la gestión del plan estratégico de gestión, considerando administrativa, recursos humanos, insumos, equipamiento, considerando un uso eficiente de la energía, de distribución temporal y proyección de los materiales y de los insumos. resultados."
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Hacer seguimiento y elaborar informes del 17 ESPECIALIDAD ADMINISTRACIÓN MENCIÓN LOGÍSTICA Campo Laboral de registro apropiados y la normativa vigente. El técnico de nivel medio egresado de la especialidad de Administración mención Logística, tiene las condiciones y está preparado para cumplir sus funciones en secciones operativas de abastecimiento, almacenaje, control de inventarios, SECTOR ECONÓMICO ADMINISTRACIÓN producción y distribución en"
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Informar y comunicar datos de ubicación de mercancías en bodegas almacenaje y de entrada y salida de y rutas de transporte de productos y productos, mediante diversos personas, entre otros. sistemas, tales como radiofrecuencia y computación. Objetivos de"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Atender a clientes internos y externos de balances, efectuar controles de existencia, la empresa, de acuerdo a sus necesidades manejo de efectivo, arqueos de caja, pago de y facturas, control de inventarios, control de demandas, aplicando técnicas de relaciones activo fijo y corrección monetaria, considerando públicas, de comunicación oral y escrita, en las normas internacionales de contabilidad forma presencial o a distancia, vía teléfono, (NIC) y de información financiera (NIIF). fax, correo electrónico u otro medio."
+    }
+  ],
+  "nota": "Los OA del perfil de egreso son terminales del ciclo 3°-4° medio. La distribución anual por módulos debe seguir el Programa de Estudio oficial de la especialidad."
+}

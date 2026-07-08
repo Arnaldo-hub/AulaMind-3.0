@@ -1,0 +1,47 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Alimentación",
+  "especialidad": "Gastronomía",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "AL-GAST-M01",
+      "nombre": "Higiene para la elaboración de alimentos",
+      "oa_asociados": [
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AL-GAST-M02",
+      "nombre": "Elaboración de alimentos de baja complejidad",
+      "oa_asociados": [
+        "OA 3",
+        "OA 5"
+      ]
+    },
+    {
+      "codigo": "AL-GAST-M03",
+      "nombre": "Recepción y almacenamiento de insumos y materias primas",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AL-GAST-M04",
+      "nombre": "Preparación, diseño y montaje de buffet",
+      "oa_asociados": [
+        "OA 4",
+        "OA 7",
+        "OA 8"
+      ]
+    },
+    {
+      "codigo": "AL-GAST-M05",
+      "nombre": "Servicio de comedores, bares y salones",
+      "oa_asociados": [
+        "OA 8"
+      ]
+    }
+  ],
+  "plan": "Módulos comunes de la especialidad"
+}

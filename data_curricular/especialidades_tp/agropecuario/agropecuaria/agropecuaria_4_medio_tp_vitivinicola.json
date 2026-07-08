@@ -1,0 +1,50 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Agropecuario",
+  "especialidad": "Agropecuaria",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AP-AGRO-M00",
+      "nombre": "Emprendimiento y empleabilidad agropecuaria",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AP-VITI-M01",
+      "nombre": "Viticultura",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AP-VITI-M02",
+      "nombre": "Cosecha y transporte de vides",
+      "oa_asociados": [
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AP-VITI-M03",
+      "nombre": "Elaboración de vinos",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "AP-VITI-M04",
+      "nombre": "Envasado y maquinaria vitivinícola",
+      "oa_asociados": [
+        "OA 4",
+        "OA 6"
+      ]
+    },
+    {
+      "codigo": "AP-VITI-M05",
+      "nombre": "Manejo de bodegas vitivinícolas",
+      "oa_asociados": [
+        "OA 5"
+      ]
+    }
+  ],
+  "mencion": "Vitivinícola"
+}

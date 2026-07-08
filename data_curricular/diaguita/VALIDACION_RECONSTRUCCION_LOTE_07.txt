@@ -1,0 +1,5 @@
+AulaMind Enterprise 3.0 — Pueblos Originarios, Reconstrucción Lote 07
+Pueblo Diaguita | 1° básico | 4 unidades | 16 asociaciones OA.
+Estructura: asignatura > pueblo > curso > unidades > OA.
+Bloque mantenido separado del currículum regular de AulaMind-3.0.
+Advertencia: los códigos LC01-Ux son identificadores internos de organización de AulaMind y no sustituyen códigos oficiales.

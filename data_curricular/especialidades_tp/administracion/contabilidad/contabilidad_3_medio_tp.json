@@ -1,0 +1,38 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Administración",
+  "especialidad": "Contabilidad",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-M01",
+      "nombre": "Registro de operaciones comerciales y financieras",
+      "oa_asociados": [
+        "OA 1",
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "CO-M02",
+      "nombre": "Cálculo y registro de remuneraciones",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "CO-M03",
+      "nombre": "Control y procesamiento de información contable",
+      "oa_asociados": [
+        "OA 1",
+        "OA 4"
+      ]
+    },
+    {
+      "codigo": "CO-M04",
+      "nombre": "Organización y archivo de documentación contable",
+      "oa_asociados": [
+        "OA 5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Compilación sintáctica del árbol Python activo: OK
+Herramientas heredadas en cuarentena: 1

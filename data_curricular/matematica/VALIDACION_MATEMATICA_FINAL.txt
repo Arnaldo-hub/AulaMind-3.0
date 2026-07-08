@@ -1,0 +1,76 @@
+AulaMind Enterprise 3.0 — Matemática 1° básico a 4° medio
+Distribución de OA por unidad obtenida desde los Programas de Estudio MINEDUC aportados.
+Validación estructural: 12 JSON, 4 unidades por curso, nombres de unidad y OA correspondientes.
+
+mat_1_basico.json: 4 unidades | 36 asignaciones OA
+  - Unidad 1 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 4 — Números y operaciones, Álgebra y funciones, Geometría
+
+mat_2_basico.json: 4 unidades | 36 asignaciones OA
+  - Unidad 1 — Números y operaciones, Álgebra y funciones, Datos y probabilidades
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 4 — Números y operaciones, Álgebra y funciones, Datos y probabilidades
+
+mat_3_basico.json: 4 unidades | 36 asignaciones OA
+  - Unidad 1 — Números y operaciones, Datos y probabilidades
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 4 — Números y operaciones, Geometría, Medición
+
+mat_4_basico.json: 4 unidades | 34 asignaciones OA
+  - Unidad 1 — Números y operaciones, Datos y probabilidades
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 4 — Números y operaciones, Álgebra y funciones, Geometría
+
+mat_5_basico.json: 4 unidades | 35 asignaciones OA
+  - Unidad 1 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Números y operaciones
+  - Unidad 4 — Números y operaciones, Álgebra y funciones, Geometría
+
+mat_6_basico.json: 4 unidades | 32 asignaciones OA
+  - Unidad 1 — Números y operaciones, Álgebra y funciones, Datos y probabilidades
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Números y operaciones, Geometría, Medición
+  - Unidad 4 — Números y operaciones, Álgebra y funciones, Datos y probabilidades
+
+mat_7_basico.json: 4 unidades | 21 asignaciones OA
+  - Unidad 1 — Números y operaciones
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Datos y probabilidades
+  - Unidad 3 — Geometría, Medición
+  - Unidad 4 — Números y operaciones, Datos y probabilidades
+
+mat_8_basico.json: 4 unidades | 20 asignaciones OA
+  - Unidad 1 — Números y operaciones, Geometría
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Geometría, Medición
+  - Unidad 4 — Números y operaciones, Datos y probabilidades
+
+mat_1_medio.json: 4 unidades | 19 asignaciones OA
+  - Unidad 1 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Álgebra y funciones, Geometría
+  - Unidad 4 — Números y operaciones, Álgebra y funciones, Geometría
+
+mat_2_medio.json: 4 unidades | 15 asignaciones OA
+  - Unidad 1 — Números y operaciones, Geometría, Medición
+  - Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría
+  - Unidad 3 — Geometría, Medición
+  - Unidad 4 — Números y operaciones, Geometría, Medición
+
+mat_3_medio.json: 4 unidades | 12 asignaciones OA
+  - Unidad 1 — El uso de datos estadísticos y de modelos
+  - Unidad 2 — Hacer predicciones acerca de situaciones
+  - Unidad 3 — Relaciones métricas en geometría
+  - Unidad 4 — Necesidad y aplicación de los números complejos
+
+mat_4_medio.json: 4 unidades | 8 asignaciones OA
+  - Unidad 1 — La toma de decisiones en situaciones de
+  - Unidad 2 — La toma de decisiones en situaciones
+  - Unidad 3 — Modelamiento matemático para describir y
+  - Unidad 4 — Geometría con coordenadas
+

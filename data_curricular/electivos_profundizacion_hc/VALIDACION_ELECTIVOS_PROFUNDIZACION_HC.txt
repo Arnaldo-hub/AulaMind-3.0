@@ -1,0 +1,6 @@
+AulaMind Enterprise 3.0 — Electivos de Profundización HC
+7 áreas, 27 asignaturas, 54 JSON.
+Lengua y Literatura: 3 asignaturas con OA/unidades cargados.
+24 asignaturas: estructura presente, carga curricular oficial pendiente.
+No se inventaron OA ni unidades.
+Este paquete consolida la carpeta completa para reemplazo único, pero no debe declararse curricularmente final hasta completar las 24 asignaturas pendientes.

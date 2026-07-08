@@ -1,0 +1,50 @@
+{
+  "asignatura": "Música",
+  "curso": "1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Escuchar cualidades del Canciones que imitan sonidos sonido (altura, timbre, intensidad, duración) y 1 Actividades elementos del lenguaje El profesor invita a escuchar una canción cuya temática sea imitar musical (pulsos, acentos, patrones, secciones), y sonidos diversos. Se sugieren: › La orquesta de los animales del grupo Zapallo Consisten en un listado de actividades, representarlos de distintas formas. › Guido el guitarrista del grupo Acuarela Luego comentan la canción y los sonidos a los que alude y escritas en un lenguaje simple y cen"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Presentar su trabajo musical › Cantan y tocan el repertorio aprendido, incorporando las en forma individual y grupal, indicaciones del director (comienzos, finales). compartiendo con el curso y la › Respetan la participación de todos al presentar su trabajo comunidad. musical (esperar turnos, conocer entradas, etcétera). › Participan con seguridad en su trabajo musical. 102 Programa de Estudio / 1º básico Ejemplos de actividades"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Interpretar y crear música",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar sensaciones, emocio- › Se expresan corporalmente (mímicas, coreografías, expre- nes e ideas que les sugieren el sión libre, etcétera) según lo que les sugieren los sonidos y la sonido y la música escuchada, música. usando diversos medios expre- › Utilizan la expresión visual (dibujos, pinturas, etcétera) se- sivos (verbal, corporal, musical, gún lo que les sugieren los sonidos y la música. visual). › Utilizan la expresión verbal (oral o escrita) según lo que les sugieren los sonidos y la música. › Escuchan atentamente variados ejemplos musicales."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Identificar y describir experien- › Identifican experiencias musicales de su vida. cias musicales y sonoras en su › Descubren su entorno sonoro. propia vida. › Expresan opiniones sobre lo escuchado. *Escuchar apreciativamente al menos 20 músicas variadas de corta duración en el transcurso del año. 60 Programa de Estudio / 1º básico Ejemplos de actividades"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Cantar al unísono y tocar › Participan en una variedad de canciones, versos rítmicos, instrumentos de percusión rondas y juegos musicales. convencionales y no convencio- › Acompañan libremente canciones aprendidas con percusión nales. corporal (palmas, pies u otros). › Reproducen patrones rítmicos con sonidos corporales. › Cantan con naturalidad, evitando forzar la voz. Música Unidad 1 59 OBJETIVOS DE APRENDIZAJE INDICADORES DE EVALUACIÓN SUGERIDOS"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explorar e improvisar ideas › Exploran las posibilidades sonoras de su voz. musicales con diversos medios › Participan en juegos de imitación y creación musical. sonoros (la voz, instrumentos › Improvisan, respetando la participación de los otros. convencionales y no convencio- › Acompañan libremente canciones aprendidas. nales, entre otros), usando las cualidades del sonido y elemen- tos del lenguaje musical."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Gráfico",
+  "especialidad": "Dibujo Técnico",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "GR-DTEC-M01",
+      "nombre": "Dibujo técnico de proyectos"
+    },
+    {
+      "codigo": "GR-DTEC-M02",
+      "nombre": "Dibujo digital de proyectos"
+    },
+    {
+      "codigo": "GR-DTEC-M03",
+      "nombre": "Levantamiento de información y representación gráfica"
+    },
+    {
+      "codigo": "GR-DTEC-M04",
+      "nombre": "Modelamiento digital de proyectos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos"
+}

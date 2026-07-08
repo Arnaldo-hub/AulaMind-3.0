@@ -1,0 +1,43 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Alimentación",
+  "especialidad": "Gastronomía",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AL-COCI-M00",
+      "nombre": "Emprendimiento y empleabilidad gastronomía mención Cocina",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AL-COCI-M01",
+      "nombre": "Cocina chilena",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AL-COCI-M02",
+      "nombre": "Cocina internacional",
+      "oa_asociados": [
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AL-COCI-M03",
+      "nombre": "Innovación gastronómica",
+      "oa_asociados": [
+        "OA 1",
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AL-COCI-M04",
+      "nombre": "Elaboración de bebidas alcohólicas y analcohólicas",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    }
+  ],
+  "mencion": "Cocina"
+}

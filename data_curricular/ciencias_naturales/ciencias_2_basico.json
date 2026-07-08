@@ -1,0 +1,82 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Órganos internos del cuerpo humano",
+      "oa": [
+        {
+          "codigo": "OA 7",
+          "descripcion": "Identificar la ubicación y explicar la función de algunas partes del cuerpo que son fundamentales para vivir: corazón, pulmones, estómago, esqueleto y músculos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Explicar la importancia de la actividad física para el desarrollo de los músculos y el fortalecimiento del corazón, proponiendo formas de ejercitarla e incorporarla en sus hábitos diarios."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Animales vertebrados e invertebrados",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Observar, describir y clasificar los vertebrados en mamíferos, aves, reptiles, anfibios y peces, a partir de características como cubierta corporal, presencia de mamas y estructuras para la respiración, entre otras."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Observar, describir y clasificar, por medio de la exploración, las características de los animales sin columna vertebral, como insectos, arácnidos, crustáceos, entre otros, y compararlos con los vertebrados."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Observar y comparar las características de las etapas del ciclo de vida de distintos animales (mamíferos, aves, insectos y anfibios), relacionándolas con su hábitat."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Actividad humana y medio ambiente",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Observar y comparar las características de distintos hábitat, identificando la luminosidad, humedad y temperatura necesarias para la supervivencia de los animales que habitan en él."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Observar e identificar algunos animales nativos que se encuentran en peligro de extinción, así como el deterioro de su hábitat, proponiendo medidas para protegerlos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Identificar y comunicar los efectos de la actividad humana sobre los animales y su hábitat."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — El agua y el tiempo atmosférico",
+      "oa": [
+        {
+          "codigo": "OA 9",
+          "descripcion": "Observar y describir, por medio de la investigación experimental, algunas características del agua, como escurrir, adaptarse a la forma del recipiente, disolver algunos sólidos, ser transparente e inodora, evaporarse y congelarse con los cambios de temperatura."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Identificar y comparar, por medio de la exploración, los estados sólido, líquido y gaseoso del agua."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Describir el ciclo del agua en la naturaleza, reconociendo que el agua es un recurso preciado y proponiendo acciones cotidianas para su cuidado."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Reconocer y describir algunas características del tiempo atmosférico, como precipitaciones (lluvia, granizo, nieve), viento y temperatura ambiente, entre otras, y sus cambios a lo largo del año."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Medir algunas características del tiempo atmosférico, construyendo y/o usando algunos instrumentos tecnológicos útiles para su localidad, como termómetro, pluviómetro o veleta."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Describir la relación de los cambios del tiempo atmosférico con las estaciones del año y sus efectos sobre los seres vivos y el ambiente."
+        }
+      ]
+    }
+  ]
+}

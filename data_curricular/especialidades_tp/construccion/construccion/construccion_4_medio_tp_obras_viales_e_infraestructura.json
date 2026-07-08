@@ -1,0 +1,33 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Construcción",
+  "especialidad": "Construcción",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-OBVI-M01",
+      "nombre": "Calidad en obras viales e infraestructura"
+    },
+    {
+      "codigo": "CO-OBVI-M02",
+      "nombre": "Seguridad vial"
+    },
+    {
+      "codigo": "CO-OBVI-M03",
+      "nombre": "Mantenimiento de obras viales"
+    },
+    {
+      "codigo": "CO-OBVI-M04",
+      "nombre": "Conformación de la calzada"
+    },
+    {
+      "codigo": "CO-OBVI-M05",
+      "nombre": "Infraestructura para la protección de la calzada"
+    },
+    {
+      "codigo": "CO-OBVI-M00",
+      "nombre": "Empleabilidad y emprendimiento"
+    }
+  ],
+  "mencion": "Obras Viales e Infraestructura"
+}

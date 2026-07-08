@@ -1,0 +1,42 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Administración",
+  "especialidad": "Administración",
+  "mencion": "Recursos Humanos",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AD-RRHH-M00",
+      "nombre": "Emprendimiento y empleabilidad administración mención recursos humanos",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AD-RRHH-M01",
+      "nombre": "Legislación laboral",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AD-RRHH-M02",
+      "nombre": "Cálculo de remuneración, finiquitos y obligaciones laborales",
+      "oa_asociados": [
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AD-RRHH-M03",
+      "nombre": "Desarrollo y bienestar personal",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "AD-RRHH-M04",
+      "nombre": "Dotación de personal",
+      "oa_asociados": [
+        "OA 4"
+      ]
+    }
+  ]
+}

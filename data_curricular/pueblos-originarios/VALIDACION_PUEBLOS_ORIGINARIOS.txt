@@ -1,0 +1,26 @@
+AulaMind Enterprise 3.0 — Lengua y Cultura de los Pueblos Originarios Ancestrales
+Fuentes organizadas desde data(1).zip sin mezclarlas con asignaturas regulares.
+
+Archivos JSON integrados: 19
+Archivos con OA no vacíos: 1
+Archivos sin OA utilizables en la fuente: 18
+
+aymara_programa7_basico.json: cursos 1 | unidades 4 | OA 0
+mapuzugun_programa_7_basico.json: cursos 1 | unidades 8 | OA 0
+originarios_aymara_1_basico.json: cursos 1 | unidades 14 | OA 0
+originarios_colla_1_basico.json: cursos 1 | unidades 14 | OA 0
+originarios_interculturalidad_1_basico.json: cursos 1 | unidades 11 | OA 0
+originarios_kawesqar_1_basico.json: cursos 1 | unidades 13 | OA 0
+originarios_lickanantay_1_basico.json: cursos 1 | unidades 12 | OA 0
+originarios_mapuche_1_basico.json: cursos 1 | unidades 18 | OA 0
+originarios_quechua_1_basico.json: cursos 1 | unidades 11 | OA 0
+originarios_rapa_nui_1_basico.json: cursos 1 | unidades 15 | OA 0
+originarios_yagan_1_basico.json: cursos 1 | unidades 16 | OA 0
+originaruos_diaguita_1_basico.json: cursos 1 | unidades 17 | OA 0
+programa_lengua_indigena_8_basico_-_lengua_indigena_aymara.json: cursos 1 | unidades 4 | OA 0
+programa_lengua_indigena_8_basico_-_lengua_indigena_mapuzugun.json: cursos 1 | unidades 8 | OA 0
+programa_lengua_indigena_8_basico_-_lengua_indigena_quechua_0.json: cursos 1 | unidades 8 | OA 0
+programa_lengua_indigena_8_basico_-_lengua_indigena_rapa_nui.json: cursos 1 | unidades 8 | OA 0
+pueblosoriginarios.json: cursos 8 | unidades 16 | OA 48
+quechua_programa_7_basico.json: cursos 1 | unidades 7 | OA 0
+rapa_nui_programa_7_basico.json: cursos 1 | unidades 8 | OA 0

@@ -1,0 +1,10 @@
+AulaMind Enterprise 3.0 — Sector Marítimo TP
+
+Acuicultura: 3° medio 4 módulos | 4° medio 5 módulos
+Operaciones Portuarias: 3° medio 4 módulos | 4° medio 5 módulos
+Pesquería: 3° medio 4 módulos | 4° medio 5 módulos
+Tripulación de Naves Mercantes y Especiales: 3° medio 4 módulos | 4° medio 5 módulos
+
+Total: 4 especialidades, 8 JSON de curso y 36 módulos estructurados.
+Las cuatro especialidades y su cobertura 3°/4° medio fueron verificadas en Currículum Nacional.
+Los nombres y la distribución anual de módulos quedan pendientes de auditoría final antes del consolidado definitivo.

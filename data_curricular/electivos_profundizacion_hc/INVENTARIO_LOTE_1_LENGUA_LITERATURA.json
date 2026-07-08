@@ -1,0 +1,51 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "lote": 1,
+  "area": "Lengua y Literatura",
+  "asignaturas": 3,
+  "json": 6,
+  "detalle": [
+    {
+      "asignatura": "Taller de literatura",
+      "curso": "3° medio HC",
+      "oa": 6,
+      "unidades": 4,
+      "archivo": "lengua_literatura/taller_de_literatura/taller_de_literatura_3_medio_hc.json"
+    },
+    {
+      "asignatura": "Taller de literatura",
+      "curso": "4° medio HC",
+      "oa": 6,
+      "unidades": 4,
+      "archivo": "lengua_literatura/taller_de_literatura/taller_de_literatura_4_medio_hc.json"
+    },
+    {
+      "asignatura": "Lectura y escritura especializadas",
+      "curso": "3° medio HC",
+      "oa": 5,
+      "unidades": 4,
+      "archivo": "lengua_literatura/lectura_y_escritura_especializadas/lectura_y_escritura_especializadas_3_medio_hc.json"
+    },
+    {
+      "asignatura": "Lectura y escritura especializadas",
+      "curso": "4° medio HC",
+      "oa": 5,
+      "unidades": 4,
+      "archivo": "lengua_literatura/lectura_y_escritura_especializadas/lectura_y_escritura_especializadas_4_medio_hc.json"
+    },
+    {
+      "asignatura": "Participación y argumentación en democracia",
+      "curso": "3° medio HC",
+      "oa": 7,
+      "unidades": 4,
+      "archivo": "lengua_literatura/participacion_y_argumentacion_en_democracia/participacion_y_argumentacion_en_democracia_3_medio_hc.json"
+    },
+    {
+      "asignatura": "Participación y argumentación en democracia",
+      "curso": "4° medio HC",
+      "oa": 7,
+      "unidades": 4,
+      "archivo": "lengua_literatura/participacion_y_argumentacion_en_democracia/participacion_y_argumentacion_en_democracia_4_medio_hc.json"
+    }
+  ]
+}

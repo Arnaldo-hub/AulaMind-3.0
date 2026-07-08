@@ -1,0 +1,74 @@
+{
+  "asignatura": "Historia, Geografía y Ciencias Sociales",
+  "curso": "2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Ubicación espacial, planos y Chile",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y dibujar planos simples de su entorno, utilizando puntos de referencia, categorías de posición relativa y simbología pictórica."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Ubicar Chile, Santiago, la propia región y su capital en el globo terráqueo o en mapas, y describir la ubicación relativa de países limítrofes y de otros países de América del Sur."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Clasificar y caracterizar algunos paisajes de Chile según su ubicación en la zona norte, centro y sur, observando imágenes y utilizando diversas fuentes."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Pueblos originarios de Chile",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Describir los modos de vida de algunos pueblos originarios de Chile en el período precolombino, incluyendo ubicación geográfica, medio natural, vida nómada o sedentaria, roles, herramientas, actividades, vivienda y costumbres."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comparar el modo de vida y expresiones culturales de algunos pueblos indígenas presentes en Chile actual con respecto al período precolombino, identificando aspectos de su cultura que se han mantenido hasta el presente."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Sociedad chilena y diversidad cultural",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Distinguir los diversos aportes a la sociedad chilena provenientes de los pueblos originarios y de los españoles y reconocer nuestra sociedad como mestiza."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Reconocer y dar ejemplos de la influencia y aportes de inmigrantes de distintas naciones europeas, orientales, árabes y latinoamericanas a la diversidad de la sociedad chilena."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reconocer diversas expresiones del patrimonio cultural del país y de su región, tales como manifestaciones artísticas, tradiciones, costumbres y sitios históricos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida en comunidad, normas y servicios",
+      "oa": [
+        {
+          "codigo": "OA 12",
+          "descripcion": "Mostrar actitudes y realizar acciones concretas en su entorno cercano que reflejen respeto al otro, responsabilidad, tolerancia y empatía."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Conocer, proponer, aplicar y explicar la importancia de algunas normas necesarias para cuidarse, cuidar a otros y evitar situaciones de riesgo."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Identificar la labor que cumplen en beneficio de la comunidad servicios como medios de transporte y comunicación, mercado, escuela, hospital, bomberos y carabineros."
+        }
+      ]
+    }
+  ]
+}

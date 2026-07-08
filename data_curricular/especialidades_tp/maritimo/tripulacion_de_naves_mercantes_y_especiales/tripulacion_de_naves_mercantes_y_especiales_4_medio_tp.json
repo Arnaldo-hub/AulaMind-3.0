@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Tripulación de Naves Mercantes y Especiales",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-TNME-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MA-TNME-M05",
+      "nombre": "Guardia de navegación"
+    },
+    {
+      "codigo": "MA-TNME-M06",
+      "nombre": "Operaciones de carga y apoyo a faenas marítimas"
+    },
+    {
+      "codigo": "MA-TNME-M07",
+      "nombre": "Prevención y combate de incendios a bordo"
+    },
+    {
+      "codigo": "MA-TNME-M08",
+      "nombre": "Operación y mantenimiento de sistemas auxiliares de la nave"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

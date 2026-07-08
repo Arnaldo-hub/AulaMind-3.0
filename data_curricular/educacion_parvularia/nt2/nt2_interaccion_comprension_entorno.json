@@ -1,0 +1,24 @@
+{
+  "nivel": "NT2 / Kínder",
+  "nivel_curricular": "NT (Nivel Transición)",
+  "ambito": "Interacción y comprensión del entorno",
+  "nucleos": [
+    {
+      "nombre": "Exploración del entorno natural",
+      "oa": [],
+      "nota": "Los OA de las BCEP corresponden al Nivel de Transición NT; la diferenciación NT1/NT2 se operacionaliza mediante desempeños e indicadores del Programa Pedagógico."
+    },
+    {
+      "nombre": "Comprensión del entorno sociocultural",
+      "oa": [],
+      "nota": "Los OA de las BCEP corresponden al Nivel de Transición NT; la diferenciación NT1/NT2 se operacionaliza mediante desempeños e indicadores del Programa Pedagógico."
+    },
+    {
+      "nombre": "Pensamiento matemático",
+      "oa": [],
+      "nota": "Los OA de las BCEP corresponden al Nivel de Transición NT; la diferenciación NT1/NT2 se operacionaliza mediante desempeños e indicadores del Programa Pedagógico."
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de Educación Parvularia vigentes desde 2019 y Programa Pedagógico Primer y Segundo Nivel de Transición, MINEDUC",
+  "estado_curricular": "ESTRUCTURA OFICIAL CREADA — OA literales pendientes de extracción completa por núcleo; no se inventó contenido."
+}

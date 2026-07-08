@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Maderero",
+  "especialidad": "Forestal",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-FORE-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MA-FORE-M05",
+      "nombre": "Manejo de bosques y plantaciones"
+    },
+    {
+      "codigo": "MA-FORE-M06",
+      "nombre": "Cosecha forestal"
+    },
+    {
+      "codigo": "MA-FORE-M07",
+      "nombre": "Prevención y control de incendios forestales"
+    },
+    {
+      "codigo": "MA-FORE-M08",
+      "nombre": "Operación y mantenimiento básico de maquinaria forestal"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura preparada para auditoría final contra Programa de Estudio oficial antes del consolidado definitivo."
+}

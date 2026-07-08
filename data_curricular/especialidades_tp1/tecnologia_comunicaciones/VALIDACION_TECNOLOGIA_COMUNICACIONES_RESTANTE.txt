@@ -1,0 +1,10 @@
+AulaMind Enterprise 3.0 — Tecnología y Comunicaciones TP
+
+Este lote completa las especialidades restantes del sector después de Conectividad y Redes.
+
+Programación: 3° medio 4 módulos | 4° medio 5 módulos
+Telecomunicaciones: 3° medio 4 módulos | 4° medio 5 módulos
+
+Total del lote: 2 especialidades, 4 JSON y 18 módulos estructurados.
+Conectividad y Redes se mantiene en su lote anterior ya generado.
+Estado: auditoría curricular oficial final pendiente antes del consolidado definitivo.

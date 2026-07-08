@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Pesquería",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-PESQ-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MA-PESQ-M05",
+      "nombre": "Detección y localización de recursos pesqueros"
+    },
+    {
+      "codigo": "MA-PESQ-M06",
+      "nombre": "Conservación y manejo de la captura"
+    },
+    {
+      "codigo": "MA-PESQ-M07",
+      "nombre": "Mantenimiento de equipos y sistemas de pesca"
+    },
+    {
+      "codigo": "MA-PESQ-M08",
+      "nombre": "Operación y control de faenas pesqueras"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

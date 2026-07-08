@@ -1,0 +1,70 @@
+{
+  "asignatura": "tecnol",
+  "curso": "tecnol 1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Necesidades, problemas y diseño de soluciones tecnológicas",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2) Inicio Materiales: Láminas, dibujos o imágenes digitales de viviendas, habitaciones, etc. Paleógrafo doblado con forma de sobre. Tiempo: 5 minutos* Desarrollo Materiales: Plantillas de dibujo, lápiz grafito, goma. Formato o plantilla de diseño Tiempo: 20 minutos* Materiales: Material concreto: papel, cartón, plástico, telas, etc. Plantilla de diseño. Tiempo: 15 minutos* cierre Materiales: Diseños de los estu- diantes. Tiempo: 5 minutos* * Los tiempos sugeridos están asociados a los respectivos"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elaboración y construcción de objetos tecnológicos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1) Organizar las tareas para elaborar un objeto tecnológico, distinguiendo las acciones, los materiales y las herramientas necesarias para lograr el resultado deseado. ("
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 que buscan favorecer el desarrollo inte- Elaborar un objeto tecnológico › Reconocen los procedimientos necesarios para la ejecución de un determinado producto. según las indicaciones del pro- › Usan los materiales necesarios para elaborar un objeto tec- gral de los estudiantes. En cada unidad fesor, seleccionando y experi- mentando con: nológico específico. › técnicas y herramientas para › Elaboran un producto, estableciendo una correcta aplica- se explicitan los Objetivos de Aprendi- medir, cortar, plegar, unir, ción de sus técnicas, como medir, cortar, plegar, unir, pegar, pegar, pintar, entre otras pintar, entre otras. zaje a trabajar. › materiales como papeles, entre otros."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8) el modo de insertar formas (como rectángulos, elipses, flechas, líneas rectas y curvas) y de seleccionar espacios de la imagen. Luego, profesor y alumnos identifican los principales lugares de la localidad donde se ubica la escuela y la representan, dibujando un plano simple del lugar indicado con: ú líneas rectas ú líneas horizontales ú líneas verticales ú líneas en forma de cruz ú las herramientas de selección para mover algunas líneas (si fuere necesario) (Historia, Geografía y Ciencias Sociales) !"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14) dibujan los bordes de las distintas formas que este posee sobre una cartulina o un cartón delgado. Marcan cada una de sus pie- zas, las cortan y las pintan. Para finalizar, arman distintas figuras con los triángulos. (Matemática) Artes Visuales 4 Expresar emociones e ideas en Pliegan un rectángulo de papel en zigzag varias veces y dibujan sus trabajos de arte, experimen- tando con: una figura humana sobre la primera de las caras. Usando las tije- ú materiales ras, cortan su contorno y cuidan de no hacerlo sobre las manos ú herramientas de la figura. Abren y chequean si estas quedaron entrelazadas y ú procedimientos ("
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Evaluación, funcionamiento y mejora de soluciones",
+      "oa": [
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15) grama Paint al curso. Los alumnos siguen las instrucciones y los procedimientos que muestra el profesor (ingresar al botón Inicio, ir a Todos los programas, luego a Accesorios y a Paint). El profesor muestra que, al ingresar al programa Paint, se encontrarán con una ventana casi en blanco, con solo algunas herramientas para dibujar y pintar. Guiados por el docente, los alumnos dibujan libremente, utilizando líneas rectas y curvas. Para finalizar, el pro- fesor les comenta que pueden guardar sus trabajos en el menú Archivo y Guardar, asignándoles el nombre que deseen. (Matemática) Ú54"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Tecnología, información, comunicación e impacto",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Usar software de dibujo para crear y"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6) Inicio Recursos: Computadores, sala de computación. Tiempo: 10 minutos* Desarrollo Recursos: Computadores, sala de computación. Tiempo: 30 minutos* cierre Recursos: Computadores, sala de computación. Tiempo: 5 minutos* * Los tiempos sugeridos están asociados a los respectivos"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7) mente (por ejemplo: vestuario, calzado, juegos, alimentos, etcéte- ra). Les pide finalmente que realicen las siguientes"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10) ú ¿es fácil de usar? ú ¿qué aspectos debe tener en cuenta al usarlo? ú ¿es seguro al utilizarlo? ú ¿es frágil, delicado, resistente? (Ciencias Naturales) !"
+        }
+      ]
+    }
+  ]
+}

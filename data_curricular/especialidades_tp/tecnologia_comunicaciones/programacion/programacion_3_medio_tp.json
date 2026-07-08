@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Tecnología y Comunicaciones",
+  "especialidad": "Programación",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "TC-PROG-M01",
+      "nombre": "Programación y bases de datos"
+    },
+    {
+      "codigo": "TC-PROG-M02",
+      "nombre": "Desarrollo de aplicaciones de escritorio"
+    },
+    {
+      "codigo": "TC-PROG-M03",
+      "nombre": "Diseño y desarrollo de sitios web"
+    },
+    {
+      "codigo": "TC-PROG-M04",
+      "nombre": "Modelamiento de información y lógica de programación"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

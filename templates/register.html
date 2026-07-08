@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Crear Cuenta | AulaMind Enterprise</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <!-- ===================================== -->
+    <!-- PANEL IZQUIERDO -->
+    <!-- ===================================== -->
+
+    <section class="left-panel">
+
+        <div class="overlay">
+
+            <div class="brand">
+
+                <h1>AulaMind</h1>
+
+                <span>Enterprise 3.0</span>
+
+            </div>
+
+            <div class="message">
+
+                <h2>
+
+                    Bienvenido a AulaMind
+
+                </h2>
+
+                <p>
+
+                    Crea tu cuenta y comienza a utilizar
+                    la plataforma de Inteligencia Artificial
+                    para docentes.
+
+                </p>
+
+            </div>
+
+            <div class="features">
+
+                <div class="feature">
+
+                    📚 Planificaciones con IA
+
+                </div>
+
+                <div class="feature">
+
+                    📝 Evaluaciones automáticas
+
+                </div>
+
+                <div class="feature">
+
+                    📖 Guías de aprendizaje
+
+                </div>
+
+                <div class="feature">
+
+                    📊 Rúbricas
+
+                </div>
+
+                <div class="feature">
+
+                    👨‍🏫 Adecuaciones PIE
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- PANEL DERECHO -->
+    <!-- ===================================== -->
+
+    <section class="right-panel">
+
+        <div class="login-box">
+
+            <div class="logo">
+
+                🚀
+
+            </div>
+
+            <h2>
+
+                Crear Cuenta
+
+            </h2>
+
+            <p>
+
+                Completa los datos para comenzar.
+
+            </p>
+
+            <!-- ================================= -->
+            <!-- Mensajes -->
+            <!-- ================================= -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    {% for category, message in messages %}
+
+                        <div class="alert {{ category }}">
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+            <!-- ================================= -->
+            <!-- Formulario -->
+            <!-- ================================= -->
+
+            <form
+
+                method="POST"
+
+                action="{{ url_for('auth.register') }}"
+
+            >
+
+                <div class="form-group">
+
+                    <label>
+
+                        Nombre
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        name="first_name"
+
+                        required
+
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Apellidos
+
+                    </label>
+
+                    <input
+
+                        type="text"
+
+                        name="last_name"
+
+                        required
+
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Correo electrónico
+
+                    </label>
+
+                    <input
+
+                        type="email"
+
+                        name="email"
+
+                        required
+
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Contraseña
+
+                    </label>
+
+                    <input
+
+                        type="password"
+
+                        name="password"
+
+                        minlength="8"
+
+                        required
+
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Confirmar contraseña
+
+                    </label>
+
+                    <input
+
+                        type="password"
+
+                        name="confirm_password"
+
+                        minlength="8"
+
+                        required
+
+                    >
+
+                </div>
+
+                <button
+
+                    class="btn-login"
+
+                    type="submit"
+
+                >
+
+                    Crear Cuenta
+
+                </button>
+
+            </form>
+
+            <div class="separator">
+
+                <span>
+
+                    o
+
+                </span>
+
+            </div>
+
+            <button
+
+                class="btn-google"
+
+                disabled
+
+            >
+
+                Registrarse con Google
+
+            </button>
+
+            <button
+
+                class="btn-microsoft"
+
+                disabled
+
+            >
+
+                Registrarse con Microsoft
+
+            </button>
+
+            <div class="register">
+
+                ¿Ya tienes cuenta?
+
+                <a
+
+                    href="{{ url_for('auth.login') }}"
+
+                >
+
+                    Iniciar sesión
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+
+</html>

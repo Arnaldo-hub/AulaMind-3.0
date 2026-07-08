@@ -1,0 +1,74 @@
+{
+  "asignatura": "tecnol",
+  "curso": "tecnol 2° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Necesidades, problemas y diseño de soluciones tecnológicas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >> Identifican problemáticas medioambientales asociadas al uso asignatura. Se refieren a Identificar necesidades de recursos energéticos y materiales a nivel local. conocimientos, habilidades que impliquen >> Seleccionan procedimientos e instrumentos para recabar y"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Evaluar las propuestas de soluciones que apunten a resolver necesidades de reducción de efectos perjudiciales relacionados con el uso de recursos energéticos y materiales considerando aspectos o dilemas éticos, legales, económicos, ambientales y sociales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elaboración y construcción de objetos tecnológicos",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Comunicar propuestas de soluciones para reducir los efectos perjudiciales proyectando posibles escenarios de cambio y sus impactos, utilizando herramientas TIC, considerando diferentes tipos de objetivos y audiencias, teniendo en cuenta aspectos éticos y aplicando normas de cuidado y seguridad. EJE TECNOLOGÍA, AMBIENTE Y SOCIEDAD"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Evaluación, funcionamiento y mejora de soluciones",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Evaluar críticamente cómo las innovaciones tecnológicas actuales afectan a la sociedad y al ambiente, considerando criterios éticos, económicos, ambientales y sociales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Tecnología, información, comunicación e impacto",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 >> Indagan sobre la utilización y las prácticas de uso de los recursos"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Proyectar escenarios de posibles impactos positivos y/o negativos de las innovaciones tecnológicas actuales en ámbitos personales, sociales, ambientales, legales, económicos u otros. 50 TECNOLOGÍA |"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7,"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 y 16 de 2º medio. >> ® Historia, Geografía y Ciencias Sociales,"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 de 2º medio. 8 Todas las"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 interdisciplinares ® Historia, Geografía y Ciencias Sociales,"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 y 22 de 2º medio. interdisciplinares >> ® Ciencias Naturales,"
+        },
+        {
+          "codigo": "OA 24",
+          "descripcion": "OA 24 de 2º medio. 28 TECNOLOGÍA |"
+        }
+      ]
+    }
+  ]
+}

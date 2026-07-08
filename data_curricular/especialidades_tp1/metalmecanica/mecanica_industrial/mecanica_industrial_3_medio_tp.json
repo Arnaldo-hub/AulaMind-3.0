@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Mecánica Industrial",
+  "curso": "3° medio TP",
+  "menciones": [
+    "Mantenimiento Electromecánico",
+    "Máquinas-Herramientas",
+    "Matricería"
+  ],
+  "modulos": [
+    {
+      "codigo": "MM-MEIN-M01",
+      "nombre": "Lectura de planos y metrología"
+    },
+    {
+      "codigo": "MM-MEIN-M02",
+      "nombre": "Mecanizado manual y ajuste de piezas"
+    },
+    {
+      "codigo": "MM-MEIN-M03",
+      "nombre": "Mecanizado con máquinas-herramientas"
+    },
+    {
+      "codigo": "MM-MEIN-M04",
+      "nombre": "Mantenimiento básico de máquinas y equipos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

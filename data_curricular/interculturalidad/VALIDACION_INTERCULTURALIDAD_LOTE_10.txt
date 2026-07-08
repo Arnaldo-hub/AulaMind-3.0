@@ -1,0 +1,5 @@
+AulaMind Enterprise 3.0 — Pueblos Originarios, Lote 10 Interculturalidad
+Modalidad Interculturalidad | 1° básico | 4 unidades | 16 asociaciones OA.
+Estructura: asignatura > modalidad > curso > unidades > OA.
+Bloque separado del currículum regular de AulaMind-3.0.
+Los códigos LC01-INT-Ux son identificadores internos de organización y no sustituyen códigos oficiales MINEDUC.

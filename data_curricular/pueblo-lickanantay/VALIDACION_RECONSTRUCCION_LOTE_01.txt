@@ -1,0 +1,6 @@
+AulaMind Enterprise 3.0 — Pueblos Originarios, Reconstrucción Lote 01
+Archivo: lcpoa_lickanantay_5_basico.json
+Curso: 5° básico | Pueblo: Lickanantay | Unidades: 4
+OA asociados por unidad: 5, 4, 4, 5
+Fuente: Programa de Estudio MINEDUC diciembre 2022, matriz de OA de cada unidad.
+Los códigos OA-Ux-xx son internos de AulaMind para asociación; no sustituyen códigos oficiales inexistentes en la matriz impresa.

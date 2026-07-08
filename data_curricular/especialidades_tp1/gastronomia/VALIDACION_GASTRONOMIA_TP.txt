@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Gastronomía TP
+
+3° medio TP, bloque común: 5 módulos.
+4° medio TP, mención Cocina: 5 módulos.
+4° medio TP, mención Pastelería y Repostería: 5 módulos.
+Total del lote: 15 módulos.
+Estructura preparada para AulaMind: modalidad > sector > especialidad > curso > mención > módulos > OA asociados.

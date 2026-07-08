@@ -1,0 +1,46 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Construcción",
+  "especialidad": "Refrigeración y Climatización",
+  "curso": "4° medio TP",
+  "alcance_oa": "Perfil de egreso terminal del ciclo 3° y 4° medio TP",
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion_resumida": "Interpretación de planos de cañerías y ductos"
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion_resumida": "Cubicación de elementos y materiales"
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion_resumida": "Medición y control de magnitudes del proyecto"
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion_resumida": "Armado, instalación y aislación de ductos y cañerías"
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion_resumida": "Instalación de equipos, componentes y controles"
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion_resumida": "Carga de fluidos y puesta en marcha de sistemas"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion_resumida": "Inspección y diagnóstico de fallas"
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion_resumida": "Mantenimiento preventivo y correctivo"
+    },
+    {
+      "codigo": "OA 9",
+      "descripcion_resumida": "Recuperación, reciclaje y almacenamiento de refrigerantes"
+    }
+  ],
+  "estado_modulos": "PENDIENTE DE EXTRACCIÓN EXACTA DESDE PROGRAMA DE ESTUDIO; no se inventan módulos ni distribución anual"
+}

@@ -1,0 +1,82 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "5° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — El agua y los océanos",
+      "oa": [
+        {
+          "codigo": "OA 12",
+          "descripcion": "Describir la distribución del agua dulce y salada en la Tierra y comparar sus volúmenes, reconociendo la escasez relativa de agua dulce."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Analizar y describir las características de los océanos y lagos, considerando variaciones con la profundidad, diversidad de flora y fauna y movimiento de las aguas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Investigar y explicar efectos positivos y negativos de la actividad humana en océanos, lagos, ríos y glaciares, proponiendo acciones de protección de las reservas hídricas en Chile."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Organización y sistemas del cuerpo humano",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Reconocer y explicar que los seres vivos están formados por una o más células y que estas se organizan en tejidos, órganos y sistemas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Identificar y describir por medio de modelos las estructuras básicas del sistema digestivo y sus funciones en la digestión, absorción de alimentos y eliminación de desechos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Explicar por medio de modelos la respiración e identificar las estructuras básicas del sistema respiratorio."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Explicar la función de transporte del sistema circulatorio, identificando sus estructuras básicas: corazón, vasos sanguíneos y sangre."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Vida saludable y prevención",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Analizar el consumo de alimento diario, reconociendo los alimentos para el crecimiento, reparación, desarrollo y movimiento del cuerpo."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Investigar en diversas fuentes y comunicar los efectos nocivos que produce el cigarrillo en los sistemas respiratorio y circulatorio."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Investigar e identificar microorganismos beneficiosos y dañinos para la salud, y proponer medidas de cuidado e higiene del cuerpo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Electricidad y uso responsable de la energía",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "Reconocer los cambios que experimenta la energía eléctrica al pasar de una forma a otra e investigar aportes de científicos en su estudio."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Construir un circuito eléctrico simple, usarlo para resolver problemas cotidianos y explicar su funcionamiento."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Observar y distinguir materiales conductores y aisladores de electricidad, relacionándolos con la manipulación segura de artefactos y circuitos."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Explicar la importancia de la energía eléctrica en la vida cotidiana y proponer medidas para promover su ahorro y uso responsable."
+        }
+      ]
+    }
+  ]
+}

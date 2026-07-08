@@ -1,0 +1,5 @@
+AulaMind Enterprise 3.0 - Lote 03
+Asignatura: Ciencias Naturales
+ciencias_1_medio.json: 1 unidades; 22 OA asignados.
+ciencias_6_bas.json: 1 unidades; 18 OA asignados.
+ciencias_7_bas.json: 1 unidades; 18 OA asignados.

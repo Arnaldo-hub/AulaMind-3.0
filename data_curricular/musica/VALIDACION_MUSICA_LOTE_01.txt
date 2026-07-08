@@ -1,0 +1,13 @@
+AulaMind Enterprise 3.0 — Música, Lote 01
+Generado desde Programas de Estudio MINEDUC aportados al proyecto.
+
+musica_1_basico.json: 4 unidades | OA por unidad [2, 2, 1, 1] | catálogo OA detectado 6
+musica_2_basico.json: 4 unidades | OA por unidad [2, 2, 1, 1] | catálogo OA detectado 6
+musica_4_basico.json: 4 unidades | OA por unidad [2, 2, 2, 2] | catálogo OA detectado 8
+musica_5_basico.json: 4 unidades | OA por unidad [2, 2, 2, 2] | catálogo OA detectado 8
+musica_6_basico.json: 4 unidades | OA por unidad [2, 2, 2, 1] | catálogo OA detectado 7
+musica_7_basico.json: 4 unidades | OA por unidad [7, 5, 4, 7] | catálogo OA detectado 7
+musica_8_basico.json: 4 unidades | OA por unidad [7, 5, 4, 7] | catálogo OA detectado 7
+musica_1_medio.json: 4 unidades | OA por unidad [7, 5, 4, 7] | catálogo OA detectado 7
+musica_2_medio.json: 4 unidades | OA por unidad [3, 5, 5, 7] | catálogo OA detectado 7
+musica_34_medio.json: 4 unidades | OA por unidad [7, 5, 5, 4] | catálogo OA detectado 7

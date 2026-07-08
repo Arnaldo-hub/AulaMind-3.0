@@ -1,0 +1,90 @@
+{
+  "asignatura": "Artes Visuales",
+  "curso": "6° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Arte contemporáneo y creación visual",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte y diseños a partir de sus propias ideas y de la observación del entorno cultural y artístico."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar y combinar elementos del lenguaje visual en trabajos de arte y diseño con diferentes propósitos expresivos y creativos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos de arte y diseños a partir de diferentes desafíos y temas del entorno cultural y artístico, demostrando dominio en el uso de materiales, herramientas y procedimientos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar e interpretar obras de arte y objetos en relación con la aplicación del lenguaje visual, contextos, materiales, estilos y propósitos expresivos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Diseño y arquitectura",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte y diseños a partir de ideas propias y de la observación del entorno cultural y artístico."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar y combinar elementos del lenguaje visual con propósitos expresivos y creativos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear diseños respondiendo a desafíos, demostrando dominio de materiales, herramientas y procedimientos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente trabajos de arte y diseños personales y de sus pares considerando criterios técnicos y expresivos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Fotografía y medios contemporáneos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte y diseños a partir de la observación de imágenes, medios contemporáneos y referentes artísticos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar elementos del lenguaje visual en producciones fotográficas y digitales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos utilizando procedimientos de fotografía, imagen digital y técnicas mixtas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar e interpretar obras e imágenes considerando lenguaje visual, contexto, materiales y propósito expresivo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Escultura, espacio y patrimonio",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte a partir del entorno cultural, artístico y patrimonial."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear obras tridimensionales demostrando manejo de materiales, herramientas y procedimientos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar e interpretar obras de arte considerando contexto, estilo, materiales y propósito expresivo."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente trabajos personales y de sus pares utilizando criterios técnicos y expresivos."
+        }
+      ]
+    }
+  ]
+}

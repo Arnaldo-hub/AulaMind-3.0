@@ -1,0 +1,789 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "sectores": 15,
+  "especialidades_presentes": 35,
+  "especialidades_faltantes": [],
+  "archivos_curriculares": 78,
+  "archivos": [
+    {
+      "archivo": "maderero/forestal/forestal_3_medio_tp.json",
+      "sector": "Maderero",
+      "especialidad": "Forestal",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MADERERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maderero/forestal/forestal_4_medio_tp.json",
+      "sector": "Maderero",
+      "especialidad": "Forestal",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MADERERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maderero/muebles_y_terminaciones_en_madera/muebles_y_terminaciones_en_madera_3_medio_tp.json",
+      "sector": "Maderero",
+      "especialidad": "Muebles y Terminaciones en Madera",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MADERERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maderero/muebles_y_terminaciones_en_madera/muebles_y_terminaciones_en_madera_4_medio_tp.json",
+      "sector": "Maderero",
+      "especialidad": "Muebles y Terminaciones en Madera",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MADERERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "quimica_industria/quimica_industrial/quimica_industrial_3_medio_tp.json",
+      "sector": "Química e Industria",
+      "especialidad": "Química Industrial",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_QUIMICA_INDUSTRIA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "quimica_industria/quimica_industrial/quimica_industrial_4_medio_tp_laboratorio_quimico.json",
+      "sector": "Química e Industria",
+      "especialidad": "Química Industrial",
+      "curso": "4° medio TP",
+      "mencion": "Laboratorio Químico",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_QUIMICA_INDUSTRIA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "quimica_industria/quimica_industrial/quimica_industrial_4_medio_tp_planta_quimica.json",
+      "sector": "Química e Industria",
+      "especialidad": "Química Industrial",
+      "curso": "4° medio TP",
+      "mencion": "Planta Química",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_QUIMICA_INDUSTRIA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/construcciones_metalicas/construcciones_metalicas_3_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Construcciones Metálicas",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/construcciones_metalicas/construcciones_metalicas_4_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Construcciones Metálicas",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/mecanica_industrial/mecanica_industrial_3_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Mecánica Industrial",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/mecanica_industrial/mecanica_industrial_4_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Mecánica Industrial",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/mecanica_automotriz/mecanica_automotriz_3_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Mecánica Automotriz",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/mecanica_automotriz/mecanica_automotriz_4_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Mecánica Automotriz",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/mecanica_de_mantenimiento_de_aeronaves/mecanica_de_mantenimiento_de_aeronaves_3_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Mecánica de Mantenimiento de Aeronaves",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "metalmecanica/mecanica_de_mantenimiento_de_aeronaves/mecanica_de_mantenimiento_de_aeronaves_4_medio_tp.json",
+      "sector": "Metalmecánica",
+      "especialidad": "Mecánica de Mantenimiento de Aeronaves",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_METALMECANICA_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "grafico/dibujo_tecnico/dibujo_tecnico_3_medio_tp.json",
+      "sector": "Gráfico",
+      "especialidad": "Dibujo Técnico",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_GRAFICO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "grafico/dibujo_tecnico/dibujo_tecnico_4_medio_tp.json",
+      "sector": "Gráfico",
+      "especialidad": "Dibujo Técnico",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_GRAFICO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "grafico/grafica/grafica_3_medio_tp.json",
+      "sector": "Gráfico",
+      "especialidad": "Gráfica",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_GRAFICO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "grafico/grafica/grafica_4_medio_tp.json",
+      "sector": "Gráfico",
+      "especialidad": "Gráfica",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_GRAFICO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/construccion/construccion_3_medio_tp.json",
+      "sector": "Construcción",
+      "especialidad": "Construcción",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 7,
+      "origen": "AulaMind_3.0_TP_CONSTRUCCION_Y_MENCIONES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/construccion/construccion_4_medio_tp_edificacion.json",
+      "sector": "Construcción",
+      "especialidad": "Construcción",
+      "curso": "4° medio TP",
+      "mencion": "Edificación",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_CONSTRUCCION_Y_MENCIONES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/construccion/construccion_4_medio_tp_terminaciones_de_la_construccion.json",
+      "sector": "Construcción",
+      "especialidad": "Construcción",
+      "curso": "4° medio TP",
+      "mencion": "Terminaciones de la Construcción",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_CONSTRUCCION_Y_MENCIONES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/construccion/construccion_4_medio_tp_obras_viales_e_infraestructura.json",
+      "sector": "Construcción",
+      "especialidad": "Construcción",
+      "curso": "4° medio TP",
+      "mencion": "Obras Viales e Infraestructura",
+      "oa_perfil": 0,
+      "modulos": 6,
+      "origen": "AulaMind_3.0_TP_CONSTRUCCION_Y_MENCIONES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "tecnologia_comunicaciones/programacion/programacion_3_medio_tp.json",
+      "sector": "Tecnología y Comunicaciones",
+      "especialidad": "Programación",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_TECNOLOGIA_COMUNICACIONES_RESTANTE_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "tecnologia_comunicaciones/programacion/programacion_4_medio_tp.json",
+      "sector": "Tecnología y Comunicaciones",
+      "especialidad": "Programación",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_TECNOLOGIA_COMUNICACIONES_RESTANTE_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "tecnologia_comunicaciones/telecomunicaciones/telecomunicaciones_3_medio_tp.json",
+      "sector": "Tecnología y Comunicaciones",
+      "especialidad": "Telecomunicaciones",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_TECNOLOGIA_COMUNICACIONES_RESTANTE_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "tecnologia_comunicaciones/telecomunicaciones/telecomunicaciones_4_medio_tp.json",
+      "sector": "Tecnología y Comunicaciones",
+      "especialidad": "Telecomunicaciones",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_TECNOLOGIA_COMUNICACIONES_RESTANTE_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/acuicultura/acuicultura_3_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Acuicultura",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/acuicultura/acuicultura_4_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Acuicultura",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/operaciones_portuarias/operaciones_portuarias_3_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Operaciones Portuarias",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/operaciones_portuarias/operaciones_portuarias_4_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Operaciones Portuarias",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/pesqueria/pesqueria_3_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Pesquería",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/pesqueria/pesqueria_4_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Pesquería",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/tripulacion_de_naves_mercantes_y_especiales/tripulacion_de_naves_mercantes_y_especiales_3_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Tripulación de Naves Mercantes y Especiales",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "maritimo/tripulacion_de_naves_mercantes_y_especiales/tripulacion_de_naves_mercantes_y_especiales_4_medio_tp.json",
+      "sector": "Marítimo",
+      "especialidad": "Tripulación de Naves Mercantes y Especiales",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MARITIMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/instalaciones_sanitarias/instalaciones_sanitarias_3_medio_tp.json",
+      "sector": "Construcción",
+      "especialidad": "Instalaciones Sanitarias",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 8,
+      "modulos": 0,
+      "origen": "AulaMind_3.0_TP_SECTOR_CONSTRUCCION_RESTANTES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/instalaciones_sanitarias/instalaciones_sanitarias_4_medio_tp.json",
+      "sector": "Construcción",
+      "especialidad": "Instalaciones Sanitarias",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 8,
+      "modulos": 0,
+      "origen": "AulaMind_3.0_TP_SECTOR_CONSTRUCCION_RESTANTES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/montaje_industrial/montaje_industrial_3_medio_tp.json",
+      "sector": "Construcción",
+      "especialidad": "Montaje Industrial",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 10,
+      "modulos": 0,
+      "origen": "AulaMind_3.0_TP_SECTOR_CONSTRUCCION_RESTANTES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/montaje_industrial/montaje_industrial_4_medio_tp.json",
+      "sector": "Construcción",
+      "especialidad": "Montaje Industrial",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 10,
+      "modulos": 0,
+      "origen": "AulaMind_3.0_TP_SECTOR_CONSTRUCCION_RESTANTES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/refrigeracion_y_climatizacion/refrigeracion_y_climatizacion_3_medio_tp.json",
+      "sector": "Construcción",
+      "especialidad": "Refrigeración y Climatización",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 9,
+      "modulos": 0,
+      "origen": "AulaMind_3.0_TP_SECTOR_CONSTRUCCION_RESTANTES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "construccion/refrigeracion_y_climatizacion/refrigeracion_y_climatizacion_4_medio_tp.json",
+      "sector": "Construcción",
+      "especialidad": "Refrigeración y Climatización",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 9,
+      "modulos": 0,
+      "origen": "AulaMind_3.0_TP_SECTOR_CONSTRUCCION_RESTANTES_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "confeccion/vestuario_y_confeccion_textil/vestuario_y_confeccion_textil_3_medio_tp.json",
+      "sector": "Confección",
+      "especialidad": "Vestuario y Confección Textil",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_VESTUARIO_CONFECCION_TEXTIL_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "confeccion/vestuario_y_confeccion_textil/vestuario_y_confeccion_textil_4_medio_tp.json",
+      "sector": "Confección",
+      "especialidad": "Vestuario y Confección Textil",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_VESTUARIO_CONFECCION_TEXTIL_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "minero/asistencia_en_geologia/asistencia_en_geologia_3_medio_tp.json",
+      "sector": "Minero",
+      "especialidad": "Asistencia en Geología",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MINERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "minero/asistencia_en_geologia/asistencia_en_geologia_4_medio_tp.json",
+      "sector": "Minero",
+      "especialidad": "Asistencia en Geología",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MINERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "minero/explotacion_minera/explotacion_minera_3_medio_tp.json",
+      "sector": "Minero",
+      "especialidad": "Explotación Minera",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MINERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "minero/explotacion_minera/explotacion_minera_4_medio_tp.json",
+      "sector": "Minero",
+      "especialidad": "Explotación Minera",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MINERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "minero/metalurgia_extractiva/metalurgia_extractiva_3_medio_tp.json",
+      "sector": "Minero",
+      "especialidad": "Metalurgia Extractiva",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_MINERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "minero/metalurgia_extractiva/metalurgia_extractiva_4_medio_tp.json",
+      "sector": "Minero",
+      "especialidad": "Metalurgia Extractiva",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_MINERO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "hoteleria_turismo/servicios_de_hoteleria/servicios_de_hoteleria_3_medio_tp.json",
+      "sector": "Hotelería y Turismo",
+      "especialidad": "Servicios de Hotelería",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_HOTELERIA_TURISMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "hoteleria_turismo/servicios_de_hoteleria/servicios_de_hoteleria_4_medio_tp.json",
+      "sector": "Hotelería y Turismo",
+      "especialidad": "Servicios de Hotelería",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_HOTELERIA_TURISMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "hoteleria_turismo/servicios_de_turismo/servicios_de_turismo_3_medio_tp.json",
+      "sector": "Hotelería y Turismo",
+      "especialidad": "Servicios de Turismo",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_HOTELERIA_TURISMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "hoteleria_turismo/servicios_de_turismo/servicios_de_turismo_4_medio_tp.json",
+      "sector": "Hotelería y Turismo",
+      "especialidad": "Servicios de Turismo",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_HOTELERIA_TURISMO_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "alimentacion/gastronomia/gastronomia_3_medio_tp.json",
+      "sector": "Alimentación",
+      "especialidad": "Gastronomía",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_GASTRONOMIA_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "alimentacion/gastronomia/gastronomia_4_medio_tp_cocina.json",
+      "sector": "Alimentación",
+      "especialidad": "Gastronomía",
+      "curso": "4° medio TP",
+      "mencion": "Cocina",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_GASTRONOMIA_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "alimentacion/gastronomia/gastronomia_4_medio_tp_pasteleria_y_reposteria.json",
+      "sector": "Alimentación",
+      "especialidad": "Gastronomía",
+      "curso": "4° medio TP",
+      "mencion": "Pastelería y Repostería",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_GASTRONOMIA_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "salud_educacion/atencion_de_enfermeria/atencion_de_enfermeria_3_medio_tp.json",
+      "sector": "Salud y Educación",
+      "especialidad": "Atención de Enfermería",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_SALUD_EDUCACION_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "salud_educacion/atencion_de_enfermeria/atencion_de_enfermeria_4_medio_tp_enfermeria.json",
+      "sector": "Salud y Educación",
+      "especialidad": "Atención de Enfermería",
+      "curso": "4° medio TP",
+      "mencion": "Enfermería",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_SALUD_EDUCACION_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "salud_educacion/atencion_de_enfermeria/atencion_de_enfermeria_4_medio_tp_adulto_mayor.json",
+      "sector": "Salud y Educación",
+      "especialidad": "Atención de Enfermería",
+      "curso": "4° medio TP",
+      "mencion": "Adulto Mayor",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_SALUD_EDUCACION_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "salud_educacion/atencion_de_parvulos/atencion_de_parvulos_3_medio_tp.json",
+      "sector": "Salud y Educación",
+      "especialidad": "Atención de Párvulos",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_SALUD_EDUCACION_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "salud_educacion/atencion_de_parvulos/atencion_de_parvulos_4_medio_tp.json",
+      "sector": "Salud y Educación",
+      "especialidad": "Atención de Párvulos",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_SALUD_EDUCACION_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "electricidad/electricidad/electricidad_3_medio_tp.json",
+      "sector": "Electricidad",
+      "especialidad": "Electricidad",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 8,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_ELECTRICIDAD_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "electricidad/electricidad/electricidad_4_medio_tp.json",
+      "sector": "Electricidad",
+      "especialidad": "Electricidad",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 8,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_ELECTRICIDAD_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "electricidad/electronica/electronica_3_medio_tp.json",
+      "sector": "Electricidad",
+      "especialidad": "Electrónica",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 7,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_SECTOR_ELECTRICIDAD_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "electricidad/electronica/electronica_4_medio_tp.json",
+      "sector": "Electricidad",
+      "especialidad": "Electrónica",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 7,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_SECTOR_ELECTRICIDAD_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "alimentacion/elaboracion_industrial_de_alimentos/elaboracion_industrial_de_alimentos_3_medio_tp.json",
+      "sector": "Alimentación",
+      "especialidad": "Elaboración Industrial de Alimentos",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_ELABORACION_INDUSTRIAL_ALIMENTOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "alimentacion/elaboracion_industrial_de_alimentos/elaboracion_industrial_de_alimentos_4_medio_tp.json",
+      "sector": "Alimentación",
+      "especialidad": "Elaboración Industrial de Alimentos",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_ELABORACION_INDUSTRIAL_ALIMENTOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "administracion/contabilidad/contabilidad_3_medio_tp.json",
+      "sector": "Administración",
+      "especialidad": "Contabilidad",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_CONTABILIDAD_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "administracion/contabilidad/contabilidad_4_medio_tp.json",
+      "sector": "Administración",
+      "especialidad": "Contabilidad",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_CONTABILIDAD_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "tecnologia_comunicaciones/conectividad_y_redes/conectividad_y_redes_3_medio_tp.json",
+      "sector": "Tecnología y Comunicaciones",
+      "especialidad": "Conectividad y Redes",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 11,
+      "modulos": 4,
+      "origen": "AulaMind_3.0_TP_Conectividad_y_Redes_COMPLETADO.zip"
+    },
+    {
+      "archivo": "tecnologia_comunicaciones/conectividad_y_redes/conectividad_y_redes_4_medio_tp.json",
+      "sector": "Tecnología y Comunicaciones",
+      "especialidad": "Conectividad y Redes",
+      "curso": "4° medio TP",
+      "mencion": "",
+      "oa_perfil": 11,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_Conectividad_y_Redes_COMPLETADO.zip"
+    },
+    {
+      "archivo": "administracion/administracion/administracion_3_medio_tp.json",
+      "sector": "Administración",
+      "especialidad": "Administración",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 6,
+      "origen": "AulaMind_3.0_TP_ADMINISTRACION_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "administracion/administracion/administracion_4_medio_tp_logistica.json",
+      "sector": "Administración",
+      "especialidad": "Administración",
+      "curso": "4° medio TP",
+      "mencion": "Logística",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_ADMINISTRACION_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "administracion/administracion/administracion_4_medio_tp_recursos_humanos.json",
+      "sector": "Administración",
+      "especialidad": "Administración",
+      "curso": "4° medio TP",
+      "mencion": "Recursos Humanos",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_ADMINISTRACION_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "agropecuario/agropecuaria/agropecuaria_3_medio_tp.json",
+      "sector": "Agropecuario",
+      "especialidad": "Agropecuaria",
+      "curso": "3° medio TP",
+      "mencion": "",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_AGROPECUARIA_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "agropecuario/agropecuaria/agropecuaria_4_medio_tp_agricultura.json",
+      "sector": "Agropecuario",
+      "especialidad": "Agropecuaria",
+      "curso": "4° medio TP",
+      "mencion": "Agricultura",
+      "oa_perfil": 0,
+      "modulos": 5,
+      "origen": "AulaMind_3.0_TP_AGROPECUARIA_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "agropecuario/agropecuaria/agropecuaria_4_medio_tp_pecuaria.json",
+      "sector": "Agropecuario",
+      "especialidad": "Agropecuaria",
+      "curso": "4° medio TP",
+      "mencion": "Pecuaria",
+      "oa_perfil": 0,
+      "modulos": 6,
+      "origen": "AulaMind_3.0_TP_AGROPECUARIA_MODULOS_3Y4_MEDIO.zip"
+    },
+    {
+      "archivo": "agropecuario/agropecuaria/agropecuaria_4_medio_tp_vitivinicola.json",
+      "sector": "Agropecuario",
+      "especialidad": "Agropecuaria",
+      "curso": "4° medio TP",
+      "mencion": "Vitivinícola",
+      "oa_perfil": 0,
+      "modulos": 6,
+      "origen": "AulaMind_3.0_TP_AGROPECUARIA_MODULOS_3Y4_MEDIO.zip"
+    }
+  ]
+}

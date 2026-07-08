@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Construcciones Metálicas",
+  "curso": "4° medio TP",
+  "menciones": [],
+  "modulos": [
+    {
+      "codigo": "MM-COME-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MM-COME-M05",
+      "nombre": "Armado y montaje de estructuras metálicas"
+    },
+    {
+      "codigo": "MM-COME-M06",
+      "nombre": "Fabricación de elementos de estructuras metálicas"
+    },
+    {
+      "codigo": "MM-COME-M07",
+      "nombre": "Protección y terminación de superficies metálicas"
+    },
+    {
+      "codigo": "MM-COME-M08",
+      "nombre": "Control de calidad de construcciones metálicas"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

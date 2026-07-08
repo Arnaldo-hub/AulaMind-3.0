@@ -1,0 +1,16 @@
+[
+  {
+    "especialidad": "Programación",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría curricular oficial final"
+  },
+  {
+    "especialidad": "Telecomunicaciones",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría curricular oficial final"
+  }
+]

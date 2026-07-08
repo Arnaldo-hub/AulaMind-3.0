@@ -1,0 +1,106 @@
+{
+  "asignatura": "Matemática",
+  "curso": "mat 8° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Números y operaciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >>Representan la multiplicación por -1 de manera concreta; que buscan favorecer el por ejemplo: con situaciones o procesos inversos (estar desarrollo integral de los Mostrar que comprenden en contra de, reflexión de luz, etc.). estudiantes. En cada unidad la multiplicación y la se explicitan los Objetivos división de números >>Desarrollan la regla de los signos en ejemplos concretos de Aprendizaje a trabajar. enteros: o en la recta numérica: + • + = +; + • - = -; - • + = Además, se especifica el -; - • - = +. número del Objetivo en >>Representándolas la Base Curricular de la de manera concreta, >>Representan la multiplicación de números enteros asignatura. pictórica y simbólica. positivos y negativos de forma pictórica (recta numérica) o simbólica. >>Aplicando Indicadores de procedimientos usados >>Aplican la regla de los signos de las multiplicaciones"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 >>Representan las cuatro operaciones con fracciones varios indicadores, dado negativas y decimales negativos en la recta numérica. que existen múltiples Utilizar las operaciones de multiplicación >>Realizan ejercicios rutinarios que involucren las cuatro desempeños que y división con los operaciones con fracciones y decimales. pueden demostrar que un aprendizaje ha sido números racionales >>Reconocen la operación matemática adecuada en adquirido. en el contexto de problemas sencillos para resolverlos. Los indicadores referentes la resolución de a un solo aprendizaje no >>Resuelven problemas que involucren la multiplicación problemas: tienen el mismo nivel y la división de números racionales. de dificultad. Se espera >>Representándolos en >>Utilizan diferente notación simbólica para un número que exista una secuencia la recta numérica. racional (decimal, fraccionaria, mixta). cognitiva, que comience >>Involucrando desde habilidades básicas diferentes conjuntos y termine en habilidades superiores. Adicionalmente, numéricos dan espacio para diversas (fracciones, decimales formas de aprendizaje y y números enteros). distintas metodologías. MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 >>Representan potencias de base y exponente natural hasta 3 con material concreto, como candados con Explicar la clave de dígitos, trompo poligonal con números, dados multiplicación y la didácticos, diagramas de árbol, etc. división de potencias de base natural y >>Representan pictóricamente la multiplicación de exponente natural potencias de igual base o de igual exponente natural hasta 3, de manera hasta 3. concreta, pictórica y >>Representan la división de potencias de igual base o simbólica. de igual exponente natural hasta 3. >>Descubren, comunican y aplican las propiedades de la multiplicación y división de potencias, incluyendo el significado del exponente cero, en forma pictórica o simbólica. >>Representan la potencia de potencias de manera concreta (combinación de máquinas que amplifican imágenes). >>Relacionan situaciones reales con multiplicación, división y potencias de potencias. >>Resuelven ejercicios rutinarios, aplicando la multiplicación, la división y la potenciación de potencias. 28 MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Mostrar que comprenden las raíces cuadradas de números naturales: >>Estimándolas de manera intuitiva. >>Representándolas de manera concreta, pictórica y simbólica. >>Aplicándolo a situaciones geométricas y en la vida diaria."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 >>Identifican en expresiones de la vida ejemplos de"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Mostrar que comprenden las operaciones de expresiones algebraicas: >>Representándolas de manera pictórica y simbólica. >>Relacionándolas con el área de cuadrados, rectángulos y volúmenes de paralelepípedos. >>Determinando formas factorizadas."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Mostrar que comprenden la noción de función por medio de un cambio lineal: >>Utilizando tablas >>Usando metáforas de máquinas >>Estableciendo reglas entre x e y >>Representando de manera gráfica (plano cartesiano, diagramas de Venn), de manera manual y/o con software educativo."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 de 8° básico. Indican la relación de la actividad con"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Resolver inecuaciones lineales con coeficientes racionales en el contexto de la resolución de problemas, por medio de representaciones gráficas, simbólicas, de manera manual y/o con software educativo."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 expresado mediante ecuaciones recursivas de Mostrar que comprenden la función afín: la forma f(x + 1) – f(x) = c. >>Generalizándola como la suma de una constante con una función lineal. >>Trasladando funciones lineales en el plano cartesiano. >>Determinando el cambio constante de un intervalo a otro, de manera gráfica y simbólica, de manera manual y/o con software educativo. >>Relacionándola con el interés simple. >>Utilizándola para resolver problemas de la vida diaria y de otras asignaturas. Habilidad OA e >>Explicar y fundamentar: --Soluciones propias y los procedimientos utilizados. --Resultados mediante definiciones, axiomas, propiedades y teorema. Actitud OA D >>Trabajar en equipo, en forma responsable y proactiva, ayudando a los otros, considerando y respetando los aportes de todos, y manifestando disposición a entender sus argumentos en las soluciones de los problemas. Tiempo y material Actividad Sugerida Materiales: Inicio de la clase: Huinchas de medir, >>Una breve repetición de las propiedades de la función afín, incluyendo la regla, fichas o botones, representación de tablas y gráficos. Inicio hojas cuadriculadas. >>Repartición y representación de los materiales e instrucción de uso. >>Organización de la clase en parejas que se denominan con números crecientes, Tiempo: partiendo del “grupo 1”. 15 minutos MATEMÁTICA |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Geometría, Medición",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Desarrollar las fórmulas para encontrar el área de superficies y el volumen de prismas rectos con diferentes bases y cilindros: >>Estimando de manera intuitiva área de superficie y volumen >>Desplegando la red de prismas rectos para encontrar la fórmula del área de superficie >>Transfiriendo la fórmula del volumen de un cubo (base por altura) en prismas diversos y cilindros >>Aplicando las fórmulas a la resolución de problemas geométricos y de la vida diaria"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 de 7° básico y"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Describir la posición y el movimiento (traslaciones, rotaciones y reflexiones) de figuras 2D, de manera manual y/o con software educativo, utilizando: >>Los vectores para la traslación. >>Los ejes del plano cartesiano como ejes de reflexión. >>Los puntos del plano para las rotaciones."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Componer rotaciones, traslaciones y reflexiones en el plano cartesiano y en el espacio, de manera manual y/o con software educativo, y aplicar a las simetrías de polígonos y poliedros, y a la resolución de problemas geométricos relacionados con el arte."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Números y operaciones, Datos y probabilidades",
+      "oa": [
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Mostrar que comprenden las medidas de posición, percentiles y cuartiles: >>Identificando la población que está sobre o bajo el percentil >>Representándolas con diagramas, incluyendo el diagrama de cajón, de manera manual y/o con software educativo >>Utilizándolas para comparar poblaciones"
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "OA 16 Evaluar la forma en que los datos están presentados: >>Comparando la información de los mismos datos representada en distintos tipos de gráficos para determinar fortalezas y debilidades de cada uno. >>Justificando la elección del gráfico para una determinada situación y su correspondiente conjunto de datos. >>Detectando manipulaciones de gráficos para representar datos."
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "OA 17 Explicar el principio combinatorio multiplicativo: >>A partir de situaciones concretas. >>Representándolo con tablas y árboles regulares, de manera manual y/o con software educativo. >>Utilizándolo para calcular la probabilidad de un evento compuesto."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >>Representan la multiplicación por -1 de manera concreta; que buscan favorecer el por ejemplo: con situaciones o procesos inversos (estar desarrollo integral de los Mostrar que comprenden en contra de, reflexión de luz, etc.). estudiantes. En cada unidad la multiplicación y la se explicitan los Objetivos división de números >>Desarrollan la regla de los signos en ejemplos concretos de Aprendizaje a trabajar. enteros: o en la recta numérica: + • + = +; + • - = -; - • + = Además, se especifica el -; - • - = +. número del Objetivo en >>Representándolas la Base Curricular de la de manera concreta, >>Representan la multiplicación de números enteros asignatura. pictórica y simbólica. positivos y negativos de forma pictórica (recta numérica) o simbólica. >>Aplicando Indicadores de procedimientos usados >>Aplican la regla de los signos de las multiplicaciones"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 >>Representan las cuatro operaciones con fracciones varios indicadores, dado negativas y decimales negativos en la recta numérica. que existen múltiples Utilizar las operaciones de multiplicación >>Realizan ejercicios rutinarios que involucren las cuatro desempeños que y división con los operaciones con fracciones y decimales. pueden demostrar que un aprendizaje ha sido números racionales >>Reconocen la operación matemática adecuada en adquirido. en el contexto de problemas sencillos para resolverlos. Los indicadores referentes la resolución de a un solo aprendizaje no >>Resuelven problemas que involucren la multiplicación problemas: tienen el mismo nivel y la división de números racionales. de dificultad. Se espera >>Representándolos en >>Utilizan diferente notación simbólica para un número que exista una secuencia la recta numérica. racional (decimal, fraccionaria, mixta). cognitiva, que comience >>Involucrando desde habilidades básicas diferentes conjuntos y termine en habilidades superiores. Adicionalmente, numéricos dan espacio para diversas (fracciones, decimales formas de aprendizaje y y números enteros). distintas metodologías. MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 >>Representan potencias de base y exponente natural hasta 3 con material concreto, como candados con Explicar la clave de dígitos, trompo poligonal con números, dados multiplicación y la didácticos, diagramas de árbol, etc. división de potencias de base natural y >>Representan pictóricamente la multiplicación de exponente natural potencias de igual base o de igual exponente natural hasta 3, de manera hasta 3. concreta, pictórica y >>Representan la división de potencias de igual base o simbólica. de igual exponente natural hasta 3. >>Descubren, comunican y aplican las propiedades de la multiplicación y división de potencias, incluyendo el significado del exponente cero, en forma pictórica o simbólica. >>Representan la potencia de potencias de manera concreta (combinación de máquinas que amplifican imágenes). >>Relacionan situaciones reales con multiplicación, división y potencias de potencias. >>Resuelven ejercicios rutinarios, aplicando la multiplicación, la división y la potenciación de potencias. 28 MATEMÁTICA |"
+        }
+      ]
+    }
+  ]
+}

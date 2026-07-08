@@ -1,0 +1,11 @@
+Flask
+Flask-SQLAlchemy
+SQLAlchemy
+python-dotenv
+openai>=1.70.0
+openpyxl
+psycopg2-binary
+gunicorn
+requests
+
+alembic>=1.13

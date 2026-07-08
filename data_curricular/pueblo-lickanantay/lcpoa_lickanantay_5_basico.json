@@ -1,0 +1,100 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Lickanantay",
+  "curso": "5° básico",
+  "nota_codigos": "Los códigos OA-Ux-xx son identificadores internos de asociación por unidad; el Programa MINEDUC presenta los OA por eje/contexto en la matriz de cada unidad.",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Ritualidad funeraria, juego tradicional y carnaval lickanantay",
+      "oa": [
+        {
+          "codigo": "OA-U1-01",
+          "descripcion": "Disfrutar y comprender relatos fundacionales o cosmogónicos de diferentes pueblos indígenas en Chile y de otras culturas significativas para su contexto, comentando la importancia que tienen para los pueblos a los que pertenecen."
+        },
+        {
+          "codigo": "OA-U1-02",
+          "descripcion": "Comprender textos propios de su cultura, referidos a la realidad familiar, local y territorial, comentando algunos elementos significativos y reconociendo palabras en lengua indígena o en castellano culturalmente significativas."
+        },
+        {
+          "codigo": "OA-U1-03",
+          "descripcion": "Reflexionar sobre la importancia del territorio para la visión de mundo y las identidades en los distintos pueblos indígenas."
+        },
+        {
+          "codigo": "OA-U1-04",
+          "descripcion": "Analizar relatos fundacionales de diferentes pueblos indígenas en Chile y de otras culturas significativas para su contexto, considerando las diferentes formas de comprender el origen del mundo y su ordenamiento."
+        },
+        {
+          "codigo": "OA-U1-05",
+          "descripcion": "Valorar el significado y sentido de la relación entre el ser humano, la naturaleza y el cosmos, vinculado a la ciencia desde la perspectiva indígena."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Espacios sagrados, celebraciones y técnica ancestral de techamiento",
+      "oa": [
+        {
+          "codigo": "OA-U2-01",
+          "descripcion": "Desarrollar diálogos, conversaciones y exposiciones breves referidas a distintos aspectos de la propia cultura, incorporando algunas palabras en lengua indígena o en castellano culturalmente significativas."
+        },
+        {
+          "codigo": "OA-U2-02",
+          "descripcion": "Valorar la existencia de diferentes pueblos indígenas y sus lenguas dentro del territorio chileno, favoreciendo el diálogo intercultural."
+        },
+        {
+          "codigo": "OA-U2-03",
+          "descripcion": "Analizar diferentes eventos socioculturales y ceremoniales de distintos pueblos indígenas en Chile y de otras culturas significativas para su contexto."
+        },
+        {
+          "codigo": "OA-U2-04",
+          "descripcion": "Valorar el patrimonio cultural y natural, material e inmaterial, de su comunidad, territorio y pueblo indígena que corresponda, aportando a su cuidado."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Valores comunitarios, espiritualidad y telar tradicional lickanantay",
+      "oa": [
+        {
+          "codigo": "OA-U3-01",
+          "descripcion": "Desarrollar la escritura para transmitir mensajes que incluyan algunas palabras o expresiones en lengua indígena, o en castellano, culturalmente significativas, en diversas situaciones del medio natural, social y cultural."
+        },
+        {
+          "codigo": "OA-U3-02",
+          "descripcion": "Valorar la existencia de diferentes pueblos indígenas y sus lenguas dentro del territorio chileno, favoreciendo el diálogo intercultural."
+        },
+        {
+          "codigo": "OA-U3-03",
+          "descripcion": "Comparar los valores comunitarios y espirituales de los diversos pueblos indígenas en Chile y su aporte a la sociedad chilena."
+        },
+        {
+          "codigo": "OA-U3-04",
+          "descripcion": "Expresarse mediante manifestaciones artísticas, considerando los aportes tradicionales y actuales de las culturas indígenas, valorando su importancia como medio para comunicar la cosmovisión y mantener viva su cultura."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Lengua kunsa/ckunsa, identidad y cultores de las tradiciones",
+      "oa": [
+        {
+          "codigo": "OA-U4-01",
+          "descripcion": "Reconocer los usos de la lengua indígena en los espacios comunitarios, valorando su importancia para la identidad del pueblo que corresponda."
+        },
+        {
+          "codigo": "OA-U4-02",
+          "descripcion": "Utilizar recursos tecnológicos disponibles para registrar y narrar situaciones personales o acontecimientos de la vida comunitaria y describir prácticas culturales, incorporando palabras o expresiones culturalmente significativas."
+        },
+        {
+          "codigo": "OA-U4-03",
+          "descripcion": "Reflexionar sobre aspectos centrales de la historia de otros pueblos indígenas, comprendiendo elementos comunes y diferencias con la historia del pueblo que corresponda."
+        },
+        {
+          "codigo": "OA-U4-04",
+          "descripcion": "Valorar la existencia de personas que portan saberes y conocimientos ancestrales que relevan la visión de mundo propia de cada pueblo indígena."
+        },
+        {
+          "codigo": "OA-U4-05",
+          "descripcion": "Valorar las técnicas y actividades de producción, así como las personas que las realizan, considerando su importancia para la permanencia y proyección material y cultural del pueblo indígena en equilibrio con la naturaleza."
+        }
+      ]
+    }
+  ]
+}

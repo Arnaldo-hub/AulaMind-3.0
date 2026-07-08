@@ -1,0 +1,50 @@
+{
+  "asignatura": "Música",
+  "curso": "2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Escuchar cualidades del Canciones que imitan sonidos sonido (altura, timbre, intensidad, duración) y 1 Actividades elementos del lenguaje El profesor invita a escuchar una canción cuya temática sea imitar musical (pulsos, acentos, patrones, secciones), y sonidos diversos. Se sugieren: › La orquesta de los animales del grupo Zapallo Consisten en un listado de actividades, representarlos de distintas formas. › Guido el guitarrista del grupo Acuarela Luego comentan la canción y los sonidos a los que alude y escritas en un lenguaje simple y cen"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Presentar su trabajo musical, › Cantan y tocan repertorio aprendido, incorporando las indi- en forma individual y grupal, caciones del director (comienzos, finales, tempo, entre otros). compartiendo con el curso y la › Respetan la participación de todos al presentar su trabajo comunidad. musical (esperar turnos, conocer entradas, etcétera). › Participan con seguridad en su trabajo musical. 86 Programa de Estudio / 2º básico Ejemplos de actividades"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Interpretar y crear música",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar sensaciones, emocio- › Se expresan corporalmente (mímicas, coreografías, expre- nes e ideas que les sugieren el sión libre, etcétera) según lo que les sugieren los sonidos y la sonido y la música escuchada, música. usando diversos medios expre- › Utilizan la expresión visual (dibujos, pinturas, etcétera) se- sivos (verbal, corporal, musical, gún lo que les sugieren los sonidos y la música. visual). › Utilizan la expresión verbal (oral o escrita) según lo que les sugieren los sonidos y la música. › Escuchan atentamente variados ejemplos musicales."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Identificar y describir experien- › Comentan acerca de sus propias experiencias sonoras. cias musicales y sonoras en su › Identifican características relevantes en algunas experien- propia vida. cias musicales (instrumentos, rasgos estilísticos, contexto, entre otros). › Describen experiencias musicales de su vida. 60 Programa de Estudio / 2º básico Ejemplos de actividades"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Cantar al unísono y tocar instru- › Participan en una variedad de canciones, versos rítmicos, mentos de percusión convencio- rondas y juegos musicales. nales y no convencionales. › Acompañan libremente canciones aprendidas con percusión corporal (palmas, pies u otros). › Cantan al unísono. › Cantan con naturalidad, evitando forzar la voz. › Reproducen patrones rítmicos. › Tocan con instrumentos de percusión convencionales y no convencionales. › Demuestran responsabilidad y cuidado con sus instrumen- tos musicales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explorar e improvisar ideas › Exploran las posibilidades sonoras de su voz. musicales con diversos medios › Participan en juegos de imitación y creación musical. sonoros (la voz, instrumentos › Improvisan ideas musicales breves (patrones, ostinati, secuen- convencionales y no convencio- cias sonoras). nales, entre otros), usando las › Incorporan el silencio y los sonidos descubiertos a sus crea- cualidades del sonido y elemen- ciones e improvisaciones musicales. tos del lenguaje musical."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+AulaMind Enterprise 3.0 — Ciencias Naturales faltantes, Lote 02
+Cursos: 4° básico, 5° básico, 8° básico y 2° medio.
+Validación: JSON, curso, asignatura, nombres de unidades y OA asociados.
+
+ciencias_4_basico.json: 4 unidades | 17 OA asignados
+ciencias_5_basico.json: 4 unidades | 14 OA asignados
+ciencias_8_basico.json: 4 unidades | 15 OA asignados
+ciencias_2_medio.json: 11 unidades | 18 OA asignados

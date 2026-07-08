@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Hotelería y Turismo",
+  "especialidad": "Servicios de Hotelería",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "HT-HOTE-M01",
+      "nombre": "Atención al cliente en servicios de hotelería"
+    },
+    {
+      "codigo": "HT-HOTE-M02",
+      "nombre": "Servicio de habitaciones"
+    },
+    {
+      "codigo": "HT-HOTE-M03",
+      "nombre": "Servicio de recepción y reservas"
+    },
+    {
+      "codigo": "HT-HOTE-M04",
+      "nombre": "Información turística y orientación al huésped"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura curricular del lote preparada para auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

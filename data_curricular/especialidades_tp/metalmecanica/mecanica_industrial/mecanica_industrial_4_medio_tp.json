@@ -1,0 +1,35 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Mecánica Industrial",
+  "curso": "4° medio TP",
+  "menciones": [
+    "Mantenimiento Electromecánico",
+    "Máquinas-Herramientas",
+    "Matricería"
+  ],
+  "modulos": [
+    {
+      "codigo": "MM-MEIN-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MM-MEIN-M05",
+      "nombre": "Mantenimiento electromecánico"
+    },
+    {
+      "codigo": "MM-MEIN-M06",
+      "nombre": "Operación de máquinas-herramientas"
+    },
+    {
+      "codigo": "MM-MEIN-M07",
+      "nombre": "Fabricación y ajuste de matrices"
+    },
+    {
+      "codigo": "MM-MEIN-M08",
+      "nombre": "Diagnóstico y control de sistemas mecánicos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

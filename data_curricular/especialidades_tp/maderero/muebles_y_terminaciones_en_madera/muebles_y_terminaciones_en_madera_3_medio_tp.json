@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Maderero",
+  "especialidad": "Muebles y Terminaciones en Madera",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-MUMA-M01",
+      "nombre": "Interpretación de planos y cubicación de materiales"
+    },
+    {
+      "codigo": "MA-MUMA-M02",
+      "nombre": "Preparación y mecanizado de madera"
+    },
+    {
+      "codigo": "MA-MUMA-M03",
+      "nombre": "Armado de estructuras y muebles de madera"
+    },
+    {
+      "codigo": "MA-MUMA-M04",
+      "nombre": "Mantenimiento básico de máquinas y herramientas"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura preparada para auditoría final contra Programa de Estudio oficial antes del consolidado definitivo."
+}

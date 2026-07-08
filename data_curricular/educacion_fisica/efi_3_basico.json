@@ -1,0 +1,70 @@
+{
+  "asignatura": "Educación Física y Salud",
+  "curso": "3° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Control corporal y habilidades motrices",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Demostrar capacidad para ejecutar de forma combinada las habilidades motrices básicas de locomoción, manipulación y estabilidad en diferentes direcciones, alturas y niveles."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Ejecutar acciones motrices que presenten una solución a un problema, reconociendo diversos criterios como tiempo, espacio y número de personas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Ejecutar movimientos o elementos de danzas tradicionales de forma coordinada, utilizando actividades rítmicas y lúdicas."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Juegos predeportivos y estrategias",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Practicar juegos predeportivos con reglas y espacios adaptados, aplicando principios generales de juego como mantener la posesión, avanzar y marcar."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Ejecutar actividades físicas y juegos en diferentes entornos, aplicando medidas para conservar limpios y ordenados los espacios."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Practicar actividades físicas y juegos colectivos demostrando responsabilidad, liderazgo y respeto hacia los demás."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Condición física y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Ejecutar actividades físicas de intensidad moderada a vigorosa que desarrollen la condición física por medio de resistencia cardiovascular, fuerza, flexibilidad y velocidad."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Practicar de manera regular y autónoma actividades físicas de intensidad moderada a vigorosa en distintos contextos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Describir y registrar las respuestas corporales provocadas por la práctica de actividad física, como aumento de frecuencia cardíaca y respiratoria."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Hábitos saludables y seguridad",
+      "oa": [
+        {
+          "codigo": "OA 9",
+          "descripcion": "Practicar actividades físicas en forma segura, demostrando hábitos de higiene, hidratación, alimentación saludable y cuidado corporal."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Practicar actividades físicas demostrando comportamientos seguros, como calentamiento, procedimientos ante accidentes y uso correcto de instalaciones e implementos."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+AulaMind Enterprise 3.0 — Educación Parvularia
+
+Cobertura: NT1 / Prekínder y NT2 / Kínder
+Ámbitos oficiales: 3
+Núcleos oficiales: 8
+JSON estructurales: 6
+
+La estructura de ámbitos y núcleos corresponde a las Bases Curriculares de Educación Parvularia vigentes desde 2019.
+Los OA del Nivel de Transición son comunes al nivel NT; NT1 y NT2 se diferencian pedagógicamente mediante desempeños e indicadores del Programa Pedagógico.
+Los OA literales completos no fueron inventados y quedan pendientes de extracción integral por núcleo.

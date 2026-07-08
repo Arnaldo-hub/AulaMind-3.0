@@ -1,0 +1,30 @@
+@import url('/static/css/dashboard.css');
+
+.evaluation-container,
+.evaluation-form,
+.evaluation-panel,
+.form-card,
+.result-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, .08);
+    margin-bottom: 24px;
+}
+
+.main-content { min-height: 100vh; }
+.topbar { margin-bottom: 28px; }
+.topbar h1 { font-size: 2rem; margin: 10px 0; }
+.hero-badge { display: inline-block; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d8e0ec;
+    border-radius: 10px;
+    font: inherit;
+    margin-top: 6px;
+    margin-bottom: 14px;
+}
+
+button { font: inherit; }

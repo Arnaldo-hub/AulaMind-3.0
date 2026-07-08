@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        AulaMind Enterprise | Planificación IA
+
+    </title>
+
+    <!--======================================================
+    FONTS
+    =======================================================-->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!--======================================================
+    ICONOS
+    =======================================================-->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!--======================================================
+    CSS
+    =======================================================-->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/planning.css') }}">
+
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!--======================================================
+    SIDEBAR
+    =======================================================-->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+
+            <img
+                src="{{ url_for('static', filename='img/logo.png') }}"
+                alt="AulaMind"
+                class="sidebar-logo">
+
+            <div>
+
+                <h2>
+
+                    AulaMind
+
+                </h2>
+
+                <span>
+
+                    Enterprise 3.0
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <nav class="sidebar-menu">
+
+            <a href="/">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+
+                    Panel Principal
+
+                </span>
+
+            </a>
+
+            <a
+                href="/planning"
+                class="active">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>
+
+                    Planificaciones
+
+                </span>
+
+            </a>
+
+            <a href="/evaluation">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <span>
+
+                    Evaluaciones
+
+                </span>
+
+            </a>
+
+            <a href="/curriculum">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>
+
+                    Currículum
+
+                </span>
+
+            </a>
+
+            <a href="/guides">
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>
+
+                    Guías
+
+                </span>
+
+            </a>
+
+            <a href="/rubrics">
+
+                <i class="fa-solid fa-table-list"></i>
+
+                <span>
+
+                    Rúbricas
+
+                </span>
+
+            </a>
+
+            <a href="/settings">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+
+                    Configuración
+
+                </span>
+
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="user-card">
+
+                <div class="avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        {{ session.get('user_name','Profesor') }}
+
+                    </strong>
+
+                    <small>
+
+                        Docente
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!--======================================================
+    CONTENIDO
+    =======================================================-->
+
+    <main class="main-content">
+
+        <!--==================================================
+        HEADER
+        ==================================================-->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Planificación IA
+
+                </h1>
+
+                <p>
+
+                    Generador Inteligente de Planificaciones
+
+                </p>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <button
+                    class="icon-button">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </button>
+
+                <button
+                    class="icon-button">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!--==================================================
+        HERO
+        ==================================================-->
+
+        <section class="hero">
+
+            <div class="hero-left">
+
+                <h2>
+
+                    Planificación Inteligente con IA
+
+                </h2>
+
+                <p>
+
+                    Seleccione el curso,
+                    la asignatura,
+                    la unidad
+                    y los Objetivos de Aprendizaje
+                    para generar automáticamente una planificación alineada con el Currículum Nacional.
+
+                </p>
+
+            </div>
+
+            <div class="hero-right">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+        </section>
+
+        <!--==================================================
+        FORMULARIO
+        ==================================================-->
+
+        <section class="planning-card">
+
+            <form id="planningForm">
+
+                <div class="planning-grid">
+
+                    <!--======================================
+                    CURSO
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Curso
+
+                        </label>
+
+                        <select
+                            id="course"
+                            name="course">
+
+                            <option value="">
+
+                                Cargando cursos...
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!--======================================
+                    ASIGNATURA
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Asignatura
+
+                        </label>
+
+                        <select
+                            id="subject"
+                            name="subject"
+                            disabled>
+
+                            <option value="">
+
+                                Seleccione un curso...
+
+                            </option>
+
+                        </select>
+
+                    </div>
+                                        <!--======================================
+                    UNIDAD
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Unidad
+
+                        </label>
+
+                        <select
+                            id="unit"
+                            name="unit"
+                            disabled>
+
+                            <option value="">
+
+                                Seleccione una asignatura...
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!--======================================
+                    BUSCADOR OA
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Buscar Objetivo de Aprendizaje
+
+                        </label>
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="searchOA"
+                                placeholder="Buscar por código o descripción...">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--==========================================
+                PANEL OA
+                ===========================================-->
+
+                <div class="oa-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h3>
+
+                                Objetivos de Aprendizaje
+
+                            </h3>
+
+                            <p>
+
+                                Seleccione uno o más OA pertenecientes
+                                a la unidad elegida.
+
+                            </p>
+
+                        </div>
+
+                        <div class="oa-actions">
+
+                            <button
+                                type="button"
+                                id="btnSelectAll"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-check-double"></i>
+
+                                Seleccionar Todos
+
+                            </button>
+
+                            <button
+                                type="button"
+                                id="btnClearAll"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-xmark"></i>
+
+                                Limpiar
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!--======================================
+                    CONTENEDOR OA
+                    ======================================-->
+
+                    <div
+                        id="learningObjectives"
+                        class="oa-container">
+
+                        <div class="empty-state">
+
+                            <i class="fa-solid fa-book-open-reader"></i>
+
+                            <h4>
+
+                                Currículum Nacional
+
+                            </h4>
+
+                            <p>
+
+                                Seleccione un Curso,
+                                una Asignatura
+                                y una Unidad para visualizar
+                                los Objetivos de Aprendizaje.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--==========================================
+                PANEL CURRICULAR
+                ===========================================-->
+
+                <aside class="curriculum-panel">
+
+                    <div class="curriculum-card">
+
+                        <div class="curriculum-title">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                            <h3>
+
+                                Información Curricular
+
+                            </h3>
+
+                        </div>
+
+                        <div class="curriculum-info">
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    Curso
+
+                                </span>
+
+                                <strong id="infoCourse">
+
+                                    —
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    Asignatura
+
+                                </span>
+
+                                <strong id="infoSubject">
+
+                                    —
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    Unidad
+
+                                </span>
+
+                                <strong id="infoUnit">
+
+                                    —
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    OA Seleccionados
+
+                                </span>
+
+                                <strong id="infoOA">
+
+                                    0
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="curriculum-card">
+
+                        <div class="curriculum-title">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                            <h3>
+
+                                AulaMind IA
+
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            AulaMind utilizará los Objetivos de
+                            Aprendizaje seleccionados para generar una
+                            planificación completamente alineada con las
+                            Bases Curriculares del MINEDUC.
+
+                        </p>
+
+                        <ul class="feature-list">
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Objetivos oficiales.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Inicio - Desarrollo - Cierre.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Evaluación.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Recursos.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Adecuaciones.
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </aside>
+                                <!--======================================================
+                CONFIGURACIÓN DE LA PLANIFICACIÓN
+                =======================================================-->
+
+                <section class="planning-options">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+
+                                Configuración de la Planificación
+
+                            </h2>
+
+                            <p>
+
+                                Complete la información que utilizará AulaMind IA para construir la planificación pedagógica.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="planning-grid">
+
+                        <!--==================================================
+                        TEMA
+                        ==================================================-->
+
+                        <div class="form-group full">
+
+                            <label for="tema">
+
+                                Tema de la Clase
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="tema"
+                                name="tema"
+                                class="form-control"
+                                placeholder="Ejemplo: Fracciones equivalentes">
+
+                        </div>
+
+                        <!--==================================================
+                        DURACIÓN
+                        ==================================================-->
+
+                        <div class="form-group">
+
+                            <label for="duracion">
+
+                                Duración
+
+                            </label>
+
+                            <select
+                                id="duracion"
+                                name="duracion"
+                                class="form-control">
+
+                                <option value="45">
+
+                                    45 minutos
+
+                                </option>
+
+                                <option value="60">
+
+                                    60 minutos
+
+                                </option>
+
+                                <option value="90">
+
+                                    90 minutos
+
+                                </option>
+
+                                <option value="120">
+
+                                    120 minutos
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!--==================================================
+                        TIPO DE CLASE
+                        ==================================================-->
+
+                        <div class="form-group">
+
+                            <label for="tipo">
+
+                                Tipo de Clase
+
+                            </label>
+
+                            <select
+                                id="tipo"
+                                name="tipo"
+                                class="form-control">
+
+                                <option value="Clase Expositiva">
+
+                                    Clase Expositiva
+
+                                </option>
+
+                                <option value="Clase Participativa">
+
+                                    Clase Participativa
+
+                                </option>
+
+                                <option value="Aprendizaje Basado en Proyectos">
+
+                                    Aprendizaje Basado en Proyectos
+
+                                </option>
+
+                                <option value="Aprendizaje Colaborativo">
+
+                                    Aprendizaje Colaborativo
+
+                                </option>
+
+                                <option value="Clase Taller">
+
+                                    Clase Taller
+
+                                </option>
+
+                                <option value="Gamificación">
+
+                                    Gamificación
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!--==================================================
+                        RECURSOS
+                        ==================================================-->
+
+                        <div class="form-group full">
+
+                            <label for="recursos">
+
+                                Recursos Didácticos
+
+                            </label>
+
+                            <textarea
+                                id="recursos"
+                                name="recursos"
+                                rows="5"
+                                class="form-control"
+                                placeholder="Ejemplo: PPT, Guía de Trabajo, Video, Pizarra Digital, Material Concreto, Internet, Notebook..."></textarea>
+
+                        </div>
+
+                        <!--==================================================
+                        OBSERVACIONES
+                        ==================================================-->
+
+                        <div class="form-group full">
+
+                            <label for="observaciones">
+
+                                Observaciones para AulaMind IA
+
+                            </label>
+
+                            <textarea
+                                id="observaciones"
+                                name="observaciones"
+                                rows="8"
+                                class="form-control"
+                                placeholder="Escriba instrucciones especiales para la IA, adecuaciones curriculares, estudiantes PIE, metodología, evaluación diferenciada, habilidades a desarrollar, etc."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!--======================================================
+                BOTONES
+                =======================================================-->
+
+                <section class="planning-actions">
+
+                    <button
+                        type="submit"
+                        id="btnGenerar"
+                        class="btn btn-primary">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Generar Planificación IA
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnLimpiar"
+                        class="btn btn-secondary">
+
+                        <i class="fa-solid fa-broom"></i>
+
+                        Limpiar
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCopiar"
+                        class="btn btn-outline">
+
+                        <i class="fa-solid fa-copy"></i>
+
+                        Copiar
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnWord"
+                        class="btn btn-outline">
+
+                        <i class="fa-solid fa-file-word"></i>
+
+                        Exportar Word
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnPDF"
+                        class="btn btn-outline">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        Exportar PDF
+
+                    </button>
+
+                </section>
+
+            </form>
+
+        </section>
+                <!--==========================================================
+        RESULTADO IA
+        ===========================================================-->
+
+        <section class="planning-result-section">
+
+            <div class="result-grid">
+
+                <!--==============================================
+                EDITOR IA
+                ==============================================-->
+
+                <div class="editor-card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-robot"></i>
+
+                            <h2>
+
+                                Planificación Generada por AulaMind IA
+
+                            </h2>
+
+                        </div>
+
+                        <div class="editor-actions">
+
+                            <button
+                                type="button"
+                                id="btnCopiarEditor"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-copy"></i>
+
+                                Copiar
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="resultado"
+                        class="planning-editor">
+
+                        <div class="placeholder">
+
+                            <i class="fa-solid fa-robot"></i>
+
+                            <h2>
+
+                                AulaMind IA está listo
+
+                            </h2>
+
+                            <p>
+
+                                Seleccione un Curso,
+                                una Asignatura,
+                                una Unidad,
+                                marque los Objetivos de Aprendizaje
+                                y presione
+
+                                <strong>
+
+                                    Generar Planificación IA
+
+                                </strong>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--==============================================
+                PANEL IA
+                ==============================================-->
+
+                <aside class="assistant-panel">
+
+                    <div class="assistant-card">
+
+                        <div class="assistant-header">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                            <h3>
+
+                                AulaMind IA
+
+                            </h3>
+
+                        </div>
+
+                        <div class="assistant-body">
+
+                            <p>
+
+                                La planificación será construida utilizando:
+
+                            </p>
+
+                            <ul>
+
+                                <li>
+
+                                    ✔ Currículum Nacional MINEDUC
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Objetivos de Aprendizaje
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Estrategias Didácticas
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Evaluación Formativa
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Inicio
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Desarrollo
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Cierre
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Recursos
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Adecuaciones Curriculares
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="assistant-card">
+
+                        <div class="assistant-header">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <h3>
+
+                                Estado
+
+                            </h3>
+
+                        </div>
+
+                        <div class="assistant-status">
+
+                            <div class="status-item">
+
+                                <span>
+
+                                    Motor Curricular
+
+                                </span>
+
+                                <strong class="status-ok">
+
+                                    Activo
+
+                                </strong>
+
+                            </div>
+
+                            <div class="status-item">
+
+                                <span>
+
+                                    IA
+
+                                </span>
+
+                                <strong class="status-ok">
+
+                                    Conectada
+
+                                </strong>
+
+                            </div>
+
+                            <div class="status-item">
+
+                                <span>
+
+                                    OpenAI
+
+                                </span>
+
+                                <strong class="status-ok">
+
+                                    Disponible
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!--==========================================================
+        LOADER
+        ===========================================================-->
+
+        <div
+            id="loader"
+            class="loader-overlay">
+
+            <div class="loader-content">
+
+                <div class="spinner"></div>
+
+                <h3>
+
+                    AulaMind IA
+
+                </h3>
+
+                <p>
+
+                    Generando la planificación...
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!--==========================================================
+        MODAL
+        ===========================================================-->
+
+        <div
+            id="loadingModal"
+            class="modal">
+
+            <div class="modal-content">
+
+                <i class="fa-solid fa-robot fa-3x"></i>
+
+                <h2>
+
+                    Espere un momento...
+
+                </h2>
+
+                <p>
+
+                    Analizando el Currículum Nacional,
+                    los Objetivos de Aprendizaje
+                    y construyendo la planificación.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!--==========================================================
+        TOAST
+        ===========================================================-->
+
+        <div
+            id="toast"
+            class="toast">
+
+        </div>
+                <!--======================================================
+        FOOTER
+        ======================================================-->
+
+        <footer class="page-footer">
+
+            <div class="footer-left">
+
+                <strong>
+
+                    AulaMind Enterprise 3.0
+
+                </strong>
+
+                <span>
+
+                    Plataforma Inteligente para Docentes
+
+                </span>
+
+            </div>
+
+            <div class="footer-right">
+
+                <span>
+
+                    © 2025 Biotecno Chile
+
+                </span>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!--==========================================================
+CONFIGURACIÓN JAVASCRIPT
+===========================================================-->
+
+<script>
+
+window.AulaMind = {
+
+    api: {
+
+        curriculum: {
+
+            courses: "/api/curriculum/courses",
+
+            subjects: "/api/curriculum/subjects",
+
+            units: "/api/curriculum/units",
+
+            objectives: "/api/curriculum/objectives",
+
+            search: "/api/curriculum/search",
+
+            planning: "/api/curriculum/planning-context"
+
+        },
+
+        planning: {
+
+            generate: "/planning/generate"
+
+        }
+
+    },
+
+    version: "3.0.0",
+
+    company: "Biotecno Chile"
+
+};
+
+</script>
+
+<!--==========================================================
+LIBRERÍAS
+===========================================================-->
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!--==========================================================
+PLANNING ENGINE
+===========================================================-->
+
+<script src="{{ url_for('static', filename='js/planning.js') }}"></script>
+
+<!--==========================================================
+SCRIPTS
+===========================================================-->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    console.clear();
+
+    console.log("========================================");
+
+    console.log("AulaMind Enterprise 3.0");
+
+    console.log("Planning Engine");
+
+    console.log("Motor Curricular");
+
+    console.log("OpenAI Ready");
+
+    console.log("========================================");
+
+});
+
+</script>
+
+</body>
+
+</html>

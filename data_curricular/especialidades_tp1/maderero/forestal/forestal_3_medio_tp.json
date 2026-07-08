@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Maderero",
+  "especialidad": "Forestal",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-FORE-M01",
+      "nombre": "Producción de plantas y viverización forestal"
+    },
+    {
+      "codigo": "MA-FORE-M02",
+      "nombre": "Establecimiento de plantaciones forestales"
+    },
+    {
+      "codigo": "MA-FORE-M03",
+      "nombre": "Manejo y protección de recursos forestales"
+    },
+    {
+      "codigo": "MA-FORE-M04",
+      "nombre": "Medición y cubicación forestal"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura preparada para auditoría final contra Programa de Estudio oficial antes del consolidado definitivo."
+}

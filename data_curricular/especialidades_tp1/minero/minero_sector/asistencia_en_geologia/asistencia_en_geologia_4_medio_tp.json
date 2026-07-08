@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Minero",
+  "especialidad": "Asistencia en Geología",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MI-ASGE-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MI-ASGE-M05",
+      "nombre": "Preparación y análisis básico de muestras geológicas"
+    },
+    {
+      "codigo": "MI-ASGE-M06",
+      "nombre": "Sondajes y apoyo a campañas de exploración"
+    },
+    {
+      "codigo": "MI-ASGE-M07",
+      "nombre": "Cartografía y representación de información geológica"
+    },
+    {
+      "codigo": "MI-ASGE-M08",
+      "nombre": "Seguridad y apoyo operacional en faenas de exploración"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

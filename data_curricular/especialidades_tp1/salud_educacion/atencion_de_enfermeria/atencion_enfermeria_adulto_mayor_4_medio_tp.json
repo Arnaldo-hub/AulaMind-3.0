@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Salud y Educación",
+  "especialidad": "Atención de Enfermería",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "SE-ADMA-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "SE-ADMA-M01",
+      "nombre": "Cuidados del adulto mayor"
+    },
+    {
+      "codigo": "SE-ADMA-M02",
+      "nombre": "Apoyo en actividades de la vida diaria"
+    },
+    {
+      "codigo": "SE-ADMA-M03",
+      "nombre": "Promoción de autonomía y envejecimiento activo"
+    },
+    {
+      "codigo": "SE-ADMA-M04",
+      "nombre": "Atención integral y acompañamiento del adulto mayor"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo.",
+  "mencion": "Adulto Mayor"
+}

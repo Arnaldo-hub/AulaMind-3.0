@@ -1,0 +1,5 @@
+AulaMind Enterprise 3.0 — Pueblos Originarios, Reconstrucción Lote 09
+Pueblo Yagán | 1° básico | 4 unidades | 16 asociaciones OA.
+Estructura: asignatura > pueblo > curso > unidades > OA.
+Bloque separado del currículum regular de AulaMind-3.0.
+Los códigos LC01-Ux son identificadores internos de organización y no sustituyen códigos oficiales MINEDUC.

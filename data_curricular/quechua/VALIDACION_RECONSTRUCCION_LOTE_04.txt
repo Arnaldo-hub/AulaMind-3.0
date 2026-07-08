@@ -1,0 +1,4 @@
+AulaMind Enterprise 3.0 — Pueblos Originarios, Reconstrucción Lote 04
+Pueblo Quechua | 2° básico | 4 unidades | 17 asociaciones OA.
+Área mantenida separada del currículum regular de AulaMind-3.0.
+Estructura validada: asignatura > pueblo > curso > unidades > OA.

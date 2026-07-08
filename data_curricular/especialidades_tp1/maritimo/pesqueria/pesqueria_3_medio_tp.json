@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Pesquería",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-PESQ-M01",
+      "nombre": "Navegación y maniobras básicas"
+    },
+    {
+      "codigo": "MA-PESQ-M02",
+      "nombre": "Artes y aparejos de pesca"
+    },
+    {
+      "codigo": "MA-PESQ-M03",
+      "nombre": "Operaciones de captura"
+    },
+    {
+      "codigo": "MA-PESQ-M04",
+      "nombre": "Seguridad y supervivencia en el mar"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

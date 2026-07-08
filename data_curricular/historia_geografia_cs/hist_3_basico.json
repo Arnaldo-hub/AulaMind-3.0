@@ -1,0 +1,78 @@
+{
+  "asignatura": "Historia, Geografía y Ciencias Sociales",
+  "curso": "3° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Orientación espacial y zonas climáticas",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Ubicar personas, lugares y elementos en una cuadrícula utilizando líneas de referencia y puntos cardinales."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Distinguir hemisferios, círculo del Ecuador, trópicos, polos, continentes y océanos del planeta en mapas y globos terráqueos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Identificar y ubicar en mapas las principales zonas climáticas del mundo y dar ejemplos de distintos paisajes asociados a ellas."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — La civilización griega",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Reconocer aspectos de la vida cotidiana de la civilización griega de la Antigüedad e identificar elementos de continuidad y cambio entre modos de vida del pasado y del presente."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comparar modos de vida de la Antigüedad con el propio, considerando costumbres, trabajos y oficios, creencias, vestimentas y características de las ciudades."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Investigar sobre algún tema de su interés con relación a las civilizaciones estudiadas, comunicando sus resultados."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — La civilización romana",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Reconocer aspectos de la vida cotidiana de la civilización romana de la Antigüedad e identificar elementos de continuidad y cambio entre modos de vida del pasado y del presente."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Explicar, con ejemplos concretos, cómo diferentes culturas y pueblos han enfrentado de distintas maneras el desafío de desarrollarse y satisfacer las necesidades comunes a todos los seres humanos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Derechos, deberes y participación en comunidad",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "Asumir sus deberes y responsabilidades como estudiante y en situaciones de la vida cotidiana."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Mostrar actitudes y realizar acciones concretas que reflejen respeto al otro, tolerancia, empatía y responsabilidad."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, juegos y trabajo escolar."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Reconocer que los niños tienen derechos que les permiten recibir cuidado y protección y asumir responsabilidades acordes a su edad."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Investigar y comunicar sus resultados sobre instituciones públicas y privadas que satisfacen necesidades y ayudan a la comunidad."
+        }
+      ]
+    }
+  ]
+}

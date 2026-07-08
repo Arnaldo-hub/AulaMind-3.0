@@ -1,0 +1,110 @@
+{
+  "asignatura": "Matemática",
+  "curso": "Mat 7 Básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Números y operaciones",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Mostrar que comprenden la adición y la sustracción de números enteros: >>Representando los números enteros en la recta numérica. >>Representándolas de manera concreta, pictórica y simbólica. >>Dándole significado a los símbolos + y – según el contexto (por ejemplo: un movimiento en una dirección seguido de un movimiento equivalente en la posición opuesta no representa ningún cambio de posición). >>Resolviendo problemas en contextos cotidianos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Explicar la multiplicación y la división de fracciones positivas: >>Utilizando representaciones concretas, pictóricas y simbólicas. >>Relacionándolas con la multiplicación y la división de números decimales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Resolver problemas que involucren la multiplicación y la división de fracciones y de decimales positivos de manera concreta, pictórica y simbólica (de forma manual y/o con software educativo)."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Mostrar que comprenden el concepto de porcentaje: >>Representándolo de manera pictórica. >>Calculando de varias maneras. >>Aplicándolo a situaciones sencillas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Utilizar potencias de base 10 con exponente natural: >>Usando los términos potencia, base, exponente, elevado. >>Definiendo y usando el exponente 0 en el sistema decimal. >>Expresando números naturales en notación científica (sistema decimal). >>Resolviendo problemas, usando la notación científica."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Números y operaciones, Álgebra y funciones, Datos y probabilidades",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Utilizar el lenguaje algebraico para generalizar relaciones entre números, para establecer y formular reglas y propiedades y construir ecuaciones."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Reducir expresiones algebraicas, reuniendo términos semejantes para obtener expresiones de la forma ax + by + cz (a, b, c P Z)"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Demostrar que comprenden las proporciones directas e inversas: >>Realizando tablas de valores para relaciones proporcionales. >>Graficando los valores de la tabla. >>Explicando las características de la gráfica. >>Resolviendo problemas de la vida diaria y de otras asignaturas."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 de 7° básico. actividad con"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Geometría, Medición",
+      "oa": [
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 >>Reconocen polígonos en las caras y en las secciones de"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 >>Identifican la línea del ecuador, paralelos y meridianos en modelos esféricos. Mostrar que comprenden el círculo: >>Miden el diámetro y el perímetro de objetos redondos, como vasos con forma cilíndrica, latas, corchos, etc. >>Describiendo las relaciones entre el >>Calculan la relación entre el perímetro y el radio y radio, el diámetro y el descubren que siempre resulta casi el mismo valor perímetro del círculo. (levemente mayor de 3), denominado “π”. >>Estimando de manera >>Aplican la fórmula p = d ∙ π en ejercicios rutinarios y intuitiva el perímetro no rutinarios, para resolver problemas que involucran y el área de un perímetros de círculos, como ecuador, paralelos y círculo. meridianos. >>Aplicando las aproxi- >>Estiman el área de la circunferencia entre 2r² y 4r², maciones del períme- descubriendo que también resulta el mismo valor tro y del área en la aproximado de a ≈ r2 ∙ 3. resolución de proble- >>Aplican la fórmula a = r² ∙ π (con π ≈ 3,14) en ejercicios mas geométricos, de rutinarios y en la solución de problemas que involucran otras asignaturas y de áreas de círculos. la vida diaria. >>Resuelven problema de la vida diaria que implican el >>Identificándolo como cálculo de área de un círculo; por ejemplo: los cultivos lugar geométrico. en círculos para el ahorro de agua."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 >>Aplican la propiedad del círculo como lugar geométrico para resolver problemas concretos; por ejemplo: la Construir objetos cobertura de una radioemisora, etc. geométricos de manera manual y/o con software >>Construyen la recta perpendicular a un punto en una educativo: recta y reconocen que la recta perpendicular a un punto fuera de ella, tiene la distancia mínima entre el >>Líneas, como las punto y la recta. perpendiculares, las paralelas, las bisec- >>Experimentan, concretamente o en forma pictórica, trices y altura s en que doblando dos veces en dirección perpendicular, se triángulos y cuadrilá- continúa paralelamente a la dirección original, y aplican teros. esto para construir paralelas de una recta. >>Puntos, como el punto medio de un segmento, el centro de gravedad, el centro del círculo inscrito y del circunscrito. 28 Matemática |"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 >>Resuelven problemas geométricos y de la vida cotidiana, cuya resolución con foco en algunos de los Desarrollar y aplicar la fórmula del área indicadores. Los ejemplos requiere calcular áreas de triángulos, de triángulos, paralelogramos y trapecios. van acompañados de paralelogramos y trapecios. criterios de"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 >>Identificar puntos en el plano cartesiano, usando pares ordenados y vectores de forma concreta (juegos) y pictórica."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Números y operaciones, Datos y probabilidades",
+      "oa": [
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Estimar el porcentaje de algunas características de una población desconocida por medio del muestreo."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "OA 16 Representar datos obtenidos en una muestra mediante tablas de frecuencias absolutas y relativas, utilizando gráficos apropiados, de manera manual y/o con software educativo."
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "OA 17 Mostrar que comprenden las medidas de tendencia central y el rango: >>Determinando las medidas de tendencia central para realizar inferencias sobre la población. >>Determinando la medida de tendencia central adecuada para responder un problema planteado. >>Utilizándolos para comparar dos poblaciones. >>Determinando el efecto de un dato que es muy diferente a los otros."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "OA 18 Explicar las probabilidades de eventos obtenidos por medio de experimentos de manera manual y/o con software educativo: >>Estimándolas de manera intuitiva. >>Utilizando frecuencias relativas. >>Relacionándolas con razones, fracciones o porcentaje."
+        },
+        {
+          "codigo": "OA 19",
+          "descripcion": "OA 19 Comparar las frecuencias relativas de un evento obtenidas al repetir un experimento de forma manual y/o con software educativo, con la probabilidad obtenida de manera teórica, usando diagramas de árbol, tablas o gráficos."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Mostrar que comprenden la adición y la sustracción de números enteros: >>Representando los números enteros en la recta numérica. >>Representándolas de manera concreta, pictórica y simbólica. >>Dándole significado a los símbolos + y – según el contexto (por ejemplo: un movimiento en una dirección seguido de un movimiento equivalente en la posición opuesta no representa ningún cambio de posición). >>Resolviendo problemas en contextos cotidianos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Explicar la multiplicación y la división de fracciones positivas: >>Utilizando representaciones concretas, pictóricas y simbólicas. >>Relacionándolas con la multiplicación y la división de números decimales."
+        }
+      ]
+    }
+  ]
+}

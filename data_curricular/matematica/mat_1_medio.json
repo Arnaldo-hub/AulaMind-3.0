@@ -1,0 +1,102 @@
+{
+  "asignatura": "Matemática",
+  "curso": "mat 1° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Calcular operaciones con números racionales en forma simbólica."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 la unidad. El propósito es Mostrar que comprenden las potencias de base racional y exponente entero: que la actividad diseñada sirva como ejemplo, • Transfiriendo propiedades de la multiplicación y división de potencias a los de forma que la o el ámbitos numéricos correspondientes. docente pueda utilizarla • Relacionándolas con el crecimiento y decrecimiento de cantidades. como referente para la elaboración de su propia • Resolviendo problemas de la vida diaria y otras asignaturas. propuesta pedagógica. En este sentido, no buscan ser exhaustivas en variedad,"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Desarrollar los productos notables de manera concreta, pictórica y simbólica: • Transformando productos en sumas y viceversa. • Aplicándolos a situaciones concretas. • Completando el cuadrado del binomio. • Utilizándolas en la reducción y desarrollo de expresiones algebraicas."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Desarrollar las fórmulas para encontrar el área de la superficie y el volumen del cono: • Desplegando la red del cono para la fórmula del área de superficie. • Experimentando de manera concreta para encontrar la relación entre el volumen del cilindro y el cono. • Aplicando las fórmulas a la resolución de problemas geométricos y de la vida diaria."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 • Verifican que una sola ecuación en dos del año para cada variables ax + by = c (con a, b, c fijo) tiene asignatura. Se refieren a Resolver sistemas de ecuaciones como solución infinitos pares ordenados (x, y) conocimientos, habilidades lineales (2 x 2) relacionados de números. y"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 • Elaboran tablas y gráficos para ecuaciones de la forma ax + by = c con a, b valores fijosGraficar relaciones lineales en a y b ∈ Q y c con valores variables.dos variables de la forma af(x,y) = ax + by; por ejemplo: • Reconocen el cociente – como pendiente b un haz de rectas paralelas en el de la recta con la ecuación ax + by = c. plano cartesiano, líneas de nivel • Confeccionan modelos 3D (figuras en planos inclinados (techo), rectangulares o poligonales en niveles propagación de olas en el mar y equidistantes) y los proyectan al plano la formación de algunas capas para identificar la proyección de los bordes de rocas: como líneas de la forma ax + by = c. • Creando tablas de valores con • Reconocen que las líneas con mayor densidad a, b fijo y x, y variable. en el plano de proyección representan mayor • Representando una ecuación cambio (pendiente) en el modelo 3D. lineal dada, por medio de un • Confeccionan un haz de gráficos de funciones gráfico, de manera manual afines, sobre la base de la función f (x, y) = ax + by y/o con software educativo. (con a y b fijo). • Escribiendo la relación entre • Resuelven en el plano cartesiano problemas las variables de un gráfico geométricos que involucren ecuaciones de dado; por ejemplo, variando c la forma ax + by = c. en la ecuación ax + by = c; a, • Representan fenómenos geográficos y b, c ∈ Q (decimales hasta la cotidianos mediante funciones lineales décima). f (x, y) en dos variables. MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Desarrollar la fórmula de los valores del área y del perímetro de sectores y segmentos circulares, respectivamente, a partir de ángulos centrales de 60°, 90°, 120° y 180°, por medio de representaciones concretas."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 en las Bases Curriculares. En ocasiones, un OA Mostrar que comprenden el concepto de homotecia: puede ser abordado por un >>Relacionándola con la perspectiva, el funcionamiento de instrumentos ópticos conjunto de"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Desarrollar el teorema de Tales mediante las propiedades de la homotecia, para aplicarlo en la resolución de problemas."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Aplicar propiedades de semejanza y de proporcionalidad a modelos a escala y otras situaciones de la vida diaria y otras asignaturas."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Representar el concepto de homotecia de forma vectorial, relacionándolo con el producto de un vector por un escalar, de manera manual y/o con software educativo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 • Realizan en su entorno encuestas preguntando Registrar distribuciones de dos características distintas, de una dos características y representan los resultados misma población, en una tabla de doble entrada y en una nube mediante gráficos de nube de puntos. de puntos. • Describen nubes de puntos presentadas en el OA d sistema de coordenadas. Describir relaciones y situaciones matemáticas usando lenguaje matemático, esquemas y gráficos OA E Mostrar una actitud crítica al evaluar las evidencias e informaciones matemáticas y valorar el aporte de los datos cuantitativos en la comprensión de la realidad social. TIEMPO Y MATERIAL ACTIVIDAD SUGERIDA Materiales: Al inicio, se sugiere comenzar con: Huinchas de medir, • Cálculo mental. regla, lápiz y hoja • Presentación de los materiales y forma de utilizarlos. de trabajo con una • Organización de la clase en grupos de trabajo. INICIO tabla para anotar • Preparación de la toma de datos, chequeo de los materiales. valores. Tiempo: 10 minutos. 50 MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Comparar poblaciones mediante la confección de gráficos “xy” para dos atributos de muestras, de manera concreta y pictórica: • Utilizando nubes de puntos en dos colores. • Separando la nube por medio de una recta trazada de manera intuitiva."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Desarrollar las reglas de las probabilidades, la regla aditiva, la regla multiplicativa y la combinación de ambas, de manera concreta, pictórica y simbólica, de manera manual y/o con software educativo, en el contexto de la resolución de problemas."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Mostrar que comprenden el concepto de azar: • Experimentando con la tabla de Galton y con paseos aleatorios sencillos de manera manual y/o con software educativo. • Realizando análisis estadísticos, empezando por frecuencias relativas. • Utilizando probabilidades para describir el comportamiento azaroso. • Resolviendo problemas de la vida diaria y de otras asignaturas."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Calcular operaciones con números racionales en forma simbólica."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 la unidad. El propósito es Mostrar que comprenden las potencias de base racional y exponente entero: que la actividad diseñada sirva como ejemplo, • Transfiriendo propiedades de la multiplicación y división de potencias a los de forma que la o el ámbitos numéricos correspondientes. docente pueda utilizarla • Relacionándolas con el crecimiento y decrecimiento de cantidades. como referente para la elaboración de su propia • Resolviendo problemas de la vida diaria y otras asignaturas. propuesta pedagógica. En este sentido, no buscan ser exhaustivas en variedad,"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Desarrollar los productos notables de manera concreta, pictórica y simbólica: • Transformando productos en sumas y viceversa. • Aplicándolos a situaciones concretas. • Completando el cuadrado del binomio. • Utilizándolas en la reducción y desarrollo de expresiones algebraicas."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Desarrollar las fórmulas para encontrar el área de la superficie y el volumen del cono: • Desplegando la red del cono para la fórmula del área de superficie. • Experimentando de manera concreta para encontrar la relación entre el volumen del cilindro y el cono. • Aplicando las fórmulas a la resolución de problemas geométricos y de la vida diaria."
+        }
+      ]
+    }
+  ]
+}

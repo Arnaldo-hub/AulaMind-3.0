@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Tripulación de Naves Mercantes y Especiales",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-TNME-M01",
+      "nombre": "Navegación y gobierno de la nave"
+    },
+    {
+      "codigo": "MA-TNME-M02",
+      "nombre": "Maniobras de cubierta"
+    },
+    {
+      "codigo": "MA-TNME-M03",
+      "nombre": "Seguridad, supervivencia y primeros auxilios a bordo"
+    },
+    {
+      "codigo": "MA-TNME-M04",
+      "nombre": "Mantenimiento básico de cubierta y equipos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

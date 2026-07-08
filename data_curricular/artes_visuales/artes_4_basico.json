@@ -1,0 +1,94 @@
+{
+  "asignatura": "Artes Visuales",
+  "curso": "4° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — El arte de los pueblos originarios americanos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del entorno natural, cultural y artístico."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar elementos del lenguaje visual en sus trabajos de arte, con diversos propósitos expresivos y creativos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural, cultural y artístico, demostrando manejo de materiales, herramientas y procedimientos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Describir fortalezas y aspectos a mejorar en el trabajo de arte personal y de sus pares, aplicando criterios de uso de materiales, procedimientos técnicos y propósito expresivo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — América y sus tradiciones",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del entorno natural, cultural y artístico."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar elementos del lenguaje visual en sus trabajos de arte, con diversos propósitos expresivos y creativos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural, cultural y artístico, demostrando manejo de materiales, herramientas y procedimientos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Paisaje americano y creación visual",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación de la naturaleza y paisaje americano."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar elementos del lenguaje visual, como líneas, formas, colores y texturas, con propósitos expresivos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos de arte demostrando manejo de materiales, herramientas y procedimientos de dibujo, pintura, grabado, escultura y técnicas mixtas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Describir fortalezas y aspectos a mejorar en trabajos propios y de sus pares usando criterios artísticos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Arte, patrimonio y apreciación",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear trabajos de arte basados en referentes culturales y artísticos de América."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos de arte a partir de experiencias e intereses, utilizando diversos medios y procedimientos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Describir observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando ideas y sentimientos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar fortalezas y aspectos a mejorar en trabajos personales y de sus pares."
+        }
+      ]
+    }
+  ]
+}

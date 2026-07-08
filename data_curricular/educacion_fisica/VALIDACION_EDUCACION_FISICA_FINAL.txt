@@ -1,0 +1,11 @@
+AulaMind Enterprise 3.0 — Educación Física y Salud
+Archivos curriculares disponibles organizados en 4 unidades temáticas, preservando OA del catálogo fuente.
+
+efi_1_basico.json: 4 unidades | OA por unidad [1, 1, 3, 6]
+efi_2_medio.json: 4 unidades | OA por unidad [1, 1, 1, 2]
+efi_34_medio_2.json: 4 unidades | OA por unidad [1, 1, 1, 3]
+efi_4_basico.json: 4 unidades | OA por unidad [2, 1, 2, 6]
+efi_5_basico.json: 4 unidades | OA por unidad [1, 1, 1, 8]
+efi_6_basico.json: 4 unidades | OA por unidad [1, 1, 3, 6]
+efi_7_basico.json: 4 unidades | OA por unidad [1, 1, 1, 4]
+efi_8_basico.json: 4 unidades | OA por unidad [1, 1, 1, 5]

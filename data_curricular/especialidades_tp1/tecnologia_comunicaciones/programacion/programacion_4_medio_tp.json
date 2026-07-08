@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Tecnología y Comunicaciones",
+  "especialidad": "Programación",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "TC-PROG-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "TC-PROG-M05",
+      "nombre": "Desarrollo de aplicaciones web"
+    },
+    {
+      "codigo": "TC-PROG-M06",
+      "nombre": "Programación orientada a objetos"
+    },
+    {
+      "codigo": "TC-PROG-M07",
+      "nombre": "Administración de bases de datos"
+    },
+    {
+      "codigo": "TC-PROG-M08",
+      "nombre": "Pruebas, documentación y mantenimiento de software"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

@@ -1,0 +1,12 @@
+AulaMind Enterprise 3.0 - Lote 05
+Asignatura: Inglés
+Validación estructural: JSON, asignatura, curso, unidades, nombre de unidad, código OA y descripción OA.
+
+ingles_1medio.json: 1 unidades; 17 OA asignados.
+ingles_2medio_modificado.json: 1 unidades; 20 OA asignados.
+ingles_3_medio.json: 1 unidades; 5 OA asignados.
+ingles_4_medio.json: 1 unidades; 4 OA asignados.
+ingles_5_basico.json: 1 unidades; 16 OA asignados.
+ingles_6_basico.json: 1 unidades; 16 OA asignados.
+ingles_7_basico.json: 1 unidades; 18 OA asignados.
+ingles_8_basico.json: 1 unidades; 18 OA asignados.

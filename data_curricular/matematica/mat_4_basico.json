@@ -1,0 +1,162 @@
+{
+  "asignatura": "Matemática",
+  "curso": "mat 4° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Números y operaciones, Datos y probabilidades",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Demostrar que comprenden la mul-"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Demostrar que comprenden la divi- forma aditiva, de acuerdo a su valor sión con dividendos de dos dígitos y posicional divisores de un dígito: › usando estrategias para dividir, con o"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Resolver problemas rutinarios y no rutinarios en contextos cotidianos"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Demostrar que comprenden la adi- que incluyen dinero, seleccionando y ción y la sustracción de números hasta utilizando la operación apropiada. 1 000: › usando estrategias personales para"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Fundamentar y aplicar las propiedades (por ejemplo: 1/100, 1/8, 1/5, 1/4, del 0 y del 1 para la multiplicación y la 1/2) con material concreto y pictórico propiedad del 1 para la división.Matemática"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Describir la localización absoluta de › determinando y registrando el área un objeto en un mapa simple con en cm2 y m2 en contextos cercanos coordenadas informales (por ejemplo: › construyendo diferentes rectángulos con letras y números) y la localización para un área dada (cm2 y m2) para relativa con relación a otros objetos. mostrar que distintos rectángulos pueden tener la misma área"
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "OA 22 Medir longitudes con unidades es-"
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "OA 16 Determinar las vistas de figuras 3D, des- › usando software geométrico de el frente, desde el lado y desde arriba.44"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Identificar y describir patrones nu- tandarizadas (m, cm) y realizar trans- méricos en tablas que involucren una formaciones entre estas unidades (m operación, de manera manual y/o a cm y viceversa) en el contexto de la usando software educativo. resolución de problemas."
+        },
+        {
+          "codigo": "OA 20",
+          "descripcion": "OA 20 Leer y registrar diversas mediciones › representándolos en forma concre- del tiempo en relojes análogos y digi- ta, pictórica y simbólica, de manera tales, usando los conceptos A.M., P.M. manual y/o con software educativo y 24 horas. › comparándolos y ordenándolos hasta la centésima"
+        },
+        {
+          "codigo": "OA 21",
+          "descripcion": "OA 21 Realizar conversiones entre unidades de tiempo en el contexto de la resolución"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 17",
+          "descripcion": "OA 17 Demostrar que comprenden una línea fracciones con igual denominador de simetría: (denominadores 100, 12, 10, 8, 6, 5, › identificando figuras simétricas 2D 4, 3, 2) de manera concreta y pictóri- › creando figuras simétricas 2D ca en el contexto de la resolución de › dibujando una o más líneas de sime- problemas. tría en figuras 2D › usando software geométrico"
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "OA 18 Trasladar, rotar y reflejar figuras 2D. mixtos hasta el 5 de manera concreta, pictórica y simbólica, en el contexto"
+        },
+        {
+          "codigo": "OA 19",
+          "descripcion": "OA 19 Construir ángulos con el transportador de la resolución de problemas. y compararlos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Demostrar que comprende las frac- realizar estas operaciones ciones con denominadores 100, 12, › descomponiendo los números invo- 10, 8, 6, 5, 4, 3, 2: lucrados › explicando que una fracción repre- › estimando sumas y diferencias senta la parte de un todo o de un › resolviendo problemas rutinarios y grupo de elementos y un lugar en la no rutinarios que incluyan adiciones recta numérica y sustracciones › describiendo situaciones en las cua- › aplicando los algoritmos en la adi- les se puede usar fracciones ción de hasta cuatro sumandos y en › mostrando que una fracción puede la sustracción de hasta un sustraendo tener representaciones diferentes › comparando y ordenando fracciones"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Resolver adiciones y sustracciones de"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Identificar, escribir y representar fracciones propias y los números"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Resolver ecuaciones e inecuaciones"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Describir y representar decimales MEDICIÓN (décimos y centésimos):"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Resolver adiciones y sustracciones de de problemas: el número de segundos decimales, empleando el valor posi- en un minuto, el número de minutos cional hasta la centésima en el con- en una hora, el número de días en un texto de la resolución de problemas. mes y el número de meses en un año. PATRONES Y ÁLGEBRA"
+        },
+        {
+          "codigo": "OA 23",
+          "descripcion": "OA 23 Demostrar que comprenden el con- de un paso que involucren adicio- cepto de área de un rectángulo y de nes y sustracciones, comprobando un cuadrado: los resultados en forma pictórica y › reconociendo que el área de una simbólica del 0 al 100 y aplicando las superficie se mide en unidades cua- relaciones inversas entre la adición y la dradas sustracción. › seleccionando y justificando la elec- ción de la unidad estandarizada (cm2 GEOMETRÍA y m2)"
+        },
+        {
+          "codigo": "OA 27",
+          "descripcion": "OA 27 Leer e interpretar pictogramas y mide en unidades de cubo gráficos de barra simple con escala, y › midiendo y registrando el volumen comunicar sus conclusiones. en unidades de cubo › usando software geométrico DATOS Y PROBABILIDADES"
+        },
+        {
+          "codigo": "OA 26",
+          "descripcion": "OA 26 Realizar experimentos aleatorios lú- cepto de volumen de un cuerpo: dicos y cotidianos, y tabular y repre- › seleccionando una unidad no estan- sentar mediante gráficos de manera darizada para medir el volumen de manual y/o con software educativo. un cuerpo › reconociendo que el volumen se"
+        },
+        {
+          "codigo": "OA 24",
+          "descripcion": "OA 24 Demostrar que comprenden el con-"
+        },
+        {
+          "codigo": "OA 25",
+          "descripcion": "OA 25 Realizar encuestas, analizar los datos y comparar con los resultados de mues- tras aleatorias, usando tablas y gráficos."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Demostrar que comprenden la adi- que incluyen dinero, seleccionando y ción y la sustracción de números hasta utilizando la operación apropiada. 1 000: › usando estrategias personales para"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Fundamentar y aplicar las propiedades (por ejemplo: 1/100, 1/8, 1/5, 1/4, del 0 y del 1 para la multiplicación y la 1/2) con material concreto y pictórico propiedad del 1 para la división.Matemática"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Demostrar que comprenden la mul-"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Demostrar que comprenden la divi- forma aditiva, de acuerdo a su valor sión con dividendos de dos dígitos y posicional divisores de un dígito: › usando estrategias para dividir, con o"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Resolver problemas rutinarios y no rutinarios en contextos cotidianos"
+        }
+      ]
+    }
+  ]
+}

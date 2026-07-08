@@ -1,0 +1,118 @@
+{
+  "asignatura": "Música",
+  "curso": "3° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Tradición folclórica de Chile y otros países",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Escuchar cualidades del sonido (altura, timbre, intensidad, duración) y elementos del lenguaje musical (pulsos, acentos, patrones, reiteraciones, contrastes, variaciones, dinámica, tempo, preguntas-respuestas, secciones, A-AB-ABA) y representarlos de distintas formas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Cantar (al unísono y cánones simples, entre otros) y tocar instrumentos de percusión y melódicos (metalófono, flauta dulce u otros)."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Identificar y describir experiencias musicales y sonoras en su propia vida y en la sociedad (celebraciones, reuniones, festividades, situaciones cotidianas, otros)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — La música en la vida diaria",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Cantar (al unísono y cánones simples, entre otros) y tocar instrumentos de percusión y melódicos (metalófono, flauta dulce u otros)."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear ideas musicales con diversos medios sonoros con un propósito dado, utilizando las cualidades del sonido y elementos del lenguaje musical."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Presentar su trabajo musical al curso y la comunidad, en forma individual y grupal, con compromiso y responsabilidad."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Identificar y describir experiencias musicales y sonoras en su propia vida y en la sociedad (celebraciones, reuniones, festividades, situaciones cotidianas, otros)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Interpretación y creación",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Escuchar cualidades del sonido (altura, timbre, intensidad, duración) y elementos del lenguaje musical (pulsos, acentos, patrones, reiteraciones, contrastes, variaciones, dinámica, tempo, preguntas-respuestas, secciones, A-AB-ABA) y representarlos de distintas formas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Cantar (al unísono y cánones simples, entre otros) y tocar instrumentos de percusión y melódicos (metalófono, flauta dulce u otros)."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear ideas musicales con diversos medios sonoros con un propósito dado, utilizando las cualidades del sonido y elementos del lenguaje musical."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Reflexionar sobre sus fortalezas y áreas en que pueden mejorar su audición, su interpretación y su creación."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Cuentos musicales y villancicos; mitos y tradiciones mapuches",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Cantar (al unísono y cánones simples, entre otros) y tocar instrumentos de percusión y melódicos (metalófono, flauta dulce u otros)."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear ideas musicales con diversos medios sonoros con un propósito dado, utilizando las cualidades del sonido y elementos del lenguaje musical."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Presentar su trabajo musical al curso y la comunidad, en forma individual y grupal, con compromiso y responsabilidad."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Reflexionar sobre sus fortalezas y áreas en que pueden mejorar su audición, su interpretación y su creación."
+        }
+      ]
+    }
+  ]
+}

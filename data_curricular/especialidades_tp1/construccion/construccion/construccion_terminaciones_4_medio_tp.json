@@ -1,0 +1,29 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Construcción",
+  "especialidad": "Construcción",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-TECO-M01",
+      "nombre": "Impermeabilización y aislación de elementos"
+    },
+    {
+      "codigo": "CO-TECO-M02",
+      "nombre": "Instalación de cubiertas y elementos de evacuación de aguas lluvias"
+    },
+    {
+      "codigo": "CO-TECO-M03",
+      "nombre": "Instalación de muebles, puertas y ventanas"
+    },
+    {
+      "codigo": "CO-TECO-M04",
+      "nombre": "Revestimientos para pisos, muros y cielos"
+    },
+    {
+      "codigo": "CO-TECO-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    }
+  ],
+  "mencion": "Terminaciones de la Construcción"
+}

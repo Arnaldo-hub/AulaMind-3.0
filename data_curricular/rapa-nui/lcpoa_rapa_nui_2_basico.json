@@ -1,0 +1,91 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Rapa Nui",
+  "curso": "2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Relatos rapa nui, territorio, ceremonias y patrimonio cultural",
+      "oa": [
+        {
+          "codigo": "LC02 OA LS01",
+          "descripcion": "Disfrutar y comprender relatos orales breves, propios de la tradición de los pueblos, reconociendo algunas palabras en lengua indígena o en castellano culturalmente significativas, valorando su importancia."
+        },
+        {
+          "codigo": "LC02 OA 12",
+          "descripcion": "Conocer eventos socioculturales y ceremoniales propios del pueblo indígena, considerando sus convenciones sociales, momentos y espacios rituales."
+        },
+        {
+          "codigo": "LC02 OA 15",
+          "descripcion": "Reconocer diversas expresiones del patrimonio cultural de su comunidad, territorio y pueblo indígena, como comidas, ceremonias, sitios arqueológicos y espacios naturales."
+        },
+        {
+          "codigo": "LC02 OA 06",
+          "descripcion": "Reconocer espacios significativos presentes en el territorio, valorando la importancia que tienen en la visión de mundo del pueblo indígena."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Historia local, Mōai Kavakava, valores comunitarios y naturaleza",
+      "oa": [
+        {
+          "codigo": "LC02 OA 07",
+          "descripcion": "Conocer aspectos centrales de la historia de la comunidad o localidad, rescatando elementos tanto del pasado como del presente del pueblo indígena."
+        },
+        {
+          "codigo": "LC02 OA 13",
+          "descripcion": "Comprender los valores sociocomunitarios presentes en las relaciones de convivencia familiar y comunitaria, como reciprocidad, respeto y ayuda mutua."
+        },
+        {
+          "codigo": "LC02 OA LS03",
+          "descripcion": "Interactuar con textos escritos en castellano que incluyan algunas palabras en lengua indígena o de culturas originarias afines, comprendiendo diferentes aspectos de su contenido."
+        },
+        {
+          "codigo": "LC02 OA 16",
+          "descripcion": "Comprender la importancia de la relación entre el ser humano, la naturaleza y el cosmos, considerando la perspectiva indígena de la ciencia."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Roŋo-roŋo, identidad, espiritualidad y expresiones artísticas",
+      "oa": [
+        {
+          "codigo": "LC02 OA LS04",
+          "descripcion": "Experimentar con la escritura de palabras en lengua indígena o en castellano, considerando elementos significativos propios de la cultura."
+        },
+        {
+          "codigo": "LC02 OA 10",
+          "descripcion": "Comprender la presencia de elementos espirituales, naturales y cósmicos en el contexto familiar y comunitario."
+        },
+        {
+          "codigo": "LC02 OA 08",
+          "descripcion": "Valorar diferentes aspectos de la cultura indígena, comprendiendo que ello contribuye a la construcción de la identidad de las personas y pueblos."
+        },
+        {
+          "codigo": "LC02 OA 17",
+          "descripcion": "Realizar diversas expresiones de arte propias del pueblo indígena de forma significativa, respetando las convenciones sociales, los momentos y espacios pertinentes."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Memoria, lengua, saberes ancestrales y vida comunitaria Rapa Nui",
+      "oa": [
+        {
+          "codigo": "LC02 OA LS05",
+          "descripcion": "Desarrollar experiencias de comunicación oral vinculadas con situaciones familiares, comunitarias y culturales, incorporando palabras y expresiones culturalmente significativas."
+        },
+        {
+          "codigo": "LC02 OA 09",
+          "descripcion": "Reconocer conocimientos y prácticas culturales transmitidas en la familia y comunidad, valorando la memoria y los saberes de las personas mayores."
+        },
+        {
+          "codigo": "LC02 OA 14",
+          "descripcion": "Reconocer principios y valores presentes en la convivencia comunitaria y en prácticas culturales del pueblo indígena."
+        },
+        {
+          "codigo": "LC02 OA 18",
+          "descripcion": "Valorar conocimientos, técnicas y actividades de producción y creación cultural, considerando su importancia para la permanencia y proyección del pueblo indígena."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "especialidad": "Asistencia en Geología",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría oficial final"
+  },
+  {
+    "especialidad": "Explotación Minera",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría oficial final"
+  },
+  {
+    "especialidad": "Metalurgia Extractiva",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría oficial final"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Alimentación",
+  "especialidad": "Gastronomía",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AL-PARE-M00",
+      "nombre": "Emprendimiento y empleabilidad gastronomía mención Pastelería y Repostería",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AL-PARE-M01",
+      "nombre": "Elaboración de productos de pastelería",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AL-PARE-M02",
+      "nombre": "Elaboración de productos de repostería",
+      "oa_asociados": [
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AL-PARE-M03",
+      "nombre": "Elaboración de productos de panadería",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "AL-PARE-M04",
+      "nombre": "Decoración y presentación de productos de pastelería y repostería",
+      "oa_asociados": [
+        "OA 4"
+      ]
+    }
+  ],
+  "mencion": "Pastelería y Repostería"
+}

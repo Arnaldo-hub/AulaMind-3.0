@@ -1,0 +1,37 @@
+{
+  "area": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "archivo_fuente": "aymara_programa7° básico.json",
+  "cursos": [
+    {
+      "curso": "1° Básico",
+      "nombre_asignatura": "aymara_programa7° básico",
+      "programa": "MINEDUC",
+      "unidades": [
+        {
+          "nombre": "Unidad 1",
+          "semestre": 1,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "Unidad 2",
+          "semestre": 1,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "Unidad 3",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "Unidad 4",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        }
+      ]
+    }
+  ]
+}

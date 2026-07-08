@@ -1,0 +1,118 @@
+{
+  "asignatura": "Música",
+  "curso": "1° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Apreciar musicalmente manifestaciones y obras musicales de Chile y el mundo presentes en la tradición oral, escrita y popular, expresándose mediante medios verbales, visuales, sonoros y corporales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio diverso y relacionado con la música escuchada, desarrollando habilidades tales como conocimiento de estilo, identificación de voces en un grupo, transmisión del propósito expresivo, laboriosidad y compromiso, entre otras."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "otros recursos, o ser una guía para que el profesor Evaluar la relevancia de la música, destacando el singular sentido que esta o la profesora diseñe sus cumple en la construcción y preservación de identidades y culturas. propias actividades. ® Relación con otras 1. Los y las estudiantes escuchan y observan obras de teatro musicalizadas, asignaturas: como por ejemplo La pérgola de las flores, de I. Aguirre y F. Flores del Campo. Indica que la actividad se Comentan lo que ocurre musicalmente en ellas y reflexionan respecto de qué relaciona con Objetivos se necesitará para montar una obra de esas características. Para ello, estudian"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar repertorio diverso a una y más voces, con precisión técnica y fluidez, utilizando diversos medios de registro y transmisión en la gestión y presentación de su quehacer musical."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión, y su influencia en el trabajo musical propio y colectivo, proponiendo alternativas de desarrollo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Interpretar y crear música",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar repertorio diverso a una y más voces, con precisión técnica y fluidez, utilizando diversos medios de registro y transmisión en la gestión y presentación de su quehacer musical."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión, y su influencia en el trabajo musical propio y colectivo, proponiendo alternativas de desarrollo."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "otros recursos, o ser una guía para que el profesor Evaluar la relevancia de la música, destacando el singular sentido que esta o la profesora diseñe sus cumple en la construcción y preservación de identidades y culturas. propias actividades. ® Relación con otras 1. Los y las estudiantes escuchan y observan obras de teatro musicalizadas, asignaturas: como por ejemplo La pérgola de las flores, de I. Aguirre y F. Flores del Campo. Indica que la actividad se Comentan lo que ocurre musicalmente en ellas y reflexionan respecto de qué relaciona con Objetivos se necesitará para montar una obra de esas características. Para ello, estudian"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Apreciar musicalmente manifestaciones y obras musicales de Chile y el mundo presentes en la tradición oral, escrita y popular, expresándose mediante medios verbales, visuales, sonoros y corporales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio diverso y relacionado con la música escuchada, desarrollando habilidades tales como conocimiento de estilo, identificación de voces en un grupo, transmisión del propósito expresivo, laboriosidad y compromiso, entre otras."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Apreciar musicalmente manifestaciones y obras musicales de Chile y el mundo presentes en la tradición oral, escrita y popular, expresándose mediante medios verbales, visuales, sonoros y corporales."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar repertorio diverso a una y más voces, con precisión técnica y fluidez, utilizando diversos medios de registro y transmisión en la gestión y presentación de su quehacer musical."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión, y su influencia en el trabajo musical propio y colectivo, proponiendo alternativas de desarrollo."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "otros recursos, o ser una guía para que el profesor Evaluar la relevancia de la música, destacando el singular sentido que esta o la profesora diseñe sus cumple en la construcción y preservación de identidades y culturas. propias actividades. ® Relación con otras 1. Los y las estudiantes escuchan y observan obras de teatro musicalizadas, asignaturas: como por ejemplo La pérgola de las flores, de I. Aguirre y F. Flores del Campo. Indica que la actividad se Comentan lo que ocurre musicalmente en ellas y reflexionan respecto de qué relaciona con Objetivos se necesitará para montar una obra de esas características. Para ello, estudian"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio diverso y relacionado con la música escuchada, desarrollando habilidades tales como conocimiento de estilo, identificación de voces en un grupo, transmisión del propósito expresivo, laboriosidad y compromiso, entre otras."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
+        }
+      ]
+    }
+  ]
+}

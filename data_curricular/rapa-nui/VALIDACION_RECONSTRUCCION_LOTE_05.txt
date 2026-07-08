@@ -1,0 +1,5 @@
+AulaMind Enterprise 3.0 — Pueblos Originarios, Reconstrucción Lote 05
+Pueblo Rapa Nui | 2° básico | 4 unidades | 16 asociaciones OA.
+Se conservaron códigos curriculares LC02 en los OA contrastados por unidad.
+Estructura validada: asignatura > pueblo > curso > unidades > OA.
+Este bloque permanece separado del currículum regular de AulaMind-3.0.

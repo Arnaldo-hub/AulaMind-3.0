@@ -1,0 +1,14 @@
+AulaMind Enterprise 3.0 — Cierre curricular de Religión
+
+NO reemplazar la carpeta religion instalada por datos inventados.
+La estructura de 24 cursos ya existe.
+Para declarar el bloque terminado deben extraerse y validarse OA y unidades desde:
+1) Programa oficial de Religión Católica aprobado por MINEDUC.
+2) Programa de Religión Evangélica DEX 372-2020 Parte I (1° a 6° básico).
+3) Programa de Religión Evangélica DEX 372-2020 Parte II (7° básico a 4° medio).
+
+Regla de aceptación:
+- 24/24 archivos con OA oficiales.
+- unidades/nombres según programa correspondiente.
+- validación de códigos y curso.
+- prueba de lectura real en AulaMind.

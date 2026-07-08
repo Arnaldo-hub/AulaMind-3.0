@@ -1,0 +1,74 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Hábitos saludables y uso de los sentidos",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Identificar y describir la ubicación y la función de los sentidos proponiendo medidas para protegerlos y para prevenir situaciones de riesgo."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Describir, dar ejemplos y practicar hábitos de vida saludable para mantener el cuerpo sano y prevenir enfermedades (actividad física, aseo del cuerpo, lavado de alimentos y alimentación saludable, entre otros)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Características de los seres vivos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Reconocer y observar, por medio de la exploración, que los seres vivos crecen, responden a estímulos del medio, se reproducen y necesitan agua, alimento y aire para vivir, comparándolos con las cosas no vivas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Observar y comparar animales de acuerdo a características como tamaño, cubierta corporal, estructuras de desplazamiento y hábitat, entre otras."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Observar e identificar, por medio de la exploración, las estructuras principales de las plantas: hojas, flores, tallos y raíces."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Observar y clasificar semillas, frutos, flores y tallos a partir de criterios como tamaño, forma, textura y color, entre otros."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reconocer y comparar diversas plantas y animales de nuestro país, considerando las características observables, y proponiendo medidas para su cuidado."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Propiedades de materiales y objetos de diverso tipo",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "Explorar y describir los diferentes tipos de materiales en diversos objetos, clasificándolos según sus propiedades (goma-flexible, plástico-impermeable) e identificando su uso en la vida cotidiana."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Observar y describir los cambios que se producen en los materiales al aplicarles fuerza, luz, calor y agua."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Diseñar instrumentos tecnológicos simples considerando diversos materiales y sus propiedades para resolver problemas cotidianos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — El Sol y las estaciones del año",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "Describir y registrar el ciclo diario y las diferencias entre el día y la noche, a partir de la observación del Sol, la Luna, las estrellas y la luminosidad del cielo, entre otras, y sus efectos en los seres vivos y el ambiente."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Describir y comunicar los cambios del ciclo de las estaciones y sus efectos en los seres vivos y el ambiente."
+        }
+      ]
+    }
+  ]
+}

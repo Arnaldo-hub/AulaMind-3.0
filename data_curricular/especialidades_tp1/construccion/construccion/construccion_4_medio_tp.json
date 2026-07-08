@@ -1,0 +1,51 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "construccion",
+  "especialidad": "Construcción",
+  "curso": "4° medio TP",
+  "alcance_oa": "Perfil de egreso de la especialidad para el ciclo formativo de 3° y 4° medio TP",
+  "menciones": [
+    "Edificación",
+    "Terminaciones de la Construcción",
+    "Obras Viales e Infraestructura"
+  ],
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Elaborar diseños básicos de apropiada, controlando la calidad y la artículos textiles y de vestuario, seguridad durante el proceso. utilizando herramientas manuales e informáticas de diseño, aplicando"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Ejecutar terminaciones, planchado cánones de figura humana según y empaquetado de artículos textiles y sexo y edad, tendencias de la moda prendas de vestir, utilizando la e innovaciones con tipos de tela, maquinaria apropiada, seleccionando colores, insumos y productos los insumos y definiendo la secuencia requeridos. óptima de acuerdo con la ficha técnica."
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Elaborar y transformar moldes para artículos textiles y vestuario de forma"
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion": "Realizar el control de calidad de los manual y digital de acuerdo con productos, considerando el formato fichas técnicas. estándar y las especificaciones técnicas de éstos."
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Marcar y cortar telas en forma manual o con máquina, considerando la ficha técnica el modelo, tipo de tela, rendimiento, eficiencia del consumo del textil, normas de calidad y seguridad."
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Coser, cortar, fusionar, planchar, utilizando diferentes tipos de máquinas, industriales y semiindustriales, de acuerdo con el manual de operaciones y aplicando normas de seguridad."
+    },
+    {
+      "codigo": "OA 9",
+      "descripcion": "Leer y aplicar normas y simbología variados elementos de construcción, de seguridad y prevención de riesgos equipos y herramientas, de acuerdo a relacionados con las diversas faenas trazados establecidos, planos que realizan, así como resguardar la estructurales. normativa ambiental."
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Cubicar manual y digitalmente elementos y materiales requeridos para una obra determinada, utilizando los programas computacionales apropiados, de acuerdo a longitudes, superficies y volúmenes determinados."
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Utilizar y realizar mantenimiento básico de equipos, herramientas y maquinarias de la especialidad, de acuerdo a los manuales de 36 ESPECIALIDAD CONSTRUCCIÓN MENCIÓN EDIFICACIÓN de construcción, utilizando maquinaria, herramientas e instrumentos de medida adecuados."
+    }
+  ],
+  "nota": "Los OA del perfil de egreso son terminales del ciclo 3°-4° medio. La distribución anual por módulos debe seguir el Programa de Estudio oficial de la especialidad."
+}

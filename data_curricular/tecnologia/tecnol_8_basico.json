@@ -1,0 +1,50 @@
+{
+  "asignatura": "tecnol",
+  "curso": "tecnol 8° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Necesidades, problemas y diseño de soluciones tecnológicas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >> Examinan, con criterio medioambiental, necesidades grupales asignatura. Se refieren a Identificar que impliquen la creación de un producto tecnológico. conocimientos, habilidades oportunidades o >> Examinan, desde el punto de vista social, oportunidades locales y"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Diseñar y crear un producto tecnológico que atienda a la oportunidad o necesidad establecida, respetando criterios de eficiencia y sustentabilidad, y utilizando herramientas TIC en distintas etapas del proceso."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 >> Evalúan funcionalmente las soluciones similares existentes, como o complementarlos. Examinar soluciones respuestas a necesidades establecidas por los destinatarios. Cada Objetivo de tecnológicas existentes >> Evalúan técnicamente las soluciones similares existentes, como Aprendizaje cuenta con que respondan a respuestas a las necesidades establecidas por los destinatarios. varios Indicadores, dado las oportunidades >> Valoran la evolución de diversas soluciones existentes y su que existen múltiples o necesidades contribución a la armonía medioambiental. desempeños que establecidas, >> Valoran la funcionalidad de diversas soluciones existentes y pueden demostrar que considerando los su contribución a la calidad de vida. un aprendizaje ha sido destinatarios, aspectos desarrollado. técnicos y funcionales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elaboración y construcción de objetos tecnológicos",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 >> Explican los aspectos éticos asociados a las diversas soluciones Establecer impactos tecnológicas analizadas. positivos o negativos >> Explican los aspectos ambientales asociados a las diversas de las soluciones soluciones tecnológicas analizadas. tecnológicas analizadas, >> Explican los aspectos sociales asociados a las diversas soluciones considerando aspectos tecnológicas analizadas. éticos, ambientales y >> Formulan medidas de mitigación que contemplen una descripción sociales, entre otros. del proceso de producción de la solución tecnológica analizada. 30 TECNOLOGÍA |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Evaluación, funcionamiento y mejora de soluciones",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Evaluar el producto tecnológico creado, aplicando criterios propios y técnicos, y proponer mejoras asociadas tanto a los procesos como al producto final."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Tecnología, información, comunicación e impacto",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 >> Planifican discursos multimodales que les permitan comunicar"
+        }
+      ]
+    }
+  ]
+}

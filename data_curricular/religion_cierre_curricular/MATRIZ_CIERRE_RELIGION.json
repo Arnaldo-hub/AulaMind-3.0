@@ -1,0 +1,193 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "bloque": "Religión",
+  "programas": [
+    {
+      "confesion": "Religión Católica",
+      "cobertura": "1° básico a 4° medio",
+      "estado": "programa oficial aprobado; requiere extracción íntegra de OA/unidades desde el documento oficial"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "cobertura": "1° básico a 6° básico",
+      "referencia_normativa": "DEX 372-2020, Parte I",
+      "estado": "requiere extracción íntegra"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "cobertura": "7° básico a 4° medio",
+      "referencia_normativa": "DEX 372-2020, Parte II",
+      "estado": "requiere extracción íntegra"
+    }
+  ],
+  "matriz_control": [
+    {
+      "confesion": "Religión Católica",
+      "curso": "1° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "2° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "3° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "4° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "5° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "6° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "7° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "8° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "1° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "2° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "3° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Católica",
+      "curso": "4° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "1° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "2° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "3° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "4° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "5° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "6° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "7° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "8° básico",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "1° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "2° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "3° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    },
+    {
+      "confesion": "Religión Evangélica",
+      "curso": "4° medio",
+      "oa_cargados": false,
+      "unidades_cargadas": false,
+      "estado": "PENDIENTE_EXTRACCION_OFICIAL"
+    }
+  ]
+}

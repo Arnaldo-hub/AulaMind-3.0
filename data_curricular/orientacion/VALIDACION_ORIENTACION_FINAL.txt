@@ -1,0 +1,13 @@
+AulaMind Enterprise 3.0 — Orientación
+Cursos disponibles organizados en 4 unidades temáticas, preservando los OA del catálogo fuente.
+
+orient_1_medio.json: 4 unidades | OA por unidad [1, 4, 2, 3]
+orient_2_bas.json: 4 unidades | OA por unidad [1, 1, 2, 4]
+orient_2_medio.json: 4 unidades | OA por unidad [1, 4, 2, 3]
+orient_3_bas.json: 4 unidades | OA por unidad [2, 1, 2, 3]
+orient_4_bas.json: 4 unidades | OA por unidad [3, 1, 2, 3]
+orient_5_basi.json: 4 unidades | OA por unidad [1, 2, 2, 4]
+orient_6_bas.json: 4 unidades | OA por unidad [1, 1, 3, 4]
+orient_7_bas.json: 4 unidades | OA por unidad [1, 3, 4, 4]
+orient_8_bas.json: 4 unidades | OA por unidad [1, 3, 5, 4]
+orientacion_1_bas.json: 4 unidades | OA por unidad [1, 1, 3, 3]

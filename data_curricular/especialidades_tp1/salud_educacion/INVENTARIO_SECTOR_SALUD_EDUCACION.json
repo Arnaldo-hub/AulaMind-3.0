@@ -1,0 +1,14 @@
+{
+  "sector": "Salud y Educación",
+  "especialidades": [
+    "Atención de Enfermería",
+    "Atención de Párvulos"
+  ],
+  "menciones_atencion_enfermeria": [
+    "Enfermería",
+    "Adulto Mayor"
+  ],
+  "archivos_json": 5,
+  "total_modulos": 23,
+  "estado": "pendiente auditoría curricular oficial final"
+}

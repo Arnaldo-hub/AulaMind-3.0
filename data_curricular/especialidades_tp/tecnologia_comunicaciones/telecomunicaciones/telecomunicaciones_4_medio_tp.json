@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Tecnología y Comunicaciones",
+  "especialidad": "Telecomunicaciones",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "TC-TELE-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "TC-TELE-M05",
+      "nombre": "Sistemas de comunicación inalámbrica"
+    },
+    {
+      "codigo": "TC-TELE-M06",
+      "nombre": "Instalación y mantenimiento de sistemas de fibra óptica"
+    },
+    {
+      "codigo": "TC-TELE-M07",
+      "nombre": "Configuración y mantenimiento de equipos de telecomunicaciones"
+    },
+    {
+      "codigo": "TC-TELE-M08",
+      "nombre": "Diagnóstico y resolución de fallas en sistemas de telecomunicaciones"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

@@ -1,0 +1,17 @@
+AulaMind Enterprise 3.0
+Matemática completa: 1° básico a 4° medio
+
+Validación ejecutada: JSON válido, asignatura, curso, unidades, nombre de unidad, código OA y descripción OA.
+
+mat_1_basico.json | mat 1° básico | 1 unidades | 20 OA asignados
+mat_1_medio.json | mat 1° medio | 1 unidades | 20 OA asignados
+mat_2_basico.json | mat 2° básico | 1 unidades | 22 OA asignados
+mat_2_medio.json | mat 2° medio | 1 unidades | 21 OA asignados
+mat_3_basico.json | Mat 3° básico | 1 unidades | 26 OA asignados
+mat_3_medio.json | mat 3° medio | 1 unidades | 8 OA asignados
+mat_4_basico.json | mat 4° básico | 1 unidades | 27 OA asignados
+mat_4_medio.json | mat 4° medio | 1 unidades | 5 OA asignados
+mat_5_basico.json | mat 5° básico | 1 unidades | 27 OA asignados
+mat_6_basico.json | mat 6° básico | 1 unidades | 24 OA asignados
+mat_7_basico.json | Mat 7 Básico | 1 unidades | 19 OA asignados
+mat_8_basico.json | mat 8° básico | 1 unidades | 20 OA asignados

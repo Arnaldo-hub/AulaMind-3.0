@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Sector Gráfico TP
+
+Dibujo Técnico: 3° medio 4 módulos | 4° medio 5 módulos
+Gráfica: 3° medio 4 módulos | 4° medio 5 módulos
+
+Total: 2 especialidades, 4 JSON de curso y 18 módulos estructurados.
+Bloque separado de formación general y preparado para data_curricular/especialidades_tp.

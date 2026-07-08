@@ -1,0 +1,54 @@
+{
+  "modalidad": "Humanístico-Científica",
+  "plan": "Formación Diferenciada",
+  "tipo": "Asignatura de profundización",
+  "area": "lengua_literatura",
+  "asignatura": "Taller de literatura",
+  "curso": "3° medio HC",
+  "cobertura_curricular": "3° y 4° medio HC",
+  "oa": [
+    {
+      "codigo": "LL-TALI-3y4-OAC-01",
+      "descripcion": "Producir diversos géneros escritos y audiovisuales para desarrollar y comunicar sus interpretaciones de las obras leídas."
+    },
+    {
+      "codigo": "LL-TALI-3y4-OAC-02",
+      "descripcion": "Producir textos pertenecientes a diversos géneros discursivos de la literatura que den cuenta de sus proyectos personales y creativos."
+    },
+    {
+      "codigo": "LL-TALI-3y4-OAC-03",
+      "descripcion": "Contribuir con sus comentarios, sugerencias, interpretaciones y críticas a los procesos de lectura colectiva y de escritura creativa de sus pares."
+    },
+    {
+      "codigo": "LL-TALI-3y4-OAC-04",
+      "descripcion": "Revisar y reescribir sus propias producciones (escritas, orales o audiovisuales) a la luz de los comentarios, críticas y sugerencias de sus pares, para enriquecer su producción creativa."
+    },
+    {
+      "codigo": "LL-TALI-3y4-OAC-05",
+      "descripcion": "Construir trayectorias de lectura que surjan de sus propios intereses, gustos literarios e inquietudes, explicitando criterios de selección de obras y compartiendo dichas trayectorias con sus pares."
+    },
+    {
+      "codigo": "LL-TALI-3y4-OAC-06",
+      "descripcion": "Producir textos y otras producciones que den cuenta de sus reflexiones sobre sí mismos y sobre diversas temáticas del mundo y del ser humano, surgidas de las interpretaciones de las obras leídas, de sus trayectorias de lectura personales y de los criterios de selección para estas."
+    }
+  ],
+  "unidades": [
+    {
+      "numero": 1,
+      "nombre": "Construyamos trayectorias de lectura"
+    },
+    {
+      "numero": 2,
+      "nombre": "Transformemos experiencias reales"
+    },
+    {
+      "numero": 3,
+      "nombre": "Aprendamos a crear colectivamente"
+    },
+    {
+      "numero": 4,
+      "nombre": "Experimentemos con nuevos formatos artísticos"
+    }
+  ],
+  "estado_curricular": "CONTENIDO CARGADO"
+}

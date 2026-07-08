@@ -1,0 +1,52 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Administración",
+  "especialidad": "Administración",
+  "curso": "3° medio TP",
+  "plan": "Plan común de especialidad",
+  "modulos": [
+    {
+      "codigo": "AD-ADMI-M01",
+      "nombre": "Utilización de información contable",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AD-ADMI-M02",
+      "nombre": "Gestión comercial y tributaria",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AD-ADMI-M03",
+      "nombre": "Proceso administrativo",
+      "oa_asociados": [
+        "OA 2",
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "AD-ADMI-M04",
+      "nombre": "Atención de clientes",
+      "oa_asociados": [
+        "OA 4"
+      ]
+    },
+    {
+      "codigo": "AD-ADMI-M05",
+      "nombre": "Organización de oficinas",
+      "oa_asociados": [
+        "OA 5"
+      ]
+    },
+    {
+      "codigo": "AD-ADMI-M06",
+      "nombre": "Aplicaciones informáticas para la gestión administrativa",
+      "oa_asociados": [
+        "OA 6"
+      ]
+    }
+  ]
+}

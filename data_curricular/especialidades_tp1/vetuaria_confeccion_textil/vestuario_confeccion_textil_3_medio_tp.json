@@ -1,0 +1,39 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Confección",
+  "especialidad": "Vestuario y Confección Textil",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-VEST-M01",
+      "nombre": "Diseño y patronaje de prendas de vestir",
+      "oa_asociados": [
+        "OA 1",
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "CO-VEST-M02",
+      "nombre": "Corte de materiales textiles",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "CO-VEST-M03",
+      "nombre": "Confección de prendas de vestir",
+      "oa_asociados": [
+        "OA 4",
+        "OA 5"
+      ]
+    },
+    {
+      "codigo": "CO-VEST-M04",
+      "nombre": "Mantenimiento básico de máquinas y equipos de confección",
+      "oa_asociados": [
+        "OA 6"
+      ]
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos > OA asociados"
+}

@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Acuicultura",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-ACUI-M01",
+      "nombre": "Manejo de reproductores y procesos de reproducción"
+    },
+    {
+      "codigo": "MA-ACUI-M02",
+      "nombre": "Producción de alimento vivo"
+    },
+    {
+      "codigo": "MA-ACUI-M03",
+      "nombre": "Cultivo de peces, moluscos y algas"
+    },
+    {
+      "codigo": "MA-ACUI-M04",
+      "nombre": "Control de parámetros y condiciones del medio de cultivo"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

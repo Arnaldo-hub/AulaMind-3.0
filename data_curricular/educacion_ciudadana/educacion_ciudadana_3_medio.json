@@ -1,0 +1,59 @@
+{
+  "asignatura": "Educación Ciudadana",
+  "curso": "3° medio",
+  "plan": "Formación General",
+  "unidades": [
+    {
+      "numero": 1,
+      "nombre": "Estado, democracia y ciudadanía"
+    },
+    {
+      "numero": 2,
+      "nombre": "Justicia y derechos humanos"
+    },
+    {
+      "numero": 3,
+      "nombre": "Participación y la organización territorial en democracia"
+    },
+    {
+      "numero": 4,
+      "nombre": "Relaciones entre Estado y mercado"
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "FG-ECIU-3M-OAC-01",
+      "descripcion": "Identificar los fundamentos, atributos y dimensiones de la democracia y la ciudadanía, considerando las libertades fundamentales de las personas como un principio de estas y reconociendo sus implicancias en los deberes del Estado y en los derechos y responsabilidades ciudadanas."
+    },
+    {
+      "codigo": "FG-ECIU-3M-OAC-02",
+      "descripcion": "Investigar, a partir de casos de interés público, los mecanismos de acceso a la justicia y las principales características del sistema judicial, para fortalecer estrategias de resguardo de las libertades fundamentales, los propios derechos y los de la comunidad."
+    },
+    {
+      "codigo": "FG-ECIU-3M-OAC-03",
+      "descripcion": "Reflexionar personal y grupalmente sobre riesgos para la democracia en Chile y el mundo, tales como el fenómeno de la desafección política, la desigualdad, la corrupción, el narcotráfico, la violencia, entre otros."
+    },
+    {
+      "codigo": "FG-ECIU-3M-OAC-04",
+      "descripcion": "Evaluar las relaciones entre el Estado y el mercado, considerando temas como sueldos justos, productividad, carga tributaria, comercio justo, probidad, desarrollo sustentable, riqueza y pobreza."
+    },
+    {
+      "codigo": "FG-ECIU-3M-OAC-05",
+      "descripcion": "Promover el reconocimiento, la defensa y exigibilidad de los derechos humanos en la vida cotidiana, considerando los principios de universalidad, indivisibilidad, inalienabilidad, igualdad y no discriminación que los sustentan."
+    },
+    {
+      "codigo": "FG-ECIU-3M-OAC-06",
+      "descripcion": "Reflexionar personal y grupalmente sobre diversas formas de participación y su aporte al fortalecimiento del bien común, considerando experiencias personales, fenómenos sociales contemporáneos y las perspectivas del republicanismo, el liberalismo, y el comunitarismo."
+    },
+    {
+      "codigo": "FG-ECIU-3M-OAC-07",
+      "descripcion": "Distinguir relaciones políticas, económicas y socioculturales que configuran el territorio en distintas escalas, proponiendo alternativas para avanzar en justicia social y ambiental."
+    },
+    {
+      "codigo": "FG-ECIU-3M-OAC-08",
+      "descripcion": "Participar en distintas instancias escolares de ejercicio democrático, reconociendo la necesidad de organizar socialmente la vida en comunidad, a fin de fortalecer una sana convivencia que resguarde las libertades fundamentales y el bien común."
+    }
+  ],
+  "fuente": "Currículum Nacional MINEDUC — Bases Curriculares y Programa de Estudio Educación Ciudadana",
+  "estado_curricular": "OA y unidades cargados por curso"
+}

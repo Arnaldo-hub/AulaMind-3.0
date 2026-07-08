@@ -1,0 +1,6 @@
+AulaMind Enterprise 3.0 — Contabilidad TP
+
+3° medio TP: 4 módulos estructurados.
+4° medio TP: 4 módulos estructurados, incluyendo Emprendimiento y Empleabilidad.
+Total del lote: 8 módulos.
+Estructura: modalidad > sector > especialidad > curso > módulos > OA asociados.

@@ -1,0 +1,91 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "modalidad": "Interculturalidad",
+  "curso": "1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Diversidad cultural, relatos y memoria de los pueblos originarios",
+      "oa": [
+        {
+          "codigo": "LC01-INT-U1-LS01",
+          "descripcion": "Disfrutar y comprender relatos breves de tradición oral de distintos pueblos originarios, reconociendo palabras y expresiones culturalmente significativas."
+        },
+        {
+          "codigo": "LC01-INT-U1-T01",
+          "descripcion": "Reconocer que existen distintos pueblos originarios, cada uno con historias, territorios y formas de vida propias."
+        },
+        {
+          "codigo": "LC01-INT-U1-C01",
+          "descripcion": "Valorar el respeto y la convivencia entre personas y comunidades culturalmente diversas."
+        },
+        {
+          "codigo": "LC01-INT-U1-P01",
+          "descripcion": "Reconocer expresiones del patrimonio cultural y natural de distintos pueblos originarios."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Territorio, naturaleza y formas de vida",
+      "oa": [
+        {
+          "codigo": "LC01-INT-U2-LS01",
+          "descripcion": "Escuchar y comunicar experiencias vinculadas con la naturaleza, el territorio y la vida comunitaria, incorporando palabras culturalmente significativas."
+        },
+        {
+          "codigo": "LC01-INT-U2-T01",
+          "descripcion": "Reconocer lugares y espacios significativos para distintos pueblos originarios y su relación con formas de vida y actividades culturales."
+        },
+        {
+          "codigo": "LC01-INT-U2-C01",
+          "descripcion": "Valorar prácticas de cooperación, reciprocidad, respeto y cuidado presentes en distintas comunidades."
+        },
+        {
+          "codigo": "LC01-INT-U2-P01",
+          "descripcion": "Comprender que los pueblos originarios desarrollan conocimientos y prácticas vinculadas con la naturaleza y el cosmos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Lenguas, saberes, artes y patrimonio cultural",
+      "oa": [
+        {
+          "codigo": "LC01-INT-U3-LS01",
+          "descripcion": "Reconocer palabras y expresiones de lenguas indígenas presentes en relatos, nombres de lugares y situaciones de la vida cotidiana."
+        },
+        {
+          "codigo": "LC01-INT-U3-T01",
+          "descripcion": "Reconocer conocimientos transmitidos por personas mayores y su importancia para la memoria y continuidad cultural de los pueblos."
+        },
+        {
+          "codigo": "LC01-INT-U3-C01",
+          "descripcion": "Reconocer valores comunitarios compartidos y formas diversas de convivencia cultural."
+        },
+        {
+          "codigo": "LC01-INT-U3-P01",
+          "descripcion": "Valorar técnicas, artes, músicas, diseños, oficios y otras expresiones del patrimonio material e inmaterial de los pueblos originarios."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Identidad, diálogo intercultural y continuidad de las culturas",
+      "oa": [
+        {
+          "codigo": "LC01-INT-U4-LS01",
+          "descripcion": "Expresar oralmente ideas y experiencias relacionadas con la diversidad cultural del entorno familiar, escolar y comunitario."
+        },
+        {
+          "codigo": "LC01-INT-U4-T01",
+          "descripcion": "Reconocer elementos culturales que aportan a las identidades y sentidos de pertenencia de personas y comunidades."
+        },
+        {
+          "codigo": "LC01-INT-U4-C01",
+          "descripcion": "Participar en experiencias de diálogo y convivencia intercultural demostrando respeto por distintas culturas y formas de comprender el mundo."
+        },
+        {
+          "codigo": "LC01-INT-U4-P01",
+          "descripcion": "Participar en experiencias de creación, apreciación y difusión vinculadas con expresiones culturales de distintos pueblos originarios."
+        }
+      ]
+    }
+  ]
+}

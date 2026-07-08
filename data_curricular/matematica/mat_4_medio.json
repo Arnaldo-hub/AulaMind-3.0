@@ -1,0 +1,58 @@
+{
+  "asignatura": "Matemática",
+  "curso": "mat 4° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — La toma de decisiones en situaciones de",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2: Fundamentar"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — La toma de decisiones en situaciones",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1: Fundamentar"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Modelamiento matemático para describir y",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3: Construir modelos de"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Geometría con coordenadas",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4: Resolver decisiones en decisiones en el situaciones o fenómenos de problemas acerca de situaciones de ámbito financiero y crecimiento, decrecimiento rectas y incerteza, a partir del económico personal o y periódicos que involucren circunferencias en el análisis crítico de datos comunitario, a partir funciones potencia de plano, mediante su estadísticos y con base de modelos que exponente entero y representación en los modelos consideren tasas de trigonométricas sen(x) y analítica, de forma binomial y normal. interés e índices cos(x), de forma manuscrita y con uso económicos. manuscrita, con uso de de herramientas OA c. Tomar decisiones herramientas tecnológicas y tecnológicas. fundamentadas en OA d. Argumentar, promoviendo la búsqueda, evidencia estadística utilizando lenguaje OA d. Argumentar, selección, contrastación y y/o en la"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3: Construir modelos de"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1: Fundamentar"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2: Fundamentar"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5. Prevenir riesgos de accidentes laborales, mediante la aplicación de normas básicas de seguridad en zonas de almacenamiento y distribución, y el reconocimiento de la rotulación internacional de sustancias peligrosas. Tipo de Proyecto Interdisciplinario • Matemática • Administración de empresas, mención Logística Producto • Presentación de un modelo de optimización de servicio de reparto. Habilidades y"
+        }
+      ]
+    }
+  ]
+}

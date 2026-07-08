@@ -1,0 +1,58 @@
+{
+  "asignatura": "Educación Física y Salud",
+  "curso": "1° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Aptitud física y entrenamiento personal",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Diseñar y aplicar un plan de entrenamiento personal para alcanzar una condición física saludable, desarrollando resistencia cardiovascular, fuerza muscular, velocidad y flexibilidad."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Participar y promover una variedad de actividades físicas y deportivas de su interés y que se desarrollan en su comunidad escolar y local."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Deportes individuales y colectivos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Perfeccionar y aplicar con precisión las habilidades motrices específicas de locomoción, manipulación y estabilidad en al menos un deporte individual y uno de oposición."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Modificar, evaluar y aplicar estrategias y tácticas específicas utilizadas para la resolución de problemas durante la práctica de juegos o deportes."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Expresión corporal, danza y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Practicar regularmente una variedad de actividades físicas alternativas y deportivas en diferentes entornos, aplicando conductas de autocuidado y seguridad."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Participar y promover una variedad de actividades físicas y deportivas de su interés y que se desarrollan en su comunidad escolar y local."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Liderazgo, seguridad y promoción de la actividad física",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Practicar regularmente una variedad de actividades físicas alternativas y deportivas en diferentes entornos, aplicando conductas de autocuidado y seguridad."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Participar y promover una variedad de actividades físicas y deportivas de su interés y que se desarrollan en su comunidad escolar y local, demostrando liderazgo y respeto."
+        }
+      ]
+    }
+  ]
+}

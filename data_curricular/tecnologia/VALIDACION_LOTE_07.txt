@@ -1,0 +1,14 @@
+AulaMind Enterprise 3.0 - Lote 07
+Asignatura: Tecnología
+Validación estructural: JSON, asignatura, curso, unidades, nombre de unidad, código OA y descripción OA.
+
+tecnol_1_basico.json: 1 unidades; 11 OA asignados.
+tecnol_2_basico.json: 1 unidades; 12 OA asignados.
+tecnol_2_medio.json: 1 unidades; 12 OA asignados.
+tecnol_4_basico.json: 1 unidades; 15 OA asignados.
+tecnol_5_basico.json: 1 unidades; 14 OA asignados.
+tecnol_7_basico.json: 1 unidades; 6 OA asignados.
+tecnol_8_basico.json: 1 unidades; 6 OA asignados.
+tecnologia_1medio.json: 1 unidades; 14 OA asignados.
+tecnologia_3_basico.json: 1 unidades; 13 OA asignados.
+tecnologia_6_basico.json: 1 unidades; 13 OA asignados.

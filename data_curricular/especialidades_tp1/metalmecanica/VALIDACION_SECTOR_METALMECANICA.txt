@@ -1,0 +1,9 @@
+AulaMind Enterprise 3.0 — Sector Metalmecánica TP
+
+Construcciones Metálicas: 3° 4 módulos | 4° 5 módulos | sin menciones
+Mecánica Industrial: 3° 4 módulos | 4° 5 módulos | Mantenimiento Electromecánico, Máquinas-Herramientas, Matricería
+Mecánica Automotriz: 3° 4 módulos | 4° 5 módulos | sin menciones
+Mecánica de Mantenimiento de Aeronaves: 3° 4 módulos | 4° 5 módulos | sin menciones
+
+Total: 4 especialidades, 8 JSON de curso y 36 módulos estructurados.
+Estado: requiere auditoría final contra programas oficiales antes del consolidado definitivo.

@@ -1,0 +1,58 @@
+{
+  "asignatura": "orient",
+  "curso": "ORIENT 3° BAS",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crecimiento personal, identidad y bienestar",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Observar, describir y valorar sus caracte- cia y discriminación, ya sea por etnia, rísticas, habilidades y fortalezas (en lo fa- género, religión, nacionalidad, etc. miliar, afectivo, académico y social, entre › respetar el derecho de todos a expre- otros) y proponerse acciones concretas sar opiniones y ser diferente para los aspectos que requiera superar. › prestar ayuda especialmente a quien lo necesite"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Identificar emociones ex- 1 perimentadas por ellos y Los estudiantes escuchan un breve relato en el que se refleje por los demás (por ejem- claramente una determinada emoción; por ejemplo: “Marcela es-"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Relaciones interpersonales, convivencia y buen trato",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Resolver conflictos entre pares en forma cional (por ejemplo, esperar un tiempo, guiada y aplicar estrategias diversas de escuchar al otro y considerar su impacto resolución de problemas, tales como en los demás). escuchar, describir los sentimientos del otro y buscar un acuerdo que satisfaga a"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Participación, hábitos de estudio y desarrollo de metas",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 al cual están asociados, y permiten al Observar, describir y valorar › Dibujan y nombran situaciones en las que reciben y dan las expresiones de afecto y cariño en su ámbito familiar. cariño, que dan y reciben, en › Identifican prácticas de cuidado familiar como formas de profesor evaluar el logro del objetivo. los ámbitos familiar, escolar y expresar cariño y aprecio hacia ellos. social (por ejemplo, compartir › Proponen formas de dar cariño y agradecer a los miembros Cada Objetivo de Aprendizaje cuenta tiempo, escuchar a los demás, de su familia y en el contexto escolar. dar y recibir ayuda). › Identifican formas en que dan y reciben cariño en el esta- con varios indicadores y la totalidad de blecimiento. › Proponen formas de expresar afecto y cariño a sus pares y los indicadores dan cuenta del apren- en su entorno escolar. dizaje. Al ser de carácter sugerido, puede especificarse con mayor detalle en cada aprendizaje qué es lo que se espera del estudiante.28"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Manifestar hábitos y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Autocuidado, vida saludable y proyecto personal",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Identificar y practicar en forma autóno- › proponiendo y aceptando iniciativas y ma conductas protectoras y de autocui- asumiendo responsabilidades dado en relación a: › respetando los derechos de los demás › rutinas de higiene en la distribución de roles y responsa- ›"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Manifestar"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 explicitan los"
+        }
+      ]
+    }
+  ]
+}

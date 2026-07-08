@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Mecánica Automotriz",
+  "curso": "4° medio TP",
+  "menciones": [],
+  "modulos": [
+    {
+      "codigo": "MM-MEAU-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MM-MEAU-M05",
+      "nombre": "Diagnóstico y reparación de motores"
+    },
+    {
+      "codigo": "MM-MEAU-M06",
+      "nombre": "Diagnóstico y reparación de sistemas de transmisión"
+    },
+    {
+      "codigo": "MM-MEAU-M07",
+      "nombre": "Diagnóstico de sistemas eléctricos y electrónicos"
+    },
+    {
+      "codigo": "MM-MEAU-M08",
+      "nombre": "Mantenimiento y reparación integral del vehículo"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

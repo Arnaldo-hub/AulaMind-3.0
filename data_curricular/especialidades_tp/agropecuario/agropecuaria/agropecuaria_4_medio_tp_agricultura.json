@@ -1,0 +1,43 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Agropecuario",
+  "especialidad": "Agropecuaria",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AP-AGRO-M00",
+      "nombre": "Emprendimiento y empleabilidad agropecuaria",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AP-AGRI-M01",
+      "nombre": "Técnicas de cultivo de especies vegetales",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AP-AGRI-M02",
+      "nombre": "Manejos para optimización productiva de frutales",
+      "oa_asociados": [
+        "OA 2"
+      ]
+    },
+    {
+      "codigo": "AP-AGRI-M03",
+      "nombre": "Postcosecha y guarda de productos agrícolas",
+      "oa_asociados": [
+        "OA 3",
+        "OA 4"
+      ]
+    },
+    {
+      "codigo": "AP-AGRI-M04",
+      "nombre": "Mantenimiento de maquinarias y equipos agrícolas",
+      "oa_asociados": [
+        "OA 5"
+      ]
+    }
+  ],
+  "mencion": "Agricultura"
+}

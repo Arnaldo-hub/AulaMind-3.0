@@ -1,0 +1,20 @@
+[
+  {
+    "especialidad": "Instalaciones Sanitarias",
+    "oa_perfil": 8,
+    "archivos_curso": 2,
+    "estado_modulos": "pendiente"
+  },
+  {
+    "especialidad": "Montaje Industrial",
+    "oa_perfil": 10,
+    "archivos_curso": 2,
+    "estado_modulos": "pendiente"
+  },
+  {
+    "especialidad": "Refrigeración y Climatización",
+    "oa_perfil": 9,
+    "archivos_curso": 2,
+    "estado_modulos": "pendiente"
+  }
+]

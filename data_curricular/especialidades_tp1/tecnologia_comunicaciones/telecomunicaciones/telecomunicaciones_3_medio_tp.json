@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Tecnología y Comunicaciones",
+  "especialidad": "Telecomunicaciones",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "TC-TELE-M01",
+      "nombre": "Instalación de redes de telecomunicaciones"
+    },
+    {
+      "codigo": "TC-TELE-M02",
+      "nombre": "Sistemas de telefonía y comunicación de voz"
+    },
+    {
+      "codigo": "TC-TELE-M03",
+      "nombre": "Montaje y mantenimiento de sistemas de transmisión"
+    },
+    {
+      "codigo": "TC-TELE-M04",
+      "nombre": "Medición y diagnóstico de señales de telecomunicaciones"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

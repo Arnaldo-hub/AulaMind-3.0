@@ -1,0 +1,66 @@
+{
+  "asignatura": "orient",
+  "curso": "ORIENT 1° MEDIO",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crecimiento personal, identidad y bienestar",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 >>Identifican situaciones en donde se ve trasgredido el resguardo de la salud, Analizar de manera fundamentada la intimidad, y la integridad física y temáticas y situaciones relacionadas con emocional. la sexualidad y los vínculos afectivos, en función de valores como el respeto hacia >>Reconocen relaciones entre estereotipos todo ser humano, la responsabilidad y asociados a los roles de género y los el cuidado de sí mismos y de los demás, principios de equidad y respeto hacia considerando el resguardo de la salud, la todas las personas. intimidad, la integridad física y emocional. >>Diferencian maneras de favorecer el respeto por su propia intimidad, integridad física y emocional de aquellas condiciones en que se transgrede su bienestar personal. >>Utilizan estrategias para afrontar las diversas problemáticas asociadas a la sexualidad y el vínculo afectivo. >>Obtienen información y orientación respecto de la diversidad sexual vinculada con orientación e identidad de género. >>Explican factores protectores y de riesgo en el ámbito de la sexualidad y los vínculos afectivos a nivel personal y de quienes los rodean. 30 ORIENTACIÓN |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Relaciones interpersonales, convivencia y buen trato",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Aprendizaje: Promover en su entorno relaciones interpersonales constructivas, sean estas presenciales Son los OA especificados o por medio de las redes sociales, sobre la base del análisis de situaciones, considerando en las Bases Curriculares. los derechos de las personas acorde a los principios de igualdad, dignidad, inclusión En ocasiones, un OA y no discriminación. puede ser abordado por un conjunto de"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Discriminar alternativas para la resolución de conflictos en un marco de derechos, que promuevan la búsqueda de acuerdos que beneficien a las partes involucradas y que impliquen el compromiso recíproco. EJE PERTENENCIA Y PARTICIPACIÓN DEMOCRÁTICA"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Evaluar en su entorno social e institucional cercano, como curso, establecimiento, barrio u otro, instancias en las que puedan participar o contribuir a la resolución de problemáticas a partir del reconocimiento de sí mismos y de los demás como sujetos de derecho, considerando aspectos como el respeto por la dignidad, la diversidad, la equidad de género, la inclusión, la participación democrática, la justicia y el bienestar."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Desarrollar iniciativas orientadas a promover el respeto, la justicia, el buen trato, las relaciones pacíficas y el bien común en el propio curso y la comunidad escolar, participando en instancias colectivas, como el Consejo de Curso, órganos de representación estudiantil u otros, de manera colaborativa y democrática, mediante el diálogo y el debate respetuoso ante la diversidad de opiniones. ORIENTACIÓN |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Participación, hábitos de estudio y desarrollo de metas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 >>Reconocen sus intereses, condiciones los aprendizajes terminales del año para cada y capacidades que facilitarían la Comparar distintas alternativas posibles asignatura. Se refieren a construcción del proyecto de vida. de sus proyectos de vida, en los ámbitos conocimientos, habilidades laboral, familiar u otros, considerando sus >>Identifican experiencias y valores y"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Diseñar aspectos de sus posibles proyectos de vida considerando elementos como habilidades, motivaciones, metas personales, posibilidades y limitaciones, asumiendo el desafío de tomar decisiones coherentes con estos elementos y actuando, basándose en ellos, de manera perseverante y esforzada. 52 ORIENTACIÓN |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Autocuidado, vida saludable y proyecto personal",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Evaluar, en sí mismos y en su entorno, situaciones problemáticas y/o de riesgos relacionadas con el consumo de sustancias, conductas sexuales riesgosas y la violencia, entre otros, e identificar y recurrir a redes de apoyo a las que pueden pedir ayuda, como familia, profesores, instituciones de salud, centros comunitarios y fonos y páginas web especializadas, entre otras."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Promover y llevar a cabo de manera autónoma acciones que favorezcan la vida saludable a nivel personal y social, manifestando interés y preocupación ante problemas y situaciones de su entorno y de sus vidas (cuidado de la alimentación, manejo adecuado del estrés, uso positivo del tiempo de ocio, prevención de riesgos y seguridad personal en situaciones cotidianas, entre otros). 50 ORIENTACIÓN |"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Contrastar diversos posibles caminos a seguir en el desarrollo de sus proyectos de vida, tomando en cuenta distintas opciones laborales y académicas y reconociendo sus habilidades e intereses."
+        }
+      ]
+    }
+  ]
+}

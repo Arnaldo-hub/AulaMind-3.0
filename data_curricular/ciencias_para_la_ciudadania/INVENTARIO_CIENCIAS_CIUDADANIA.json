@@ -1,0 +1,12 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "asignatura": "Ciencias para la Ciudadanía",
+  "cursos": [
+    "3° medio",
+    "4° medio"
+  ],
+  "modulos": 4,
+  "oa_ciclo": 12,
+  "archivos_curso": 2,
+  "nota": "Los mismos 12 OA oficiales corresponden al ciclo 3° y 4° medio."
+}

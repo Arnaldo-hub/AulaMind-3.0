@@ -1,0 +1,51 @@
+AulaMind Enterprise 3.0 — Plan de cierre curricular
+
+AUDITORÍA DE LOS BLOQUES COMPLEMENTARIOS GENERADOS
+
+1. Religión Católica y Evangélica
+   Estado: ESTRUCTURA
+   JSON detectados en paquete: 25
+   Nota: OA y unidades oficiales pendientes
+
+2. Filosofía 3°-4° medio
+   Estado: CARGADO
+   JSON detectados en paquete: 3
+   Nota: OA incorporados
+
+3. Educación Ciudadana 3°-4° medio
+   Estado: CARGADO
+   JSON detectados en paquete: 3
+   Nota: OA y unidades incorporados
+
+4. Ciencias para la Ciudadanía 3°-4° medio
+   Estado: CARGADO
+   JSON detectados en paquete: 3
+   Nota: 4 módulos y OA incorporados
+
+5. Electivos de Profundización HC
+   Estado: ESTRUCTURA
+   JSON detectados en paquete: 55
+   Nota: 27 asignaturas; OA y unidades pendientes
+
+6. Educación Parvularia NT1-NT2
+   Estado: ESTRUCTURA
+   JSON detectados en paquete: 7
+   Nota: Ámbitos y núcleos creados; OA pendientes
+
+7. EMTP
+   Estado: MIXTO
+   JSON detectados en paquete: 80
+   Nota: 35 especialidades presentes; varios lotes requieren auditoría MINEDUC
+
+8. EPJA
+   Estado: ESTRUCTURA
+   JSON detectados en paquete: 34
+   Nota: 33 JSON; OA y unidades pendientes
+
+ORDEN RECOMENDADO DE CIERRE:
+1. Religión Católica y Evangélica: cargar OA/unidades oficiales.
+2. Electivos HC: extraer OA y unidades de las 27 asignaturas.
+3. Educación Parvularia: cargar OA exactos por núcleo y progresión NT1/NT2.
+4. EPJA: cargar OA y unidades desde Bases/Programas vigentes.
+5. EMTP: auditar los lotes marcados como provisionales contra programas MINEDUC.
+6. Ejecutar prueba real de lectura desde AulaMind antes de declarar cierre.

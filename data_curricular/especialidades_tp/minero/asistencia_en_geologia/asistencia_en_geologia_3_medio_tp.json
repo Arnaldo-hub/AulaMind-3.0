@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Minero",
+  "especialidad": "Asistencia en Geología",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MI-ASGE-M01",
+      "nombre": "Introducción a la geología y reconocimiento de minerales y rocas"
+    },
+    {
+      "codigo": "MI-ASGE-M02",
+      "nombre": "Topografía y levantamiento de información en terreno"
+    },
+    {
+      "codigo": "MI-ASGE-M03",
+      "nombre": "Muestreo geológico"
+    },
+    {
+      "codigo": "MI-ASGE-M04",
+      "nombre": "Registro y manejo de información geológica"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

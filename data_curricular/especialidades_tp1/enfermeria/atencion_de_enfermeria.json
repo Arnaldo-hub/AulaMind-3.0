@@ -1,0 +1,28 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "especialidad": "Atención de Enfermería",
+  "alcance_oa": "Perfil de egreso terminal del ciclo 3° y 4° medio TP",
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 4",
+      "descripcion": "Registrar hechos económicos u operaciones de Técnico-Profesional, los estudiantes habrán comercio nacional e internacional, ordenados desarrollado las siguientes competencias: cronológicamente, en libros y sistemas contables, elaborando los asientos de ajuste y saldos"
+    },
+    {
+      "codigo": "OA 1",
+      "descripcion": "Leer y utilizar información contable sobre la contables correspondientes de una empresa. marcha de la empresa, de acuerdo a las normas internacionales de contabilidad y a"
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Comunicar y presentar información contable la legislación tributaria vigente. básica para usos internos de la empresa, considerando técnicas y formatos establecidos"
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Procesar información contable sobre la marcha de presentación de la información. de la empresa, utilizando los sistemas contables de uso frecuente en las empresas y"
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Organizar y ordenar el lugar de trabajo, de los correspondientes software de la acuerdo a técnicas y procedimientos que"
+    }
+  ],
+  "fuente": "Bases Curriculares Formación Diferenciada Técnico-Profesional aportadas al proyecto AulaMind-3.0"
+}

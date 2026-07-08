@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Minero",
+  "especialidad": "Explotación Minera",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MI-EXMI-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MI-EXMI-M05",
+      "nombre": "Carguío y transporte de minerales"
+    },
+    {
+      "codigo": "MI-EXMI-M06",
+      "nombre": "Operación de equipos de apoyo a la explotación"
+    },
+    {
+      "codigo": "MI-EXMI-M07",
+      "nombre": "Ventilación y servicios de mina"
+    },
+    {
+      "codigo": "MI-EXMI-M08",
+      "nombre": "Control operacional y seguridad en explotación minera"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

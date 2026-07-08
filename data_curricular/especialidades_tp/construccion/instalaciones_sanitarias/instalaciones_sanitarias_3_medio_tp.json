@@ -1,0 +1,42 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Construcción",
+  "especialidad": "Instalaciones Sanitarias",
+  "curso": "3° medio TP",
+  "alcance_oa": "Perfil de egreso terminal del ciclo 3° y 4° medio TP",
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion_resumida": "Interpretación de planos de redes de gas, agua y evacuación"
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion_resumida": "Cubicación digital de elementos y materiales"
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion_resumida": "Trazado de redes sanitarias y de gas"
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion_resumida": "Instalación de artefactos y redes de gas"
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion_resumida": "Mantenimiento y reparación de redes y artefactos"
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion_resumida": "Instalación de redes de agua potable"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion_resumida": "Instalación de artefactos sanitarios"
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion_resumida": "Verificación de equipos, herramientas y maquinarias"
+    }
+  ],
+  "estado_modulos": "PENDIENTE DE EXTRACCIÓN EXACTA DESDE PROGRAMA DE ESTUDIO; no se inventan módulos ni distribución anual"
+}

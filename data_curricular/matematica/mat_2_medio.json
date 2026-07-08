@@ -1,0 +1,86 @@
+{
+  "asignatura": "Matemática",
+  "curso": "mat 2° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Números y operaciones, Geometría, Medición",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 • Reconocen números cuyo desarrollo decimal del año para cada es infinito y no tiene periodo. asignatura. Se refieren a Realizar cálculos y estimaciones conocimientos, habilidades que involucren operaciones con • Estiman y aproximan números irracionales. y"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 • Relacionan y caracterizan las raíces por sugerido, por lo que el o la medio de potencias de exponente racional. docente puede modificarlos Mostrar que comprenden las o complementarlos. relaciones entre potencias, • Derivan y determinan propiedades relativas Cada Objetivo de raíces enésimas y logaritmos: a multiplicaciones y divisiones con raíces. Aprendizaje cuenta con • Comparando representaciones • Resuelven problemas que involucren raíces varios Indicadores, dado que existen múltiples de potencias de exponente y números racionales. desempeños que racional con raíces enésimas • Establecen relaciones entre potencias, raíces pueden demostrar que en la recta numérica. y logaritmos. un aprendizaje ha sido • Convirtiendo raíces enésimas • Comparan representaciones de potencias con desarrollado. a potencias de exponente exponente racional, con raíces enésimas, y racional y viceversa. las representan en la recta numérica. • Describiendo la relación entre • Explican la relación entre potencias y potencias y logaritmos. logaritmos. • Resolviendo problemas • Convierten desde un tipo de registro a otro; rutinarios y no rutinarios es decir, desde potencias a raíces y viceversa, que involucren potencias, y desde potencias a logaritmos y viceversa. logaritmos y raíces enésimas. • Resuelven problemas rutinarios y no rutinarios que involucran logaritmos. 30 MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 • Relacionan medidas de contenidos en envases en forma de cono, cilindro y esfera, queDesarrollar las fórmulas del área tienen el mismo radio y cuya altura tambiénde la superficie y el volumen de es igual al radio.la esfera: • Derivan la fórmula del volumen de una• Conjeturando la fórmula. esfera, a partir de los datos obtenidos en • Representando de manera la comparación. concreta y simbólica, de • Reconocen que el volumen del cono es un manera manual y/o con cuarto del volumen de la esfera, si el radio software educativo. y la altura son iguales en ambas figuras 3D. • Resolviendo problemas de la • Determinan la relación entre el volumen de vida diaria y de geometría. la esfera y el volumen de un cono inscrito en ella. • Relacionan la esfera con objetos cotidianos (balón de fútbol, pelota de tenis, etc.). MATEMÁTICA |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Mostrar que comprenden la función cuadrática f(x)= ax2 + bx + c (a ≠ 0): • Reconociendo la función cuadrática f(x) = ax2 en situaciones de la vida diaria y otras asignaturas. • Representándola en tablas y gráficos de manera manual y/o con software educativo. • Determinando puntos especiales de su gráfica. • Seleccionándola como modelo de situaciones de cambio cuadrático de otras asignaturas, en particular de la oferta y demanda."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Resolver, de manera concreta, pictórica y simbólica o usando herramientas tecnológicas, ecuaciones cuadráticas de la forma: • ax2 = b • (ax + b)2= c • ax2 + bx = 0 • ax2 + bx = c • (a, b, c son números racionales, a ≠ 0)."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Mostrar que comprenden la inversa de una función: • Utilizando la metáfora de una máquina. • Representándola por medio de tablas y gráficos, de manera manual y/o con software educativo. • Utilizando la reflexión de la función representada en el gráfico en un plano cartesiano. • Calculando las inversas en casos de funciones lineales y cuadráticas."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Geometría, Medición",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Son los OA especificados Explicar el cambio porcentual constante en intervalos de tiempo: en las Bases Curriculares. En ocasiones, un OA >>Por medio de situaciones de la vida real y de otras asignaturas. puede ser abordado por un >>Identificándolo con el interés compuesto. conjunto de"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Mostrar que comprenden las razones trigonométricas de seno, coseno y tangente en triángulos rectángulos: • Relacionándolas con las propiedades de la semejanza y los ángulos. • Explicándolas de manera pictórica y simbólica, de manera manual y/o con software educativo. • Aplicándolas para determinar ángulos o medidas de lados. • Resolviendo problemas geométricos y de otras asignaturas."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Aplicar las razones trigonométricas en diversos contextos en la composición y descomposición de vectores y determinar las proyecciones de vectores."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Números y operaciones, Geometría, Medición",
+      "oa": [
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Mostrar que comprenden las variables aleatorias finitas: • Definiendo la variable. • Determinando los posibles valores de la incógnita. • Calculando su probabilidad. • Graficando sus distribuciones."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 de 8° básico. asignaturas, en sus respectivos niveles. 32 MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Mostrar que comprenden el rol de la probabilidad en la sociedad: • Revisando informaciones de los medios de comunicación. • Identificando suposiciones basadas en probabilidades. • Explicando cómo una probabilidad puede sustentar suposiciones opuestas. • Explicando decisiones basadas en situaciones subjetivas o en probabilidades."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 • Reconocen números cuyo desarrollo decimal del año para cada es infinito y no tiene periodo. asignatura. Se refieren a Realizar cálculos y estimaciones conocimientos, habilidades que involucren operaciones con • Estiman y aproximan números irracionales. y"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 • Relacionan y caracterizan las raíces por sugerido, por lo que el o la medio de potencias de exponente racional. docente puede modificarlos Mostrar que comprenden las o complementarlos. relaciones entre potencias, • Derivan y determinan propiedades relativas Cada Objetivo de raíces enésimas y logaritmos: a multiplicaciones y divisiones con raíces. Aprendizaje cuenta con • Comparando representaciones • Resuelven problemas que involucren raíces varios Indicadores, dado que existen múltiples de potencias de exponente y números racionales. desempeños que racional con raíces enésimas • Establecen relaciones entre potencias, raíces pueden demostrar que en la recta numérica. y logaritmos. un aprendizaje ha sido • Convirtiendo raíces enésimas • Comparan representaciones de potencias con desarrollado. a potencias de exponente exponente racional, con raíces enésimas, y racional y viceversa. las representan en la recta numérica. • Describiendo la relación entre • Explican la relación entre potencias y potencias y logaritmos. logaritmos. • Resolviendo problemas • Convierten desde un tipo de registro a otro; rutinarios y no rutinarios es decir, desde potencias a raíces y viceversa, que involucren potencias, y desde potencias a logaritmos y viceversa. logaritmos y raíces enésimas. • Resuelven problemas rutinarios y no rutinarios que involucran logaritmos. 30 MATEMÁTICA |"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 • Relacionan medidas de contenidos en envases en forma de cono, cilindro y esfera, queDesarrollar las fórmulas del área tienen el mismo radio y cuya altura tambiénde la superficie y el volumen de es igual al radio.la esfera: • Derivan la fórmula del volumen de una• Conjeturando la fórmula. esfera, a partir de los datos obtenidos en • Representando de manera la comparación. concreta y simbólica, de • Reconocen que el volumen del cono es un manera manual y/o con cuarto del volumen de la esfera, si el radio software educativo. y la altura son iguales en ambas figuras 3D. • Resolviendo problemas de la • Determinan la relación entre el volumen de vida diaria y de geometría. la esfera y el volumen de un cono inscrito en ella. • Relacionan la esfera con objetos cotidianos (balón de fútbol, pelota de tenis, etc.). MATEMÁTICA |"
+        }
+      ]
+    }
+  ]
+}

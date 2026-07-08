@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Minero",
+  "especialidad": "Explotación Minera",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MI-EXMI-M01",
+      "nombre": "Introducción a las operaciones mineras"
+    },
+    {
+      "codigo": "MI-EXMI-M02",
+      "nombre": "Perforación de rocas"
+    },
+    {
+      "codigo": "MI-EXMI-M03",
+      "nombre": "Tronadura y fragmentación de roca"
+    },
+    {
+      "codigo": "MI-EXMI-M04",
+      "nombre": "Fortificación y seguridad de labores mineras"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

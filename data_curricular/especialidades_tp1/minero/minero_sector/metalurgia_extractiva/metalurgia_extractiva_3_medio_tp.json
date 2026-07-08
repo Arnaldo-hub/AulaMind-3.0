@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Minero",
+  "especialidad": "Metalurgia Extractiva",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "MI-MEEX-M01",
+      "nombre": "Preparación mecánica de minerales"
+    },
+    {
+      "codigo": "MI-MEEX-M02",
+      "nombre": "Muestreo y caracterización de minerales"
+    },
+    {
+      "codigo": "MI-MEEX-M03",
+      "nombre": "Concentración de minerales"
+    },
+    {
+      "codigo": "MI-MEEX-M04",
+      "nombre": "Control de variables en procesos metalúrgicos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

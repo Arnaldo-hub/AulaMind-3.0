@@ -1,0 +1,88 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Tecnología y Comunicaciones",
+  "especialidad": "Conectividad y Redes",
+  "curso": "4° medio TP",
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Leer y utilizar técnicamente proyectos de conectividad y redes, considerando planos o diagramas de una red de área local (red LAN), basándose en los modelos TCP/IP y OSI."
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Instalar y configurar sistemas operativos en computadores personales con el fin de incorporarlos a una red LAN, cumpliendo con los estándares de calidad y seguridad establecidos."
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Instalar y mantener cableados estructurados, incluyendo fibra óptica, utilizados en la construcción de redes, basándose en las especificaciones técnicas correspondientes."
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Realizar pruebas de conexión y señales en equipos y redes, optimizando el rendimiento de la red y utilizando instrumentos de medición y certificación de calidad de la señal, considerando las especificaciones técnicas."
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Aplicar métodos de seguridad informática para mitigar amenazas en una red LAN, aplicando técnicas como filtrado de tráfico, listas de control de acceso u otras."
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Aplicar procedimientos de recuperación de fallas y realizar copias de respaldo de los servidores, manteniendo la integridad de la información."
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Instalar y configurar una red inalámbrica según tecnologías y protocolos establecidos."
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion": "Aplicar herramientas de software que permitan obtener servicios de intranet e internet de manera eficiente."
+    },
+    {
+      "codigo": "OA 9",
+      "descripcion": "Mantener y actualizar el hardware de los computadores personales y de comunicación, basándose en un cronograma de trabajo, de acuerdo a las especificaciones técnicas del equipo."
+    },
+    {
+      "codigo": "OA 10",
+      "descripcion": "Mantener actualizado el software de productividad y programas utilitarios en un equipo personal, de acuerdo a los requerimientos de los usuarios."
+    },
+    {
+      "codigo": "OA 11",
+      "descripcion": "Armar y configurar un equipo personal, basándose en manuales de instalación, utilizando las herramientas apropiadas y respetando las normas de seguridad establecidas."
+    }
+  ],
+  "modulos": [
+    {
+      "codigo": "M00",
+      "nombre": "Emprendimiento y empleabilidad conectividad y redes",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "M05",
+      "nombre": "Configuración de la seguridad en redes de área local",
+      "oa_asociados": [
+        "OA 5"
+      ]
+    },
+    {
+      "codigo": "M06",
+      "nombre": "Mantenimiento y actualización de hardware en redes área local",
+      "oa_asociados": [
+        "OA 9"
+      ]
+    },
+    {
+      "codigo": "M07",
+      "nombre": "Mantenimiento y actualización de software en redes área local",
+      "oa_asociados": [
+        "OA 10"
+      ]
+    },
+    {
+      "codigo": "M08",
+      "nombre": "Recuperación y respaldo de información en redes de área local",
+      "oa_asociados": [
+        "OA 6"
+      ]
+    }
+  ],
+  "nota": "Los OA del perfil de egreso son terminales del ciclo. Los módulos se organizan por plan anual según el Programa de Estudio oficial."
+}

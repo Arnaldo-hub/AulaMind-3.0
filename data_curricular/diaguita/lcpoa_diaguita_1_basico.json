@@ -1,0 +1,91 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Diaguita",
+  "curso": "1° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Relatos, memoria familiar y territorio Diaguita",
+      "oa": [
+        {
+          "codigo": "LC01-U1-LS01",
+          "descripcion": "Disfrutar y comprender relatos breves que forman parte de la tradición oral del pueblo, reconociendo palabras y expresiones culturalmente significativas."
+        },
+        {
+          "codigo": "LC01-U1-T01",
+          "descripcion": "Reconocer lugares y espacios significativos del territorio Diaguita, vinculándolos con experiencias familiares y comunitarias."
+        },
+        {
+          "codigo": "LC01-U1-C01",
+          "descripcion": "Reconocer formas de convivencia y participación familiar y comunitaria basadas en el respeto, la colaboración y la reciprocidad."
+        },
+        {
+          "codigo": "LC01-U1-P01",
+          "descripcion": "Reconocer expresiones del patrimonio cultural y natural presentes en la familia, comunidad y territorio."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Naturaleza, agricultura y vida comunitaria",
+      "oa": [
+        {
+          "codigo": "LC01-U2-LS01",
+          "descripcion": "Escuchar y comunicar experiencias relacionadas con actividades familiares y comunitarias, incorporando palabras culturalmente significativas."
+        },
+        {
+          "codigo": "LC01-U2-T01",
+          "descripcion": "Reconocer prácticas de ocupación, cuidado y conocimiento del territorio vinculadas con la memoria del pueblo Diaguita."
+        },
+        {
+          "codigo": "LC01-U2-C01",
+          "descripcion": "Valorar prácticas de cooperación, intercambio, respeto y ayuda mutua presentes en la vida comunitaria."
+        },
+        {
+          "codigo": "LC01-U2-P01",
+          "descripcion": "Comprender la relación entre las personas, el agua, la tierra, las plantas y otros elementos de la naturaleza desde conocimientos culturales del pueblo Diaguita."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Alfarería, diseños, saberes y patrimonio Diaguita",
+      "oa": [
+        {
+          "codigo": "LC01-U3-LS01",
+          "descripcion": "Comprender y comunicar mensajes sencillos relacionados con saberes, oficios y prácticas culturales de la comunidad."
+        },
+        {
+          "codigo": "LC01-U3-T01",
+          "descripcion": "Reconocer conocimientos transmitidos por personas mayores y su importancia para la memoria e identidad del pueblo Diaguita."
+        },
+        {
+          "codigo": "LC01-U3-C01",
+          "descripcion": "Reconocer valores comunitarios presentes en actividades productivas, celebraciones y prácticas familiares."
+        },
+        {
+          "codigo": "LC01-U3-P01",
+          "descripcion": "Valorar técnicas, diseños, oficios y expresiones artísticas tradicionales como parte del patrimonio material e inmaterial del pueblo Diaguita."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Celebraciones, identidad y continuidad cultural",
+      "oa": [
+        {
+          "codigo": "LC01-U4-LS01",
+          "descripcion": "Expresar oralmente ideas y experiencias sobre celebraciones y prácticas culturales del entorno familiar y comunitario."
+        },
+        {
+          "codigo": "LC01-U4-T01",
+          "descripcion": "Reconocer elementos culturales que aportan a la identidad y al sentido de pertenencia al pueblo Diaguita."
+        },
+        {
+          "codigo": "LC01-U4-C01",
+          "descripcion": "Reconocer dimensiones espirituales, ceremoniales y comunitarias en la relación con la naturaleza y el territorio."
+        },
+        {
+          "codigo": "LC01-U4-P01",
+          "descripcion": "Participar en experiencias de creación y apreciación vinculadas con expresiones culturales y patrimoniales del pueblo Diaguita."
+        }
+      ]
+    }
+  ]
+}

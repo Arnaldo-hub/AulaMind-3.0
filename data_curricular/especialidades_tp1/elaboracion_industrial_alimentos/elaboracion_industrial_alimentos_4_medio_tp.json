@@ -1,0 +1,43 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Alimentación",
+  "especialidad": "Elaboración Industrial de Alimentos",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AL-ELIA-M00",
+      "nombre": "Emprendimiento y empleabilidad elaboración industrial de alimentos",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AL-ELIA-M05",
+      "nombre": "Tratamientos de conservación de alimentos",
+      "oa_asociados": [
+        "OA 2",
+        "OA 5"
+      ]
+    },
+    {
+      "codigo": "AL-ELIA-M06",
+      "nombre": "Control y registro de procesos de la industria de alimentos",
+      "oa_asociados": [
+        "OA 6"
+      ]
+    },
+    {
+      "codigo": "AL-ELIA-M07",
+      "nombre": "Manejo de desechos de la industria de alimentos",
+      "oa_asociados": [
+        "OA 8"
+      ]
+    },
+    {
+      "codigo": "AL-ELIA-M08",
+      "nombre": "Envasado y rotulación de alimentos",
+      "oa_asociados": [
+        "OA 7"
+      ]
+    }
+  ],
+  "fuente_validacion": "Currículum Nacional MINEDUC — Programa de Estudio Especialidad Elaboración Industrial de Alimentos"
+}

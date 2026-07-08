@@ -1,0 +1,86 @@
+{
+  "asignatura": "Lenguaje y Literatura",
+  "curso": "leng 4° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Comparando lecturas literarias",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1:"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8: Evaluar los recursos literarias y análisis incidencia en el Investigar sobre lingüísticos y no crítico de textos: posicionamiento frente diversos temas para lingüísticos (visuales, al tema, en los roles y enriquecer sus lecturas • Explicando sus sonoros y gestuales) al"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3:"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Construyendo interpretaciones literarias",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2:"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7: ideologías, creencias y discurso. tema o problema y Dialogar puntos de vista. perspectiva argumentativamente, • Posicionamiento del"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1:"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Desafíos en el análisis crítico de los discursos",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3:"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4: interpretaciones considerando su"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6: adoptada sobre evitando enunciador frente al Usar los recursos estos. descalificaciones o tema y el rol que busca lingüísticos y no • El efecto estético prejuicios, para representar ante la lingüísticos (visuales, producido por los construir y ampliar audiencia. sonoros y gestuales) al textos. ideas en torno a producir textos,"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5: Formular Proponer distintas Evaluar críticamente Evaluar los recursos interpretaciones de interpretaciones para textos de diversos lingüísticos y no obras que aborden un una obra literaria, a géneros no literarios lingüísticos (visuales, mismo tema o partir de un criterio de (orales, escritos y sonoros y gestuales) al problema, análisis literario (por audiovisuales), comprender textos, comparando: ejemplo, perspectiva analizando cuando considerando su de personajes, corresponda: incidencia en el • La relación de cada creencias, valores, posicionamiento frente obra con sus • Intenciones explícitas e contextos, etc.), al tema, en los roles y contextos de implícitas del texto. fundamentándolas con"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — La escritura como forma de participación",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5: Formular Proponer distintas Evaluar críticamente Evaluar los recursos interpretaciones de interpretaciones para textos de diversos lingüísticos y no obras que aborden un una obra literaria, a géneros no literarios lingüísticos (visuales, mismo tema o partir de un criterio de (orales, escritos y sonoros y gestuales) al problema, análisis literario (por audiovisuales), comprender textos, comparando: ejemplo, perspectiva analizando cuando considerando su de personajes, corresponda: incidencia en el • La relación de cada creencias, valores, posicionamiento frente obra con sus • Intenciones explícitas e contextos, etc.), al tema, en los roles y contextos de implícitas del texto. fundamentándolas con"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4: interpretaciones considerando su"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6: adoptada sobre evitando enunciador frente al Usar los recursos estos. descalificaciones o tema y el rol que busca lingüísticos y no • El efecto estético prejuicios, para representar ante la lingüísticos (visuales, producido por los construir y ampliar audiencia. sonoros y gestuales) al textos. ideas en torno a producir textos,"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3:"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7: ideologías, creencias y discurso. tema o problema y Dialogar puntos de vista. perspectiva argumentativamente, • Posicionamiento del"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "asignatura": "efi",
+  "curso": "EFI 6° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades motrices y control corporal",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 explicitan los"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Condición física y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1) › Establecen metas para mejorar la resistencia mediante activi- dades de mediana a larga duración. Actividad física y resolución de problemas ("
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Juegos, deportes y estrategias",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2) › Elaboran estrategias grupales en situaciones de juego; por ejemplo: se organizan con sus compañeros para quitar la pelota a los contrincantes; se distribuyen en posiciones de juego para atrapar al adversario. › Identifican la importancia de mantener hábitos de higiene per- sonal y grupal. ACTIVIDAD SUGERIDA"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Practicar deportes individuales y colec- físico de forma manual, mediante el tivos que apliquen reglas y estrategias pulso o utilizando escalas de percep- específicas del juego, por ejemplo, ge- ción de esfuerzo. nerar superioridad numérica, cambiar la posición o la función de los jugadores"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Demostrar la correcta ejecución de una danza nacional, utilizando pasos SEGURIDAD, JUEGO LIMPIO Y LIDERAZGO básicos y música folclórica de forma"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Planificar y ejecutar"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Ejecutar"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Practicar y planificar de forma regular que requieran tomar decisiones y"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 jetivo de Aprendizaje cuenta con varios Reconocer las sensaciones y › Identifican las distintas respuestas corporales provocadas indicadores y la totalidad de los indica- respuestas corporales provoca- por la actividad física, como aumento del ritmo de la respi- das por la práctica de actividad ración, sudor y dificultad al hablar. física, como cambios del color › Identifican, guiados por el docente, qué tipo de actividad dores dan cuenta del aprendizaje. Al ser de la piel, sudor, agitación, ritmo física (baja, moderada o intensa) incrementa más los latidos de respiración, cansancio y difi- del corazón. de carácter sugerido, puede especificar- cultad al hablar. › Identifican las partes del cuerpo que usaron durante la acti- vidad. se con mayor detalle en cada aprendiza- je qué se espera del estudiante.28"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Practicar"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Practicar"
+        }
+      ]
+    }
+  ]
+}

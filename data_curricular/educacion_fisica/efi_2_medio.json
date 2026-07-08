@@ -1,0 +1,46 @@
+{
+  "asignatura": "efi",
+  "curso": "EFI 2° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades motrices y control corporal",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Perfeccionar y aplicar con precisión las habilidades motrices específicas de locomoción, manipulación y estabilidad en, al menos: >>Un deporte individual (gimnasia rítmica, natación, entre otros). >>Un deporte de oposición (bádminton, tenis de mesa, entre otros). >>Un deporte de colaboración (kayak, escalada, entre otros). >>Un deporte de oposición/colaboración (fútbol, vóleibol, rugby, entre otros). >>Una danza (folclórica, popular, entre otras). OA D Demostrar y asumir responsabilidad por su salud, buscando mejorar su condición física y practicando"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Condición física y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 >>Ejecutan ejercicios que les permiten mejorar del año para cada los componentes de la condición física. asignatura. Se refieren a Diseñar, evaluar y aplicar un conocimientos, habilidades plan de entrenamiento personal >>Evalúan y comparten sus niveles de avances y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Juegos, deportes y estrategias",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Diseñar, aplicar y evaluar las estrategias y tácticas específicas utilizadas para la resolución de problemas durante la práctica de juegos o deportes; por ejemplo: ajustar las velocidades del golpe según la posición del contrincante, elaborar en forma grupal una táctica para recuperar el balón desde el campo del adversario, evaluar la aplicación de una estrategia defensiva en función del resultado, entre otros. 50 EDUCACIÓN FÍSICA Y SALUD |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 >>Practican una variedad de"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Participar, liderar y promover una variedad de"
+        }
+      ]
+    }
+  ]
+}

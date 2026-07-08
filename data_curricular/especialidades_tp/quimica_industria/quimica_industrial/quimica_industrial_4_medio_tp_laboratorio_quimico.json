@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Química e Industria",
+  "especialidad": "Química Industrial",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "QI-LAQU-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "QI-LAQU-M01",
+      "nombre": "Análisis químico cualitativo y cuantitativo"
+    },
+    {
+      "codigo": "QI-LAQU-M02",
+      "nombre": "Análisis instrumental"
+    },
+    {
+      "codigo": "QI-LAQU-M03",
+      "nombre": "Control de calidad de materias primas y productos"
+    },
+    {
+      "codigo": "QI-LAQU-M04",
+      "nombre": "Gestión y aseguramiento de calidad en laboratorio"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo.",
+  "mencion": "Laboratorio Químico"
+}

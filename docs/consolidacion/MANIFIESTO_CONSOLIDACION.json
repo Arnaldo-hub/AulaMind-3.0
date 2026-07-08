@@ -1,0 +1,25 @@
+{
+  "proyecto": "AulaMind 3.0",
+  "fase": "Fase 1 — Semana 1 Consolidación",
+  "base_runtime": "AulaMind-3.0",
+  "copiloto_docente": "fuente de activos; no runtime paralelo",
+  "python_files": 35,
+  "blueprints_registrados": [
+    "dashboard",
+    "auth",
+    "planning",
+    "curriculum",
+    "curriculum_api",
+    "evaluation"
+  ],
+  "health_endpoint": "/health",
+  "exclusiones_seguridad": [
+    ".env",
+    "aulamind.db",
+    "ZIP anidados",
+    "__pycache__",
+    "*.pyc",
+    "copias manuales de servicios"
+  ],
+  "tools_offline": "tools/curriculum"
+}

@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Bloque Religión
+
+Estructura creada: Religión Católica y Religión Evangélica.
+Cobertura estructural: 1° básico a 4° medio.
+Archivos JSON: 24.
+
+IMPORTANTE: no se inventaron OA ni nombres de unidades. Los programas de Religión son aprobados por MINEDUC a propuesta de cada autoridad religiosa. La carga curricular exacta debe hacerse desde el programa oficial correspondiente.

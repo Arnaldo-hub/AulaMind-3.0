@@ -1,0 +1,50 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Construcción",
+  "especialidad": "Montaje Industrial",
+  "curso": "4° medio TP",
+  "alcance_oa": "Perfil de egreso terminal del ciclo 3° y 4° medio TP",
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion_resumida": "Lectura de planos técnicos, simbología y mediciones"
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion_resumida": "Mediciones y cálculos aplicados al montaje"
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion_resumida": "Trazado de áreas y componentes para montaje"
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion_resumida": "Unión y reparación de elementos metálicos"
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion_resumida": "Protección superficial de componentes"
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion_resumida": "Operaciones de levante, amarre, izaje y traslado"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion_resumida": "Fijación y montaje de estructuras, equipos y sistemas"
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion_resumida": "Mantenimiento básico de instrumentos y equipos"
+    },
+    {
+      "codigo": "OA 9",
+      "descripcion_resumida": "Tratamiento de residuos y desechos"
+    },
+    {
+      "codigo": "OA 10",
+      "descripcion_resumida": "Cálculo y cubicación de materiales e insumos"
+    }
+  ],
+  "estado_modulos": "PENDIENTE DE EXTRACCIÓN EXACTA DESDE PROGRAMA DE ESTUDIO; no se inventan módulos ni distribución anual"
+}

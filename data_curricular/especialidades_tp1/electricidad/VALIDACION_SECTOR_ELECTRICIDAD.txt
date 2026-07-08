@@ -1,0 +1,6 @@
+AulaMind Enterprise 3.0 — Sector Electricidad TP
+
+Electricidad: OA perfil 8 | módulos 3° 4 | módulos 4° 5
+Electrónica: OA perfil 7 | módulos 3° 4 | módulos 4° 5
+
+Archivos separados por especialidad y curso. No se mezclan con formación general.

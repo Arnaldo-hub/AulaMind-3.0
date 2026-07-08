@@ -1,0 +1,18 @@
+AulaMind Enterprise 3.0 — Plan de cierre de Electivos HC
+
+LOTE 1: Lengua y Literatura — 3 asignaturas
+LOTE 2: Matemática — 4 asignaturas
+LOTE 3: Filosofía — 3 asignaturas
+LOTE 4: Historia, Geografía y Ciencias Sociales — 3 asignaturas
+LOTE 5: Ciencias — 5 asignaturas
+LOTE 6: Educación Física y Salud — 3 asignaturas
+LOTE 7: Artes — 6 asignaturas
+
+Criterio de cierre de cada asignatura:
+- nombre oficial validado;
+- códigos y textos de OA cargados;
+- unidades del Programa de Estudio cargadas;
+- no duplicar OA comunes al ciclo como OA distintos por curso;
+- prueba de lectura en AulaMind.
+
+La estructura de 54 JSON ya creada no debe reemplazarse con contenido inventado.

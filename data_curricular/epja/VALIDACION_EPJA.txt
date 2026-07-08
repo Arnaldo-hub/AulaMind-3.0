@@ -1,0 +1,5 @@
+AulaMind Enterprise 3.0 — EPJA
+Estructura: Educación Básica B1, B2, B3; Educación Media M1, M2.
+JSON estructurales: 33
+Marco: Bases Curriculares EPJA 2024.
+OA y unidades quedan pendientes de extracción literal; no se inventó contenido.

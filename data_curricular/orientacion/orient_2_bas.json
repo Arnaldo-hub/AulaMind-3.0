@@ -1,0 +1,58 @@
+{
+  "asignatura": "orient",
+  "curso": "orient 2° BÁS",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crecimiento personal, identidad y bienestar",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Identificar emociones ex- 1 perimentadas por ellos y Los estudiantes escuchan un breve relato en el que se refleje por los demás (por ejem- claramente una determinada emoción; por ejemplo: “Marcela es-"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Relaciones interpersonales, convivencia y buen trato",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Identificar conflictos que surgen entre guir diversas formas de expresarlas. pares y practicar formas de solucionar- los, como escuchar al otro, ponerse en"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Participación, hábitos de estudio y desarrollo de metas",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 al cual están asociados, y permiten al Observar, describir y valorar › Dibujan y nombran situaciones en las que reciben y dan las expresiones de afecto y cariño en su ámbito familiar. cariño, que dan y reciben, en › Identifican prácticas de cuidado familiar como formas de profesor evaluar el logro del objetivo. los ámbitos familiar, escolar y expresar cariño y aprecio hacia ellos. social (por ejemplo, compartir › Proponen formas de dar cariño y agradecer a los miembros Cada Objetivo de Aprendizaje cuenta tiempo, escuchar a los demás, de su familia y en el contexto escolar. dar y recibir ayuda). › Identifican formas en que dan y reciben cariño en el esta- con varios indicadores y la totalidad de blecimiento. › Proponen formas de expresar afecto y cariño a sus pares y los indicadores dan cuenta del apren- en su entorno escolar. dizaje. Al ser de carácter sugerido, puede especificarse con mayor detalle en cada aprendizaje qué es lo que se espera del estudiante.28"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Practicar hábitos y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Autocuidado, vida saludable y proyecto personal",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Observar, describir y valorar sus carac- ejemplo, escuchar, respetar turnos, terísticas personales, sus habilidades e rutinas y pertenencias) intereses. › compartir con los pares (por ejemplo, jugar juntos, prestarse útiles, ayudar"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Identificar y practicar, en forma nen y sus características, y participar guiada, conductas protectoras y de activamente en ellos (por ejemplo, autocuidado en relación a: ayudando en el orden de la casa y sala › rutinas de higiene de clases). ›"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Manifestar"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 explicitan los"
+        }
+      ]
+    }
+  ]
+}

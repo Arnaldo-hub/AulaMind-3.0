@@ -1,0 +1,59 @@
+{
+  "asignatura": "Educación Ciudadana",
+  "curso": "4° medio",
+  "plan": "Formación General",
+  "unidades": [
+    {
+      "numero": 1,
+      "nombre": "La participación ciudadana contribuye con soluciones a los desafíos, problemas y conflictos presentes en la sociedad"
+    },
+    {
+      "numero": 2,
+      "nombre": "Medios de comunicación masivos, ciudadanía responsable y ética para una sociedad democrática"
+    },
+    {
+      "numero": 3,
+      "nombre": "Principios éticos para orientar la vida en democracia"
+    },
+    {
+      "numero": 4,
+      "nombre": "Modelos de desarrollo económico y derechos laborales, decisiones para construir la sociedad que queremos"
+    }
+  ],
+  "oa": [
+    {
+      "codigo": "FG-ECIU-4M-OAC-01",
+      "descripcion": "Evaluar las características y el funcionamiento de la institucionalidad democrática, las formas de representación y su impacto en la distribución del poder en la sociedad, a la luz del bien común, la cohesión y justicia social."
+    },
+    {
+      "codigo": "FG-ECIU-4M-OAC-02",
+      "descripcion": "Participar de forma corresponsable y ética en la búsqueda de estrategias y soluciones a desafíos, problemas y conflictos en diversas escalas, que impliquen armonizar desarrollo, democracia, equidad y sustentabilidad."
+    },
+    {
+      "codigo": "FG-ECIU-4M-OAC-03",
+      "descripcion": "Analizar el impacto de diversos modelos de desarrollo y las políticas económicas en la vida cotidiana y en el cambio climático, en función de la sustentabilidad y del aseguramiento de una vida digna y justa para todos y todas con condiciones para el desarrollo personal y colectivo."
+    },
+    {
+      "codigo": "FG-ECIU-4M-OAC-04",
+      "descripcion": "Comprender la importancia de los derechos laborales en Chile, considerando las principales tendencias globales y nacionales, la evolución de los mecanismos institucionales que buscan resguardarlos y los aportes de los movimientos y organizaciones sociales a su fortalecimiento."
+    },
+    {
+      "codigo": "FG-ECIU-4M-OAC-05",
+      "descripcion": "Relacionar de manera fundamentada los conceptos libertad, igualdad y solidaridad, con desafíos y problemas de la democracia como la desigualdad y superación de la pobreza, la equidad de género, la inclusión, la diversidad étnica, cultural y sexual, entre otras."
+    },
+    {
+      "codigo": "FG-ECIU-4M-OAC-06",
+      "descripcion": "Evaluar oportunidades y riesgos de los medios de comunicación masiva y del uso de las nuevas tecnologías de la información en el marco de una sociedad democrática, reflexionando personal y grupalmente sobre sus implicancias en la participación ciudadana y en el resguardo de la vida privada."
+    },
+    {
+      "codigo": "FG-ECIU-4M-OAC-07",
+      "descripcion": "Proponer formas de organización del territorio y del espacio público que promuevan la acción colectiva, la interculturalidad, la inclusión de la diversidad y el mejoramiento de la vida comunitaria."
+    },
+    {
+      "codigo": "FG-ECIU-4M-OAC-08",
+      "descripcion": "Tomar decisiones fundadas en principios éticos, valores y virtudes públicas en las prácticas ciudadanas, resguardando la dignidad del otro y la vida en democracia."
+    }
+  ],
+  "fuente": "Currículum Nacional MINEDUC — Bases Curriculares y Programa de Estudio Educación Ciudadana",
+  "estado_curricular": "OA y unidades cargados por curso"
+}

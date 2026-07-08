@@ -1,0 +1,8 @@
+AulaMind Enterprise 3.0 — Historia, Geografía y Ciencias Sociales faltantes, Lote 01
+Cursos: 2° básico, 3° básico, 6° básico y 2° medio.
+Estructura validada: curso > unidades con nombre > OA asociados.
+
+hist_2_basico.json: 4 unidades | 12 OA asignados
+hist_3_basico.json: 4 unidades | 13 OA asignados
+hist_6_basico.json: 4 unidades | 19 OA asignados
+hist_2_medio.json: 4 unidades | 15 OA asignados

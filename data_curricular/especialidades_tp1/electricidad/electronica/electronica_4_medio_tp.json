@@ -1,0 +1,59 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Electricidad",
+  "especialidad": "Electrónica",
+  "curso": "4° medio TP",
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Leer y utilizar información técnica, planos y diagramas de equipos y sistemas electrónicos."
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Instalar y montar equipos y sistemas electrónicos de acuerdo con especificaciones técnicas."
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Configurar y programar equipos electrónicos y sistemas de control."
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Mantener y reparar equipos y sistemas electrónicos, utilizando instrumentos y procedimientos de diagnóstico."
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Instalar y mantener sistemas electrónicos de control, automatización e instrumentación."
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Verificar parámetros eléctricos y electrónicos mediante instrumentos de medición."
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Aplicar procedimientos de seguridad y protección en trabajos con equipos y sistemas electrónicos."
+    }
+  ],
+  "modulos": [
+    {
+      "codigo": "EL-ELECRO-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "EL-ELECRO-M05",
+      "nombre": "Montaje y mantenimiento de equipos electrónicos"
+    },
+    {
+      "codigo": "EL-ELECRO-M06",
+      "nombre": "Sistemas de control industrial"
+    },
+    {
+      "codigo": "EL-ELECRO-M07",
+      "nombre": "Instrumentación y medición electrónica"
+    },
+    {
+      "codigo": "EL-ELECRO-M08",
+      "nombre": "Mantenimiento y diagnóstico de sistemas electrónicos"
+    }
+  ],
+  "nota": "Los OA de perfil son terminales del ciclo 3°-4° medio; los módulos se organizan por curso para AulaMind."
+}

@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Hotelería y Turismo",
+  "especialidad": "Servicios de Hotelería",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "HT-HOTE-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "HT-HOTE-M05",
+      "nombre": "Servicio de alimentos y bebidas"
+    },
+    {
+      "codigo": "HT-HOTE-M06",
+      "nombre": "Organización de eventos y servicios hoteleros"
+    },
+    {
+      "codigo": "HT-HOTE-M07",
+      "nombre": "Administración y control de operaciones hoteleras"
+    },
+    {
+      "codigo": "HT-HOTE-M08",
+      "nombre": "Comunicación en inglés para servicios de hotelería"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura curricular del lote preparada para auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

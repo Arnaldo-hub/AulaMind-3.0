@@ -1,0 +1,82 @@
+{
+  "asignatura": "tecnol",
+  "curso": "Tecnología 1Medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Necesidades, problemas y diseño de soluciones tecnológicas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Identificar oportunidades o necesidades personales, grupales o locales que impliquen la creación de un servicio, utilizando recursos digitales u otros medios."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Comunicar el diseño, la planificación u otros procesos del desarrollo de un servicio, utilizando herramientas TIC, considerando diferentes tipos de objetivos y audiencias y teniendo en cuenta aspectos éticos. EJE TECNOLOGÍA, AMBIENTE Y SOCIEDAD"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 de 1° medio Interdisciplinares ® Historia, Geografía y Ciencias Sociales. OA f de 1° medio Los y las estudiantes, teniendo en cuenta las necesidades determinadas con anterioridad, indagan la búsqueda de alternativas de soluciones, esto lo realizan a través de la técnica del árbol de problemas, adaptándola hacia la búsqueda de soluciones, para esto incluye la o las necesidades en el tronco y luego, completan las ramas y hojas del árbol con soluciones. Si el o la docente ha dividido al curso en grupos de trabajado, cada uno deberá tener su propio árbol de problemas. 66 TECNOLOGÍA |"
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "OA 22 de 1º medio. interdisciplinares Los y las estudiantes planifican la elaboración del servicio que dará solución a la o las necesidades identificadas, para ello siguen los pasos que se indican a continuación: 1. Los y las estudiantes planifican la elaboración de la solución elegida utilizando distintas formas de organización de las personas, los tiempos y los recursos disponibles. 2. Planifican las acciones para llevar a cabo la solución considerando: el reparto de tareas, la asignación de recursos y los tiempos estimados de ejecución, utilizando instrumentos como carta Gantt, gráficos PERT o planificadores y organizadores digitales como Excel, GoogleCalendar, Bitrix24.es , LiveBinders, Remember The Milk; disponibles a través de computadores o en teléfonos móviles, como la aplicación Splanner. 3. Buscan información pertinente, relevante y actualizada relativa a la forma de producción de soluciones o servicios similares en distintas fuentes o en internet. TECNOLOGÍA |"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elaboración y construcción de objetos tecnológicos",
+      "oa": [
+        {
+          "codigo": "OA 24",
+          "descripcion": "OA 24 de 1º medio. interdisciplinares ® Matemática,"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Evaluación, funcionamiento y mejora de soluciones",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Evaluar el servicio desarrollado considerando criterios propios, técnicos y valóricos, y proponer mejoras asociadas tanto a los procesos como al producto final."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Tecnología, información, comunicación e impacto",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 Desarrollar un servicio que implique la utilización de recursos digitales u otros medios, considerando aspectos éticos, sus potenciales impactos y normas de cuidado y seguridad."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 > Determinan los aspectos en que diferentes innovaciones asignatura. Se refieren a Analizar las formas tecnológicas (productos, procesos, técnicas) del pasado conocimientos, habilidades en que los productos evolucionan a partir de la comparación y contrastación de sus y"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 > Identifican productos, procesos y técnicas tecnológicas que"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13,"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 de 1º medio. 7 Todas las"
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "OA 18 y"
+        },
+        {
+          "codigo": "OA 20",
+          "descripcion": "OA 20 de 8º básico. interdisciplinares Los y las estudiantes investigan acerca de cómo han evolucionado los objetos y servicios del área o ámbito productivo elegido: > Definen aspectos por investigar. > Establecen una estrategia de búsqueda definiendo fuentes de información, personas, lugares, etc. > Elaboran o adaptan instrumentos de recolección de información. > Recopilan información a partir de diferentes fuentes. TECNOLOGÍA |"
+        },
+        {
+          "codigo": "OA 21",
+          "descripcion": "OA 21 y"
+        }
+      ]
+    }
+  ]
+}

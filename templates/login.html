@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar Sesión | AulaMind Enterprise</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <!-- ===================================== -->
+    <!-- PANEL IZQUIERDO -->
+    <!-- ===================================== -->
+
+    <section class="left-panel">
+
+        <div class="overlay">
+
+            <div class="brand">
+
+                <h1>AulaMind</h1>
+
+                <span>Enterprise 3.0</span>
+
+            </div>
+
+            <div class="message">
+
+                <h2>
+
+                    El Copilot Inteligente para Docentes
+
+                </h2>
+
+                <p>
+
+                    Planificaciones, evaluaciones,
+                    guías, rúbricas e inteligencia
+                    artificial en un solo lugar.
+
+                </p>
+
+            </div>
+
+            <div class="features">
+
+                <div class="feature">
+
+                    ✅ Currículum MINEDUC
+
+                </div>
+
+                <div class="feature">
+
+                    ✅ IA Pedagógica
+
+                </div>
+
+                <div class="feature">
+
+                    ✅ Exportar Word y PDF
+
+                </div>
+
+                <div class="feature">
+
+                    ✅ Historial ilimitado
+
+                </div>
+
+                <div class="feature">
+
+                    ✅ Plataforma SaaS
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- PANEL DERECHO -->
+    <!-- ===================================== -->
+
+    <section class="right-panel">
+
+        <div class="login-box">
+
+            <div class="logo">
+
+                🧠
+
+            </div>
+
+            <h2>
+
+                Iniciar Sesión
+
+            </h2>
+
+            <p>
+
+                Bienvenido nuevamente.
+
+            </p>
+
+            <!-- =============================== -->
+            <!-- Mensajes -->
+            <!-- =============================== -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% if messages %}
+
+                    {% for category, message in messages %}
+
+                        <div class="alert {{ category }}">
+
+                            {{ message }}
+
+                        </div>
+
+                    {% endfor %}
+
+                {% endif %}
+
+            {% endwith %}
+
+            <!-- =============================== -->
+            <!-- Formulario -->
+            <!-- =============================== -->
+
+            <form
+
+                method="POST"
+
+                action="{{ url_for('auth.login') }}"
+
+            >
+
+                <div class="form-group">
+
+                    <label>
+
+                        Correo electrónico
+
+                    </label>
+
+                    <input
+
+                        type="email"
+
+                        name="email"
+
+                        placeholder="correo@ejemplo.cl"
+
+                        required
+
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Contraseña
+
+                    </label>
+
+                    <input
+
+                        type="password"
+
+                        name="password"
+
+                        placeholder="********"
+
+                        required
+
+                    >
+
+                </div>
+
+                <div class="remember">
+
+                    <label>
+
+                        <input
+
+                            type="checkbox"
+
+                            name="remember"
+
+                        >
+
+                        Recordarme
+
+                    </label>
+
+                </div>
+
+                <button
+
+                    class="btn-login"
+
+                    type="submit"
+
+                >
+
+                    Ingresar
+
+                </button>
+
+            </form>
+
+            <div class="separator">
+
+                <span>
+
+                    o
+
+                </span>
+
+            </div>
+
+            <button
+
+                class="btn-google"
+
+                disabled
+
+            >
+
+                Google (Próximamente)
+
+            </button>
+
+            <button
+
+                class="btn-microsoft"
+
+                disabled
+
+            >
+
+                Microsoft (Próximamente)
+
+            </button>
+
+            <div class="links">
+
+                <a
+
+                    href="#"
+
+                >
+
+                    ¿Olvidaste tu contraseña?
+
+                </a>
+
+            </div>
+
+            <div class="register">
+
+                ¿No tienes cuenta?
+
+                <a
+
+                    href="{{ url_for('auth.register') }}"
+
+                >
+
+                    Crear una cuenta
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1686 @@
+/*
+===========================================================
+AulaMind Enterprise 3.0
+Planning Engine
+PARTE 1
+Variables - Reset - Layout - Sidebar - Hero
+===========================================================
+*/
+
+/*=========================================================
+VARIABLES
+=========================================================*/
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+
+    --secondary:#0f172a;
+
+    --accent:#06b6d4;
+
+    --purple:#7c3aed;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --background:#f5f7fb;
+
+    --surface:#ffffff;
+
+    --border:#e5e7eb;
+
+    --text:#0f172a;
+
+    --text-light:#64748b;
+
+    --sidebar:#071630;
+
+    --sidebar-hover:#10264b;
+
+    --radius:20px;
+
+    --shadow:
+    0 12px 35px rgba(15,23,42,.08);
+
+}
+
+/*=========================================================
+RESET
+=========================================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--background);
+
+    font-family:
+
+    "Segoe UI",
+
+    Arial,
+
+    sans-serif;
+
+    color:var(--text);
+
+}
+
+/*=========================================================
+LAYOUT
+=========================================================*/
+
+.app{
+
+    display:grid;
+
+    grid-template-columns:290px 1fr;
+
+    min-height:100vh;
+
+}
+
+/*=========================================================
+SIDEBAR
+=========================================================*/
+
+.sidebar{
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    width:290px;
+
+    overflow:auto;
+
+    background:var(--sidebar);
+
+    color:white;
+
+    padding:28px;
+
+}
+
+.sidebar::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+
+    background:#35517c;
+
+    border-radius:20px;
+
+}
+
+.logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:35px;
+
+}
+
+.logo img{
+
+    width:180px;
+
+}
+
+.menu-title{
+
+    color:#87a7d4;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.sidebar nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    transition:.25s;
+
+    font-size:15px;
+
+}
+
+.sidebar nav a i{
+
+    width:24px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.sidebar nav a:hover{
+
+    background:var(--sidebar-hover);
+
+}
+
+.sidebar nav a.active{
+
+    background:linear-gradient(
+
+        135deg,
+
+        #2563eb,
+
+        #3b82f6
+
+    );
+
+}
+
+/*=========================================================
+CONTENIDO
+=========================================================*/
+
+.main{
+
+    margin-left:290px;
+
+    padding:45px;
+
+}
+
+/*=========================================================
+TOPBAR
+=========================================================*/
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:38px;
+
+    margin-top:10px;
+
+    margin-bottom:10px;
+
+}
+
+.topbar p{
+
+    color:var(--text-light);
+
+    font-size:16px;
+
+}
+
+/*=========================================================
+PERFIL
+=========================================================*/
+
+.profile{
+
+    background:white;
+
+    border-radius:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:12px 22px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.profile i{
+
+    font-size:42px;
+
+    color:var(--primary);
+
+}
+
+.profile strong{
+
+    display:block;
+
+}
+
+.profile small{
+
+    color:var(--text-light);
+
+}
+
+/*=========================================================
+BADGE
+=========================================================*/
+
+.badge{
+
+    display:inline-block;
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    padding:8px 18px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    font-size:13px;
+
+}
+
+/*=========================================================
+HERO
+=========================================================*/
+
+.hero{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #0b4edb,
+
+        #2563eb,
+
+        #3b82f6
+
+    );
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:60px;
+
+    margin-bottom:40px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 25px 50px rgba(37,99,235,.25);
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-120px;
+
+    top:-120px;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+
+    left:-80px;
+
+    bottom:-80px;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+    max-width:800px;
+
+}
+
+.hero h2{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    opacity:.95;
+
+}
+
+/*=========================================================
+COMPONENTES BASE
+=========================================================*/
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.card-header h2{
+
+    font-size:28px;
+
+}
+
+.card-header span{
+
+    color:var(--text-light);
+
+}
+
+.btn-primary{
+
+    border:none;
+
+    cursor:pointer;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        #4f8dfd
+
+    );
+
+    color:white;
+
+    padding:15px 28px;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+    box-shadow:
+
+    0 10px 25px rgba(37,99,235,.25);
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.btn-secondary{
+
+    border:1px solid var(--border);
+
+    cursor:pointer;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    background:white;
+
+    color:var(--text);
+
+    padding:15px 28px;
+
+    border-radius:12px;
+
+    transition:.25s;
+
+}
+
+.btn-secondary:hover{
+
+    background:#f8fafc;
+
+}
+
+.btn-small{
+
+    border:1px solid var(--border);
+
+    background:white;
+
+    cursor:pointer;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    transition:.25s;
+
+}
+
+.btn-small:hover{
+
+    border-color:var(--primary);
+
+    color:var(--primary);
+
+}
+/*=========================================================
+PLANNING CARD
+=========================================================*/
+
+.planning-card{
+
+    background:var(--surface);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid var(--border);
+
+    margin-bottom:35px;
+
+}
+
+/*=========================================================
+GRID
+=========================================================*/
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group.full{
+
+    grid-column:1/-1;
+
+}
+
+/*=========================================================
+LABELS
+=========================================================*/
+
+.form-group label{
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    color:var(--secondary);
+
+}
+
+/*=========================================================
+INPUTS
+=========================================================*/
+
+.form-group input{
+
+    width:100%;
+
+    height:56px;
+
+    padding:0 18px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    font-size:15px;
+
+    transition:.25s;
+
+    outline:none;
+
+}
+
+.form-group input:hover{
+
+    border-color:#bfd2ff;
+
+}
+
+.form-group input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/*=========================================================
+SELECT
+=========================================================*/
+
+.form-group select{
+
+    width:100%;
+
+    height:56px;
+
+    padding:0 18px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.form-group select:hover{
+
+    border-color:#bfd2ff;
+
+}
+
+.form-group select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/*=========================================================
+TEXTAREA
+=========================================================*/
+
+.form-group textarea{
+
+    width:100%;
+
+    min-height:130px;
+
+    resize:vertical;
+
+    padding:18px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:white;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    transition:.25s;
+
+    outline:none;
+
+}
+
+.form-group textarea:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/*=========================================================
+BOTONES
+=========================================================*/
+
+.buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:35px;
+
+    flex-wrap:wrap;
+
+}
+
+.buttons .btn-primary{
+
+    min-width:240px;
+
+}
+
+.buttons .btn-secondary{
+
+    min-width:180px;
+
+}
+
+/*=========================================================
+LAYOUT RESULTADO
+=========================================================*/
+
+.planning-layout{
+
+    display:grid;
+
+    grid-template-columns:2fr 380px;
+
+    gap:30px;
+
+    align-items:start;
+
+}
+
+/*=========================================================
+EDITOR CARD
+=========================================================*/
+
+.editor-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:35px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+/*=========================================================
+EDITOR HEADER
+=========================================================*/
+
+.editor-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.editor-header h2{
+
+    font-size:28px;
+
+    margin-bottom:6px;
+
+}
+
+.editor-header span{
+
+    color:var(--text-light);
+
+}
+
+.editor-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+/*=========================================================
+EDITOR NOTION
+=========================================================*/
+
+.editor{
+
+    min-height:760px;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    background:white;
+
+    overflow:auto;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.editor:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.10);
+
+}
+
+.editor h1{
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+.editor h2{
+
+    margin-top:30px;
+
+    margin-bottom:15px;
+
+    font-size:26px;
+
+}
+
+.editor h3{
+
+    margin-top:25px;
+
+    margin-bottom:12px;
+
+}
+
+.editor p{
+
+    margin-bottom:18px;
+
+}
+
+.editor ul{
+
+    margin-left:30px;
+
+    margin-bottom:20px;
+
+}
+
+.editor li{
+
+    margin-bottom:8px;
+
+}
+
+/*=========================================================
+PLACEHOLDER
+=========================================================*/
+
+.placeholder{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:650px;
+
+    color:#94a3b8;
+
+}
+
+.placeholder i{
+
+    font-size:72px;
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+.placeholder h3{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+}
+
+.placeholder p{
+
+    max-width:420px;
+
+    line-height:1.8;
+
+}
+
+/*=========================================================
+PANEL DERECHO
+=========================================================*/
+
+.info-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+/*=========================================================
+INFO CARD
+=========================================================*/
+
+.info-card{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.info-card h3{
+
+    margin-bottom:18px;
+
+    font-size:22px;
+
+}
+
+.info-card p{
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+
+}
+
+.info-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.info-card li{
+
+    padding:10px 0;
+
+    border-bottom:1px solid #edf2f7;
+
+    color:var(--text-light);
+
+}
+
+.info-card li:last-child{
+
+    border-bottom:none;
+
+}
+
+.info-card strong{
+
+    color:var(--primary);
+
+}
+/*=========================================================
+LOADER
+=========================================================*/
+
+.loader{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:60px;
+
+    margin-top:35px;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+.loader h3{
+
+    margin-top:25px;
+
+    margin-bottom:10px;
+
+    font-size:26px;
+
+}
+
+.loader p{
+
+    color:var(--text-light);
+
+}
+
+/*=========================================================
+SPINNER
+=========================================================*/
+
+.spinner{
+
+    width:70px;
+
+    height:70px;
+
+    border:6px solid #e5e7eb;
+
+    border-top:6px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin .9s linear infinite;
+
+}
+
+/*=========================================================
+MODAL
+=========================================================*/
+
+.loading-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.70);
+
+    backdrop-filter:blur(6px);
+
+    z-index:9999;
+
+}
+
+.loading-box{
+
+    width:460px;
+
+    max-width:90%;
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.25);
+
+}
+
+.loading-box h2{
+
+    margin-top:25px;
+
+    margin-bottom:12px;
+
+}
+
+.loading-box p{
+
+    color:var(--text-light);
+
+    margin-bottom:10px;
+
+}
+
+.loading-box small{
+
+    color:#94a3b8;
+
+}
+
+.spinner-large{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border:8px solid #e5e7eb;
+
+    border-top:8px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+/*=========================================================
+TOAST
+=========================================================*/
+
+.toast{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        #4f8dfd
+
+    );
+
+    color:white;
+
+    padding:18px 30px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    box-shadow:
+
+    0 15px 35px rgba(37,99,235,.30);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(20px);
+
+    transition:.35s;
+
+    z-index:99999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================================
+FOOTER
+=========================================================*/
+
+.footer{
+
+    margin-top:50px;
+
+    padding-top:25px;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+/*=========================================================
+SCROLLBAR
+=========================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#94a3b8;
+
+    border-radius:25px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#64748b;
+
+}
+
+/*=========================================================
+ANIMACIONES
+=========================================================*/
+
+.fade-in{
+
+    animation:fadeIn .45s ease;
+
+}
+
+.slide-up{
+
+    animation:slideUp .45s ease;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*=========================================================
+UTILIDADES
+=========================================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.w-100{
+
+    width:100%;
+
+}
+
+.mt-10{
+
+    margin-top:10px;
+
+}
+
+.mt-20{
+
+    margin-top:20px;
+
+}
+
+.mt-30{
+
+    margin-top:30px;
+
+}
+
+.mt-40{
+
+    margin-top:40px;
+
+}
+
+.mb-20{
+
+    margin-bottom:20px;
+
+}
+
+.mb-30{
+
+    margin-bottom:30px;
+
+}
+
+.mb-40{
+
+    margin-bottom:40px;
+
+}
+
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+
+@media(max-width:1200px){
+
+.app{
+
+grid-template-columns:1fr;
+
+}
+
+.sidebar{
+
+position:relative;
+
+width:100%;
+
+height:auto;
+
+}
+
+.main{
+
+margin-left:0;
+
+padding:30px;
+
+}
+
+.planning-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.info-panel{
+
+margin-top:30px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.editor-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+.editor-actions{
+
+width:100%;
+
+}
+
+.editor-actions button{
+
+flex:1;
+
+}
+
+.hero{
+
+padding:35px;
+
+}
+
+.hero h2{
+
+font-size:32px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main{
+
+padding:20px;
+
+}
+
+.topbar{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:20px;
+
+}
+
+.topbar h1{
+
+font-size:28px;
+
+}
+
+.hero{
+
+padding:28px;
+
+}
+
+.hero h2{
+
+font-size:24px;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+}
+
+.buttons button{
+
+width:100%;
+
+}
+
+.editor{
+
+padding:22px;
+
+min-height:500px;
+
+}
+
+.placeholder{
+
+min-height:420px;
+
+}
+
+.footer{
+
+flex-direction:column;
+
+gap:10px;
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.sidebar{
+
+padding:20px;
+
+}
+
+.logo img{
+
+width:150px;
+
+}
+
+.sidebar nav a{
+
+font-size:14px;
+
+padding:12px;
+
+}
+
+.loading-box{
+
+padding:30px;
+
+}
+
+.spinner-large{
+
+width:70px;
+
+height:70px;
+
+}
+
+}
+
+/*=========================================================
+FIN DEL ARCHIVO
+Planning Engine v1.0
+AulaMind Enterprise
+=========================================================*/

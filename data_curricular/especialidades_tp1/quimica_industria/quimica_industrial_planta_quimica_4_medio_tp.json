@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Química e Industria",
+  "especialidad": "Química Industrial",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "QI-PLQU-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "QI-PLQU-M01",
+      "nombre": "Operación de procesos unitarios"
+    },
+    {
+      "codigo": "QI-PLQU-M02",
+      "nombre": "Control de variables de procesos industriales"
+    },
+    {
+      "codigo": "QI-PLQU-M03",
+      "nombre": "Operación y mantenimiento básico de equipos de planta"
+    },
+    {
+      "codigo": "QI-PLQU-M04",
+      "nombre": "Tratamiento de residuos y control ambiental en planta química"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo.",
+  "mencion": "Planta Química"
+}

@@ -1,0 +1,9 @@
+AulaMind Enterprise 3.0 — Historia, Geografía y Ciencias Sociales
+Cursos reconstruidos según los Programas de Estudio MINEDUC disponibles en los archivos aportados.
+
+hist_1_basico.json: 4 unidades | OA por unidad [5, 7, 5, 15]
+hist_bas.json: 4 unidades | OA por unidad [7, 4, 4, 10]
+hist_5_basico.json: 4 unidades | OA por unidad [6, 5, 5, 10]
+hist.json: 4 unidades | OA por unidad [4, 9, 6, 7]
+hist_8_basico.json: 4 unidades | OA por unidad [8, 7, 5, 3]
+hist_1_medio.json: 4 unidades | OA por unidad [6, 10, 5, 4]

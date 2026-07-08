@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Ciencias Naturales faltantes, Lote 01
+Cursos: 1°, 2° y 3° básico.
+Estructura: curso > 4 unidades oficiales > OA correspondientes.
+
+ciencias_1_basico.json: 4 unidades | 12 OA asignados
+ciencias_2_basico.json: 4 unidades | 14 OA asignados
+ciencias_3_basico.json: 4 unidades | 13 OA asignados

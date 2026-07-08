@@ -1,0 +1,8 @@
+AulaMind Enterprise 3.0 - Lote 01
+Asignatura: Matemática
+Cursos incluidos: 3° medio y 4° medio
+Validación ejecutada: JSON válido, asignatura, curso, unidades, nombres de unidad, OA, código y descripción.
+
+mat_3_medio.json: 1 unidades, 12 OA asignados a unidades.
+
+mat_4_medio.json: 4 unidades, 11 OA asignados a unidades.

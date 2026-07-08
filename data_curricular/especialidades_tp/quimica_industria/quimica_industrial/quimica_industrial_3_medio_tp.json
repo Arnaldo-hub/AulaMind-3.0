@@ -1,0 +1,27 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Química e Industria",
+  "especialidad": "Química Industrial",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "QI-QUIM-M01",
+      "nombre": "Técnicas, procesos y equipos de laboratorio"
+    },
+    {
+      "codigo": "QI-QUIM-M02",
+      "nombre": "Preparación de soluciones y reactivos"
+    },
+    {
+      "codigo": "QI-QUIM-M03",
+      "nombre": "Muestreo y análisis físico-químico"
+    },
+    {
+      "codigo": "QI-QUIM-M04",
+      "nombre": "Seguridad, higiene y manejo de residuos en procesos químicos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo.",
+  "plan": "Plan común de especialidad"
+}

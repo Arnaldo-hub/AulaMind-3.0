@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Sector Maderero TP
+
+Forestal: 3° medio 4 módulos | 4° medio 5 módulos
+Muebles y Terminaciones en Madera: 3° medio 4 módulos | 4° medio 5 módulos
+
+Total: 2 especialidades, 4 JSON de curso y 18 módulos estructurados.
+Estado: lote estructurado; requiere auditoría final contra programas oficiales antes del consolidado definitivo.

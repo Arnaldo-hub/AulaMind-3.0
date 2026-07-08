@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AulaMind Enterprise | Motor Curricular</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/curriculum.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-logo"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind"></div>
+        <div class="sidebar-title">MENÚ PRINCIPAL</div>
+        <nav class="sidebar-menu">
+            <a href="{{ url_for('dashboard.home') }}"><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
+            <a href="{{ url_for('planning.index') }}"><i class="fa-solid fa-book-open"></i><span>Planificaciones</span></a>
+            <a href="{{ url_for('evaluation.index') }}"><i class="fa-solid fa-file-lines"></i><span>Evaluaciones</span></a>
+            <a class="active" href="{{ url_for('curriculum.index') }}"><i class="fa-solid fa-book"></i><span>Currículum</span></a>
+            <a class="logout" href="{{ url_for('auth.logout') }}"><i class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span></a>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <section class="curriculum-header">
+            <span class="hero-badge">Motor Curricular AulaMind</span>
+            <h1>Currículum Nacional</h1>
+            <p>Panel de control de la estructura curricular disponible en AulaMind.</p>
+        </section>
+        <section class="curriculum-stats">
+            <article class="curriculum-card"><span>Cursos</span><strong>{{ total_courses }}</strong></article>
+            <article class="curriculum-card"><span>Asignaturas</span><strong>{{ total_subjects }}</strong></article>
+            <article class="curriculum-card"><span>Unidades</span><strong>{{ total_units }}</strong></article>
+            <article class="curriculum-card"><span>Objetivos de Aprendizaje</span><strong>{{ total_learning_objectives }}</strong></article>
+        </section>
+        <section class="curriculum-note">
+            <h2>Estado del motor curricular</h2>
+            <p>La ruta curricular ya está integrada a la base única. La normalización multimodal del currículo se abordará en Curriculum Engine 4.0 según el plan de 90 días.</p>
+        </section>
+    </main>
+</div>
+</body>
+</html>

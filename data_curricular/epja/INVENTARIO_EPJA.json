@@ -1,0 +1,206 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "bloque": "EPJA",
+  "niveles": 5,
+  "archivos_curriculares": 33,
+  "detalle": [
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b1_1_a_4_basico",
+      "asignatura": "Lenguaje y Comunicación",
+      "archivo": "educacion_basica/nivel_b1_1_a_4_basico/lenguaje_y_comunicacion.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b1_1_a_4_basico",
+      "asignatura": "Matemática",
+      "archivo": "educacion_basica/nivel_b1_1_a_4_basico/matematica.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b1_1_a_4_basico",
+      "asignatura": "Ciencias Naturales",
+      "archivo": "educacion_basica/nivel_b1_1_a_4_basico/ciencias_naturales.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b2_5_y_6_basico",
+      "asignatura": "Lenguaje y Comunicación",
+      "archivo": "educacion_basica/nivel_b2_5_y_6_basico/lenguaje_y_comunicacion.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b2_5_y_6_basico",
+      "asignatura": "Matemática",
+      "archivo": "educacion_basica/nivel_b2_5_y_6_basico/matematica.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b2_5_y_6_basico",
+      "asignatura": "Ciencias Naturales",
+      "archivo": "educacion_basica/nivel_b2_5_y_6_basico/ciencias_naturales.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b2_5_y_6_basico",
+      "asignatura": "Historia, Geografía y Ciencias Sociales",
+      "archivo": "educacion_basica/nivel_b2_5_y_6_basico/historia_geografia_y_ciencias_sociales.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b2_5_y_6_basico",
+      "asignatura": "Inglés",
+      "archivo": "educacion_basica/nivel_b2_5_y_6_basico/ingles.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b3_7_y_8_basico",
+      "asignatura": "Lenguaje y Comunicación",
+      "archivo": "educacion_basica/nivel_b3_7_y_8_basico/lenguaje_y_comunicacion.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b3_7_y_8_basico",
+      "asignatura": "Matemática",
+      "archivo": "educacion_basica/nivel_b3_7_y_8_basico/matematica.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b3_7_y_8_basico",
+      "asignatura": "Ciencias Naturales",
+      "archivo": "educacion_basica/nivel_b3_7_y_8_basico/ciencias_naturales.json"
+    },
+    {
+      "tramo": "educacion_basica",
+      "nivel": "nivel_b3_7_y_8_basico",
+      "asignatura": "Historia, Geografía y Ciencias Sociales",
+      "archivo": "educacion_basica/nivel_b3_7_y_8_basico/historia_geografia_y_ciencias_sociales.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Lenguaje y Comunicación",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/lenguaje_y_comunicacion.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Matemática",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/matematica.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Ciencias Naturales",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/ciencias_naturales.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Historia, Geografía y Ciencias Sociales",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/historia_geografia_y_ciencias_sociales.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Artes Visuales",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/artes_visuales.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Educación Física y Salud",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/educacion_fisica_y_salud.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Educación Financiera",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/educacion_financiera.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Emprendimiento y Empleabilidad",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/emprendimiento_y_empleabilidad.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Filosofía",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/filosofia.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Pensamiento Computacional",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/pensamiento_computacional.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m1_1_y_2_medio",
+      "asignatura": "Responsabilidad Personal y Social",
+      "archivo": "educacion_media/nivel_m1_1_y_2_medio/responsabilidad_personal_y_social.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Lenguaje y Comunicación",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/lenguaje_y_comunicacion.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Matemática",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/matematica.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Ciencias Naturales",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/ciencias_naturales.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Artes Visuales",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/artes_visuales.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Educación Física y Salud",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/educacion_fisica_y_salud.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Educación Financiera",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/educacion_financiera.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Emprendimiento y Empleabilidad",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/emprendimiento_y_empleabilidad.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Filosofía",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/filosofia.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Pensamiento Computacional",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/pensamiento_computacional.json"
+    },
+    {
+      "tramo": "educacion_media",
+      "nivel": "nivel_m2_3_y_4_medio",
+      "asignatura": "Responsabilidad Personal y Social",
+      "archivo": "educacion_media/nivel_m2_3_y_4_medio/responsabilidad_personal_y_social.json"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Artes Visuales faltantes, Lote 02
+Cursos incorporados: 4° básico, 6° básico y 2° medio.
+Estructura: curso > unidades con nombre > OA asociados.
+
+artes_4_basico.json: 4 unidades | 17 asignaciones OA
+artes_6_basico.json: 4 unidades | 16 asignaciones OA
+artes_2_medio.json: 4 unidades | 13 asignaciones OA

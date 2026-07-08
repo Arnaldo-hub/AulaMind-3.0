@@ -1,0 +1,121 @@
+{
+  "area": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "archivo_fuente": "originarios mapuche 1° básico.json",
+  "cursos": [
+    {
+      "curso": "1° Básico",
+      "nombre_asignatura": "originarios mapuche 1° básico",
+      "programa": "MINEDUC",
+      "unidades": [
+        {
+          "nombre": "UNIDAD 1",
+          "semestre": 1,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD 2",
+          "semestre": 1,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD 3",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD 4",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 34",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 62",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 70",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 76",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 81",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 84",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 87",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 106",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 108",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 113",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 116",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 119",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 122",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        },
+        {
+          "nombre": "UNIDAD\n 124",
+          "semestre": 2,
+          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
+          "oa": []
+        }
+      ]
+    }
+  ]
+}

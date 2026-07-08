@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        AulaMind Enterprise
+
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ============================================ -->
+    <!-- SIDEBAR -->
+    <!-- ============================================ -->
+
+    <aside class="sidebar">
+
+        <!-- ============================== -->
+        <!-- LOGO -->
+        <!-- ============================== -->
+
+        <div class="sidebar-logo">
+
+            <img
+
+                src="{{ url_for('static', filename='img/logo.png') }}"
+
+                alt="AulaMind">
+
+        </div>
+
+        <!-- ============================== -->
+
+        <div class="sidebar-title">
+
+            MENÚ PRINCIPAL
+
+        </div>
+
+        <!-- ============================== -->
+
+        <nav class="sidebar-menu">
+
+            <a
+
+                class="active"
+
+                href="{{ url_for('dashboard.home') }}">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>
+
+                    Panel Principal
+
+                </span>
+
+            </a>
+
+            <a
+
+                href="{{ url_for('planning.index') }}">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>
+
+                    Nueva Planificación
+
+                </span>
+
+            </a>
+
+            <a href="{{ url_for('evaluation.index') }}">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>
+
+                    Evaluaciones
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>
+
+                    Guías
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-table"></i>
+
+                <span>
+
+                    Rúbricas
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-user-group"></i>
+
+                <span>
+
+                    PIE
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>
+
+                    Calendario
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>
+
+                    Analítica
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-school"></i>
+
+                <span>
+
+                    Colegio
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>
+
+                    Usuarios
+
+                </span>
+
+            </a>
+
+            <a href="#">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+
+                    Configuración
+
+                </span>
+
+            </a>
+
+        </nav>
+
+        <!-- ============================== -->
+        <!-- FOOTER SIDEBAR -->
+        <!-- ============================== -->
+
+        <div class="sidebar-footer">
+
+            <div class="version">
+
+                AulaMind Enterprise
+
+            </div>
+
+            <small>
+
+                Versión 3.0
+
+            </small>
+
+            <a
+
+                class="logout"
+
+                href="{{ url_for('auth.logout') }}">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Cerrar sesión
+
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- ============================================ -->
+    <!-- CONTENIDO -->
+    <!-- ============================================ -->
+
+    <main class="main-content">
+            <!-- ============================================ -->
+    <!-- HEADER -->
+    <!-- ============================================ -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <h1>
+
+                Bienvenido a AulaMind Enterprise
+
+            </h1>
+
+            <p>
+
+                El Copiloto Inteligente para Docentes de Latinoamérica
+
+            </p>
+
+        </div>
+
+        <div class="topbar-right">
+
+            <button class="notification-btn">
+
+                <i class="fa-regular fa-bell"></i>
+
+            </button>
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>
+
+                        {{ session.get("user_name","Profesor") }}
+
+                    </strong>
+
+                    <small>
+
+                        Docente
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ============================================ -->
+    <!-- HERO -->
+    <!-- ============================================ -->
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <span class="hero-badge">
+
+                🚀 AulaMind IA Enterprise
+
+            </span>
+
+            <h2>
+
+                Crea planificaciones, evaluaciones y recursos
+                pedagógicos con Inteligencia Artificial.
+
+            </h2>
+
+            <p>
+
+                AulaMind automatiza el trabajo administrativo del docente,
+                genera planificaciones alineadas al currículum nacional,
+                crea evaluaciones, guías, rúbricas y recursos educativos
+                en cuestión de segundos.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+
+                    href="{{ url_for('planning.index') }}"
+
+                    class="btn-primary">
+
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    Nueva Planificación
+
+                </a>
+
+                <a
+
+                    href="#"
+
+                    class="btn-secondary">
+
+                    <i class="fa-solid fa-circle-play"></i>
+
+                    Ver demostración
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        Planificaciones
+
+                    </span>
+
+                    <h3>
+
+                        {{ stats.planning_count }}
+
+                    </h3>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        Evaluaciones
+
+                    </span>
+
+                    <h3>
+
+                        {{ stats.evaluation_count }}
+
+                    </h3>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        Guías
+
+                    </span>
+
+                    <h3>
+
+                        {{ stats.guide_count }}
+
+                    </h3>
+
+                </div>
+
+                <div class="hero-stat">
+
+                    <span>
+
+                        Tiempo Ahorrado
+
+                    </span>
+
+                    <h3>
+
+                        {{ stats.time_saved_hours }} h
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PANEL DE BIENVENIDA -->
+    <!-- ============================================ -->
+
+    <section class="welcome-panel">
+
+        <div class="welcome-card">
+
+            <div class="welcome-icon">
+
+                <i class="fa-solid fa-brain"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+
+                    Bienvenido a AulaMind
+
+                </h3>
+
+                <p>
+
+                    Desde este panel podrás acceder a todos los módulos
+                    del sistema y generar contenido educativo utilizando
+                    Inteligencia Artificial.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="welcome-card">
+
+            <div class="welcome-icon">
+
+                <i class="fa-solid fa-bolt"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+
+                    Inicio rápido
+
+                </h3>
+
+                <p>
+
+                    Comienza creando tu primera planificación.
+                    AulaMind se encargará de generar una propuesta
+                    completa que luego podrás editar y exportar.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MÓDULOS -->
+    <!-- ============================================ -->
+
+    <section class="modules-grid">
+                <!-- ================================================= -->
+        <!-- PLANIFICACIONES -->
+        <!-- ================================================= -->
+
+        <article class="module-card featured">
+
+            <div class="module-icon blue">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Planificaciones
+
+                </h3>
+
+                <p>
+
+                    Genera planificaciones completas alineadas al
+                    currículum nacional mediante Inteligencia Artificial.
+
+                </p>
+
+            </div>
+
+            <a
+
+                href="{{ url_for('planning.index') }}"
+
+                class="module-button">
+
+                Abrir módulo
+
+            </a>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
+            <div class="module-icon green">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Evaluaciones
+
+                </h3>
+
+                <p>
+
+                    Construye pruebas, controles y evaluaciones
+                    automáticamente utilizando IA.
+
+                </p>
+
+            </div>
+
+            <span class="coming-soon">
+
+                Próximamente
+
+            </span>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
+            <div class="module-icon purple">
+
+                <i class="fa-solid fa-book"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Guías
+
+                </h3>
+
+                <p>
+
+                    Crea material de apoyo listo para imprimir
+                    en segundos.
+
+                </p>
+
+            </div>
+
+            <span class="coming-soon">
+
+                Próximamente
+
+            </span>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
+            <div class="module-icon orange">
+
+                <i class="fa-solid fa-table"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Rúbricas
+
+                </h3>
+
+                <p>
+
+                    Diseña rúbricas analíticas y listas
+                    de cotejo automáticamente.
+
+                </p>
+
+            </div>
+
+            <span class="coming-soon">
+
+                Próximamente
+
+            </span>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
+            <div class="module-icon red">
+
+                <i class="fa-solid fa-user-group"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    PIE
+
+                </h3>
+
+                <p>
+
+                    Adecuaciones curriculares y apoyo para
+                    estudiantes con NEE.
+
+                </p>
+
+            </div>
+
+            <span class="coming-soon">
+
+                Próximamente
+
+            </span>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
+            <div class="module-icon cyan">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Analítica
+
+                </h3>
+
+                <p>
+
+                    Visualiza estadísticas de productividad,
+                    uso y desempeño docente.
+
+                </p>
+
+            </div>
+
+            <span class="coming-soon">
+
+                Próximamente
+
+            </span>
+
+        </article>
+
+    </section>
+
+    <!-- ================================================= -->
+    <!-- ESTADÍSTICAS -->
+    <!-- ================================================= -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <span>
+
+                Planificaciones creadas
+
+            </span>
+
+            <h2>
+
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <span>
+
+                Evaluaciones
+
+            </span>
+
+            <h2>
+
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <span>
+
+                Documentos exportados
+
+            </span>
+
+            <h2>
+
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <span>
+
+                Tiempo ahorrado
+
+            </span>
+
+            <h2>
+
+                0 h
+
+            </h2>
+
+        </div>
+
+    </section>
+
+    <!-- ================================================= -->
+    <!-- ACTIVIDAD -->
+    <!-- ================================================= -->
+
+    <section class="activity-panel">
+
+        <div class="panel-header">
+
+            <h2>
+
+                Actividad reciente
+
+            </h2>
+
+        </div>
+
+        <div class="empty-state">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <h3>
+
+                Aún no existen actividades
+
+            </h3>
+
+            <p>
+
+                Cuando generes tu primera planificación,
+                aquí aparecerá el historial de trabajo.
+
+            </p>
+
+            <a
+
+                href="{{ url_for('planning.index') }}"
+
+                class="btn-primary">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Crear primera planificación
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer class="dashboard-footer">
+
+        <div>
+
+            © 2026 AulaMind Enterprise
+
+        </div>
+
+        <div>
+
+            Copilot Inteligente para Docentes
+
+        </div>
+
+    </footer>
+        <!-- ============================================ -->
+    <!-- CONFIGURACIÓN DEL DASHBOARD -->
+    <!-- ============================================ -->
+
+    <script>
+
+        window.AULAMIND = {
+
+            version: "3.0.0",
+
+            application: "AulaMind Enterprise",
+
+            modules: {
+
+                planning: "{{ url_for('planning.index') }}",
+
+                dashboard: "{{ url_for('dashboard.home') }}"
+
+            }
+
+        };
+
+    </script>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================================ -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Resaltar menú activo
+            const current = window.location.pathname;
+
+            document.querySelectorAll(".sidebar-menu a").forEach(link => {
+
+                const href = link.getAttribute("href");
+
+                if (href && current === href) {
+
+                    link.classList.add("active");
+
+                }
+
+            });
+
+            // Animación de entrada
+            document.querySelectorAll(
+
+                ".module-card, .stat-card, .welcome-card"
+
+            ).forEach((card, index) => {
+
+                card.style.opacity = "0";
+
+                card.style.transform = "translateY(20px)";
+
+                setTimeout(() => {
+
+                    card.style.transition = "all .45s ease";
+
+                    card.style.opacity = "1";
+
+                    card.style.transform = "translateY(0)";
+
+                }, index * 80);
+
+            });
+
+        });
+
+    </script>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

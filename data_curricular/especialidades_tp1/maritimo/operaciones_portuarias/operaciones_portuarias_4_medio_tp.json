@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Operaciones Portuarias",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-OPOR-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MA-OPOR-M05",
+      "nombre": "Operación de equipos de transferencia de carga"
+    },
+    {
+      "codigo": "MA-OPOR-M06",
+      "nombre": "Almacenamiento y control de mercancías"
+    },
+    {
+      "codigo": "MA-OPOR-M07",
+      "nombre": "Coordinación de operaciones portuarias"
+    },
+    {
+      "codigo": "MA-OPOR-M08",
+      "nombre": "Control operacional y logístico portuario"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

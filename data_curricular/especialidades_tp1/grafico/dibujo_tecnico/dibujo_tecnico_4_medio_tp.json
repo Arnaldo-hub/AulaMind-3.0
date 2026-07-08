@@ -1,0 +1,29 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Gráfico",
+  "especialidad": "Dibujo Técnico",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "GR-DTEC-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "GR-DTEC-M05",
+      "nombre": "Dibujo de proyectos de arquitectura"
+    },
+    {
+      "codigo": "GR-DTEC-M06",
+      "nombre": "Dibujo de proyectos de ingeniería"
+    },
+    {
+      "codigo": "GR-DTEC-M07",
+      "nombre": "Representación y documentación técnica de proyectos"
+    },
+    {
+      "codigo": "GR-DTEC-M08",
+      "nombre": "Presentación gráfica de proyectos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos"
+}

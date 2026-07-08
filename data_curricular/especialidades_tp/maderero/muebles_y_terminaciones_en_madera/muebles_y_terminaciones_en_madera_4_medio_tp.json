@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Maderero",
+  "especialidad": "Muebles y Terminaciones en Madera",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-MUMA-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MA-MUMA-M05",
+      "nombre": "Fabricación de muebles y componentes de madera"
+    },
+    {
+      "codigo": "MA-MUMA-M06",
+      "nombre": "Instalación de muebles y elementos de terminación"
+    },
+    {
+      "codigo": "MA-MUMA-M07",
+      "nombre": "Aplicación de recubrimientos y terminaciones"
+    },
+    {
+      "codigo": "MA-MUMA-M08",
+      "nombre": "Control de calidad de productos de madera"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura preparada para auditoría final contra Programa de Estudio oficial antes del consolidado definitivo."
+}

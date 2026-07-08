@@ -1,0 +1,10 @@
+AulaMind Enterprise 3.0 - Lote 04
+Asignatura: Historia, Geografía y Ciencias Sociales
+Validación: JSON válido, curso, asignatura, unidades, nombre de unidad, código OA y descripción OA.
+
+hist.json: 1 unidades; 18 OA asignados.
+hist_1_basico.json: 1 unidades; 15 OA asignados.
+hist_1_medio.json: 1 unidades; 25 OA asignados.
+hist_5_basico.json: 1 unidades; 22 OA asignados.
+hist_8_basico.json: 1 unidades; 22 OA asignados.
+hist_bas.json: 1 unidades; 23 OA asignados.

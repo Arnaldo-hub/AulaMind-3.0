@@ -1,0 +1,95 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Aymara",
+  "curso": "2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Jallupacha: relatos, territorio, ceremonias y patrimonio aymara",
+      "oa": [
+        {
+          "codigo": "LC02-U1-LS01",
+          "descripcion": "Disfrutar y comprender relatos orales breves, propios de la tradición de los pueblos, reconociendo algunas palabras en lengua indígena o en castellano culturalmente significativas y valorando su importancia."
+        },
+        {
+          "codigo": "LC02-U1-T01",
+          "descripcion": "Reconocer espacios significativos presentes en el territorio, valorando la importancia que tienen en la visión de mundo de cada pueblo indígena."
+        },
+        {
+          "codigo": "LC02-U1-C01",
+          "descripcion": "Conocer eventos socioculturales y ceremoniales propios del pueblo indígena, considerando sus convenciones sociales, momentos y espacios rituales."
+        },
+        {
+          "codigo": "LC02-U1-P01",
+          "descripcion": "Reconocer diversas expresiones del patrimonio cultural de su comunidad, territorio y pueblo indígena."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Yapuchasiña, alax pacha y mara t’aqa: agricultura, cosmos y cambio de ciclo",
+      "oa": [
+        {
+          "codigo": "LC02-U2-LS01",
+          "descripcion": "Interactuar con textos escritos en castellano que incluyan algunas palabras en lengua indígena o de culturas originarias afines, comprendiendo diferentes aspectos de su contenido."
+        },
+        {
+          "codigo": "LC02-U2-T01",
+          "descripcion": "Conocer aspectos centrales de la historia de la comunidad o localidad, rescatando elementos tanto del pasado como del presente del pueblo indígena."
+        },
+        {
+          "codigo": "LC02-U2-C01",
+          "descripcion": "Comprender los valores sociocomunitarios presentes en las relaciones de convivencia familiar y comunitaria, como reciprocidad, respeto y ayuda mutua."
+        },
+        {
+          "codigo": "LC02-U2-P01",
+          "descripcion": "Comprender la importancia de la relación entre el ser humano, la naturaleza y el cosmos, considerando la perspectiva indígena de la ciencia."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Markasax uñt’aña, Pachamama y actividades de invierno",
+      "oa": [
+        {
+          "codigo": "LC02-U3-LS01",
+          "descripcion": "Experimentar con la escritura de palabras en lengua indígena o en castellano, considerando elementos significativos propios de la cultura."
+        },
+        {
+          "codigo": "LC02-U3-T01",
+          "descripcion": "Valorar diferentes aspectos de la cultura indígena, comprendiendo que ello contribuye a la construcción de la identidad de las personas y pueblos."
+        },
+        {
+          "codigo": "LC02-U3-C01",
+          "descripcion": "Comprender el significado cultural de principios que permiten una interacción armónica en la vida familiar y comunitaria aymara, como respeto, reciprocidad y complementariedad."
+        },
+        {
+          "codigo": "LC02-U3-P01",
+          "descripcion": "Comprender la importancia de la relación entre el ser humano, la naturaleza y el cosmos desde la visión de la ciencia y la cultura aymara."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Mensajes de la naturaleza, costumbres, ganadería y agricultura",
+      "oa": [
+        {
+          "codigo": "LC02-U4-LS01",
+          "descripcion": "Describir oralmente el medio natural y los mensajes que entrega la naturaleza, utilizando algunas palabras en lengua indígena o en castellano culturalmente significativas."
+        },
+        {
+          "codigo": "LC02-U4-LS02",
+          "descripcion": "Utilizar recursos tecnológicos disponibles para escuchar y ver aspectos propios de la cultura aymara."
+        },
+        {
+          "codigo": "LC02-U4-T01",
+          "descripcion": "Reconocer elementos culturales e identitarios del pueblo aymara, asociándolos a lugares del territorio."
+        },
+        {
+          "codigo": "LC02-U4-C01",
+          "descripcion": "Reconocer creencias vinculadas con elementos naturales y espirituales en el entorno familiar y comunitario."
+        },
+        {
+          "codigo": "LC02-U4-P01",
+          "descripcion": "Reconocer y valorar procesos de creación de expresiones artísticas del pueblo aymara y su relación con convenciones sociales, momentos y espacios propios."
+        }
+      ]
+    }
+  ]
+}

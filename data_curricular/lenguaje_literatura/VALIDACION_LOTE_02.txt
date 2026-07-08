@@ -1,0 +1,14 @@
+AulaMind Enterprise 3.0 - Lote 02
+Lenguaje y Comunicación / Lengua y Literatura
+leng_1_basico.json: 1 unidades; 26 OA asignados.
+leng_1_medio.json: 1 unidades; 24 OA asignados.
+leng_2_basico.json: 1 unidades; 30 OA asignados.
+leng_2_medio.json: 1 unidades; 24 OA asignados.
+leng_3_basico.json: 1 unidades; 31 OA asignados.
+leng_3_medio.json: 1 unidades; 9 OA asignados.
+leng_4_basico.json: 1 unidades; 30 OA asignados.
+leng_4_medio.json: 1 unidades; 8 OA asignados.
+leng_5_basico.json: 1 unidades; 30 OA asignados.
+leng_6_basico.json: 1 unidades; 31 OA asignados.
+leng_7_basico.json: 1 unidades; 25 OA asignados.
+leng_8_basico.json: 1 unidades; 26 OA asignados.

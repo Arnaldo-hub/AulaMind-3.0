@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Sector Salud y Educación TP
+
+Atención de Enfermería: 3° medio plan común + 4° medio mención Enfermería + 4° medio mención Adulto Mayor.
+Atención de Párvulos: archivos separados para 3° y 4° medio TP.
+Total: 5 JSON y 23 módulos estructurados.
+
+Estado: requiere auditoría curricular final contra los Programas de Estudio oficiales antes del consolidado definitivo.

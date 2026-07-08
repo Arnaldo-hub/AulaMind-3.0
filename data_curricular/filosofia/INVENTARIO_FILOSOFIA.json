@@ -1,0 +1,12 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "asignatura": "Filosofía",
+  "cursos": [
+    "3° medio",
+    "4° medio"
+  ],
+  "archivos": 2,
+  "oa_3_medio": 6,
+  "oa_4_medio": 5,
+  "total_oa": 11
+}

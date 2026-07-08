@@ -1,0 +1,78 @@
+{
+  "asignatura": "Artes Visuales",
+  "curso": "2° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Problemáticas juveniles y creación visual",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear proyectos visuales basados en la valoración crítica de manifestaciones estéticas referidas a problemáticas sociales y juveniles, en el espacio público y en diferentes contextos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear trabajos y proyectos visuales basados en diferentes desafíos creativos, investigando el manejo de materiales sustentables en procedimientos de escultura y diseño."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Argumentar juicios críticos referidos a la valoración de diversas manifestaciones visuales, configurando una selección personal de criterios estéticos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Arquitectura y espacio público",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Crear proyectos visuales basados en la valoración crítica de manifestaciones estéticas presentes en el espacio público."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear proyectos visuales basados en diferentes desafíos creativos, utilizando medios contemporáneos como video y multimedia."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Argumentar evaluaciones y juicios críticos de trabajos visuales personales y de sus pares, fundamentados en criterios estéticos y propósitos expresivos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Diseño, sustentabilidad y creación",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear trabajos y proyectos visuales basados en desafíos creativos, investigando el manejo de materiales sustentables en procedimientos de escultura y diseño."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear proyectos visuales basados en diferentes desafíos creativos, utilizando medios contemporáneos como video y multimedia."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Argumentar juicios críticos referidos a la valoración de manifestaciones visuales, configurando criterios estéticos personales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Medios contemporáneos, difusión y evaluación",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear proyectos visuales utilizando medios contemporáneos como video y multimedia."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Argumentar juicios críticos sobre manifestaciones visuales y sus contextos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Argumentar evaluaciones y juicios críticos de trabajos visuales personales y de sus pares, fundamentados en criterios estéticos y propósitos expresivos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Implementar propuestas de difusión hacia la comunidad de trabajos y proyectos de arte, en el contexto escolar o local, de forma directa o virtual, contemplando acciones de montaje y exhibición."
+        }
+      ]
+    }
+  ]
+}

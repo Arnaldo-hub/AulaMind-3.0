@@ -1,0 +1,133 @@
+{
+  "asignatura": "Ciencias Naturales",
+  "curso": "2° medio",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Biología: Coordinación y regulación",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Explicar cómo el sistema nervioso coordina las acciones del organismo para adaptarse a estímulos del ambiente e investigar y comunicar sus cuidados."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear modelos que expliquen la regulación de la glicemia y de los caracteres sexuales y funciones reproductivas mediante control hormonal."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Biología: Sexualidad y reproducción",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Explicar que la sexualidad humana y la reproducción son aspectos fundamentales de la vida, considerando dimensiones biológicas, sociales, afectivas y psicológicas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Describir la fecundación, implantación y desarrollo del embrión, y analizar la responsabilidad de los padres en la nutrición prenatal y lactancia."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explicar y evaluar métodos de regulación de la fertilidad e identificar elementos de una paternidad y maternidad responsables."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Biología: División celular y herencia",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Investigar y argumentar, basándose en evidencias, que el material genético se transmite de generación en generación, considerando mitosis, meiosis y anomalías de la división celular."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Desarrollar una explicación científica sobre procesos de herencia genética en plantas y animales, aplicando principios básicos de la herencia propuestos por Mendel."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Biología: Manipulación genética y sus implicancias",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "Investigar y explicar aplicaciones de la manipulación genética y evaluar sus implicancias éticas y sociales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 5 — Física: Movimiento",
+      "oa": [
+        {
+          "codigo": "OA 9",
+          "descripcion": "Analizar, sobre la base de la experimentación, el movimiento rectilíneo uniforme y acelerado respecto de un sistema de referencia espacio-temporal."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 6 — Física: Fuerza",
+      "oa": [
+        {
+          "codigo": "OA 10",
+          "descripcion": "Explicar, por medio de investigaciones experimentales, los efectos de una fuerza neta sobre un objeto, utilizando las leyes de Newton y el diagrama de cuerpo libre."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 7 — Física: Trabajo, energía y cantidad de movimiento",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "Describir el movimiento de un objeto usando la ley de conservación de la energía mecánica y los conceptos de trabajo y potencia mecánica."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Analizar e interpretar datos de investigaciones sobre colisiones, considerando impulso, cantidad de movimiento y su conservación."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 8 — Física: Universo y gravitación",
+      "oa": [
+        {
+          "codigo": "OA 13",
+          "descripcion": "Demostrar que comprenden que el conocimiento del Universo cambia y aumenta a partir de nuevas evidencias, usando modelos y teorías cosmológicas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Explicar cualitativamente, por medio de las leyes de Kepler y gravitación universal, mareas, estructuras cósmicas y movimiento de estructuras artificiales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 9 — Química: Soluciones",
+      "oa": [
+        {
+          "codigo": "OA 15",
+          "descripcion": "Explicar, por medio de modelos y experimentación, las propiedades de las soluciones considerando estado físico, componentes y concentración."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 10 — Química: Propiedades coligativas",
+      "oa": [
+        {
+          "codigo": "OA 16",
+          "descripcion": "Planificar y conducir una investigación experimental para explicar propiedades coligativas de las soluciones y su importancia en procesos cotidianos e industriales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 11 — Química: Carbono, biomoléculas e isomería",
+      "oa": [
+        {
+          "codigo": "OA 17",
+          "descripcion": "Crear modelos del carbono y explicar sus propiedades como base para moléculas útiles para seres vivos y el entorno."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "Desarrollar modelos que expliquen la estereoquímica e isomería de compuestos orgánicos como la glucosa, identificando propiedades y utilidad."
+        }
+      ]
+    }
+  ]
+}

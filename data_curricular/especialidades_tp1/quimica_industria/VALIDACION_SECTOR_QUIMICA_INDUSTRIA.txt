@@ -1,0 +1,9 @@
+AulaMind Enterprise 3.0 — Sector Química e Industria TP
+
+Especialidad: Química Industrial
+3° medio TP plan común: 4 módulos estructurados
+4° medio TP mención Laboratorio Químico: 5 módulos estructurados
+4° medio TP mención Planta Química: 5 módulos estructurados
+Total: 3 JSON y 14 módulos estructurados.
+
+Estado: pendiente de auditoría curricular final contra programas oficiales antes del consolidado definitivo.

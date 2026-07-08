@@ -1,0 +1,7 @@
+AulaMind Enterprise 3.0 — Educación Física y Salud faltantes, Lote 01
+Cursos incorporados: 2° básico, 3° básico y 1° medio.
+Estructura: curso > 4 unidades > OA asociados.
+
+efi_2_basico.json: 4 unidades | 12 asignaciones OA
+efi_3_basico.json: 4 unidades | 11 asignaciones OA
+efi_1_medio.json: 4 unidades | 8 asignaciones OA

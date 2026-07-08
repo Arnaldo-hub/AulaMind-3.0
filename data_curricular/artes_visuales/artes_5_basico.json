@@ -1,0 +1,46 @@
+{
+  "asignatura": "Artes Visuales",
+  "curso": "5° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Crear y expresar visualmente",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Expresar y crear trabajos Vida familiar y obra de arte de arte a partir de la ob- servación del: 1 Actividades › entorno natural: paisaje, Los estudiantes observan esculturas de escenas familiares de animales y plantas › entorno cultural: vida Henry Moore, Fernando Botero y Laura Rodig y las describen, relacionándolas con su vida diaria, guiados por el docente con Consisten en un listado de actividades,"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Describir y comparar trabajos › Comparan trabajos de arte y obras de arte de los estilos de arte y diseño personales y de impresionista y postimpresionista en relación con caracte- sus pares considerando: rísticas visuales, temas, materiales, uso de procedimientos, › fortalezas y aspectos a mejorar aplicación de elementos del lenguaje visual y expresividad. › uso de materiales y procedi- › Describen las fortalezas y aspectos a mejorar en los trabajos"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elementos del lenguaje visual y procesos de creación",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar y combinar elementos › Reconocen formas abiertas y cerradas y colores comple- del lenguaje visual (incluidos mentarios en obras de arte del impresionismo y postimpre- los de niveles anteriores) en sionismo. trabajos de arte y diseño con di- › Pintan aplicando los colores complementarios con fines ferentes propósitos expresivos expresivos y creativos. y creativos: › Pintan usando formas abiertas o cerradas"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Arte, cultura y patrimonio",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear trabajos de arte y diseños › Aplican los diferentes procedimientos técnicos en forma a partir de diferentes desafíos innovadora. y temas del entorno cultural y › Buscan soluciones frente a dificultades al aplicar los diferen- artístico, demostrando dominio tes procedimientos técnicos. en el uso de: › Crean pinturas y esculturas, utilizando diversos procedi- › materiales de modelado, de mientos de pintura en sus trabajos de arte, basados en la"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentación, apreciación y reflexión artística",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "› ¿se parecen a su familia? ¿por qué? › ¿qué sienten cuando piensan en su familia? ser una guía al docente para diseñar sus › Al representar una escena familiar por medio de un trabajo de Observar y comunicar oral- arte, ¿a quiénes incluirían y qué estarían haciendo? propias actividades. mente sus primeras impre- (Orientación) siones de lo que sienten y piensan de obras de arte 2 Relación con otras asignaturas por variados medios. Los estudiantes observan fotografías de su familia, las comentan y"
+        }
+      ]
+    }
+  ]
+}

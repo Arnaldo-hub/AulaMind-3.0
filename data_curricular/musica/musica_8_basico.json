@@ -1,0 +1,118 @@
+{
+  "asignatura": "Música",
+  "curso": "8° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comunicar sentimientos, sensaciones e ideas al escuchar manifestaciones y obras musicales de Chile y el mundo, presentes en la tradición, oral, escrita y popular, integrando sus conocimientos en expresiones verbales, visuales, sonoras y corporales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio relacionado con la música escuchada, desarrollando habilidades tales como comprensión rítmica, melódica, conciencia de textura y estilo, expresividad, rigurosidad, fluidez de fraseo y dinámica, entre otros."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Apreciar el rol de la música en la sociedad a partir del repertorio trabajado, respetando la diversidad y riqueza de los contextos socioculturales. música | Programa de Estudio | 8° básico 65 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación en las unidades son sugerencias para los y las docentes. La finalidad es entregar recursos que puedan enriquecer su labor; estos pueden ser adaptados a cada contexto además de enfatizar algunos aspectos del trabajo, de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y el crecimiento musical de las y los estudiantes en todos los ejes."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música aplicando experiencias y conocimientos a partir de indicaciones determinadas, dando énfasis a acompañamientos y variaciones rítmicas, melódicas y/o armónicas. 64 música | Programa de Estudio | 8° básico EJE REFLEXIONAR Y RELACIONAR"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Describir analíticamente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada, y su relación con el propósito expresivo. EJE INTERPRETAR Y CREAR"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar repertorio diverso a una y más voces, con precisión rítmica y melódica, incorporando como guía el uso de medios de registro y transmisión, en la presentación de su quehacer musical."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Explicar fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión, y su influencia en el trabajo musical propio y colectivo."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Interpretar y crear música",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Describir analíticamente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada, y su relación con el propósito expresivo. EJE INTERPRETAR Y CREAR"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar repertorio diverso a una y más voces, con precisión rítmica y melódica, incorporando como guía el uso de medios de registro y transmisión, en la presentación de su quehacer musical."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música aplicando experiencias y conocimientos a partir de indicaciones determinadas, dando énfasis a acompañamientos y variaciones rítmicas, melódicas y/o armónicas. 64 música | Programa de Estudio | 8° básico EJE REFLEXIONAR Y RELACIONAR"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Explicar fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión, y su influencia en el trabajo musical propio y colectivo."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Apreciar el rol de la música en la sociedad a partir del repertorio trabajado, respetando la diversidad y riqueza de los contextos socioculturales. música | Programa de Estudio | 8° básico 65 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación en las unidades son sugerencias para los y las docentes. La finalidad es entregar recursos que puedan enriquecer su labor; estos pueden ser adaptados a cada contexto además de enfatizar algunos aspectos del trabajo, de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y el crecimiento musical de las y los estudiantes en todos los ejes."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comunicar sentimientos, sensaciones e ideas al escuchar manifestaciones y obras musicales de Chile y el mundo, presentes en la tradición, oral, escrita y popular, integrando sus conocimientos en expresiones verbales, visuales, sonoras y corporales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Describir analíticamente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada, y su relación con el propósito expresivo. EJE INTERPRETAR Y CREAR"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio relacionado con la música escuchada, desarrollando habilidades tales como comprensión rítmica, melódica, conciencia de textura y estilo, expresividad, rigurosidad, fluidez de fraseo y dinámica, entre otros."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música aplicando experiencias y conocimientos a partir de indicaciones determinadas, dando énfasis a acompañamientos y variaciones rítmicas, melódicas y/o armónicas. 64 música | Programa de Estudio | 8° básico EJE REFLEXIONAR Y RELACIONAR"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comunicar sentimientos, sensaciones e ideas al escuchar manifestaciones y obras musicales de Chile y el mundo, presentes en la tradición, oral, escrita y popular, integrando sus conocimientos en expresiones verbales, visuales, sonoras y corporales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Describir analíticamente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada, y su relación con el propósito expresivo. EJE INTERPRETAR Y CREAR"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio relacionado con la música escuchada, desarrollando habilidades tales como comprensión rítmica, melódica, conciencia de textura y estilo, expresividad, rigurosidad, fluidez de fraseo y dinámica, entre otros."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar repertorio diverso a una y más voces, con precisión rítmica y melódica, incorporando como guía el uso de medios de registro y transmisión, en la presentación de su quehacer musical."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Explicar fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión, y su influencia en el trabajo musical propio y colectivo."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Apreciar el rol de la música en la sociedad a partir del repertorio trabajado, respetando la diversidad y riqueza de los contextos socioculturales. música | Programa de Estudio | 8° básico 65 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación en las unidades son sugerencias para los y las docentes. La finalidad es entregar recursos que puedan enriquecer su labor; estos pueden ser adaptados a cada contexto además de enfatizar algunos aspectos del trabajo, de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y el crecimiento musical de las y los estudiantes en todos los ejes."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música aplicando experiencias y conocimientos a partir de indicaciones determinadas, dando énfasis a acompañamientos y variaciones rítmicas, melódicas y/o armónicas. 64 música | Programa de Estudio | 8° básico EJE REFLEXIONAR Y RELACIONAR"
+        }
+      ]
+    }
+  ]
+}

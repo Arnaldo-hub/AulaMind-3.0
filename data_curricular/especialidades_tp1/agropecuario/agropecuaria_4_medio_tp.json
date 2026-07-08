@@ -1,0 +1,47 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "agropecuario",
+  "especialidad": "Agropecuaria",
+  "curso": "4° medio TP",
+  "alcance_oa": "Perfil de egreso de la especialidad para el ciclo formativo de 3° y 4° medio TP",
+  "menciones": [
+    "Agricultura",
+    "Pecuaria",
+    "Vitivinícola"
+  ],
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Preparar el suelo para establecer distintos tipos"
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Aplicar técnicas de sanidad vegetal y control de de cultivos y praderas, utilizando técnicas, plagas, enfermedades y malezas a través de maquinaria, instrumental analítico, métodos preventivos y curativos, tanto implementos e insumos apropiados, químicos como orgánicos y biológicos, de considerando sistemas de producción, acuerdo a las necesidades de los distintos condiciones del terreno y ecosistema, y cultivos, modalidades y destinos de la resguardo y protección del recurso suelo. producción, cautelando la legislación sanitaria, ambiental y laboral vigente."
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Regar y drenar de acuerdo a los distintos sistemas de producción vegetal, utilizando técnicas"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Registrar el manejo productivo y la producción de tipo gravitacional y equipos para el riego del sistema en forma manual y digital, para el tecnificado, considerando los requerimientos de los control de gestión de la producción agropecuaria, cultivos, las condiciones climáticas y del terreno, el utilizando formatos establecidos en el sector. resguardo del recurso hídrico y la legislación correspondiente."
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion": "Utilizar sistemas de información remota e instrumental analítico para obtener y"
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Aplicar técnicas de reproducción vegetal, de transmitir información necesaria para la acuerdo a las características de las especies agricultura de precisión, aplicable a los manejos productivos del predio. 23 ESPECIALIDAD AGROPECUARIA MENCIÓN AGRICULTURA Campo Laboral ambientes forzados, utilizando maquinaria, herramientas e El egresado de la especialidad instrumental, de acuerdo a las Agropecuaria, mención Agricultura, características fisiológicas de los podrá desempeñarse en empresas agrícolas, agroindustriales y de control fitosanitario, distribuidoras de maquinaria e insumos agrícolas o procesadoras de productos agrícolas. Su ámbito de trabajo estará SECTOR ECONÓMICO AGROPECUARIO orientado a cultivos diversos, en cultivos, propósitos productivos, predios pequeños, medianos y sistema de producción, grandes, huertos frutícolas, huertos características del terreno y del hortícolas, viveros y programas de ecosistema, según la legislación cultivos forzados, procesos de vigente. cosecha, sanidad vegetal. En estas"
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Ejecutar labores de acopio, clasificación y guarda de productos agrícolas diversos, de acuerdo a sus Objetivos de características fisiológicas y a sus Aprendizaje de la destinos en el corto, mediano y largo Mención plazo. Al egreso de la Educación Media"
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Ejecutar acciones de Técnico-Profesional, los estudiantes mantenimiento preventivo y habrán desarrollado las siguientes correctivo básico de la maquinaria, competencias: equipos e implementos agrícolas."
+    }
+  ],
+  "nota": "Los OA del perfil de egreso son terminales del ciclo 3°-4° medio. La distribución anual por módulos debe seguir el Programa de Estudio oficial de la especialidad."
+}

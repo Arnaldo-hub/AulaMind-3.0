@@ -1,0 +1,31 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Salud y Educación",
+  "especialidad": "Atención de Enfermería",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "SE-ENFE-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "SE-ENFE-M01",
+      "nombre": "Cuidados de enfermería"
+    },
+    {
+      "codigo": "SE-ENFE-M02",
+      "nombre": "Administración de medicamentos y procedimientos básicos"
+    },
+    {
+      "codigo": "SE-ENFE-M03",
+      "nombre": "Atención de urgencia y primeros auxilios"
+    },
+    {
+      "codigo": "SE-ENFE-M04",
+      "nombre": "Apoyo en procedimientos clínicos y registro de información"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo.",
+  "mencion": "Enfermería"
+}

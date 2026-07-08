@@ -1,0 +1,43 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "alimentacion",
+  "especialidad": "Elaboración Industrial de Alimentos",
+  "curso": "4° medio TP",
+  "alcance_oa": "Perfil de egreso de la especialidad para el ciclo formativo de 3° y 4° medio TP",
+  "menciones": [],
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Recepcionar, pesar, clasificar, almacenar y"
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Rotular y etiquetar las materias primas, seleccionar materias primas, insumos y insumos, productos intermedios y finales, materiales abastecidos por proveedores, de registrando el proceso, utilizando los acuerdo a sus características y naturaleza, envases y embalajes requeridos por la utilizando eficientemente sistemas industria alimentaria y operando los equipos informáticos y manuales de inventarios. correspondientes."
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Elaborar, conservar y envasar alimentos,"
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion": "Manejar residuos sólidos, líquidos y aplicando los tratamientos y procedimientos gaseosos, aplicando procedimientos de de control de calidad que correspondan, prevención y de emergencia acordes a las utilizando los equipos pertinentes a los disposiciones de la normativa de seguridad y procesos de acuerdo con el producto a medioambiental. obtener."
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Elaborar productos de baja complejidad Alemania. Esta situación conlleva importantes gastronómica, utilizando equipos y desafíos de perfeccionamiento del recurso utensilios para procesar las materias humano del sector gastronómico, tanto en lo primas y los insumos requeridos. utensilios, de"
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Ordenar, organizar y disponer los productos intermedios, insumos, equipos y 29 AD GASTRONO MÍA acuerdo a sus características organolépticas, al proceso de elaboración gastronómica y a las normativas de higiene e inocuidad."
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Elaborar alimentos de baja complejidad, considerando productos o técnicas base de acuerdo a lo indicado en la ficha técnica y/o en las instrucciones de la jefatura de cocina, aplicando técnicas de corte y cocción, utilizando equipos, y utensilios, controlando los parámetros de temperatura y humedad mediante instrumentos apropiados."
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Monitorear el estado de materias primas, insumos y productos intermedios y finales, apoyándose en análisis físico-químicos, microbiológicos y sensoriales básicos de los mismos, y aplicando técnicas y procedimientos de aseguramiento de calidad que permitan cumplir con los estándares de calidad e inocuidad establecidos, conforme a la normativa vigente. 30"
+    }
+  ],
+  "nota": "Los OA del perfil de egreso son terminales del ciclo 3°-4° medio. La distribución anual por módulos debe seguir el Programa de Estudio oficial de la especialidad."
+}

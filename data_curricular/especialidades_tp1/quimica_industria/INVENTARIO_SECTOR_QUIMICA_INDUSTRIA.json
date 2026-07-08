@@ -1,0 +1,13 @@
+{
+  "sector": "Química e Industria",
+  "especialidad": "Química Industrial",
+  "menciones": [
+    "Laboratorio Químico",
+    "Planta Química"
+  ],
+  "archivos_json": 3,
+  "modulos_plan_comun_3": 4,
+  "modulos_laboratorio_4": 5,
+  "modulos_planta_4": 5,
+  "total_modulos": 14
+}

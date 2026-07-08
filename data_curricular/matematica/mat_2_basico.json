@@ -1,0 +1,170 @@
+{
+  "asignatura": "Matemática",
+  "curso": "mat 2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Números y operaciones, Álgebra y funciones, Datos y probabilidades",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Comparar y ordenar números del 0 al"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Demostrar que comprende la adición y la sustracción en el ámbito del 0"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Estimar cantidades hasta 20 en situa- ciones concretas, usando un referente.42"
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "OA 17 Identificar días, semanas, meses y de problemas. fechas en el calendario."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Describir y aplicar estrategias1 de cál-"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Identificar las unidades y decenas en del 2, del 5 y del 10 números del 0 al 100, representando › resolviendo problemas que involu- las cantidades de acuerdo a su valor cren las tablas del 2, del 5 y del 10 posicional, con material concreto, pictórico y simbólico. PATRONES Y ÁLGEBRA"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Identificar las unidades y decenas en del 2, del 5 y del 10 números del 0 al 100, representando › resolviendo problemas que involu- las cantidades de acuerdo a su valor cren las tablas del 2, del 5 y del 10 posicional, con material concreto, pictórico y simbólico. PATRONES Y ÁLGEBRA"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Describir y aplicar estrategias1 de cál-"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Demostrar, explicar y registrar la al 100: igualdad y la desigualdad en forma › usando un lenguaje cotidiano y concreta y pictórica del 0 al 20, usan- matemático para describir acciones do el símbolo igual (=) y los símbolos desde su propia experiencia no igual (<, >). › resolviendo problemas con una va- riedad de representaciones concre- GEOMETRÍA tas y pictóricas, de manera manual"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Demostrar que comprende la rela- conos) con diversos materiales. ción entre la adición y la sustracción al usar la “familia de operaciones”2 en MEDICIÓN cálculos aritméticos y la resolución"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Estimar cantidades hasta 100 en"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Representar y describir la posición de y/o usando software educativo objetos y personas con relación a sí › registrando el proceso en forma mismos y a otros objetos y personas, in- simbólica cluyendo derecha e izquierda y usando › aplicando los resultados de las material concreto y dibujos. adiciones y sustracciones de los nú-"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Demostrar y explicar de manera con- variedad de patrones numéricos y creta, pictórica y simbólica el efecto completar los elementos faltantes, de de sumar y restar 0 a un número. manera manual y/o usando software educativo."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Describir y aplicar estrategias1 de cál-"
+        },
+        {
+          "codigo": "OA 20",
+          "descripcion": "OA 20 Recolectar y registrar datos para responder preguntas estadísticas sobre juegos con monedas y dados, usando bloques y tablas de conteo y pictogramas."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Describir, comparar y construir meros del 0 a 20 sin realizar cálculos figuras 2D (triángulos, cuadrados, › aplicando el algoritmo de la adición rectángulos y círculos) con material y sustracción sin considerar reserva concreto. › creando problemas matemáticos en contextos familiares y resolviéndolos"
+        },
+        {
+          "codigo": "OA 19",
+          "descripcion": "OA 19 Determinar la longitud de objetos,"
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "OA 16 Describir, comparar y construir figuras 3D (cubos, paralelepípedos, esferas y"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Demostrar que comprende la adición y la sustracción en el ámbito del 0"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Números y operaciones, Álgebra y funciones, Datos y probabilidades",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Describir y aplicar estrategias1 de cál-"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Demostrar que comprende la multi- culo mental para adiciones y sustrac- plicación: ciones hasta 20: › usando representaciones concretas › completar 10 y pictóricas › usar dobles y mitades › expresando una multiplicación › “uno más uno menos” como una adición de sumandos › “dos más dos menos” iguales › usar la reversibilidad de las operaciones › usando la distributividad3 como estrategia para construir las tablas"
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "OA 18 Leer horas y medias horas en relojes digitales, en el contexto de la resolu- ción de problemas.Matemática"
+        },
+        {
+          "codigo": "OA 21",
+          "descripcion": "OA 21 Registrar en tablas y gráficos de barra usando unidades de medidas no simple, resultados de juegos aleatorios estandarizadas y unidades estanda- con dados y monedas. rizadas (cm y m), en el contexto de la resolución de problemas."
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "OA 22 Construir, leer e interpretar picto- gramas con escala y gráficos de barra DATOS Y PROBABILIDADES simple."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Crear, representar y continuar una"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Comparar y ordenar números del 0 al"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Estimar cantidades hasta 20 en situa- ciones concretas, usando un referente.42"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Identificar las unidades y decenas en del 2, del 5 y del 10 números del 0 al 100, representando › resolviendo problemas que involu- las cantidades de acuerdo a su valor cren las tablas del 2, del 5 y del 10 posicional, con material concreto, pictórico y simbólico. PATRONES Y ÁLGEBRA"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Demostrar que comprende la adición y la sustracción en el ámbito del 0"
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "OA 17 Identificar días, semanas, meses y de problemas. fechas en el calendario."
+        }
+      ]
+    }
+  ]
+}

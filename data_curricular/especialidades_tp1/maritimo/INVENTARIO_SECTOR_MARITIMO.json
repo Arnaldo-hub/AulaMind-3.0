@@ -1,0 +1,30 @@
+[
+  {
+    "especialidad": "Acuicultura",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría oficial final"
+  },
+  {
+    "especialidad": "Operaciones Portuarias",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría oficial final"
+  },
+  {
+    "especialidad": "Pesquería",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría oficial final"
+  },
+  {
+    "especialidad": "Tripulación de Naves Mercantes y Especiales",
+    "archivos_curso": 2,
+    "modulos_3": 4,
+    "modulos_4": 5,
+    "estado": "pendiente auditoría oficial final"
+  }
+]

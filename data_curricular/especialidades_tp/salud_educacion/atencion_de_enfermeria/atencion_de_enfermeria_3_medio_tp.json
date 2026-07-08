@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Salud y Educación",
+  "especialidad": "Atención de Enfermería",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "SE-ATEN-M01",
+      "nombre": "Aplicación de cuidados básicos de enfermería"
+    },
+    {
+      "codigo": "SE-ATEN-M02",
+      "nombre": "Medición y control de parámetros de salud"
+    },
+    {
+      "codigo": "SE-ATEN-M03",
+      "nombre": "Higiene y confort del paciente"
+    },
+    {
+      "codigo": "SE-ATEN-M04",
+      "nombre": "Prevención de infecciones y manejo de residuos sanitarios"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

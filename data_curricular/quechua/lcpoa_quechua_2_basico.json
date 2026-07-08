@@ -1,0 +1,95 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Quechua",
+  "curso": "2° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Relatos, territorio y expresiones culturales del pueblo Quechua",
+      "oa": [
+        {
+          "codigo": "LC02-U1-LS01",
+          "descripcion": "Disfrutar y comprender relatos orales breves propios de la tradición de los pueblos, reconociendo palabras en lengua indígena o en castellano culturalmente significativas y valorando su importancia."
+        },
+        {
+          "codigo": "LC02-U1-T01",
+          "descripcion": "Reconocer espacios significativos presentes en el territorio, valorando la importancia que tienen en la visión de mundo del pueblo Quechua."
+        },
+        {
+          "codigo": "LC02-U1-C01",
+          "descripcion": "Conocer eventos socioculturales y ceremoniales propios del pueblo Quechua, considerando sus convenciones sociales, momentos y espacios rituales."
+        },
+        {
+          "codigo": "LC02-U1-P01",
+          "descripcion": "Reconocer diversas expresiones del patrimonio cultural de su comunidad, territorio y pueblo indígena."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Familia, comunidad, reciprocidad y ciclo agrícola",
+      "oa": [
+        {
+          "codigo": "LC02-U2-LS01",
+          "descripcion": "Interactuar con textos escritos en castellano que incluyan palabras en lengua indígena o de culturas originarias afines, comprendiendo diferentes aspectos de su contenido."
+        },
+        {
+          "codigo": "LC02-U2-T01",
+          "descripcion": "Conocer aspectos centrales de la historia de la comunidad o localidad, rescatando elementos del pasado y del presente del pueblo Quechua."
+        },
+        {
+          "codigo": "LC02-U2-C01",
+          "descripcion": "Comprender valores sociocomunitarios presentes en las relaciones de convivencia familiar y comunitaria, como reciprocidad, respeto, complementariedad y ayuda mutua."
+        },
+        {
+          "codigo": "LC02-U2-P01",
+          "descripcion": "Comprender la importancia de la relación entre el ser humano, la naturaleza y el cosmos, considerando la perspectiva indígena de la ciencia."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Lengua quechua, identidad y saberes comunitarios",
+      "oa": [
+        {
+          "codigo": "LC02-U3-LS01",
+          "descripcion": "Experimentar con la escritura de palabras en lengua indígena o en castellano, considerando elementos significativos propios de la cultura."
+        },
+        {
+          "codigo": "LC02-U3-T01",
+          "descripcion": "Valorar diferentes aspectos de la cultura indígena, comprendiendo que contribuyen a la construcción de la identidad de las personas y pueblos."
+        },
+        {
+          "codigo": "LC02-U3-C01",
+          "descripcion": "Comprender el significado cultural de principios que permiten una interacción armónica en la vida familiar y comunitaria."
+        },
+        {
+          "codigo": "LC02-U3-P01",
+          "descripcion": "Reconocer y valorar conocimientos, técnicas y expresiones artísticas propias del pueblo Quechua y su relación con el territorio y la naturaleza."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Naturaleza, espiritualidad, celebraciones y patrimonio Quechua",
+      "oa": [
+        {
+          "codigo": "LC02-U4-LS01",
+          "descripcion": "Describir oralmente el medio natural y los mensajes que entrega la naturaleza, utilizando palabras en lengua indígena o en castellano culturalmente significativas."
+        },
+        {
+          "codigo": "LC02-U4-LS02",
+          "descripcion": "Utilizar recursos tecnológicos disponibles para escuchar y observar aspectos propios de la cultura Quechua."
+        },
+        {
+          "codigo": "LC02-U4-T01",
+          "descripcion": "Reconocer elementos culturales e identitarios del pueblo Quechua, asociándolos a lugares y espacios significativos del territorio."
+        },
+        {
+          "codigo": "LC02-U4-C01",
+          "descripcion": "Reconocer creencias vinculadas con elementos naturales y espirituales presentes en el entorno familiar y comunitario."
+        },
+        {
+          "codigo": "LC02-U4-P01",
+          "descripcion": "Reconocer y valorar procesos de creación, producción y expresiones del patrimonio cultural Quechua."
+        }
+      ]
+    }
+  ]
+}

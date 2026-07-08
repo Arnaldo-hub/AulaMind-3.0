@@ -1,0 +1,12 @@
+AulaMind Enterprise 3.0 - Lote 06
+Asignatura: Educación Física y Salud
+Validación estructural: JSON, asignatura, curso, unidades, nombre de unidad, código OA y descripción OA.
+
+efi_1_basico.json: 1 unidades; 11 OA asignados.
+efi_2_medio.json: 1 unidades; 5 OA asignados.
+efi_34_medio_2.json: 1 unidades; 6 OA asignados.
+efi_4_basico.json: 1 unidades; 11 OA asignados.
+efi_5_basico.json: 1 unidades; 11 OA asignados.
+efi_6_basico.json: 1 unidades; 11 OA asignados.
+efi_7_basico.json: 1 unidades; 7 OA asignados.
+efi_8_basico.json: 1 unidades; 8 OA asignados.

@@ -1,0 +1,49 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Agropecuario",
+  "especialidad": "Agropecuaria",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "AP-AGRO-M01",
+      "nombre": "Manejo de suelo y residuos",
+      "oa_asociados": [
+        "OA 1",
+        "OA 5",
+        "OA 7"
+      ]
+    },
+    {
+      "codigo": "AP-AGRO-M02",
+      "nombre": "Manejo de técnicas de riego",
+      "oa_asociados": [
+        "OA 2",
+        "OA 8"
+      ]
+    },
+    {
+      "codigo": "AP-AGRO-M03",
+      "nombre": "Técnicas de reproducción vegetal",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "AP-AGRO-M04",
+      "nombre": "Alimentación y pesaje pecuario",
+      "oa_asociados": [
+        "OA 4",
+        "OA 7"
+      ]
+    },
+    {
+      "codigo": "AP-AGRO-M05",
+      "nombre": "Control de plagas y enfermedades",
+      "oa_asociados": [
+        "OA 6",
+        "OA 7"
+      ]
+    }
+  ],
+  "plan": "Plan común de especialidad"
+}

@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Minero",
+  "especialidad": "Metalurgia Extractiva",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MI-MEEX-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MI-MEEX-M05",
+      "nombre": "Hidrometalurgia"
+    },
+    {
+      "codigo": "MI-MEEX-M06",
+      "nombre": "Pirometalurgia"
+    },
+    {
+      "codigo": "MI-MEEX-M07",
+      "nombre": "Electrometalurgia"
+    },
+    {
+      "codigo": "MI-MEEX-M08",
+      "nombre": "Control ambiental y seguridad en procesos metalúrgicos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

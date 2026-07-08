@@ -1,0 +1,153 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "bloque": "Religión",
+  "confesiones": 2,
+  "cursos_por_confesion": 12,
+  "archivos_curriculares": 24,
+  "detalle": [
+    {
+      "asignatura": "Religión Católica",
+      "curso": "1° básico",
+      "archivo": "religion_catolica/religion_catolica_1_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "2° básico",
+      "archivo": "religion_catolica/religion_catolica_2_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "3° básico",
+      "archivo": "religion_catolica/religion_catolica_3_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "4° básico",
+      "archivo": "religion_catolica/religion_catolica_4_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "5° básico",
+      "archivo": "religion_catolica/religion_catolica_5_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "6° básico",
+      "archivo": "religion_catolica/religion_catolica_6_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "7° básico",
+      "archivo": "religion_catolica/religion_catolica_7_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "8° básico",
+      "archivo": "religion_catolica/religion_catolica_8_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "1° medio",
+      "archivo": "religion_catolica/religion_catolica_1_medio.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "2° medio",
+      "archivo": "religion_catolica/religion_catolica_2_medio.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "3° medio",
+      "archivo": "religion_catolica/religion_catolica_3_medio.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Católica",
+      "curso": "4° medio",
+      "archivo": "religion_catolica/religion_catolica_4_medio.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "1° básico",
+      "archivo": "religion_evangelica/religion_evangelica_1_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "2° básico",
+      "archivo": "religion_evangelica/religion_evangelica_2_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "3° básico",
+      "archivo": "religion_evangelica/religion_evangelica_3_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "4° básico",
+      "archivo": "religion_evangelica/religion_evangelica_4_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "5° básico",
+      "archivo": "religion_evangelica/religion_evangelica_5_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "6° básico",
+      "archivo": "religion_evangelica/religion_evangelica_6_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "7° básico",
+      "archivo": "religion_evangelica/religion_evangelica_7_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "8° básico",
+      "archivo": "religion_evangelica/religion_evangelica_8_basico.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "1° medio",
+      "archivo": "religion_evangelica/religion_evangelica_1_medio.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "2° medio",
+      "archivo": "religion_evangelica/religion_evangelica_2_medio.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "3° medio",
+      "archivo": "religion_evangelica/religion_evangelica_3_medio.json",
+      "estado": "pendiente carga curricular literal"
+    },
+    {
+      "asignatura": "Religión Evangélica",
+      "curso": "4° medio",
+      "archivo": "religion_evangelica/religion_evangelica_4_medio.json",
+      "estado": "pendiente carga curricular literal"
+    }
+  ]
+}

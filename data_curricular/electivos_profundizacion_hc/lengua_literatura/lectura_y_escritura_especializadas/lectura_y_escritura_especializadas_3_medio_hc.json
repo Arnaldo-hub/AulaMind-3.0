@@ -1,0 +1,50 @@
+{
+  "modalidad": "Humanístico-Científica",
+  "plan": "Formación Diferenciada",
+  "tipo": "Asignatura de profundización",
+  "area": "lengua_literatura",
+  "asignatura": "Lectura y escritura especializadas",
+  "curso": "3° medio HC",
+  "cobertura_curricular": "3° y 4° medio HC",
+  "oa": [
+    {
+      "codigo": "LL-LEES-3y4-OAC-01",
+      "descripcion": "Producir textos pertenecientes a diversos géneros discursivos académicos, en los cuales se gestione información recogida de distintas fuentes y se demuestre dominio especializado de un tema."
+    },
+    {
+      "codigo": "LL-LEES-3y4-OAC-02",
+      "descripcion": "Participar de manera activa en procesos colaborativos de producción de textos especializados -como autor, lector, revisor- al interior de una comunidad de \"pares especialistas\" que leen, escriben y aprenden sobre un tema en particular."
+    },
+    {
+      "codigo": "LL-LEES-3y4-OAC-03",
+      "descripcion": "Utilizar diversas estrategias para registrar y procesar información obtenida en soportes impresos o digitales, en coherencia con el tema, los propósitos comunicativos y las convenciones discursivas de los textos que producirán."
+    },
+    {
+      "codigo": "LL-LEES-3y4-OAC-04",
+      "descripcion": "Utilizar diversas estrategias para construir y transformar el conocimiento por escrito, en coherencia con los temas, los propósitos comunicativos y las convenciones discursivas de los textos que producirán."
+    },
+    {
+      "codigo": "LL-LEES-3y4-OAC-05",
+      "descripcion": "Buscar, evaluar y seleccionar rigurosamente fuentes disponibles en soportes impresos y digitales, considerando la validez, veracidad y responsabilidad de su autoría."
+    }
+  ],
+  "unidades": [
+    {
+      "numero": 1,
+      "nombre": "Procesando información"
+    },
+    {
+      "numero": 2,
+      "nombre": "Conociendo las comunidades especializadas"
+    },
+    {
+      "numero": 3,
+      "nombre": "Transformando el conocimiento"
+    },
+    {
+      "numero": 4,
+      "nombre": "Colaborando en la construcción del conocimiento"
+    }
+  ],
+  "estado_curricular": "CONTENIDO CARGADO"
+}

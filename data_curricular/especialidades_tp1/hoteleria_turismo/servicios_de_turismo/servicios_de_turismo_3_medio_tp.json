@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Hotelería y Turismo",
+  "especialidad": "Servicios de Turismo",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "HT-TURI-M01",
+      "nombre": "Patrimonio, cultura y atractivos turísticos"
+    },
+    {
+      "codigo": "HT-TURI-M02",
+      "nombre": "Información y orientación turística"
+    },
+    {
+      "codigo": "HT-TURI-M03",
+      "nombre": "Atención y comunicación con visitantes"
+    },
+    {
+      "codigo": "HT-TURI-M04",
+      "nombre": "Diseño de programas y circuitos turísticos"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Estructura curricular del lote preparada para auditoría final contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

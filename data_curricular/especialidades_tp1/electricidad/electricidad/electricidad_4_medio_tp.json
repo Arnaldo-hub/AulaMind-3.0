@@ -1,0 +1,63 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Electricidad",
+  "especialidad": "Electricidad",
+  "curso": "4° medio TP",
+  "oa_perfil_egreso": [
+    {
+      "codigo": "OA 1",
+      "descripcion": "Leer y utilizar especificaciones técnicas, planos, diagramas y proyectos de instalaciones eléctricas."
+    },
+    {
+      "codigo": "OA 2",
+      "descripcion": "Dibujar circuitos eléctricos mediante software CAD, considerando simbología y normativa aplicable."
+    },
+    {
+      "codigo": "OA 3",
+      "descripcion": "Ejecutar instalaciones de alumbrado, fuerza y calefacción de acuerdo con planos, especificaciones técnicas y normativa."
+    },
+    {
+      "codigo": "OA 4",
+      "descripcion": "Ejecutar instalaciones de sistemas de control eléctrico industrial y automatización básica."
+    },
+    {
+      "codigo": "OA 5",
+      "descripcion": "Programar y utilizar controladores y dispositivos de automatización en aplicaciones eléctricas."
+    },
+    {
+      "codigo": "OA 6",
+      "descripcion": "Mantener y reparar instalaciones, máquinas y equipos eléctricos, aplicando procedimientos de diagnóstico y seguridad."
+    },
+    {
+      "codigo": "OA 7",
+      "descripcion": "Montar y mantener sistemas eléctricos de potencia, protección y distribución conforme a especificaciones técnicas."
+    },
+    {
+      "codigo": "OA 8",
+      "descripcion": "Modificar y actualizar instalaciones eléctricas, respetando normativa, seguridad y requerimientos técnicos."
+    }
+  ],
+  "modulos": [
+    {
+      "codigo": "EL-ELEC-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "EL-ELEC-M05",
+      "nombre": "Instalaciones eléctricas industriales"
+    },
+    {
+      "codigo": "EL-ELEC-M06",
+      "nombre": "Automatización de sistemas eléctricos"
+    },
+    {
+      "codigo": "EL-ELEC-M07",
+      "nombre": "Mantenimiento de sistemas eléctricos"
+    },
+    {
+      "codigo": "EL-ELEC-M08",
+      "nombre": "Montaje y operación de sistemas eléctricos de potencia"
+    }
+  ],
+  "nota": "Los OA de perfil son terminales del ciclo 3°-4° medio; los módulos se organizan por curso para AulaMind."
+}

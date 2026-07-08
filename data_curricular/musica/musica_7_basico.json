@@ -1,0 +1,118 @@
+{
+  "asignatura": "Música",
+  "curso": "7° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Reconocer sentimientos, sensaciones e ideas al escuchar manifestaciones y obras musicales de Chile y el mundo, presentes en la tradición oral, escrita y popular, manifestándolos a través de medios verbales, visuales, sonoros y corporales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio diverso, desarrollando habilidades tales como precisión rítmica y melódica, expresividad, conciencia de fraseo y dinámica, entre otros, fortaleciendo el interés por el hacer musical individual y grupal."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Reconocer el rol de la música en la sociedad, considerando sus propias experiencias musicales, contextos en que surge y las personas que la cultivan. Música | Programa de Estudio | 7° básico 67 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación en las unidades son sugerencias para los y las docentes. La finalidad es entregar recursos que puedan enriquecer su labor; estos pueden ser adaptados a cada contexto además de enfatizar algunos aspectos del trabajo, de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y el crecimiento musical de las y los estudiantes en todos los ejes."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Identificar conscientemente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada. Eje interpretar y crear"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar a una y más voces repertorio diverso, incorporando como apoyo el uso de medios de registro y transmisión."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a ambientaciones sonoras libres, acompañamientos rítmicos, melódicos y/o armónicos simples. 66 Música | Programa de Estudio | 7° básico Eje reflexionar y relacionar"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Reconocer fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Interpretar y crear música",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Identificar conscientemente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada. Eje interpretar y crear"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar a una y más voces repertorio diverso, incorporando como apoyo el uso de medios de registro y transmisión."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a ambientaciones sonoras libres, acompañamientos rítmicos, melódicos y/o armónicos simples. 66 Música | Programa de Estudio | 7° básico Eje reflexionar y relacionar"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Reconocer fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Reconocer el rol de la música en la sociedad, considerando sus propias experiencias musicales, contextos en que surge y las personas que la cultivan. Música | Programa de Estudio | 7° básico 67 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación en las unidades son sugerencias para los y las docentes. La finalidad es entregar recursos que puedan enriquecer su labor; estos pueden ser adaptados a cada contexto además de enfatizar algunos aspectos del trabajo, de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y el crecimiento musical de las y los estudiantes en todos los ejes."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Reconocer sentimientos, sensaciones e ideas al escuchar manifestaciones y obras musicales de Chile y el mundo, presentes en la tradición oral, escrita y popular, manifestándolos a través de medios verbales, visuales, sonoros y corporales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Identificar conscientemente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada. Eje interpretar y crear"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio diverso, desarrollando habilidades tales como precisión rítmica y melódica, expresividad, conciencia de fraseo y dinámica, entre otros, fortaleciendo el interés por el hacer musical individual y grupal."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a ambientaciones sonoras libres, acompañamientos rítmicos, melódicos y/o armónicos simples. 66 Música | Programa de Estudio | 7° básico Eje reflexionar y relacionar"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Reconocer sentimientos, sensaciones e ideas al escuchar manifestaciones y obras musicales de Chile y el mundo, presentes en la tradición oral, escrita y popular, manifestándolos a través de medios verbales, visuales, sonoros y corporales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Identificar conscientemente los elementos del lenguaje musical y los procedimientos compositivos evidentes en la música escuchada, interpretada y creada. Eje interpretar y crear"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cantar y tocar repertorio diverso, desarrollando habilidades tales como precisión rítmica y melódica, expresividad, conciencia de fraseo y dinámica, entre otros, fortaleciendo el interés por el hacer musical individual y grupal."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar a una y más voces repertorio diverso, incorporando como apoyo el uso de medios de registro y transmisión."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Reconocer fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Reconocer el rol de la música en la sociedad, considerando sus propias experiencias musicales, contextos en que surge y las personas que la cultivan. Música | Programa de Estudio | 7° básico 67 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación en las unidades son sugerencias para los y las docentes. La finalidad es entregar recursos que puedan enriquecer su labor; estos pueden ser adaptados a cada contexto además de enfatizar algunos aspectos del trabajo, de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y el crecimiento musical de las y los estudiantes en todos los ejes."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Improvisar y crear música dando énfasis a ambientaciones sonoras libres, acompañamientos rítmicos, melódicos y/o armónicos simples. 66 Música | Programa de Estudio | 7° básico Eje reflexionar y relacionar"
+        }
+      ]
+    }
+  ]
+}

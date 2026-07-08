@@ -1,0 +1,27 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Construcciones Metálicas",
+  "curso": "3° medio TP",
+  "menciones": [],
+  "modulos": [
+    {
+      "codigo": "MM-COME-M01",
+      "nombre": "Lectura de planos y cubicación de materiales"
+    },
+    {
+      "codigo": "MM-COME-M02",
+      "nombre": "Trazado y preparación de piezas metálicas"
+    },
+    {
+      "codigo": "MM-COME-M03",
+      "nombre": "Corte y mecanizado de materiales"
+    },
+    {
+      "codigo": "MM-COME-M04",
+      "nombre": "Soldadura y unión de estructuras metálicas"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

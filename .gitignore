@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.env
+*.db
+instance/
+exports/
+logs/
+.venv/
+venv/
+*.zip
+*.pyc
+aulamind.db

@@ -1,0 +1,26 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Salud y Educación",
+  "especialidad": "Atención de Párvulos",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "SE-ATPA-M01",
+      "nombre": "Desarrollo y bienestar integral de niños y niñas"
+    },
+    {
+      "codigo": "SE-ATPA-M02",
+      "nombre": "Expresión musical para párvulos"
+    },
+    {
+      "codigo": "SE-ATPA-M03",
+      "nombre": "Expresión corporal y teatral"
+    },
+    {
+      "codigo": "SE-ATPA-M04",
+      "nombre": "Material didáctico y ambientación educativa"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > mención > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres, OA asociados y distribución anual contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

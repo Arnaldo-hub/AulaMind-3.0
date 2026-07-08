@@ -1,0 +1,27 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Metalmecánica",
+  "especialidad": "Mecánica Automotriz",
+  "curso": "3° medio TP",
+  "menciones": [],
+  "modulos": [
+    {
+      "codigo": "MM-MEAU-M01",
+      "nombre": "Mantenimiento de motores"
+    },
+    {
+      "codigo": "MM-MEAU-M02",
+      "nombre": "Sistemas de transmisión y frenado"
+    },
+    {
+      "codigo": "MM-MEAU-M03",
+      "nombre": "Sistemas eléctricos y electrónicos del vehículo"
+    },
+    {
+      "codigo": "MM-MEAU-M04",
+      "nombre": "Diagnóstico básico de sistemas automotrices"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "Lote estructurado; requiere auditoría final contra los Programas de Estudio oficiales antes del consolidado definitivo."
+}

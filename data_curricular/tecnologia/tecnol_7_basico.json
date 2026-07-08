@@ -1,0 +1,50 @@
+{
+  "asignatura": "tecnol",
+  "curso": "tecnol 7° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Necesidades, problemas y diseño de soluciones tecnológicas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 Son los OA especificados en Identificar necesidades personales o grupales del entorno cercano que impliquen las Bases Curriculares. En soluciones de reparación, adaptación o mejora, reflexionando acerca de sus posibles ocasiones, un OA puede ser aportes. abordado por un conjunto de"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 actividad puede corresponder Diseñar e implementar soluciones que respondan a las necesidades de reparación, a más de un OA. adaptación o mejora de objetos o entornos, haciendo uso eficiente de recursos materiales, energéticos y digitales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Elaboración y construcción de objetos tecnológicos",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Contrastar soluciones tecnológicas existentes de reparación, adaptación o mejora, identificando las necesidades a las que respondieron y el contexto en que fueron desarrolladas. Actividad 2"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Evaluación, funcionamiento y mejora de soluciones",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 >> Evalúan la funcionalidad de la solución implementada a partir conocimientos, habilidades de las decisiones tomadas en el diseño. Evaluar soluciones y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Tecnología, información, comunicación e impacto",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 >> Comparan las características de diversos presentadores en línea"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Caracterizar algunos de los efectos que han tenido las soluciones tecnológicas existentes de reparación, adaptación o mejora, considerando aspectos sociales y ambientales. 52 TECNOLOGÍA |"
+        }
+      ]
+    }
+  ]
+}

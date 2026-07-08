@@ -1,0 +1,166 @@
+{
+  "asignatura": "Matemática",
+  "curso": "mat 5° básico",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Realizar cálculos que involucren las"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Resolver problemas rutinarios y no"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Descubrir alguna regla que explique"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Resolver problemas, usando ecuacio- › conteo de cuadrículas nes e inecuaciones de un paso, que › comparación con el área de un involucren adiciones y sustracciones, rectángulo en forma pictórica y simbólica. › completar figuras por traslación GEOMETRÍA DATOS Y PROBABILIDADES"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Demostrar que comprenden la multi- y los números mixtos asociados: plicación de números naturales de dos › usando material concreto y pictó- dígitos por números naturales de dos rico para representarlas, de manera dígitos: manual y/o con software educativo › estimando productos › identificando y determinando equi- › aplicando estrategias de cálculo valencias entre fracciones impropias mental y números mixtos › resolviendo problemas rutinarios y › representando estas fracciones y no rutinarios aplicando el algoritmo estos números mixtos en la recta numérica"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Demostrar que comprenden la divi- sión con dividendos de tres dígitos y"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 21",
+          "descripcion": "OA 21 Diseñar y construir diferentes rectán- decimales hasta la milésima. gulos, dados el perímetro, el área o ambos, y sacar conclusiones. PATRONES Y ÁLGEBRA"
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "OA 16 Identificar y dibujar puntos en el primer"
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "OA 17 Describir y dar ejemplos de aristas y caras de un evento en base a un experi- de figuras 3D y lados de figuras 2D: mento aleatorio, empleando los tér- › que son paralelos minos seguro – posible - poco posible › que se intersectan - imposible. › que son perpendiculares"
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "OA 22 Calcular áreas de triángulos, de para- una sucesión dada y que permita lelogramos y de trapecios, y estimar hacer predicciones. áreas de figuras irregulares aplicando las siguientes estrategias:"
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "OA 18 Demostrar que comprenden el eventos sin calcularlas. concepto de congruencia, usando la traslación, la reflexión y la rotación"
+        },
+        {
+          "codigo": "OA 19",
+          "descripcion": "OA 19 Medir longitudes con unidades estan- representar datos provenientes de darizadas (m, cm, mm) en el contexto muestras aleatorias de la resolución de problemas.44"
+        },
+        {
+          "codigo": "OA 20",
+          "descripcion": "OA 20 Realizar transformaciones entre uni- decimales, empleando el valor posi- dades de medidas de longitud: km a cional hasta la milésima. m, m a cm, cm a mm y viceversa, de manera manual y/o usando software"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Números y operaciones",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "OA 11 Comparar y ordenar decimales hasta cuando corresponda. la milésima.Matemática"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "OA 12 Resolver adiciones y sustracciones de"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "OA 7 Demostrar que comprenden las frac- cantidades ciones propias4: › comparando y ordenando números › representándolas de manera concre- naturales en este ámbito numérico ta, pictórica y simbólica › dando ejemplos de estos números › creando grupos de fracciones equi- naturales en contextos reales valentes _simplificando y amplifi- cando_ de manera concreta, pictóri-"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "OA 13 Resolver problemas rutinarios y no educativo. rutinarios, aplicando adiciones y sustracciones de fracciones propias o"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "OA 8 Demostrar que comprenden las va, asociativa y distributiva3 fracciones impropias de uso común de denominadores 2, 3, 4, 5, 6, 8, 10, 12"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "OA 9 Resolver adiciones y sustracciones con divisores de un dígito: fracciones propias con denominadores › interpretando el resto menores o iguales a 12: › resolviendo problemas rutinarios y no › de manera pictórica y simbólica rutinarios que impliquen divisiones › amplificando o simplificando"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "OA 10 Determinar el decimal que correspon- cuatro operaciones, aplicando las de a fracciones con denominador 2, reglas relativas a paréntesis y la preva- 4, 5 y 10. lencia de la multiplicación y la división por sobre la adición y la sustracción"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Números y operaciones, Álgebra y funciones, Geometría",
+      "oa": [
+        {
+          "codigo": "OA 23",
+          "descripcion": "OA 23 Calcular el promedio de datos e inter- cuadrante del plano cartesiano, dadas pretarlo en su contexto. sus coordenadas en números naturales."
+        },
+        {
+          "codigo": "OA 24",
+          "descripcion": "OA 24 Describir la posibilidad de ocurrencia"
+        },
+        {
+          "codigo": "OA 25",
+          "descripcion": "OA 25 Comparar probabilidades de distintos"
+        },
+        {
+          "codigo": "OA 26",
+          "descripcion": "OA 26 Leer, interpretar y completar tablas, en cuadrículas y mediante software gráficos de barra simple y gráficos de geométrico. línea y comunicar sus conclusiones. MEDICIÓN"
+        },
+        {
+          "codigo": "OA 27",
+          "descripcion": "OA 27 Utilizar diagramas de tallo y hojas para"
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "OA 3 Demostrar que comprenden la multi- y los números mixtos asociados: plicación de números naturales de dos › usando material concreto y pictó- dígitos por números naturales de dos rico para representarlas, de manera dígitos: manual y/o con software educativo › estimando productos › identificando y determinando equi- › aplicando estrategias de cálculo valencias entre fracciones impropias mental y números mixtos › resolviendo problemas rutinarios y › representando estas fracciones y no rutinarios aplicando el algoritmo estos números mixtos en la recta numérica"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "OA 4 Demostrar que comprenden la divi- sión con dividendos de tres dígitos y"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "OA 5 Realizar cálculos que involucren las"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "OA 6 Resolver problemas rutinarios y no"
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "OA 14 Descubrir alguna regla que explique"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "OA 15 Resolver problemas, usando ecuacio- › conteo de cuadrículas nes e inecuaciones de un paso, que › comparación con el área de un involucren adiciones y sustracciones, rectángulo en forma pictórica y simbólica. › completar figuras por traslación GEOMETRÍA DATOS Y PROBABILIDADES"
+        }
+      ]
+    }
+  ]
+}

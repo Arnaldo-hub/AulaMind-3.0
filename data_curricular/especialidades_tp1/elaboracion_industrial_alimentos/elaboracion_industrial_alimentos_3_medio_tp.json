@@ -1,0 +1,38 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Alimentación",
+  "especialidad": "Elaboración Industrial de Alimentos",
+  "curso": "3° medio TP",
+  "modulos": [
+    {
+      "codigo": "AL-ELIA-M01",
+      "nombre": "Recepción de materias primas",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AL-ELIA-M02",
+      "nombre": "Almacenaje y bodega de alimentos e insumos alimentarios",
+      "oa_asociados": [
+        "OA 1"
+      ]
+    },
+    {
+      "codigo": "AL-ELIA-M03",
+      "nombre": "Elaboración de alimentos e higiene",
+      "oa_asociados": [
+        "OA 2",
+        "OA 4"
+      ]
+    },
+    {
+      "codigo": "AL-ELIA-M04",
+      "nombre": "Aseguramiento de la calidad de procesos y alimentos",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    }
+  ],
+  "fuente_validacion": "Currículum Nacional MINEDUC — Programa de Estudio Especialidad Elaboración Industrial de Alimentos"
+}

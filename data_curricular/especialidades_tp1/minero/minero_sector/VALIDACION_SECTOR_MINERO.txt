@@ -1,0 +1,8 @@
+AulaMind Enterprise 3.0 — Sector Minero TP
+
+Asistencia en Geología: 3° medio 4 módulos | 4° medio 5 módulos
+Explotación Minera: 3° medio 4 módulos | 4° medio 5 módulos
+Metalurgia Extractiva: 3° medio 4 módulos | 4° medio 5 módulos
+
+Total: 3 especialidades, 6 JSON de curso y 27 módulos estructurados.
+IMPORTANTE: este lote no debe marcarse como curricularmente definitivo hasta completar la auditoría contra los Programas de Estudio oficiales.

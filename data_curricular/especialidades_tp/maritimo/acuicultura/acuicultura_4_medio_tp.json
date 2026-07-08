@@ -1,0 +1,30 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Marítimo",
+  "especialidad": "Acuicultura",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "MA-ACUI-M00",
+      "nombre": "Emprendimiento y empleabilidad"
+    },
+    {
+      "codigo": "MA-ACUI-M05",
+      "nombre": "Manejo sanitario en sistemas de cultivo"
+    },
+    {
+      "codigo": "MA-ACUI-M06",
+      "nombre": "Cosecha y postcosecha de recursos hidrobiológicos"
+    },
+    {
+      "codigo": "MA-ACUI-M07",
+      "nombre": "Mantenimiento de sistemas y equipos de cultivo"
+    },
+    {
+      "codigo": "MA-ACUI-M08",
+      "nombre": "Gestión y control de producción acuícola"
+    }
+  ],
+  "estructura_aulamind": "modalidad > sector > especialidad > curso > módulos",
+  "estado_validacion": "ESTRUCTURADO — requiere auditoría final de nombres y distribución anual contra el Programa de Estudio oficial antes del consolidado definitivo."
+}

@@ -1,0 +1,37 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Administración",
+  "especialidad": "Contabilidad",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "CO-M00",
+      "nombre": "Emprendimiento y empleabilidad",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "CO-M05",
+      "nombre": "Cumplimiento de obligaciones tributarias",
+      "oa_asociados": [
+        "OA 2",
+        "OA 6"
+      ]
+    },
+    {
+      "codigo": "CO-M06",
+      "nombre": "Elaboración y análisis de informes contables",
+      "oa_asociados": [
+        "OA 4",
+        "OA 7"
+      ]
+    },
+    {
+      "codigo": "CO-M07",
+      "nombre": "Procesamiento de información contable y financiera",
+      "oa_asociados": [
+        "OA 1",
+        "OA 4"
+      ]
+    }
+  ]
+}

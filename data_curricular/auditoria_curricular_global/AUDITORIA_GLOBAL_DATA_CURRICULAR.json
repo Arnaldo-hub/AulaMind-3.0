@@ -1,0 +1,75 @@
+{
+  "proyecto": "AulaMind Enterprise 3.0",
+  "tipo": "Auditoría curricular global de bloques complementarios generados",
+  "bloques_revisados": 8,
+  "bloques_con_contenido_cargado": 3,
+  "bloques_estructurales_pendientes": 4,
+  "bloques_mixtos": 1,
+  "detalle": [
+    {
+      "bloque": "Religión Católica y Evangélica",
+      "paquete": "AulaMind_3.0_RELIGION_CATOLICA_EVANGELICA_ESTRUCTURA.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 25,
+      "estado": "ESTRUCTURA",
+      "pendiente_o_nota": "OA y unidades oficiales pendientes"
+    },
+    {
+      "bloque": "Filosofía 3°-4° medio",
+      "paquete": "AulaMind_3.0_FILOSOFIA_3Y4_MEDIO.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 3,
+      "estado": "CARGADO",
+      "pendiente_o_nota": "OA incorporados"
+    },
+    {
+      "bloque": "Educación Ciudadana 3°-4° medio",
+      "paquete": "AulaMind_3.0_EDUCACION_CIUDADANA_3Y4_MEDIO.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 3,
+      "estado": "CARGADO",
+      "pendiente_o_nota": "OA y unidades incorporados"
+    },
+    {
+      "bloque": "Ciencias para la Ciudadanía 3°-4° medio",
+      "paquete": "AulaMind_3.0_CIENCIAS_PARA_LA_CIUDADANIA_3Y4_MEDIO.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 3,
+      "estado": "CARGADO",
+      "pendiente_o_nota": "4 módulos y OA incorporados"
+    },
+    {
+      "bloque": "Electivos de Profundización HC",
+      "paquete": "AulaMind_3.0_ELECTIVOS_PROFUNDIZACION_HC_3Y4_MEDIO_ESTRUCTURA.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 55,
+      "estado": "ESTRUCTURA",
+      "pendiente_o_nota": "27 asignaturas; OA y unidades pendientes"
+    },
+    {
+      "bloque": "Educación Parvularia NT1-NT2",
+      "paquete": "AulaMind_3.0_EDUCACION_PARVULARIA_NT1_NT2_ESTRUCTURA.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 7,
+      "estado": "ESTRUCTURA",
+      "pendiente_o_nota": "Ámbitos y núcleos creados; OA pendientes"
+    },
+    {
+      "bloque": "EMTP",
+      "paquete": "AulaMind_3.0_especialidades_tp_RECONSTRUIDA.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 80,
+      "estado": "MIXTO",
+      "pendiente_o_nota": "35 especialidades presentes; varios lotes requieren auditoría MINEDUC"
+    },
+    {
+      "bloque": "EPJA",
+      "paquete": "AulaMind_3.0_EPJA_ESTRUCTURA_BASES_2024.zip",
+      "paquete_disponible": true,
+      "json_en_paquete": 34,
+      "estado": "ESTRUCTURA",
+      "pendiente_o_nota": "33 JSON; OA y unidades pendientes"
+    }
+  ],
+  "regla_integracion": "No declarar terminado un bloque estructural hasta cargar y validar OA/unidades oficiales."
+}

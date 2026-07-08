@@ -1,0 +1,51 @@
+{
+  "modalidad": "Formación Diferenciada Técnico-Profesional",
+  "sector": "Agropecuario",
+  "especialidad": "Agropecuaria",
+  "curso": "4° medio TP",
+  "modulos": [
+    {
+      "codigo": "AP-AGRO-M00",
+      "nombre": "Emprendimiento y empleabilidad agropecuaria",
+      "oa_asociados": []
+    },
+    {
+      "codigo": "AP-PECU-M01",
+      "nombre": "Manejos pecuarios",
+      "oa_asociados": [
+        "OA 1",
+        "OA 2",
+        "OA 7"
+      ]
+    },
+    {
+      "codigo": "AP-PECU-M02",
+      "nombre": "Reproducción animal",
+      "oa_asociados": [
+        "OA 3"
+      ]
+    },
+    {
+      "codigo": "AP-PECU-M03",
+      "nombre": "Producción lechera",
+      "oa_asociados": [
+        "OA 4"
+      ]
+    },
+    {
+      "codigo": "AP-PECU-M04",
+      "nombre": "Sanidad y bienestar animal",
+      "oa_asociados": [
+        "OA 5"
+      ]
+    },
+    {
+      "codigo": "AP-PECU-M05",
+      "nombre": "Cultivo de praderas y forrajes",
+      "oa_asociados": [
+        "OA 6"
+      ]
+    }
+  ],
+  "mencion": "Pecuaria"
+}
