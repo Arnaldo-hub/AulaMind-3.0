@@ -120,6 +120,18 @@ class User(Base):
 
     )
 
+    role: Mapped[str] = mapped_column(
+
+        String(30),
+
+        default="teacher",
+
+        nullable=False,
+
+        index=True
+
+    )
+
     email_verified: Mapped[bool] = mapped_column(
 
         Boolean,
@@ -274,6 +286,18 @@ class User(Base):
         return f"{self.first_name} {self.last_name}"
 
     # ======================================================
+    # Roles y permisos
+    # ======================================================
+
+    def has_role(self, role: str) -> bool:
+
+        return self.role == role
+
+    def has_any_role(self, *roles: str) -> bool:
+
+        return self.role in roles
+
+    # ======================================================
     # Serialización
     # ======================================================
 
@@ -304,6 +328,8 @@ class User(Base):
             "is_active": self.is_active,
 
             "is_admin": self.is_admin,
+
+            "role": self.role,
 
             "email_verified": self.email_verified,
 

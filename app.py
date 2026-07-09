@@ -49,6 +49,7 @@ from routes.planning import planning
 from routes.curriculum import curriculum
 from routes.curriculum_api import curriculum_api
 from routes.evaluation import evaluation
+from routes.admin_security import admin_security
 
 # ==========================================================
 # CREAR APP
@@ -90,6 +91,7 @@ app.register_blueprint(
 app.register_blueprint(curriculum)
 app.register_blueprint(curriculum_api)
 app.register_blueprint(evaluation)
+app.register_blueprint(admin_security)
 
 # ==========================================================
 # CREAR BASE DE DATOS

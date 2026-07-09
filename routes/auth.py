@@ -85,6 +85,8 @@ def login():
 
         session["user_id"] = str(user.id)
 
+        session["role"] = user.role
+
         session["user_name"] = (
 
             f"{user.first_name} "
