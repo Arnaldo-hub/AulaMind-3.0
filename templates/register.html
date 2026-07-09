@@ -151,6 +151,8 @@
 
             >
 
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
                 <div class="form-group">
 
                     <label>
@@ -225,7 +227,7 @@
 
                         name="password"
 
-                        minlength="8"
+                        minlength="10"
 
                         required
 
@@ -247,7 +249,7 @@
 
                         name="confirm_password"
 
-                        minlength="8"
+                        minlength="10"
 
                         required
 

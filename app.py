@@ -14,9 +14,11 @@ Biotecno Chile
 from dotenv import load_dotenv
 load_dotenv()
 
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, jsonify
 
 from config import Config
+from flask_wtf.csrf import CSRFProtect, CSRFError
+from extensions import limiter
 
 # ==========================================================
 # Base de datos
@@ -57,6 +59,16 @@ app = Flask(__name__)
 app.config.from_object(Config)
 
 app.secret_key = Config.SECRET_KEY
+
+csrf = CSRFProtect(app)
+limiter.init_app(app)
+
+@app.errorhandler(CSRFError)
+def handle_csrf_error(error):
+    return jsonify({
+        "error": "csrf_invalid",
+        "message": "La solicitud expiró o no es válida. Recarga la página e inténtalo nuevamente."
+    }), 400
 
 # ==========================================================
 # REGISTRAR BLUEPRINTS

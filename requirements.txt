@@ -9,3 +9,5 @@ gunicorn
 requests
 
 alembic>=1.13
+Flask-WTF>=1.2
+Flask-Limiter>=3.8

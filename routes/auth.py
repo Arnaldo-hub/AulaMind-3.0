@@ -26,6 +26,7 @@ from flask import session
 
 from database.session import SessionLocal
 from services.auth_service import AuthService
+from extensions import limiter
 
 # ==========================================================
 # Blueprint
@@ -42,6 +43,7 @@ auth = Blueprint(
 # ==========================================================
 
 @auth.route("/login", methods=["GET", "POST"])
+@limiter.limit("10 per minute", methods=["POST"])
 def login():
 
     if request.method == "GET":
@@ -119,6 +121,7 @@ def login():
 # ==========================================================
 
 @auth.route("/register", methods=["GET", "POST"])
+@limiter.limit("5 per hour", methods=["POST"])
 def register():
 
     if request.method == "GET":
