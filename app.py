@@ -113,7 +113,7 @@ def status():
 
         "application": Config.APP_NAME,
         "version": Config.APP_VERSION,
-        "database": Config.SQLALCHEMY_DATABASE_URI,
+        "database": "configured",
         "status": "running"
 
     }

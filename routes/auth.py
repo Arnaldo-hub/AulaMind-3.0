@@ -78,6 +78,9 @@ def login():
 
             return render_template("login.html")
 
+        session.clear()
+        session.permanent = True
+
         session["user_id"] = str(user.id)
 
         session["user_name"] = (

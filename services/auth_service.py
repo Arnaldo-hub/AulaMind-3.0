@@ -23,6 +23,7 @@ Responsabilidades
 
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
+from datetime import datetime
 
 from models.user import User
 
@@ -62,6 +63,21 @@ class AuthService:
             password
 
         )
+
+    # =====================================================
+    # Política mínima de contraseña
+    # =====================================================
+
+    @staticmethod
+    def validate_password(password: str) -> None:
+        if len(password) < 10:
+            raise ValueError("La contraseña debe tener al menos 10 caracteres.")
+        if not any(c.isupper() for c in password):
+            raise ValueError("La contraseña debe incluir una mayúscula.")
+        if not any(c.islower() for c in password):
+            raise ValueError("La contraseña debe incluir una minúscula.")
+        if not any(c.isdigit() for c in password):
+            raise ValueError("La contraseña debe incluir un número.")
 
     # =====================================================
     # Buscar Usuario
@@ -125,6 +141,8 @@ class AuthService:
 
             )
 
+        AuthService.validate_password(password)
+
         usuario = User(
 
             first_name=first_name,
@@ -176,6 +194,10 @@ class AuthService:
 
             return None
 
+        if not usuario.is_active:
+
+            return None
+
         if not AuthService.verify_password(
 
             password,
@@ -185,6 +207,10 @@ class AuthService:
         ):
 
             return None
+
+        usuario.last_login = datetime.utcnow()
+        db.commit()
+        db.refresh(usuario)
 
         return usuario
 
@@ -202,6 +228,8 @@ class AuthService:
         new_password
 
     ):
+
+        AuthService.validate_password(new_password)
 
         user.password_hash = AuthService.hash_password(
 

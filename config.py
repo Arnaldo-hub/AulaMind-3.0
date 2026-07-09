@@ -56,13 +56,20 @@ class Config:
     # Flask
     # =====================================================
 
-    SECRET_KEY = os.getenv(
+    SECRET_KEY = os.getenv("SECRET_KEY")
 
-        "SECRET_KEY",
+    if not SECRET_KEY:
+        if os.getenv("DEBUG", "True").lower() == "true":
+            SECRET_KEY = "AulaMind-Local-Development-Only"
+        else:
+            raise RuntimeError("SECRET_KEY es obligatoria fuera de desarrollo.")
 
-        "AulaMind-Development-Secret-Key"
-
-    )
+    SESSION_COOKIE_HTTPONLY = True
+    SESSION_COOKIE_SAMESITE = "Lax"
+    SESSION_COOKIE_SECURE = os.getenv(
+        "SESSION_COOKIE_SECURE", "False"
+    ).lower() == "true"
+    PERMANENT_SESSION_LIFETIME = 60 * 60 * 8
 
     DEBUG = os.getenv(
 
