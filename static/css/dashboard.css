@@ -937,13 +937,85 @@ PANEL BIENVENIDA
     line-height:1.8;
 
 }
-Parte 3
-•	Grid de módulos 
-•	Tarjetas de módulos 
-•	Iconos 
-•	Estados 
-•	Hover 
-•	Colores 
+/*=========================================================
+MÓDULOS
+=========================================================*/
+.modules-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:25px;
+    margin-bottom:45px;
+}
+.module-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:22px;
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    min-height:280px;
+    box-shadow:var(--shadow);
+    transition:transform .30s ease, box-shadow .30s ease, border-color .30s ease;
+}
+.module-card:hover{
+    transform:translateY(-6px);
+    border-color:#BFDBFE;
+    box-shadow:0 20px 45px rgba(15,23,42,.12);
+}
+.module-card.featured{border-color:#BFDBFE;}
+.module-icon{
+    width:58px;
+    height:58px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:24px;
+    margin-bottom:22px;
+}
+.module-icon.blue{background:var(--primary);}
+.module-icon.green{background:var(--success);}
+.module-icon.purple{background:var(--purple);}
+.module-icon.orange{background:var(--warning);}
+.module-icon.red{background:var(--danger);}
+.module-icon.cyan{background:var(--accent);}
+.module-content{flex:1;}
+.module-content h3{
+    font-size:22px;
+    margin-bottom:12px;
+    color:var(--text);
+}
+.module-content p{
+    color:var(--text-light);
+    line-height:1.7;
+    font-size:15px;
+}
+.module-button{
+    margin-top:22px;
+    align-self:flex-start;
+    background:var(--primary);
+    color:white;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:700;
+    transition:var(--transition);
+}
+.module-button:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+}
+.coming-soon{
+    margin-top:22px;
+    align-self:flex-start;
+    background:#EFF6FF;
+    color:var(--primary);
+    padding:9px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+}
+
 /*=========================================================
 ESTADÍSTICAS
 =========================================================*/
@@ -952,7 +1024,7 @@ ESTADÍSTICAS
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(4,minmax(0,1fr));
 
     gap:25px;
 
@@ -1320,6 +1392,10 @@ RESPONSIVE
 
 @media (max-width:992px){
 
+    .modules-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
     .topbar{
 
         flex-direction:column;
@@ -1343,6 +1419,10 @@ RESPONSIVE
 }
 
 @media (max-width:768px){
+
+    .modules-grid{
+        grid-template-columns:1fr;
+    }
 
     .hero{
 
