@@ -3,6 +3,7 @@ from database.session import SessionLocal
 from models.document import Document
 from models.ai_generation import AIGeneration
 from models.usage_event import UsageEvent
+from models.export import Export
 
 class PersistenceService:
     @staticmethod
@@ -61,11 +62,16 @@ class PersistenceService:
             ).all()
             counts = dict(rows)
             total = sum(counts.values())
+            export_count = db.scalar(
+                select(func.count(Export.id))
+                .where(Export.user_id == str(user_id))
+            ) or 0
             return {
                 "planning_count": counts.get("planning", 0),
                 "evaluation_count": counts.get("evaluation", 0),
                 "guide_count": counts.get("guide", 0),
                 "rubric_count": counts.get("rubric", 0),
+                "export_count": export_count,
                 "total_documents": total,
                 "time_saved_hours": round(total * 1.5, 1),
             }
