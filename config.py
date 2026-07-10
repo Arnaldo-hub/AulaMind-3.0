@@ -86,6 +86,19 @@ class Config:
     MAX_CONTENT_LENGTH = 20 * 1024 * 1024
 
     # =====================================================
+    # Rate limiting
+    # =====================================================
+
+    RATELIMIT_STORAGE_URI = os.getenv(
+        "RATELIMIT_STORAGE_URI",
+        "memory://" if DEBUG else "",
+    )
+    if not RATELIMIT_STORAGE_URI:
+        raise RuntimeError(
+            "RATELIMIT_STORAGE_URI es obligatoria fuera de desarrollo."
+        )
+
+    # =====================================================
     # Recuperación de contraseña
     # =====================================================
 
@@ -97,6 +110,9 @@ class Config:
     MAIL_USERNAME = os.getenv("MAIL_USERNAME", "")
     MAIL_PASSWORD = os.getenv("MAIL_PASSWORD", "")
     MAIL_FROM = os.getenv("MAIL_FROM", MAIL_USERNAME or "no-reply@aulamind.local")
+
+    if MAIL_USE_TLS and MAIL_USE_SSL:
+        raise RuntimeError("MAIL_USE_TLS y MAIL_USE_SSL no pueden estar activos simultáneamente.")
 
     # =====================================================
     # Base de Datos
