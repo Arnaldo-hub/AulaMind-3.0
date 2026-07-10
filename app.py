@@ -24,7 +24,6 @@ from extensions import limiter
 # Base de datos
 # ==========================================================
 
-from database.session import create_database
 
 # ==========================================================
 # IMPORTAR TODOS LOS MODELOS
@@ -94,14 +93,6 @@ app.register_blueprint(curriculum_api)
 app.register_blueprint(evaluation)
 app.register_blueprint(admin_security)
 app.register_blueprint(password_reset, url_prefix="/auth")
-
-# ==========================================================
-# CREAR BASE DE DATOS
-# ==========================================================
-
-with app.app_context():
-
-    create_database()
 
 # ==========================================================
 # RUTA RAÍZ
