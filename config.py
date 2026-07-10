@@ -86,6 +86,19 @@ class Config:
     MAX_CONTENT_LENGTH = 20 * 1024 * 1024
 
     # =====================================================
+    # Recuperación de contraseña
+    # =====================================================
+
+    PASSWORD_RESET_TOKEN_MAX_AGE = int(os.getenv("PASSWORD_RESET_TOKEN_MAX_AGE", "1800"))
+    MAIL_SERVER = os.getenv("MAIL_SERVER", "")
+    MAIL_PORT = int(os.getenv("MAIL_PORT", "587"))
+    MAIL_USE_TLS = os.getenv("MAIL_USE_TLS", "True").lower() == "true"
+    MAIL_USE_SSL = os.getenv("MAIL_USE_SSL", "False").lower() == "true"
+    MAIL_USERNAME = os.getenv("MAIL_USERNAME", "")
+    MAIL_PASSWORD = os.getenv("MAIL_PASSWORD", "")
+    MAIL_FROM = os.getenv("MAIL_FROM", MAIL_USERNAME or "no-reply@aulamind.local")
+
+    # =====================================================
     # Base de Datos
     # =====================================================
 

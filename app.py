@@ -50,6 +50,7 @@ from routes.curriculum import curriculum
 from routes.curriculum_api import curriculum_api
 from routes.evaluation import evaluation
 from routes.admin_security import admin_security
+from routes.password_reset import password_reset
 
 # ==========================================================
 # CREAR APP
@@ -92,6 +93,7 @@ app.register_blueprint(curriculum)
 app.register_blueprint(curriculum_api)
 app.register_blueprint(evaluation)
 app.register_blueprint(admin_security)
+app.register_blueprint(password_reset, url_prefix="/auth")
 
 # ==========================================================
 # CREAR BASE DE DATOS
