@@ -1,0 +1,39 @@
+AulaMind Enterprise 3.0
+BLOQUE 2.4B-1 — ARRANQUE SEGURO Y VALIDACIÓN DE STAGING
+Base Git: e4e4ddf
+
+Este paquete evita reemplazar app.py completo.
+El aplicador elimina solamente:
+1) import de create_database;
+2) llamada create_database() durante el arranque.
+
+Alembic queda como única autoridad para evolucionar el esquema.
+
+ARCHIVOS
+- tools/apply_block_2_4b_1.py
+- tests/staging_smoke.py
+- .env.staging.example
+- staging_preflight_2_4b_1.py
+
+APLICAR
+python tools\apply_block_2_4b_1.py
+
+VALIDACIÓN LOCAL
+python -c "from app import app; print('2.4B-1 IMPORT OK')"
+python -m tests.staging_smoke
+python tests\run_security_regression.py
+
+REVISIÓN ANTES DE COMMIT
+git diff -- app.py .env.staging.example
+git status
+
+STAGING REAL (NO ejecutar contra SQLite local)
+1. Configurar variables del .env.staging.example en el proveedor.
+2. Crear PostgreSQL vacío.
+3. Ejecutar: python -m alembic upgrade head
+4. Ejecutar: python staging_preflight_2_4b_1.py
+5. Arrancar Gunicorn con Procfile.
+6. Ejecutar smoke tests contra el entorno.
+
+No usar create_all() para evolucionar staging.
+No hacer stamp sobre una base PostgreSQL nueva.

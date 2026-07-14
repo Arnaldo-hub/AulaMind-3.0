@@ -1,0 +1,11 @@
+Bloques incluidos:
+3.1D TP Adapter
+3.1E Parvularia + EPJA
+3.1F Refactor Engine
+3.1G API curricular
+3.1H 20 recorridos
+3.1I Cache
+3.1J Cierre
+
+Este paquete NO contiene implementaciones completas.
+Debe desarrollarse sobre el código real de AulaMind para cumplir las pruebas.

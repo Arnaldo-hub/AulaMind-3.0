@@ -20,6 +20,7 @@ from config import Config
 from flask_wtf.csrf import CSRFProtect, CSRFError
 from extensions import limiter
 
+
 # ==========================================================
 # Base de datos
 # ==========================================================
@@ -47,6 +48,7 @@ from routes.auth import auth
 from routes.planning import planning
 from routes.curriculum import curriculum
 from routes.curriculum_api import curriculum_api
+from routes.curriculum_api_v4 import curriculum_api_v4
 from routes.evaluation import evaluation
 from routes.admin_security import admin_security
 from routes.password_reset import password_reset
@@ -84,15 +86,14 @@ app.register_blueprint(
     url_prefix="/auth"
 )
 
-app.register_blueprint(
-    planning
-)
-
+app.register_blueprint(planning)
 app.register_blueprint(curriculum)
 app.register_blueprint(curriculum_api)
+app.register_blueprint(curriculum_api_v4)
 app.register_blueprint(evaluation)
 app.register_blueprint(admin_security)
 app.register_blueprint(password_reset, url_prefix="/auth")
+
 
 # ==========================================================
 # RUTA RAÍZ

@@ -1,0 +1,28 @@
+AulaMind Enterprise 3.0
+SEMANA 3 — ENTREGA 1: CURRICULUM ENGINE 4.0
+
+Base: d77cf91
+
+ALCANCE
+- No modifica data_curricular.
+- No elimina CurriculumService v1.
+- No reemplaza API v1.
+- Agrega índice multimodal y adaptadores:
+  Regular, HC, TP, Parvularia, EPJA.
+- Agrega caché en memoria del índice.
+- Agrega API /api/v4/curriculum.
+- Agrega prueba automática de 20 recorridos.
+
+INSTALACIÓN
+Descomprimir en la raíz del proyecto.
+
+APLICAR REGISTRO API
+python tools\apply_semana3_entrega1.py
+
+PRUEBAS
+python -m tests.curriculum_engine_v4_paths
+python -c "from app import app; print([r.rule for r in app.url_map.iter_rules() if '/api/v4/curriculum' in r.rule])"
+python tests\run_security_regression.py
+
+NO HACER COMMIT TODAVÍA.
+Primero revisar resultados y git status.
