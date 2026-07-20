@@ -1,16 +1,3 @@
-"""
-===========================================================
-AulaMind Enterprise 3.0
-routes/evaluation.py
------------------------------------------------------------
-
-Blueprint del Motor de Evaluaciones IA
-
-Autor:
-Biotecno Chile
-===========================================================
-"""
-
 from flask import (
     Blueprint,
     render_template,
@@ -24,9 +11,6 @@ from flask import (
 from services.evaluation_service import EvaluationService
 from services.persistence_service import persistence_service
 
-# ==========================================================
-# BLUEPRINT
-# ==========================================================
 
 evaluation = Blueprint(
     "evaluation",
@@ -34,30 +18,29 @@ evaluation = Blueprint(
     url_prefix="/evaluation"
 )
 
-# ==========================================================
-# SERVICE
-# ==========================================================
-
 evaluation_service = EvaluationService()
 
+
 # ==========================================================
-# INDEX
+# PÁGINA PRINCIPAL
 # ==========================================================
 
-@evaluation.route("/", methods=["GET"])
+@evaluation.route("/")
 def index():
 
     if "user_id" not in session:
-
         return redirect(url_for("auth.login"))
 
-    stats = persistence_service.dashboard_stats(session.get("user_id"))
+    stats = persistence_service.dashboard_stats(
+        session["user_id"]
+    )
 
     return render_template(
         "evaluation.html",
-        title="Evaluaciones IA",
-        evaluation_count=stats.get("evaluation_count", 0)
+        evaluation_count=stats.get("evaluation_count", 0),
+        dashboard_stats=stats
     )
+
 
 # ==========================================================
 # GENERAR EVALUACIÓN
@@ -66,207 +49,233 @@ def index():
 @evaluation.route("/generate", methods=["POST"])
 def generate():
 
-    try:
+    if "user_id" not in session:
+        return jsonify(
+            success=False,
+            error="No autenticado"
+        ), 401
 
-        data = request.get_json()
-
-        if not data:
-
-            return jsonify({
-                "success": False,
-                "error": "No se recibieron datos."
-            }), 400
-
-        required = [
-
-            "asignatura",
-            "curso",
-            "unidad",
-            "objetivo",
-            "tema",
-            "tipo",
-            "preguntas",
-            "dificultad"
-
-        ]
-
-        for campo in required:
-
-            if not data.get(campo):
-
-                return jsonify({
-
-                    "success": False,
-
-                    "error": f"Falta el campo: {campo}"
-
-                }), 400
-
-        if "user_id" not in session:
-            return jsonify({"success": False, "error": "No autenticado"}), 401
-
-        resultado = evaluation_service.generate(data)
-
-        if resultado.get("success"):
-            try:
-                document_id = persistence_service.save_generated_document(
-                    user_id=session.get("user_id"),
-                    school_id=session.get("school_id"),
-                    document_type="evaluation",
-                    payload=data,
-                    result=resultado,
-                )
-                resultado["document_id"] = document_id
-            except Exception as exc:
-                resultado["persistence_warning"] = str(exc)
-
-        return jsonify(resultado)
-
-    except Exception as e:
-
-        return jsonify({
-
-            "success": False,
-
-            "error": str(e)
-
-        }), 500
-
-# ==========================================================
-# PREVIEW
-# ==========================================================
-
-@evaluation.route("/preview", methods=["POST"])
-def preview():
+    payload = request.get_json() or {}
 
     try:
 
-        contenido = request.json.get("content", "")
+        result = evaluation_service.generate(payload)
 
-        return jsonify({
+        if result.get("success"):
 
-            "success": True,
+            document_id = persistence_service.save_generated_document(
+                user_id=session["user_id"],
+                school_id=session.get("school_id"),
+                document_type="evaluation",
+                payload=payload,
+                result=result
+            )
 
-            "preview": contenido
+            result["document_id"] = document_id
 
-        })
+        return jsonify(result)
 
-    except Exception as e:
+    except Exception as ex:
 
-        return jsonify({
+        return jsonify(
+            success=False,
+            error=str(ex)
+        ), 500
 
-            "success": False,
-
-            "error": str(e)
-
-        }), 500
-
-# ==========================================================
-# SAMPLE
-# ==========================================================
-
-@evaluation.route("/sample", methods=["GET"])
-def sample():
-
-    ejemplo = """
-
-# Evaluación de Matemática
-
-Curso:
-5° Básico
-
-Unidad:
-Fracciones
-
-OA:
-OA11
-
-------------------------------------------------
-
-I. Selección Múltiple
-
-1.- ¿Cuál es equivalente a 1/2?
-
-A) 2/6
-
-B) 3/6
-
-C) 5/8
-
-D) 4/10
-
-------------------------------------------------
-
-II. Verdadero y Falso
-
-2.- Dos fracciones equivalentes representan la misma cantidad.
-
-------------------------------------------------
-
-III. Desarrollo
-
-3.- Resuelve:
-
-2/5 + 1/5
-
-------------------------------------------------
-
-Puntaje Total:
-30 puntos
-
-"""
-
-    return jsonify({
-
-        "success": True,
-
-        "content": ejemplo
-
-    })
 
 # ==========================================================
-# EXPORT WORD
+# HISTORIAL
 # ==========================================================
 
-@evaluation.route("/export/word", methods=["POST"])
-def export_word():
+@evaluation.route("/history")
+def history():
 
-    return jsonify({
+    if "user_id" not in session:
+        return jsonify(
+            success=False,
+            error="No autenticado"
+        ), 401
 
-        "success": False,
+    items = persistence_service.list_documents(
+        session["user_id"],
+        "evaluation"
+    )
 
-        "message": "Disponible en Sprint Export."
+    return jsonify(
+        success=True,
+        items=items
+    )
 
-    })
-
-# ==========================================================
-# EXPORT PDF
-# ==========================================================
-
-@evaluation.route("/export/pdf", methods=["POST"])
-def export_pdf():
-
-    return jsonify({
-
-        "success": False,
-
-        "message": "Disponible en Sprint Export."
-
-    })
 
 # ==========================================================
-# HEALTH
+# OBTENER DOCUMENTO
 # ==========================================================
 
-@evaluation.route("/health", methods=["GET"])
-def health():
+@evaluation.route("/<int:document_id>")
+def get_document(document_id):
 
-    return jsonify({
+    if "user_id" not in session:
+        return jsonify(
+            success=False,
+            error="No autenticado"
+        ), 401
 
-        "module": "Evaluation Engine",
+    document = persistence_service.get_document(
+        document_id,
+        session["user_id"]
+    )
 
-        "status": "running",
+    if document is None:
 
-        "version": "1.0"
+        return jsonify(
+            success=False,
+            error="Documento no encontrado"
+        ), 404
 
-    })
+    return jsonify(
+
+        success=True,
+
+        document={
+
+            "id": document.id,
+            "title": document.title,
+            "document_type": document.document_type,
+            "course": document.course,
+            "subject": document.subject,
+            "unit": document.unit,
+            "topic": document.topic,
+            "content": document.content,
+            "created_at": (
+                document.created_at.isoformat()
+                if document.created_at
+                else None
+            )
+
+        }
+
+    )
+
+
+# ==========================================================
+# ELIMINAR DOCUMENTO
+# ==========================================================
+
+@evaluation.route(
+    "/<int:document_id>",
+    methods=["DELETE"]
+)
+def delete_document(document_id):
+
+    if "user_id" not in session:
+        return jsonify(
+            success=False,
+            error="No autenticado"
+        ), 401
+
+    deleted = persistence_service.delete_document(
+        document_id,
+        session["user_id"]
+    )
+
+    if not deleted:
+
+        return jsonify(
+            success=False,
+            error="Documento no encontrado"
+        ), 404
+
+    return jsonify(
+        success=True
+    )
+
+
+# ==========================================================
+# ENLACES DE EXPORTACIÓN
+# ==========================================================
+
+@evaluation.route("/export-links/<int:document_id>")
+def export_links(document_id):
+
+    if "user_id" not in session:
+        return jsonify(
+            success=False,
+            error="No autenticado"
+        ), 401
+
+    document = persistence_service.get_document(
+        document_id,
+        session["user_id"]
+    )
+
+    if document is None:
+
+        return jsonify(
+            success=False,
+            error="Documento no encontrado"
+        ), 404
+
+    return jsonify(
+
+        success=True,
+
+        word=url_for(
+            "export.export_word",
+            document_id=document_id
+        ),
+
+        pdf=url_for(
+            "export.export_pdf",
+            document_id=document_id
+        )
+
+    )
+
+
+# ==========================================================
+# DASHBOARD
+# ==========================================================
+
+@evaluation.route("/dashboard")
+def dashboard():
+
+    if "user_id" not in session:
+        return jsonify(
+            success=False,
+            error="No autenticado"
+        ), 401
+
+    stats = persistence_service.dashboard_stats(
+        session["user_id"]
+    )
+
+    return jsonify(
+        success=True,
+        stats=stats
+    )
+
+
+# ==========================================================
+# BUSCAR
+# ==========================================================
+
+@evaluation.route("/search")
+def search():
+
+    if "user_id" not in session:
+        return jsonify(
+            success=False,
+            error="No autenticado"
+        ), 401
+
+    document_type = request.args.get("type")
+
+    items = persistence_service.list_documents(
+        session["user_id"],
+        document_type
+    )
+
+    return jsonify(
+        success=True,
+        items=items
+    )

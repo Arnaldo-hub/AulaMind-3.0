@@ -3,6 +3,9 @@
 AulaMind Enterprise 3.0
 
 Planning Engine 4.0
+Orquestador
+
+Semana 4.1H
 ===========================================================
 """
 
@@ -12,29 +15,41 @@ from copy import deepcopy
 
 from services.curriculum_engine_v4 import curriculum_engine_v4
 
+from services.planning.didactics import didactic_engine
+from services.planning.evaluations import evaluation_engine
+from services.planning.resources import resources_engine
+from services.planning.dua import dua_engine
+from services.planning.indicators import indicators_engine
+from services.planning.prompt_builder import prompt_builder
+
 
 class PlanningEngine:
     """
-    Motor base de planificación.
+    Planning Engine 4.0
 
-    Esta primera versión solamente obtiene la información
-    curricular desde CurriculumEngineV4.
+    Este motor coordina todos los componentes del sistema
+    de planificación.
 
-    Los siguientes bloques incorporarán:
+    No contiene lógica didáctica.
 
-        • Inicio
-        • Desarrollo
-        • Cierre
-        • Evaluación
-        • DUA
-        • Recursos
-        • Instrumentos
-        • IA Prompt
+    Su única responsabilidad es orquestar los motores.
     """
 
     def __init__(self):
 
         self.curriculum = curriculum_engine_v4
+
+        self.didactics = didactic_engine
+
+        self.evaluation = evaluation_engine
+
+        self.resources = resources_engine
+
+        self.dua = dua_engine
+
+        self.indicators = indicators_engine
+
+        self.prompt_builder = prompt_builder
 
     # ---------------------------------------------------------
 
@@ -52,59 +67,148 @@ class PlanningEngine:
         )
 
         if record is None:
-
             return None
+
+        curriculum = deepcopy(record)
+
+        didactics = self.didactics.generate(
+            curriculum
+        )
+
+        evaluation = self.evaluation.generate(
+            curriculum
+        )
+
+        resources = self.resources.generate(
+            curriculum
+        )
+
+        dua = self.dua.generate(
+            curriculum
+        )
+
+        indicators = self.indicators.generate(
+            curriculum
+        )
+
+        prompt = self.prompt_builder.build(
+
+            curriculum=curriculum,
+
+            didactics=didactics,
+
+            evaluation=evaluation,
+
+            resources=resources,
+
+            dua=dua,
+
+            indicators=indicators,
+
+        )
 
         return {
 
-            "curriculum": deepcopy(record),
+            "curriculum": curriculum,
 
-            "planning": {
+            "didactics": didactics,
 
-                "inicio": "",
+            "evaluation": evaluation,
 
-                "desarrollo": "",
+            "resources": resources,
 
-                "cierre": "",
+            "dua": dua,
 
-                "evaluacion_formativa": "",
+            "indicators": indicators,
 
-                "recursos": [],
+            "prompt": prompt,
 
-                "dua": [],
+            "metadata": {
 
-                "adecuaciones": [],
+                "modalidad":
+                    curriculum.get("modalidad"),
 
-                "indicadores": [],
+                "curso":
+                    curriculum.get("curso"),
 
-                "instrumento": "",
+                "asignatura":
+                    curriculum.get("asignatura"),
 
-                "evidencias": [],
-
-                "ia_prompt": ""
+                "engine":
+                    "Planning Engine 4.0",
 
             }
 
         }
-
-    # ---------------------------------------------------------
+            # ---------------------------------------------------------
 
     def statistics(self):
+
+        curriculum_stats = self.curriculum.statistics()
 
         return {
 
             "engine": "Planning Engine 4.0",
 
-            "curriculum_documents":
+            "version": "Semana 4.1H",
 
-                self.curriculum.statistics()[
-                    "documentos_adaptados"
-                ],
+            "curriculum_documents":
+                curriculum_stats.get(
+                    "documentos_adaptados",
+                    0,
+                ),
 
             "modalidades":
+                curriculum_stats.get(
+                    "modalidades",
+                    0,
+                ),
 
-                self.curriculum.statistics()[
-                    "modalidades"
-                ]
+            "cursos":
+                curriculum_stats.get(
+                    "cursos",
+                    0,
+                ),
+
+            "asignaturas":
+                curriculum_stats.get(
+                    "asignaturas",
+                    0,
+                ),
+
+            "unidades":
+                curriculum_stats.get(
+                    "unidades",
+                    0,
+                ),
+
+            "oa":
+                curriculum_stats.get(
+                    "oa",
+                    0,
+                ),
+
+            "planning_modules": {
+
+                "didactics": True,
+
+                "evaluation": True,
+
+                "resources": True,
+
+                "dua": True,
+
+                "indicators": True,
+
+                "prompt_builder": True,
+
+            }
 
         }
+
+
+# =========================================================
+# Instancia global
+# =========================================================
+
+planning_engine = PlanningEngine()

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluaciones IA | AulaMind Enterprise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind">
+        </div>
+        <div class="sidebar-title">MENÚ PRINCIPAL</div>
+        <nav class="sidebar-menu">
+            <a href="{{ url_for('dashboard.home') }}"><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
+            <a href="{{ url_for('planning.index') }}"><i class="fa-solid fa-book-open"></i><span>Planificaciones</span></a>
+            <a class="active" href="{{ url_for('evaluation.index') }}"><i class="fa-solid fa-file-lines"></i><span>Evaluaciones IA</span></a>
+            <a href="#"><i class="fa-solid fa-book"></i><span>Guías</span></a>
+            <a href="#"><i class="fa-solid fa-table"></i><span>Rúbricas</span></a>
+            <a href="#"><i class="fa-solid fa-user-group"></i><span>PIE</span></a>
+            <a href="#"><i class="fa-solid fa-chart-column"></i><span>Analítica</span></a>
+            <a class="logout" href="{{ url_for('auth.logout') }}"><i class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span></a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <span class="hero-badge">Motor de Evaluaciones IA</span>
+                <h1>Generador Inteligente de Evaluaciones</h1>
+                <p>Crea pruebas diagnósticas, formativas, sumativas y controles alineados al currículum nacional.</p>
+            </div>
+            <div class="topbar-right">
+                <button class="notification-btn" type="button"><i class="fa-regular fa-bell"></i></button>
+                <div class="profile-card">
+                    <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+                    <div class="profile-info"><strong>{{ session.get("user_name","Profesor") }}</strong><small>Docente</small></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-left">
+                <span class="hero-badge">🤖 Inteligencia Artificial</span>
+                <h2>Diseña evaluaciones profesionales en menos de un minuto.</h2>
+                <p>AulaMind generará automáticamente preguntas, puntajes, solucionario, indicadores de evaluación y formato listo para imprimir.</p>
+            </div>
+            <div class="hero-right">
+                <div class="hero-stats">
+                    <div class="hero-stat"><span>Evaluaciones</span><h3>{{ evaluation_count|default(0) }}</h3></div>
+                    <div class="hero-stat"><span>Preguntas</span><h3>IA</h3></div>
+                    <div class="hero-stat"><span>Solucionario</span><h3>✔</h3></div>
+                    <div class="hero-stat"><span>Exportación</span><h3>PDF</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="evaluation-card">
+            <div class="card-header">
+                <h2>Datos de la Evaluación</h2>
+                <span>Completa todos los campos.</span>
+            </div>
+
+            <form id="evaluationForm">
+                <div class="grid">
+                    <div class="form-group">
+                        <label for="asignatura">Asignatura</label>
+                        <input id="asignatura" name="asignatura" type="text" placeholder="Ej.: Matemática" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="curso">Curso</label>
+                        <input id="curso" name="curso" type="text" placeholder="Ej.: 5° Básico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="unidad">Unidad</label>
+                        <input id="unidad" name="unidad" type="text" placeholder="Unidad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="objetivo">Objetivo de Aprendizaje</label>
+                        <input id="objetivo" name="objetivo" type="text" placeholder="Ej.: OA 1" required>
+                    </div>
+                    <div class="form-group full">
+                        <label for="tema">Tema</label>
+                        <input id="tema" name="tema" type="text" placeholder="Tema principal de la evaluación" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo de evaluación</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Diagnóstica">Diagnóstica</option>
+                            <option value="Formativa">Formativa</option>
+                            <option value="Sumativa">Sumativa</option>
+                            <option value="Control">Control</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preguntas">Cantidad de preguntas</label>
+                        <input id="preguntas" name="preguntas" type="number" min="3" max="50" value="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dificultad">Nivel de dificultad</label>
+                        <select id="dificultad" name="dificultad" required>
+                            <option value="">Seleccione...</option>
+                            <option value="Básica">Básica</option>
+                            <option value="Intermedia">Intermedia</option>
+                            <option value="Avanzada">Avanzada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn-primary" type="submit"><i class="fa-solid fa-wand-magic-sparkles"></i> Generar Evaluación IA</button>
+                    <button class="btn-secondary" type="reset"><i class="fa-solid fa-broom"></i> Limpiar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="evaluation-card" id="resultSection" style="display:none;">
+            <div class="card-header">
+                <h2>Evaluación Generada por AulaMind IA</h2>
+                <button type="button" id="copyEvaluation" class="btn-secondary"><i class="fa-solid fa-copy"></i> Copiar</button>
+            </div>
+            <pre id="evaluationResult" style="white-space:pre-wrap; font-family:inherit;"></pre>
+        </section>
+
+        <div id="loadingModal" class="loading-modal" style="display:none;">
+            <div class="loading-box">
+                <div class="spinner-large"></div>
+                <h2>Generando Evaluación</h2>
+                <p>AulaMind está creando una evaluación profesional.</p>
+                <small>Este proceso puede tardar algunos segundos.</small>
+            </div>
+        </div>
+
+        <div id="toast" class="toast">Evaluación generada y guardada correctamente.</div>
+
+        <footer class="footer">
+            <div>© 2026 AulaMind Enterprise</div>
+            <div>Motor de Evaluaciones IA</div>
+        </footer>
+    </main>
+</div>
+
+<script>
+window.EVALUATION_CONFIG = {
+    generateUrl: "{{ url_for('evaluation.generate') }}",
+    previewUrl: "{{ url_for('evaluation.preview') }}",
+    sampleUrl: "{{ url_for('evaluation.sample') }}",
+    exportWordUrl: "{{ url_for('evaluation.export_word') }}",
+    exportPdfUrl: "{{ url_for('evaluation.export_pdf') }}"
+};
+</script>
+<script src="{{ url_for('static', filename='js/evaluation.js') }}"></script>
+</body>
+</html>
