@@ -89,15 +89,19 @@ class Config:
     # Rate limiting
     # =====================================================
 
-    RATELIMIT_STORAGE_URI = os.getenv(
-        "RATELIMIT_STORAGE_URI",
-        "memory://" if DEBUG else "",
-    )
-    if not RATELIMIT_STORAGE_URI:
-        raise RuntimeError(
-            "RATELIMIT_STORAGE_URI es obligatoria fuera de desarrollo."
-        )
+    # Desarrollo:
+    #     memory://
+    #
+    # Producción:
+    #     Redis si existe
+    #     En caso contrario utiliza memoria para permitir
+    #     que la aplicación arranque.
 
+    RATELIMIT_STORAGE_URI = os.getenv("RATELIMIT_STORAGE_URI")
+
+    if not RATELIMIT_STORAGE_URI:
+        RATELIMIT_STORAGE_URI = "memory://"
+        
     # =====================================================
     # Recuperación de contraseña
     # =====================================================
