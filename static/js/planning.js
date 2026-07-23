@@ -1871,12 +1871,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         method: "POST",
 
-                        headers: {
+                        const csrfToken =
+                          document.querySelector('input[name="csrf_token"]').value;
 
-                            "Content-Type":
-                                "application/json"
-
-                        },
+                        const response = await fetch(API.generate, {
+                             method: "POST",
+                             credentials: "same-origin",
+                             headers: {
+                                  "Content-Type": "application/json",
+                                  "X-CSRFToken": csrfToken
+                             },
+                             body: JSON.stringify(payload)
+                        });
 
                         body:
                             JSON.stringify(payload)
