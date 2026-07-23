@@ -1871,25 +1871,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         method: "POST",
 
-                        const csrfToken =
-                          document.querySelector('input[name="csrf_token"]').value;
+            const csrfToken =
+                document.querySelector('input[name="csrf_token"]').value;
 
-                        const response = await fetch(API.generate, {
-                             method: "POST",
-                             credentials: "same-origin",
-                             headers: {
-                                  "Content-Type": "application/json",
-                                  "X-CSRFToken": csrfToken
-                             },
-                             body: JSON.stringify(payload)
-                        });
+            const csrfToken =
+                document.querySelector('input[name="csrf_token"]').value;
 
-                        body:
-                            JSON.stringify(payload)
-
-                    }
-
-                );
+            const response = await fetch(API.generate, {
+                method: "POST",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": csrfToken
+                    },
+                    body: JSON.stringify(payload)
+            });
 
 
             const json =
