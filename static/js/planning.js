@@ -21,10 +21,15 @@ Incluye:
 ===========================================================
 */
 
-document.addEventListener("DOMContentLoaded", () => {
+async function startPlanning() {
+    await initializePlanning();
+}
 
-    "use strict";
-
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startPlanning);
+} else {
+    startPlanning();
+}
 
     //=========================================================
     // CONFIGURACIÓN API
@@ -551,29 +556,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchJSON(url) {
 
-        const response =
-            await fetch(url);
-
+        const response = await fetch(url, {
+            credentials: "same-origin",
+            headers: {
+                "Accept": "application/json"
+            }
+        });
 
         if (!response.ok) {
-
-            throw new Error(
-
-                `HTTP ${response.status} en ${url}`
-
-            );
-
+         throw new Error(`HTTP ${response.status} en ${url}`);
         }
 
-
-        const json =
-            await response.json();
-
-
-        return json;
-
+        return await response.json();
     }
-
 
     //=========================================================
     // LIMPIAR OBJETIVOS DE APRENDIZAJE
@@ -1871,21 +1866,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         method: "POST",
 
-            const csrfToken =
-                document.querySelector('input[name="csrf_token"]').value;
+                        headers: {
 
-            const csrfToken =
-                document.querySelector('input[name="csrf_token"]').value;
+                            "Content-Type":
+                                "application/json"
 
-            const response = await fetch(API.generate, {
-                method: "POST",
-                credentials: "same-origin",
-                headers: {
-                    "Content-Type": "application/json",
-                    "X-CSRFToken": csrfToken
-                    },
-                    body: JSON.stringify(payload)
-            });
+                        },
+
+                        body:
+                            JSON.stringify(payload)
+
+                    }
+
+                );
 
 
             const json =
@@ -2372,12 +2365,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    //=========================================================
-    // EJECUTAR INICIALIZACIÓN
-    //=========================================================
+ //=========================================================
+// EJECUTAR INICIALIZACIÓN
+//=========================================================
 
-    initializePlanning();
+console.log("ANTES initializePlanning");
 
+initializePlanning()
+    .then(() => console.log("initializePlanning OK"))
+    .catch(err => console.error("initializePlanning ERROR", err));
 
 //=============================================================
 // CIERRE DOMContentLoaded
