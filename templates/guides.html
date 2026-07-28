@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guías de Apoyo IA | AulaMind Enterprise</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<h2>AulaMind</h2>
+<nav>
+<a href="{{ url_for('dashboard.home') }}">Dashboard</a>
+<a href="{{ url_for('planning.index') }}">Planificaciones</a>
+<a href="{{ url_for('evaluation.index') }}">Evaluaciones</a>
+<a class="active" href="{{ url_for('guides.index') }}">Guías</a>
+<a href="{{ url_for('auth.logout') }}">Cerrar sesión</a>
+</nav>
+</aside>
+<main class="main-content">
+<header>
+<h1>Guías de Apoyo y Aprendizaje IA</h1>
+<p>Genera material complementario, fichas de trabajo y guías de estudio.</p>
+</header>
+<section class="evaluation-card">
+<h2>Nueva guía</h2>
+<form id="guideForm">
+<input id="asignatura" name="asignatura" placeholder="Asignatura" required>
+<input id="curso" name="curso" placeholder="Curso" required>
+<input id="unidad" name="unidad" placeholder="Unidad" required>
+<input id="objetivo" name="objetivo" placeholder="OA" required>
+<input id="tema" name="tema" placeholder="Tema" required>
+<select id="tipo" name="tipo">
+<option>Ficha de trabajo</option>
+<option>Guía de estudio</option>
+<option>Material complementario</option>
+<option>Ejercicios prácticos</option>
+</select>
+<select id="dificultad" name="dificultad">
+<option>Básica</option>
+<option>Intermedia</option>
+<option>Avanzada</option>
+</select>
+<button type="submit">Generar Guía</button>
+</form>
+</section>
+<section id="resultSection" style="display:none">
+<h2>Resultado</h2>
+<div class="toolbar">
+<button id="copyGuide">Copiar</button>
+<button id="downloadWord">Word</button>
+<button id="downloadPdf">PDF</button>
+</div>
+<pre id="guideResult"></pre>
+</section>
+<section class="history">
+<h2>Historial de guías</h2>
+<table id="historyTable">
+<thead>
+<tr><th>Fecha</th><th>Curso</th><th>Asignatura</th><th>Acciones</th></tr>
+</thead>
+<tbody id="historyBody"></tbody>
+</table>
+</section>
+<div id="loadingModal" style="display:none">Generando...</div>
+<script>
+window.GUIDE_CONFIG={generateUrl:"{{ url_for('guides.generate') }}",historyUrl:"{{ url_for('guides.history') }}"};
+</script>
+<script src="{{ url_for('static', filename='js/guides.js') }}"></script>
+</main>
+</div>
+</body>
+</html>
