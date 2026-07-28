@@ -98,6 +98,8 @@ def login():
         session["email"] = user.email
 
         session["user_email"] = user.email
+        
+        session["school_id"] = user.school_id  # ← FIX: NUEVO
 
         flash(
 
