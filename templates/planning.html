@@ -1,1465 +1,1349 @@
-/*
-===========================================================
-AulaMind Enterprise 3.0
-Planning Engine
-static/js/planning.js
+<!DOCTYPE html>
+<html lang="es">
 
-VERSIÓN CORREGIDA
-PARTE 1 DE 4
+<head>
 
-Incluye:
-- Inicialización única
-- Configuración API
-- Referencias DOM
-- Estado
-- Utilidades
-- Orden correcto de cursos
-- Normalización de respuestas
-- Toast
-- Loader
-- Fetch JSON
-===========================================================
-*/
+    <meta charset="UTF-8">
 
-async function startPlanning() {
-    await initializePlanning();
-}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", startPlanning);
-} else {
-    startPlanning();
-}
+    <title>
 
-//=========================================================
-// CONFIGURACIÓN API
-//=========================================================
+        AulaMind Enterprise | Planificación IA
 
-const API = {
+    </title>
 
-    courses: "/planning/api/curriculum/courses",
+    <!--======================================================
+    FONTS
+    =======================================================-->
 
-    subjects: "/planning/api/curriculum/subjects",
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    units: "/planning/api/curriculum/units",
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    objectives: "/planning/api/curriculum/objectives",
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    generate: "/planning/generate"
+    <!--======================================================
+    ICONOS
+    =======================================================-->
 
-};
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+    <!--======================================================
+    CSS
+    =======================================================-->
 
-//=========================================================
-// REFERENCIAS DOM
-//=========================================================
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
 
-const form =
-    document.getElementById("planningForm");
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/planning.css') }}">
 
-const course =
-    document.getElementById("course");
+</head>
 
-const subject =
-    document.getElementById("subject");
+<body>
 
-const unit =
-    document.getElementById("unit");
+<div class="app-layout">
 
-const learningObjectives =
-    document.getElementById("learningObjectives");
+    <!--======================================================
+    SIDEBAR
+    =======================================================-->
 
-const tema =
-    document.getElementById("tema");
+    <aside class="sidebar">
 
-const duracion =
-    document.getElementById("duracion");
+        <div class="sidebar-header">
 
-const tipo =
-    document.getElementById("tipo");
+            <img
+                src="{{ url_for('static', filename='img/logo.png') }}"
+                alt="AulaMind"
+                class="sidebar-logo">
 
-const recursos =
-    document.getElementById("recursos");
+            <div>
 
-const observaciones =
-    document.getElementById("observaciones");
+                <h2>
 
-const resultado =
-    document.getElementById("resultado");
+                    AulaMind
 
-const btnGenerar =
-    document.getElementById("btnGenerar");
+                </h2>
 
-const btnLimpiar =
-    document.getElementById("btnLimpiar");
+                <span>
 
-const btnCopiar =
-    document.getElementById("btnCopiar");
+                    Enterprise 3.0
 
-const btnWord =
-    document.getElementById("btnWord");
-
-const btnPDF =
-    document.getElementById("btnPDF");
-
-const loader =
-    document.getElementById("loader");
-
-const toast =
-    document.getElementById("toast");
-
-
-//=========================================================
-// VALIDACIÓN DE ELEMENTOS PRINCIPALES
-//=========================================================
-
-if (!form) {
-
-    console.error(
-        "AulaMind: no se encontró #planningForm"
-    );
-
-    return;
-
-}
-
-if (!course || !subject || !unit) {
-
-    console.error(
-        "AulaMind: faltan selectores curriculares."
-    );
-
-    return;
-
-}
-
-if (!learningObjectives) {
-
-    console.error(
-        "AulaMind: no se encontró #learningObjectives"
-    );
-
-    return;
-
-}
-
-
-//=========================================================
-// ESTADO DEL MÓDULO
-//=========================================================
-
-let currentCourses = [];
-
-let currentSubjects = [];
-
-let currentUnits = [];
-
-let currentObjectives = [];
-
-
-//=========================================================
-// CREAR OPTION
-//=========================================================
-
-function createOption(value, text) {
-
-    const option =
-        document.createElement("option");
-
-    option.value = value;
-
-    option.textContent = text;
-
-    return option;
-
-}
-
-
-//=========================================================
-// LIMPIAR SELECT
-//=========================================================
-
-function clearSelect(select, placeholder) {
-
-    if (!select) return;
-
-    select.innerHTML = "";
-
-    select.appendChild(
-        createOption("", placeholder)
-    );
-
-    select.selectedIndex = 0;
-
-}
-//=========================================================
-// ACTIVAR / DESACTIVAR SELECT
-//=========================================================
-
-function enableSelect(select) {
-
-    if (select) {
-
-        select.disabled = false;
-
-    }
-
-}
-
-function disableSelect(select) {
-
-    if (select) {
-
-        select.disabled = true;
-
-    }
-
-}
-
-
-//=========================================================
-// EXTRAER TEXTO DE RESPUESTAS API
-//=========================================================
-
-function extractText(item) {
-
-    if (typeof item === "string") {
-
-        return item.trim();
-
-    }
-
-    if (!item || typeof item !== "object") {
-
-        return "";
-
-    }
-
-    return String(
-
-        item.name ??
-
-        item.nombre ??
-
-        item.course ??
-
-        item.curso ??
-
-        item.subject ??
-
-        item.asignatura ??
-
-        item.unit ??
-
-        item.unidad ??
-
-        item.title ??
-
-        item.titulo ??
-
-        ""
-
-    ).trim();
-
-}
-
-
-//=========================================================
-// ELIMINAR DUPLICADOS
-//=========================================================
-
-function uniqueStrings(items) {
-
-    const values = Array.isArray(items)
-        ? items
-        : [];
-
-    const normalized = values
-        .map(extractText)
-        .filter(Boolean);
-
-    return [...new Set(normalized)];
-
-}
-
-
-//=========================================================
-// ORDEN CURRICULAR DE CURSOS
-//=========================================================
-
-function courseOrder(courseName) {
-
-    const text =
-        String(courseName).toLowerCase();
-
-    const match =
-        text.match(/\d+/);
-
-    const number =
-        match ? parseInt(match[0], 10) : 99;
-
-    // 1° Básico a 8° Básico
-
-    if (
-
-        text.includes("bás") ||
-
-        text.includes("bas")
-
-    ) {
-
-        return number;
-
-    }
-
-    // 1° Medio a 4° Medio
-
-    if (text.includes("medio")) {
-
-        return 8 + number;
-
-    }
-
-    return 99;
-
-}
-
-
-//=========================================================
-// ORDENAR CURSOS
-//=========================================================
-
-function sortCourses(items) {
-
-    return uniqueStrings(items).sort(
-
-        (a, b) => {
-
-            const orderA =
-                courseOrder(a);
-
-            const orderB =
-                courseOrder(b);
-
-            if (orderA !== orderB) {
-
-                return orderA - orderB;
-
-            }
-
-            return a.localeCompare(
-
-                b,
-
-                "es",
-
-                {
-
-                    numeric: true,
-
-                    sensitivity: "base"
-
-                }
-
-            );
-
-        }
-
-    );
-
-}
-
-
-//=========================================================
-// ORDEN ALFABÉTICO
-//=========================================================
-
-function sortAlphabetically(items) {
-
-    return uniqueStrings(items).sort(
-
-        (a, b) =>
-
-            a.localeCompare(
-
-                b,
-
-                "es",
-
-                {
-
-                    numeric: true,
-
-                    sensitivity: "base"
-
-                }
-
-            )
-
-    );
-
-}
-
-
-//=========================================================
-// ORDENAR UNIDADES
-//=========================================================
-
-function sortUnits(items) {
-
-    return uniqueStrings(items).sort(
-
-        (a, b) =>
-
-            a.localeCompare(
-
-                b,
-
-                "es",
-
-                {
-
-                    numeric: true,
-
-                    sensitivity: "base"
-
-                }
-
-            )
-
-    );
-
-}
-
-
-//=========================================================
-// ESCAPAR HTML
-//=========================================================
-
-function escapeHTML(value) {
-
-    return String(value ?? "")
-
-        .replace(/&/g, "&amp;")
-
-        .replace(/</g, "&lt;")
-
-        .replace(/>/g, "&gt;")
-
-        .replace(/"/g, "&quot;")
-
-        .replace(/'/g, "&#039;");
-
-}
-
-
-//=========================================================
-// CONFIGURACIÓN PANEL OA COMPACTO
-//=========================================================
-
-learningObjectives.style.maxHeight =
-    "360px";
-
-learningObjectives.style.overflowY =
-    "auto";
-
-learningObjectives.style.paddingRight =
-    "8px";
-
-learningObjectives.style.scrollBehavior =
-    "smooth";
-
-
-//=========================================================
-// TOAST
-//=========================================================
-
-function showToast(message, success = true) {
-
-    if (!toast) {
-
-        console.log(message);
-
-        return;
-
-    }
-
-    toast.textContent = message;
-
-    toast.className = success
-
-        ? "toast success show"
-
-        : "toast error show";
-
-    setTimeout(() => {
-
-        toast.classList.remove("show");
-
-    }, 3000);
-
-}
-
-
-//=========================================================
-// LOADER
-//=========================================================
-
-function openLoader() {
-
-    if (loader) {
-
-        loader.style.display = "flex";
-
-    }
-
-    if (btnGenerar) {
-
-        btnGenerar.disabled = true;
-
-    }
-
-}
-
-function closeLoader() {
-
-    if (loader) {
-
-        loader.style.display = "none";
-
-    }
-
-    if (btnGenerar) {
-
-        btnGenerar.disabled = false;
-
-    }
-
-}
-
-
-//=========================================================
-// FETCH JSON
-//=========================================================
-
-async function fetchJSON(url) {
-
-    const response = await fetch(url, {
-
-        credentials: "same-origin",
-
-        headers: {
-
-            "Accept": "application/json"
-
-        }
-
-    });
-
-    if (!response.ok) {
-
-        throw new Error(
-
-            `HTTP ${response.status} en ${url}`
-
-        );
-
-    }
-
-    return await response.json();
-
-}
-
-
-//=========================================================
-// LIMPIAR OBJETIVOS DE APRENDIZAJE
-//=========================================================
-
-function clearObjectives() {
-
-    currentObjectives = [];
-
-    learningObjectives.innerHTML = `
-
-        <div class="empty-state">
-
-            <i class="fa-solid fa-book-open-reader"></i>
-
-            <h4>Currículum Nacional</h4>
-
-            <p>
-
-                Seleccione una unidad para visualizar
-                los Objetivos de Aprendizaje.
-
-            </p>
-
-        </div>
-
-    `;
-
-}
-
-
-//=========================================================
-// PLACEHOLDER RESULTADO
-//=========================================================
-
-function resetResult() {
-
-    if (!resultado) return;
-
-    resultado.innerHTML = `
-
-        <div class="placeholder">
-                // CONTINUAR INMEDIATAMENTE CON PARTE 3
-    //=========================================================
-    // OBTENER OA SELECCIONADOS
-    //=========================================================
-
-    function getSelectedObjectives() {
-
-        const selected = [];
-
-        document
-            .querySelectorAll(".oa-checkbox:checked")
-            .forEach(checkbox => {
-
-                const index =
-                    Number(checkbox.dataset.index);
-
-                const objective =
-                    currentObjectives[index];
-
-                if (!objective) {
-
-                    return;
-
-                }
-
-                selected.push({
-
-                    code:
-                        getObjectiveCode(
-                            objective,
-                            index
-                        ),
-
-                    description:
-                        getObjectiveDescription(
-                            objective
-                        )
-
-                });
-
-            });
-
-        return selected;
-
-    }
-
-
-    //=========================================================
-    // VALIDAR FORMULARIO
-    //=========================================================
-
-    function validatePlanning() {
-
-        if (course.value === "") {
-
-            showToast(
-                "Seleccione un curso.",
-                false
-            );
-
-            course.focus();
-
-            return false;
-
-        }
-
-        if (subject.value === "") {
-
-            showToast(
-                "Seleccione una asignatura.",
-                false
-            );
-
-            subject.focus();
-
-            return false;
-
-        }
-
-        if (unit.value === "") {
-
-            showToast(
-                "Seleccione una unidad.",
-                false
-            );
-
-            unit.focus();
-
-            return false;
-
-        }
-
-        const selectedObjectives =
-            getSelectedObjectives();
-
-        if (selectedObjectives.length === 0) {
-
-            showToast(
-                "Debe seleccionar al menos un Objetivo de Aprendizaje.",
-                false
-            );
-
-            learningObjectives.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "center"
-
-            });
-
-            return false;
-
-        }
-
-        if (
-
-            !tema ||
-
-            tema.value.trim() === ""
-
-        ) {
-
-            showToast(
-                "Debe ingresar el tema de la clase.",
-                false
-            );
-
-            if (tema) {
-
-                tema.focus();
-
-            }
-
-            return false;
-
-        }
-
-        return true;
-
-    }
-
-
-    //=========================================================
-    // CONSTRUIR PAYLOAD
-    //=========================================================
-
-    function buildPayload() {
-
-        return {
-
-            curso:
-                course.value,
-
-            asignatura:
-                subject.value,
-
-            unidad:
-                unit.value,
-
-            objetivos:
-                getSelectedObjectives(),
-
-            tema:
-                tema
-                    ? tema.value.trim()
-                    : "",
-
-            duracion:
-                duracion
-                    ? duracion.value
-                    : "",
-
-            tipo:
-                tipo
-                    ? tipo.value
-                    : "",
-
-            metodologia:
-                "Aprendizaje Activo",
-
-            evaluacion:
-                "Formativa",
-
-            recursos:
-                recursos
-                    ? recursos.value.trim()
-                    : "",
-
-            observaciones:
-                observaciones
-                    ? observaciones.value.trim()
-                    : ""
-
-        };
-
-    }
-
-
-    //=========================================================
-    // MOSTRAR PLANIFICACIÓN
-    //=========================================================
-
-    function renderPlanning(content) {
-
-        if (!resultado) {
-
-            return;
-
-        }
-
-        if (
-
-            content === undefined ||
-
-            content === null ||
-
-            String(content).trim() === ""
-
-        ) {
-
-            renderError(
-                "La IA respondió sin contenido."
-            );
-
-            return;
-
-        }
-
-        resultado.innerHTML = `
-
-            <div class="planning-response">
-
-                ${String(content)
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/\n/g, "<br>")}
+                </span>
 
             </div>
 
-        `;
+        </div>
 
-        resultado.scrollIntoView({
+        <nav class="sidebar-menu">
 
-            behavior: "smooth",
+            <a href="/">
 
-            block: "start"
+                <i class="fa-solid fa-house"></i>
 
-        });
+                <span>
 
-    }
+                    Panel Principal
 
+                </span>
 
-    //=========================================================
-    // MOSTRAR ERROR
-    //=========================================================
+            </a>
 
-    function renderError(message) {
+            <a
+                href="/planning"
+                class="active">
 
-        if (!resultado) {
+                <i class="fa-solid fa-calendar-days"></i>
 
-            return;
+                <span>
 
-        }
+                    Planificaciones
 
-        resultado.innerHTML = `
+                </span>
 
-            <div class="planning-error">
+            </a>
 
-                <i class="fa-solid fa-circle-exclamation"></i>
+            <a href="/evaluation">
 
-                <h3>
-                    Error
-                </h3>
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <span>
+
+                    Evaluaciones
+
+                </span>
+
+            </a>
+
+            <a href="/curriculum">
+
+                <i class="fa-solid fa-book-open"></i>
+
+                <span>
+
+                    Currículum
+
+                </span>
+
+            </a>
+
+            <a href="/guides">
+
+                <i class="fa-solid fa-book"></i>
+
+                <span>
+
+                    Guías
+
+                </span>
+
+            </a>
+
+            <a href="/rubrics">
+
+                <i class="fa-solid fa-table-list"></i>
+
+                <span>
+
+                    Rúbricas
+
+                </span>
+
+            </a>
+
+            <a href="/settings">
+
+                <i class="fa-solid fa-gear"></i>
+
+                <span>
+
+                    Configuración
+
+                </span>
+
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="user-card">
+
+                <div class="avatar">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+
+                        {{ session.get('user_name','Profesor') }}
+
+                    </strong>
+
+                    <small>
+
+                        Docente
+
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!--======================================================
+    CONTENIDO
+    =======================================================-->
+
+    <main class="main-content">
+
+        <!--==================================================
+        HEADER
+        ==================================================-->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Planificación IA
+
+                </h1>
 
                 <p>
-                    ${escapeHTML(
-                        message ||
-                        "Error desconocido."
-                    )}
+
+                    Generador Inteligente de Planificaciones
+
                 </p>
 
             </div>
 
-        `;
+            <div class="topbar-actions">
 
-        resultado.scrollIntoView({
+                <button
+                    class="icon-button">
 
-            behavior: "smooth",
+                    <i class="fa-solid fa-bell"></i>
 
-            block: "start"
+                </button>
 
-        });
+                <button
+                    class="icon-button">
 
-    }
+                    <i class="fa-solid fa-user"></i>
 
+                </button>
 
-    //=========================================================
-    // LEER RESPUESTA DEL SERVIDOR
-    //=========================================================
+            </div>
 
-    async function readServerResponse(response) {
+        </header>
 
-        const contentType =
-            response.headers.get("content-type") || "";
+        <!--==================================================
+        HERO
+        ==================================================-->
 
-        if (
+        <section class="hero">
 
-            contentType.includes(
-                "application/json"
-            )
+            <div class="hero-left">
 
-        ) {
+                <h2>
 
-            return await response.json();
+                    Planificación Inteligente con IA
+
+                </h2>
+
+                <p>
+
+                    Seleccione el curso,
+                    la asignatura,
+                    la unidad
+                    y los Objetivos de Aprendizaje
+                    para generar automáticamente una planificación alineada con el Currículum Nacional.
+
+                </p>
+
+            </div>
+
+            <div class="hero-right">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+        </section>
+
+        <!--==================================================
+        FORMULARIO
+        ==================================================-->
+
+        <section class="planning-card">
+
+            <form id="planningForm">
+
+                <div class="planning-grid">
+
+                    <!--======================================
+                    CURSO
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Curso
+
+                        </label>
+
+                        <select
+                            id="course"
+                            name="course">
+
+                            <option value="">
+
+                                Cargando cursos...
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!--======================================
+                    ASIGNATURA
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Asignatura
+
+                        </label>
+
+                        <select
+                            id="subject"
+                            name="subject"
+                            disabled>
+
+                            <option value="">
+
+                                Seleccione un curso...
+
+                            </option>
+
+                        </select>
+
+                    </div>
+                                        <!--======================================
+                    UNIDAD
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Unidad
+
+                        </label>
+
+                        <select
+                            id="unit"
+                            name="unit"
+                            disabled>
+
+                            <option value="">
+
+                                Seleccione una asignatura...
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!--======================================
+                    BUSCADOR OA
+                    ======================================-->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Buscar Objetivo de Aprendizaje
+
+                        </label>
+
+                        <div class="search-box">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="searchOA"
+                                placeholder="Buscar por código o descripción...">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--==========================================
+                PANEL OA
+                ===========================================-->
+
+                <div class="oa-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h3>
+
+                                Objetivos de Aprendizaje
+
+                            </h3>
+
+                            <p>
+
+                                Seleccione uno o más OA pertenecientes
+                                a la unidad elegida.
+
+                            </p>
+
+                        </div>
+
+                        <div class="oa-actions">
+
+                            <button
+                                type="button"
+                                id="btnSelectAll"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-check-double"></i>
+
+                                Seleccionar Todos
+
+                            </button>
+
+                            <button
+                                type="button"
+                                id="btnClearAll"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-xmark"></i>
+
+                                Limpiar
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!--======================================
+                    CONTENEDOR OA
+                    ======================================-->
+
+                    <div
+                        id="learningObjectives"
+                        class="oa-container">
+
+                        <div class="empty-state">
+
+                            <i class="fa-solid fa-book-open-reader"></i>
+
+                            <h4>
+
+                                Currículum Nacional
+
+                            </h4>
+
+                            <p>
+
+                                Seleccione un Curso,
+                                una Asignatura
+                                y una Unidad para visualizar
+                                los Objetivos de Aprendizaje.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--==========================================
+                PANEL CURRICULAR
+                ===========================================-->
+
+                <aside class="curriculum-panel">
+
+                    <div class="curriculum-card">
+
+                        <div class="curriculum-title">
+
+                            <i class="fa-solid fa-graduation-cap"></i>
+
+                            <h3>
+
+                                Información Curricular
+
+                            </h3>
+
+                        </div>
+
+                        <div class="curriculum-info">
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    Curso
+
+                                </span>
+
+                                <strong id="infoCourse">
+
+                                    —
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    Asignatura
+
+                                </span>
+
+                                <strong id="infoSubject">
+
+                                    —
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    Unidad
+
+                                </span>
+
+                                <strong id="infoUnit">
+
+                                    —
+
+                                </strong>
+
+                            </div>
+
+                            <div class="info-item">
+
+                                <span>
+
+                                    OA Seleccionados
+
+                                </span>
+
+                                <strong id="infoOA">
+
+                                    0
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="curriculum-card">
+
+                        <div class="curriculum-title">
+
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                            <h3>
+
+                                AulaMind IA
+
+                            </h3>
+
+                        </div>
+
+                        <p>
+
+                            AulaMind utilizará los Objetivos de
+                            Aprendizaje seleccionados para generar una
+                            planificación completamente alineada con las
+                            Bases Curriculares del MINEDUC.
+
+                        </p>
+
+                        <ul class="feature-list">
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Objetivos oficiales.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Inicio - Desarrollo - Cierre.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Evaluación.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Recursos.
+
+                            </li>
+
+                            <li>
+
+                                <i class="fa-solid fa-check"></i>
+
+                                Adecuaciones.
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </aside>
+                                <!--======================================================
+                CONFIGURACIÓN DE LA PLANIFICACIÓN
+                =======================================================-->
+
+                <section class="planning-options">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+
+                                Configuración de la Planificación
+
+                            </h2>
+
+                            <p>
+
+                                Complete la información que utilizará AulaMind IA para construir la planificación pedagógica.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="planning-grid">
+
+                        <!--==================================================
+                        TEMA
+                        ==================================================-->
+
+                        <div class="form-group full">
+
+                            <label for="tema">
+
+                                Tema de la Clase
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="tema"
+                                name="tema"
+                                class="form-control"
+                                placeholder="Ejemplo: Fracciones equivalentes">
+
+                        </div>
+
+                        <!--==================================================
+                        DURACIÓN
+                        ==================================================-->
+
+                        <div class="form-group">
+
+                            <label for="duracion">
+
+                                Duración
+
+                            </label>
+
+                            <select
+                                id="duracion"
+                                name="duracion"
+                                class="form-control">
+
+                                <option value="45">
+
+                                    45 minutos
+
+                                </option>
+
+                                <option value="60">
+
+                                    60 minutos
+
+                                </option>
+
+                                <option value="90">
+
+                                    90 minutos
+
+                                </option>
+
+                                <option value="120">
+
+                                    120 minutos
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!--==================================================
+                        TIPO DE CLASE
+                        ==================================================-->
+
+                        <div class="form-group">
+
+                            <label for="tipo">
+
+                                Tipo de Clase
+
+                            </label>
+
+                            <select
+                                id="tipo"
+                                name="tipo"
+                                class="form-control">
+
+                                <option value="Clase Expositiva">
+
+                                    Clase Expositiva
+
+                                </option>
+
+                                <option value="Clase Participativa">
+
+                                    Clase Participativa
+
+                                </option>
+
+                                <option value="Aprendizaje Basado en Proyectos">
+
+                                    Aprendizaje Basado en Proyectos
+
+                                </option>
+
+                                <option value="Aprendizaje Colaborativo">
+
+                                    Aprendizaje Colaborativo
+
+                                </option>
+
+                                <option value="Clase Taller">
+
+                                    Clase Taller
+
+                                </option>
+
+                                <option value="Gamificación">
+
+                                    Gamificación
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!--==================================================
+                        RECURSOS
+                        ==================================================-->
+
+                        <div class="form-group full">
+
+                            <label for="recursos">
+
+                                Recursos Didácticos
+
+                            </label>
+
+                            <textarea
+                                id="recursos"
+                                name="recursos"
+                                rows="5"
+                                class="form-control"
+                                placeholder="Ejemplo: PPT, Guía de Trabajo, Video, Pizarra Digital, Material Concreto, Internet, Notebook..."></textarea>
+
+                        </div>
+
+                        <!--==================================================
+                        OBSERVACIONES
+                        ==================================================-->
+
+                        <div class="form-group full">
+
+                            <label for="observaciones">
+
+                                Observaciones para AulaMind IA
+
+                            </label>
+
+                            <textarea
+                                id="observaciones"
+                                name="observaciones"
+                                rows="8"
+                                class="form-control"
+                                placeholder="Escriba instrucciones especiales para la IA, adecuaciones curriculares, estudiantes PIE, metodología, evaluación diferenciada, habilidades a desarrollar, etc."></textarea>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!--======================================================
+                BOTONES
+                =======================================================-->
+
+                <section class="planning-actions">
+
+                    <button
+                        type="submit"
+                        id="btnGenerar"
+                        class="btn btn-primary">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Generar Planificación IA
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnLimpiar"
+                        class="btn btn-secondary">
+
+                        <i class="fa-solid fa-broom"></i>
+
+                        Limpiar
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCopiar"
+                        class="btn btn-outline">
+
+                        <i class="fa-solid fa-copy"></i>
+
+                        Copiar
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnWord"
+                        class="btn btn-outline">
+
+                        <i class="fa-solid fa-file-word"></i>
+
+                        Exportar Word
+
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnPDF"
+                        class="btn btn-outline">
+
+                        <i class="fa-solid fa-file-pdf"></i>
+
+                        Exportar PDF
+
+                    </button>
+
+                </section>
+
+            </form>
+
+        </section>
+                <!--==========================================================
+        RESULTADO IA
+        ===========================================================-->
+
+        <section class="planning-result-section">
+
+            <div class="result-grid">
+
+                <!--==============================================
+                EDITOR IA
+                ==============================================-->
+
+                <div class="editor-card">
+
+                    <div class="card-header">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-robot"></i>
+
+                            <h2>
+
+                                Planificación Generada por AulaMind IA
+
+                            </h2>
+
+                        </div>
+
+                        <div class="editor-actions">
+
+                            <button
+                                type="button"
+                                id="btnCopiarEditor"
+                                class="btn btn-outline">
+
+                                <i class="fa-solid fa-copy"></i>
+
+                                Copiar
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        id="resultado"
+                        class="planning-editor">
+
+                        <div class="placeholder">
+
+                            <i class="fa-solid fa-robot"></i>
+
+                            <h2>
+
+                                AulaMind IA está listo
+
+                            </h2>
+
+                            <p>
+
+                                Seleccione un Curso,
+                                una Asignatura,
+                                una Unidad,
+                                marque los Objetivos de Aprendizaje
+                                y presione
+
+                                <strong>
+
+                                    Generar Planificación IA
+
+                                </strong>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--==============================================
+                PANEL IA
+                ==============================================-->
+
+                <aside class="assistant-panel">
+
+                    <div class="assistant-card">
+
+                        <div class="assistant-header">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                            <h3>
+
+                                AulaMind IA
+
+                            </h3>
+
+                        </div>
+
+                        <div class="assistant-body">
+
+                            <p>
+
+                                La planificación será construida utilizando:
+
+                            </p>
+
+                            <ul>
+
+                                <li>
+
+                                    ✔ Currículum Nacional MINEDUC
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Objetivos de Aprendizaje
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Estrategias Didácticas
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Evaluación Formativa
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Inicio
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Desarrollo
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Cierre
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Recursos
+
+                                </li>
+
+                                <li>
+
+                                    ✔ Adecuaciones Curriculares
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                    <div class="assistant-card">
+
+                        <div class="assistant-header">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <h3>
+
+                                Estado
+
+                            </h3>
+
+                        </div>
+
+                        <div class="assistant-status">
+
+                            <div class="status-item">
+
+                                <span>
+
+                                    Motor Curricular
+
+                                </span>
+
+                                <strong class="status-ok">
+
+                                    Activo
+
+                                </strong>
+
+                            </div>
+
+                            <div class="status-item">
+
+                                <span>
+
+                                    IA
+
+                                </span>
+
+                                <strong class="status-ok">
+
+                                    Conectada
+
+                                </strong>
+
+                            </div>
+
+                            <div class="status-item">
+
+                                <span>
+
+                                    OpenAI
+
+                                </span>
+
+                                <strong class="status-ok">
+
+                                    Disponible
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+        <!--==========================================================
+        LOADER
+        ===========================================================-->
+
+        <div
+            id="loader"
+            class="loader-overlay">
+
+            <div class="loader-content">
+
+                <div class="spinner"></div>
+
+                <h3>
+
+                    AulaMind IA
+
+                </h3>
+
+                <p>
+
+                    Generando la planificación...
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!--==========================================================
+        MODAL
+        ===========================================================-->
+
+        <div
+            id="loadingModal"
+            class="modal">
+
+            <div class="modal-content">
+
+                <i class="fa-solid fa-robot fa-3x"></i>
+
+                <h2>
+
+                    Espere un momento...
+
+                </h2>
+
+                <p>
+
+                    Analizando el Currículum Nacional,
+                    los Objetivos de Aprendizaje
+                    y construyendo la planificación.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!--==========================================================
+        TOAST
+        ===========================================================-->
+
+        <div
+            id="toast"
+            class="toast">
+
+        </div>
+                <!--======================================================
+        FOOTER
+        ======================================================-->
+
+        <footer class="page-footer">
+
+            <div class="footer-left">
+
+                <strong>
+
+                    AulaMind Enterprise 3.0
+
+                </strong>
+
+                <span>
+
+                    Plataforma Inteligente para Docentes
+
+                </span>
+
+            </div>
+
+            <div class="footer-right">
+
+                <span>
+
+                    © 2025 Biotecno Chile
+
+                </span>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<!--==========================================================
+CONFIGURACIÓN JAVASCRIPT
+===========================================================-->
+
+<script>
+
+window.AulaMind = {
+
+    api: {
+
+        curriculum: {
+
+            courses: "/api/curriculum/courses",
+
+            subjects: "/api/curriculum/subjects",
+
+            units: "/api/curriculum/units",
+
+            objectives: "/api/curriculum/objectives",
+
+            search: "/api/curriculum/search",
+
+            planning: "/api/curriculum/planning-context"
+
+        },
+
+        planning: {
+
+            generate: "/planning/generate"
 
         }
 
-        const text =
-            await response.text();
+    },
 
-        throw new Error(
+    version: "3.0.0",
 
-            text ||
+    company: "Biotecno Chile"
 
-            `Respuesta HTTP ${response.status}`
+};
 
-        );
+</script>
 
-    }
+<!--==========================================================
+LIBRERÍAS
+===========================================================-->
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    //=========================================================
-    // GENERAR PLANIFICACIÓN IA
-    //=========================================================
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    async function generatePlanning() {
+<!--==========================================================
+PLANNING ENGINE
+===========================================================-->
 
-        if (!validatePlanning()) {
+<script src="{{ url_for('static', filename='js/planning.js') }}"></script>
 
-            return;
+<!--==========================================================
+SCRIPTS
+===========================================================-->
 
-        }
+<script>
 
-        openLoader();
+document.addEventListener("DOMContentLoaded", function(){
 
-        try {
+    console.clear();
 
-            const payload =
-                buildPayload();
+    console.log("========================================");
 
-            console.log(
-                "Payload enviado a AulaMind IA:",
-                payload
-            );
+    console.log("AulaMind Enterprise 3.0");
 
-            const response =
-                await fetch(
+    console.log("Planning Engine");
 
-                    API.generate,
+    console.log("Motor Curricular");
 
-                    {
+    console.log("OpenAI Ready");
 
-                        method: "POST",
-
-                        headers: {
-
-                            "Content-Type":
-                                "application/json"
-
-                        },
-
-                        body:
-                            JSON.stringify(payload)
-
-                    }
-
-                );
-
-            const json =
-                await readServerResponse(response);
-
-            console.log(
-                "Respuesta del servidor:",
-                json
-            );
-
-            if (
-
-                !response.ok ||
-
-                !json.success
-
-            ) {
-
-                const serverMessage =
-
-                    json.error ||
-
-                    json.message ||
-
-                    "No fue posible generar la planificación.";
-
-                renderError(
-                    serverMessage
-                );
-
-                showToast(
-                    serverMessage,
-                    false
-                );
-
-                return;
-
-            }
-
-            const content =
-
-                json.content ??
-
-                json.planificacion ??
-
-                json.result ??
-
-                json.data ??
-
-                "";
-
-            renderPlanning(content);
-
-            showToast(
-                "Planificación generada correctamente."
-            );
-
-        }
-
-        catch (error) {
-
-            console.error(
-                "Error generatePlanning:",
-                error
-            );
-
-            renderError(
-                error.message ||
-                "Error de conexión con el servidor."
-            );
-
-            showToast(
-                "Error generando la planificación.",
-                false
-            );
-
-        }
-
-        finally {
-
-            closeLoader();
-
-        }
-
-    }
-
-
-    //=========================================================
-    // SUBMIT DEL FORMULARIO
-    //=========================================================
-
-    form.addEventListener(
-
-        "submit",
-
-        async function (event) {
-
-            event.preventDefault();
-
-            await generatePlanning();
-
-        }
-
-    );
-
-
-    //=========================================================
-    // EVITAR DOBLE GENERACIÓN
-    //=========================================================
-    //
-    // El botón btnGenerar está dentro del formulario.
-    // Por eso la generación se controla solamente mediante
-    // el evento submit anterior.
-    //
-    // No agregamos un segundo listener click al botón porque
-    // eso podría provocar dos peticiones POST /generate.
-    //=========================================================
-
-
-    //=========================================================
-    // LIMPIAR FORMULARIO
-    //=========================================================
-
-    function clearPlanningForm() {
-
-        form.reset();
-
-        currentSubjects = [];
-
-        currentUnits = [];
-
-        currentObjectives = [];
-
-        clearSelect(
-            subject,
-            "Seleccione una asignatura..."
-        );
-
-        clearSelect(
-            unit,
-            "Seleccione una unidad..."
-        );
-
-        disableSelect(subject);
-
-        disableSelect(unit);
-
-        clearObjectives();
-
-        resetResult();
-
-        showToast(
-            "Formulario limpiado."
-        );
-
-    }
-
-
-    //=========================================================
-    // COPIAR PLANIFICACIÓN
-    //=========================================================
-
-    async function copyPlanning() {
-
-        try {
-
-            if (!resultado) {
-
-                return;
-
-            }
-
-            const texto =
-                resultado.innerText.trim();
-
-            if (
-
-                texto === "" ||
-
-                texto.includes(
-                    "AulaMind IA está listo"
-                )
-
-            ) {
-
-                showToast(
-                    "No existe una planificación para copiar.",
-                    false
-                );
-
-                return;
-
-            }
-
-            await navigator.clipboard.writeText(
-                texto
-            );
-
-            showToast(
-                "Planificación copiada al portapapeles."
-            );
-
-        }
-
-        catch (error) {
-
-            console.error(
-                "Error copyPlanning:",
-                error
-            );
-
-            showToast(
-                "No fue posible copiar la planificación.",
-                false
-            );
-
-        }
-
-    }
-
-
-    //=========================================================
-    // EXPORTAR WORD
-    //=========================================================
-
-    function exportWord() {
-
-        showToast(
-            "La exportación Word se mantendrá para su módulo correspondiente.",
-            false
-        );
-
-    }
-
-
-    //=========================================================
-    // EXPORTAR PDF
-    //=========================================================
-
-    function exportPDF() {
-
-        showToast(
-            "La exportación PDF se mantendrá para su módulo correspondiente.",
-            false
-        );
-
-    }
-
-
-    //=========================================================
-    // FIN PARTE 3 DE 4
-        // CONTINUAR INMEDIATAMENTE CON PARTE 4
-
-    //=========================================================
-    // EVENTO BOTÓN LIMPIAR
-    //=========================================================
-
-    if (btnLimpiar) {
-
-        btnLimpiar.addEventListener(
-
-            "click",
-
-            function (event) {
-
-                event.preventDefault();
-
-                clearPlanningForm();
-
-            }
-
-        );
-
-    }
-
-
-    //=========================================================
-    // EVENTO BOTÓN COPIAR
-    //=========================================================
-
-    if (btnCopiar) {
-
-        btnCopiar.addEventListener(
-
-            "click",
-
-            async function (event) {
-
-                event.preventDefault();
-
-                await copyPlanning();
-
-            }
-
-        );
-
-    }
-
-
-    //=========================================================
-    // EVENTO BOTÓN WORD
-    //=========================================================
-
-    if (btnWord) {
-
-        btnWord.addEventListener(
-
-            "click",
-
-            function (event) {
-
-                event.preventDefault();
-
-                exportWord();
-
-            }
-
-        );
-
-    }
-
-
-    //=========================================================
-    // EVENTO BOTÓN PDF
-    //=========================================================
-
-    if (btnPDF) {
-
-        btnPDF.addEventListener(
-
-            "click",
-
-            function (event) {
-
-                event.preventDefault();
-
-                exportPDF();
-
-            }
-
-        );
-
-    }
-
-
-    //=========================================================
-    // ATAJO CTRL + ENTER
-    //=========================================================
-
-    document.addEventListener(
-
-        "keydown",
-
-        async function (event) {
-
-            if (
-
-                event.ctrlKey &&
-
-                event.key === "Enter"
-
-            ) {
-
-                event.preventDefault();
-
-                await generatePlanning();
-
-            }
-
-        }
-
-    );
-
-
-    //=========================================================
-    // FUNCIONES GLOBALES
-    //=========================================================
-
-    window.generatePlanning =
-        generatePlanning;
-
-    window.clearPlanningForm =
-        clearPlanningForm;
-
-
-    //=========================================================
-    // INICIALIZACIÓN ÚNICA
-    //=========================================================
-
-    async function initializePlanning() {
-
-        console.log(
-            "========================================"
-        );
-
-        console.log(
-            "AulaMind Enterprise 3.0"
-        );
-
-        console.log(
-            "Planning Engine"
-        );
-
-        console.log(
-            "Inicializando módulo curricular..."
-        );
-
-        console.log(
-            "========================================"
-        );
-
-        // Estado inicial
-
-        clearSelect(
-            course,
-            "Seleccione un curso..."
-        );
-
-        clearSelect(
-            subject,
-            "Seleccione una asignatura..."
-        );
-
-        clearSelect(
-            unit,
-            "Seleccione una unidad..."
-        );
-
-        disableSelect(subject);
-        disableSelect(unit);
-
-        clearObjectives();
-
-        resetResult();
-
-        // Cargar cursos
-
-        await loadCourses();
-
-        console.log(
-            "========================================"
-        );
-
-        console.log(
-            "Planning Engine inicializado correctamente"
-        );
-
-        console.log(
-            "========================================"
-        );
-
-    }
-
-
-    //=========================================================
-    // EJECUTAR INICIALIZACIÓN
-    //=========================================================
-
-    console.log("ANTES initializePlanning");
-
-    initializePlanning()
-        .then(() => console.log("initializePlanning OK"))
-        .catch(err =>
-            console.error(
-                "initializePlanning ERROR",
-                err
-            )
-        );
-
-    //=========================================================
-    // CIERRE DOMContentLoaded
-    //=========================================================
+    console.log("========================================");
 
 });
+
+</script>
+
+</body>
+
+</html>

@@ -28,7 +28,6 @@ logger = logging.getLogger(__name__)
 
 
 class PlanningService:
-
     """
     Motor principal de generación de planificaciones IA.
     """
@@ -38,7 +37,6 @@ class PlanningService:
     # =====================================================
 
     def __init__(self):
-
         self.ai = OpenAIService()
 
     # =====================================================
@@ -49,13 +47,9 @@ class PlanningService:
     def validate(data):
 
         required = [
-
             "curso",
             "asignatura",
-            "unidad",
-            "objetivos",
-            "tema"
-
+            "unidad"
         ]
 
         for field in required:
@@ -66,12 +60,10 @@ class PlanningService:
                 return False, f"El campo '{field}' es obligatorio."
 
             if isinstance(value, str):
-
                 if value.strip() == "":
                     return False, f"El campo '{field}' es obligatorio."
 
             elif isinstance(value, list):
-
                 if len(value) == 0:
                     return False, f"El campo '{field}' es obligatorio."
 
@@ -89,28 +81,45 @@ class PlanningService:
 
         result = {}
 
+        aliases = {
+            "course": "curso",
+            "subject": "asignatura",
+            "unit": "unidad",
+            "objectives": "objetivos",
+            "learning_objectives": "objetivos",
+            "selected_objectives": "objetivos",
+            "topic": "tema",
+            "duration": "duracion",
+            "class_type": "tipo",
+            "methodology": "metodologia",
+            "evaluation": "evaluacion",
+            "resources": "recursos",
+            "notes": "observaciones",
+        }
+
         for key, value in data.items():
+            key = aliases.get(key, key)
 
             if value is None:
-
                 result[key] = ""
-
                 continue
-
+  
             if isinstance(value, list):
 
-                result[key] = [
+                clean = []
 
-                    str(item).strip()
+                for item in value:
 
-                    for item in value
+                    if isinstance(item, dict):
+                        clean.append(item)
+                    else:
+                        text = str(item).strip()
+                        if text:
+                            clean.append(text)
 
-                    if str(item).strip()
-
-                ]
+                result[key] = clean
 
             else:
-
                 result[key] = str(value).strip()
 
         return result
@@ -135,7 +144,10 @@ class PlanningService:
                 data.get("objetivo", [])
             ),
 
-            "tema": data.get("tema", ""),
+            "tema": data.get(
+                "tema",
+                data.get("unidad", "")
+            ),
 
             "duracion": data.get(
                 "duracion",
@@ -177,15 +189,12 @@ class PlanningService:
     def format_objectives(objectives):
 
         if objectives is None:
-
             return ""
 
         if isinstance(objectives, str):
-
             return objectives
 
         if not isinstance(objectives, list):
-
             return str(objectives)
 
         lines = []
@@ -195,12 +204,7 @@ class PlanningService:
             if isinstance(item, dict):
 
                 code = item.get("code", "")
-
-                description = item.get(
-                    "description",
-                    ""
-                )
-
+                description = item.get("description", "")
                 if code:
 
                     lines.append(
@@ -216,6 +220,7 @@ class PlanningService:
                 lines.append(str(item))
 
         return "\n".join(lines)
+
     # =====================================================
     # CONSTRUIR PROMPT
     # =====================================================
@@ -313,7 +318,6 @@ La planificación debe incluir obligatoriamente:
 Escribe todo en español.
 """
 
-
     # =====================================================
     # ENRIQUECER PROMPT
     # =====================================================
@@ -370,11 +374,9 @@ directamente a Word.
 No inventes Objetivos de Aprendizaje.
 
 Respeta exactamente los OA entregados.
-
 """
 
         return prompt + extra
-
 
     # =====================================================
     # VALIDAR RESPUESTA IA
@@ -384,37 +386,34 @@ Respeta exactamente los OA entregados.
     def validate_response(response):
 
         if response is None:
-
             return False, "La IA no respondió."
 
         if not isinstance(response, dict):
-
             return False, "Respuesta inválida."
 
         if not response.get("success"):
-
-            return False, response.get(
-
-                "error",
-
-                "Error desconocido."
-
+            return (
+                False,
+                response.get(
+                    "error",
+                    "Error desconocido."
+                )
             )
 
         content = response.get(
-
             "content",
-
             ""
+        )
 
-        ).strip()
+        if not isinstance(content, str):
+            content = str(content)
+
+        content = content.strip()
 
         if content == "":
-
             return False, "La IA no devolvió contenido."
 
         return True, content
-
 
     # =====================================================
     # CONSTRUIR RESPUESTA
@@ -428,9 +427,7 @@ Respeta exactamente los OA entregados.
             "success": True,
 
             "generated_at": datetime.now().strftime(
-
                 "%d-%m-%Y %H:%M"
-
             ),
 
             "curso": context["curso"],
@@ -441,7 +438,27 @@ Respeta exactamente los OA entregados.
 
             "tema": context["tema"],
 
-            "content": content
+            "content": content,
+
+            "metadata": {
+
+                "curso": context["curso"],
+
+                "asignatura": context["asignatura"],
+
+                "unidad": context["unidad"],
+
+                "tema": context["tema"],
+
+                "duracion": context["duracion"],
+
+                "tipo": context["tipo"],
+
+                "metodologia": context["metodologia"],
+
+                "evaluacion": context["evaluacion"]
+
+            }
 
         }
     # =====================================================
@@ -462,91 +479,43 @@ Respeta exactamente los OA entregados.
         logger.info("Tipo       : %s", context["tipo"])
         logger.info("=" * 60)
 
-
     # =====================================================
     # GENERAR PLANIFICACIÓN
     # =====================================================
 
     def generate(self, data):
 
-        # ------------------------------------------
-        # Sanitizar
-        # ------------------------------------------
+        try:
 
-        data = self.sanitize(data)
+            data = self.sanitize(data)
 
-        # ------------------------------------------
-        # Validar
-        # ------------------------------------------
+            valid, message = self.validate(data)
 
-        valid, message = self.validate(data)
+            if not valid:
+                return {
+                    "success": False,
+                    "error": message
+                }
 
-        if not valid:
+            context = self.build_context(data)
 
-            return {
+            objectives = self.format_objectives(
+                context["objetivos"]
+            )
 
-                "success": False,
+            prompt = self.build_prompt(
+                context,
+                objectives
+            )
 
-                "error": message
+            prompt = self.enrich_prompt(prompt)
 
-            }
+            self.log_generation(context)
 
-        # ------------------------------------------
-        # Construir contexto
-        # ------------------------------------------
+            response = self.ai.generate(
 
-        context = self.build_context(data)
-
-        # ------------------------------------------
-        # Formatear OA
-        # ------------------------------------------
-
-        objectives = self.format_objectives(
-
-            context["objetivos"]
-
-        )
-
-        # ------------------------------------------
-        # Construir Prompt
-        # ------------------------------------------
-
-        prompt = self.build_prompt(
-
-            context,
-
-            objectives
-
-        )
-
-        # ------------------------------------------
-        # Enriquecer Prompt
-        # ------------------------------------------
-
-        prompt = self.enrich_prompt(
-
-            prompt
-
-        )
-
-        # ------------------------------------------
-        # Registrar generación
-        # ------------------------------------------
-
-        self.log_generation(
-
-            context
-
-        )
-
-        # ------------------------------------------
-        # Llamar OpenAI
-        # ------------------------------------------
-
-        response = self.ai.generate(
-
-            system_prompt="""
-Eres AulaMind Enterprise.
+                system_prompt="""
+Eres AulaMind Enterprise 3.0.
 
 Especialista en planificación curricular del
 Ministerio de Educación de Chile.
@@ -555,47 +524,37 @@ Responde únicamente en español.
 
 No inventes Objetivos de Aprendizaje.
 
-Respeta siempre la información curricular entregada.
-
-Genera documentos profesionales,
-claros y pedagógicos.
+Respeta exactamente el currículo entregado.
 """,
 
-            user_prompt=prompt
+                user_prompt=prompt
 
-        )
+            )
 
-        # ------------------------------------------
-        # Validar respuesta
-        # ------------------------------------------
+            ok, result = self.validate_response(response)
 
-        ok, result = self.validate_response(
+            if not ok:
+                return {
+                    "success": False,
+                    "error": result
+                }
 
-            response
+            return self.build_response(
+                context,
+                result
+            )
 
-        )
+        except Exception as e:
 
-        if not ok:
+            logger.exception(
+                "Error PlanningService.generate()"
+            )
 
             return {
-
                 "success": False,
-
-                "error": result
-
+                "error": str(e)
             }
 
-        # ------------------------------------------
-        # Construir respuesta
-        # ------------------------------------------
-
-        return self.build_response(
-
-            context,
-
-            result
-
-        )
     # =====================================================
     # VISTA PREVIA
     # =====================================================
@@ -607,11 +566,8 @@ claros y pedagógicos.
         context = self.build_context(data)
 
         objectives = self.format_objectives(
-
             context["objetivos"]
-
         )
-
         return {
 
             "success": True,
@@ -690,7 +646,10 @@ claros y pedagógicos.
 
                     "code": "OA 11",
 
-                    "description": "Resolver problemas de suma y resta de fracciones."
+                    "description": (
+                        "Resolver problemas de suma y resta "
+                        "de fracciones."
+                    )
 
                 }
 
@@ -706,7 +665,10 @@ claros y pedagógicos.
 
             "evaluacion": "Formativa",
 
-            "recursos": "Pizarra, guía de trabajo, material concreto.",
+            "recursos": (
+                "Pizarra, guía de trabajo, "
+                "material concreto."
+            ),
 
             "observaciones": ""
 

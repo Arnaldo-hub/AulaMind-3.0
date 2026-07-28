@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from functools import wraps
 
 from flask import (
     Blueprint,
@@ -39,66 +40,59 @@ planning = Blueprint(
 # UTILIDADES
 # ==========================================================
 
-def is_logged():
+def is_logged() -> bool:
     """
-    Verifica si existe una sesión iniciada.
+    Indica si existe una sesión activa.
     """
+    return session.get("user_id") is not None
 
-    return "user_id" in session
 
-
-def login_required():
+def current_user() -> dict:
     """
-    Redirecciona al login si el usuario
-    no está autenticado.
+    Retorna la información del usuario autenticado.
     """
-
-    if not is_logged():
-
-        return redirect(
-            url_for("auth.login")
-        )
-
-    return None
-
-
-def current_user():
-
     return {
-
         "id": session.get("user_id"),
-
         "name": session.get("user_name"),
-
         "email": session.get("user_email")
-
     }
 
 
-def success(data=None):
+def login_required(view):
+    """
+    Decorador para proteger rutas.
+    """
+
+    @wraps(view)
+    def wrapper(*args, **kwargs):
+
+        if not is_logged():
+            return redirect(url_for("auth.login"))
+
+        return view(*args, **kwargs)
+
+    return wrapper
+
+
+def success(data=None, status=200):
 
     response = {
-
         "success": True
-
     }
 
     if data:
-
         response.update(data)
 
-    return jsonify(response)
+    return jsonify(response), status
 
 
 def error(message, status=400):
 
     return jsonify({
-
         "success": False,
-
         "message": message
-
     }), status
+
 
 
 # ==========================================================
@@ -106,13 +100,8 @@ def error(message, status=400):
 # ==========================================================
 
 @planning.route("/")
+@login_required
 def index():
-
-    auth = login_required()
-
-    if auth:
-
-        return auth
 
     return render_template(
 
@@ -140,13 +129,8 @@ def index():
 # ==========================================================
 
 @planning.route("/new")
+@login_required
 def new_planning():
-
-    auth = login_required()
-
-    if auth:
-
-        return auth
 
     return render_template(
 
@@ -200,13 +184,8 @@ def health():
 # ==========================================================
 
 @planning.route("/info")
+@login_required
 def info():
-
-    auth = login_required()
-
-    if auth:
-
-        return auth
 
     return success({
 
@@ -320,45 +299,113 @@ def api_objectives(course, subject, unit):
             )
 
     })
-    # ==========================================================
+
+# ==========================================================
 # GENERAR PLANIFICACIÓN IA
 # ==========================================================
 
 @planning.route("/generate", methods=["POST"])
+@login_required
 def generate():
 
-    auth = login_required()
+    try:
 
-    if auth:
+        data = request.get_json(silent=True)
 
-        return auth
+        if not data:
+            return error(
+                "No se recibieron datos.",
+                400
+            )
 
-    data = request.get_json()
+        required = [
+            "course",
+            "subject",
+            "unit"
+        ]
 
-    if data is None:
+        missing = [
+            field
+            for field in required
+            if not data.get(field)
+        ]
 
-        return error(
+        if missing:
 
-            "No se recibieron datos.",
+            return error(
+                f"Campos obligatorios faltantes: {', '.join(missing)}",
+                400
+            )
 
-            400
+        objectives = data.get("objectives")
 
+        if objectives is None:
+            objectives = data.get("learning_objectives")
+
+        if objectives is None:
+            objectives = data.get("selected_objectives")
+
+        if objectives is None:
+            objectives = []
+
+        if isinstance(objectives, str):
+            objectives = [objectives]
+
+        data["objectives"] = objectives
+
+        current_app.logger.info(
+            "Generando planificación %s | %s | %s",
+            data["course"],
+            data["subject"],
+            data["unit"]
         )
 
-    result = planning_service.generate(data)
+        result = planning_service.generate(data)
 
-    if result.get("success"):
-        try:
-            document_id = persistence_service.save_generated_document(
-                user_id=session.get("user_id"),
-                school_id=session.get("school_id"),
-                document_type="planning",
-                payload=data,
-                result=result,
+        if not isinstance(result, dict):
+
+            return error(
+                "planning_service devolvió una respuesta inválida.",
+                500
             )
-            result["document_id"] = document_id
-        except Exception as exc:
-            current_app.logger.exception("No se pudo persistir la planificación")
-            result["persistence_warning"] = str(exc)
 
-    return jsonify(result)
+        if result.get("success"):
+
+            try:
+
+                document_id = persistence_service.save_generated_document(
+
+                    user_id=session.get("user_id"),
+
+                    school_id=session.get("school_id"),
+
+                    document_type="planning",
+
+                    payload=data,
+
+                    result=result
+
+                )
+
+                result["document_id"] = document_id
+
+            except Exception:
+
+                current_app.logger.exception(
+                    "Error guardando la planificación."
+                )
+
+                result["persistence_warning"] = True
+
+        return jsonify(result)
+
+    except Exception:
+
+        current_app.logger.exception(
+            "Error inesperado en Planning.generate()"
+        )
+
+        return error(
+            "Error interno al generar la planificación.",
+            500
+        )
