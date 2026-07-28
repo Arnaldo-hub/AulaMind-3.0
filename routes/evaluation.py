@@ -11,7 +11,6 @@ from flask import (
 from services.evaluation_service import EvaluationService
 from services.persistence_service import persistence_service
 
-
 evaluation = Blueprint(
     "evaluation",
     __name__,
@@ -19,7 +18,6 @@ evaluation = Blueprint(
 )
 
 evaluation_service = EvaluationService()
-
 
 # ==========================================================
 # PÁGINA PRINCIPAL
@@ -40,7 +38,6 @@ def index():
         evaluation_count=stats.get("evaluation_count", 0),
         dashboard_stats=stats
     )
-
 
 # ==========================================================
 # GENERAR EVALUACIÓN
@@ -73,7 +70,7 @@ def generate():
 
             result["document_id"] = document_id
 
-        return jsonify(result)
+            return jsonify(result)
 
     except Exception as ex:
 
@@ -81,7 +78,6 @@ def generate():
             success=False,
             error=str(ex)
         ), 500
-
 
 # ==========================================================
 # HISTORIAL
@@ -106,12 +102,11 @@ def history():
         items=items
     )
 
-
 # ==========================================================
 # OBTENER DOCUMENTO
 # ==========================================================
 
-@evaluation.route("/<int:document_id>")
+@evaluation.route("/<document_id>")  # ← FIX: Agregado <document_id>
 def get_document(document_id):
 
     if "user_id" not in session:
@@ -156,13 +151,12 @@ def get_document(document_id):
 
     )
 
-
 # ==========================================================
 # ELIMINAR DOCUMENTO
 # ==========================================================
 
 @evaluation.route(
-    "/<int:document_id>",
+    "/<document_id>",  # ← FIX: Agregado <document_id>
     methods=["DELETE"]
 )
 def delete_document(document_id):
@@ -189,12 +183,11 @@ def delete_document(document_id):
         success=True
     )
 
-
 # ==========================================================
 # ENLACES DE EXPORTACIÓN
 # ==========================================================
 
-@evaluation.route("/export-links/<int:document_id>")
+@evaluation.route("/export-links/<document_id>")  # ← FIX: Agregado <document_id>
 def export_links(document_id):
 
     if "user_id" not in session:
@@ -231,7 +224,6 @@ def export_links(document_id):
 
     )
 
-
 # ==========================================================
 # DASHBOARD
 # ==========================================================
@@ -253,7 +245,6 @@ def dashboard():
         success=True,
         stats=stats
     )
-
 
 # ==========================================================
 # BUSCAR
