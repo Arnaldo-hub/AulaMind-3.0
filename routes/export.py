@@ -32,7 +32,7 @@ export = Blueprint(
 # DESCARGAR WORD
 # ==========================================================
 
-@export.route("/word/<int:document_id>", methods=["GET"])
+@export.route("/word/<document_id>", methods=["GET"])  # ← FIX
 def export_word(document_id):
 
     if "user_id" not in session:
@@ -101,7 +101,7 @@ def export_word(document_id):
 # DESCARGAR PDF
 # ==========================================================
 
-@export.route("/pdf/<int:document_id>", methods=["GET"])
+@export.route("/pdf/<document_id>", methods=["GET"])   # ← FIX
 def export_pdf(document_id):
 
     if "user_id" not in session:
@@ -170,7 +170,7 @@ def export_pdf(document_id):
 # INFORMACIÓN DEL DOCUMENTO
 # ==========================================================
 
-@export.route("/info/<int:document_id>", methods=["GET"])
+@export.route("/info/<document_id>", methods=["GET"])  # ← FIX
 def document_info(document_id):
 
     if "user_id" not in session:
