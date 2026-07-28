@@ -122,7 +122,7 @@ def history():
 # OBTENER DOCUMENTO
 # ==========================================================
 
-@guides.route("/<document_id>")
+@guides.route("/export-links/<document_id>")
 def get_document(document_id):
 
     if "user_id" not in session:
