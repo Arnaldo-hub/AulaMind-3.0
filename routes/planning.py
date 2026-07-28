@@ -235,69 +235,47 @@ def api_courses():
 # API ASIGNATURAS
 # ==========================================================
 
-@planning.route("/api/curriculum/subjects/<course>", methods=["GET"])
+@planning.route("/api/curriculum/subjects/<course>", methods=["GET"])  # ← FIX
 def api_subjects(course):
-
     return jsonify({
-
         "success": True,
-
         "subjects": curriculum_service.get_subjects(course)
-
     })
-
 
 # ==========================================================
 # API UNIDADES
 # ==========================================================
 
 @planning.route(
-    "/api/curriculum/units/<course>/<subject>",
+    "/api/curriculum/units/<course>/<subject>",  # ← FIX
     methods=["GET"]
 )
 def api_units(course, subject):
-
     return jsonify({
-
         "success": True,
-
         "units": curriculum_service.get_units(
-
             course,
-
             subject
-
         )
-
     })
-
 
 # ==========================================================
 # API OA
 # ==========================================================
 
 @planning.route(
-    "/api/curriculum/objectives/<course>/<subject>/<unit>",
+    "/api/curriculum/objectives/<course>/<subject>/<unit>",  # ← FIX
     methods=["GET"]
 )
 def api_objectives(course, subject, unit):
-
     return jsonify({
-
         "success": True,
-
         "objectives":
-
             curriculum_service.get_learning_objectives(
-
                 course,
-
                 subject,
-
                 unit
-
             )
-
     })
 
 # ==========================================================
