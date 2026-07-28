@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AulaMind Enterprise | Analítica</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --bg: #f3f4f6;
+            --card: #ffffff;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .header p {
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        /* KPIs */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .kpi-card {
+            background: var(--card);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .kpi-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-value {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .kpi-value.success { color: var(--success); }
+        .kpi-value.warning { color: var(--warning); }
+        .kpi-value.danger { color: var(--danger); }
+
+        /* Alertas */
+        .alerts-section { margin-bottom: 2rem; }
+
+        .section-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .alert-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid;
+        }
+
+        .alert-card.critical {
+            background: #fef2f2;
+            border-color: var(--danger);
+        }
+
+        .alert-card.warning {
+            background: #fffbeb;
+            border-color: var(--warning);
+        }
+
+        .alert-card.info {
+            background: #eff6ff;
+            border-color: var(--info);
+        }
+
+        .alert-icon {
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .alert-title {
+            font-weight: 600;
+            font-size: 0.9375rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .alert-message {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Gráficos */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            background: var(--card);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+
+        .chart-card h3 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 260px;
+        }
+
+        /* Rankings */
+        .rankings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .ranking-card {
+            background: var(--card);
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid var(--border);
+        }
+
+        .ranking-card h3 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        .ranking-table th {
+            text-align: left;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .ranking-table td {
+            padding: 0.625rem 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ranking-table tr:last-child td { border-bottom: none; }
+
+        .score-badge {
+            display: inline-block;
+            padding: 0.125rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .score-badge.high { background: #d1fae5; color: #065f46; }
+        .score-badge.medium { background: #fef3c7; color: #92400e; }
+        .score-badge.low { background: #fee2e2; color: #991b1b; }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1rem;
+            opacity: 0.4;
+        }
+
+        @media (max-width: 640px) {
+            .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+            .charts-grid, .rankings-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="{{ url_for('dashboard.home') }}" class="back-link">
+        ← Volver al Dashboard
+    </a>
+
+    <div class="header">
+        <h1>Analítica Curricular</h1>
+        <p>Estadísticas de cobertura, completitud y calidad del currículo.</p>
+    </div>
+
+    {% if report %}
+
+    <!-- KPIs -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-label">Documentos</div>
+            <div class="kpi-value">{{ report.kpis.documents }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Cobertura</div>
+            <div class="kpi-value {% if report.kpis.coverage >= 90 %}success{% elif report.kpis.coverage >= 70 %}warning{% else %}danger{% endif %}">
+                {{ "%.1f"|format(report.kpis.coverage) }}%
+            </div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Completitud Promedio</div>
+            <div class="kpi-value">{{ "%.1f"|format(report.kpis.average_completeness) }}%</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Válidos</div>
+            <div class="kpi-value success">{{ report.kpis.valid }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Incompletos</div>
+            <div class="kpi-value warning">{{ report.kpis.incomplete }}</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Duplicados</div>
+            <div class="kpi-value danger">{{ report.kpis.duplicates }}</div>
+        </div>
+    </div>
+
+    <!-- Alertas -->
+    {% if report.alerts %}
+    <div class="alerts-section">
+        <h2 class="section-title">Alertas</h2>
+        {% for alert in report.alerts %}
+        <div class="alert-card {{ alert.level }}">
+            <div class="alert-icon">
+                {% if alert.level == 'critical' %}⚠️{% elif alert.level == 'warning' %}🔔{% else %}ℹ️{% endif %}
+            </div>
+            <div>
+                <div class="alert-title">{{ alert.title }}</div>
+                <div class="alert-message">{{ alert.message }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Gráficos -->
+    {% if report.charts %}
+    <div class="charts-grid">
+        {% for chart in report.charts %}
+        <div class="chart-card">
+            <h3>{{ chart.title }}</h3>
+            <div class="chart-wrapper">
+                <canvas id="chart-{{ loop.index }}"></canvas>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Rankings -->
+    {% if report.rankings %}
+    <div class="rankings-grid">
+        {% for ranking in report.rankings %}
+        <div class="ranking-card">
+            <h3>{{ ranking.title }}</h3>
+            {% if ranking.items %}
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>Documento</th>
+                        <th>Puntaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in ranking.items %}
+                    <tr>
+                        <td>{{ item.path or item.name or item.title or 'Sin nombre' }}</td>
+                        <td>
+                            {% set score = item.score | default(0) %}
+                            <span class="score-badge {% if score >= 80 %}high{% elif score >= 50 %}medium{% else %}low{% endif %}">
+                                {{ "%.0f"|format(score) }}%
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">Sin datos para mostrar.</div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% else %}
+
+    <div class="empty-state">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        <h3>No se pudo cargar el reporte</h3>
+        <p>Verifica que la carpeta <code>data_curricular</code> contenga archivos válidos.</p>
+    </div>
+
+    {% endif %}
+
+</div>
+
+<script>
+    // Renderizar gráficos Chart.js desde los datos del reporte
+    {% if report and report.charts %}
+    {% for chart in report.charts %}
+    (function() {
+        const ctx = document.getElementById('chart-{{ loop.index }}').getContext('2d');
+        new Chart(ctx, {
+            type: '{{ 'doughnut' if loop.index == 1 else 'bar' }}',
+            data: {
+                labels: {{ chart.labels | tojson }},
+                datasets: [{
+                    label: 'Cantidad',
+                    data: {{ chart.values | tojson }},
+                    backgroundColor: [
+                        '#2563eb', '#10b981', '#f59e0b', '#ef4444',
+                        '#8b5cf6', '#ec4899', '#06b6d4', '#84cc16'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { padding: 16, usePointStyle: true }
+                    }
+                }
+            }
+        });
+    })();
+    {% endfor %}
+    {% endif %}
+</script>
+
+</body>
+</html>

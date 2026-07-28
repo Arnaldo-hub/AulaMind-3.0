@@ -58,6 +58,7 @@ from routes.curriculum_api_v4 import curriculum_api_v4
 from routes.evaluation import evaluation
 from routes.admin_security import admin_security
 from routes.password_reset import password_reset
+from routes.analytics import analytics  # ← NUEVO
 
 # ==========================================================
 # CREAR APP
@@ -100,6 +101,7 @@ app.register_blueprint(evaluation)
 app.register_blueprint(admin_security)
 app.register_blueprint(password_reset, url_prefix="/auth")
 app.register_blueprint(export)
+app.register_blueprint(analytics)  # ← NUEVO
 
 # ==========================================================
 # RUTA RAÍZ
