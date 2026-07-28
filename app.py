@@ -30,12 +30,16 @@ from routes.export import export
 
 # ==========================================================
 # IMPORTAR TODOS LOS MODELOS
-# (Necesario para que SQLAlchemy cree las tablas)
+# (Necesario para que SQLAlchemy registre el metadata completo)
 # ==========================================================
 
 from models.user import User
 from models.school import School
 from models.subscription import Subscription
+from models.course import Course
+from models.subject import Subject
+from models.unit import Unit
+from models.learning_objective import LearningObjective
 from models.document import Document
 from models.ai_generation import AIGeneration
 from models.export import Export
