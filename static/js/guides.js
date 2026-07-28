@@ -10,6 +10,98 @@ document.addEventListener("DOMContentLoaded", () => {
     const CONFIG = window.GUIDE_CONFIG || {};
     const CSRF_TOKEN = document.getElementById("csrf_token")?.value || "";
 
+        /**********************************************************************
+     * CARGA EN CASCADA DEL CURRÍCULO MINEDUC
+     **********************************************************************/
+
+    const API_BASE = "/planning/api/curriculum";
+
+    async function populateSelect(url, selectId, placeholder) {
+        const select = document.getElementById(selectId);
+        if (!select) return;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            if (!data.success) throw new Error(data.message || "Error API");
+            select.innerHTML = `<option value="">${placeholder}</option>`;
+            data[selectId === "curso" ? "courses" : selectId === "asignatura" ? "subjects" : selectId === "unidad" ? "units" : "objectives"].forEach(item => {
+                const opt = document.createElement("option");
+                opt.value = item;
+                opt.textContent = item;
+                select.appendChild(opt);
+            });
+            select.disabled = false;
+        } catch (err) {
+            console.error(`Error cargando ${selectId}:`, err);
+            select.innerHTML = `<option value="">Error cargando datos</option>`;
+        }
+    }
+
+    // Cargar cursos al iniciar
+    (async () => {
+        await populateSelect(`${API_BASE}/courses`, "curso", "Selecciona un curso...");
+    })();
+
+    // Curso → Asignaturas
+    document.getElementById("curso")?.addEventListener("change", async function () {
+        const course = this.value;
+        const asignatura = document.getElementById("asignatura");
+        const unidad = document.getElementById("unidad");
+        const objetivo = document.getElementById("objetivo");
+
+        asignatura.innerHTML = '<option value="">Selecciona una asignatura...</option>';
+        unidad.innerHTML = '<option value="">Selecciona una unidad...</option>';
+        objetivo.innerHTML = '<option value="">Selecciona un OA...</option>';
+        asignatura.disabled = !course;
+        unidad.disabled = true;
+        objetivo.disabled = true;
+
+        if (!course) return;
+        await populateSelect(
+            `${API_BASE}/subjects/${encodeURIComponent(course)}`,
+            "asignatura",
+            "Selecciona una asignatura..."
+        );
+    });
+
+    // Asignatura → Unidades
+    document.getElementById("asignatura")?.addEventListener("change", async function () {
+        const course = document.getElementById("curso").value;
+        const subject = this.value;
+        const unidad = document.getElementById("unidad");
+        const objetivo = document.getElementById("objetivo");
+
+        unidad.innerHTML = '<option value="">Selecciona una unidad...</option>';
+        objetivo.innerHTML = '<option value="">Selecciona un OA...</option>';
+        unidad.disabled = !subject;
+        objetivo.disabled = true;
+
+        if (!subject) return;
+        await populateSelect(
+            `${API_BASE}/units/${encodeURIComponent(course)}/${encodeURIComponent(subject)}`,
+            "unidad",
+            "Selecciona una unidad..."
+        );
+    });
+
+    // Unidad → OAs
+    document.getElementById("unidad")?.addEventListener("change", async function () {
+        const course = document.getElementById("curso").value;
+        const subject = document.getElementById("asignatura").value;
+        const unit = this.value;
+        const objetivo = document.getElementById("objetivo");
+
+        objetivo.innerHTML = '<option value="">Selecciona un OA...</option>';
+        objetivo.disabled = !unit;
+
+        if (!unit) return;
+        await populateSelect(
+            `${API_BASE}/objectives/${encodeURIComponent(course)}/${encodeURIComponent(subject)}/${encodeURIComponent(unit)}`,
+            "objetivo",
+            "Selecciona un OA..."
+        );
+    });
+
     const URLS = {
         generate: CONFIG.generateUrl,
         history: CONFIG.historyUrl,
