@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const CONFIG = window.GUIDE_CONFIG || {};
     const CSRF_TOKEN = document.getElementById("csrf_token")?.value || "";
 
-        /**********************************************************************
+    /**********************************************************************
      * CARGA EN CASCADA DEL CURRÍCULO MINEDUC
      **********************************************************************/
 
@@ -23,17 +23,26 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(url);
             const data = await response.json();
             if (!data.success) throw new Error(data.message || "Error API");
+
             select.innerHTML = `<option value="">${placeholder}</option>`;
-            data[selectId === "curso" ? "courses" : selectId === "asignatura" ? "subjects" : selectId === "unidad" ? "units" : "objectives"].forEach(item => {
+
+            const key = selectId === "curso" ? "courses"
+                        : selectId === "asignatura" ? "subjects"
+                        : selectId === "unidad" ? "units"
+                        : "objectives";
+
+            data[key].forEach(item => {
                 const opt = document.createElement("option");
                 opt.value = item;
                 opt.textContent = item;
                 select.appendChild(opt);
             });
+
             select.disabled = false;
         } catch (err) {
             console.error(`Error cargando ${selectId}:`, err);
             select.innerHTML = `<option value="">Error cargando datos</option>`;
+            select.disabled = true;
         }
     }
 
@@ -101,6 +110,10 @@ document.addEventListener("DOMContentLoaded", () => {
             "Selecciona un OA..."
         );
     });
+
+    /**********************************************************************
+     * RESTO DEL MÓDULO (sin cambios en la lógica)
+     **********************************************************************/
 
     const URLS = {
         generate: CONFIG.generateUrl,
@@ -240,7 +253,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!confirm("¿Desea eliminar esta guía?")) return;
         showLoading();
         try {
-            await request(URLS.document(documentId), { method: "DELETE" });
+            await request(URLS.document(documentId), {
+                method: "DELETE",
+                body: JSON.stringify({ csrf_token: CSRF_TOKEN })
+            });
             if (currentDocument === documentId) clearResult();
             await loadHistory();
             showToast("Guía eliminada.");
@@ -293,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
     historyBody?.addEventListener("click", async (e) => {
         const btn = e.target.closest("button");
         if (!btn) return;
-        const id = parseInt(btn.dataset.id);
+        const id = btn.dataset.id; // ← SIN parseInt
         if (btn.classList.contains("btn-open")) { await openDocument(id); return; }
         if (btn.classList.contains("btn-delete")) { await deleteDocument(id); return; }
         if (btn.classList.contains("btn-word")) { currentDocument = id; await loadExportLinks(); exportWord(); return; }
