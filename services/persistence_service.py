@@ -180,7 +180,7 @@ class PersistenceService:
     def get_document(document_id, user_id):
         db = SessionLocal()
         try:
-            document_id = int(document_id)  # ← FORZAR INT
+           
             query = select(Document).where(
                 Document.id == document_id,
                 Document.user_id == str(user_id)
@@ -193,7 +193,7 @@ class PersistenceService:
     def delete_document(document_id, user_id):
         db = SessionLocal()
         try:
-            document_id = int(document_id)  # ← FORZAR INT
+           
             document = db.execute(
                 select(Document).where(
                     Document.id == document_id,
