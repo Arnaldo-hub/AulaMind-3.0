@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             historyBody.innerHTML = "";
             response.items.forEach(function(doc) {
-                var created = doc.created_at ? new Date(doc.created_at).toLocaleString() : "";
+                var created = doc.created_at ? new Date(doc.created_at + "Z").toLocaleString("es-CL", { timeZone: "America/Santiago", hour12: true }) : "";
                 var tr = document.createElement("tr");
                 tr.innerHTML = 
                     "<td>" + created + "</td>" +
