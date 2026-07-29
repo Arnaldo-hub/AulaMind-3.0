@@ -270,23 +270,18 @@ class CurriculumService:
         return str(text).strip()
 
 
-       # ======================================================
-    # NORMALIZAR CURSO
-    # ======================================================
-
-      # ======================================================
+        # ======================================================
     # NORMALIZAR CURSO
     # ======================================================
 
     @staticmethod
     def normalize_course(course):
-
         import re
 
         if not course:
             return ""
 
-        text = str(course).lower()
+        text = str(course).lower().strip()
 
         text = text.replace("_", " ")
         text = text.replace("medio", " medio")
@@ -295,26 +290,25 @@ class CurriculumService:
         text = text.replace("bás", " básico")
         text = text.replace("bas", " básico")
 
+        # Normalizar 1° básico
         m = re.search(r"([1-8])\s*°?\s*básico", text)
-
         if m:
             return f"{m.group(1)}° Básico"
 
+        # Normalizar 1° medio
         m = re.search(r"([1-4])\s*°?\s*medio", text)
-
         if m:
             return f"{m.group(1)}° Medio"
 
         return ""
 
-            # ======================================================
+    # ======================================================
     # CONSTRUIR ÍNDICES
     # ======================================================
 
     def build_indexes(self):
         """
-        Construye todos los índices curriculares a partir
-        de los JSON cargados.
+        Construye todos los índices curriculares.
         """
 
         logger.info("Construyendo índices curriculares...")
@@ -330,21 +324,9 @@ class CurriculumService:
         total_oa = 0
 
         for document in self.raw_data:
-
             try:
-
-                subject = self.clean(
-                    document.get("asignatura")
-                )
-
-                course = self.normalize_course(
-                     self.clean(
-                       document.get("curso")
-                    )
-                )
-                logger.info(
-                  f"CURSO ORIGINAL: {document.get('curso')} -> {course}"
-                )
+                subject = self.clean(document.get("asignatura"))
+                course = self.normalize_course(self.clean(document.get("curso")))
 
                 if course == "" or subject == "":
                     continue
@@ -352,224 +334,63 @@ class CurriculumService:
                 total_courses.add(course)
                 total_subjects.add(subject)
 
-                # -----------------------------
                 # Curso
-                # -----------------------------
+                self.courses[course] = {"id": course, "name": course}
 
-                self.courses[course] = {
-
-                    "id": course,
-
-                    "name": course
-
-                }
-
-                # -----------------------------
                 # Asignatura
-                # -----------------------------
+                self.subjects[course][subject] = {"id": subject, "name": subject}
 
-                self.subjects[course][subject] = {
-
-                    "id": subject,
-
-                    "name": subject
-
-                }
-
-                # -----------------------------
                 # Unidades
-                # -----------------------------
-
-                for unit in document.get(
-
-                    "unidades",
-
-                    []
-
-                ):
-
-                    unit_name = self.clean(
-
-                        unit.get("nombre")
-
-                    )
-
+                for unit in document.get("unidades", []):
+                    unit_name = self.clean(unit.get("nombre"))
                     if unit_name == "":
                         continue
 
-                    if unit_name not in self.units[course][subject]:
+                    # Normalizar para evitar duplicados por espacios
+                    unit_key = " ".join(unit_name.split())
 
-                        self.units[course][subject][unit_name] = {
-
-                            "id": unit_name,
-
-                            "name": unit_name
-
+                    if unit_key not in self.units[course][subject]:
+                        self.units[course][subject][unit_key] = {
+                            "id": unit_key,
+                            "name": unit_key
                         }
-
                         total_units += 1
 
-                    # -------------------------
                     # OA
-                    # -------------------------
-
-                    for oa in unit.get(
-
-                        "oa",
-
-                        []
-
-                    ):
-
-                        code = self.clean(
-
-                            oa.get("codigo")
-
-                        )
-
-                        description = self.clean(
-
-                            oa.get("descripcion")
-
-                        )
+                    for oa in unit.get("oa", []):
+                        code = self.clean(oa.get("codigo"))
+                        description = self.clean(oa.get("descripcion"))
 
                         if code == "":
                             continue
 
-                        self.learning_objectives[
-                            course
-                        ][
-                            subject
-                        ][
-                            unit_name
-                        ].append({
+                        # Evitar OA duplicados en la misma unidad
+                        existing_codes = [
+                            obj.get("code") for obj in
+                            self.learning_objectives[course][subject][unit_key]
+                        ]
 
-                            "code": code,
-
-                            "description": description
-
-                        })
-
-                        total_oa += 1
+                        if code not in existing_codes:
+                            self.learning_objectives[course][subject][unit_key].append({
+                                "code": code,
+                                "description": description
+                            })
+                            total_oa += 1
 
             except Exception as ex:
-
                 logger.warning(ex)
 
-        # -----------------------------------
-
-        self.stats["courses"] = len(
-
-            total_courses
-
-        )
-
-        self.stats["subjects"] = len(
-
-            total_subjects
-
-        )
-
+        self.stats["courses"] = len(total_courses)
+        self.stats["subjects"] = len(total_subjects)
         self.stats["units"] = total_units
-
         self.stats["oa"] = total_oa
 
-        logger.info(
-
-            f"Cursos: {self.stats['courses']}"
-
-        )
-
-        logger.info(
-
-            f"Asignaturas: {self.stats['subjects']}"
-
-        )
-
-        logger.info(
-
-            f"Unidades: {self.stats['units']}"
-
-        )
-
-        logger.info(
-
-            f"OA: {self.stats['oa']}"
-
-        )
-
+        logger.info(f"Cursos: {self.stats['courses']}")
+        logger.info(f"Asignaturas: {self.stats['subjects']}")
+        logger.info(f"Unidades: {self.stats['units']}")
+        logger.info(f"OA: {self.stats['oa']}")
 
     # ======================================================
-    # INICIALIZAR ÍNDICES
-    # ======================================================
-
-    def initialize(self):
-
-        """
-        Construye todos los índices después
-        de cargar los JSON.
-        """
-
-        self.build_indexes()
-
-        logger.info(
-
-            "Currículum listo."
-
-        )
-
-
-    # ======================================================
-    # RELOAD
-    # ======================================================
-
-    def reload(self):
-
-        """
-        Recarga completamente el currículum.
-        """
-
-        logger.info(
-
-            "Recargando currículum..."
-
-        )
-
-        self.raw_data.clear()
-
-        self.load()
-
-        self.initialize()
-
-        logger.info(
-
-            "Currículum actualizado."
-
-        )
-
-
-    # ======================================================
-    # ESTADÍSTICAS
-    # ======================================================
-
-    def statistics(self):
-
-        return {
-
-            "json": self.stats["json"],
-
-            "courses": self.stats["courses"],
-
-            "subjects": self.stats["subjects"],
-
-            "units": self.stats["units"],
-
-            "learning_objectives":
-
-                self.stats["oa"]
-
-        }
-            # ======================================================
     # CURSOS
     # ======================================================
 
@@ -579,36 +400,19 @@ class CurriculumService:
         """
 
         order = [
-
-            "1° básico",
-            "2° básico",
-            "3° básico",
-            "4° básico",
-            "5° básico",
-            "6° básico",
-            "7° básico",
-            "8° básico",
-            "1° medio",
-            "2° medio",
-            "3° medio",
-            "4° medio"
-
+            "1° Básico", "2° Básico", "3° Básico", "4° Básico",
+            "5° Básico", "6° Básico", "7° Básico", "8° Básico",
+            "1° Medio", "2° Medio", "3° Medio", "4° Medio"
         ]
 
         courses = list(self.courses.keys())
 
-        courses.sort(
+        def sort_key(value):
+            if value in order:
+                return order.index(value)
+            return 999
 
-            key=lambda value:
-
-            order.index(value)
-
-            if value in order
-
-            else 999
-
-        )
-
+        courses.sort(key=sort_key)
         return courses
 
 

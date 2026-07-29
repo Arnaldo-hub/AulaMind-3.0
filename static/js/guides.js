@@ -31,10 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
                         : selectId === "unidad" ? "units"
                         : "objectives";
 
-            data[key].forEach(item => {
+             data[key].forEach(item => {
                 const opt = document.createElement("option");
-                opt.value = item;
-                opt.textContent = item;
+                
+                // Manejar OA como objeto {code, description}
+                if (typeof item === "object" && item !== null && item.code) {
+                    opt.value = item.code;
+                    opt.textContent = `${item.code} - ${item.description || ""}`;
+                    opt.title = item.description || item.code;
+                } else {
+                    opt.value = item;
+                    opt.textContent = item;
+                }
+                
                 select.appendChild(opt);
             });
 
