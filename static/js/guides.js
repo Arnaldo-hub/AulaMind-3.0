@@ -259,8 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!confirm("¿Desea eliminar esta guía?")) return;
         showLoading();
         try {
-            var url = URLS.document(documentId) + "?csrf_token=" + encodeURIComponent(CSRF_TOKEN);
-            await request(url, { method: "DELETE" });
+            await request("/guides/delete/" + documentId, { method: "POST", body: JSON.stringify({ csrf_token: CSRF_TOKEN }) });
             if (currentDocument === documentId) clearResult();
             await loadHistory();
             showToast("Guía eliminada.");

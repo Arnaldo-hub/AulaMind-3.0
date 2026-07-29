@@ -104,3 +104,12 @@ def search():
     document_type = request.args.get("type")
     items = persistence_service.list_documents(session["user_id"], document_type)
     return jsonify(success=True, items=items)
+
+@guides.route("/delete/<document_id>", methods=["POST"])
+def delete_guide_post(document_id):
+    if "user_id" not in session:
+        return jsonify(success=False, error="No autenticado"), 401
+    deleted = persistence_service.delete_document(document_id, session["user_id"])
+    if not deleted:
+        return jsonify(success=False, error="Documento no encontrado"), 404
+    return jsonify(success=True)
