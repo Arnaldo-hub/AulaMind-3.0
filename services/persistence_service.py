@@ -176,7 +176,7 @@ class PersistenceService:
     # OBTENER DOCUMENTO
     # ==========================================================
 
-      @staticmethod
+    @staticmethod
     def get_document(document_id, user_id):
         db = SessionLocal()
         try:
