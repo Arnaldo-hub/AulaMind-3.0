@@ -1,7 +1,5 @@
-/******************************************************************************
- * AulaMind Enterprise 3.0
- * static/js/guides.js
- * Módulo: Guías de Apoyo IA
+﻿/******************************************************************************
+ * AulaMind Enterprise 3.0 - Guías de Apoyo IA
  ******************************************************************************/
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,126 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const CONFIG = window.GUIDE_CONFIG || {};
     const CSRF_TOKEN = document.getElementById("csrf_token")?.value || "";
-
-    /**********************************************************************
-     * CARGA EN CASCADA DEL CURRÍCULO MINEDUC
-     **********************************************************************/
-
     const API_BASE = "/planning/api/curriculum";
-
-    async function populateSelect(url, selectId, placeholder) {
-        const select = document.getElementById(selectId);
-        if (!select) return;
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-            if (!data.success) throw new Error(data.message || "Error API");
-
-            select.innerHTML = `<option value="">${placeholder}</option>`;
-
-            const key = selectId === "curso" ? "courses"
-                        : selectId === "asignatura" ? "subjects"
-                        : selectId === "unidad" ? "units"
-                        : "objectives";
-
-             data[key].forEach(item => {
-                const opt = document.createElement("option");
-                
-                // Manejar OA como objeto {code, description}
-                if (typeof item === "object" && item !== null && item.code) {
-                    opt.value = item.code;
-                    opt.textContent = `${item.code} - ${item.description || ""}`;
-                    opt.title = item.description || item.code;
-                } else {
-                    opt.value = item;
-                    opt.textContent = item;
-                }
-                
-                select.appendChild(opt);
-            });
-
-            select.disabled = false;
-        } catch (err) {
-            console.error(`Error cargando ${selectId}:`, err);
-            select.innerHTML = `<option value="">Error cargando datos</option>`;
-            select.disabled = true;
-        }
-    }
-
-    // Cargar cursos al iniciar
-    (async () => {
-        await populateSelect(`${API_BASE}/courses`, "curso", "Selecciona un curso...");
-    })();
-
-    // Curso → Asignaturas
-    document.getElementById("curso")?.addEventListener("change", async function () {
-        const course = this.value;
-        const asignatura = document.getElementById("asignatura");
-        const unidad = document.getElementById("unidad");
-        const objetivo = document.getElementById("objetivo");
-
-        asignatura.innerHTML = '<option value="">Selecciona una asignatura...</option>';
-        unidad.innerHTML = '<option value="">Selecciona una unidad...</option>';
-        objetivo.innerHTML = '<option value="">Selecciona un OA...</option>';
-        asignatura.disabled = !course;
-        unidad.disabled = true;
-        objetivo.disabled = true;
-
-        if (!course) return;
-        await populateSelect(
-            `${API_BASE}/subjects/${encodeURIComponent(course)}`,
-            "asignatura",
-            "Selecciona una asignatura..."
-        );
-    });
-
-    // Asignatura → Unidades
-    document.getElementById("asignatura")?.addEventListener("change", async function () {
-        const course = document.getElementById("curso").value;
-        const subject = this.value;
-        const unidad = document.getElementById("unidad");
-        const objetivo = document.getElementById("objetivo");
-
-        unidad.innerHTML = '<option value="">Selecciona una unidad...</option>';
-        objetivo.innerHTML = '<option value="">Selecciona un OA...</option>';
-        unidad.disabled = !subject;
-        objetivo.disabled = true;
-
-        if (!subject) return;
-        await populateSelect(
-            `${API_BASE}/units/${encodeURIComponent(course)}/${encodeURIComponent(subject)}`,
-            "unidad",
-            "Selecciona una unidad..."
-        );
-    });
-
-    // Unidad → OAs
-    document.getElementById("unidad")?.addEventListener("change", async function () {
-        const course = document.getElementById("curso").value;
-        const subject = document.getElementById("asignatura").value;
-        const unit = this.value;
-        const objetivo = document.getElementById("objetivo");
-
-        objetivo.innerHTML = '<option value="">Selecciona un OA...</option>';
-        objetivo.disabled = !unit;
-
-        if (!unit) return;
-        await populateSelect(
-            `${API_BASE}/objectives/${encodeURIComponent(course)}/${encodeURIComponent(subject)}/${encodeURIComponent(unit)}`,
-            "objetivo",
-            "Selecciona un OA..."
-        );
-    });
-
-    /**********************************************************************
-     * RESTO DEL MÓDULO (sin cambios en la lógica)
-     **********************************************************************/
 
     const URLS = {
         generate: CONFIG.generateUrl,
         history: CONFIG.historyUrl,
-        document(id) { return `/guides/${id}`; },
-        exportLinks(id) { return `/guides/export-links/${id}`; }
+        document(id) { return /guides/; },
+        exportLinks(id) { return /guides/export-links/; }
     };
 
     const form = document.getElementById("guideForm");
@@ -141,13 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentDocument = null;
     let exportInfo = { word: null, pdf: null };
 
-    function showLoading() {
-        loadingModal?.classList.add("active");
-    }
-
-    function hideLoading() {
-        loadingModal?.classList.remove("active");
-    }
+    function showLoading() { loadingModal?.classList.add("active"); }
+    function hideLoading() { loadingModal?.classList.remove("active"); }
 
     function showToast(message, type = "success") {
         if (!toast) { console.log(message); return; }
@@ -173,31 +53,127 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function request(url, options = {}) {
-        const defaultHeaders = {
-            "Content-Type": "application/json",
-            "X-CSRFToken": CSRF_TOKEN
-        };
-
-        const response = await fetch(url, {
-            ...options,
-            headers: { ...defaultHeaders, ...options.headers }
-        });
-
+        const defaultHeaders = { "Content-Type": "application/json", "X-CSRFToken": CSRF_TOKEN };
+        const response = await fetch(url, { ...options, headers: { ...defaultHeaders, ...options.headers } });
         const data = await response.json();
-        if (!response.ok || data.success === false) {
-            throw new Error(data.error || "Error del servidor.");
-        }
+        if (!response.ok || data.success === false) throw new Error(data.error || "Error del servidor.");
         return data;
     }
+
+    /**********************************************************************
+     * CARGA EN CASCADA DEL CURRÍCULO
+     **********************************************************************/
+
+    async function populateSelect(url, selectId, placeholder) {
+        const select = document.getElementById(selectId);
+        if (!select) return;
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            if (!data.success) throw new Error(data.message || "Error API");
+
+            select.innerHTML = <option value=""></option>;
+
+            const key = selectId === "curso" ? "courses"
+                      : selectId === "asignatura" ? "subjects"
+                      : selectId === "unidad" ? "units"
+                      : "objectives";
+
+            const items = data[key];
+            if (!items || items.length === 0) {
+                select.innerHTML = <option value="">No hay datos disponibles</option>;
+                select.disabled = true;
+                return;
+            }
+
+            items.forEach(item => {
+                const opt = document.createElement("option");
+                if (typeof item === "object" && item !== null) {
+                    if (item.code) {
+                        opt.value = item.code;
+                        opt.textContent = ${item.code} - ;
+                        opt.title = item.description || item.code;
+                    } else if (item.id) {
+                        opt.value = item.id;
+                        opt.textContent = item.name || item.id;
+                    } else if (item.name) {
+                        opt.value = item.name;
+                        opt.textContent = item.name;
+                    } else {
+                        opt.value = JSON.stringify(item);
+                        opt.textContent = item.name || item.id || JSON.stringify(item);
+                    }
+                } else {
+                    opt.value = item;
+                    opt.textContent = item;
+                }
+                select.appendChild(opt);
+            });
+            select.disabled = false;
+        } catch (err) {
+            console.error(Error cargando :, err);
+            select.innerHTML = <option value="">Error cargando datos</option>;
+            select.disabled = true;
+        }
+    }
+
+    // Cargar cursos
+    (async () => { await populateSelect(${API_BASE}/courses, "curso", "Selecciona un curso..."); })();
+
+    document.getElementById("curso")?.addEventListener("change", async function () {
+        const course = this.value;
+        const asignatura = document.getElementById("asignatura");
+        const unidad = document.getElementById("unidad");
+        const objetivo = document.getElementById("objetivo");
+
+        asignatura.innerHTML = <option value="">Selecciona una asignatura...</option>;
+        unidad.innerHTML = <option value="">Selecciona una unidad...</option>;
+        objetivo.innerHTML = <option value="">Selecciona un OA...</option>;
+        asignatura.disabled = !course;
+        unidad.disabled = true;
+        objetivo.disabled = true;
+
+        if (!course) return;
+        await populateSelect(${API_BASE}/subjects/, "asignatura", "Selecciona una asignatura...");
+    });
+
+    document.getElementById("asignatura")?.addEventListener("change", async function () {
+        const course = document.getElementById("curso").value;
+        const subject = this.value;
+        const unidad = document.getElementById("unidad");
+        const objetivo = document.getElementById("objetivo");
+
+        unidad.innerHTML = <option value="">Selecciona una unidad...</option>;
+        objetivo.innerHTML = <option value="">Selecciona un OA...</option>;
+        unidad.disabled = !subject;
+        objetivo.disabled = true;
+
+        if (!subject) return;
+        await populateSelect(${API_BASE}/units//, "unidad", "Selecciona una unidad...");
+    });
+
+    document.getElementById("unidad")?.addEventListener("change", async function () {
+        const course = document.getElementById("curso").value;
+        const subject = document.getElementById("asignatura").value;
+        const unit = this.value;
+        const objetivo = document.getElementById("objetivo");
+
+        objetivo.innerHTML = <option value="">Selecciona un OA...</option>;
+        objetivo.disabled = !unit;
+
+        if (!unit) return;
+        await populateSelect(${API_BASE}/objectives///, "objetivo", "Selecciona un OA...");
+    });
+
+    /**********************************************************************
+     * GENERAR GUÍA
+     **********************************************************************/
 
     async function generateGuide() {
         const payload = Object.fromEntries(new FormData(form).entries());
         showLoading();
         try {
-            const response = await request(URLS.generate, {
-                method: "POST",
-                body: JSON.stringify(payload)
-            });
+            const response = await request(URLS.generate, { method: "POST", body: JSON.stringify(payload) });
             currentDocument = response.document_id;
             showResult(response.content);
             showToast("Guía generada correctamente.");
@@ -211,35 +187,39 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    /**********************************************************************
+     * HISTORIAL
+     **********************************************************************/
+
     async function loadHistory() {
         if (!historyBody) return;
-        historyBody.innerHTML = '<tr><td colspan="4" class="empty-state">Cargando...</td></tr>';
+        historyBody.innerHTML = <tr><td colspan="4" class="empty-state">Cargando...</td></tr>;
         try {
             const response = await request(URLS.history);
             if (!response.items || response.items.length === 0) {
-                historyBody.innerHTML = '<tr><td colspan="4" class="empty-state">No existen guías.</td></tr>';
+                historyBody.innerHTML = <tr><td colspan="4" class="empty-state">No existen guías.</td></tr>;
                 return;
             }
             historyBody.innerHTML = "";
             response.items.forEach(doc => {
                 const created = doc.created_at ? new Date(doc.created_at).toLocaleString() : "";
                 const tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td>${created}</td>
-                    <td>${doc.course || ""}</td>
-                    <td>${doc.subject || ""}</td>
+                tr.innerHTML = 
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td>
-                        <button class="btn-action btn-open" data-id="${doc.id}">Abrir</button>
-                        <button class="btn-action btn-word" data-id="${doc.id}">Word</button>
-                        <button class="btn-action btn-pdf" data-id="${doc.id}">PDF</button>
-                        <button class="btn-action delete btn-delete" data-id="${doc.id}">Eliminar</button>
+                        <button class="btn-action btn-open" data-id="">Abrir</button>
+                        <button class="btn-action btn-word" data-id="">Word</button>
+                        <button class="btn-action btn-pdf" data-id="">PDF</button>
+                        <button class="btn-action delete btn-delete" data-id="">Eliminar</button>
                     </td>
-                `;
+                ;
                 historyBody.appendChild(tr);
             });
         } catch (error) {
             console.error(error);
-            historyBody.innerHTML = '<tr><td colspan="4" class="empty-state">Error cargando historial</td></tr>';
+            historyBody.innerHTML = <tr><td colspan="4" class="empty-state">Error cargando historial</td></tr>;
         }
     }
 
@@ -262,10 +242,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!confirm("¿Desea eliminar esta guía?")) return;
         showLoading();
         try {
-            await request(URLS.document(documentId), {
-                method: "DELETE",
-                body: JSON.stringify({ csrf_token: CSRF_TOKEN })
-            });
+            // DELETE sin body (Flask-WTF no lee body en DELETE)
+            await request(URLS.document(documentId) + ?csrf_token=, { method: "DELETE" });
             if (currentDocument === documentId) clearResult();
             await loadHistory();
             showToast("Guía eliminada.");
@@ -318,13 +296,12 @@ document.addEventListener("DOMContentLoaded", () => {
     historyBody?.addEventListener("click", async (e) => {
         const btn = e.target.closest("button");
         if (!btn) return;
-        const id = btn.dataset.id; // ← SIN parseInt
+        const id = btn.dataset.id;
         if (btn.classList.contains("btn-open")) { await openDocument(id); return; }
         if (btn.classList.contains("btn-delete")) { await deleteDocument(id); return; }
         if (btn.classList.contains("btn-word")) { currentDocument = id; await loadExportLinks(); exportWord(); return; }
         if (btn.classList.contains("btn-pdf")) { currentDocument = id; await loadExportLinks(); exportPdf(); return; }
     });
 
-    // Inicialización
     (async () => { try { await loadHistory(); } catch (e) { console.error(e); } })();
 });

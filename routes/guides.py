@@ -1,4 +1,4 @@
-"""
+﻿"""
 ===========================================================
 AulaMind Enterprise 3.0
 routes/guides.py
@@ -104,4 +104,3 @@ def search():
     document_type = request.args.get("type")
     items = persistence_service.list_documents(session["user_id"], document_type)
     return jsonify(success=True, items=items)
-    
