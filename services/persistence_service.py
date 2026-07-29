@@ -176,22 +176,40 @@ class PersistenceService:
     # OBTENER DOCUMENTO
     # ==========================================================
 
-    @staticmethod
+      @staticmethod
     def get_document(document_id, user_id):
-
         db = SessionLocal()
-
         try:
-
+            document_id = int(document_id)  # ← FORZAR INT
             query = select(Document).where(
                 Document.id == document_id,
                 Document.user_id == str(user_id)
             )
-
             return db.execute(query).scalar_one_or_none()
-
         finally:
+            db.close()
 
+    @staticmethod
+    def delete_document(document_id, user_id):
+        db = SessionLocal()
+        try:
+            document_id = int(document_id)  # ← FORZAR INT
+            document = db.execute(
+                select(Document).where(
+                    Document.id == document_id,
+                    Document.user_id == str(user_id)
+                )
+            ).scalar_one_or_none()
+
+            if document:
+                db.delete(document)
+                db.commit()
+                return True
+            return False
+        except Exception:
+            db.rollback()
+            raise
+        finally:
             db.close()
 
 
