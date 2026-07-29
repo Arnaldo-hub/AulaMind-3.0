@@ -2,39 +2,40 @@
  * AulaMind Enterprise 3.0 - Guías de Apoyo IA
  ******************************************************************************/
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
     "use strict";
 
-    const CONFIG = window.GUIDE_CONFIG || {};
-    const CSRF_TOKEN = document.getElementById("csrf_token")?.value || "";
-    const API_BASE = "/planning/api/curriculum";
+    var CONFIG = window.GUIDE_CONFIG || {};
+    var CSRF_TOKEN = document.getElementById("csrf_token") ? document.getElementById("csrf_token").value : "";
+    var API_BASE = "/planning/api/curriculum";
 
-    const URLS = {
+    var URLS = {
         generate: CONFIG.generateUrl,
         history: CONFIG.historyUrl,
-        document(id) { return /guides/; },
-        exportLinks(id) { return /guides/export-links/; }
+        document: function(id) { return "/guides/" + id; },
+        exportLinks: function(id) { return "/guides/export-links/" + id; }
     };
 
-    const form = document.getElementById("guideForm");
-    const resultSection = document.getElementById("resultSection");
-    const result = document.getElementById("guideResult");
-    const historyBody = document.getElementById("historyBody");
-    const loadingModal = document.getElementById("loadingModal");
-    const toast = document.getElementById("toast");
+    var form = document.getElementById("guideForm");
+    var resultSection = document.getElementById("resultSection");
+    var result = document.getElementById("guideResult");
+    var historyBody = document.getElementById("historyBody");
+    var loadingModal = document.getElementById("loadingModal");
+    var toast = document.getElementById("toast");
 
-    let currentDocument = null;
-    let exportInfo = { word: null, pdf: null };
+    var currentDocument = null;
+    var exportInfo = { word: null, pdf: null };
 
-    function showLoading() { loadingModal?.classList.add("active"); }
-    function hideLoading() { loadingModal?.classList.remove("active"); }
+    function showLoading() { if(loadingModal) loadingModal.classList.add("active"); }
+    function hideLoading() { if(loadingModal) loadingModal.classList.remove("active"); }
 
-    function showToast(message, type = "success") {
+    function showToast(message, type) {
+        type = type || "success";
         if (!toast) { console.log(message); return; }
         toast.textContent = message;
         toast.className = "toast " + type;
-        setTimeout(() => toast.classList.add("show"), 10);
-        setTimeout(() => toast.classList.remove("show"), 3000);
+        setTimeout(function() { toast.classList.add("show"); }, 10);
+        setTimeout(function() { toast.classList.remove("show"); }, 3000);
     }
 
     function showResult(content) {
@@ -52,46 +53,52 @@ document.addEventListener("DOMContentLoaded", () => {
         if (result) result.textContent = "";
     }
 
-    async function request(url, options = {}) {
-        const defaultHeaders = { "Content-Type": "application/json", "X-CSRFToken": CSRF_TOKEN };
-        const response = await fetch(url, { ...options, headers: { ...defaultHeaders, ...options.headers } });
-        const data = await response.json();
-        if (!response.ok || data.success === false) throw new Error(data.error || "Error del servidor.");
+    async function request(url, options) {
+        options = options || {};
+        var defaultHeaders = { "Content-Type": "application/json", "X-CSRFToken": CSRF_TOKEN };
+        var mergedHeaders = Object.assign({}, defaultHeaders, options.headers || {});
+        
+        var response = await fetch(url, Object.assign({}, options, { headers: mergedHeaders }));
+        var data = await response.json();
+        
+        if (!response.ok || data.success === false) {
+            throw new Error(data.error || "Error del servidor.");
+        }
         return data;
     }
 
     /**********************************************************************
-     * CARGA EN CASCADA DEL CURRÍCULO
+     * CARGA EN CASCADA DEL CURRICULO
      **********************************************************************/
 
     async function populateSelect(url, selectId, placeholder) {
-        const select = document.getElementById(selectId);
+        var select = document.getElementById(selectId);
         if (!select) return;
         try {
-            const response = await fetch(url);
-            const data = await response.json();
+            var response = await fetch(url);
+            var data = await response.json();
             if (!data.success) throw new Error(data.message || "Error API");
 
-            select.innerHTML = <option value=""></option>;
+            select.innerHTML = "<option value=\"\">" + placeholder + "</option>";
 
-            const key = selectId === "curso" ? "courses"
+            var key = selectId === "curso" ? "courses"
                       : selectId === "asignatura" ? "subjects"
                       : selectId === "unidad" ? "units"
                       : "objectives";
 
-            const items = data[key];
+            var items = data[key];
             if (!items || items.length === 0) {
-                select.innerHTML = <option value="">No hay datos disponibles</option>;
+                select.innerHTML = "<option value=\"\">No hay datos disponibles</option>";
                 select.disabled = true;
                 return;
             }
 
-            items.forEach(item => {
-                const opt = document.createElement("option");
+            items.forEach(function(item) {
+                var opt = document.createElement("option");
                 if (typeof item === "object" && item !== null) {
                     if (item.code) {
                         opt.value = item.code;
-                        opt.textContent = ${item.code} - ;
+                        opt.textContent = item.code + " - " + (item.description || "");
                         opt.title = item.description || item.code;
                     } else if (item.id) {
                         opt.value = item.id;
@@ -111,69 +118,80 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             select.disabled = false;
         } catch (err) {
-            console.error(Error cargando :, err);
-            select.innerHTML = <option value="">Error cargando datos</option>;
+            console.error("Error cargando " + selectId + ":", err);
+            select.innerHTML = "<option value=\"\">Error cargando datos</option>";
             select.disabled = true;
         }
     }
 
     // Cargar cursos
-    (async () => { await populateSelect(${API_BASE}/courses, "curso", "Selecciona un curso..."); })();
+    (async function() { 
+        await populateSelect(API_BASE + "/courses", "curso", "Selecciona un curso..."); 
+    })();
 
-    document.getElementById("curso")?.addEventListener("change", async function () {
-        const course = this.value;
-        const asignatura = document.getElementById("asignatura");
-        const unidad = document.getElementById("unidad");
-        const objetivo = document.getElementById("objetivo");
+    var cursoSelect = document.getElementById("curso");
+    if (cursoSelect) {
+        cursoSelect.addEventListener("change", async function() {
+            var course = this.value;
+            var asignatura = document.getElementById("asignatura");
+            var unidad = document.getElementById("unidad");
+            var objetivo = document.getElementById("objetivo");
 
-        asignatura.innerHTML = <option value="">Selecciona una asignatura...</option>;
-        unidad.innerHTML = <option value="">Selecciona una unidad...</option>;
-        objetivo.innerHTML = <option value="">Selecciona un OA...</option>;
-        asignatura.disabled = !course;
-        unidad.disabled = true;
-        objetivo.disabled = true;
+            asignatura.innerHTML = "<option value=\"\">Selecciona una asignatura...</option>";
+            unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
+            objetivo.innerHTML = "<option value=\"\">Selecciona un OA...</option>";
+            asignatura.disabled = !course;
+            unidad.disabled = true;
+            objetivo.disabled = true;
 
-        if (!course) return;
-        await populateSelect(${API_BASE}/subjects/, "asignatura", "Selecciona una asignatura...");
-    });
+            if (!course) return;
+            await populateSelect(API_BASE + "/subjects/" + encodeURIComponent(course), "asignatura", "Selecciona una asignatura...");
+        });
+    }
 
-    document.getElementById("asignatura")?.addEventListener("change", async function () {
-        const course = document.getElementById("curso").value;
-        const subject = this.value;
-        const unidad = document.getElementById("unidad");
-        const objetivo = document.getElementById("objetivo");
+    var asignaturaSelect = document.getElementById("asignatura");
+    if (asignaturaSelect) {
+        asignaturaSelect.addEventListener("change", async function() {
+            var course = document.getElementById("curso").value;
+            var subject = this.value;
+            var unidad = document.getElementById("unidad");
+            var objetivo = document.getElementById("objetivo");
 
-        unidad.innerHTML = <option value="">Selecciona una unidad...</option>;
-        objetivo.innerHTML = <option value="">Selecciona un OA...</option>;
-        unidad.disabled = !subject;
-        objetivo.disabled = true;
+            unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
+            objetivo.innerHTML = "<option value=\"\">Selecciona un OA...</option>";
+            unidad.disabled = !subject;
+            objetivo.disabled = true;
 
-        if (!subject) return;
-        await populateSelect(${API_BASE}/units//, "unidad", "Selecciona una unidad...");
-    });
+            if (!subject) return;
+            await populateSelect(API_BASE + "/units/" + encodeURIComponent(course) + "/" + encodeURIComponent(subject), "unidad", "Selecciona una unidad...");
+        });
+    }
 
-    document.getElementById("unidad")?.addEventListener("change", async function () {
-        const course = document.getElementById("curso").value;
-        const subject = document.getElementById("asignatura").value;
-        const unit = this.value;
-        const objetivo = document.getElementById("objetivo");
+    var unidadSelect = document.getElementById("unidad");
+    if (unidadSelect) {
+        unidadSelect.addEventListener("change", async function() {
+            var course = document.getElementById("curso").value;
+            var subject = document.getElementById("asignatura").value;
+            var unit = this.value;
+            var objetivo = document.getElementById("objetivo");
 
-        objetivo.innerHTML = <option value="">Selecciona un OA...</option>;
-        objetivo.disabled = !unit;
+            objetivo.innerHTML = "<option value=\"\">Selecciona un OA...</option>";
+            objetivo.disabled = !unit;
 
-        if (!unit) return;
-        await populateSelect(${API_BASE}/objectives///, "objetivo", "Selecciona un OA...");
-    });
+            if (!unit) return;
+            await populateSelect(API_BASE + "/objectives/" + encodeURIComponent(course) + "/" + encodeURIComponent(subject) + "/" + encodeURIComponent(unit), "objetivo", "Selecciona un OA...");
+        });
+    }
 
     /**********************************************************************
-     * GENERAR GUÍA
+     * GENERAR GUIA
      **********************************************************************/
 
     async function generateGuide() {
-        const payload = Object.fromEntries(new FormData(form).entries());
+        var payload = Object.fromEntries(new FormData(form).entries());
         showLoading();
         try {
-            const response = await request(URLS.generate, { method: "POST", body: JSON.stringify(payload) });
+            var response = await request(URLS.generate, { method: "POST", body: JSON.stringify(payload) });
             currentDocument = response.document_id;
             showResult(response.content);
             showToast("Guía generada correctamente.");
@@ -193,40 +211,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function loadHistory() {
         if (!historyBody) return;
-        historyBody.innerHTML = <tr><td colspan="4" class="empty-state">Cargando...</td></tr>;
+        historyBody.innerHTML = "<tr><td colspan=\"4\" class=\"empty-state\">Cargando...</td></tr>";
         try {
-            const response = await request(URLS.history);
+            var response = await request(URLS.history);
             if (!response.items || response.items.length === 0) {
-                historyBody.innerHTML = <tr><td colspan="4" class="empty-state">No existen guías.</td></tr>;
+                historyBody.innerHTML = "<tr><td colspan=\"4\" class=\"empty-state\">No existen guías.</td></tr>";
                 return;
             }
             historyBody.innerHTML = "";
-            response.items.forEach(doc => {
-                const created = doc.created_at ? new Date(doc.created_at).toLocaleString() : "";
-                const tr = document.createElement("tr");
+            response.items.forEach(function(doc) {
+                var created = doc.created_at ? new Date(doc.created_at).toLocaleString() : "";
+                var tr = document.createElement("tr");
                 tr.innerHTML = 
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button class="btn-action btn-open" data-id="">Abrir</button>
-                        <button class="btn-action btn-word" data-id="">Word</button>
-                        <button class="btn-action btn-pdf" data-id="">PDF</button>
-                        <button class="btn-action delete btn-delete" data-id="">Eliminar</button>
-                    </td>
-                ;
+                    "<td>" + created + "</td>" +
+                    "<td>" + (doc.course || "") + "</td>" +
+                    "<td>" + (doc.subject || "") + "</td>" +
+                    "<td>" +
+                        "<button class=\"btn-action btn-open\" data-id=\"" + doc.id + "\">Abrir</button>" +
+                        "<button class=\"btn-action btn-word\" data-id=\"" + doc.id + "\">Word</button>" +
+                        "<button class=\"btn-action btn-pdf\" data-id=\"" + doc.id + "\">PDF</button>" +
+                        "<button class=\"btn-action delete btn-delete\" data-id=\"" + doc.id + "\">Eliminar</button>" +
+                    "</td>";
                 historyBody.appendChild(tr);
             });
         } catch (error) {
             console.error(error);
-            historyBody.innerHTML = <tr><td colspan="4" class="empty-state">Error cargando historial</td></tr>;
+            historyBody.innerHTML = "<tr><td colspan=\"4\" class=\"empty-state\">Error cargando historial</td></tr>";
         }
     }
 
     async function openDocument(documentId) {
         showLoading();
         try {
-            const response = await request(URLS.document(documentId));
+            var response = await request(URLS.document(documentId));
             currentDocument = documentId;
             showResult(response.document.content);
             await loadExportLinks();
@@ -242,8 +259,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!confirm("¿Desea eliminar esta guía?")) return;
         showLoading();
         try {
-            // DELETE sin body (Flask-WTF no lee body en DELETE)
-            await request(URLS.document(documentId) + ?csrf_token=, { method: "DELETE" });
+            var url = URLS.document(documentId) + "?csrf_token=" + encodeURIComponent(CSRF_TOKEN);
+            await request(url, { method: "DELETE" });
             if (currentDocument === documentId) clearResult();
             await loadHistory();
             showToast("Guía eliminada.");
@@ -257,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function loadExportLinks() {
         if (!currentDocument) return;
         try {
-            const response = await request(URLS.exportLinks(currentDocument));
+            var response = await request(URLS.exportLinks(currentDocument));
             exportInfo.word = response.word;
             exportInfo.pdf = response.pdf;
         } catch (error) {
@@ -267,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function copyGuide() {
         if (!result) return;
-        const text = result.textContent.trim();
+        var text = result.textContent.trim();
         if (!text) { showToast("No existe contenido para copiar.", "error"); return; }
         try {
             await navigator.clipboard.writeText(text);
@@ -288,20 +305,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Eventos
-    form?.addEventListener("submit", (e) => { e.preventDefault(); generateGuide(); });
-    document.getElementById("copyGuide")?.addEventListener("click", copyGuide);
-    document.getElementById("downloadWord")?.addEventListener("click", exportWord);
-    document.getElementById("downloadPdf")?.addEventListener("click", exportPdf);
+    if (form) form.addEventListener("submit", function(e) { e.preventDefault(); generateGuide(); });
+    
+    var copyBtn = document.getElementById("copyGuide");
+    if (copyBtn) copyBtn.addEventListener("click", copyGuide);
+    
+    var wordBtn = document.getElementById("downloadWord");
+    if (wordBtn) wordBtn.addEventListener("click", exportWord);
+    
+    var pdfBtn = document.getElementById("downloadPdf");
+    if (pdfBtn) pdfBtn.addEventListener("click", exportPdf);
 
-    historyBody?.addEventListener("click", async (e) => {
-        const btn = e.target.closest("button");
-        if (!btn) return;
-        const id = btn.dataset.id;
-        if (btn.classList.contains("btn-open")) { await openDocument(id); return; }
-        if (btn.classList.contains("btn-delete")) { await deleteDocument(id); return; }
-        if (btn.classList.contains("btn-word")) { currentDocument = id; await loadExportLinks(); exportWord(); return; }
-        if (btn.classList.contains("btn-pdf")) { currentDocument = id; await loadExportLinks(); exportPdf(); return; }
-    });
+    if (historyBody) {
+        historyBody.addEventListener("click", async function(e) {
+            var btn = e.target.closest("button");
+            if (!btn) return;
+            var id = btn.dataset.id;
+            if (btn.classList.contains("btn-open")) { await openDocument(id); return; }
+            if (btn.classList.contains("btn-delete")) { await deleteDocument(id); return; }
+            if (btn.classList.contains("btn-word")) { currentDocument = id; await loadExportLinks(); exportWord(); return; }
+            if (btn.classList.contains("btn-pdf")) { currentDocument = id; await loadExportLinks(); exportPdf(); return; }
+        });
+    }
 
-    (async () => { try { await loadHistory(); } catch (e) { console.error(e); } })();
+    (async function() { 
+        try { await loadHistory(); } catch (e) { console.error(e); } 
+    })();
 });
