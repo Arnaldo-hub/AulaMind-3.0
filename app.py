@@ -21,6 +21,7 @@ from flask_wtf.csrf import CSRFProtect, CSRFError
 from extensions import limiter
 from routes.export import export
 from routes.guides import guides  # ← NUEVO
+from routes.rubrics import rubrics  # ← NUEVO
 
 
 # ==========================================================
@@ -103,6 +104,7 @@ app.register_blueprint(password_reset, url_prefix="/auth")
 app.register_blueprint(export)
 app.register_blueprint(analytics)  # ← NUEVO
 app.register_blueprint(guides)  # ← NUEVO
+app.register_blueprint(rubrics)  # ← NUEVO
 
 # ==========================================================
 # RUTA RAÍZ
