@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Usuarios | AulaMind Enterprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <style>
+        .admin-section { padding: 2rem; max-width: 1100px; }
+        .admin-card {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+        .admin-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+
+        /* ---------- Filtros ---------- */
+        .filters-bar {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filters-bar input,
+        .filters-bar select {
+            padding: 0.625rem 0.875rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 0.9375rem;
+            background: #fff;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .filters-bar input { flex: 1; min-width: 220px; }
+        .filters-bar input:focus,
+        .filters-bar select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+
+        /* ---------- Tabla ---------- */
+        .users-table-wrapper { overflow-x: auto; }
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9375rem;
+        }
+        .users-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            color: #6b7280;
+            border-bottom: 2px solid #e5e7eb;
+            white-space: nowrap;
+        }
+        .users-table td {
+            padding: 0.875rem 1rem;
+            border-bottom: 1px solid #f3f4f6;
+            color: #374151;
+            vertical-align: middle;
+        }
+        .users-table tr:hover td { background: #f9fafb; }
+        .user-name { font-weight: 600; color: #1f2937; }
+        .user-email { color: #6b7280; font-size: 0.875rem; }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+        .badge-admin { background: #ede9fe; color: #5b21b6; }
+        .badge-teacher { background: #dbeafe; color: #1e40af; }
+        .badge-active { background: #d1fae5; color: #065f46; }
+        .badge-inactive { background: #fee2e2; color: #991b1b; }
+
+        .row-actions { display: flex; gap: 0.5rem; }
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            background: #fff;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .btn-icon:hover { background: #f3f4f6; }
+        .btn-icon.btn-toggle-on { color: #059669; border-color: #a7f3d0; }
+        .btn-icon.btn-toggle-on:hover { background: #ecfdf5; }
+        .btn-icon.btn-toggle-off { color: #d97706; border-color: #fde68a; }
+        .btn-icon.btn-toggle-off:hover { background: #fffbeb; }
+        .btn-icon.btn-danger { color: #dc2626; border-color: #fecaca; }
+        .btn-icon.btn-danger:hover { background: #fef2f2; }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #6b7280;
+        }
+        .empty-state i { font-size: 2.5rem; margin-bottom: 1rem; color: #d1d5db; }
+
+        /* ---------- Modal ---------- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(17,24,39,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal-box {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        .modal-box h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.375rem;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 0.625rem 0.875rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 0.9375rem;
+            background: #fff;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+        .form-hint {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+        }
+        .btn-secondary {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #d1d5db;
+            background: #fff;
+            color: #374151;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn-secondary:hover { background: #f3f4f6; }
+    </style>
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
+            <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="/"><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
+            <a href="/planning"><i class="fa-solid fa-calendar-days"></i><span>Planificaciones</span></a>
+            <a href="/evaluation"><i class="fa-solid fa-file-circle-check"></i><span>Evaluaciones</span></a>
+            <a href="/guides"><i class="fa-solid fa-book"></i><span>Guías</span></a>
+            <a href="/rubrics"><i class="fa-solid fa-table-list"></i><span>Rúbricas</span></a>
+            <a href="/pie"><i class="fa-solid fa-user-group"></i><span>PIE</span></a>
+            <a href="/admin/usuarios" class="active"><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <strong>{{ session.get('user_name','Administrador') }}</strong>
+                    <small>Administrador</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>Administración de Usuarios</h1>
+                <p>Gestiona las cuentas, roles y accesos de la plataforma.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-button"><i class="fa-solid fa-bell"></i></button>
+                <button class="icon-button"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </header>
+
+        <section class="admin-section">
+
+            <div class="admin-card">
+
+                <div class="filters-bar">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Buscar por nombre o correo…">
+                    <select id="roleFilter">
+                        <option value="">Todos los roles</option>
+                        {% for value, label in roles.items() %}
+                        <option value="{{ value }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    <select id="statusFilter">
+                        <option value="">Todos los estados</option>
+                        <option value="active">Activos</option>
+                        <option value="inactive">Inactivos</option>
+                    </select>
+                    <button class="btn-primary" id="btnNewUser">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Nuevo usuario
+                    </button>
+                </div>
+
+                <div class="users-table-wrapper">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+                                <th>Último acceso</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="emptyState" style="display:none;">
+                        <i class="fa-solid fa-users-slash"></i>
+                        <p>No se encontraron usuarios con los filtros aplicados.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="page-footer">
+            <div class="footer-left">
+                <strong>AulaMind Enterprise 3.0</strong>
+                <span>Plataforma Inteligente para Docentes</span>
+            </div>
+            <div class="footer-right">
+                <span>© 2025 Biotecno Chile</span>
+            </div>
+        </footer>
+    </main>
+</div>
+
+<!-- ==================== MODAL CREAR / EDITAR ==================== -->
+<div id="userModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3 id="modalTitle">Nuevo usuario</h3>
+        <form id="userForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="firstName">Nombre</label>
+                    <input type="text" id="firstName" required maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" id="lastName" required maxlength="100">
+                </div>
+                <div class="form-group full">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required maxlength="255">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label for="role">Rol</label>
+                    <select id="role">
+                        {% for value, label in roles.items() %}
+                        <option value="{{ value }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group full">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" autocomplete="new-password">
+                    <span class="form-hint" id="passwordHint">Mínimo 8 caracteres.</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" id="btnCancelModal">Cancelar</button>
+                <button type="submit" class="btn-primary" id="btnSaveUser">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="loadingModal" class="loader-overlay">
+    <div class="spinner"></div>
+    <h3>AulaMind</h3>
+    <p>Procesando...</p>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+window.ADMIN_USERS_CONFIG = {
+    listUrl: "{{ url_for('admin_security.list_users') }}",
+    createUrl: "{{ url_for('admin_security.create_user') }}",
+    userUrl: "{{ url_for('admin_security.get_user', user_id='__ID__') }}",
+    updateUrl: "{{ url_for('admin_security.update_user', user_id='__ID__') }}",
+    toggleUrl: "{{ url_for('admin_security.toggle_user', user_id='__ID__') }}",
+    deleteUrl: "{{ url_for('admin_security.delete_user', user_id='__ID__') }}",
+    currentUserId: "{{ session.get('user_id', '') }}"
+};
+</script>
+<script src="{{ url_for('static', filename='js/admin_users.js') }}"></script>
+
+</body>
+</html>

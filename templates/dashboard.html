@@ -175,7 +175,9 @@
 
             </a>
 
-            <a href="#">
+            {% if session.get('role') == 'admin' %}
+
+            <a href="{{ url_for('admin_security.users_page') }}">
 
                 <i class="fa-solid fa-users"></i>
 
@@ -186,6 +188,8 @@
                 </span>
 
             </a>
+
+            {% endif %}
 
             <a href="#">
 
