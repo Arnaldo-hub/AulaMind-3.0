@@ -22,7 +22,7 @@ from extensions import limiter
 from routes.export import export
 from routes.guides import guides  # ← NUEVO
 from routes.rubrics import rubrics  # ← NUEVO
-
+from routes.pie import pie  # ← NUEVO
 
 # ==========================================================
 # Base de datos
@@ -105,6 +105,7 @@ app.register_blueprint(export)
 app.register_blueprint(analytics)  # ← NUEVO
 app.register_blueprint(guides)  # ← NUEVO
 app.register_blueprint(rubrics)  # ← NUEVO
+app.register_blueprint(pie)  # ← NUEVO
 
 # ==========================================================
 # RUTA RAÍZ
