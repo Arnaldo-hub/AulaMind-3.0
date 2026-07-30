@@ -25,6 +25,7 @@ import os
 import pkgutil
 import sys
 from datetime import datetime
+from decimal import Decimal
 
 # ----------------------------------------------------------
 # Raíz del proyecto
@@ -57,6 +58,12 @@ def deserialize(value):
 
         if value["__type__"] == "bytes":
             return bytes.fromhex(value["value"])
+
+        if value["__type__"] == "decimal":
+            return Decimal(value["value"])
+
+        if value["__type__"] == "text":
+            return value["value"]
 
     return value
 

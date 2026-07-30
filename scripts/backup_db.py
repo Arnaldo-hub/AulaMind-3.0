@@ -29,6 +29,7 @@ import os
 import pkgutil
 import sys
 from datetime import date, datetime
+from decimal import Decimal
 
 # ----------------------------------------------------------
 # Raíz del proyecto
@@ -59,6 +60,16 @@ def serialize(value):
 
     if isinstance(value, bytes):
         return {"__type__": "bytes", "value": value.hex()}
+
+    if isinstance(value, Decimal):
+        return {"__type__": "decimal", "value": str(value)}
+
+    # Fallback: cualquier tipo desconocido se guarda como
+    # texto. Un respaldo NO debe fallar por una columna rara.
+    if value is not None and not isinstance(
+        value, (str, int, float, bool, list, dict)
+    ):
+        return {"__type__": "text", "value": str(value)}
 
     return value
 
