@@ -9,4 +9,6 @@ logs/
 venv/
 *.zip
 *.pyc
-aulamind.db
+aulamind.db-e 
+# Respaldos de BD — contienen datos sensibles, nunca commitear
+backups/
