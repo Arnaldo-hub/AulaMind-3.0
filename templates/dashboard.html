@@ -148,9 +148,7 @@
                     </strong>
 
                     <small>
-
-                        Docente
-
+                        {{ 'Administrador' if session.get('role') == 'admin' else 'Docente' }}
                     </small>
 
                 </div>

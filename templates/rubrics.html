@@ -186,7 +186,7 @@
                 <div class="avatar"><i class="fa-solid fa-user"></i></div>
                 <div>
                     <strong>{{ session.get('user_name','Profesor') }}</strong>
-                    <small>Docente</small>
+                    <small>{{ 'Administrador' if session.get('role') == 'admin' else 'Docente' }}</small>
                 </div>
             </div>
         </div>
