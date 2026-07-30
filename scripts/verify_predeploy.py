@@ -282,6 +282,32 @@ check(
     f"recibió {r.status_code}"
 )
 
+# /admin/health: JSON válido para admin, 403 para teacher
+login(ADMIN_ID, "admin", "admin@verify.cl")
+r = client.get("/admin/health")
+try:
+    health = r.get_json()
+    health_ok = (
+        r.status_code in (200, 503)
+        and "status" in health
+        and "checks" in health
+    )
+except Exception:
+    health_ok = False
+check(
+    "GET /admin/health responde JSON válido",
+    health_ok,
+    f"status_code={r.status_code}"
+)
+
+login(PROFE_ID, "teacher", "profe@verify.cl")
+r = client.get("/admin/health")
+check(
+    "Teacher recibe 403 en /admin/health",
+    r.status_code == 403,
+    f"recibió {r.status_code}"
+)
+
 
 # ==========================================================
 # Reporte final

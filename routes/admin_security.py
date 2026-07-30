@@ -105,6 +105,84 @@ def security_check():
 
 
 # ==========================================================
+# Salud operacional (solo admin)
+# ==========================================================
+
+@admin_security.route("/admin/health")
+@role_required("admin")
+def operational_health():
+    """
+    Reporta la configuración crítica de la instancia.
+
+    NUNCA expone valores de secretos: solo si están
+    configurados o no.
+    """
+
+    from config import Config
+
+    db = SessionLocal()
+
+    try:
+
+        total_users = db.query(User).count()
+
+        active_users = db.query(User).filter(
+
+            User.is_active.is_(True)
+
+        ).count()
+
+        db_ok = True
+
+    except Exception:
+
+        total_users = None
+
+        active_users = None
+
+        db_ok = False
+
+    finally:
+
+        db.close()
+
+    mail_configured = bool(
+
+        getattr(Config, "MAIL_SERVER", "")
+
+        and getattr(Config, "MAIL_USERNAME", "")
+
+    )
+
+    openai_configured = bool(
+
+        getattr(Config, "OPENAI_API_KEY", None)
+
+    )
+
+    checks = {
+        "database": db_ok,
+        "openai_configured": openai_configured,
+        "mail_configured": mail_configured,
+    }
+
+    status = (
+
+        "ok" if all(checks.values()) else "degraded"
+
+    )
+
+    return jsonify(
+        status=status,
+        checks=checks,
+        users={
+            "total": total_users,
+            "active": active_users,
+        },
+    ), (200 if status == "ok" else 503)
+
+
+# ==========================================================
 # Página principal del módulo
 # ==========================================================
 
