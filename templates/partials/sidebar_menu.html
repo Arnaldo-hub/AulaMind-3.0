@@ -1,0 +1,30 @@
+{#
+===========================================================
+AulaMind Enterprise 3.0
+partials/sidebar_menu.html
+-----------------------------------------------------------
+Menú lateral unificado.
+
+Uso:
+    {% set active_menu = 'dashboard' %}
+    {% include 'partials/sidebar_menu.html' %}
+
+Valores válidos de active_menu:
+    dashboard, planning, evaluation, guides, rubrics,
+    pie, analytics, curriculum, admin_users, profile
+===========================================================
+#}
+<nav class="sidebar-menu">
+    <a href="{{ url_for('dashboard.home') }}"{% if active_menu == 'dashboard' %} class="active"{% endif %}><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
+    <a href="{{ url_for('planning.index') }}"{% if active_menu == 'planning' %} class="active"{% endif %}><i class="fa-solid fa-calendar-days"></i><span>Planificaciones</span></a>
+    <a href="{{ url_for('evaluation.index') }}"{% if active_menu == 'evaluation' %} class="active"{% endif %}><i class="fa-solid fa-file-circle-check"></i><span>Evaluaciones</span></a>
+    <a href="{{ url_for('guides.index') }}"{% if active_menu == 'guides' %} class="active"{% endif %}><i class="fa-solid fa-book"></i><span>Guías</span></a>
+    <a href="{{ url_for('rubrics.index') }}"{% if active_menu == 'rubrics' %} class="active"{% endif %}><i class="fa-solid fa-table-list"></i><span>Rúbricas</span></a>
+    <a href="{{ url_for('pie.index') }}"{% if active_menu == 'pie' %} class="active"{% endif %}><i class="fa-solid fa-user-group"></i><span>PIE</span></a>
+    <a href="{{ url_for('analytics.index') }}"{% if active_menu == 'analytics' %} class="active"{% endif %}><i class="fa-solid fa-chart-line"></i><span>Analítica</span></a>
+    <a href="{{ url_for('curriculum.index') }}"{% if active_menu == 'curriculum' %} class="active"{% endif %}><i class="fa-solid fa-book-atlas"></i><span>Currículum</span></a>
+    {% if session.get('role') == 'admin' %}
+    <a href="{{ url_for('admin_security.users_page') }}"{% if active_menu == 'admin_users' %} class="active"{% endif %}><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
+    {% endif %}
+    <a href="{{ url_for('auth.profile') }}"{% if active_menu == 'profile' %} class="active"{% endif %}><i class="fa-solid fa-circle-user"></i><span>Mi Perfil</span></a>
+</nav>

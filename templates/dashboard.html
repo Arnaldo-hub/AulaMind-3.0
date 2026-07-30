@@ -59,151 +59,8 @@
 
         <!-- ============================== -->
 
-        <nav class="sidebar-menu">
-
-            <a
-
-                class="active"
-
-                href="{{ url_for('dashboard.home') }}">
-
-                <i class="fa-solid fa-house"></i>
-
-                <span>
-
-                    Panel Principal
-
-                </span>
-
-            </a>
-
-            <a
-
-                href="{{ url_for('planning.index') }}">
-
-                <i class="fa-solid fa-book-open"></i>
-
-                <span>
-
-                    Nueva Planificación
-
-                </span>
-
-            </a>
-
-            <a href="{{ url_for('rubrics.index') }}" class="btn-module">Abrir módulo</a>
-
-                <i class="fa-solid fa-file-lines"></i>
-
-                <span>
-
-                    Evaluaciones
-
-                </span>
-
-            </a>
-
-            <a href="#">
-
-                <i class="fa-solid fa-book"></i>
-
-                <span>
-
-                    Guías
-
-                </span>
-
-            </a>
-
-            <a href="#">
-
-                <i class="fa-solid fa-table"></i>
-
-                <span>
-
-                    Rúbricas
-
-                </span>
-
-            </a>
-
-            <a href="/pie">
-
-                <i class="fa-solid fa-user-group"></i>
-
-                <span>
-
-                    PIE
-
-                </span>
-
-            </a>
-
-            <a href="#">
-
-                <i class="fa-solid fa-calendar-days"></i>
-
-                <span>
-
-                    Calendario
-
-                </span>
-
-            </a>
-
-            <a href="#">
-
-                <i class="fa-solid fa-chart-line"></i>
-
-                <span>
-
-                    Analítica
-
-                </span>
-
-            </a>
-
-            <a href="#">
-
-                <i class="fa-solid fa-school"></i>
-
-                <span>
-
-                    Colegio
-
-                </span>
-
-            </a>
-
-            {% if session.get('role') == 'admin' %}
-
-            <a href="{{ url_for('admin_security.users_page') }}">
-
-                <i class="fa-solid fa-users"></i>
-
-                <span>
-
-                    Usuarios
-
-                </span>
-
-            </a>
-
-            {% endif %}
-
-            <a href="#">
-
-                <i class="fa-solid fa-gear"></i>
-
-                <span>
-
-                    Configuración
-
-                </span>
-
-            </a>
-
-        </nav>
+        {% set active_menu = 'dashboard' %}
+    {% include 'partials/sidebar_menu.html' %}
 
         <!-- ============================== -->
         <!-- FOOTER SIDEBAR -->
@@ -350,13 +207,13 @@
 
                 <a
 
-                    href="#"
+                    href="{{ url_for('analytics.index') }}"
 
                     class="btn-secondary">
 
-                    <i class="fa-solid fa-circle-play"></i>
+                    <i class="fa-solid fa-chart-line"></i>
 
-                    Ver demostración
+                    Ver analítica
 
                 </a>
 

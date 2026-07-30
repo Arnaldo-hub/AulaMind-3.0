@@ -179,15 +179,8 @@
             <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
             <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
         </div>
-        <nav class="sidebar-menu">
-            <a href="/"><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
-            <a href="/planning"><i class="fa-solid fa-calendar-days"></i><span>Planificaciones</span></a>
-            <a href="/evaluation"><i class="fa-solid fa-file-circle-check"></i><span>Evaluaciones</span></a>
-            <a href="/guides"><i class="fa-solid fa-book"></i><span>Guías</span></a>
-            <a href="/rubrics"><i class="fa-solid fa-table-list"></i><span>Rúbricas</span></a>
-            <a href="/pie" class="active"><i class="fa-solid fa-wheelchair"></i><span>PIE</span></a>
-            <a href="/settings"><i class="fa-solid fa-gear"></i><span>Configuración</span></a>
-        </nav>
+        {% set active_menu = 'pie' %}
+    {% include 'partials/sidebar_menu.html' %}
         <div class="sidebar-footer">
             <div class="user-card">
                 <div class="avatar"><i class="fa-solid fa-user"></i></div>

@@ -11,12 +11,8 @@
 <div class="app">
 <aside class="sidebar">
 <h2>AulaMind</h2>
-<nav>
-<a href="{{ url_for('dashboard.home') }}">Dashboard</a>
-<a href="{{ url_for('planning.index') }}">Planificaciones</a>
-<a class="active" href="{{ url_for('evaluation.index') }}">Evaluaciones</a>
-<a href="{{ url_for('auth.logout') }}">Cerrar sesión</a>
-</nav>
+{% set active_menu = 'evaluation' %}
+    {% include 'partials/sidebar_menu.html' %}
 </aside>
 
 <main class="main-content">
