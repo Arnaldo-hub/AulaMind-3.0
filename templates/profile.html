@@ -1,1 +1,342 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Perfil | AulaMind</title><link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}"></head><body><div class="app"><aside class="sidebar"><div class="sidebar-logo"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind"></div><nav class="sidebar-menu"><a href="{{ url_for('dashboard.home') }}">Panel Principal</a><a href="{{ url_for('auth.logout') }}">Cerrar sesión</a></nav></aside><main class="main-content"><section class="welcome-panel"><div class="welcome-card"><div><h1>Perfil docente</h1><p><strong>{{ user_name }}</strong></p><p>{{ email }}</p></div></div></section></main></div></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | AulaMind Enterprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+    <style>
+        .profile-section { padding: 2rem; max-width: 900px; }
+        .profile-card {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+        .profile-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+        .profile-card h2 i { color: #2563eb; }
+
+        /* ---------- Encabezado de identidad ---------- */
+        .identity-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .avatar-initials {
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background: #2563eb;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            text-transform: uppercase;
+        }
+        .identity-header .identity-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        .identity-header .identity-email {
+            color: #6b7280;
+            font-size: 0.9375rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-top: 0.375rem;
+        }
+        .badge-admin { background: #ede9fe; color: #5b21b6; }
+        .badge-teacher { background: #dbeafe; color: #1e40af; }
+
+        /* ---------- Formularios ---------- */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full { grid-column: 1 / -1; }
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.375rem;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 0.625rem 0.875rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 0.9375rem;
+            background: #fff;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+        .form-group input[readonly] {
+            background: #f9fafb;
+            color: #6b7280;
+            cursor: not-allowed;
+        }
+        .form-hint {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+
+        /* ---------- Flash ---------- */
+        .flash-messages { margin-bottom: 1.5rem; }
+        .flash {
+            padding: 0.875rem 1.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.9375rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+        }
+        .flash-success { background: #d1fae5; color: #065f46; }
+        .flash-danger { background: #fee2e2; color: #991b1b; }
+
+        @media (max-width: 640px) {
+            .form-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
+            <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="/"><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
+            <a href="/planning"><i class="fa-solid fa-calendar-days"></i><span>Planificaciones</span></a>
+            <a href="/evaluation"><i class="fa-solid fa-file-circle-check"></i><span>Evaluaciones</span></a>
+            <a href="/guides"><i class="fa-solid fa-book"></i><span>Guías</span></a>
+            <a href="/rubrics"><i class="fa-solid fa-table-list"></i><span>Rúbricas</span></a>
+            <a href="/pie"><i class="fa-solid fa-user-group"></i><span>PIE</span></a>
+            {% if session.get('role') == 'admin' %}
+            <a href="/admin/usuarios"><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
+            {% endif %}
+            <a href="{{ url_for('auth.profile') }}" class="active"><i class="fa-solid fa-circle-user"></i><span>Mi Perfil</span></a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <strong>{{ session.get('user_name','Docente') }}</strong>
+                    <small>{{ 'Administrador' if session.get('role') == 'admin' else 'Docente' }}</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>Mi Perfil</h1>
+                <p>Actualiza tu información personal y la seguridad de tu cuenta.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-button"><i class="fa-solid fa-bell"></i></button>
+                <button class="icon-button"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </header>
+
+        <section class="profile-section">
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">
+                        <i class="fa-solid {% if category == 'success' %}fa-circle-check{% else %}fa-circle-exclamation{% endif %}"></i>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+
+            <!-- ==================== DATOS PERSONALES ==================== -->
+            <div class="profile-card">
+
+                <div class="identity-header">
+                    <div class="avatar-initials">
+                        {{ user.first_name[0] }}{{ user.last_name[0] }}
+                    </div>
+                    <div>
+                        <div class="identity-name">{{ user.full_name }}</div>
+                        <div class="identity-email">{{ user.email }}</div>
+                        {% if user.role == 'admin' %}
+                        <span class="badge badge-admin">Administrador</span>
+                        {% else %}
+                        <span class="badge badge-teacher">Docente</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <h2><i class="fa-solid fa-id-card"></i> Información personal</h2>
+
+                <form method="POST" action="{{ url_for('auth.update_profile') }}">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="first_name">Nombre</label>
+                            <input type="text" id="first_name" name="first_name"
+                                   value="{{ user.first_name }}" required maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Apellido</label>
+                            <input type="text" id="last_name" name="last_name"
+                                   value="{{ user.last_name }}" required maxlength="100">
+                        </div>
+                        <div class="form-group full">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" value="{{ user.email }}" readonly>
+                            <span class="form-hint">El correo no puede modificarse. Contacta al administrador si necesitas cambiarlo.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone"
+                                   value="{{ user.phone or '' }}" maxlength="30">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Ciudad</label>
+                            <input type="text" id="city" name="city"
+                                   value="{{ user.city or '' }}" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">País</label>
+                            <input type="text" id="country" name="country"
+                                   value="{{ user.country or 'Chile' }}" maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="language">Idioma</label>
+                            <select id="language" name="language">
+                                {% for value, label in languages.items() %}
+                                <option value="{{ value }}"
+                                    {% if user.language == value %}selected{% endif %}>
+                                    {{ label }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group full">
+                            <label for="timezone">Zona horaria</label>
+                            <select id="timezone" name="timezone">
+                                {% for value, label in timezones.items() %}
+                                <option value="{{ value }}"
+                                    {% if user.timezone == value %}selected{% endif %}>
+                                    {{ label }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Guardar cambios
+                    </button>
+                </form>
+
+            </div>
+
+            <!-- ==================== SEGURIDAD ==================== -->
+            <div class="profile-card">
+
+                <h2><i class="fa-solid fa-lock"></i> Cambiar contraseña</h2>
+
+                <form method="POST" action="{{ url_for('auth.change_profile_password') }}">
+                    <div class="form-grid">
+                        <div class="form-group full">
+                            <label for="current_password">Contraseña actual</label>
+                            <input type="password" id="current_password" name="current_password"
+                                   required autocomplete="current-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="new_password">Nueva contraseña</label>
+                            <input type="password" id="new_password" name="new_password"
+                                   required autocomplete="new-password">
+                            <span class="form-hint">Mínimo 10 caracteres, una mayúscula, una minúscula y un número.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm_password">Confirmar contraseña</label>
+                            <input type="password" id="confirm_password" name="confirm_password"
+                                   required autocomplete="new-password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-key"></i>
+                        Actualizar contraseña
+                    </button>
+                </form>
+
+            </div>
+
+        </section>
+
+        <footer class="page-footer">
+            <div class="footer-left">
+                <strong>AulaMind Enterprise 3.0</strong>
+                <span>Plataforma Inteligente para Docentes</span>
+            </div>
+            <div class="footer-right">
+                <span>© 2025 Biotecno Chile</span>
+            </div>
+        </footer>
+    </main>
+</div>
+
+</body>
+</html>
