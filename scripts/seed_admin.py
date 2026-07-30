@@ -94,6 +94,8 @@ def main():
         password = generate_password()
         generated = True
 
+    password_created = False
+
     db = SessionLocal()
 
     try:
