@@ -2376,7 +2376,7 @@ initializePlanning()
     .catch(err => console.error("initializePlanning ERROR", err));
 
 //=============================================================
-// CIERRE DOMContentLoaded
+// FIN planning.js
+// (el cierre DOMContentLoaded era un remanente del armado
+// por partes y rompía toda la sintaxis del archivo)
 //=============================================================
-
-});

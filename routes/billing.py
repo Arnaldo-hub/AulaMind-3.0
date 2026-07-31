@@ -13,6 +13,7 @@ Biotecno Chile
 ===========================================================
 """
 
+import math
 from datetime import datetime
 
 from flask import Blueprint
@@ -50,12 +51,16 @@ def status():
     plan = Entitlements.get_status(user_id)
 
     # Días restantes (la plantilla no calcula fechas)
+    # Se redondea hacia arriba: recién registrado muestra 3,
+    # no "2 días y 23 horas" truncado a 2.
     days_left = None
     ends_at = plan.get("ends_at")
 
     if ends_at:
         delta = ends_at - datetime.utcnow()
-        days_left = max(0, delta.days)
+        days_left = max(
+            0, math.ceil(delta.total_seconds() / 86400)
+        )
 
     return render_template(
         "plan_status.html",

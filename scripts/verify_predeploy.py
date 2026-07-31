@@ -28,6 +28,8 @@ import importlib
 import os
 import pkgutil
 import py_compile
+import shutil
+import subprocess
 import sys
 import tempfile
 
@@ -88,6 +90,40 @@ check(
     not py_errors,
     "; ".join(py_errors[:3])
 )
+
+# JavaScript: un solo error de sintaxis mata toda la página
+# (caso real: planning.js con un "});" huérfano dejaba el
+# selector de cursos pegado en "Cargando cursos...")
+js_errors = []
+
+if shutil.which("node"):
+
+    js_dir = os.path.join(ROOT, "static", "js")
+
+    if os.path.isdir(js_dir):
+
+        for filename in sorted(os.listdir(js_dir)):
+
+            if not filename.endswith(".js"):
+                continue
+
+            if "copia" in filename or "CHAT" in filename:
+                continue  # respaldos, no se cargan en páginas
+
+            path = os.path.join(js_dir, filename)
+            result = subprocess.run(
+                ["node", "--check", path],
+                capture_output=True, text=True
+            )
+
+            if result.returncode != 0:
+                js_errors.append(filename)
+
+    check(
+        "Todos los .js de static/js parsean",
+        not js_errors,
+        "; ".join(js_errors[:3])
+    )
 
 
 # ==========================================================
