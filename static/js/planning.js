@@ -112,6 +112,30 @@ if (document.readyState === "loading") {
     const toast =
         document.getElementById("toast");
 
+    const searchOA =
+        document.getElementById("searchOA");
+
+    const btnSelectAll =
+        document.getElementById("btnSelectAll");
+
+    const btnClearAll =
+        document.getElementById("btnClearAll");
+
+    const btnCopiarEditor =
+        document.getElementById("btnCopiarEditor");
+
+    const infoCourse =
+        document.getElementById("infoCourse");
+
+    const infoSubject =
+        document.getElementById("infoSubject");
+
+    const infoUnit =
+        document.getElementById("infoUnit");
+
+    const infoOA =
+        document.getElementById("infoOA");
+
 
     //=========================================================
     // VALIDACIÓN DE ELEMENTOS PRINCIPALES
@@ -165,6 +189,10 @@ if (document.readyState === "loading") {
     let currentUnits = [];
 
     let currentObjectives = [];
+
+    // Última planificación generada (markdown crudo,
+    // se usa para Copiar / Exportar Word / Exportar PDF)
+    let lastGeneratedMarkdown = "";
 
 
     //=========================================================
@@ -1084,7 +1112,17 @@ if (document.readyState === "loading") {
             );
 
 
+            // Nueva unidad: limpiar el filtro del buscador
+            if (searchOA) {
+
+                searchOA.value = "";
+
+            }
+
+
             renderObjectives();
+
+            updateCurriculumInfo();
 
         }
 
@@ -1363,6 +1401,9 @@ if (document.readyState === "loading") {
             clearObjectives();
 
 
+            updateCurriculumInfo();
+
+
             if (selectedCourse === "") {
 
                 return;
@@ -1409,6 +1450,9 @@ if (document.readyState === "loading") {
             clearObjectives();
 
 
+            updateCurriculumInfo();
+
+
             if (
 
                 course.value === "" ||
@@ -1452,6 +1496,9 @@ if (document.readyState === "loading") {
 
 
             clearObjectives();
+
+
+            updateCurriculumInfo();
 
 
             if (
@@ -1534,6 +1581,124 @@ if (document.readyState === "loading") {
 
 
         return selected;
+
+    }
+
+
+    //=========================================================
+    // PANEL "INFORMACIÓN CURRICULAR" (actualización en vivo)
+    //=========================================================
+
+    function updateCurriculumInfo() {
+
+        if (infoCourse) {
+
+            infoCourse.textContent =
+                course.value || "—";
+
+        }
+
+        if (infoSubject) {
+
+            infoSubject.textContent =
+                subject.value || "—";
+
+        }
+
+        if (infoUnit) {
+
+            infoUnit.textContent =
+                unit.value || "—";
+
+        }
+
+        if (infoOA) {
+
+            infoOA.textContent =
+                String(getSelectedObjectives().length);
+
+        }
+
+    }
+
+
+    //=========================================================
+    // BUSCADOR DE OA (filtro en vivo)
+    //=========================================================
+
+    function normalizeSearchText(text) {
+
+        return String(text || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+    }
+
+
+    function filterObjectives() {
+
+        if (!searchOA || !learningObjectives) {
+
+            return;
+
+        }
+
+        const query =
+            normalizeSearchText(searchOA.value.trim());
+
+        learningObjectives
+            .querySelectorAll(".oa-item")
+            .forEach((item) => {
+
+                const haystack =
+                    normalizeSearchText(item.textContent);
+
+                item.classList.toggle(
+                    "oa-hidden",
+                    query !== "" && !haystack.includes(query)
+                );
+
+            });
+
+    }
+
+
+    //=========================================================
+    // SELECCIONAR TODOS / LIMPIAR OA
+    // (respeta el filtro del buscador: solo marca visibles)
+    //=========================================================
+
+    function setAllObjectives(checked) {
+
+        if (!learningObjectives) {
+
+            return;
+
+        }
+
+        learningObjectives
+            .querySelectorAll(".oa-checkbox")
+            .forEach((box) => {
+
+                const item =
+                    box.closest(".oa-item");
+
+                if (
+                    checked &&
+                    item &&
+                    item.classList.contains("oa-hidden")
+                ) {
+
+                    return;
+
+                }
+
+                box.checked = checked;
+
+            });
+
+        updateCurriculumInfo();
 
     }
 
@@ -1698,6 +1863,48 @@ if (document.readyState === "loading") {
 
 
     //=========================================================
+    // RENDER MARKDOWN → HTML
+    // Usa marked (CDN incluido en la plantilla).
+    // Respaldo: texto escapado con <br>.
+    //=========================================================
+
+    function renderMarkdown(text) {
+
+        const source =
+            String(text ?? "");
+
+        if (
+            window.marked &&
+            typeof window.marked.parse === "function"
+        ) {
+
+            try {
+
+                return window.marked.parse(source);
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Error renderizando markdown:",
+                    error
+                );
+
+            }
+
+        }
+
+        return source
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\n/g, "<br>");
+
+    }
+
+
+    //=========================================================
     // MOSTRAR PLANIFICACIÓN
     //=========================================================
 
@@ -1729,15 +1936,14 @@ if (document.readyState === "loading") {
         }
 
 
+        lastGeneratedMarkdown =
+            String(content);
+
         resultado.innerHTML = `
 
             <div class="planning-response">
 
-                ${String(content)
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/\n/g, "<br>")}
+                ${renderMarkdown(content)}
 
             </div>
 
@@ -2057,7 +2263,20 @@ if (document.readyState === "loading") {
         clearObjectives();
 
 
+        if (searchOA) {
+
+            searchOA.value = "";
+
+        }
+
+
+        lastGeneratedMarkdown = "";
+
+
         resetResult();
+
+
+        updateCurriculumInfo();
 
 
         showToast(
@@ -2087,13 +2306,8 @@ if (document.readyState === "loading") {
 
 
             if (
-
-                texto === "" ||
-
-                texto.includes(
-                    "AulaMind IA está listo"
-                )
-
+                !hasGeneratedContent() ||
+                texto === ""
             ) {
 
                 showToast(
@@ -2136,28 +2350,195 @@ if (document.readyState === "loading") {
 
 
     //=========================================================
-    // EXPORTAR WORD
+    // EXPORTAR — utilidades comunes
+    //=========================================================
+
+    function hasGeneratedContent() {
+
+        return (
+            lastGeneratedMarkdown &&
+            lastGeneratedMarkdown.trim() !== ""
+        );
+
+    }
+
+
+    function buildExportFileName(extension) {
+
+        const parts = [
+            "Planificacion",
+            course.value || "",
+            subject.value || ""
+        ];
+
+        const base =
+            parts
+                .filter(Boolean)
+                .join("_")
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^\w\- ]/g, "")
+                .trim()
+                .replace(/\s+/g, "_");
+
+        return `${base}.${extension}`;
+
+    }
+
+
+    function buildExportDocument() {
+
+        const fecha =
+            new Date().toLocaleDateString(
+                "es-CL",
+                {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }
+            );
+
+        const cuerpo =
+            renderMarkdown(lastGeneratedMarkdown);
+
+        return `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8">
+<title>Planificación AulaMind</title>
+<style>
+body{font-family:Calibri,Arial,sans-serif;font-size:11pt;color:#1f2937;line-height:1.55;margin:40px;}
+h1{font-size:17pt;color:#1e3a8a;margin:14pt 0 6pt;}
+h2{font-size:13.5pt;color:#1e3a8a;margin:14pt 0 5pt;}
+h3{font-size:11.5pt;color:#334155;margin:10pt 0 4pt;}
+p{margin:5pt 0;}
+ul,ol{margin:5pt 0 5pt 18pt;}
+table{border-collapse:collapse;width:100%;margin:8pt 0;}
+th,td{border:1px solid #94a3b8;padding:5pt 7pt;text-align:left;vertical-align:top;}
+th{background:#e2e8f0;}
+.brand{border-bottom:2pt solid #1e3a8a;padding-bottom:8pt;margin-bottom:12pt;}
+.meta{color:#475569;font-size:10pt;}
+.footer{margin-top:18pt;border-top:1px solid #cbd5e1;padding-top:6pt;color:#94a3b8;font-size:9pt;}
+</style>
+</head>
+<body>
+<div class="brand">
+<strong style="font-size:15pt;color:#1e3a8a;">AulaMind Enterprise 3.0</strong><br>
+<span class="meta">Planificación pedagógica generada con IA · Biotecno Chile</span>
+</div>
+<p class="meta">
+<strong>Curso:</strong> ${escapeHTML(course.value || "—")}<br>
+<strong>Asignatura:</strong> ${escapeHTML(subject.value || "—")}<br>
+<strong>Unidad:</strong> ${escapeHTML(unit.value || "—")}<br>
+<strong>Tema:</strong> ${escapeHTML(tema ? tema.value : "—")}<br>
+<strong>Fecha de emisión:</strong> ${fecha}
+</p>
+<hr>
+${cuerpo}
+<div class="footer">Documento generado por AulaMind Enterprise 3.0 — aulamind.cl</div>
+</body>
+</html>`;
+
+    }
+
+
+    //=========================================================
+    // EXPORTAR WORD (.doc compatible con MS Word)
     //=========================================================
 
     function exportWord() {
 
+        if (!hasGeneratedContent()) {
+
+            showToast(
+                "Primero genera una planificación.",
+                false
+            );
+
+            return;
+
+        }
+
+        const blob =
+            new Blob(
+                ["\ufeff", buildExportDocument()],
+                { type: "application/msword" }
+            );
+
+        const url =
+            URL.createObjectURL(blob);
+
+        const link =
+            document.createElement("a");
+
+        link.href = url;
+
+        link.download =
+            buildExportFileName("doc");
+
+        document.body.appendChild(link);
+
+        link.click();
+
+        link.remove();
+
+        URL.revokeObjectURL(url);
+
         showToast(
-            "La exportación Word se mantendrá para su módulo correspondiente.",
-            false
+            "Documento Word descargado."
         );
 
     }
 
 
     //=========================================================
-    // EXPORTAR PDF
+    // EXPORTAR PDF (ventana de impresión → Guardar como PDF)
     //=========================================================
 
     function exportPDF() {
 
+        if (!hasGeneratedContent()) {
+
+            showToast(
+                "Primero genera una planificación.",
+                false
+            );
+
+            return;
+
+        }
+
+        const printWindow =
+            window.open("", "_blank");
+
+        if (!printWindow) {
+
+            showToast(
+                "El navegador bloqueó la ventana emergente. Permítela para exportar a PDF.",
+                false
+            );
+
+            return;
+
+        }
+
+        printWindow.document.open();
+
+        printWindow.document.write(
+            buildExportDocument()
+        );
+
+        printWindow.document.close();
+
+        printWindow.focus();
+
+        setTimeout(function () {
+
+            printWindow.print();
+
+        }, 500);
+
         showToast(
-            "La exportación PDF se mantendrá para su módulo correspondiente.",
-            false
+            "En la ventana abierta elige «Guardar como PDF»."
         );
 
     }
@@ -2251,6 +2632,113 @@ if (document.readyState === "loading") {
                 event.preventDefault();
 
                 exportPDF();
+
+            }
+
+        );
+
+    }
+
+
+    //=========================================================
+    // BUSCADOR DE OA
+    //=========================================================
+
+    if (searchOA) {
+
+        searchOA.addEventListener(
+            "input",
+            filterObjectives
+        );
+
+    }
+
+
+    //=========================================================
+    // SELECCIONAR TODOS / LIMPIAR OA
+    //=========================================================
+
+    if (btnSelectAll) {
+
+        btnSelectAll.addEventListener(
+
+            "click",
+
+            function (event) {
+
+                event.preventDefault();
+
+                setAllObjectives(true);
+
+                showToast(
+                    "Objetivos seleccionados."
+                );
+
+            }
+
+        );
+
+    }
+
+    if (btnClearAll) {
+
+        btnClearAll.addEventListener(
+
+            "click",
+
+            function (event) {
+
+                event.preventDefault();
+
+                setAllObjectives(false);
+
+            }
+
+        );
+
+    }
+
+
+    //=========================================================
+    // CONTADOR DE OA EN VIVO (panel Información Curricular)
+    //=========================================================
+
+    learningObjectives.addEventListener(
+
+        "change",
+
+        function (event) {
+
+            if (
+                event.target &&
+                event.target.classList &&
+                event.target.classList.contains("oa-checkbox")
+            ) {
+
+                updateCurriculumInfo();
+
+            }
+
+        }
+
+    );
+
+
+    //=========================================================
+    // BOTÓN COPIAR DEL EDITOR (junto al resultado)
+    //=========================================================
+
+    if (btnCopiarEditor) {
+
+        btnCopiarEditor.addEventListener(
+
+            "click",
+
+            async function (event) {
+
+                event.preventDefault();
+
+                await copyPlanning();
 
             }
 
@@ -2378,18 +2866,8 @@ if (document.readyState === "loading") {
     }
 
 
- //=========================================================
-// EJECUTAR INICIALIZACIÓN
-//=========================================================
-
-console.log("ANTES initializePlanning");
-
-initializePlanning()
-    .then(() => console.log("initializePlanning OK"))
-    .catch(err => console.error("initializePlanning ERROR", err));
-
 //=============================================================
 // FIN planning.js
-// (el cierre DOMContentLoaded era un remanente del armado
-// por partes y rompía toda la sintaxis del archivo)
+// La inicialización se ejecuta UNA sola vez desde el wrapper
+// DOMContentLoaded/startPlanning al inicio del archivo.
 //=============================================================

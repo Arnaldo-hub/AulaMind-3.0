@@ -41,10 +41,10 @@
     =======================================================-->
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/dashboard.css') }}">
+          href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/planning.css') }}">
+          href="{{ url_for('static', filename='css/planning.css', v=config.APP_VERSION) }}">
 
 </head>
 
@@ -907,166 +907,6 @@
 
                 </div>
 
-                <!--==============================================
-                PANEL IA
-                ==============================================-->
-
-                <aside class="assistant-panel">
-
-                    <div class="assistant-card">
-
-                        <div class="assistant-header">
-
-                            <i class="fa-solid fa-brain"></i>
-
-                            <h3>
-
-                                AulaMind IA
-
-                            </h3>
-
-                        </div>
-
-                        <div class="assistant-body">
-
-                            <p>
-
-                                La planificación será construida utilizando:
-
-                            </p>
-
-                            <ul>
-
-                                <li>
-
-                                    ✔ Currículum Nacional MINEDUC
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Objetivos de Aprendizaje
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Estrategias Didácticas
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Evaluación Formativa
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Inicio
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Desarrollo
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Cierre
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Recursos
-
-                                </li>
-
-                                <li>
-
-                                    ✔ Adecuaciones Curriculares
-
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                    <div class="assistant-card">
-
-                        <div class="assistant-header">
-
-                            <i class="fa-solid fa-chart-line"></i>
-
-                            <h3>
-
-                                Estado
-
-                            </h3>
-
-                        </div>
-
-                        <div class="assistant-status">
-
-                            <div class="status-item">
-
-                                <span>
-
-                                    Motor Curricular
-
-                                </span>
-
-                                <strong class="status-ok">
-
-                                    Activo
-
-                                </strong>
-
-                            </div>
-
-                            <div class="status-item">
-
-                                <span>
-
-                                    IA
-
-                                </span>
-
-                                <strong class="status-ok">
-
-                                    Conectada
-
-                                </strong>
-
-                            </div>
-
-                            <div class="status-item">
-
-                                <span>
-
-                                    OpenAI
-
-                                </span>
-
-                                <strong class="status-ok">
-
-                                    Disponible
-
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </aside>
-
             </div>
 
         </section>
@@ -1077,7 +917,8 @@
 
         <div
             id="loader"
-            class="loader-overlay">
+            class="loader-overlay"
+            style="display: none;">
 
             <div class="loader-content">
 
@@ -1085,43 +926,22 @@
 
                 <h3>
 
-                    AulaMind IA
+                    Generando tu planificación...
 
                 </h3>
 
                 <p>
 
-                    Generando la planificación...
+                    AulaMind IA está analizando el Currículum
+                    Nacional y los Objetivos de Aprendizaje
+                    seleccionados.
 
                 </p>
 
-            </div>
+                <p class="loader-hint">
 
-        </div>
-
-        <!--==========================================================
-        MODAL
-        ===========================================================-->
-
-        <div
-            id="loadingModal"
-            class="modal">
-
-            <div class="modal-content">
-
-                <i class="fa-solid fa-robot fa-3x"></i>
-
-                <h2>
-
-                    Espere un momento...
-
-                </h2>
-
-                <p>
-
-                    Analizando el Currículum Nacional,
-                    los Objetivos de Aprendizaje
-                    y construyendo la planificación.
+                    Esto puede tomar hasta 1 minuto.
+                    No cierres esta ventana.
 
                 </p>
 
