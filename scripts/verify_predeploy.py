@@ -310,6 +310,61 @@ check(
 
 
 # ==========================================================
+# 7. Guardia global de autenticación (DT-016)
+# ==========================================================
+
+print("\n=== 7. Guardia global de autenticación ===")
+
+# Anónimo: toda página protegida debe redirigir al login
+with client.session_transaction() as s:
+    s.clear()
+
+PROTECTED = [
+    "/",
+    "/planning/",
+    "/evaluation/",
+    "/guides/",
+    "/rubrics/",
+    "/pie/",
+    "/analytics/",
+    "/curriculum/",
+    "/admin/usuarios",
+    "/auth/profile",
+]
+
+for path in PROTECTED:
+
+    r = client.get(path)
+    location = r.headers.get("Location", "")
+
+    check(
+        f"Anónimo en {path} -> login",
+        r.status_code in (301, 302) and "/auth/login" in location,
+        f"recibió {r.status_code} -> {location[:50]}"
+    )
+
+# Anónimo: páginas públicas siguen abiertas
+for path in ("/auth/login", "/auth/forgot-password", "/health"):
+
+    r = client.get(path)
+
+    check(
+        f"Anónimo en {path} -> 200",
+        r.status_code == 200,
+        f"recibió {r.status_code}"
+    )
+
+# Anónimo: API responde 401 JSON, nunca datos
+r = client.get("/admin/api/usuarios")
+
+check(
+    "Anónimo en /admin/api/usuarios -> 401",
+    r.status_code == 401,
+    f"recibió {r.status_code}"
+)
+
+
+# ==========================================================
 # Reporte final
 # ==========================================================
 

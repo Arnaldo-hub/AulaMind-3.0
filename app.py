@@ -14,7 +14,7 @@ Biotecno Chile
 from dotenv import load_dotenv
 load_dotenv()
 
-from flask import Flask, redirect, url_for, jsonify
+from flask import Flask, redirect, url_for, jsonify, request, session
 
 from config import Config
 from flask_wtf.csrf import CSRFProtect, CSRFError
@@ -114,9 +114,12 @@ app.register_blueprint(pie)  # ← NUEVO
 @app.route("/")
 def index():
 
-    return redirect(
-        url_for("dashboard.home")
-    )
+    # Hasta que exista la landing pública (v3.1), la raíz
+    # envía al login; con sesión activa va al dashboard.
+    if session.get("user_id"):
+        return redirect(url_for("dashboard.home"))
+
+    return redirect(url_for("auth.login"))
 
 # ==========================================================
 # STATUS
@@ -137,6 +140,43 @@ def status():
         "status": "running"
 
     }
+
+# ==========================================================
+# GUARDIA GLOBAL DE AUTENTICACIÓN
+# Toda la plataforma exige sesión activa, salvo los
+# endpoints públicos listados abajo. (DT-016)
+# ==========================================================
+
+PUBLIC_ENDPOINTS = {
+    "index",
+    "health",
+    "dashboard.health",  # colisión: dashboard.py también define /health y gana por orden de registro
+    "status",
+    "static",
+    "auth.login",
+    "auth.register",
+    "password_reset.forgot_password",
+    "password_reset.reset_password",
+}
+
+
+@app.before_request
+def require_login_globally():
+
+    endpoint = request.endpoint
+
+    if endpoint is None or endpoint in PUBLIC_ENDPOINTS:
+        return None
+
+    if session.get("user_id"):
+        return None
+
+    # APIs responden 401 JSON; páginas redirigen al login
+    if "/api/" in request.path:
+        return jsonify({"error": "No autenticado"}), 401
+
+    return redirect(url_for("auth.login"))
+
 
 # ==========================================================
 # MAIN
