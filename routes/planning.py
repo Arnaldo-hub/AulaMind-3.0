@@ -22,6 +22,7 @@ from flask import (
 
 from services.curriculum_service import curriculum_service
 from security.authorization import subscription_required
+from services.entitlements import Entitlements
 from services.planning_service import planning_service
 from services.persistence_service import persistence_service
 
@@ -276,18 +277,54 @@ def generate():
 
     try:
 
-        data = request.get_json(silent=True)
+        raw = request.get_json(silent=True)
 
-        if not data:
+        if not raw:
             return error(
                 "No se recibieron datos.",
                 400
             )
 
+        # --------------------------------------------------
+        # Normalizar aliases inglés → español.
+        #
+        # planning.js envía las claves en español
+        # (curso, asignatura, unidad, objetivos...), que
+        # son las que entiende PlanningService. Se aceptan
+        # también las variantes en inglés por compatibilidad.
+        # --------------------------------------------------
+
+        aliases = {
+            "course": "curso",
+            "subject": "asignatura",
+            "unit": "unidad",
+            "objectives": "objetivos",
+            "learning_objectives": "objetivos",
+            "selected_objectives": "objetivos",
+            "topic": "tema",
+            "duration": "duracion",
+            "class_type": "tipo",
+            "methodology": "metodologia",
+            "evaluation": "evaluacion",
+            "resources": "recursos",
+            "notes": "observaciones",
+        }
+
+        data = dict(raw)
+
+        for en, es in aliases.items():
+
+            if en in data:
+
+                if es not in data:
+                    data[es] = data[en]
+
+                del data[en]
+
         required = [
-            "course",
-            "subject",
-            "unit"
+            "curso",
+            "asignatura",
+            "unidad"
         ]
 
         missing = [
@@ -303,13 +340,7 @@ def generate():
                 400
             )
 
-        objectives = data.get("objectives")
-
-        if objectives is None:
-            objectives = data.get("learning_objectives")
-
-        if objectives is None:
-            objectives = data.get("selected_objectives")
+        objectives = data.get("objetivos")
 
         if objectives is None:
             objectives = []
@@ -317,13 +348,13 @@ def generate():
         if isinstance(objectives, str):
             objectives = [objectives]
 
-        data["objectives"] = objectives
+        data["objetivos"] = objectives
 
         current_app.logger.info(
             "Generando planificación %s | %s | %s",
-            data["course"],
-            data["subject"],
-            data["unit"]
+            data["curso"],
+            data["asignatura"],
+            data["unidad"]
         )
 
         result = planning_service.generate(data)
@@ -336,6 +367,11 @@ def generate():
             )
 
         if result.get("success"):
+
+            # Consumir una generación del trial (si aplica)
+            Entitlements.record_generation(
+                session.get("user_id")
+            )
 
             try:
 

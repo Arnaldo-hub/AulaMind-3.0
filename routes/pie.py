@@ -10,6 +10,7 @@ Módulo de Adecuaciones Curriculares PIE
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from services.pie_service import PIEService
 from security.authorization import subscription_required
+from services.entitlements import Entitlements
 from services.persistence_service import persistence_service
 
 pie = Blueprint("pie", __name__, url_prefix="/pie")
@@ -31,6 +32,8 @@ def generate():
     try:
         result = pie_service.generate(payload)
         if result.get("success"):
+            # Consumir una generación del trial (si aplica)
+            Entitlements.record_generation(session["user_id"])
             document_id = persistence_service.save_generated_document(
                 user_id=session["user_id"],
                 school_id=session.get("school_id"),

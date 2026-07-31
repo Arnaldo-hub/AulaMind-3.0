@@ -537,6 +537,159 @@ finally:
 
 
 # ==========================================================
+# 9. Regresión: /planning/generate acepta las claves que
+#    envía planning.js (español) — bug "Campos obligatorios
+#    faltantes: course, subject, unit" (v3.1.3+)
+# ==========================================================
+
+print("\n=== 9. Generate planning con claves reales del JS ===")
+
+login(ADMIN_ID, "admin", "admin@verify.cl")
+
+import routes.planning as _planning_routes
+
+_captured = {}
+
+
+class _FakePlanningService:
+
+    def generate(self, data):
+        _captured.update(data)
+        return {"success": True, "content": "PLAN_OK"}
+
+
+_real_ps = _planning_routes.planning_service
+_planning_routes.planning_service = _FakePlanningService()
+
+_csrf_prev = app_module.app.config.get("WTF_CSRF_ENABLED", True)
+app_module.app.config["WTF_CSRF_ENABLED"] = False
+
+try:
+
+    # 9.1 Payload EXACTO que envía planning.js (buildPayload)
+    r = client.post("/planning/generate", json={
+        "curso": "5° Básico",
+        "asignatura": "Tecnología",
+        "unidad": "Unidad 2",
+        "objetivos": ["OA 2"],
+        "tema": "gráficos",
+        "duracion": "45 minutos",
+        "tipo": "Aprendizaje Basado en Proyectos",
+        "metodologia": "Aprendizaje Activo",
+        "evaluacion": "Formativa",
+        "recursos": "PPT",
+        "observaciones": "",
+    })
+    _body = r.get_json() or {}
+
+    check(
+        "/planning/generate acepta claves en español (JS real)",
+        r.status_code == 200 and _body.get("success") is True,
+        f"status={r.status_code} body={str(_body)[:120]}"
+    )
+
+    check(
+        "Servicio recibió curso/asignatura/unidad/objetivos",
+        _captured.get("curso") == "5° Básico"
+        and _captured.get("asignatura") == "Tecnología"
+        and _captured.get("unidad") == "Unidad 2"
+        and _captured.get("objetivos") == ["OA 2"],
+        f"captured={str(_captured)[:140]}"
+    )
+
+    # 9.2 Compatibilidad: aliases en inglés también entran
+    _captured.clear()
+    r = client.post("/planning/generate", json={
+        "course": "5° Básico",
+        "subject": "Tecnología",
+        "unit": "Unidad 2",
+        "objectives": ["OA 2"],
+    })
+    _body = r.get_json() or {}
+
+    check(
+        "/planning/generate traduce aliases en inglés",
+        r.status_code == 200
+        and _body.get("success") is True
+        and _captured.get("curso") == "5° Básico"
+        and _captured.get("objetivos") == ["OA 2"],
+        f"status={r.status_code} captured={str(_captured)[:120]}"
+    )
+
+    # 9.3 Payload incompleto sigue rechazándose (400)
+    r = client.post("/planning/generate", json={"tema": "x"})
+    _body = r.get_json() or {}
+
+    check(
+        "/planning/generate rechaza payload incompleto (400)",
+        r.status_code == 400
+        and (
+            "obligatorios" in str(_body.get("error") or "")
+            or "obligatorios" in str(_body.get("message") or "")
+        ),
+        f"status={r.status_code} body={str(_body)[:120]}"
+    )
+
+    # 9.4 Generar con usuario trial CONSUME cuota (contador 0→1)
+    _db2 = _SL()
+    _ctx2 = app_module.app.app_context()
+    _ctx2.push()
+
+    try:
+
+        _email2 = f"quota_{_dt.utcnow().timestamp():.0f}@verify.local"
+        _u2 = _User(
+            first_name="Quota",
+            last_name="Test",
+            email=_email2,
+            password_hash="verify-only",
+            role="teacher",
+        )
+        _db2.add(_u2)
+        _db2.commit()
+        _db2.refresh(_u2)
+
+        _Ent.ensure_default_plans(_db2)
+        _sub2 = _Ent.create_trial(_db2, _u2)
+
+        login(str(_u2.id), "teacher", _email2)
+
+        r = client.post("/planning/generate", json={
+            "curso": "5° Básico",
+            "asignatura": "Tecnología",
+            "unidad": "Unidad 2",
+            "objetivos": ["OA 2"],
+        })
+        _body = r.get_json() or {}
+
+        _db2.refresh(_sub2)
+
+        check(
+            "Generación exitosa consume cuota del trial (0→1)",
+            r.status_code == 200
+            and _body.get("success") is True
+            and _sub2.generations_used == 1,
+            f"status={r.status_code} used={_sub2.generations_used}"
+        )
+
+        _db2.query(_US).filter(_US.user_id == str(_u2.id)).delete()
+        _db2.delete(_u2)
+        _db2.commit()
+
+    finally:
+
+        _db2.close()
+        _ctx2.pop()
+
+    login(ADMIN_ID, "admin", "admin@verify.cl")
+
+finally:
+
+    _planning_routes.planning_service = _real_ps
+    app_module.app.config["WTF_CSRF_ENABLED"] = _csrf_prev
+
+
+# ==========================================================
 # Reporte final
 # ==========================================================
 

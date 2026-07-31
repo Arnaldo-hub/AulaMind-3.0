@@ -10,6 +10,7 @@ from flask import (
 
 from services.evaluation_service import EvaluationService
 from security.authorization import subscription_required
+from services.entitlements import Entitlements
 from services.persistence_service import persistence_service
 
 evaluation = Blueprint(
@@ -61,6 +62,9 @@ def generate():
         result = evaluation_service.generate(payload)
 
         if result.get("success"):
+
+            # Consumir una generación del trial (si aplica)
+            Entitlements.record_generation(session["user_id"])
 
             document_id = persistence_service.save_generated_document(
                 user_id=session["user_id"],

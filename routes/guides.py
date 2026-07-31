@@ -8,6 +8,7 @@ routes/guides.py
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from services.guide_service import GuideService
 from security.authorization import subscription_required
+from services.entitlements import Entitlements
 from services.persistence_service import persistence_service
 
 guides = Blueprint("guides", __name__, url_prefix="/guides")
@@ -29,6 +30,8 @@ def generate():
     try:
         result = guide_service.generate(payload)
         if result.get("success"):
+            # Consumir una generación del trial (si aplica)
+            Entitlements.record_generation(session["user_id"])
             document_id = persistence_service.save_generated_document(
                 user_id=session["user_id"],
                 school_id=session.get("school_id"),
