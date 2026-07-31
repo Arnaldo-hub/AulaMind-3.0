@@ -459,6 +459,17 @@ check(
     f"recibió {r.status_code}"
 )
 
+# Botón de pago apunta al WhatsApp real configurado (v3.1.4)
+_ps = open(
+    os.path.join(ROOT, "templates", "plan_status.html"),
+    encoding="utf-8"
+).read()
+
+check(
+    "Mi Plan usa config.WHATSAPP_NUMBER (sin placeholder)",
+    "56900000000" not in _ps and "config.WHATSAPP_NUMBER" in _ps,
+)
+
 # ==========================================================
 # 8. Motor de trial (v3.1)
 # ==========================================================

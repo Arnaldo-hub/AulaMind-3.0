@@ -136,6 +136,10 @@ class Config:
 
     PRO_MONTHLY_PRICE_CLP = int(os.getenv("PRO_MONTHLY_PRICE_CLP", "9990"))
 
+    # WhatsApp comercial (botón "Activar Plan Pro" en Mi Plan).
+    # Solo dígitos, con código de país, sin '+'.
+    WHATSAPP_NUMBER = os.getenv("WHATSAPP_NUMBER", "56954690241")
+
     # =====================================================
     # Base de Datos
     # =====================================================
