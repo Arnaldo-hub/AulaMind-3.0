@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generation-ui.css', v=config.APP_VERSION) }}">
 
     <style>
         .pie-section { padding: 2rem; max-width: 900px; }
@@ -306,7 +307,7 @@
                     <button id="downloadWord"><i class="fa-solid fa-file-word"></i> Word</button>
                     <button id="downloadPdf"><i class="fa-solid fa-file-pdf"></i> PDF</button>
                 </div>
-                <pre class="result-box" id="pieResult"></pre>
+                <div class="result-box generation-markdown" id="pieResult"></div>
             </div>
 
             <div class="pie-card">
@@ -341,9 +342,12 @@
 </div>
 
 <div id="loadingModal" class="loader-overlay">
-    <div class="spinner"></div>
-    <h3>AulaMind IA</h3>
-    <p>Generando la adecuación PIE...</p>
+    <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <h3>Generando tu adecuación PIE...</h3>
+        <p>AulaMind IA está analizando el Currículum Nacional y las necesidades educativas descritas.</p>
+        <span class="loader-hint">Esto puede tomar hasta 1 minuto. No cierres esta ventana.</span>
+    </div>
 </div>
 
 <div id="toast" class="toast"></div>
@@ -354,6 +358,7 @@ window.PIE_CONFIG = {
     historyUrl: "{{ url_for('pie.history') }}"
 };
 </script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="{{ url_for('static', filename='js/pie.js', v=config.APP_VERSION) }}"></script>
 
 </body>

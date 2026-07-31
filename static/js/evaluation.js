@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentDocument = null;
 
+    let lastGeneratedMarkdown = "";
+
     let exportInfo = {
 
         word : null,
@@ -78,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(loadingModal){
 
-            loadingModal.style.display = "flex";
+            loadingModal.classList.add("active");
 
         }
 
@@ -88,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if(loadingModal){
 
-            loadingModal.style.display = "none";
+            loadingModal.classList.remove("active");
 
         }
 
@@ -122,11 +124,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    function renderMarkdown(text){
+
+        const source = String(text ?? "");
+
+        if(
+            window.marked &&
+            typeof window.marked.parse === "function"
+        ){
+
+            try{
+
+                return window.marked.parse(source);
+
+            }
+
+            catch(error){
+
+                console.error(
+                    "Error renderizando markdown:",
+                    error
+                );
+
+            }
+
+        }
+
+        return source
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\n/g, "<br>");
+
+    }
+
     function showResult(content){
+
+        lastGeneratedMarkdown = content || "";
 
         if(result){
 
-            result.textContent = content || "";
+            result.innerHTML = renderMarkdown(lastGeneratedMarkdown);
 
         }
 
@@ -150,13 +188,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         currentDocument = null;
 
+        lastGeneratedMarkdown = "";
+
         exportInfo.word = null;
 
         exportInfo.pdf = null;
 
         if(result){
 
-            result.textContent="";
+            result.innerHTML="";
 
         }
 
@@ -198,6 +238,249 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         return data;
+
+    }
+
+    /**********************************************************************
+     * CARGA EN CASCADA DEL CURRÍCULO
+     **********************************************************************/
+
+    const API_BASE = "/planning/api/curriculum";
+
+    async function populateSelect(url, selectId, placeholder){
+
+        const select = document.getElementById(selectId);
+
+        if(!select){
+
+            return;
+
+        }
+
+        try{
+
+            const response = await fetch(url);
+
+            const data = await response.json();
+
+            if(!data.success){
+
+                throw new Error(data.message || "Error API");
+
+            }
+
+            select.innerHTML =
+                `<option value="">${placeholder}</option>`;
+
+            const key =
+                selectId === "curso"      ? "courses"    :
+                selectId === "asignatura" ? "subjects"   :
+                selectId === "unidad"     ? "units"      :
+                "objectives";
+
+            const items = data[key];
+
+            if(!items || items.length === 0){
+
+                select.innerHTML =
+                    "<option value=\"\">No hay datos disponibles</option>";
+
+                select.disabled = true;
+
+                return;
+
+            }
+
+            items.forEach((item)=>{
+
+                const opt = document.createElement("option");
+
+                if(typeof item === "object" && item !== null){
+
+                    if(item.code){
+
+                        opt.value = item.code;
+                        opt.textContent =
+                            item.code + " - " + (item.description || "");
+                        opt.title = item.description || item.code;
+
+                    }
+
+                    else if(item.id){
+
+                        opt.value = item.id;
+                        opt.textContent = item.name || item.id;
+
+                    }
+
+                    else if(item.name){
+
+                        opt.value = item.name;
+                        opt.textContent = item.name;
+
+                    }
+
+                    else{
+
+                        opt.value = JSON.stringify(item);
+                        opt.textContent =
+                            item.name || item.id || JSON.stringify(item);
+
+                    }
+
+                }
+
+                else{
+
+                    opt.value = item;
+                    opt.textContent = item;
+
+                }
+
+                select.appendChild(opt);
+
+            });
+
+            select.disabled = false;
+
+        }
+
+        catch(error){
+
+            console.error(
+                "Error cargando " + selectId + ":",
+                error
+            );
+
+            select.innerHTML =
+                "<option value=\"\">Error cargando datos</option>";
+
+            select.disabled = true;
+
+        }
+
+    }
+
+    (async()=>{
+
+        await populateSelect(
+            API_BASE + "/courses",
+            "curso",
+            "Selecciona un curso..."
+        );
+
+    })();
+
+    const cursoSelect = document.getElementById("curso");
+
+    if(cursoSelect){
+
+        cursoSelect.addEventListener("change", async function(){
+
+            const course = this.value;
+
+            const asignatura = document.getElementById("asignatura");
+            const unidad = document.getElementById("unidad");
+            const objetivo = document.getElementById("objetivo");
+
+            asignatura.innerHTML =
+                "<option value=\"\">Selecciona una asignatura...</option>";
+            unidad.innerHTML =
+                "<option value=\"\">Selecciona una unidad...</option>";
+            objetivo.innerHTML =
+                "<option value=\"\">Selecciona un OA...</option>";
+
+            asignatura.disabled = !course;
+            unidad.disabled = true;
+            objetivo.disabled = true;
+
+            if(!course){
+
+                return;
+
+            }
+
+            await populateSelect(
+                API_BASE + "/subjects/" + encodeURIComponent(course),
+                "asignatura",
+                "Selecciona una asignatura..."
+            );
+
+        });
+
+    }
+
+    const asignaturaSelect = document.getElementById("asignatura");
+
+    if(asignaturaSelect){
+
+        asignaturaSelect.addEventListener("change", async function(){
+
+            const course = document.getElementById("curso").value;
+            const subject = this.value;
+
+            const unidad = document.getElementById("unidad");
+            const objetivo = document.getElementById("objetivo");
+
+            unidad.innerHTML =
+                "<option value=\"\">Selecciona una unidad...</option>";
+            objetivo.innerHTML =
+                "<option value=\"\">Selecciona un OA...</option>";
+
+            unidad.disabled = !subject;
+            objetivo.disabled = true;
+
+            if(!subject){
+
+                return;
+
+            }
+
+            await populateSelect(
+                API_BASE + "/units/" +
+                    encodeURIComponent(course) + "/" +
+                    encodeURIComponent(subject),
+                "unidad",
+                "Selecciona una unidad..."
+            );
+
+        });
+
+    }
+
+    const unidadSelect = document.getElementById("unidad");
+
+    if(unidadSelect){
+
+        unidadSelect.addEventListener("change", async function(){
+
+            const course = document.getElementById("curso").value;
+            const subject = document.getElementById("asignatura").value;
+            const unit = this.value;
+
+            const objetivo = document.getElementById("objetivo");
+
+            objetivo.innerHTML =
+                "<option value=\"\">Selecciona un OA...</option>";
+
+            objetivo.disabled = !unit;
+
+            if(!unit){
+
+                return;
+
+            }
+
+            await populateSelect(
+                API_BASE + "/objectives/" +
+                    encodeURIComponent(course) + "/" +
+                    encodeURIComponent(subject) + "/" +
+                    encodeURIComponent(unit),
+                "objetivo",
+                "Selecciona un OA..."
+            );
+
+        });
 
     }
 
@@ -343,25 +626,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>
 
                         <button
-                            class="btn-open"
+                            class="btn-action btn-open"
                             data-id="${document.id}">
                             Abrir
                         </button>
 
                         <button
-                            class="btn-word"
+                            class="btn-action btn-word"
                             data-id="${document.id}">
                             Word
                         </button>
 
                         <button
-                            class="btn-pdf"
+                            class="btn-action btn-pdf"
                             data-id="${document.id}">
                             PDF
                         </button>
 
                         <button
-                            class="btn-delete"
+                            class="btn-action delete btn-delete"
                             data-id="${document.id}">
                             Eliminar
                         </button>
@@ -571,7 +854,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        const text=result.textContent.trim();
+        const text=(lastGeneratedMarkdown || result.textContent || "").trim();
 
         if(text===""){
 

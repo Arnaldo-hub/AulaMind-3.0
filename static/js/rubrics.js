@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var currentDocument = null;
     var exportInfo = { word: null, pdf: null };
+    var lastGeneratedMarkdown = "";
 
     function showLoading() { if(loadingModal) loadingModal.classList.add("active"); }
     function hideLoading() { if(loadingModal) loadingModal.classList.remove("active"); }
@@ -39,18 +40,36 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function showResult(content) {
-        if (result) result.textContent = content || "";
+        lastGeneratedMarkdown = content || "";
+        if (result) result.innerHTML = renderMarkdown(lastGeneratedMarkdown);
         if (resultSection) {
             resultSection.style.display = "block";
             resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     }
 
+    function renderMarkdown(text) {
+        var source = String(text == null ? "" : text);
+        if (window.marked && typeof window.marked.parse === "function") {
+            try {
+                return window.marked.parse(source);
+            } catch (error) {
+                console.error("Error renderizando markdown:", error);
+            }
+        }
+        return source
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\n/g, "<br>");
+    }
+
     function clearResult() {
         currentDocument = null;
         exportInfo.word = null;
         exportInfo.pdf = null;
-        if (result) result.textContent = "";
+        lastGeneratedMarkdown = "";
+        if (result) result.innerHTML = "";
     }
 
     async function request(url, options) {
@@ -258,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function copyRubric() {
         if (!result) return;
-        var text = result.textContent.trim();
+        var text = (lastGeneratedMarkdown || result.textContent || "").trim();
         if (!text) { showToast("No existe contenido para copiar.", "error"); return; }
         try {
             await navigator.clipboard.writeText(text);

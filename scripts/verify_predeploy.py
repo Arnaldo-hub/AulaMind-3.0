@@ -729,6 +729,140 @@ finally:
 
 
 # ==========================================================
+# 10. UX unificada módulos de generación (v3.1.5)
+# ==========================================================
+
+print("\n=== 10. UX unificada: evaluation/guides/rubrics/pie ===")
+
+# 10.1 CSS compartido existe con las piezas clave
+_guicss_path = os.path.join(ROOT, "static", "css", "generation-ui.css")
+_guicss = open(_guicss_path, encoding="utf-8").read() \
+    if os.path.exists(_guicss_path) else ""
+
+check(
+    "generation-ui.css existe (loader + markdown + toast)",
+    ".loader-overlay.active" in _guicss
+    and ".loader-content" in _guicss
+    and ".loader-hint" in _guicss
+    and ".generation-markdown" in _guicss
+    and ".toast.show" in _guicss,
+)
+
+# 10.2-10.5 Plantillas: marked, css compartido, loader profesional,
+# contenedor markdown y cache-busting
+for _mod, _res_id in [
+    ("guides", "guideResult"),
+    ("rubrics", "rubricResult"),
+    ("pie", "pieResult"),
+    ("evaluation", "evaluationResult"),
+]:
+
+    _tpl = open(
+        os.path.join(ROOT, "templates", f"{_mod}.html"),
+        encoding="utf-8"
+    ).read()
+
+    check(
+        f"{_mod}.html: marked + generation-ui.css + loader pro + "
+        f"div markdown + cache-bust",
+        "marked.min.js" in _tpl
+        and "generation-ui.css" in _tpl
+        and "loader-content" in _tpl
+        and "loader-hint" in _tpl
+        and "No cierres esta ventana" in _tpl
+        and f'result-box generation-markdown" id="{_res_id}"' in _tpl
+        and "<pre" not in _tpl
+        and "css/dashboard.css', v=config.APP_VERSION" in _tpl,
+    )
+
+# 10.6 evaluation.html tiene cascada curricular (selects, no inputs
+# de texto libre) y toast propio
+_eval_tpl = open(
+    os.path.join(ROOT, "templates", "evaluation.html"),
+    encoding="utf-8"
+).read()
+
+check(
+    "evaluation.html: selects en cascada + toast + campo preguntas",
+    '<select id="curso"' in _eval_tpl
+    and '<select id="asignatura"' in _eval_tpl
+    and '<select id="unidad"' in _eval_tpl
+    and '<select id="objetivo"' in _eval_tpl
+    and 'id="toast"' in _eval_tpl
+    and 'id="preguntas"' in _eval_tpl,
+)
+
+# 10.7 JS: renderMarkdown + lastGeneratedMarkdown + copia desde
+# la fuente markdown en los 4 módulos
+for _js in ["evaluation", "guides", "rubrics", "pie"]:
+
+    _src = open(
+        os.path.join(ROOT, "static", "js", f"{_js}.js"),
+        encoding="utf-8"
+    ).read()
+
+    check(
+        f"{_js}.js: renderMarkdown + lastGeneratedMarkdown + "
+        f"clearResult con innerHTML",
+        "function renderMarkdown" in _src
+        and "lastGeneratedMarkdown" in _src
+        and "result.innerHTML = renderMarkdown" in _src
+        and (
+            'result.innerHTML = ""' in _src
+            or 'result.innerHTML=""' in _src
+        )
+        and "window.marked" in _src,
+    )
+
+# 10.8 evaluation.js: cascada curricular + loader por clase
+_eval_js = open(
+    os.path.join(ROOT, "static", "js", "evaluation.js"),
+    encoding="utf-8"
+).read()
+
+check(
+    "evaluation.js: cascada curricular + loader .active + "
+    "botones btn-action",
+    "populateSelect" in _eval_js
+    and "/planning/api/curriculum" in _eval_js
+    and 'classList.add("active")' in _eval_js
+    and 'classList.remove("active")' in _eval_js
+    and "btn-action btn-open" in _eval_js,
+)
+
+# 10.9 APP_VERSION actualizada (cache-busting de estáticos)
+_cfg = open(
+    os.path.join(ROOT, "config.py"),
+    encoding="utf-8"
+).read()
+
+check(
+    "APP_VERSION = 3.1.5 (cache-busting)",
+    'APP_VERSION = "3.1.5"' in _cfg,
+)
+
+# 10.10 Páginas de los 4 módulos renderizan con la nueva UX
+for _url, _res_id in [
+    ("/evaluation/", "evaluationResult"),
+    ("/guides/", "guideResult"),
+    ("/rubrics/", "rubricResult"),
+    ("/pie/", "pieResult"),
+]:
+
+    r = client.get(_url)
+
+    check(
+        f"GET {_url} sirve UX unificada",
+        r.status_code == 200
+        and b"generation-markdown" in r.data
+        and b"marked.min.js" in r.data
+        and b"loader-content" in r.data
+        and _res_id.encode() in r.data,
+        f"recibió {r.status_code}"
+    )
+
+
+# ==========================================================
 # Reporte final
 # ==========================================================
 

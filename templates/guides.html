@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generation-ui.css', v=config.APP_VERSION) }}">
 
     <style>
         /* Estilos específicos del módulo Guías */
@@ -279,7 +280,7 @@
                     <button id="downloadWord"><i class="fa-solid fa-file-word"></i> Word</button>
                     <button id="downloadPdf"><i class="fa-solid fa-file-pdf"></i> PDF</button>
                 </div>
-                <pre class="result-box" id="guideResult"></pre>
+                <div class="result-box generation-markdown" id="guideResult"></div>
             </div>
 
             <!-- HISTORIAL -->
@@ -318,9 +319,12 @@
 
 <!-- LOADER -->
 <div id="loadingModal" class="loader-overlay">
-    <div class="spinner"></div>
-    <h3>AulaMind IA</h3>
-    <p>Generando la guía...</p>
+    <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <h3>Generando tu guía...</h3>
+        <p>AulaMind IA está analizando el Currículum Nacional y construyendo tu material pedagógico.</p>
+        <span class="loader-hint">Esto puede tomar hasta 1 minuto. No cierres esta ventana.</span>
+    </div>
 </div>
 
 <!-- TOAST -->
@@ -332,6 +336,7 @@ window.GUIDE_CONFIG = {
     historyUrl: "{{ url_for('guides.history') }}"
 };
 </script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="{{ url_for('static', filename='js/guides.js', v=config.APP_VERSION) }}"></script>
 
 </body>

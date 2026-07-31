@@ -1,0 +1,219 @@
+/******************************************************************************
+ * AulaMind Enterprise 3.0
+ * Archivo : static/css/generation-ui.css
+ * Propósito: Estilos compartidos de los módulos de generación IA
+ *            (evaluaciones, guías, rúbricas, PIE):
+ *            - Overlay de carga profesional (tarjeta + spinner + aviso)
+ *            - Contenido markdown renderizado
+ *            - Toast de notificaciones (refuerzo)
+ * Autor   : Biotecno Chile
+ * Versión : 3.1.5
+ ******************************************************************************/
+
+/* ============================================================
+ * OVERLAY DE CARGA
+ * El elemento raíz usa la clase .loader-overlay y se activa
+ * con la clase .active desde JS.
+ * ========================================================== */
+
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 1rem;
+}
+
+.loader-overlay.active {
+    display: flex;
+}
+
+.loader-content {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2.25rem 2.5rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.loader-content h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.loader-content p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.loader-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: generation-spin 1s linear infinite;
+}
+
+/* Compatibilidad con markup previo que usa .spinner */
+.loader-overlay .spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: generation-spin 1s linear infinite;
+}
+
+@keyframes generation-spin {
+    to { transform: rotate(360deg); }
+}
+
+.loader-hint {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+}
+
+/* ============================================================
+ * CONTENIDO MARKDOWN RENDERIZADO
+ * Aplicar la clase .generation-markdown al contenedor del
+ * resultado. Reemplaza la visualización de markdown crudo.
+ * ========================================================== */
+
+.generation-markdown {
+    white-space: normal;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #1f2937;
+}
+
+/* Gana a la regla inline .result-box de cada módulo (pre-wrap/monospace) */
+.result-box.generation-markdown {
+    white-space: normal;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.generation-markdown h1,
+.generation-markdown h2,
+.generation-markdown h3,
+.generation-markdown h4 {
+    color: #0f172a;
+    line-height: 1.3;
+    margin: 1.25rem 0 0.5rem;
+}
+
+.generation-markdown h1 { font-size: 1.45rem; }
+.generation-markdown h2 { font-size: 1.25rem; }
+.generation-markdown h3 { font-size: 1.1rem; }
+.generation-markdown h4 { font-size: 1rem; }
+
+.generation-markdown h1:first-child,
+.generation-markdown h2:first-child,
+.generation-markdown h3:first-child {
+    margin-top: 0;
+}
+
+.generation-markdown p {
+    margin: 0.6rem 0;
+    line-height: 1.65;
+}
+
+.generation-markdown ul,
+.generation-markdown ol {
+    margin: 0.6rem 0;
+    padding-left: 1.5rem;
+    line-height: 1.65;
+}
+
+.generation-markdown li {
+    margin: 0.25rem 0;
+}
+
+.generation-markdown strong {
+    color: #0f172a;
+}
+
+.generation-markdown hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 1.25rem 0;
+}
+
+.generation-markdown table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.generation-markdown th,
+.generation-markdown td {
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.generation-markdown th {
+    background: #f1f5f9;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.generation-markdown code {
+    background: #f1f5f9;
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.875em;
+}
+
+.generation-markdown blockquote {
+    border-left: 3px solid #2563eb;
+    margin: 0.75rem 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: #475569;
+    background: #f8fafc;
+}
+
+/* ============================================================
+ * TOAST (refuerzo por si el módulo no define estilos inline)
+ * ========================================================== */
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(120%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10001;
+    pointer-events: none;
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.toast.success { background: #10b981; color: #ffffff; }
+.toast.error   { background: #ef4444; color: #ffffff; }
