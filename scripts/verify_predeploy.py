@@ -863,6 +863,108 @@ for _url, _res_id in [
 
 
 # ==========================================================
+# 11. Dashboard: tarjetas activas + actividad reciente
+# ==========================================================
+
+print("\n=== 11. Dashboard: tarjetas y actividad reciente ===")
+
+# 11.1 Ninguna tarjeta de módulo operativo dice "Próximamente"
+_dash_tpl = open(
+    os.path.join(ROOT, "templates", "dashboard.html"),
+    encoding="utf-8"
+).read()
+
+check(
+    "dashboard.html: sin 'Próximamente' en módulos operativos",
+    "coming-soon" not in _dash_tpl
+    and "Próximamente" not in _dash_tpl
+    and "evaluation.index" in _dash_tpl
+    and "rubrics.index" in _dash_tpl
+    and "pie.index" in _dash_tpl,
+)
+
+# 11.2 Actividad reciente es dinámica (loop Jinja) con fallback
+check(
+    "dashboard.html: actividad reciente dinámica",
+    "recent_activity" in _dash_tpl
+    and "activity-list" in _dash_tpl
+    and "for item in recent_activity" in _dash_tpl
+    and "Aún no existen actividades" in _dash_tpl,
+)
+
+# 11.3 La ruta entrega recent_activity al template
+_dash_route = open(
+    os.path.join(ROOT, "routes", "dashboard.py"),
+    encoding="utf-8"
+).read()
+
+check(
+    "routes/dashboard.py: _recent_activity con metadatos por tipo",
+    "_recent_activity" in _dash_route
+    and "_ACTIVITY_META" in _dash_route
+    and "list_documents" in _dash_route
+    and "recent_activity=_recent_activity" in _dash_route,
+)
+
+# 11.4 CSS de la lista de actividad existe
+_dash_css = open(
+    os.path.join(ROOT, "static", "css", "dashboard.css"),
+    encoding="utf-8"
+).read()
+
+check(
+    "dashboard.css: estilos activity-list/activity-icon",
+    ".activity-list" in _dash_css
+    and ".activity-item" in _dash_css
+    and ".activity-icon.blue" in _dash_css,
+)
+
+# 11.5 E2E: documento recién creado aparece en el dashboard
+from services.persistence_service import persistence_service as _psvc
+
+_doc_id = _psvc.save_generated_document(
+    user_id=str(ADMIN_ID),
+    school_id=None,
+    document_type="planning",
+    payload={
+        "curso": "7° Básico",
+        "asignatura": "Historia",
+        "unidad": "Unidad X",
+        "tema": "ActividadRecienteVerify",
+    },
+    result={"content": "contenido de prueba actividad"},
+)
+
+try:
+
+    r = client.get("/dashboard/")
+
+    check(
+        "GET /dashboard/ muestra el documento en Actividad reciente",
+        r.status_code == 200
+        and b"activity-list" in r.data
+        and "Planning - Historia".encode() in r.data,
+        f"recibió {r.status_code}"
+    )
+
+finally:
+
+    from database.session import SessionLocal as _SL3
+    from models.document import Document as _Doc3
+
+    _db3 = _SL3()
+
+    try:
+
+        _db3.query(_Doc3).filter(_Doc3.id == _doc_id).delete()
+        _db3.commit()
+
+    finally:
+
+        _db3.close()
+
+
+# ==========================================================
 # Reporte final
 # ==========================================================
 

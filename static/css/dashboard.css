@@ -1525,3 +1525,159 @@ FIN DEL ARCHIVO
 Dashboard Enterprise v3.0
 AulaMind
 =========================================================*/
+/* ==========================================================
+ * ACTIVIDAD RECIENTE (v3.1.5)
+ * Lista de últimos documentos generados por el usuario
+ * ========================================================== */
+
+.activity-list{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.activity-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:16px 20px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:var(--surface);
+
+    transition:box-shadow 0.15s ease, transform 0.15s ease;
+
+}
+
+.activity-item:hover{
+
+    box-shadow:var(--shadow);
+
+    transform:translateY(-1px);
+
+}
+
+.activity-icon{
+
+    width:46px;
+
+    height:46px;
+
+    min-width:46px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#fff;
+
+    font-size:18px;
+
+}
+
+.activity-icon.blue{background:var(--primary);}
+
+.activity-icon.green{background:var(--success);}
+
+.activity-icon.purple{background:var(--purple);}
+
+.activity-icon.orange{background:var(--warning);}
+
+.activity-icon.red{background:var(--danger);}
+
+.activity-icon.cyan{background:var(--accent);}
+
+.activity-info{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+    min-width:0;
+
+}
+
+.activity-info strong{
+
+    font-size:15px;
+
+    color:var(--text);
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.activity-info small{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+.activity-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.activity-meta span{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+    white-space:nowrap;
+
+}
+
+@media (max-width: 720px){
+
+    .activity-item{
+
+        flex-wrap:wrap;
+
+    }
+
+    .activity-meta{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+}

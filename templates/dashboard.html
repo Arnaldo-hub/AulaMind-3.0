@@ -17,7 +17,7 @@
 
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='css/dashboard.css') }}">
+        href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
 
     <link
         rel="stylesheet"
@@ -430,11 +430,7 @@
 
             </div>
 
-            <span class="coming-soon">
-
-                Próximamente
-
-            </span>
+            <a href="{{ url_for('evaluation.index') }}" class="btn-module">Abrir módulo</a>
 
         </article>
 
@@ -496,11 +492,7 @@
 
             </div>
 
-            <span class="coming-soon">
-
-                Próximamente
-
-            </span>
+            <a href="{{ url_for('rubrics.index') }}" class="btn-module">Abrir módulo</a>
 
         </article>
 
@@ -531,7 +523,7 @@
 
             </div>
 
-            <a href="/pie" class="btn-module">Abrir módulo</a>
+            <a href="{{ url_for('pie.index') }}" class="btn-module">Abrir módulo</a>
 
         </article>
 
@@ -562,11 +554,7 @@
 
             </div>
 
-            <span class="coming-soon">
-
-                Ver analítica
-
-            </span>
+            <a href="{{ url_for('analytics.index') }}" class="btn-module">Ver analítica</a>
 
         </article>
 
@@ -660,6 +648,50 @@
 
         </div>
 
+        {% if recent_activity %}
+
+        <ul class="activity-list">
+
+            {% for item in recent_activity %}
+
+            <li class="activity-item">
+
+                <div class="activity-icon {{ item.color }}">
+
+                    <i class="fa-solid {{ item.icon }}"></i>
+
+                </div>
+
+                <div class="activity-info">
+
+                    <strong>{{ item.title }}</strong>
+
+                    <small>
+                        {{ item.type_label }}
+                        {% if item.course %} · {{ item.course }}{% endif %}
+                        {% if item.subject %} · {{ item.subject }}{% endif %}
+                    </small>
+
+                </div>
+
+                <div class="activity-meta">
+
+                    <span>{{ item.created_display }}</span>
+
+                    <a href="{{ item.module_url }}" class="btn-module">
+                        Abrir módulo
+                    </a>
+
+                </div>
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+        {% else %}
+
         <div class="empty-state">
 
             <i class="fa-solid fa-clock-rotate-left"></i>
@@ -690,6 +722,8 @@
             </a>
 
         </div>
+
+        {% endif %}
 
     </section>
 
