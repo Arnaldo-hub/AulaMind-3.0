@@ -35,6 +35,10 @@ if (document.readyState === "loading") {
     // CONFIGURACIÓN API
     //=========================================================
 
+    // Token CSRF: Flask-WTF exige X-CSRFToken en todos los POST
+    const CSRF_TOKEN =
+        (document.getElementById("csrf_token") || {}).value || "";
+
     const API = {
 
         courses: "/planning/api/curriculum/courses",
@@ -1875,7 +1879,10 @@ if (document.readyState === "loading") {
                         headers: {
 
                             "Content-Type":
-                                "application/json"
+                                "application/json",
+
+                            "X-CSRFToken":
+                                CSRF_TOKEN
 
                         },
 

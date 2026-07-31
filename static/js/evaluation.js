@@ -16,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const CONFIG = window.EVALUATION_CONFIG || {};
 
+    // Token CSRF: Flask-WTF exige X-CSRFToken en todos los POST
+    const CSRF_TOKEN =
+        (document.getElementById("csrf_token") || {}).value || "";
+
     const URLS = {
 
         generate : CONFIG.generateUrl,
@@ -159,6 +163,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function request(url,options={}){
+
+        options.headers = Object.assign(
+            { "X-CSRFToken": CSRF_TOKEN },
+            options.headers || {}
+        );
 
         const response = await fetch(url,options);
 

@@ -26,6 +26,7 @@
 <h2>Nueva evaluación</h2>
 
 <form id="evaluationForm">
+    <input type="hidden" id="csrf_token" value="{{ csrf_token() }}">
 
 <input id="asignatura" name="asignatura" placeholder="Asignatura" required>
 <input id="curso" name="curso" placeholder="Curso" required>
