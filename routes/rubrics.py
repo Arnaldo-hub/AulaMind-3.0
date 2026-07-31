@@ -9,6 +9,7 @@ Módulo de Rúbricas y Listas de Cotejo IA
 
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from services.rubric_service import RubricService
+from security.authorization import subscription_required
 from services.persistence_service import persistence_service
 
 rubrics = Blueprint("rubrics", __name__, url_prefix="/rubrics")
@@ -22,6 +23,7 @@ def index():
     return render_template("rubrics.html", rubric_count=stats.get("rubric_count", 0), dashboard_stats=stats)
 
 @rubrics.route("/generate", methods=["POST"])
+@subscription_required
 def generate():
     if "user_id" not in session:
         return jsonify(success=False, error="No autenticado"), 401

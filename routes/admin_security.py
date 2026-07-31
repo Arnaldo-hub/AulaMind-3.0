@@ -29,6 +29,7 @@ from flask import session
 from database.session import SessionLocal
 from models.user import User
 from services.auth_service import AuthService
+from services.entitlements import Entitlements
 from security.authorization import role_required
 
 # ==========================================================
@@ -770,6 +771,62 @@ def delete_user(user_id):
 
             )
 
+        )
+
+    finally:
+
+        db.close()
+
+
+# ==========================================================
+# ACTIVAR PLAN PAGADO (v3.1)
+# Activación manual mientras no exista webhook de
+# Mercado Pago (v3.2). Body JSON: {"days": 30}
+# ==========================================================
+
+@admin_security.route(
+    "/admin/api/usuarios/<user_id>/plan",
+    methods=["PUT"]
+)
+@role_required("admin")
+def activate_user_plan(user_id):
+
+    data = request.get_json(silent=True) or {}
+
+    try:
+        days = int(data.get("days", 30))
+    except (TypeError, ValueError):
+        return _error("El campo 'days' debe ser un número.")
+
+    if days < 1 or days > 3660:
+        return _error("'days' debe estar entre 1 y 3660.")
+
+    db = SessionLocal()
+
+    try:
+
+        user = db.query(User).filter(
+            User.id == user_id
+        ).first()
+
+        if user is None:
+            return _error("Usuario no encontrado.", 404)
+
+        sub = Entitlements.activate_paid(
+            db, user_id, days=days, source="manual"
+        )
+
+        return jsonify(
+            success=True,
+            message=(
+                f"Plan Pro activado para {user.email} "
+                f"por {days} días."
+            ),
+            plan={
+                "status": sub.status,
+                "ends_at": sub.ends_at.isoformat(),
+                "days": days,
+            }
         )
 
     finally:

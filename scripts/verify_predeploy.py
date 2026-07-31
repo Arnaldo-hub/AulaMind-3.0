@@ -219,7 +219,7 @@ def login(user_id, role, email):
 print("\n=== 4-5. Páginas y enlaces ===")
 
 PAGES = [
-    "/",
+    "/dashboard/",
     "/planning/",
     "/evaluation/",
     "/guides/",
@@ -261,12 +261,12 @@ print("\n=== 6. Visibilidad por rol ===")
 
 login(ADMIN_ID, "admin", "admin@verify.cl")
 admin_sees = (
-    "/admin/usuarios" in client.get("/").data.decode()
+    "/admin/usuarios" in client.get("/dashboard/").data.decode()
 )
 
 login(PROFE_ID, "teacher", "profe@verify.cl")
 teacher_sees = (
-    "/admin/usuarios" in client.get("/").data.decode()
+    "/admin/usuarios" in client.get("/dashboard/").data.decode()
 )
 
 check(
@@ -320,7 +320,6 @@ with client.session_transaction() as s:
     s.clear()
 
 PROTECTED = [
-    "/",
     "/planning/",
     "/evaluation/",
     "/guides/",
@@ -330,6 +329,7 @@ PROTECTED = [
     "/curriculum/",
     "/admin/usuarios",
     "/auth/profile",
+    "/plan/",
 ]
 
 for path in PROTECTED:
@@ -354,6 +354,29 @@ for path in ("/auth/login", "/auth/forgot-password", "/health"):
         f"recibió {r.status_code}"
     )
 
+# Anónimo: la raíz sirve la landing pública (v3.1)
+r = client.get("/")
+
+check(
+    "Anónimo en / -> landing (200)",
+    r.status_code == 200 and b"Prueba gratis" in r.data,
+    f"recibió {r.status_code}"
+)
+
+# Con sesión: la raíz redirige al dashboard (v3.1)
+login(ADMIN_ID, "admin", "admin@verify.cl")
+r = client.get("/")
+
+check(
+    "Con sesión en / -> /dashboard/",
+    r.status_code in (301, 302)
+    and "/dashboard/" in r.headers.get("Location", ""),
+    f"recibió {r.status_code}"
+)
+
+with client.session_transaction() as s:
+    s.clear()
+
 # Anónimo: API responde 401 JSON, nunca datos
 r = client.get("/admin/api/usuarios")
 
@@ -362,6 +385,110 @@ check(
     r.status_code == 401,
     f"recibió {r.status_code}"
 )
+
+# ==========================================================
+# 8. Motor de trial (v3.1)
+# ==========================================================
+
+print("\n=== 8. Motor de trial (v3.1) ===")
+
+from datetime import datetime as _dt, timedelta as _td
+from database.session import SessionLocal as _SL
+from models.user import User as _User
+from models.user_subscription import UserSubscription as _US
+from services.entitlements import Entitlements as _Ent
+
+_db = _SL()
+_ctx = app_module.app.app_context()
+_ctx.push()
+
+try:
+
+    _email = f"trialtest_{_dt.utcnow().timestamp():.0f}@verify.local"
+    _user = _User(
+        first_name="Trial",
+        last_name="Test",
+        email=_email,
+        password_hash="verify-only",
+        role="teacher",
+    )
+    _db.add(_user)
+    _db.commit()
+    _db.refresh(_user)
+
+    # 8.1 Planes por defecto se siembran solos
+    _plans = _Ent.ensure_default_plans(_db)
+    check(
+        "Planes Trial/Pro existen (seeding)",
+        "Trial" in _plans and "Pro" in _plans,
+        f"planes: {sorted(_plans.keys())}"
+    )
+
+    # 8.2 create_trial asigna trial de 3 días
+    _sub = _Ent.create_trial(_db, _user)
+    check(
+        "create_trial crea suscripción trial",
+        _sub.status == "trial" and _sub.ends_at > _dt.utcnow(),
+        f"status={_sub.status} ends={_sub.ends_at}"
+    )
+
+    # 8.3 Trial fresco puede generar
+    _res = _Ent.check_generation(str(_user.id))
+    check(
+        "Trial fresco permite generar",
+        _res.get("allowed") is True and _res.get("reason") == "trial",
+        f"reason={_res.get('reason')}"
+    )
+
+    # 8.4 record_generation consume cuota
+    _Ent.record_generation(str(_user.id))
+    _db.refresh(_sub)
+    check(
+        "record_generation incrementa contador",
+        _sub.generations_used == 1,
+        f"generations_used={_sub.generations_used}"
+    )
+
+    # 8.5 Trial vencido bloquea con razón trial_expired
+    _sub.ends_at = _dt.utcnow() - _td(hours=1)
+    _db.commit()
+    _res = _Ent.check_generation(str(_user.id))
+    check(
+        "Trial vencido bloquea (trial_expired)",
+        _res.get("allowed") is False and _res.get("reason") == "trial_expired",
+        f"reason={_res.get('reason')}"
+    )
+
+    # 8.6 activate_paid reactiva como Plan Pro
+    _Ent.activate_paid(_db, str(_user.id), days=30, source="verify")
+    _res = _Ent.check_generation(str(_user.id))
+    check(
+        "activate_paid reactiva (paid)",
+        _res.get("allowed") is True and _res.get("reason") == "paid",
+        f"reason={_res.get('reason')}"
+    )
+
+    # 8.7 Admin siempre pasa, aunque no tenga suscripción
+    _admin = _db.query(_User).filter(_User.role == "admin").first()
+    if _admin is not None:
+        _res = _Ent.check_generation(str(_admin.id))
+        check(
+            "Admin sin suscripción pasa igual (bypass)",
+            _res.get("allowed") is True and _res.get("reason") == "admin",
+            f"reason={_res.get('reason')}"
+        )
+    else:
+        check("Admin existe en BD", False, "no hay usuario admin")
+
+    # Limpieza: borrar datos de prueba
+    _db.query(_US).filter(_US.user_id == str(_user.id)).delete()
+    _db.delete(_user)
+    _db.commit()
+
+finally:
+
+    _db.close()
+    _ctx.pop()
 
 
 # ==========================================================

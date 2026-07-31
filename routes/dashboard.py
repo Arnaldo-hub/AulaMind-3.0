@@ -34,10 +34,14 @@ dashboard = Blueprint(
 # Dashboard Principal
 # ==========================================================
 
-@dashboard.route("/")
+@dashboard.route("/dashboard/")
 def home():
     """
     Página principal de AulaMind.
+
+    v3.1: se movió de "/" a "/dashboard/" para que la raíz
+    muestre la landing pública. Las plantillas usan
+    url_for('dashboard.home'), así que no hay enlaces rotos.
     """
 
     return render_template(

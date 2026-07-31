@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AulaMind | Documentos pedagógicos con IA para docentes de Chile</title>
+    <meta name="description" content="AulaMind genera planificaciones, evaluaciones, guías, rúbricas y PIE alineadas al currículum MINEDUC en minutos. Prueba gratis 3 días, sin tarjeta.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: #1f2937;
+            background: #fff;
+            line-height: 1.6;
+        }
+        .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+        /* ---------- Navbar ---------- */
+        .navbar {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .navbar-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.875rem 1.5rem; max-width: 1120px; margin: 0 auto;
+        }
+        .brand { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; }
+        .brand img { height: 2.25rem; }
+        .brand span { font-weight: 800; font-size: 1.125rem; color: #1f2937; }
+        .brand small { color: #2563eb; font-weight: 600; }
+        .nav-actions { display: flex; gap: 0.75rem; align-items: center; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.625rem 1.25rem; border-radius: 0.5rem;
+            font-weight: 600; font-size: 0.9375rem;
+            text-decoration: none; border: none; cursor: pointer;
+            transition: all 0.15s;
+        }
+        .btn-primary { background: #2563eb; color: #fff; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-outline { background: transparent; color: #2563eb; border: 1px solid #bfdbfe; }
+        .btn-outline:hover { background: #eff6ff; }
+        .btn-lg { padding: 0.875rem 1.75rem; font-size: 1rem; }
+        .btn-white { background: #fff; color: #2563eb; }
+        .btn-white:hover { background: #eff6ff; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #3b82f6 100%);
+            color: #fff;
+            padding: 5rem 0 6rem;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 0.375rem 1rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            font-weight: 800;
+            line-height: 1.15;
+            max-width: 800px;
+            margin: 0 auto 1.25rem;
+        }
+        .hero p {
+            font-size: 1.125rem;
+            color: #dbeafe;
+            max-width: 640px;
+            margin: 0 auto 2.25rem;
+        }
+        .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .hero-note { margin-top: 1.25rem; font-size: 0.875rem; color: #bfdbfe; }
+
+        /* ---------- Features ---------- */
+        .section { padding: 4.5rem 0; }
+        .section-alt { background: #f8fafc; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem; font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+        .section-sub {
+            text-align: center; color: #6b7280;
+            max-width: 600px; margin: 0 auto 3rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .feature-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 1.75rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .feature-card:hover { box-shadow: 0 8px 24px rgba(37,99,235,0.10); transform: translateY(-2px); }
+        .feature-icon {
+            width: 3rem; height: 3rem;
+            border-radius: 0.75rem;
+            background: #eff6ff; color: #2563eb;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card h3 { font-size: 1.0625rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .feature-card p { color: #6b7280; font-size: 0.9375rem; }
+
+        /* ---------- Pricing ---------- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .price-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 2rem;
+            display: flex; flex-direction: column;
+        }
+        .price-card.featured {
+            border: 2px solid #2563eb;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(37,99,235,0.12);
+        }
+        .price-tag {
+            position: absolute; top: -0.875rem; left: 50%;
+            transform: translateX(-50%);
+            background: #2563eb; color: #fff;
+            font-size: 0.75rem; font-weight: 700;
+            padding: 0.25rem 0.875rem; border-radius: 999px;
+            text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .price-card h3 { font-size: 1.125rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .price-amount { font-size: 2.25rem; font-weight: 800; color: #1f2937; margin-bottom: 0.25rem; }
+        .price-amount small { font-size: 1rem; font-weight: 600; color: #6b7280; }
+        .price-desc { color: #6b7280; font-size: 0.9375rem; margin-bottom: 1.5rem; }
+        .price-list { list-style: none; margin-bottom: 1.75rem; flex: 1; }
+        .price-list li {
+            padding: 0.375rem 0;
+            color: #374151; font-size: 0.9375rem;
+            display: flex; gap: 0.625rem; align-items: flex-start;
+        }
+        .price-list li i { color: #059669; margin-top: 0.25rem; }
+
+        /* ---------- CTA final ---------- */
+        .final-cta {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #fff;
+            text-align: center;
+            padding: 4.5rem 0;
+        }
+        .final-cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+        .final-cta p { color: #dbeafe; margin-bottom: 2rem; }
+
+        /* ---------- Footer ---------- */
+        .site-footer {
+            background: #111827; color: #9ca3af;
+            padding: 2.5rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        .site-footer strong { color: #fff; }
+
+        @media (max-width: 640px) {
+            .nav-actions .btn-outline { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="/">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind">
+            <span>AulaMind <small>Enterprise 3.0</small></span>
+        </a>
+        <div class="nav-actions">
+            <a href="{{ url_for('auth.login') }}" class="btn btn-outline">
+                <i class="fa-solid fa-right-to-bracket"></i> Ingresar
+            </a>
+            <a href="{{ url_for('auth.register') }}" class="btn btn-primary">
+                Probar gratis
+            </a>
+        </div>
+    </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+    <div class="container">
+        <span class="hero-badge"><i class="fa-solid fa-flag"></i> Hecho para docentes de Chile</span>
+        <h1>Planifica, evalúa y documenta en minutos, no en horas</h1>
+        <p>
+            AulaMind genera planificaciones, evaluaciones, guías de trabajo, rúbricas y
+            documentos PIE alineados al currículum MINEDUC, con inteligencia artificial.
+        </p>
+        <div class="hero-ctas">
+            <a href="{{ url_for('auth.register') }}" class="btn btn-white btn-lg">
+                <i class="fa-solid fa-rocket"></i> Comenzar prueba gratis
+            </a>
+            <a href="#precios" class="btn btn-lg" style="background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.3);">
+                Ver planes
+            </a>
+        </div>
+        <div class="hero-note">3 días gratis · Sin tarjeta de crédito · Cancela cuando quieras</div>
+    </div>
+</section>
+
+<!-- ==================== FEATURES ==================== -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Todo lo que un docente necesita</h2>
+        <p class="section-sub">
+            Cinco herramientas conectadas al currículum nacional, listas para usar en tu sala de clases.
+        </p>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <h3>Planificaciones</h3>
+                <p>Planificaciones de clase y unidades completas, alineadas a objetivos de aprendizaje MINEDUC.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+                <h3>Evaluaciones</h3>
+                <p>Pruebas y evaluaciones con ítems variados, pautas de corrección y niveles de logro.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-book"></i></div>
+                <h3>Guías de trabajo</h3>
+                <p>Guías de aprendizaje con actividades progresivas, listas para imprimir o compartir.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-table-list"></i></div>
+                <h3>Rúbricas</h3>
+                <p>Rúbricas de evaluación con criterios claros y descriptores por nivel de logro.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-user-group"></i></div>
+                <h3>PIE</h3>
+                <p>Documentos para Programa de Integración Escolar, con estrategias de apoyo diferenciadas.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-book-atlas"></i></div>
+                <h3>Currículum MINEDUC</h3>
+                <p>Motor curricular integrado: cada documento nace alineado a las bases curriculares vigentes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PRICING ==================== -->
+<section class="section section-alt" id="precios">
+    <div class="container">
+        <h2 class="section-title">Planes simples, sin sorpresas</h2>
+        <p class="section-sub">
+            Empieza gratis y suscríbete cuando estés convencido. Sin permanencia.
+        </p>
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <h3>Prueba gratis</h3>
+                <div class="price-amount">$0 <small>/ 3 días</small></div>
+                <p class="price-desc">Para conocer la plataforma sin compromiso.</p>
+                <ul class="price-list">
+                    <li><i class="fa-solid fa-check"></i> 3 días de acceso completo</li>
+                    <li><i class="fa-solid fa-check"></i> Hasta 10 documentos generados</li>
+                    <li><i class="fa-solid fa-check"></i> Las 5 herramientas habilitadas</li>
+                    <li><i class="fa-solid fa-check"></i> Sin tarjeta de crédito</li>
+                </ul>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-outline" style="justify-content:center;">
+                    Crear cuenta gratis
+                </a>
+            </div>
+
+            <div class="price-card featured">
+                <span class="price-tag">Recomendado</span>
+                <h3>Pro Docente</h3>
+                <div class="price-amount">$9.990 <small>/ mes</small></div>
+                <p class="price-desc">Para docentes que planifican todas las semanas.</p>
+                <ul class="price-list">
+                    <li><i class="fa-solid fa-check"></i> Generación de documentos sin límite práctico</li>
+                    <li><i class="fa-solid fa-check"></i> Planificaciones, evaluaciones, guías, rúbricas y PIE</li>
+                    <li><i class="fa-solid fa-check"></i> Exportación a PDF y Word</li>
+                    <li><i class="fa-solid fa-check"></i> Currículum MINEDUC actualizado</li>
+                    <li><i class="fa-solid fa-check"></i> Soporte por correo y WhatsApp</li>
+                </ul>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary" style="justify-content:center;">
+                    Empezar con prueba gratis
+                </a>
+            </div>
+
+            <div class="price-card">
+                <h3>Colegios</h3>
+                <div class="price-amount">A convenir</div>
+                <p class="price-desc">Para equipos docentes y direcciones pedagógicas.</p>
+                <ul class="price-list">
+                    <li><i class="fa-solid fa-check"></i> Múltiples cuentas docentes</li>
+                    <li><i class="fa-solid fa-check"></i> Panel de administración</li>
+                    <li><i class="fa-solid fa-check"></i> Capacitación de inicio</li>
+                    <li><i class="fa-solid fa-check"></i> Facturación institucional</li>
+                </ul>
+                <a href="mailto:contacto@aulamind.cl" class="btn btn-outline" style="justify-content:center;">
+                    <i class="fa-solid fa-envelope"></i> Contactar
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CTA FINAL ==================== -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Recupera tu tiempo para lo que importa: enseñar</h2>
+        <p>Crea tu cuenta en un minuto y genera tu primer documento hoy.</p>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-white btn-lg">
+            <i class="fa-solid fa-rocket"></i> Probar AulaMind gratis 3 días
+        </a>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>AulaMind Enterprise 3.0</strong> · Plataforma Inteligente para Docentes</p>
+        <p>© 2025 Biotecno Chile · <a href="mailto:contacto@aulamind.cl" style="color:#9ca3af;">contacto@aulamind.cl</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

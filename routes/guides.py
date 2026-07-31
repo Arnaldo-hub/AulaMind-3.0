@@ -7,6 +7,7 @@ routes/guides.py
 
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from services.guide_service import GuideService
+from security.authorization import subscription_required
 from services.persistence_service import persistence_service
 
 guides = Blueprint("guides", __name__, url_prefix="/guides")
@@ -20,6 +21,7 @@ def index():
     return render_template("guides.html", guide_count=stats.get("guide_count", 0), dashboard_stats=stats)
 
 @guides.route("/generate", methods=["POST"])
+@subscription_required
 def generate():
     if "user_id" not in session:
         return jsonify(success=False, error="No autenticado"), 401

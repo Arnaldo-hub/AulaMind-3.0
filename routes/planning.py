@@ -21,6 +21,7 @@ from flask import (
 )
 
 from services.curriculum_service import curriculum_service
+from security.authorization import subscription_required
 from services.planning_service import planning_service
 from services.persistence_service import persistence_service
 
@@ -270,6 +271,7 @@ def api_objectives(course, subject, unit):
 
 @planning.route("/generate", methods=["POST"])
 @login_required
+@subscription_required
 def generate():
 
     try:

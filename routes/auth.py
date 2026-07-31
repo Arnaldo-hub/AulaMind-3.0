@@ -26,6 +26,7 @@ from flask import session
 
 from database.session import SessionLocal
 from services.auth_service import AuthService
+from services.entitlements import Entitlements
 from extensions import limiter
 
 # ==========================================================
@@ -196,7 +197,7 @@ def register():
 
     try:
 
-        AuthService.register_user(
+        usuario = AuthService.register_user(
 
             db,
 
@@ -210,9 +211,13 @@ def register():
 
         )
 
+        # Asignar trial automático (3 días + tope de generaciones)
+
+        Entitlements.create_trial(db, usuario)
+
         flash(
 
-            "Usuario creado correctamente.",
+            "Cuenta creada. Tienes 3 días de prueba gratis: inicia sesión.",
 
             "success"
 

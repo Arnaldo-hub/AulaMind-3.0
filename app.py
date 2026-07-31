@@ -14,7 +14,7 @@ Biotecno Chile
 from dotenv import load_dotenv
 load_dotenv()
 
-from flask import Flask, redirect, url_for, jsonify, request, session
+from flask import Flask, redirect, url_for, jsonify, request, session, render_template
 
 from config import Config
 from flask_wtf.csrf import CSRFProtect, CSRFError
@@ -45,6 +45,8 @@ from models.document import Document
 from models.ai_generation import AIGeneration
 from models.export import Export
 from models.usage_event import UsageEvent
+from models.user_subscription import UserSubscription  # ← NUEVO v3.1
+from database.session import create_database
 
 # ==========================================================
 # IMPORTAR BLUEPRINTS
@@ -60,6 +62,7 @@ from routes.evaluation import evaluation
 from routes.admin_security import admin_security
 from routes.password_reset import password_reset
 from routes.analytics import analytics  # ← NUEVO
+from routes.billing import billing  # ← NUEVO v3.1
 
 # ==========================================================
 # CREAR APP
@@ -106,6 +109,19 @@ app.register_blueprint(analytics)  # ← NUEVO
 app.register_blueprint(guides)  # ← NUEVO
 app.register_blueprint(rubrics)  # ← NUEVO
 app.register_blueprint(pie)  # ← NUEVO
+app.register_blueprint(billing)  # ← NUEVO v3.1
+
+# ==========================================================
+# TABLAS: crear las que falten al arrancar (v3.1)
+# create_all es idempotente: no toca tablas existentes.
+# Se envuelve en try/except para no tumbar el boot si la
+# BD aún no está disponible (primer deploy, cold start).
+# ==========================================================
+
+try:
+    create_database()
+except Exception as e:
+    print(f"[boot] create_database omitido: {e}")
 
 # ==========================================================
 # RUTA RAÍZ
@@ -114,12 +130,12 @@ app.register_blueprint(pie)  # ← NUEVO
 @app.route("/")
 def index():
 
-    # Hasta que exista la landing pública (v3.1), la raíz
-    # envía al login; con sesión activa va al dashboard.
+    # v3.1: la raíz muestra la landing pública; con sesión
+    # activa va directo al dashboard.
     if session.get("user_id"):
         return redirect(url_for("dashboard.home"))
 
-    return redirect(url_for("auth.login"))
+    return render_template("landing.html")
 
 # ==========================================================
 # STATUS

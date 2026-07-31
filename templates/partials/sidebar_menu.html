@@ -11,7 +11,7 @@ Uso:
 
 Valores válidos de active_menu:
     dashboard, planning, evaluation, guides, rubrics,
-    pie, analytics, curriculum, admin_users, profile
+    pie, analytics, curriculum, admin_users, plan, profile
 ===========================================================
 #}
 <nav class="sidebar-menu">
@@ -26,5 +26,6 @@ Valores válidos de active_menu:
     {% if session.get('role') == 'admin' %}
     <a href="{{ url_for('admin_security.users_page') }}"{% if active_menu == 'admin_users' %} class="active"{% endif %}><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
     {% endif %}
+    <a href="{{ url_for('billing.status') }}"{% if active_menu == 'plan' %} class="active"{% endif %}><i class="fa-solid fa-gem"></i><span>Mi Plan</span></a>
     <a href="{{ url_for('auth.profile') }}"{% if active_menu == 'profile' %} class="active"{% endif %}><i class="fa-solid fa-circle-user"></i><span>Mi Perfil</span></a>
 </nav>

@@ -119,6 +119,20 @@ class Config:
         raise RuntimeError("MAIL_USE_TLS y MAIL_USE_SSL no pueden estar activos simultáneamente.")
 
     # =====================================================
+    # Trial Comercial (v3.1)
+    # =====================================================
+
+    TRIAL_DAYS = int(os.getenv("TRIAL_DAYS", "3"))
+
+    TRIAL_MAX_GENERATIONS = int(os.getenv("TRIAL_MAX_GENERATIONS", "10"))
+
+    TRIAL_PLAN_NAME = os.getenv("TRIAL_PLAN_NAME", "Trial")
+
+    PRO_PLAN_NAME = os.getenv("PRO_PLAN_NAME", "Pro")
+
+    PRO_MONTHLY_PRICE_CLP = int(os.getenv("PRO_MONTHLY_PRICE_CLP", "9990"))
+
+    # =====================================================
     # Base de Datos
     # =====================================================
 

@@ -9,6 +9,7 @@ Módulo de Adecuaciones Curriculares PIE
 
 from flask import Blueprint, render_template, request, jsonify, session, redirect, url_for
 from services.pie_service import PIEService
+from security.authorization import subscription_required
 from services.persistence_service import persistence_service
 
 pie = Blueprint("pie", __name__, url_prefix="/pie")
@@ -22,6 +23,7 @@ def index():
     return render_template("pie.html", pie_count=stats.get("pie_count", 0), dashboard_stats=stats)
 
 @pie.route("/generate", methods=["POST"])
+@subscription_required
 def generate():
     if "user_id" not in session:
         return jsonify(success=False, error="No autenticado"), 401

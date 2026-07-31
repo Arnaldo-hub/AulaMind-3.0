@@ -9,6 +9,7 @@ from flask import (
 )
 
 from services.evaluation_service import EvaluationService
+from security.authorization import subscription_required
 from services.persistence_service import persistence_service
 
 evaluation = Blueprint(
@@ -44,6 +45,7 @@ def index():
 # ==========================================================
 
 @evaluation.route("/generate", methods=["POST"])
+@subscription_required
 def generate():
 
     if "user_id" not in session:

@@ -31,6 +31,39 @@ def login_required(view):
     return wrapped
 
 
+def subscription_required(view):
+    """
+    Portero comercial: exige suscripción vigente
+    (trial activo o plan pagado) antes de generar con IA.
+    Responde 402 con motivo para el paywall si no puede.
+    """
+    @wraps(view)
+    def wrapped(*args, **kwargs):
+        user_id = session.get("user_id")
+        if not user_id:
+            session.clear()
+            return redirect(url_for("auth.login"))
+
+        from flask import jsonify
+        from services.entitlements import Entitlements
+
+        result = Entitlements.check_generation(user_id)
+
+        if not result.get("allowed"):
+            return jsonify({
+                "success": False,
+                "error": result.get(
+                    "message", "Suscripción requerida."
+                ),
+                "paywall": True,
+                "reason": result.get("reason"),
+                "plan_url": "/plan",
+            }), 402
+
+        return view(*args, **kwargs)
+    return wrapped
+
+
 def role_required(*allowed_roles):
     def decorator(view):
         @wraps(view)
