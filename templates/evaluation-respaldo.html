@@ -153,6 +153,6 @@ window.EVALUATION_CONFIG = {
     exportPdfUrl: "{{ url_for('evaluation.export_pdf') }}"
 };
 </script>
-<script src="{{ url_for('static', filename='js/evaluation.js') }}"></script>
+<script src="{{ url_for('static', filename='js/evaluation.js', v=config.APP_VERSION) }}"></script>
 </body>
 </html>

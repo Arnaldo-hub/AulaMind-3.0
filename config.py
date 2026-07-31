@@ -42,7 +42,7 @@ class Config:
 
     APP_NAME = "AulaMind Enterprise"
 
-    APP_VERSION = "3.0.0"
+    APP_VERSION = "3.1.1"
 
     COMPANY = "Biotecno Chile"
 

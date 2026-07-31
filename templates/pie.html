@@ -338,7 +338,7 @@ window.PIE_CONFIG = {
     historyUrl: "{{ url_for('pie.history') }}"
 };
 </script>
-<script src="{{ url_for('static', filename='js/pie.js') }}"></script>
+<script src="{{ url_for('static', filename='js/pie.js', v=config.APP_VERSION) }}"></script>
 
 </body>
 </html>

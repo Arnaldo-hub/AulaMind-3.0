@@ -332,7 +332,7 @@ window.GUIDE_CONFIG = {
     historyUrl: "{{ url_for('guides.history') }}"
 };
 </script>
-<script src="{{ url_for('static', filename='js/guides.js') }}"></script>
+<script src="{{ url_for('static', filename='js/guides.js', v=config.APP_VERSION) }}"></script>
 
 </body>
 </html>

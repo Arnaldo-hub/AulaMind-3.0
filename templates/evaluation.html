@@ -112,7 +112,7 @@ historyUrl:"{{ url_for('evaluation.history') }}"
 
 </script>
 
-<script src="{{ url_for('static', filename='js/evaluation.js') }}"></script>
+<script src="{{ url_for('static', filename='js/evaluation.js', v=config.APP_VERSION) }}"></script>
 
 </main>
 

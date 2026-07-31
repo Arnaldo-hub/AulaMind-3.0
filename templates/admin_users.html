@@ -380,7 +380,7 @@ window.ADMIN_USERS_CONFIG = {
     currentUserId: "{{ session.get('user_id', '') }}"
 };
 </script>
-<script src="{{ url_for('static', filename='js/admin_users.js') }}"></script>
+<script src="{{ url_for('static', filename='js/admin_users.js', v=config.APP_VERSION) }}"></script>
 
 </body>
 </html>
