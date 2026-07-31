@@ -119,7 +119,9 @@ if (document.readyState === "loading") {
             "AulaMind: no se encontró #planningForm"
         );
 
-        return;
+        throw new Error(
+            "AulaMind: falta #planningForm"
+        );
 
     }
 
@@ -129,7 +131,9 @@ if (document.readyState === "loading") {
             "AulaMind: faltan selectores curriculares."
         );
 
-        return;
+        throw new Error(
+            "AulaMind: faltan selectores curriculares"
+        );
 
     }
 
@@ -139,7 +143,9 @@ if (document.readyState === "loading") {
             "AulaMind: no se encontró #learningObjectives"
         );
 
-        return;
+        throw new Error(
+            "AulaMind: falta #learningObjectives"
+        );
 
     }
 

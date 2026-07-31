@@ -111,8 +111,17 @@ if shutil.which("node"):
                 continue  # respaldos, no se cargan en páginas
 
             path = os.path.join(js_dir, filename)
+            # vm.Script parsea como SCRIPT CLÁSICO de navegador.
+            # node --check parsea como módulo CommonJS y da falsos
+            # positivos (ej: acepta "return" a nivel top, ilegal en
+            # navegador — bug real que mató planning.js).
             result = subprocess.run(
-                ["node", "--check", path],
+                [
+                    "node", "-e",
+                    "const vm=require('vm');"
+                    f"new vm.Script(require('fs').readFileSync("
+                    f"'{path}','utf8'));",
+                ],
                 capture_output=True, text=True
             )
 
