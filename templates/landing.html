@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AulaMind | Documentos pedagógicos con IA para docentes de Chile</title>
     <meta name="description" content="AulaMind genera planificaciones, evaluaciones, guías, rúbricas y PIE alineadas al currículum MINEDUC en minutos. Prueba gratis 3 días, sin tarjeta.">
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AulaMind Enterprise 3.0">
+    <meta property="og:title" content="AulaMind | Documentos pedagógicos con IA para docentes de Chile">
+    <meta property="og:description" content="Planificaciones, evaluaciones, guías, rúbricas y PIE alineadas al currículum MINEDUC en minutos. Prueba gratis 3 días, sin tarjeta.">
+    <meta property="og:url" content="https://www.aulamind.cl/">
+    <meta property="og:image" content="https://www.aulamind.cl{{ url_for('static', filename='img/og-cover.png') }}">
+    <meta property="og:locale" content="es_CL">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AulaMind | Documentos pedagógicos con IA para docentes de Chile">
+    <meta name="twitter:description" content="Planificaciones, evaluaciones, guías, rúbricas y PIE alineadas al currículum MINEDUC en minutos. Prueba gratis 3 días.">
+    <meta name="twitter:image" content="https://www.aulamind.cl{{ url_for('static', filename='img/og-cover.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -344,7 +359,12 @@
 <footer class="site-footer">
     <div class="container">
         <p><strong>AulaMind Enterprise 3.0</strong> · Plataforma Inteligente para Docentes</p>
-        <p>© 2025 Biotecno Chile · <a href="mailto:contacto@aulamind.cl" style="color:#9ca3af;">contacto@aulamind.cl</a></p>
+        <p>© 2026 Biotecno Chile · <a href="mailto:contacto@aulamind.cl" style="color:#9ca3af;">contacto@aulamind.cl</a></p>
+        <p style="margin-top:8px;">
+            <a href="{{ url_for('legal.terms') }}" style="color:#9ca3af;">Términos y Condiciones</a>
+            <span style="color:#4b5563;"> · </span>
+            <a href="{{ url_for('legal.privacy') }}" style="color:#9ca3af;">Política de Privacidad</a>
+        </p>
     </div>
 </footer>
 

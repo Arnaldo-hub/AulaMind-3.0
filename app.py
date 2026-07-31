@@ -63,6 +63,7 @@ from routes.admin_security import admin_security
 from routes.password_reset import password_reset
 from routes.analytics import analytics  # ← NUEVO
 from routes.billing import billing  # ← NUEVO v3.1
+from routes.legal import legal  # ← NUEVO v3.1.4 páginas legales
 
 # ==========================================================
 # CREAR APP
@@ -110,6 +111,7 @@ app.register_blueprint(guides)  # ← NUEVO
 app.register_blueprint(rubrics)  # ← NUEVO
 app.register_blueprint(pie)  # ← NUEVO
 app.register_blueprint(billing)  # ← NUEVO v3.1
+app.register_blueprint(legal)  # ← NUEVO v3.1.4
 
 # ==========================================================
 # TABLAS: crear las que falten al arrancar (v3.1)
@@ -173,6 +175,8 @@ PUBLIC_ENDPOINTS = {
     "auth.register",
     "password_reset.forgot_password",
     "password_reset.reset_password",
+    "legal.terms",
+    "legal.privacy",
 }
 
 

@@ -66,8 +66,12 @@ class Config:
 
     SESSION_COOKIE_HTTPONLY = True
     SESSION_COOKIE_SAMESITE = "Lax"
+    # Secure por defecto: solo se desactiva en desarrollo local
+    # explícito (DEBUG=true). En producción la cookie de sesión
+    # viaja únicamente por HTTPS.
     SESSION_COOKIE_SECURE = os.getenv(
-        "SESSION_COOKIE_SECURE", "False"
+        "SESSION_COOKIE_SECURE",
+        "false" if os.getenv("DEBUG", "True").lower() == "true" else "true"
     ).lower() == "true"
     PERMANENT_SESSION_LIFETIME = 60 * 60 * 8
 

@@ -431,6 +431,34 @@ check(
     f"recibió {r.status_code}"
 )
 
+# Páginas legales públicas (v3.1.4 — requisito comercial Chile)
+r = client.get("/terminos")
+
+check(
+    "Anónimo en /terminos -> 200 (Ley 19.628)",
+    r.status_code == 200 and b"Ley" in r.data,
+    f"recibió {r.status_code}"
+)
+
+r = client.get("/privacidad")
+
+check(
+    "Anónimo en /privacidad -> 200 (Ley 21.719)",
+    r.status_code == 200 and b"21.719" in r.data,
+    f"recibió {r.status_code}"
+)
+
+# Landing con Open Graph (compartir por WhatsApp)
+r = client.get("/")
+
+check(
+    "Landing incluye Open Graph + imagen og-cover",
+    r.status_code == 200
+    and b'property="og:title"' in r.data
+    and b"og-cover.png" in r.data,
+    f"recibió {r.status_code}"
+)
+
 # ==========================================================
 # 8. Motor de trial (v3.1)
 # ==========================================================
