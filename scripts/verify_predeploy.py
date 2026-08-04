@@ -837,8 +837,8 @@ _cfg = open(
 ).read()
 
 check(
-    "APP_VERSION = 3.1.5 (cache-busting)",
-    'APP_VERSION = "3.1.5"' in _cfg,
+    "APP_VERSION = 3.2.0 (cache-busting)",
+    'APP_VERSION = "3.2.0"' in _cfg,
 )
 
 # 10.10 Páginas de los 4 módulos renderizan con la nueva UX
@@ -962,6 +962,257 @@ finally:
     finally:
 
         _db3.close()
+
+
+# ==========================================================
+# 12. Pagos Mercado Pago — Suscripciones (v3.2)
+# ==========================================================
+
+print("\n=== 12. Pagos: Mercado Pago Suscripciones ===")
+
+# 12.1 Archivos del lote con piezas clave
+_mp_svc = open(
+    os.path.join(ROOT, "services", "mercadopago_service.py"),
+    encoding="utf-8"
+).read() if os.path.exists(
+    os.path.join(ROOT, "services", "mercadopago_service.py")
+) else ""
+
+_pay_routes = open(
+    os.path.join(ROOT, "routes", "payments.py"),
+    encoding="utf-8"
+).read() if os.path.exists(
+    os.path.join(ROOT, "routes", "payments.py")
+) else ""
+
+check(
+    "mercadopago_service.py: preapproval + authorized_payments "
+    "+ firma HMAC",
+    "create_subscription" in _mp_svc
+    and "get_preapproval" in _mp_svc
+    and "get_authorized_payment" in _mp_svc
+    and "verify_signature" in _mp_svc
+    and "api.mercadopago.com" in _mp_svc
+    and "external_reference" in _mp_svc,
+)
+
+check(
+    "routes/payments.py: checkout + return + webhook + "
+    "idempotencia",
+    "def checkout" in _pay_routes
+    and "def return_page" in _pay_routes
+    and "def webhook" in _pay_routes
+    and "process_mp_webhook" in _pay_routes
+    and "PaymentEvent" in _pay_routes
+    and "activate_paid" in _pay_routes,
+)
+
+# 12.2 Config: claves MP y versión
+check(
+    "config.py: claves MP + APP_VERSION 3.2.0",
+    "MERCADOPAGO_ACCESS_TOKEN" in _cfg
+    and "MERCADOPAGO_WEBHOOK_SECRET" in _cfg
+    and "MERCADOPAGO_SUCCESS_URL" in _cfg
+    and 'APP_VERSION = "3.2.0"' in _cfg,
+)
+
+# 12.3 Cableado en app.py
+_app_src = open(
+    os.path.join(ROOT, "app.py"),
+    encoding="utf-8"
+).read()
+
+check(
+    "app.py: blueprint payments + webhook público + CSRF exempt",
+    "from routes.payments import payments" in _app_src
+    and "app.register_blueprint(payments)" in _app_src
+    and "csrf.exempt(payments)" in _app_src
+    and '"payments.webhook"' in _app_src,
+)
+
+# 12.4 Modelo de idempotencia
+_pay_model = open(
+    os.path.join(ROOT, "models", "payment_event.py"),
+    encoding="utf-8"
+).read() if os.path.exists(
+    os.path.join(ROOT, "models", "payment_event.py")
+) else ""
+
+check(
+    "payment_event.py: event_key único + provider",
+    "payment_events" in _pay_model
+    and "unique=True" in _pay_model
+    and "event_key" in _pay_model
+    and "provider" in _pay_model,
+)
+
+# 12.5 plan_status.html: botón de suscripción
+_plan_tpl = open(
+    os.path.join(ROOT, "templates", "plan_status.html"),
+    encoding="utf-8"
+).read()
+
+check(
+    "plan_status.html: botón Mercado Pago + respaldo WhatsApp",
+    "payments.checkout" in _plan_tpl
+    and "config.MERCADOPAGO_ACCESS_TOKEN" in _plan_tpl
+    and "muy pronto" not in _plan_tpl,
+)
+
+# 12.6 Firma HMAC: vector conocido
+import hashlib as _hl
+import hmac as _hm
+
+from services.mercadopago_service import (
+    MercadoPagoService as _MPS,
+)
+
+_ctx3 = app_module.app.app_context()
+_ctx3.push()
+
+try:
+
+    _secret_prev = app_module.app.config.get(
+        "MERCADOPAGO_WEBHOOK_SECRET", ""
+    )
+
+    app_module.app.config["MERCADOPAGO_WEBHOOK_SECRET"] = (
+        "secreto-verify"
+    )
+
+    _manifest = "id:12345;request-id:req-9;ts:1700000000;"
+    _good = _hm.new(
+        b"secreto-verify",
+        _manifest.encode("utf-8"),
+        _hl.sha256,
+    ).hexdigest()
+
+    check(
+        "Firma webhook: acepta HMAC válido, rechaza inválido",
+        _MPS.verify_signature(
+            f"ts=1700000000,v1={_good}", "req-9", "12345"
+        ) is True
+        and _MPS.verify_signature(
+            "ts=1700000000,v1=deadbeef", "req-9", "12345"
+        ) is False,
+    )
+
+    # 12.7 Webhook con firma incorrecta → 401
+    r = client.post(
+        "/payments/webhook",
+        json={"type": "subscription_preapproval",
+              "data": {"id": "x"}},
+        headers={"x-signature": "ts=1,v1=bad",
+                 "x-request-id": "r"},
+    )
+
+    check(
+        "POST /payments/webhook con firma mala → 401",
+        r.status_code == 401,
+        f"recibió {r.status_code}"
+    )
+
+    app_module.app.config["MERCADOPAGO_WEBHOOK_SECRET"] = ""
+
+    # 12.8 E2E: webhook authorized activa el Plan Pro
+    # (API de MP mockeada; idempotencia incluida)
+    from models.payment_event import PaymentEvent as _PE
+    from models.user_subscription import (
+        UserSubscription as _US12,
+    )
+
+    _real_get_pre = _MPS.get_preapproval
+    _MPS.get_preapproval = staticmethod(lambda pid: {
+        "status": "authorized",
+        "external_reference": str(ADMIN_ID),
+    })
+
+    try:
+
+        r = client.post(
+            "/payments/webhook",
+            json={
+                "type": "subscription_preapproval",
+                "data": {"id": "preapproval-verify-1"},
+            },
+        )
+
+        _db4 = _SL3()
+
+        try:
+
+            _sub = _db4.query(_US12).filter(
+                _US12.user_id == str(ADMIN_ID)
+            ).first()
+
+            _ev = _db4.query(_PE).filter(
+                _PE.event_key ==
+                "subscription_preapproval:preapproval-verify-1"
+            ).first()
+
+            check(
+                "Webhook authorized → Plan Pro activo + "
+                "auditoría PaymentEvent",
+                r.status_code == 200
+                and r.get_json().get("status") == "activated"
+                and _sub is not None
+                and _sub.status == "active"
+                and _sub.source == "mercadopago"
+                and _ev is not None
+                and _ev.action == "activated",
+                f"status={r.status_code} sub="
+                f"{getattr(_sub, 'status', None)}"
+            )
+
+            # Mismo evento otra vez → duplicate (no reactiva)
+            r2 = client.post(
+                "/payments/webhook",
+                json={
+                    "type": "subscription_preapproval",
+                    "data": {"id": "preapproval-verify-1"},
+                },
+            )
+
+            check(
+                "Webhook duplicado → idempotente (duplicate)",
+                r2.status_code == 200
+                and r2.get_json().get("status") == "duplicate",
+            )
+
+        finally:
+
+            _db4.close()
+
+    finally:
+
+        _MPS.get_preapproval = _real_get_pre
+
+    # 12.9 Checkout sin MP configurado → redirige a Mi Plan
+    r = client.get("/payments/checkout")
+
+    check(
+        "GET /payments/checkout responde redirect seguro",
+        r.status_code == 302,
+        f"recibió {r.status_code}"
+    )
+
+    # 12.10 Página de retorno renderiza
+    r = client.get("/payments/return")
+
+    check(
+        "GET /payments/return renderiza confirmación",
+        r.status_code == 200
+        and "suscribirte".encode() in r.data,
+        f"recibió {r.status_code}"
+    )
+
+    app_module.app.config["MERCADOPAGO_WEBHOOK_SECRET"] = (
+        _secret_prev
+    )
+
+finally:
+
+    _ctx3.pop()
 
 
 # ==========================================================
