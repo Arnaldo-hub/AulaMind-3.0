@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmando tu suscripción | AulaMind Enterprise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <style>
+        .status-pill {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin: 0.75rem 0 1rem;
+        }
+        .status-pill.ok { background: #d1fae5; color: #065f46; }
+        .status-pill.wait { background: #fef3c7; color: #92400e; }
+        .hint { font-size: 0.875rem; color: #6b7280; line-height: 1.5; }
+    </style>
+</head>
+<body>
+<div class="login-page">
+    <section class="left-panel">
+        <div class="overlay">
+            <div class="brand"><h1>AulaMind</h1><span>Enterprise 3.0</span></div>
+            <div class="message">
+                <h2>El Copilot Inteligente para Docentes</h2>
+                <p>Planificaciones, evaluaciones, guías, rúbricas e inteligencia artificial en un solo lugar.</p>
+            </div>
+            <div class="features">
+                <div class="feature">✅ Currículum MINEDUC</div>
+                <div class="feature">✅ IA Pedagógica</div>
+                <div class="feature">✅ Exportar Word y PDF</div>
+                <div class="feature">✅ Historial ilimitado</div>
+            </div>
+        </div>
+    </section>
+    <section class="right-panel">
+        <div class="login-box">
+            <div class="logo">💳</div>
+            <h2>¡Gracias por suscribirte!</h2>
+
+            {% if plan.get('status') == 'active' %}
+                <span class="status-pill ok">✅ Plan Pro activo</span>
+                <p class="hint">
+                    Tu suscripción quedó confirmada por Mercado Pago.
+                    Ya puedes generar documentos sin límite práctico.
+                </p>
+            {% else %}
+                <span class="status-pill wait">⏳ Confirmando tu pago…</span>
+                <p class="hint">
+                    Mercado Pago está procesando tu suscripción.
+                    La activación es automática y suele tardar menos
+                    de un minuto: revisa <strong>Mi Plan</strong> en unos
+                    instantes. Recibirás además un correo de
+                    confirmación.
+                </p>
+            {% endif %}
+
+            <a class="login-btn" style="display:block; text-align:center; text-decoration:none; margin-top:1.25rem;"
+               href="{{ url_for('billing.status') }}">Ver Mi Plan</a>
+
+            <div class="links">
+                <a href="{{ url_for('dashboard.home') }}">Volver al panel principal</a>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

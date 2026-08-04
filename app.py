@@ -64,6 +64,7 @@ from routes.password_reset import password_reset
 from routes.analytics import analytics  # ← NUEVO
 from routes.billing import billing  # ← NUEVO v3.1
 from routes.legal import legal  # ← NUEVO v3.1.4 páginas legales
+from routes.payments import payments  # ← NUEVO v3.2 Mercado Pago
 
 # ==========================================================
 # CREAR APP
@@ -112,6 +113,12 @@ app.register_blueprint(rubrics)  # ← NUEVO
 app.register_blueprint(pie)  # ← NUEVO
 app.register_blueprint(billing)  # ← NUEVO v3.1
 app.register_blueprint(legal)  # ← NUEVO v3.1.4
+app.register_blueprint(payments)  # ← NUEVO v3.2 Mercado Pago
+
+# El webhook de Mercado Pago es un POST server-to-server:
+# no lleva token CSRF de sesión. Se exime SOLO este
+# blueprint (sus otras rutas son GET de todos modos).
+csrf.exempt(payments)
 
 # ==========================================================
 # TABLAS: crear las que falten al arrancar (v3.1)
@@ -177,6 +184,7 @@ PUBLIC_ENDPOINTS = {
     "password_reset.reset_password",
     "legal.terms",
     "legal.privacy",
+    "payments.webhook",
 }
 
 

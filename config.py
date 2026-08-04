@@ -42,7 +42,7 @@ class Config:
 
     APP_NAME = "AulaMind Enterprise"
 
-    APP_VERSION = "3.1.5"
+    APP_VERSION = "3.2.0"
 
     COMPANY = "Biotecno Chile"
 
@@ -139,6 +139,34 @@ class Config:
     # WhatsApp comercial (botón "Activar Plan Pro" en Mi Plan).
     # Solo dígitos, con código de país, sin '+'.
     WHATSAPP_NUMBER = os.getenv("WHATSAPP_NUMBER", "56954690241")
+
+    # =====================================================
+    # Mercado Pago — Suscripciones (v3.2)
+    # Credenciales de PRODUCCIÓN de la aplicación
+    # "AulaMind" (panel Developers de MP). El Access Token
+    # NUNCA va al frontend: solo vive en variables de
+    # entorno del servidor.
+    # MERCADOPAGO_WEBHOOK_SECRET: firma secreta que MP
+    # muestra al configurar la URL del webhook; si está
+    # vacío, el webhook valida solo por consulta a la API.
+    # =====================================================
+
+    MERCADOPAGO_ACCESS_TOKEN = os.getenv(
+        "MERCADOPAGO_ACCESS_TOKEN", ""
+    )
+
+    MERCADOPAGO_PUBLIC_KEY = os.getenv(
+        "MERCADOPAGO_PUBLIC_KEY", ""
+    )
+
+    MERCADOPAGO_WEBHOOK_SECRET = os.getenv(
+        "MERCADOPAGO_WEBHOOK_SECRET", ""
+    )
+
+    MERCADOPAGO_SUCCESS_URL = os.getenv(
+        "MERCADOPAGO_SUCCESS_URL",
+        "https://www.aulamind.cl/payments/return"
+    )
 
     # =====================================================
     # Base de Datos

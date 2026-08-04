@@ -299,6 +299,29 @@
                     </div>
                 </div>
 
+                {% if config.MERCADOPAGO_ACCESS_TOKEN %}
+                <!-- Pago en línea activo (v3.2): checkout hosted de MP -->
+                <a class="btn-primary"
+                   href="{{ url_for('payments.checkout') }}"
+                   style="display:inline-flex; align-items:center; gap:0.5rem;">
+                    <i class="fa-solid fa-credit-card"></i>
+                    Suscribirme con Mercado Pago
+                </a>
+
+                <p style="margin-top:1rem; font-size:0.8125rem; color:#6b7280;">
+                    Pago con tarjeta vía Mercado Pago. Se renueva solo cada mes;
+                    sin permanencia, cancelas cuando quieras.
+                </p>
+
+                <p style="margin-top:0.5rem; font-size:0.8125rem; color:#6b7280;">
+                    ¿Prefieres transferencia?
+                    <a href="https://wa.me/{{ config.WHATSAPP_NUMBER }}?text=Hola,%20quiero%20activar%20mi%20Plan%20Pro%20en%20AulaMind.%20Mi%20correo%20es%20{{ session.get('email','') }}"
+                       target="_blank" rel="noopener" style="color:#059669;">
+                        Actívalo por WhatsApp
+                    </a>
+                </p>
+                {% else %}
+                <!-- Respaldo mientras no se configure Mercado Pago -->
                 <a class="btn-whatsapp"
                    href="https://wa.me/{{ config.WHATSAPP_NUMBER }}?text=Hola,%20quiero%20activar%20mi%20Plan%20Pro%20en%20AulaMind.%20Mi%20correo%20es%20{{ session.get('email','') }}"
                    target="_blank" rel="noopener">
@@ -307,9 +330,9 @@
                 </a>
 
                 <p style="margin-top:1rem; font-size:0.8125rem; color:#6b7280;">
-                    El pago en línea con Mercado Pago estará disponible muy pronto.
-                    Por ahora la activación es manual: te respondemos el mismo día.
+                    Te respondemos el mismo día.
                 </p>
+                {% endif %}
 
             </div>
             {% endif %}
