@@ -273,6 +273,7 @@ PAGES = [
     "/analytics/",
     "/curriculum/",
     "/admin/usuarios",
+    "/admin/comercial",
     "/auth/profile",
     "/auth/login",
     "/auth/forgot-password",
@@ -837,8 +838,8 @@ _cfg = open(
 ).read()
 
 check(
-    "APP_VERSION = 3.2.0 (cache-busting)",
-    'APP_VERSION = "3.2.0"' in _cfg,
+    "APP_VERSION = 3.3.0 (cache-busting)",
+    'APP_VERSION = "3.3.0"' in _cfg,
 )
 
 # 10.10 Páginas de los 4 módulos renderizan con la nueva UX
@@ -1009,11 +1010,11 @@ check(
 
 # 12.2 Config: claves MP y versión
 check(
-    "config.py: claves MP + APP_VERSION 3.2.0",
+    "config.py: claves MP + APP_VERSION 3.3.0",
     "MERCADOPAGO_ACCESS_TOKEN" in _cfg
     and "MERCADOPAGO_WEBHOOK_SECRET" in _cfg
     and "MERCADOPAGO_SUCCESS_URL" in _cfg
-    and 'APP_VERSION = "3.2.0"' in _cfg,
+    and 'APP_VERSION = "3.3.0"' in _cfg,
 )
 
 # 12.3 Cableado en app.py
@@ -1213,6 +1214,258 @@ try:
 finally:
 
     _ctx3.pop()
+
+
+# ==========================================================
+# 13. Panel Comercial (v3.3)
+# ==========================================================
+
+print("\n=== 13. Panel Comercial ===")
+
+
+def _read_rel(*parts):
+    path = os.path.join(ROOT, *parts)
+    if not os.path.exists(path):
+        return ""
+    return open(path, encoding="utf-8").read()
+
+
+_ac_route = _read_rel("routes", "admin_comercial.py")
+_ac_tpl = _read_rel("templates", "admin_comercial.html")
+_ac_js = _read_rel("static", "js", "admin_comercial.js")
+
+# 13.1 Archivos del lote con piezas clave
+check(
+    "admin_comercial.py: página + resumen + usuarios + "
+    "eventos + PaymentEvent",
+    "def comercial_page" in _ac_route
+    and "def resumen" in _ac_route
+    and "def usuarios" in _ac_route
+    and "def eventos" in _ac_route
+    and "PaymentEvent" in _ac_route
+    and 'role_required("admin")' in _ac_route,
+)
+
+check(
+    "admin_comercial.html: panel + KPIs + modal + CSRF meta",
+    "Panel Comercial" in _ac_tpl
+    and "COMERCIAL_CONFIG" in _ac_tpl
+    and "csrf-token" in _ac_tpl
+    and "planModal" in _ac_tpl
+    and "admin_comercial.js" in _ac_tpl
+    and "admin_comercial.css" in _ac_tpl,
+)
+
+check(
+    "admin_comercial.js: fetch con token CSRF + activación",
+    "X-CSRFToken" in _ac_js
+    and "btn-activate" in _ac_js
+    and "planUrl" in _ac_js,
+)
+
+check(
+    "admin_comercial.css existe",
+    os.path.exists(
+        os.path.join(
+            ROOT, "static", "css", "admin_comercial.css"
+        )
+    ),
+)
+
+# 13.2 Cableado en app.py
+_app_src13 = _read_rel("app.py")
+
+check(
+    "app.py: blueprint admin_comercial registrado",
+    "from routes.admin_comercial import admin_comercial"
+    in _app_src13
+    and "app.register_blueprint(admin_comercial)"
+    in _app_src13,
+)
+
+# 13.3 Sidebar: enlace dentro del bloque solo-admin
+_sidebar13 = _read_rel(
+    "templates", "partials", "sidebar_menu.html"
+)
+
+_i_admin = _sidebar13.find("session.get('role') == 'admin'")
+_i_link = _sidebar13.find("admin_comercial.comercial_page")
+_i_endif = _sidebar13.find("{% endif %}", _i_link)
+
+check(
+    "sidebar: Comercial visible solo para admin",
+    _i_admin != -1
+    and _i_admin < _i_link != -1
+    and _i_link < _i_endif,
+)
+
+# 13.4 Bugfix CSRF en módulo Usuarios (M-09)
+_au_tpl13 = _read_rel("templates", "admin_users.html")
+_au_js13 = _read_rel("static", "js", "admin_users.js")
+
+check(
+    "Bugfix CSRF M-09: meta token + header X-CSRFToken",
+    'name="csrf-token"' in _au_tpl13
+    and "X-CSRFToken" in _au_js13,
+)
+
+# 13.5 Versión
+check(
+    "config.py: APP_VERSION 3.3.0",
+    'APP_VERSION = "3.3.0"' in _cfg,
+)
+
+# 13.6 E2E admin: página, APIs y token CSRF real
+import re as _re13
+
+login(ADMIN_ID, "admin", "admin@verify.cl")
+
+r = client.get("/admin/comercial")
+_body13 = r.data.decode(errors="ignore")
+
+check(
+    "GET /admin/comercial → 200 con panel",
+    r.status_code == 200 and "Panel Comercial" in _body13,
+    f"recibió {r.status_code}"
+)
+
+_m13 = _re13.search(
+    r'name="csrf-token" content="([^"]+)"', _body13
+)
+_csrf13 = _m13.group(1) if _m13 else ""
+
+check(
+    "Página comercial entrega token CSRF en meta",
+    bool(_csrf13),
+)
+
+r = client.get("/admin/api/comercial/resumen")
+_j13 = r.get_json(silent=True) or {}
+_k13 = _j13.get("kpis", {})
+
+check(
+    "API resumen: KPIs completos + activación MP del mes",
+    r.status_code == 200
+    and _j13.get("success")
+    and all(
+        k in _k13 for k in (
+            "usuarios", "trials", "pro_activos",
+            "expirados", "activaciones_mes",
+        )
+    )
+    and _k13.get("activaciones_mes", 0) >= 1,
+    f"status={r.status_code} kpis={sorted(_k13)}",
+)
+
+r = client.get("/admin/api/comercial/usuarios")
+_j13 = r.get_json(silent=True) or {}
+_items13 = _j13.get("items", [])
+
+check(
+    "API usuarios: fila comercial del profe de prueba",
+    r.status_code == 200
+    and _j13.get("success")
+    and any(
+        i.get("email") == "profe@verify.cl"
+        and "status_label" in i
+        and "days_left" in i
+        and "source_label" in i
+        for i in _items13
+    ),
+    f"status={r.status_code} total={_j13.get('total')}",
+)
+
+r = client.get("/admin/api/comercial/eventos")
+_j13 = r.get_json(silent=True) or {}
+
+check(
+    "API eventos: pipeline muestra la activación MP (12.8)",
+    r.status_code == 200
+    and _j13.get("success")
+    and _j13.get("total", 0) >= 1
+    and any(
+        i.get("action") == "activated"
+        and i.get("provider") == "mercadopago"
+        for i in _j13.get("items", [])
+    ),
+    f"status={r.status_code} total={_j13.get('total')}",
+)
+
+# 13.7 Activación manual con CSRF (bugfix E2E M-09)
+from models.user_subscription import (
+    UserSubscription as _US13,
+)
+
+r = client.put(
+    f"/admin/api/usuarios/{PROFE_ID}/plan",
+    json={"days": 30},
+    headers={"X-CSRFToken": _csrf13},
+)
+_j13 = r.get_json(silent=True) or {}
+
+_db13 = _SL3()
+
+try:
+
+    _sub13 = _db13.query(_US13).filter(
+        _US13.user_id == str(PROFE_ID)
+    ).first()
+
+finally:
+
+    _db13.close()
+
+check(
+    "PUT plan con CSRF → Plan Pro activo (origen manual)",
+    r.status_code == 200
+    and _j13.get("success")
+    and _j13.get("plan", {}).get("status") == "active"
+    and _sub13 is not None
+    and _sub13.status == "active"
+    and _sub13.source == "manual",
+    f"status={r.status_code} json={_j13.get('plan')}",
+)
+
+r = client.put(
+    f"/admin/api/usuarios/{PROFE_ID}/plan",
+    json={"days": 30},
+)
+
+check(
+    "PUT plan sin CSRF → 400 (protección intacta)",
+    r.status_code == 400,
+    f"recibió {r.status_code}",
+)
+
+# 13.8 Acceso por rol
+login(PROFE_ID, "teacher", "profe@verify.cl")
+
+r = client.get("/admin/comercial")
+_r_api = client.get("/admin/api/comercial/resumen")
+
+check(
+    "Teacher recibe 403 en panel y API comercial",
+    r.status_code == 403 and _r_api.status_code == 403,
+    f"página={r.status_code} api={_r_api.status_code}",
+)
+
+login(ADMIN_ID, "admin", "admin@verify.cl")
+_admin_sees_c = (
+    "/admin/comercial"
+    in client.get("/dashboard/").data.decode()
+)
+
+login(PROFE_ID, "teacher", "profe@verify.cl")
+_teacher_sees_c = (
+    "/admin/comercial"
+    in client.get("/dashboard/").data.decode()
+)
+
+check(
+    "Link Comercial solo para admin",
+    _admin_sees_c and not _teacher_sees_c,
+    f"admin={_admin_sees_c}, teacher={_teacher_sees_c}",
+)
 
 
 # ==========================================================

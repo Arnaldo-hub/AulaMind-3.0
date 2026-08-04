@@ -65,6 +65,7 @@ from routes.analytics import analytics  # ← NUEVO
 from routes.billing import billing  # ← NUEVO v3.1
 from routes.legal import legal  # ← NUEVO v3.1.4 páginas legales
 from routes.payments import payments  # ← NUEVO v3.2 Mercado Pago
+from routes.admin_comercial import admin_comercial  # ← NUEVO v3.3 Panel Comercial
 
 # ==========================================================
 # CREAR APP
@@ -105,6 +106,7 @@ app.register_blueprint(curriculum_api)
 app.register_blueprint(curriculum_api_v4)
 app.register_blueprint(evaluation)
 app.register_blueprint(admin_security)
+app.register_blueprint(admin_comercial)  # ← NUEVO v3.3 Panel Comercial
 app.register_blueprint(password_reset, url_prefix="/auth")
 app.register_blueprint(export)
 app.register_blueprint(analytics)  # ← NUEVO

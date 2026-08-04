@@ -76,8 +76,17 @@ Módulo M-09: Administración de Usuarios (CRUD AJAX)
     }
 
     async function apiFetch(fetchUrl, options) {
+        // Token CSRF (v3.3): sin él las escrituras API
+        // devuelven 400 csrf_invalid (Flask-WTF global).
+        const csrfMeta = document.querySelector(
+            'meta[name="csrf-token"]'
+        );
+        const csrfToken = csrfMeta ? csrfMeta.content : "";
         const response = await fetch(fetchUrl, Object.assign({
-            headers: { "Content-Type": "application/json" }
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrfToken
+            }
         }, options));
 
         let data = {};

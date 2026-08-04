@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Panel Comercial | AulaMind Enterprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_comercial.css', v=config.APP_VERSION) }}">
+</head>
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
+            <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
+        </div>
+        {% set active_menu = 'admin_comercial' %}
+    {% include 'partials/sidebar_menu.html' %}
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <strong>{{ session.get('user_name','Administrador') }}</strong>
+                    <small>Administrador</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>Panel Comercial</h1>
+                <p>Suscripciones, trials y pagos de la plataforma.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-button"><i class="fa-solid fa-bell"></i></button>
+                <button class="icon-button"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </header>
+
+        <section class="admin-section">
+
+            <!-- ============ KPIs ============ -->
+            <div class="kpi-grid" id="kpiGrid">
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-blue"><i class="fa-solid fa-users"></i></div>
+                    <div>
+                        <span class="kpi-value" id="kpiUsuarios">—</span>
+                        <span class="kpi-label">Docentes registrados</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-cyan"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div>
+                        <span class="kpi-value" id="kpiTrials">—</span>
+                        <span class="kpi-label">Trials activos</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-green"><i class="fa-solid fa-gem"></i></div>
+                    <div>
+                        <span class="kpi-value" id="kpiPro">—</span>
+                        <span class="kpi-label">Plan Pro activos</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div>
+                        <span class="kpi-value" id="kpiExpirados">—</span>
+                        <span class="kpi-label">Expirados sin pagar</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon kpi-purple"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <div>
+                        <span class="kpi-value" id="kpiActivaciones">—</span>
+                        <span class="kpi-label">Activaciones del mes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ Tabla comercial ============ -->
+            <div class="admin-card">
+
+                <h2><i class="fa-solid fa-table-list"></i> Suscripciones por docente</h2>
+
+                <div class="filters-bar">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Buscar por nombre o correo…">
+                    <select id="statusFilter">
+                        <option value="">Todos los estados</option>
+                        <option value="trial">Trial activo</option>
+                        <option value="active">Plan Pro</option>
+                        <option value="expired">Expirados</option>
+                    </select>
+                    <button class="btn-secondary" id="btnRefresh">
+                        <i class="fa-solid fa-rotate"></i>
+                        Actualizar
+                    </button>
+                </div>
+
+                <div class="users-table-wrapper">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Docente</th>
+                                <th>Estado</th>
+                                <th>Días restantes</th>
+                                <th>Uso trial</th>
+                                <th>Origen</th>
+                                <th>Registro</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comercialTableBody">
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="emptyState" style="display:none;">
+                        <i class="fa-solid fa-users-slash"></i>
+                        <p>No se encontraron docentes con los filtros aplicados.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ============ Pipeline de pagos ============ -->
+            <div class="admin-card">
+
+                <h2><i class="fa-solid fa-receipt"></i> Eventos de pago recientes</h2>
+
+                <div class="users-table-wrapper">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Proveedor</th>
+                                <th>Acción</th>
+                                <th>Docente</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventsTableBody">
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="eventsEmptyState" style="display:none;">
+                        <i class="fa-solid fa-receipt"></i>
+                        <p>Aún no hay eventos de pago registrados.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="page-footer">
+            <div class="footer-left">
+                <strong>AulaMind Enterprise 3.0</strong>
+                <span>Plataforma Inteligente para Docentes</span>
+            </div>
+            <div class="footer-right">
+                <span>© 2025 Biotecno Chile</span>
+            </div>
+        </footer>
+    </main>
+</div>
+
+<!-- ==================== MODAL ACTIVAR PLAN ==================== -->
+<div id="planModal" class="modal-overlay">
+    <div class="modal-box">
+        <h3><i class="fa-solid fa-gem"></i> Activar Plan Pro</h3>
+        <p class="modal-subtitle" id="planModalUser"></p>
+        <form id="planForm">
+            <div class="form-grid">
+                <div class="form-group full">
+                    <label for="planDays">Días de acceso</label>
+                    <input type="number" id="planDays" min="1" max="3660" value="30" required>
+                    <span class="form-hint">Usa 30 para una mensualidad por transferencia. La activación se registra como pago manual en el pipeline.</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" id="btnCancelPlan">Cancelar</button>
+                <button type="submit" class="btn-primary" id="btnSavePlan">
+                    <i class="fa-solid fa-check"></i>
+                    Activar
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="loadingModal" class="loader-overlay">
+    <div class="spinner"></div>
+    <h3>AulaMind</h3>
+    <p>Procesando...</p>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+window.COMERCIAL_CONFIG = {
+    resumenUrl: "{{ url_for('admin_comercial.resumen') }}",
+    usuariosUrl: "{{ url_for('admin_comercial.usuarios') }}",
+    eventosUrl: "{{ url_for('admin_comercial.eventos') }}",
+    planUrl: "{{ url_for('admin_security.activate_user_plan', user_id='__ID__') }}",
+    csrfToken: "{{ csrf_token() }}"
+};
+</script>
+<script src="{{ url_for('static', filename='js/admin_comercial.js', v=config.APP_VERSION) }}"></script>
+
+</body>
+</html>
