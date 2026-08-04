@@ -19,6 +19,7 @@ Biotecno Chile
 """
 
 import re
+import uuid
 
 from flask import Blueprint
 from flask import render_template
@@ -27,6 +28,7 @@ from flask import jsonify
 from flask import session
 
 from database.session import SessionLocal
+from models.payment_event import PaymentEvent
 from models.user import User
 from services.auth_service import AuthService
 from services.entitlements import Entitlements
@@ -815,6 +817,25 @@ def activate_user_plan(user_id):
         sub = Entitlements.activate_paid(
             db, user_id, days=days, source="manual"
         )
+
+        # Auditoría comercial (v3.3.1): la activación
+        # manual queda registrada en el pipeline de pagos.
+        admin_email = (
+            session.get("user_email")
+            or session.get("email")
+            or "—"
+        )
+        db.add(PaymentEvent(
+            provider="manual",
+            event_key=f"manual:{user_id}:{uuid.uuid4().hex}",
+            user_id=user_id,
+            action="activated",
+            detail=(
+                f"Plan Pro activado manualmente por "
+                f"{days} días (admin: {admin_email})"
+            ),
+        ))
+        db.commit()
 
         return jsonify(
             success=True,

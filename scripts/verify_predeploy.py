@@ -838,8 +838,8 @@ _cfg = open(
 ).read()
 
 check(
-    "APP_VERSION = 3.3.0 (cache-busting)",
-    'APP_VERSION = "3.3.0"' in _cfg,
+    "APP_VERSION = 3.3.1 (cache-busting)",
+    'APP_VERSION = "3.3.1"' in _cfg,
 )
 
 # 10.10 Páginas de los 4 módulos renderizan con la nueva UX
@@ -1010,11 +1010,11 @@ check(
 
 # 12.2 Config: claves MP y versión
 check(
-    "config.py: claves MP + APP_VERSION 3.3.0",
+    "config.py: claves MP + APP_VERSION 3.3.1",
     "MERCADOPAGO_ACCESS_TOKEN" in _cfg
     and "MERCADOPAGO_WEBHOOK_SECRET" in _cfg
     and "MERCADOPAGO_SUCCESS_URL" in _cfg
-    and 'APP_VERSION = "3.3.0"' in _cfg,
+    and 'APP_VERSION = "3.3.1"' in _cfg,
 )
 
 # 12.3 Cableado en app.py
@@ -1311,8 +1311,8 @@ check(
 
 # 13.5 Versión
 check(
-    "config.py: APP_VERSION 3.3.0",
-    'APP_VERSION = "3.3.0"' in _cfg,
+    "config.py: APP_VERSION 3.3.1",
+    'APP_VERSION = "3.3.1"' in _cfg,
 )
 
 # 13.6 E2E admin: página, APIs y token CSRF real
@@ -1424,6 +1424,31 @@ check(
     and _sub13.status == "active"
     and _sub13.source == "manual",
     f"status={r.status_code} json={_j13.get('plan')}",
+)
+
+# 13.7b La activación manual queda auditada en el
+# pipeline de pagos (PaymentEvent provider="manual").
+from models.payment_event import PaymentEvent as _PE13
+
+_db13 = _SL3()
+
+try:
+
+    _ev13 = _db13.query(_PE13).filter(
+        _PE13.provider == "manual",
+        _PE13.user_id == str(PROFE_ID),
+        _PE13.action == "activated",
+    ).first()
+
+finally:
+
+    _db13.close()
+
+check(
+    "Activación manual queda auditada en PaymentEvent",
+    _ev13 is not None
+    and "manualmente" in (_ev13.detail or ""),
+    f"evento={getattr(_ev13, 'event_key', None)}",
 )
 
 r = client.put(
