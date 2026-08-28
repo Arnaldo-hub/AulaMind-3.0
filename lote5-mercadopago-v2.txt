@@ -1,0 +1,1166 @@
+From fc27ed7e34e095c879627991ea9f86876740cbae Mon Sep 17 00:00:00 2001
+From: CTO Biotecno <cto@biotecnochile.cl>
+Date: Tue, 4 Aug 2026 15:30:27 +0000
+Subject: [PATCH] =?UTF-8?q?feat(pagos):=20Mercado=20Pago=20Suscripciones?=
+ =?UTF-8?q?=20v3.2=20=E2=80=94=20checkout,=20webhook=20con=20firma=20HMAC,?=
+ =?UTF-8?q?=20idempotencia=20y=20correos?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ app.py                          |   8 +
+ config.py                       |  30 ++-
+ models/payment_event.py         | 117 ++++++++++
+ routes/payments.py              | 378 ++++++++++++++++++++++++++++++++
+ services/mercadopago_service.py | 260 ++++++++++++++++++++++
+ services/payment_mailer.py      | 154 +++++++++++++
+ templates/payments_return.html  |  71 ++++++
+ templates/plan_status.html      |  27 ++-
+ 8 files changed, 1042 insertions(+), 3 deletions(-)
+ create mode 100644 models/payment_event.py
+ create mode 100644 routes/payments.py
+ create mode 100644 services/mercadopago_service.py
+ create mode 100644 services/payment_mailer.py
+ create mode 100644 templates/payments_return.html
+
+diff --git a/app.py b/app.py
+index 2490274..3793f09 100644
+--- a/app.py
++++ b/app.py
+@@ -64,6 +64,7 @@ from routes.password_reset import password_reset
+ from routes.analytics import analytics  # ← NUEVO
+ from routes.billing import billing  # ← NUEVO v3.1
+ from routes.legal import legal  # ← NUEVO v3.1.4 páginas legales
++from routes.payments import payments  # ← NUEVO v3.2 Mercado Pago
+ 
+ # ==========================================================
+ # CREAR APP
+@@ -112,6 +113,12 @@ app.register_blueprint(rubrics)  # ← NUEVO
+ app.register_blueprint(pie)  # ← NUEVO
+ app.register_blueprint(billing)  # ← NUEVO v3.1
+ app.register_blueprint(legal)  # ← NUEVO v3.1.4
++app.register_blueprint(payments)  # ← NUEVO v3.2 Mercado Pago
++
++# El webhook de Mercado Pago es un POST server-to-server:
++# no lleva token CSRF de sesión. Se exime SOLO este
++# blueprint (sus otras rutas son GET de todos modos).
++csrf.exempt(payments)
+ 
+ # ==========================================================
+ # TABLAS: crear las que falten al arrancar (v3.1)
+@@ -177,6 +184,7 @@ PUBLIC_ENDPOINTS = {
+     "password_reset.reset_password",
+     "legal.terms",
+     "legal.privacy",
++    "payments.webhook",
+ }
+ 
+ 
+diff --git a/config.py b/config.py
+index e803b1c..0552ce3 100644
+--- a/config.py
++++ b/config.py
+@@ -42,7 +42,7 @@ class Config:
+ 
+     APP_NAME = "AulaMind Enterprise"
+ 
+-    APP_VERSION = "3.1.5"
++    APP_VERSION = "3.2.0"
+ 
+     COMPANY = "Biotecno Chile"
+ 
+@@ -140,6 +140,34 @@ class Config:
+     # Solo dígitos, con código de país, sin '+'.
+     WHATSAPP_NUMBER = os.getenv("WHATSAPP_NUMBER", "56954690241")
+ 
++    # =====================================================
++    # Mercado Pago — Suscripciones (v3.2)
++    # Credenciales de PRODUCCIÓN de la aplicación
++    # "AulaMind" (panel Developers de MP). El Access Token
++    # NUNCA va al frontend: solo vive en variables de
++    # entorno del servidor.
++    # MERCADOPAGO_WEBHOOK_SECRET: firma secreta que MP
++    # muestra al configurar la URL del webhook; si está
++    # vacío, el webhook valida solo por consulta a la API.
++    # =====================================================
++
++    MERCADOPAGO_ACCESS_TOKEN = os.getenv(
++        "MERCADOPAGO_ACCESS_TOKEN", ""
++    )
++
++    MERCADOPAGO_PUBLIC_KEY = os.getenv(
++        "MERCADOPAGO_PUBLIC_KEY", ""
++    )
++
++    MERCADOPAGO_WEBHOOK_SECRET = os.getenv(
++        "MERCADOPAGO_WEBHOOK_SECRET", ""
++    )
++
++    MERCADOPAGO_SUCCESS_URL = os.getenv(
++        "MERCADOPAGO_SUCCESS_URL",
++        "https://www.aulamind.cl/payments/return"
++    )
++
+     # =====================================================
+     # Base de Datos
+     # =====================================================
+diff --git a/models/payment_event.py b/models/payment_event.py
+new file mode 100644
+index 0000000..9c613e6
+--- /dev/null
++++ b/models/payment_event.py
+@@ -0,0 +1,117 @@
++"""
++===========================================================
++AulaMind Enterprise 3.0
++models/payment_event.py
++-----------------------------------------------------------
++
++Modelo PaymentEvent (v3.2)
++
++Registro de eventos de pago procesados desde el webhook
++de Mercado Pago. Cumple dos funciones:
++
++1. IDEMPOTENCIA: Mercado Pago puede reintentar o duplicar
++   notificaciones. La llave única (provider + event_key)
++   garantiza que cada cobro active/extienda el plan UNA
++   sola vez.
++
++2. AUDITORÍA: historial de qué evento llegó, para qué
++   usuario y cuándo. Base del futuro panel comercial.
++
++La tabla se crea sola al arrancar (create_all en boot).
++
++Compatible con:
++
++✓ SQLite
++✓ PostgreSQL
++✓ SQLAlchemy 2.x
++
++Autor:
++Biotecno Chile
++===========================================================
++"""
++
++import uuid
++from datetime import datetime
++
++from sqlalchemy import DateTime
++from sqlalchemy import String
++
++from sqlalchemy.orm import Mapped
++from sqlalchemy.orm import mapped_column
++
++from database.base import Base
++
++
++class PaymentEvent(Base):
++
++    __tablename__ = "payment_events"
++
++    # =====================================================
++    # ID
++    # =====================================================
++
++    id: Mapped[str] = mapped_column(
++
++        String(36),
++
++        primary_key=True,
++
++        default=lambda: str(uuid.uuid4())
++
++    )
++
++    # =====================================================
++    # Qué evento fue
++    # =====================================================
++
++    # "mercadopago" (preparado para otros proveedores)
++    provider: Mapped[str] = mapped_column(String(30))
++
++    # Llave de idempotencia única, p.ej:
++    #   "subscription_authorized_payment:1092837465"
++    #   "subscription_preapproval:2c938084726fca"
++    event_key: Mapped[str] = mapped_column(
++
++        String(160),
++
++        unique=True,
++
++        index=True
++
++    )
++
++    # =====================================================
++    # Para quién (puede quedar nulo si el evento llega sin
++    # external_reference resoluble: se registra igual)
++    # =====================================================
++
++    user_id: Mapped[str] = mapped_column(
++
++        String(36),
++
++        index=True,
++
++        nullable=True
++
++    )
++
++    # Acción resultante: "activated", "payment_failed",
++    # "noted", "ignored", "duplicate"
++    action: Mapped[str] = mapped_column(String(30))
++
++    # Resumen legible (nunca datos de tarjeta)
++    detail: Mapped[str] = mapped_column(
++
++        String(500),
++
++        default=""
++
++    )
++
++    created_at: Mapped[datetime] = mapped_column(
++
++        DateTime,
++
++        default=datetime.utcnow
++
++    )
+diff --git a/routes/payments.py b/routes/payments.py
+new file mode 100644
+index 0000000..8bd47c6
+--- /dev/null
++++ b/routes/payments.py
+@@ -0,0 +1,378 @@
++"""
++===========================================================
++AulaMind Enterprise 3.0
++routes/payments.py
++-----------------------------------------------------------
++
++Pagos con Mercado Pago — Suscripciones (v3.2)
++
++Flujo:
++
++1. GET  /payments/checkout  → crea la suscripción en MP
++   y redirige al checkout hosted (init_point). El usuario
++   paga con tarjeta en Mercado Pago.
++2. GET  /payments/return    → back_url: página "estamos
++   confirmando" mientras llega el webhook.
++3. POST /payments/webhook   → notificaciones de MP. Es la
++   ÚNICA vía que activa/extiende planes. Nunca se confía
++   en el body ni en el redirect: se consulta el recurso
++   por id a la API y se actúa sobre el estado confirmado.
++
++Eventos manejados:
++
++- subscription_preapproval (authorized) → activa el plan
++  de inmediato (silencioso, sin correo).
++- subscription_authorized_payment (approved) → activa/
++  renueva el plan y envía confirmación por correo.
++- subscription_authorized_payment (rechazado) → correo
++  de dunning (el acceso expira solo si no se regulariza).
++
++Regla de oro de renovación: Entitlements.activate_paid
++REINICIA la ventana a +31 días desde el cobro, no acumula
++— un webhook duplicado nunca regala días. La tabla
++payment_events asegura idempotencia y deja auditoría.
++
++Autor:
++Biotecno Chile
++===========================================================
++"""
++
++import logging
++
++from flask import Blueprint
++from flask import current_app
++from flask import jsonify
++from flask import redirect
++from flask import render_template
++from flask import request
++from flask import session
++from flask import url_for
++
++from database.session import SessionLocal
++from models.payment_event import PaymentEvent
++from models.user import User
++from services.entitlements import Entitlements
++from services.mercadopago_service import MercadoPagoService
++from services.payment_mailer import PaymentMailer
++
++logger = logging.getLogger(__name__)
++
++# Días de acceso por cobro mensual confirmado
++# (30 del mes + 1 de gracia por desfase del webhook)
++PAID_PERIOD_DAYS = 31
++
++# ==========================================================
++# Blueprint
++# ==========================================================
++
++payments = Blueprint(
++    "payments",
++    __name__,
++    url_prefix="/payments"
++)
++
++
++# ==========================================================
++# Checkout: crear suscripción y enviar al usuario a MP
++# ==========================================================
++
++@payments.route("/checkout", methods=["GET"])
++def checkout():
++
++    # El guardia global ya exige sesión (doble chequeo)
++    user_id = session.get("user_id")
++
++    if not user_id:
++        return redirect(url_for("auth.login"))
++
++    if not MercadoPagoService.is_configured():
++
++        logger.error(
++            "Checkout invocado sin MERCADOPAGO_ACCESS_TOKEN"
++        )
++
++        return redirect(url_for("billing.status"))
++
++    result = MercadoPagoService.create_subscription(
++        user_email=session.get("email", ""),
++        user_id=user_id,
++    )
++
++    init_point = (result or {}).get("init_point")
++
++    if not init_point:
++
++        logger.error(
++            "MP no devolvió init_point para usuario %s",
++            user_id,
++        )
++
++        return redirect(url_for("billing.status"))
++
++    return redirect(init_point)
++
++
++# ==========================================================
++# Back URL: el usuario vuelve desde Mercado Pago
++# ==========================================================
++
++@payments.route("/return", methods=["GET"])
++def return_page():
++
++    user_id = session.get("user_id")
++
++    if not user_id:
++        return redirect(url_for("auth.login"))
++
++    plan = Entitlements.get_status(user_id)
++
++    return render_template(
++        "payments_return.html",
++        plan=plan,
++    )
++
++
++# ==========================================================
++# Webhook: la única fuente de verdad
++# ==========================================================
++
++@payments.route("/webhook", methods=["POST"])
++def webhook():
++
++    # MP envía JSON (v1: {"type", "data": {"id"}}); el
++    # formato legado usa query string (?topic=&id=).
++    body = request.get_json(silent=True) or {}
++
++    event_type = (
++        body.get("type")
++        or request.args.get("topic")
++        or ""
++    )
++
++    data_id = (
++        request.args.get("data.id")
++        or (body.get("data") or {}).get("id")
++        or request.args.get("id")
++        or ""
++    )
++
++    data_id = str(data_id)
++
++    # 1) Firma: confirma que el POST viene de Mercado Pago
++    if not MercadoPagoService.verify_signature(
++        x_signature=request.headers.get("x-signature", ""),
++        x_request_id=request.headers.get("x-request-id", ""),
++        data_id=data_id,
++    ):
++
++        logger.warning(
++            "Webhook MP con firma inválida (data.id=%s)",
++            data_id,
++        )
++
++        return jsonify({"error": "invalid_signature"}), 401
++
++    if not event_type or not data_id:
++        return jsonify({"status": "ignored"}), 200
++
++    # 2) Procesar (siempre 200 para que MP no reintente
++    #    indefinidamente; los errores quedan en log)
++    try:
++
++        action = process_mp_webhook(event_type, data_id)
++
++    except Exception:
++
++        logger.exception(
++            "Webhook MP falló procesando %s %s",
++            event_type,
++            data_id,
++        )
++
++        action = "error"
++
++    return jsonify({"status": action}), 200
++
++
++# ==========================================================
++# Procesamiento de eventos (separado para poder probarlo
++# y para mantener el handler delgado)
++# ==========================================================
++
++def process_mp_webhook(event_type, resource_id):
++
++    event_key = f"{event_type}:{resource_id}"
++
++    db = SessionLocal()
++
++    try:
++
++        # ----------------------------------------------
++        # Idempotencia: cada evento se procesa una vez
++        # ----------------------------------------------
++
++        already = db.query(PaymentEvent).filter(
++            PaymentEvent.provider == "mercadopago",
++            PaymentEvent.event_key == event_key,
++        ).first()
++
++        if already is not None:
++            return "duplicate"
++
++        action = "ignored"
++        user_id = None
++        detail = ""
++
++        # ----------------------------------------------
++        # Ciclo de vida de la suscripción
++        # ----------------------------------------------
++
++        if event_type == "subscription_preapproval":
++
++            preapproval = MercadoPagoService.get_preapproval(
++                resource_id
++            )
++
++            if preapproval:
++
++                status = preapproval.get("status", "")
++                user_id = preapproval.get("external_reference")
++                detail = f"status={status}"
++
++                if status == "authorized" and user_id:
++
++                    # Acceso inmediato al suscribirse. El
++                    # correo lo envía el evento de cobro.
++                    Entitlements.activate_paid(
++                        db,
++                        user_id,
++                        days=PAID_PERIOD_DAYS,
++                        source="mercadopago",
++                    )
++
++                    action = "activated"
++
++                else:
++                    # paused / cancelled / pending: el
++                    # acceso expira solo al cumplirse el
++                    # período ya pagado. Solo dejamos
++                    # registro.
++                    action = "noted"
++
++        # ----------------------------------------------
++        # Cobro recurrente (cada ciclo mensual)
++        # ----------------------------------------------
++
++        elif event_type == "subscription_authorized_payment":
++
++            payment = (
++                MercadoPagoService.get_authorized_payment(
++                    resource_id
++                )
++            )
++
++            if payment:
++
++                status = payment.get("status", "")
++                detail = f"status={status}"
++
++                # Resolver nuestro usuario: primero la
++                # referencia directa; si no viene, la de
++                # la suscripción madre (llave robusta).
++                user_id = payment.get("external_reference")
++
++                if not user_id and payment.get("preapproval_id"):
++
++                    parent = (
++                        MercadoPagoService.get_preapproval(
++                            payment["preapproval_id"]
++                        )
++                    )
++
++                    if parent:
++                        user_id = parent.get(
++                            "external_reference"
++                        )
++
++                if user_id:
++
++                    if status == "approved":
++
++                        Entitlements.activate_paid(
++                            db,
++                            user_id,
++                            days=PAID_PERIOD_DAYS,
++                            source="mercadopago",
++                        )
++
++                        _notify(
++                            db,
++                            user_id,
++                            PaymentMailer.send_activated,
++                            current_app.config.get(
++                                "PRO_MONTHLY_PRICE_CLP", 9990
++                            ),
++                        )
++
++                        action = "activated"
++
++                    else:
++
++                        # Cobro rechazado: dunning amable.
++                        # MP reintenta solo; el acceso
++                        # expira por tiempo si no paga.
++                        _notify(
++                            db,
++                            user_id,
++                            PaymentMailer.send_payment_failed,
++                        )
++
++                        action = "payment_failed"
++
++        # ----------------------------------------------
++        # Auditoría
++        # ----------------------------------------------
++
++        db.add(PaymentEvent(
++            provider="mercadopago",
++            event_key=event_key,
++            user_id=str(user_id) if user_id else None,
++            action=action,
++            detail=detail[:490],
++        ))
++
++        db.commit()
++
++        return action
++
++    finally:
++
++        db.close()
++
++
++# ==========================================================
++# Helper: correo al usuario sin tumbar el webhook
++# ==========================================================
++
++def _notify(db, user_id, send_fn, *args):
++
++    try:
++
++        user = db.query(User).filter(
++            User.id == str(user_id)
++        ).first()
++
++        if user and user.email:
++
++            send_fn(
++                user.email,
++                user.first_name or "docente",
++                *args,
++            )
++
++    except Exception:
++
++        logger.exception(
++            "No se pudo notificar por correo al usuario %s",
++            user_id,
++        )
+diff --git a/services/mercadopago_service.py b/services/mercadopago_service.py
+new file mode 100644
+index 0000000..f2c6288
+--- /dev/null
++++ b/services/mercadopago_service.py
+@@ -0,0 +1,260 @@
++"""
++===========================================================
++AulaMind Enterprise 3.0
++services/mercadopago_service.py
++-----------------------------------------------------------
++
++Integración Mercado Pago — Suscripciones (v3.2)
++
++Modelo elegido: suscripción SIN plan asociado
++(POST /preapproval con auto_recurring inline). Es el
++camino más flexible para un único precio ($9.990 CLP/mes)
++y no requiere formulario de tarjeta propio: el usuario
++paga en el checkout hosted de Mercado Pago (init_point).
++
++Reglas de seguridad implementadas (docs oficiales MP):
++
++1. Nunca confiar en el body del webhook ni en el
++   redirect del navegador (back_url). Solo se actúa
++   sobre el estado CONFIRMADO consultando la API por id.
++2. Validación de firma x-signature (HMAC-SHA256) cuando
++   MERCADOPAGO_WEBHOOK_SECRET está configurado.
++3. Idempotencia vía PaymentEvent (la capa de rutas).
++
++Autor:
++Biotecno Chile
++===========================================================
++"""
++
++import hashlib
++import hmac
++import logging
++
++import requests
++
++from flask import current_app
++
++logger = logging.getLogger(__name__)
++
++MP_API_BASE = "https://api.mercadopago.com"
++
++# Segundos de espera máximos por llamada a la API
++MP_TIMEOUT = 20
++
++
++class MercadoPagoService:
++
++    # =====================================================
++    # Configuración
++    # =====================================================
++
++    @staticmethod
++    def is_configured():
++
++        config = current_app.config
++
++        return bool(config.get("MERCADOPAGO_ACCESS_TOKEN"))
++
++    @staticmethod
++    def _headers():
++
++        token = current_app.config.get(
++            "MERCADOPAGO_ACCESS_TOKEN", ""
++        )
++
++        return {
++            "Authorization": f"Bearer {token}",
++            "Content-Type": "application/json",
++        }
++
++    # =====================================================
++    # Crear suscripción → URL de pago hosted
++    # =====================================================
++
++    @staticmethod
++    def create_subscription(user_email, user_id):
++
++        """
++        Crea la suscripción mensual y devuelve el dict de
++        MP (incluye init_point para redirigir al usuario).
++
++        Devuelve None si la API rechaza la creación: la
++        capa de rutas muestra mensaje amable y no rompe.
++        """
++
++        config = current_app.config
++
++        price = config.get("PRO_MONTHLY_PRICE_CLP", 9990)
++        back_url = config.get(
++            "MERCADOPAGO_SUCCESS_URL",
++            "https://www.aulamind.cl/payments/return",
++        )
++
++        payload = {
++            "reason": (
++                f"AulaMind Plan Pro — ${price:,} CLP/mes"
++                .replace(",", ".")
++            ),
++            # Llave de unión con nuestro usuario: llega de
++            # vuelta en cada webhook de la suscripción.
++            "external_reference": str(user_id),
++            "payer_email": user_email,
++            "auto_recurring": {
++                "frequency": 1,
++                "frequency_type": "months",
++                "transaction_amount": price,
++                "currency_id": "CLP",
++            },
++            "back_url": back_url,
++        }
++
++        try:
++
++            response = requests.post(
++                f"{MP_API_BASE}/preapproval",
++                json=payload,
++                headers=MercadoPagoService._headers(),
++                timeout=MP_TIMEOUT,
++            )
++
++            if response.status_code not in (200, 201):
++
++                logger.error(
++                    "MP create_subscription rechazado "
++                    "(%s): %s",
++                    response.status_code,
++                    response.text[:300],
++                )
++
++                return None
++
++            return response.json()
++
++        except requests.RequestException:
++
++            logger.exception("MP create_subscription: error de red")
++
++            return None
++
++    # =====================================================
++    # Consultas por id (la única verdad)
++    # =====================================================
++
++    @staticmethod
++    def get_preapproval(preapproval_id):
++
++        """Estado real de la suscripción (authorized /
++        paused / cancelled / pending)."""
++
++        return MercadoPagoService._get(
++            f"/preapproval/{preapproval_id}"
++        )
++
++    @staticmethod
++    def get_authorized_payment(payment_id):
++
++        """Estado real de un cobro recurrente (factura).
++        Trae preapproval_id y external_reference."""
++
++        return MercadoPagoService._get(
++            f"/authorized_payments/{payment_id}"
++        )
++
++    @staticmethod
++    def _get(path):
++
++        try:
++
++            response = requests.get(
++                f"{MP_API_BASE}{path}",
++                headers=MercadoPagoService._headers(),
++                timeout=MP_TIMEOUT,
++            )
++
++            if response.status_code != 200:
++
++                logger.error(
++                    "MP GET %s → %s: %s",
++                    path,
++                    response.status_code,
++                    response.text[:300],
++                )
++
++                return None
++
++            return response.json()
++
++        except requests.RequestException:
++
++            logger.exception("MP GET %s: error de red", path)
++
++            return None
++
++    # =====================================================
++    # Firma de webhooks (HMAC-SHA256)
++    # =====================================================
++
++    @staticmethod
++    def verify_signature(x_signature, x_request_id, data_id):
++
++        """
++        Valida que el POST venga realmente de Mercado Pago.
++
++        Manifiesto exacto (docs oficiales):
++            id:<data.id>;request-id:<x-request-id>;ts:<ts>;
++
++        Devuelve True si no hay secreto configurado (modo
++        permisivo con warning: la consulta por id sigue
++        siendo la barrera real, pero el secreto debe
++        configurarse en producción).
++        """
++
++        secret = current_app.config.get(
++            "MERCADOPAGO_WEBHOOK_SECRET", ""
++        )
++
++        if not secret:
++
++            logger.warning(
++                "MERCADOPAGO_WEBHOOK_SECRET no configurado: "
++                "webhook aceptado sin validar firma"
++            )
++
++            return True
++
++        if not x_signature or not data_id:
++
++            return False
++
++        parts = {}
++
++        for chunk in x_signature.split(","):
++
++            key, _, value = chunk.strip().partition("=")
++
++            if key:
++                parts[key] = value
++
++        ts = parts.get("ts")
++        received_hash = parts.get("v1")
++
++        if not ts or not received_hash:
++
++            return False
++
++        manifest = (
++            f"id:{data_id};"
++            f"request-id:{x_request_id or ''};"
++            f"ts:{ts};"
++        )
++
++        expected_hash = hmac.new(
++            secret.encode("utf-8"),
++            manifest.encode("utf-8"),
++            hashlib.sha256,
++        ).hexdigest()
++
++        return hmac.compare_digest(
++            expected_hash.lower(),
++            received_hash.lower(),
++        )
+diff --git a/services/payment_mailer.py b/services/payment_mailer.py
+new file mode 100644
+index 0000000..b433573
+--- /dev/null
++++ b/services/payment_mailer.py
+@@ -0,0 +1,154 @@
++"""
++===========================================================
++AulaMind Enterprise 3.0
++services/payment_mailer.py
++-----------------------------------------------------------
++
++Correos del flujo de pagos (v3.2)
++
++- send_activated:      plan Pro activado/renovado
++- send_payment_failed: un cobro mensual fue rechazado
++                       (dunning amable: invita a actualizar
++                       el medio de pago antes de perder
++                       acceso)
++
++Sigue el mismo patrón que PasswordResetMailer: smtplib
++directo con la configuración MAIL_* de la app. Nunca
++tumba el webhook: cualquier falla de envío queda en log
++y devuelve False.
++
++Autor:
++Biotecno Chile
++===========================================================
++"""
++
++import logging
++import smtplib
++from email.message import EmailMessage
++
++from flask import current_app
++
++logger = logging.getLogger(__name__)
++
++
++class PaymentMailer:
++
++    # =====================================================
++    # Transporte compartido
++    # =====================================================
++
++    @staticmethod
++    def _send(email, subject, body):
++
++        config = current_app.config
++        server = config.get("MAIL_SERVER", "")
++
++        if not server:
++
++            logger.warning(
++                "PaymentMailer sin MAIL_SERVER: correo '%s' "
++                "para %s omitido",
++                subject,
++                email,
++            )
++
++            return False
++
++        try:
++
++            msg = EmailMessage()
++            msg["Subject"] = subject
++            msg["From"] = config.get("MAIL_FROM")
++            msg["To"] = email
++            msg.set_content(body)
++
++            smtp_class = (
++                smtplib.SMTP_SSL
++                if config.get("MAIL_USE_SSL", False)
++                else smtplib.SMTP
++            )
++
++            with smtp_class(
++                server,
++                config.get("MAIL_PORT", 587),
++                timeout=15,
++            ) as smtp:
++
++                if config.get(
++                    "MAIL_USE_TLS", True
++                ) and not config.get("MAIL_USE_SSL", False):
++
++                    smtp.starttls()
++
++                username = config.get("MAIL_USERNAME", "")
++
++                if username:
++                    smtp.login(
++                        username,
++                        config.get("MAIL_PASSWORD", ""),
++                    )
++
++                smtp.send_message(msg)
++
++            return True
++
++        except Exception:
++
++            logger.exception(
++                "PaymentMailer: no se pudo enviar '%s' a %s",
++                subject,
++                email,
++            )
++
++            return False
++
++    # =====================================================
++    # Plan activado / renovado
++    # =====================================================
++
++    @staticmethod
++    def send_activated(email, name, price_clp):
++
++        price = f"{int(price_clp):,}".replace(",", ".")
++
++        return PaymentMailer._send(
++            email,
++            "Tu Plan Pro está activo — AulaMind",
++            (
++                f"Hola {name}:\n\n"
++                "Tu suscripción a AulaMind Plan Pro quedó "
++                "activa. Ya puedes generar planificaciones, "
++                "evaluaciones, guías, rúbricas y PIE sin "
++                "límite práctico.\n\n"
++                f"Valor mensual: ${price} CLP, cobrado "
++                "automáticamente por Mercado Pago. Puedes "
++                "cancelar cuando quieras desde tu cuenta de "
++                "Mercado Pago, sin permanencia.\n\n"
++                "Gracias por confiar en AulaMind.\n"
++                "— Equipo AulaMind · aulamind.cl"
++            ),
++        )
++
++    # =====================================================
++    # Cobro rechazado (renovación fallida)
++    # =====================================================
++
++    @staticmethod
++    def send_payment_failed(email, name):
++
++        return PaymentMailer._send(
++            email,
++            "No pudimos cobrar tu suscripción — AulaMind",
++            (
++                f"Hola {name}:\n\n"
++                "Mercado Pago rechazó el cobro mensual de tu "
++                "Plan Pro. No te preocupes: tu acceso sigue "
++                "activo mientras se reintenta el pago.\n\n"
++                "Para no perder acceso, actualiza tu tarjeta "
++                "desde tu cuenta de Mercado Pago (sección "
++                "Suscripciones).\n\n"
++                "Si necesitas ayuda, responde este correo o "
++                "escríbenos a contacto@aulamind.cl.\n\n"
++                "— Equipo AulaMind · aulamind.cl"
++            ),
++        )
+diff --git a/templates/payments_return.html b/templates/payments_return.html
+new file mode 100644
+index 0000000..cdc5367
+--- /dev/null
++++ b/templates/payments_return.html
+@@ -0,0 +1,71 @@
++<!DOCTYPE html>
++<html lang="es">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Confirmando tu suscripción | AulaMind Enterprise</title>
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
++    <style>
++        .status-pill {
++            display: inline-block;
++            padding: 0.4rem 1rem;
++            border-radius: 999px;
++            font-size: 0.875rem;
++            font-weight: 600;
++            margin: 0.75rem 0 1rem;
++        }
++        .status-pill.ok { background: #d1fae5; color: #065f46; }
++        .status-pill.wait { background: #fef3c7; color: #92400e; }
++        .hint { font-size: 0.875rem; color: #6b7280; line-height: 1.5; }
++    </style>
++</head>
++<body>
++<div class="login-page">
++    <section class="left-panel">
++        <div class="overlay">
++            <div class="brand"><h1>AulaMind</h1><span>Enterprise 3.0</span></div>
++            <div class="message">
++                <h2>El Copilot Inteligente para Docentes</h2>
++                <p>Planificaciones, evaluaciones, guías, rúbricas e inteligencia artificial en un solo lugar.</p>
++            </div>
++            <div class="features">
++                <div class="feature">✅ Currículum MINEDUC</div>
++                <div class="feature">✅ IA Pedagógica</div>
++                <div class="feature">✅ Exportar Word y PDF</div>
++                <div class="feature">✅ Historial ilimitado</div>
++            </div>
++        </div>
++    </section>
++    <section class="right-panel">
++        <div class="login-box">
++            <div class="logo">💳</div>
++            <h2>¡Gracias por suscribirte!</h2>
++
++            {% if plan.get('status') == 'active' %}
++                <span class="status-pill ok">✅ Plan Pro activo</span>
++                <p class="hint">
++                    Tu suscripción quedó confirmada por Mercado Pago.
++                    Ya puedes generar documentos sin límite práctico.
++                </p>
++            {% else %}
++                <span class="status-pill wait">⏳ Confirmando tu pago…</span>
++                <p class="hint">
++                    Mercado Pago está procesando tu suscripción.
++                    La activación es automática y suele tardar menos
++                    de un minuto: revisa <strong>Mi Plan</strong> en unos
++                    instantes. Recibirás además un correo de
++                    confirmación.
++                </p>
++            {% endif %}
++
++            <a class="login-btn" style="display:block; text-align:center; text-decoration:none; margin-top:1.25rem;"
++               href="{{ url_for('billing.status') }}">Ver Mi Plan</a>
++
++            <div class="links">
++                <a href="{{ url_for('dashboard.home') }}">Volver al panel principal</a>
++            </div>
++        </div>
++    </section>
++</div>
++</body>
++</html>
+diff --git a/templates/plan_status.html b/templates/plan_status.html
+index 3fe4cda..482e879 100644
+--- a/templates/plan_status.html
++++ b/templates/plan_status.html
+@@ -299,6 +299,29 @@
+                     </div>
+                 </div>
+ 
++                {% if config.MERCADOPAGO_ACCESS_TOKEN %}
++                <!-- Pago en línea activo (v3.2): checkout hosted de MP -->
++                <a class="btn-primary"
++                   href="{{ url_for('payments.checkout') }}"
++                   style="display:inline-flex; align-items:center; gap:0.5rem;">
++                    <i class="fa-solid fa-credit-card"></i>
++                    Suscribirme con Mercado Pago
++                </a>
++
++                <p style="margin-top:1rem; font-size:0.8125rem; color:#6b7280;">
++                    Pago con tarjeta vía Mercado Pago. Se renueva solo cada mes;
++                    sin permanencia, cancelas cuando quieras.
++                </p>
++
++                <p style="margin-top:0.5rem; font-size:0.8125rem; color:#6b7280;">
++                    ¿Prefieres transferencia?
++                    <a href="https://wa.me/{{ config.WHATSAPP_NUMBER }}?text=Hola,%20quiero%20activar%20mi%20Plan%20Pro%20en%20AulaMind.%20Mi%20correo%20es%20{{ session.get('email','') }}"
++                       target="_blank" rel="noopener" style="color:#059669;">
++                        Actívalo por WhatsApp
++                    </a>
++                </p>
++                {% else %}
++                <!-- Respaldo mientras no se configure Mercado Pago -->
+                 <a class="btn-whatsapp"
+                    href="https://wa.me/{{ config.WHATSAPP_NUMBER }}?text=Hola,%20quiero%20activar%20mi%20Plan%20Pro%20en%20AulaMind.%20Mi%20correo%20es%20{{ session.get('email','') }}"
+                    target="_blank" rel="noopener">
+@@ -307,9 +330,9 @@
+                 </a>
+ 
+                 <p style="margin-top:1rem; font-size:0.8125rem; color:#6b7280;">
+-                    El pago en línea con Mercado Pago estará disponible muy pronto.
+-                    Por ahora la activación es manual: te respondemos el mismo día.
++                    Te respondemos el mismo día.
+                 </p>
++                {% endif %}
+ 
+             </div>
+             {% endif %}
+-- 
+2.39.5
+

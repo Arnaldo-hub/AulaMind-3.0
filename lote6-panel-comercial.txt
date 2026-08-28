@@ -1,0 +1,1671 @@
+From a682ec8e89ab3f133e5ef4d0cba876707dc9bcb9 Mon Sep 17 00:00:00 2001
+From: CTO Biotecno <cto@biotecnochile.cl>
+Date: Tue, 4 Aug 2026 16:57:49 +0000
+Subject: [PATCH] =?UTF-8?q?feat(comercial):=20panel=20admin=20comercial=20?=
+ =?UTF-8?q?v3.3=20=E2=80=94=20KPIs,=20suscripciones,=20pipeline=20de=20pag?=
+ =?UTF-8?q?os=20y=20bugfix=20CSRF=20M-09?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ app.py                               |   2 +
+ config.py                            |   2 +-
+ routes/admin_comercial.py            | 347 +++++++++++++++++++++++++++
+ scripts/verify_predeploy.py          | 261 +++++++++++++++++++-
+ static/css/admin_comercial.css       | 332 +++++++++++++++++++++++++
+ static/js/admin_comercial.js         | 331 +++++++++++++++++++++++++
+ static/js/admin_users.js             |  11 +-
+ templates/admin_comercial.html       | 221 +++++++++++++++++
+ templates/admin_users.html           |   1 +
+ templates/partials/sidebar_menu.html |   4 +-
+ 10 files changed, 1505 insertions(+), 7 deletions(-)
+ create mode 100644 routes/admin_comercial.py
+ create mode 100644 static/css/admin_comercial.css
+ create mode 100644 static/js/admin_comercial.js
+ create mode 100644 templates/admin_comercial.html
+
+diff --git a/app.py b/app.py
+index 3793f09..222a653 100644
+--- a/app.py
++++ b/app.py
+@@ -65,6 +65,7 @@ from routes.analytics import analytics  # ← NUEVO
+ from routes.billing import billing  # ← NUEVO v3.1
+ from routes.legal import legal  # ← NUEVO v3.1.4 páginas legales
+ from routes.payments import payments  # ← NUEVO v3.2 Mercado Pago
++from routes.admin_comercial import admin_comercial  # ← NUEVO v3.3 Panel Comercial
+ 
+ # ==========================================================
+ # CREAR APP
+@@ -105,6 +106,7 @@ app.register_blueprint(curriculum_api)
+ app.register_blueprint(curriculum_api_v4)
+ app.register_blueprint(evaluation)
+ app.register_blueprint(admin_security)
++app.register_blueprint(admin_comercial)  # ← NUEVO v3.3 Panel Comercial
+ app.register_blueprint(password_reset, url_prefix="/auth")
+ app.register_blueprint(export)
+ app.register_blueprint(analytics)  # ← NUEVO
+diff --git a/config.py b/config.py
+index 0552ce3..21f1f85 100644
+--- a/config.py
++++ b/config.py
+@@ -42,7 +42,7 @@ class Config:
+ 
+     APP_NAME = "AulaMind Enterprise"
+ 
+-    APP_VERSION = "3.2.0"
++    APP_VERSION = "3.3.0"
+ 
+     COMPANY = "Biotecno Chile"
+ 
+diff --git a/routes/admin_comercial.py b/routes/admin_comercial.py
+new file mode 100644
+index 0000000..18b4378
+--- /dev/null
++++ b/routes/admin_comercial.py
+@@ -0,0 +1,347 @@
++"""
++===========================================================
++AulaMind Enterprise 3.0
++routes/admin_comercial.py
++-----------------------------------------------------------
++Panel Comercial (v3.3)
++
++Visibilidad comercial de la plataforma para el rol admin:
++
++• KPIs: usuarios, trials activos, Plan Pro activos,
++  expirados y activaciones del mes.
++• Tabla comercial: estado del plan, días restantes,
++  uso de trial y origen del alta por usuario.
++• Pipeline de pagos: últimos eventos PaymentEvent
++  (Mercado Pago + activaciones manuales).
++
++La activación manual de planes reutiliza el endpoint
++existente PUT /admin/api/usuarios/<id>/plan
++(routes/admin_security.py).
++
++Todas las rutas requieren rol "admin".
++
++Autor:
++Biotecno Chile
++===========================================================
++"""
++
++from datetime import datetime
++
++from flask import Blueprint
++from flask import jsonify
++from flask import render_template
++from flask import request
++
++from database.session import SessionLocal
++from models.payment_event import PaymentEvent
++from models.user import User
++from models.user_subscription import UserSubscription
++from security.authorization import role_required
++
++# ==========================================================
++# Blueprint
++# ==========================================================
++
++admin_comercial = Blueprint(
++    "admin_comercial",
++    __name__
++)
++
++# ==========================================================
++# Constantes
++# ==========================================================
++
++EVENTS_LIMIT = 50
++
++VALID_STATUS_FILTERS = ("trial", "active", "expired")
++
++STATUS_LABELS = {
++    "trial": "Trial",
++    "active": "Plan Pro",
++    "expired": "Expirado",
++    "cancelled": "Cancelado",
++    "admin": "Admin",
++    "none": "Sin plan",
++}
++
++SOURCE_LABELS = {
++    "auto_trial": "Registro web",
++    "manual": "Manual",
++    "mercadopago": "Mercado Pago",
++}
++
++
++# ==========================================================
++# Helpers
++# ==========================================================
++
++def _effective_status(user, sub, now):
++    """
++    Estado comercial real del usuario.
++
++    Admin de la plataforma → "admin".
++    Trial o Plan Pro con ends_at vencido → "expired"
++    (aunque la fila aún diga trial/active: el portero
++    lo expira perezosamente en el próximo acceso).
++    """
++
++    if user.role == "admin":
++        return "admin"
++
++    if sub is None:
++        return "none"
++
++    if sub.status in ("trial", "active"):
++
++        if sub.ends_at and now > sub.ends_at:
++            return "expired"
++
++    return sub.status
++
++
++def _days_left(sub, effective, now):
++    """Días restantes (solo trial / Plan Pro vigente)."""
++
++    if effective not in ("trial", "active"):
++        return None
++
++    if not sub or not sub.ends_at:
++        return None
++
++    delta = sub.ends_at - now
++
++    days = delta.days + (1 if delta.seconds > 0 else 0)
++
++    return max(0, days)
++
++
++def _serialize_commercial(user, sub, now):
++    """Fila de la tabla comercial."""
++
++    effective = _effective_status(user, sub, now)
++
++    return {
++        "id": user.id,
++        "name": (
++            f"{user.first_name or ''} "
++            f"{user.last_name or ''}"
++        ).strip() or user.email,
++        "email": user.email,
++        "is_active": bool(user.is_active),
++        "created_at": (
++            user.created_at.isoformat()
++            if user.created_at else None
++        ),
++        "status": effective,
++        "status_label": STATUS_LABELS.get(
++            effective, effective
++        ),
++        "days_left": _days_left(sub, effective, now),
++        "ends_at": (
++            sub.ends_at.isoformat()
++            if sub and sub.ends_at else None
++        ),
++        "generations_used": (
++            sub.generations_used if sub else 0
++        ),
++        "plan_name": (
++            sub.plan.name
++            if sub and sub.plan else "—"
++        ),
++        "source": (
++            sub.source if sub else ""
++        ),
++        "source_label": SOURCE_LABELS.get(
++            sub.source if sub else "",
++            sub.source if sub else "—"
++        ),
++    }
++
++
++def _load_rows(db):
++    """Usuarios + suscripciones en 2 consultas."""
++
++    users = db.query(User).order_by(
++        User.created_at.desc()
++    ).all()
++
++    subs = db.query(UserSubscription).all()
++
++    sub_by_user = {s.user_id: s for s in subs}
++
++    now = datetime.utcnow()
++
++    return [
++        _serialize_commercial(
++            u, sub_by_user.get(u.id), now
++        )
++        for u in users
++    ], now
++
++
++# ==========================================================
++# Página principal
++# ==========================================================
++
++@admin_comercial.route("/admin/comercial")
++@role_required("admin")
++def comercial_page():
++
++    return render_template("admin_comercial.html")
++
++
++# ==========================================================
++# API — KPIs del panel
++# ==========================================================
++
++@admin_comercial.route("/admin/api/comercial/resumen")
++@role_required("admin")
++def resumen():
++
++    db = SessionLocal()
++
++    try:
++
++        rows, now = _load_rows(db)
++
++        month_start = now.replace(
++            day=1, hour=0, minute=0,
++            second=0, microsecond=0
++        )
++
++        activaciones_mes = db.query(
++            PaymentEvent
++        ).filter(
++            PaymentEvent.action == "activated",
++            PaymentEvent.created_at >= month_start,
++        ).count()
++
++        teachers = [
++            r for r in rows
++            if r["status"] != "admin"
++        ]
++
++        return jsonify(
++            success=True,
++            kpis={
++                "usuarios": len(teachers),
++                "trials": sum(
++                    1 for r in teachers
++                    if r["status"] == "trial"
++                ),
++                "pro_activos": sum(
++                    1 for r in teachers
++                    if r["status"] == "active"
++                ),
++                "expirados": sum(
++                    1 for r in teachers
++                    if r["status"] == "expired"
++                ),
++                "activaciones_mes": activaciones_mes,
++            },
++        )
++
++    finally:
++
++        db.close()
++
++
++# ==========================================================
++# API — Tabla comercial de usuarios
++# ==========================================================
++
++@admin_comercial.route("/admin/api/comercial/usuarios")
++@role_required("admin")
++def usuarios():
++
++    query_text = request.args.get("q", "").strip().lower()
++
++    status_filter = request.args.get(
++        "status", ""
++    ).strip()
++
++    db = SessionLocal()
++
++    try:
++
++        rows, _now = _load_rows(db)
++
++        if query_text:
++
++            rows = [
++                r for r in rows
++                if query_text in r["name"].lower()
++                or query_text in r["email"].lower()
++            ]
++
++        if status_filter in VALID_STATUS_FILTERS:
++
++            rows = [
++                r for r in rows
++                if r["status"] == status_filter
++            ]
++
++        return jsonify(
++            success=True,
++            total=len(rows),
++            items=rows,
++        )
++
++    finally:
++
++        db.close()
++
++
++# ==========================================================
++# API — Pipeline de pagos (últimos eventos)
++# ==========================================================
++
++@admin_comercial.route("/admin/api/comercial/eventos")
++@role_required("admin")
++def eventos():
++
++    db = SessionLocal()
++
++    try:
++
++        events = db.query(PaymentEvent).order_by(
++            PaymentEvent.created_at.desc()
++        ).limit(EVENTS_LIMIT).all()
++
++        user_ids = {
++            e.user_id for e in events if e.user_id
++        }
++
++        emails = {}
++
++        if user_ids:
++
++            for u in db.query(User).filter(
++                User.id.in_(user_ids)
++            ).all():
++
++                emails[u.id] = u.email
++
++        return jsonify(
++            success=True,
++            total=len(events),
++            items=[
++                {
++                    "created_at": (
++                        e.created_at.isoformat()
++                        if e.created_at else None
++                    ),
++                    "provider": e.provider,
++                    "action": e.action,
++                    "detail": e.detail or "",
++                    "user_email": emails.get(
++                        e.user_id, ""
++                    ),
++                }
++                for e in events
++            ],
++        )
++
++    finally:
++
++        db.close()
+diff --git a/scripts/verify_predeploy.py b/scripts/verify_predeploy.py
+index 47c524d..27e77f0 100644
+--- a/scripts/verify_predeploy.py
++++ b/scripts/verify_predeploy.py
+@@ -273,6 +273,7 @@ PAGES = [
+     "/analytics/",
+     "/curriculum/",
+     "/admin/usuarios",
++    "/admin/comercial",
+     "/auth/profile",
+     "/auth/login",
+     "/auth/forgot-password",
+@@ -837,8 +838,8 @@ _cfg = open(
+ ).read()
+ 
+ check(
+-    "APP_VERSION = 3.2.0 (cache-busting)",
+-    'APP_VERSION = "3.2.0"' in _cfg,
++    "APP_VERSION = 3.3.0 (cache-busting)",
++    'APP_VERSION = "3.3.0"' in _cfg,
+ )
+ 
+ # 10.10 Páginas de los 4 módulos renderizan con la nueva UX
+@@ -1009,11 +1010,11 @@ check(
+ 
+ # 12.2 Config: claves MP y versión
+ check(
+-    "config.py: claves MP + APP_VERSION 3.2.0",
++    "config.py: claves MP + APP_VERSION 3.3.0",
+     "MERCADOPAGO_ACCESS_TOKEN" in _cfg
+     and "MERCADOPAGO_WEBHOOK_SECRET" in _cfg
+     and "MERCADOPAGO_SUCCESS_URL" in _cfg
+-    and 'APP_VERSION = "3.2.0"' in _cfg,
++    and 'APP_VERSION = "3.3.0"' in _cfg,
+ )
+ 
+ # 12.3 Cableado en app.py
+@@ -1215,6 +1216,258 @@ finally:
+     _ctx3.pop()
+ 
+ 
++# ==========================================================
++# 13. Panel Comercial (v3.3)
++# ==========================================================
++
++print("\n=== 13. Panel Comercial ===")
++
++
++def _read_rel(*parts):
++    path = os.path.join(ROOT, *parts)
++    if not os.path.exists(path):
++        return ""
++    return open(path, encoding="utf-8").read()
++
++
++_ac_route = _read_rel("routes", "admin_comercial.py")
++_ac_tpl = _read_rel("templates", "admin_comercial.html")
++_ac_js = _read_rel("static", "js", "admin_comercial.js")
++
++# 13.1 Archivos del lote con piezas clave
++check(
++    "admin_comercial.py: página + resumen + usuarios + "
++    "eventos + PaymentEvent",
++    "def comercial_page" in _ac_route
++    and "def resumen" in _ac_route
++    and "def usuarios" in _ac_route
++    and "def eventos" in _ac_route
++    and "PaymentEvent" in _ac_route
++    and 'role_required("admin")' in _ac_route,
++)
++
++check(
++    "admin_comercial.html: panel + KPIs + modal + CSRF meta",
++    "Panel Comercial" in _ac_tpl
++    and "COMERCIAL_CONFIG" in _ac_tpl
++    and "csrf-token" in _ac_tpl
++    and "planModal" in _ac_tpl
++    and "admin_comercial.js" in _ac_tpl
++    and "admin_comercial.css" in _ac_tpl,
++)
++
++check(
++    "admin_comercial.js: fetch con token CSRF + activación",
++    "X-CSRFToken" in _ac_js
++    and "btn-activate" in _ac_js
++    and "planUrl" in _ac_js,
++)
++
++check(
++    "admin_comercial.css existe",
++    os.path.exists(
++        os.path.join(
++            ROOT, "static", "css", "admin_comercial.css"
++        )
++    ),
++)
++
++# 13.2 Cableado en app.py
++_app_src13 = _read_rel("app.py")
++
++check(
++    "app.py: blueprint admin_comercial registrado",
++    "from routes.admin_comercial import admin_comercial"
++    in _app_src13
++    and "app.register_blueprint(admin_comercial)"
++    in _app_src13,
++)
++
++# 13.3 Sidebar: enlace dentro del bloque solo-admin
++_sidebar13 = _read_rel(
++    "templates", "partials", "sidebar_menu.html"
++)
++
++_i_admin = _sidebar13.find("session.get('role') == 'admin'")
++_i_link = _sidebar13.find("admin_comercial.comercial_page")
++_i_endif = _sidebar13.find("{% endif %}", _i_link)
++
++check(
++    "sidebar: Comercial visible solo para admin",
++    _i_admin != -1
++    and _i_admin < _i_link != -1
++    and _i_link < _i_endif,
++)
++
++# 13.4 Bugfix CSRF en módulo Usuarios (M-09)
++_au_tpl13 = _read_rel("templates", "admin_users.html")
++_au_js13 = _read_rel("static", "js", "admin_users.js")
++
++check(
++    "Bugfix CSRF M-09: meta token + header X-CSRFToken",
++    'name="csrf-token"' in _au_tpl13
++    and "X-CSRFToken" in _au_js13,
++)
++
++# 13.5 Versión
++check(
++    "config.py: APP_VERSION 3.3.0",
++    'APP_VERSION = "3.3.0"' in _cfg,
++)
++
++# 13.6 E2E admin: página, APIs y token CSRF real
++import re as _re13
++
++login(ADMIN_ID, "admin", "admin@verify.cl")
++
++r = client.get("/admin/comercial")
++_body13 = r.data.decode(errors="ignore")
++
++check(
++    "GET /admin/comercial → 200 con panel",
++    r.status_code == 200 and "Panel Comercial" in _body13,
++    f"recibió {r.status_code}"
++)
++
++_m13 = _re13.search(
++    r'name="csrf-token" content="([^"]+)"', _body13
++)
++_csrf13 = _m13.group(1) if _m13 else ""
++
++check(
++    "Página comercial entrega token CSRF en meta",
++    bool(_csrf13),
++)
++
++r = client.get("/admin/api/comercial/resumen")
++_j13 = r.get_json(silent=True) or {}
++_k13 = _j13.get("kpis", {})
++
++check(
++    "API resumen: KPIs completos + activación MP del mes",
++    r.status_code == 200
++    and _j13.get("success")
++    and all(
++        k in _k13 for k in (
++            "usuarios", "trials", "pro_activos",
++            "expirados", "activaciones_mes",
++        )
++    )
++    and _k13.get("activaciones_mes", 0) >= 1,
++    f"status={r.status_code} kpis={sorted(_k13)}",
++)
++
++r = client.get("/admin/api/comercial/usuarios")
++_j13 = r.get_json(silent=True) or {}
++_items13 = _j13.get("items", [])
++
++check(
++    "API usuarios: fila comercial del profe de prueba",
++    r.status_code == 200
++    and _j13.get("success")
++    and any(
++        i.get("email") == "profe@verify.cl"
++        and "status_label" in i
++        and "days_left" in i
++        and "source_label" in i
++        for i in _items13
++    ),
++    f"status={r.status_code} total={_j13.get('total')}",
++)
++
++r = client.get("/admin/api/comercial/eventos")
++_j13 = r.get_json(silent=True) or {}
++
++check(
++    "API eventos: pipeline muestra la activación MP (12.8)",
++    r.status_code == 200
++    and _j13.get("success")
++    and _j13.get("total", 0) >= 1
++    and any(
++        i.get("action") == "activated"
++        and i.get("provider") == "mercadopago"
++        for i in _j13.get("items", [])
++    ),
++    f"status={r.status_code} total={_j13.get('total')}",
++)
++
++# 13.7 Activación manual con CSRF (bugfix E2E M-09)
++from models.user_subscription import (
++    UserSubscription as _US13,
++)
++
++r = client.put(
++    f"/admin/api/usuarios/{PROFE_ID}/plan",
++    json={"days": 30},
++    headers={"X-CSRFToken": _csrf13},
++)
++_j13 = r.get_json(silent=True) or {}
++
++_db13 = _SL3()
++
++try:
++
++    _sub13 = _db13.query(_US13).filter(
++        _US13.user_id == str(PROFE_ID)
++    ).first()
++
++finally:
++
++    _db13.close()
++
++check(
++    "PUT plan con CSRF → Plan Pro activo (origen manual)",
++    r.status_code == 200
++    and _j13.get("success")
++    and _j13.get("plan", {}).get("status") == "active"
++    and _sub13 is not None
++    and _sub13.status == "active"
++    and _sub13.source == "manual",
++    f"status={r.status_code} json={_j13.get('plan')}",
++)
++
++r = client.put(
++    f"/admin/api/usuarios/{PROFE_ID}/plan",
++    json={"days": 30},
++)
++
++check(
++    "PUT plan sin CSRF → 400 (protección intacta)",
++    r.status_code == 400,
++    f"recibió {r.status_code}",
++)
++
++# 13.8 Acceso por rol
++login(PROFE_ID, "teacher", "profe@verify.cl")
++
++r = client.get("/admin/comercial")
++_r_api = client.get("/admin/api/comercial/resumen")
++
++check(
++    "Teacher recibe 403 en panel y API comercial",
++    r.status_code == 403 and _r_api.status_code == 403,
++    f"página={r.status_code} api={_r_api.status_code}",
++)
++
++login(ADMIN_ID, "admin", "admin@verify.cl")
++_admin_sees_c = (
++    "/admin/comercial"
++    in client.get("/dashboard/").data.decode()
++)
++
++login(PROFE_ID, "teacher", "profe@verify.cl")
++_teacher_sees_c = (
++    "/admin/comercial"
++    in client.get("/dashboard/").data.decode()
++)
++
++check(
++    "Link Comercial solo para admin",
++    _admin_sees_c and not _teacher_sees_c,
++    f"admin={_admin_sees_c}, teacher={_teacher_sees_c}",
++)
++
++
+ # ==========================================================
+ # Reporte final
+ # ==========================================================
+diff --git a/static/css/admin_comercial.css b/static/css/admin_comercial.css
+new file mode 100644
+index 0000000..3fd7d52
+--- /dev/null
++++ b/static/css/admin_comercial.css
+@@ -0,0 +1,332 @@
++/* ==========================================================
++   AulaMind Enterprise 3.0 — Panel Comercial (v3.3)
++   static/css/admin_comercial.css
++   ========================================================== */
++
++.admin-section { padding: 2rem; max-width: 1150px; }
++
++.admin-card {
++    background: #fff;
++    border-radius: 1rem;
++    padding: 2rem;
++    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
++    border: 1px solid #e5e7eb;
++    margin-bottom: 2rem;
++}
++.admin-card h2 {
++    font-size: 1.15rem;
++    font-weight: 700;
++    margin-bottom: 1.5rem;
++    color: #1f2937;
++    display: flex;
++    align-items: center;
++    gap: 0.6rem;
++}
++.admin-card h2 i { color: #2563eb; }
++
++/* ---------- KPIs ---------- */
++.kpi-grid {
++    display: grid;
++    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
++    gap: 1rem;
++    margin-bottom: 2rem;
++}
++.kpi-card {
++    background: #fff;
++    border: 1px solid #e5e7eb;
++    border-radius: 1rem;
++    padding: 1.25rem;
++    display: flex;
++    align-items: center;
++    gap: 1rem;
++    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
++}
++.kpi-icon {
++    width: 46px;
++    height: 46px;
++    border-radius: 0.75rem;
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    font-size: 1.15rem;
++    flex-shrink: 0;
++}
++.kpi-blue   { background: #eff6ff; color: #2563eb; }
++.kpi-cyan   { background: #ecfeff; color: #0891b2; }
++.kpi-green  { background: #f0fdf4; color: #16a34a; }
++.kpi-red    { background: #fef2f2; color: #dc2626; }
++.kpi-purple { background: #faf5ff; color: #9333ea; }
++.kpi-value {
++    display: block;
++    font-size: 1.5rem;
++    font-weight: 800;
++    color: #111827;
++    line-height: 1.1;
++}
++.kpi-label {
++    display: block;
++    font-size: 0.8125rem;
++    color: #6b7280;
++    margin-top: 0.15rem;
++}
++
++/* ---------- Botones ---------- */
++.btn-primary {
++    display: inline-flex;
++    align-items: center;
++    gap: 0.5rem;
++    background: #2563eb;
++    color: #fff;
++    border: none;
++    padding: 0.75rem 1.5rem;
++    border-radius: 0.5rem;
++    font-weight: 600;
++    font-size: 0.9375rem;
++    cursor: pointer;
++    transition: background 0.15s;
++}
++.btn-primary:hover { background: #1d4ed8; }
++.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
++
++.btn-secondary {
++    display: inline-flex;
++    align-items: center;
++    gap: 0.5rem;
++    background: #fff;
++    color: #374151;
++    border: 1px solid #d1d5db;
++    padding: 0.625rem 1.25rem;
++    border-radius: 0.5rem;
++    font-weight: 600;
++    font-size: 0.9375rem;
++    cursor: pointer;
++    transition: background 0.15s;
++}
++.btn-secondary:hover { background: #f9fafb; }
++
++.btn-activate {
++    display: inline-flex;
++    align-items: center;
++    gap: 0.4rem;
++    background: #16a34a;
++    color: #fff;
++    border: none;
++    padding: 0.45rem 0.9rem;
++    border-radius: 0.5rem;
++    font-weight: 600;
++    font-size: 0.8125rem;
++    cursor: pointer;
++    white-space: nowrap;
++    transition: background 0.15s;
++}
++.btn-activate:hover { background: #15803d; }
++.btn-activate:disabled {
++    background: #e5e7eb;
++    color: #9ca3af;
++    cursor: not-allowed;
++}
++
++/* ---------- Filtros ---------- */
++.filters-bar {
++    display: flex;
++    gap: 0.75rem;
++    margin-bottom: 1.25rem;
++    flex-wrap: wrap;
++    align-items: center;
++}
++.filters-bar input,
++.filters-bar select {
++    padding: 0.625rem 0.875rem;
++    border: 1px solid #d1d5db;
++    border-radius: 0.5rem;
++    font-size: 0.9375rem;
++    background: #fff;
++    transition: border-color 0.15s, box-shadow 0.15s;
++}
++.filters-bar input { flex: 1; min-width: 220px; }
++.filters-bar input:focus,
++.filters-bar select:focus {
++    outline: none;
++    border-color: #2563eb;
++    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
++}
++
++/* ---------- Tabla ---------- */
++.users-table-wrapper { overflow-x: auto; }
++.users-table {
++    width: 100%;
++    border-collapse: collapse;
++    font-size: 0.9375rem;
++}
++.users-table th {
++    text-align: left;
++    padding: 0.75rem 1rem;
++    font-size: 0.8125rem;
++    font-weight: 600;
++    color: #6b7280;
++    text-transform: uppercase;
++    letter-spacing: 0.03em;
++    border-bottom: 2px solid #e5e7eb;
++}
++.users-table td {
++    padding: 0.875rem 1rem;
++    border-bottom: 1px solid #f3f4f6;
++    vertical-align: middle;
++}
++.users-table tbody tr:hover { background: #f9fafb; }
++
++.user-cell strong {
++    display: block;
++    color: #111827;
++    font-weight: 600;
++}
++.user-cell small { color: #6b7280; }
++
++/* ---------- Pills de estado ---------- */
++.pill {
++    display: inline-flex;
++    align-items: center;
++    gap: 0.35rem;
++    padding: 0.25rem 0.75rem;
++    border-radius: 999px;
++    font-size: 0.8125rem;
++    font-weight: 600;
++    white-space: nowrap;
++}
++.pill-trial   { background: #ecfeff; color: #0e7490; }
++.pill-active  { background: #f0fdf4; color: #15803d; }
++.pill-expired { background: #fef2f2; color: #b91c1c; }
++.pill-admin   { background: #faf5ff; color: #7e22ce; }
++.pill-none    { background: #f3f4f6; color: #6b7280; }
++.pill-cancelled { background: #fff7ed; color: #c2410c; }
++
++.pill-activated      { background: #f0fdf4; color: #15803d; }
++.pill-payment_failed { background: #fef2f2; color: #b91c1c; }
++.pill-noted          { background: #eff6ff; color: #1d4ed8; }
++.pill-duplicate      { background: #f3f4f6; color: #6b7280; }
++.pill-ignored        { background: #f3f4f6; color: #9ca3af; }
++
++.days-left { font-weight: 700; color: #111827; }
++.days-left.warn { color: #d97706; }
++.muted { color: #9ca3af; }
++
++.empty-state {
++    text-align: center;
++    padding: 2.5rem 1rem;
++    color: #9ca3af;
++}
++.empty-state i { font-size: 2rem; margin-bottom: 0.5rem; }
++
++/* ---------- Modal ---------- */
++.modal-overlay {
++    display: none;
++    position: fixed;
++    inset: 0;
++    background: rgba(17,24,39,0.5);
++    z-index: 1000;
++    align-items: center;
++    justify-content: center;
++    padding: 1rem;
++}
++.modal-overlay.open { display: flex; }
++.modal-box {
++    background: #fff;
++    border-radius: 1rem;
++    padding: 2rem;
++    width: 100%;
++    max-width: 440px;
++    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15);
++}
++.modal-box h3 {
++    font-size: 1.15rem;
++    font-weight: 700;
++    margin-bottom: 0.5rem;
++    color: #111827;
++    display: flex;
++    align-items: center;
++    gap: 0.5rem;
++}
++.modal-box h3 i { color: #16a34a; }
++.modal-subtitle {
++    color: #6b7280;
++    font-size: 0.9375rem;
++    margin-bottom: 1.25rem;
++    word-break: break-all;
++}
++.form-grid { display: grid; gap: 1rem; margin-bottom: 1.5rem; }
++.form-group label {
++    display: block;
++    font-size: 0.875rem;
++    font-weight: 600;
++    color: #374151;
++    margin-bottom: 0.35rem;
++}
++.form-group input {
++    width: 100%;
++    padding: 0.625rem 0.875rem;
++    border: 1px solid #d1d5db;
++    border-radius: 0.5rem;
++    font-size: 0.9375rem;
++    box-sizing: border-box;
++}
++.form-group input:focus {
++    outline: none;
++    border-color: #2563eb;
++    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
++}
++.form-hint {
++    display: block;
++    font-size: 0.8125rem;
++    color: #6b7280;
++    margin-top: 0.35rem;
++}
++.modal-actions {
++    display: flex;
++    justify-content: flex-end;
++    gap: 0.75rem;
++}
++
++/* ---------- Loader y toast ---------- */
++.loader-overlay {
++    display: none;
++    position: fixed;
++    inset: 0;
++    background: rgba(255,255,255,0.92);
++    z-index: 2000;
++    flex-direction: column;
++    align-items: center;
++    justify-content: center;
++    gap: 0.75rem;
++    color: #374151;
++}
++.loader-overlay.open { display: flex; }
++.spinner {
++    width: 42px;
++    height: 42px;
++    border: 4px solid #e5e7eb;
++    border-top-color: #2563eb;
++    border-radius: 50%;
++    animation: ac-spin 0.8s linear infinite;
++}
++@keyframes ac-spin { to { transform: rotate(360deg); } }
++
++.toast {
++    position: fixed;
++    bottom: 1.5rem;
++    right: 1.5rem;
++    background: #111827;
++    color: #fff;
++    padding: 0.875rem 1.5rem;
++    border-radius: 0.75rem;
++    font-size: 0.9375rem;
++    font-weight: 500;
++    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
++    opacity: 0;
++    transform: translateY(1rem);
++    transition: opacity 0.2s, transform 0.2s;
++    z-index: 3000;
++    max-width: 420px;
++}
++.toast.show { opacity: 1; transform: translateY(0); }
++.toast.error { background: #b91c1c; }
++.toast.success { background: #15803d; }
+diff --git a/static/js/admin_comercial.js b/static/js/admin_comercial.js
+new file mode 100644
+index 0000000..379c450
+--- /dev/null
++++ b/static/js/admin_comercial.js
+@@ -0,0 +1,331 @@
++/* ==========================================================
++   AulaMind Enterprise 3.0 — Panel Comercial (v3.3)
++   static/js/admin_comercial.js
++   ========================================================== */
++
++(function () {
++    "use strict";
++
++    var CFG = window.COMERCIAL_CONFIG || {};
++
++    // ------------------------------------------------------
++    // Helpers
++    // ------------------------------------------------------
++
++    function apiFetch(url, options) {
++        var opts = Object.assign({
++            headers: {
++                "Content-Type": "application/json",
++                "X-CSRFToken": CFG.csrfToken || ""
++            }
++        }, options || {});
++        return fetch(url, opts).then(function (r) {
++            return r.json().catch(function () { return {}; });
++        });
++    }
++
++    function showToast(message, type) {
++        var toast = document.getElementById("toast");
++        toast.textContent = message;
++        toast.className = "toast show " + (type || "");
++        setTimeout(function () {
++            toast.className = "toast";
++        }, 3800);
++    }
++
++    function showLoader(show) {
++        document.getElementById("loadingModal")
++            .classList.toggle("open", !!show);
++    }
++
++    function esc(text) {
++        var div = document.createElement("div");
++        div.textContent = text == null ? "" : String(text);
++        return div.innerHTML;
++    }
++
++    function fmtDate(iso) {
++        if (!iso) return "—";
++        var d = new Date(iso);
++        if (isNaN(d)) return "—";
++        return d.toLocaleDateString("es-CL", {
++            day: "2-digit", month: "2-digit", year: "numeric"
++        });
++    }
++
++    function fmtDateTime(iso) {
++        if (!iso) return "—";
++        var d = new Date(iso);
++        if (isNaN(d)) return "—";
++        return d.toLocaleDateString("es-CL", {
++            day: "2-digit", month: "2-digit"
++        }) + " " + d.toLocaleTimeString("es-CL", {
++            hour: "2-digit", minute: "2-digit"
++        });
++    }
++
++    // ------------------------------------------------------
++    // KPIs
++    // ------------------------------------------------------
++
++    function loadKpis() {
++        apiFetch(CFG.resumenUrl).then(function (data) {
++            if (!data.success) return;
++            var k = data.kpis || {};
++            document.getElementById("kpiUsuarios").textContent = k.usuarios;
++            document.getElementById("kpiTrials").textContent = k.trials;
++            document.getElementById("kpiPro").textContent = k.pro_activos;
++            document.getElementById("kpiExpirados").textContent = k.expirados;
++            document.getElementById("kpiActivaciones").textContent = k.activaciones_mes;
++        });
++    }
++
++    // ------------------------------------------------------
++    // Tabla comercial
++    // ------------------------------------------------------
++
++    var currentRows = [];
++
++    function statusPill(row) {
++        return '<span class="pill pill-' + esc(row.status) + '">'
++            + esc(row.status_label) + "</span>";
++    }
++
++    function daysCell(row) {
++        if (row.days_left === null || row.days_left === undefined) {
++            return '<span class="muted">—</span>';
++        }
++        var cls = row.days_left <= 2 ? "days-left warn" : "days-left";
++        return '<span class="' + cls + '">' + row.days_left
++            + (row.days_left === 1 ? " día" : " días") + "</span>";
++    }
++
++    function usageCell(row) {
++        if (row.status !== "trial") {
++            return '<span class="muted">—</span>';
++        }
++        return esc(row.generations_used) + " docs";
++    }
++
++    function actionCell(row) {
++        if (row.status === "admin") {
++            return '<span class="muted">—</span>';
++        }
++        var label = row.status === "active"
++            ? "Renovar 30 días" : "Activar Plan Pro";
++        return '<button class="btn-activate" data-user-id="'
++            + esc(row.id) + '" data-user-email="'
++            + esc(row.email) + '" data-days="30">'
++            + '<i class="fa-solid fa-gem"></i> ' + label
++            + "</button>";
++    }
++
++    function renderTable(rows) {
++        var tbody = document.getElementById("comercialTableBody");
++        var empty = document.getElementById("emptyState");
++
++        if (!rows.length) {
++            tbody.innerHTML = "";
++            empty.style.display = "block";
++            return;
++        }
++
++        empty.style.display = "none";
++
++        tbody.innerHTML = rows.map(function (row) {
++            return "<tr>"
++                + '<td class="user-cell"><strong>' + esc(row.name)
++                + "</strong><small>" + esc(row.email) + "</small></td>"
++                + "<td>" + statusPill(row) + "</td>"
++                + "<td>" + daysCell(row) + "</td>"
++                + "<td>" + usageCell(row) + "</td>"
++                + "<td>" + esc(row.source_label) + "</td>"
++                + "<td>" + fmtDate(row.created_at) + "</td>"
++                + "<td>" + actionCell(row) + "</td>"
++                + "</tr>";
++        }).join("");
++    }
++
++    function loadUsuarios() {
++        var q = document.getElementById("searchInput").value.trim();
++        var status = document.getElementById("statusFilter").value;
++
++        var params = new URLSearchParams();
++        if (q) params.set("q", q);
++        if (status) params.set("status", status);
++
++        var url = CFG.usuariosUrl
++            + (params.toString() ? "?" + params.toString() : "");
++
++        apiFetch(url).then(function (data) {
++            if (!data.success) {
++                showToast(data.error || "Error al cargar docentes.", "error");
++                return;
++            }
++            currentRows = data.items || [];
++            renderTable(currentRows);
++        });
++    }
++
++    // ------------------------------------------------------
++    // Eventos de pago
++    // ------------------------------------------------------
++
++    var ACTION_LABELS = {
++        activated: "Plan activado",
++        payment_failed: "Cobro fallido",
++        noted: "Evento registrado",
++        duplicate: "Duplicado",
++        ignored: "Ignorado"
++    };
++
++    var PROVIDER_LABELS = {
++        mercadopago: "Mercado Pago",
++        manual: "Manual"
++    };
++
++    function renderEvents(items) {
++        var tbody = document.getElementById("eventsTableBody");
++        var empty = document.getElementById("eventsEmptyState");
++
++        if (!items.length) {
++            tbody.innerHTML = "";
++            empty.style.display = "block";
++            return;
++        }
++
++        empty.style.display = "none";
++
++        tbody.innerHTML = items.map(function (ev) {
++            var actionLabel = ACTION_LABELS[ev.action] || ev.action;
++            var providerLabel = PROVIDER_LABELS[ev.provider] || ev.provider;
++            return "<tr>"
++                + "<td>" + fmtDateTime(ev.created_at) + "</td>"
++                + "<td>" + esc(providerLabel) + "</td>"
++                + '<td><span class="pill pill-' + esc(ev.action) + '">'
++                + esc(actionLabel) + "</span></td>"
++                + "<td>" + esc(ev.user_email || "—") + "</td>"
++                + "<td>" + esc(ev.detail || "—") + "</td>"
++                + "</tr>";
++        }).join("");
++    }
++
++    function loadEventos() {
++        apiFetch(CFG.eventosUrl).then(function (data) {
++            if (!data.success) return;
++            renderEvents(data.items || []);
++        });
++    }
++
++    // ------------------------------------------------------
++    // Modal activar plan
++    // ------------------------------------------------------
++
++    var planTargetId = null;
++
++    function openPlanModal(userId, email, days) {
++        planTargetId = userId;
++        document.getElementById("planModalUser").textContent = email;
++        document.getElementById("planDays").value = days || 30;
++        document.getElementById("planModal").classList.add("open");
++    }
++
++    function closePlanModal() {
++        planTargetId = null;
++        document.getElementById("planModal").classList.remove("open");
++    }
++
++    function submitPlan(event) {
++        event.preventDefault();
++        if (!planTargetId) return;
++
++        var days = parseInt(
++            document.getElementById("planDays").value, 10
++        );
++
++        if (!days || days < 1 || days > 3660) {
++            showToast("Los días deben estar entre 1 y 3660.", "error");
++            return;
++        }
++
++        var url = CFG.planUrl.replace("__ID__", planTargetId);
++
++        showLoader(true);
++
++        apiFetch(url, {
++            method: "PUT",
++            body: JSON.stringify({ days: days })
++        }).then(function (data) {
++            showLoader(false);
++            if (data.success) {
++                showToast(data.message || "Plan activado.", "success");
++                closePlanModal();
++                loadKpis();
++                loadUsuarios();
++                loadEventos();
++            } else {
++                showToast(
++                    data.error || data.message
++                    || "No se pudo activar el plan.",
++                    "error"
++                );
++            }
++        }).catch(function () {
++            showLoader(false);
++            showToast("Error de red. Intenta nuevamente.", "error");
++        });
++    }
++
++    // ------------------------------------------------------
++    // Wiring
++    // ------------------------------------------------------
++
++    document.addEventListener("DOMContentLoaded", function () {
++
++        loadKpis();
++        loadUsuarios();
++        loadEventos();
++
++        var searchTimer = null;
++
++        document.getElementById("searchInput")
++            .addEventListener("input", function () {
++                clearTimeout(searchTimer);
++                searchTimer = setTimeout(loadUsuarios, 350);
++            });
++
++        document.getElementById("statusFilter")
++            .addEventListener("change", loadUsuarios);
++
++        document.getElementById("btnRefresh")
++            .addEventListener("click", function () {
++                loadKpis();
++                loadUsuarios();
++                loadEventos();
++                showToast("Datos actualizados.", "success");
++            });
++
++        document.getElementById("comercialTableBody")
++            .addEventListener("click", function (ev) {
++                var btn = ev.target.closest(".btn-activate");
++                if (!btn) return;
++                openPlanModal(
++                    btn.getAttribute("data-user-id"),
++                    btn.getAttribute("data-user-email"),
++                    btn.getAttribute("data-days")
++                );
++            });
++
++        document.getElementById("btnCancelPlan")
++            .addEventListener("click", closePlanModal);
++
++        document.getElementById("planForm")
++            .addEventListener("submit", submitPlan);
++
++        document.getElementById("planModal")
++            .addEventListener("click", function (ev) {
++                if (ev.target === this) closePlanModal();
++            });
++    });
++
++})();
+diff --git a/static/js/admin_users.js b/static/js/admin_users.js
+index 13434c5..0d5c173 100644
+--- a/static/js/admin_users.js
++++ b/static/js/admin_users.js
+@@ -76,8 +76,17 @@ Módulo M-09: Administración de Usuarios (CRUD AJAX)
+     }
+ 
+     async function apiFetch(fetchUrl, options) {
++        // Token CSRF (v3.3): sin él las escrituras API
++        // devuelven 400 csrf_invalid (Flask-WTF global).
++        const csrfMeta = document.querySelector(
++            'meta[name="csrf-token"]'
++        );
++        const csrfToken = csrfMeta ? csrfMeta.content : "";
+         const response = await fetch(fetchUrl, Object.assign({
+-            headers: { "Content-Type": "application/json" }
++            headers: {
++                "Content-Type": "application/json",
++                "X-CSRFToken": csrfToken
++            }
+         }, options));
+ 
+         let data = {};
+diff --git a/templates/admin_comercial.html b/templates/admin_comercial.html
+new file mode 100644
+index 0000000..b40c5fe
+--- /dev/null
++++ b/templates/admin_comercial.html
+@@ -0,0 +1,221 @@
++<!DOCTYPE html>
++<html lang="es">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <meta name="csrf-token" content="{{ csrf_token() }}">
++    <title>Panel Comercial | AulaMind Enterprise</title>
++    <link rel="preconnect" href="https://fonts.googleapis.com">
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
++    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_comercial.css', v=config.APP_VERSION) }}">
++</head>
++<body>
++
++<div class="app-layout">
++
++    <aside class="sidebar">
++        <div class="sidebar-header">
++            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
++            <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
++        </div>
++        {% set active_menu = 'admin_comercial' %}
++    {% include 'partials/sidebar_menu.html' %}
++        <div class="sidebar-footer">
++            <div class="user-card">
++                <div class="avatar"><i class="fa-solid fa-user"></i></div>
++                <div>
++                    <strong>{{ session.get('user_name','Administrador') }}</strong>
++                    <small>Administrador</small>
++                </div>
++            </div>
++        </div>
++    </aside>
++
++    <main class="main-content">
++        <header class="topbar">
++            <div>
++                <h1>Panel Comercial</h1>
++                <p>Suscripciones, trials y pagos de la plataforma.</p>
++            </div>
++            <div class="topbar-actions">
++                <button class="icon-button"><i class="fa-solid fa-bell"></i></button>
++                <button class="icon-button"><i class="fa-solid fa-user"></i></button>
++            </div>
++        </header>
++
++        <section class="admin-section">
++
++            <!-- ============ KPIs ============ -->
++            <div class="kpi-grid" id="kpiGrid">
++                <div class="kpi-card">
++                    <div class="kpi-icon kpi-blue"><i class="fa-solid fa-users"></i></div>
++                    <div>
++                        <span class="kpi-value" id="kpiUsuarios">—</span>
++                        <span class="kpi-label">Docentes registrados</span>
++                    </div>
++                </div>
++                <div class="kpi-card">
++                    <div class="kpi-icon kpi-cyan"><i class="fa-solid fa-hourglass-half"></i></div>
++                    <div>
++                        <span class="kpi-value" id="kpiTrials">—</span>
++                        <span class="kpi-label">Trials activos</span>
++                    </div>
++                </div>
++                <div class="kpi-card">
++                    <div class="kpi-icon kpi-green"><i class="fa-solid fa-gem"></i></div>
++                    <div>
++                        <span class="kpi-value" id="kpiPro">—</span>
++                        <span class="kpi-label">Plan Pro activos</span>
++                    </div>
++                </div>
++                <div class="kpi-card">
++                    <div class="kpi-icon kpi-red"><i class="fa-solid fa-triangle-exclamation"></i></div>
++                    <div>
++                        <span class="kpi-value" id="kpiExpirados">—</span>
++                        <span class="kpi-label">Expirados sin pagar</span>
++                    </div>
++                </div>
++                <div class="kpi-card">
++                    <div class="kpi-icon kpi-purple"><i class="fa-solid fa-hand-holding-dollar"></i></div>
++                    <div>
++                        <span class="kpi-value" id="kpiActivaciones">—</span>
++                        <span class="kpi-label">Activaciones del mes</span>
++                    </div>
++                </div>
++            </div>
++
++            <!-- ============ Tabla comercial ============ -->
++            <div class="admin-card">
++
++                <h2><i class="fa-solid fa-table-list"></i> Suscripciones por docente</h2>
++
++                <div class="filters-bar">
++                    <input
++                        type="search"
++                        id="searchInput"
++                        placeholder="Buscar por nombre o correo…">
++                    <select id="statusFilter">
++                        <option value="">Todos los estados</option>
++                        <option value="trial">Trial activo</option>
++                        <option value="active">Plan Pro</option>
++                        <option value="expired">Expirados</option>
++                    </select>
++                    <button class="btn-secondary" id="btnRefresh">
++                        <i class="fa-solid fa-rotate"></i>
++                        Actualizar
++                    </button>
++                </div>
++
++                <div class="users-table-wrapper">
++                    <table class="users-table">
++                        <thead>
++                            <tr>
++                                <th>Docente</th>
++                                <th>Estado</th>
++                                <th>Días restantes</th>
++                                <th>Uso trial</th>
++                                <th>Origen</th>
++                                <th>Registro</th>
++                                <th>Acciones</th>
++                            </tr>
++                        </thead>
++                        <tbody id="comercialTableBody">
++                        </tbody>
++                    </table>
++                    <div class="empty-state" id="emptyState" style="display:none;">
++                        <i class="fa-solid fa-users-slash"></i>
++                        <p>No se encontraron docentes con los filtros aplicados.</p>
++                    </div>
++                </div>
++
++            </div>
++
++            <!-- ============ Pipeline de pagos ============ -->
++            <div class="admin-card">
++
++                <h2><i class="fa-solid fa-receipt"></i> Eventos de pago recientes</h2>
++
++                <div class="users-table-wrapper">
++                    <table class="users-table">
++                        <thead>
++                            <tr>
++                                <th>Fecha</th>
++                                <th>Proveedor</th>
++                                <th>Acción</th>
++                                <th>Docente</th>
++                                <th>Detalle</th>
++                            </tr>
++                        </thead>
++                        <tbody id="eventsTableBody">
++                        </tbody>
++                    </table>
++                    <div class="empty-state" id="eventsEmptyState" style="display:none;">
++                        <i class="fa-solid fa-receipt"></i>
++                        <p>Aún no hay eventos de pago registrados.</p>
++                    </div>
++                </div>
++
++            </div>
++
++        </section>
++
++        <footer class="page-footer">
++            <div class="footer-left">
++                <strong>AulaMind Enterprise 3.0</strong>
++                <span>Plataforma Inteligente para Docentes</span>
++            </div>
++            <div class="footer-right">
++                <span>© 2025 Biotecno Chile</span>
++            </div>
++        </footer>
++    </main>
++</div>
++
++<!-- ==================== MODAL ACTIVAR PLAN ==================== -->
++<div id="planModal" class="modal-overlay">
++    <div class="modal-box">
++        <h3><i class="fa-solid fa-gem"></i> Activar Plan Pro</h3>
++        <p class="modal-subtitle" id="planModalUser"></p>
++        <form id="planForm">
++            <div class="form-grid">
++                <div class="form-group full">
++                    <label for="planDays">Días de acceso</label>
++                    <input type="number" id="planDays" min="1" max="3660" value="30" required>
++                    <span class="form-hint">Usa 30 para una mensualidad por transferencia. La activación se registra como pago manual en el pipeline.</span>
++                </div>
++            </div>
++            <div class="modal-actions">
++                <button type="button" class="btn-secondary" id="btnCancelPlan">Cancelar</button>
++                <button type="submit" class="btn-primary" id="btnSavePlan">
++                    <i class="fa-solid fa-check"></i>
++                    Activar
++                </button>
++            </div>
++        </form>
++    </div>
++</div>
++
++<div id="loadingModal" class="loader-overlay">
++    <div class="spinner"></div>
++    <h3>AulaMind</h3>
++    <p>Procesando...</p>
++</div>
++
++<div id="toast" class="toast"></div>
++
++<script>
++window.COMERCIAL_CONFIG = {
++    resumenUrl: "{{ url_for('admin_comercial.resumen') }}",
++    usuariosUrl: "{{ url_for('admin_comercial.usuarios') }}",
++    eventosUrl: "{{ url_for('admin_comercial.eventos') }}",
++    planUrl: "{{ url_for('admin_security.activate_user_plan', user_id='__ID__') }}",
++    csrfToken: "{{ csrf_token() }}"
++};
++</script>
++<script src="{{ url_for('static', filename='js/admin_comercial.js', v=config.APP_VERSION) }}"></script>
++
++</body>
++</html>
+diff --git a/templates/admin_users.html b/templates/admin_users.html
+index 527145a..9b1d598 100644
+--- a/templates/admin_users.html
++++ b/templates/admin_users.html
+@@ -3,6 +3,7 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <meta name="csrf-token" content="{{ csrf_token() }}">
+     <title>Administración de Usuarios | AulaMind Enterprise</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+diff --git a/templates/partials/sidebar_menu.html b/templates/partials/sidebar_menu.html
+index 120a746..14f6a8a 100644
+--- a/templates/partials/sidebar_menu.html
++++ b/templates/partials/sidebar_menu.html
+@@ -11,7 +11,8 @@ Uso:
+ 
+ Valores válidos de active_menu:
+     dashboard, planning, evaluation, guides, rubrics,
+-    pie, analytics, curriculum, admin_users, plan, profile
++    pie, analytics, curriculum, admin_users,
++    admin_comercial, plan, profile
+ ===========================================================
+ #}
+ <nav class="sidebar-menu">
+@@ -24,6 +25,7 @@ Valores válidos de active_menu:
+     <a href="{{ url_for('analytics.index') }}"{% if active_menu == 'analytics' %} class="active"{% endif %}><i class="fa-solid fa-chart-line"></i><span>Analítica</span></a>
+     <a href="{{ url_for('curriculum.index') }}"{% if active_menu == 'curriculum' %} class="active"{% endif %}><i class="fa-solid fa-book-atlas"></i><span>Currículum</span></a>
+     {% if session.get('role') == 'admin' %}
++    <a href="{{ url_for('admin_comercial.comercial_page') }}"{% if active_menu == 'admin_comercial' %} class="active"{% endif %}><i class="fa-solid fa-hand-holding-dollar"></i><span>Comercial</span></a>
+     <a href="{{ url_for('admin_security.users_page') }}"{% if active_menu == 'admin_users' %} class="active"{% endif %}><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
+     {% endif %}
+     <a href="{{ url_for('billing.status') }}"{% if active_menu == 'plan' %} class="active"{% endif %}><i class="fa-solid fa-gem"></i><span>Mi Plan</span></a>
+-- 
+2.39.5
+

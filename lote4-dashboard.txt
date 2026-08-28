@@ -1,0 +1,588 @@
+From 6cf1b0da88cf636bae725a56b95c72d117e78d77 Mon Sep 17 00:00:00 2001
+From: Biotecno Chile <contacto@aulamind.cl>
+Date: Fri, 31 Jul 2026 23:26:09 +0000
+Subject: [PATCH] fix(dashboard): tarjetas de modulos activas y actividad
+ reciente real
+
+- Evaluaciones, Rubricas y Analitica dejan de decir 'Proximamente':
+  ahora enlazan a sus modulos (PIE usa url_for)
+- Actividad reciente muestra los ultimos 6 documentos reales del
+  usuario (icono/color por tipo, titulo, curso, asignatura, fecha,
+  link al modulo) con empty-state solo cuando no hay documentos
+- Estilos activity-list/activity-item/activity-icon en dashboard.css
+- Cache-busting v=APP_VERSION en dashboard.css
+- Verificador: seccion 11 con 5 checks nuevos (73 total)
+---
+ routes/dashboard.py         | 130 +++++++++++++++++++++++++++--
+ scripts/verify_predeploy.py | 102 +++++++++++++++++++++++
+ static/css/dashboard.css    | 158 +++++++++++++++++++++++++++++++++++-
+ templates/dashboard.html    |  68 ++++++++++++----
+ 4 files changed, 431 insertions(+), 27 deletions(-)
+
+diff --git a/routes/dashboard.py b/routes/dashboard.py
+index 9bae2ca..809cbcf 100644
+--- a/routes/dashboard.py
++++ b/routes/dashboard.py
+@@ -13,10 +13,13 @@ AulaMind Enterprise
+ ===========================================================
+ """
+ 
++from datetime import datetime
++
+ from flask import Blueprint
+ from flask import render_template
+ from flask import current_app
+ from flask import session
++from flask import url_for
+ from services.persistence_service import persistence_service
+ 
+ 
+@@ -44,6 +47,20 @@ def home():
+     url_for('dashboard.home'), así que no hay enlaces rotos.
+     """
+ 
++    user_id = session.get("user_id")
++
++    stats = (
++        persistence_service.dashboard_stats(user_id)
++        if user_id else {
++            "planning_count": 0,
++            "evaluation_count": 0,
++            "guide_count": 0,
++            "rubric_count": 0,
++            "total_documents": 0,
++            "time_saved_hours": 0,
++        }
++    )
++
+     return render_template(
+ 
+         "dashboard.html",
+@@ -54,19 +71,114 @@ def home():
+ 
+         company=current_app.config["COMPANY"],
+ 
+-        stats=persistence_service.dashboard_stats(session.get("user_id"))
+-        if session.get("user_id") else {
+-            "planning_count": 0,
+-            "evaluation_count": 0,
+-            "guide_count": 0,
+-            "rubric_count": 0,
+-            "total_documents": 0,
+-            "time_saved_hours": 0,
+-        }
++        stats=stats,
++
++        recent_activity=_recent_activity(user_id)
+ 
+     )
+ 
+ 
++# ==========================================================
++# Actividad reciente (últimos documentos del usuario)
++# ==========================================================
++
++_ACTIVITY_META = {
++
++    "planning": {
++        "label": "Planificación",
++        "icon": "fa-book",
++        "color": "blue",
++        "endpoint": "planning.index",
++    },
++
++    "evaluation": {
++        "label": "Evaluación",
++        "icon": "fa-file-lines",
++        "color": "green",
++        "endpoint": "evaluation.index",
++    },
++
++    "guide": {
++        "label": "Guía",
++        "icon": "fa-book-open",
++        "color": "purple",
++        "endpoint": "guides.index",
++    },
++
++    "rubric": {
++        "label": "Rúbrica",
++        "icon": "fa-table",
++        "color": "orange",
++        "endpoint": "rubrics.index",
++    },
++
++    "pie": {
++        "label": "PIE",
++        "icon": "fa-user-group",
++        "color": "red",
++        "endpoint": "pie.index",
++    },
++
++}
++
++
++def _recent_activity(user_id, limit=6):
++
++    if not user_id:
++
++        return []
++
++    items = []
++
++    for doc in persistence_service.list_documents(user_id)[:limit]:
++
++        meta = _ACTIVITY_META.get(
++            doc.get("document_type"),
++            {
++                "label": "Documento",
++                "icon": "fa-file",
++                "color": "blue",
++                "endpoint": "dashboard.home",
++            }
++        )
++
++        created_display = ""
++
++        if doc.get("created_at"):
++
++            try:
++
++                created_display = datetime.fromisoformat(
++                    doc["created_at"]
++                ).strftime("%d-%m-%Y %H:%M")
++
++            except (ValueError, TypeError):
++
++                created_display = str(doc["created_at"])
++
++        try:
++
++            module_url = url_for(meta["endpoint"])
++
++        except Exception:
++
++            module_url = url_for("dashboard.home")
++
++        items.append({
++            "id": doc.get("id"),
++            "title": doc.get("title") or meta["label"],
++            "course": doc.get("course"),
++            "subject": doc.get("subject"),
++            "type_label": meta["label"],
++            "icon": meta["icon"],
++            "color": meta["color"],
++            "module_url": module_url,
++            "created_display": created_display,
++        })
++
++    return items
++
++
+ # ==========================================================
+ # Health Check
+ # ==========================================================
+diff --git a/scripts/verify_predeploy.py b/scripts/verify_predeploy.py
+index b489013..a992024 100644
+--- a/scripts/verify_predeploy.py
++++ b/scripts/verify_predeploy.py
+@@ -862,6 +862,108 @@ for _url, _res_id in [
+     )
+ 
+ 
++# ==========================================================
++# 11. Dashboard: tarjetas activas + actividad reciente
++# ==========================================================
++
++print("\n=== 11. Dashboard: tarjetas y actividad reciente ===")
++
++# 11.1 Ninguna tarjeta de módulo operativo dice "Próximamente"
++_dash_tpl = open(
++    os.path.join(ROOT, "templates", "dashboard.html"),
++    encoding="utf-8"
++).read()
++
++check(
++    "dashboard.html: sin 'Próximamente' en módulos operativos",
++    "coming-soon" not in _dash_tpl
++    and "Próximamente" not in _dash_tpl
++    and "evaluation.index" in _dash_tpl
++    and "rubrics.index" in _dash_tpl
++    and "pie.index" in _dash_tpl,
++)
++
++# 11.2 Actividad reciente es dinámica (loop Jinja) con fallback
++check(
++    "dashboard.html: actividad reciente dinámica",
++    "recent_activity" in _dash_tpl
++    and "activity-list" in _dash_tpl
++    and "for item in recent_activity" in _dash_tpl
++    and "Aún no existen actividades" in _dash_tpl,
++)
++
++# 11.3 La ruta entrega recent_activity al template
++_dash_route = open(
++    os.path.join(ROOT, "routes", "dashboard.py"),
++    encoding="utf-8"
++).read()
++
++check(
++    "routes/dashboard.py: _recent_activity con metadatos por tipo",
++    "_recent_activity" in _dash_route
++    and "_ACTIVITY_META" in _dash_route
++    and "list_documents" in _dash_route
++    and "recent_activity=_recent_activity" in _dash_route,
++)
++
++# 11.4 CSS de la lista de actividad existe
++_dash_css = open(
++    os.path.join(ROOT, "static", "css", "dashboard.css"),
++    encoding="utf-8"
++).read()
++
++check(
++    "dashboard.css: estilos activity-list/activity-icon",
++    ".activity-list" in _dash_css
++    and ".activity-item" in _dash_css
++    and ".activity-icon.blue" in _dash_css,
++)
++
++# 11.5 E2E: documento recién creado aparece en el dashboard
++from services.persistence_service import persistence_service as _psvc
++
++_doc_id = _psvc.save_generated_document(
++    user_id=str(ADMIN_ID),
++    school_id=None,
++    document_type="planning",
++    payload={
++        "curso": "7° Básico",
++        "asignatura": "Historia",
++        "unidad": "Unidad X",
++        "tema": "ActividadRecienteVerify",
++    },
++    result={"content": "contenido de prueba actividad"},
++)
++
++try:
++
++    r = client.get("/dashboard/")
++
++    check(
++        "GET /dashboard/ muestra el documento en Actividad reciente",
++        r.status_code == 200
++        and b"activity-list" in r.data
++        and "Planning - Historia".encode() in r.data,
++        f"recibió {r.status_code}"
++    )
++
++finally:
++
++    from database.session import SessionLocal as _SL3
++    from models.document import Document as _Doc3
++
++    _db3 = _SL3()
++
++    try:
++
++        _db3.query(_Doc3).filter(_Doc3.id == _doc_id).delete()
++        _db3.commit()
++
++    finally:
++
++        _db3.close()
++
++
+ # ==========================================================
+ # Reporte final
+ # ==========================================================
+diff --git a/static/css/dashboard.css b/static/css/dashboard.css
+index 01bd453..c4c0071 100644
+--- a/static/css/dashboard.css
++++ b/static/css/dashboard.css
+@@ -1524,4 +1524,160 @@ RESPONSIVE
+ FIN DEL ARCHIVO
+ Dashboard Enterprise v3.0
+ AulaMind
+-=========================================================*/
+\ No newline at end of file
++=========================================================*/
++/* ==========================================================
++ * ACTIVIDAD RECIENTE (v3.1.5)
++ * Lista de últimos documentos generados por el usuario
++ * ========================================================== */
++
++.activity-list{
++
++    list-style:none;
++
++    margin:0;
++
++    padding:0;
++
++    display:flex;
++
++    flex-direction:column;
++
++    gap:14px;
++
++}
++
++.activity-item{
++
++    display:flex;
++
++    align-items:center;
++
++    gap:18px;
++
++    padding:16px 20px;
++
++    border:1px solid var(--border);
++
++    border-radius:16px;
++
++    background:var(--surface);
++
++    transition:box-shadow 0.15s ease, transform 0.15s ease;
++
++}
++
++.activity-item:hover{
++
++    box-shadow:var(--shadow);
++
++    transform:translateY(-1px);
++
++}
++
++.activity-icon{
++
++    width:46px;
++
++    height:46px;
++
++    min-width:46px;
++
++    border-radius:12px;
++
++    display:flex;
++
++    align-items:center;
++
++    justify-content:center;
++
++    color:#fff;
++
++    font-size:18px;
++
++}
++
++.activity-icon.blue{background:var(--primary);}
++
++.activity-icon.green{background:var(--success);}
++
++.activity-icon.purple{background:var(--purple);}
++
++.activity-icon.orange{background:var(--warning);}
++
++.activity-icon.red{background:var(--danger);}
++
++.activity-icon.cyan{background:var(--accent);}
++
++.activity-info{
++
++    flex:1;
++
++    display:flex;
++
++    flex-direction:column;
++
++    gap:4px;
++
++    min-width:0;
++
++}
++
++.activity-info strong{
++
++    font-size:15px;
++
++    color:var(--text);
++
++    white-space:nowrap;
++
++    overflow:hidden;
++
++    text-overflow:ellipsis;
++
++}
++
++.activity-info small{
++
++    font-size:13px;
++
++    color:var(--text-light);
++
++}
++
++.activity-meta{
++
++    display:flex;
++
++    align-items:center;
++
++    gap:16px;
++
++}
++
++.activity-meta span{
++
++    font-size:13px;
++
++    color:var(--text-light);
++
++    white-space:nowrap;
++
++}
++
++@media (max-width: 720px){
++
++    .activity-item{
++
++        flex-wrap:wrap;
++
++    }
++
++    .activity-meta{
++
++        width:100%;
++
++        justify-content:space-between;
++
++    }
++
++}
+diff --git a/templates/dashboard.html b/templates/dashboard.html
+index e814c93..c97b55c 100644
+--- a/templates/dashboard.html
++++ b/templates/dashboard.html
+@@ -17,7 +17,7 @@
+ 
+     <link
+         rel="stylesheet"
+-        href="{{ url_for('static', filename='css/dashboard.css') }}">
++        href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
+ 
+     <link
+         rel="stylesheet"
+@@ -430,11 +430,7 @@
+ 
+             </div>
+ 
+-            <span class="coming-soon">
+-
+-                Próximamente
+-
+-            </span>
++            <a href="{{ url_for('evaluation.index') }}" class="btn-module">Abrir módulo</a>
+ 
+         </article>
+ 
+@@ -496,11 +492,7 @@
+ 
+             </div>
+ 
+-            <span class="coming-soon">
+-
+-                Próximamente
+-
+-            </span>
++            <a href="{{ url_for('rubrics.index') }}" class="btn-module">Abrir módulo</a>
+ 
+         </article>
+ 
+@@ -531,7 +523,7 @@
+ 
+             </div>
+ 
+-            <a href="/pie" class="btn-module">Abrir módulo</a>
++            <a href="{{ url_for('pie.index') }}" class="btn-module">Abrir módulo</a>
+ 
+         </article>
+ 
+@@ -562,11 +554,7 @@
+ 
+             </div>
+ 
+-            <span class="coming-soon">
+-
+-                Ver analítica
+-
+-            </span>
++            <a href="{{ url_for('analytics.index') }}" class="btn-module">Ver analítica</a>
+ 
+         </article>
+ 
+@@ -660,6 +648,50 @@
+ 
+         </div>
+ 
++        {% if recent_activity %}
++
++        <ul class="activity-list">
++
++            {% for item in recent_activity %}
++
++            <li class="activity-item">
++
++                <div class="activity-icon {{ item.color }}">
++
++                    <i class="fa-solid {{ item.icon }}"></i>
++
++                </div>
++
++                <div class="activity-info">
++
++                    <strong>{{ item.title }}</strong>
++
++                    <small>
++                        {{ item.type_label }}
++                        {% if item.course %} · {{ item.course }}{% endif %}
++                        {% if item.subject %} · {{ item.subject }}{% endif %}
++                    </small>
++
++                </div>
++
++                <div class="activity-meta">
++
++                    <span>{{ item.created_display }}</span>
++
++                    <a href="{{ item.module_url }}" class="btn-module">
++                        Abrir módulo
++                    </a>
++
++                </div>
++
++            </li>
++
++            {% endfor %}
++
++        </ul>
++
++        {% else %}
++
+         <div class="empty-state">
+ 
+             <i class="fa-solid fa-clock-rotate-left"></i>
+@@ -691,6 +723,8 @@
+ 
+         </div>
+ 
++        {% endif %}
++
+     </section>
+ 
+     <!-- ================================================= -->
+-- 
+2.39.5
+

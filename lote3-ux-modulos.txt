@@ -1,0 +1,1551 @@
+From 0094dd1ee9c66022f4ad9321cf2cf450b25f267d Mon Sep 17 00:00:00 2001
+From: Biotecno Chile <contacto@aulamind.cl>
+Date: Fri, 31 Jul 2026 23:16:10 +0000
+Subject: [PATCH] feat(ux): unifica evaluaciones, guias, rubricas y PIE al
+ nivel de planificaciones
+
+- Loader profesional con aviso (tarjeta + spinner + 'no cierres esta ventana')
+- Contenido IA renderizado como markdown (marked.js) en los 4 modulos
+- Nuevo generation-ui.css compartido (loader, markdown, toast)
+- evaluation.html reescrito: selects curriculares en cascada (era texto libre),
+  toast propio, layout dashboard consistente
+- Copiar usa la fuente markdown; cache-busting v=APP_VERSION en CSS
+- APP_VERSION 3.1.5; verificador con seccion 10 (16 checks nuevos, 68 total)
+---
+ config.py                    |   2 +-
+ scripts/verify_predeploy.py  | 134 ++++++++++++
+ static/css/generation-ui.css | 219 +++++++++++++++++++
+ static/js/evaluation.js      | 301 +++++++++++++++++++++++++-
+ static/js/guides.js          |  25 ++-
+ static/js/pie.js             |  25 ++-
+ static/js/rubrics.js         |  25 ++-
+ templates/evaluation.html    | 403 ++++++++++++++++++++++++++---------
+ templates/guides.html        |  15 +-
+ templates/pie.html           |  15 +-
+ templates/rubrics.html       |  15 +-
+ 11 files changed, 1044 insertions(+), 135 deletions(-)
+ create mode 100644 static/css/generation-ui.css
+
+diff --git a/config.py b/config.py
+index 85c2b97..e803b1c 100644
+--- a/config.py
++++ b/config.py
+@@ -42,7 +42,7 @@ class Config:
+ 
+     APP_NAME = "AulaMind Enterprise"
+ 
+-    APP_VERSION = "3.1.4"
++    APP_VERSION = "3.1.5"
+ 
+     COMPANY = "Biotecno Chile"
+ 
+diff --git a/scripts/verify_predeploy.py b/scripts/verify_predeploy.py
+index 7dc9002..b489013 100644
+--- a/scripts/verify_predeploy.py
++++ b/scripts/verify_predeploy.py
+@@ -728,6 +728,140 @@ finally:
+     app_module.app.config["WTF_CSRF_ENABLED"] = _csrf_prev
+ 
+ 
++# ==========================================================
++# 10. UX unificada módulos de generación (v3.1.5)
++# ==========================================================
++
++print("\n=== 10. UX unificada: evaluation/guides/rubrics/pie ===")
++
++# 10.1 CSS compartido existe con las piezas clave
++_guicss_path = os.path.join(ROOT, "static", "css", "generation-ui.css")
++_guicss = open(_guicss_path, encoding="utf-8").read() \
++    if os.path.exists(_guicss_path) else ""
++
++check(
++    "generation-ui.css existe (loader + markdown + toast)",
++    ".loader-overlay.active" in _guicss
++    and ".loader-content" in _guicss
++    and ".loader-hint" in _guicss
++    and ".generation-markdown" in _guicss
++    and ".toast.show" in _guicss,
++)
++
++# 10.2-10.5 Plantillas: marked, css compartido, loader profesional,
++# contenedor markdown y cache-busting
++for _mod, _res_id in [
++    ("guides", "guideResult"),
++    ("rubrics", "rubricResult"),
++    ("pie", "pieResult"),
++    ("evaluation", "evaluationResult"),
++]:
++
++    _tpl = open(
++        os.path.join(ROOT, "templates", f"{_mod}.html"),
++        encoding="utf-8"
++    ).read()
++
++    check(
++        f"{_mod}.html: marked + generation-ui.css + loader pro + "
++        f"div markdown + cache-bust",
++        "marked.min.js" in _tpl
++        and "generation-ui.css" in _tpl
++        and "loader-content" in _tpl
++        and "loader-hint" in _tpl
++        and "No cierres esta ventana" in _tpl
++        and f'result-box generation-markdown" id="{_res_id}"' in _tpl
++        and "<pre" not in _tpl
++        and "css/dashboard.css', v=config.APP_VERSION" in _tpl,
++    )
++
++# 10.6 evaluation.html tiene cascada curricular (selects, no inputs
++# de texto libre) y toast propio
++_eval_tpl = open(
++    os.path.join(ROOT, "templates", "evaluation.html"),
++    encoding="utf-8"
++).read()
++
++check(
++    "evaluation.html: selects en cascada + toast + campo preguntas",
++    '<select id="curso"' in _eval_tpl
++    and '<select id="asignatura"' in _eval_tpl
++    and '<select id="unidad"' in _eval_tpl
++    and '<select id="objetivo"' in _eval_tpl
++    and 'id="toast"' in _eval_tpl
++    and 'id="preguntas"' in _eval_tpl,
++)
++
++# 10.7 JS: renderMarkdown + lastGeneratedMarkdown + copia desde
++# la fuente markdown en los 4 módulos
++for _js in ["evaluation", "guides", "rubrics", "pie"]:
++
++    _src = open(
++        os.path.join(ROOT, "static", "js", f"{_js}.js"),
++        encoding="utf-8"
++    ).read()
++
++    check(
++        f"{_js}.js: renderMarkdown + lastGeneratedMarkdown + "
++        f"clearResult con innerHTML",
++        "function renderMarkdown" in _src
++        and "lastGeneratedMarkdown" in _src
++        and "result.innerHTML = renderMarkdown" in _src
++        and (
++            'result.innerHTML = ""' in _src
++            or 'result.innerHTML=""' in _src
++        )
++        and "window.marked" in _src,
++    )
++
++# 10.8 evaluation.js: cascada curricular + loader por clase
++_eval_js = open(
++    os.path.join(ROOT, "static", "js", "evaluation.js"),
++    encoding="utf-8"
++).read()
++
++check(
++    "evaluation.js: cascada curricular + loader .active + "
++    "botones btn-action",
++    "populateSelect" in _eval_js
++    and "/planning/api/curriculum" in _eval_js
++    and 'classList.add("active")' in _eval_js
++    and 'classList.remove("active")' in _eval_js
++    and "btn-action btn-open" in _eval_js,
++)
++
++# 10.9 APP_VERSION actualizada (cache-busting de estáticos)
++_cfg = open(
++    os.path.join(ROOT, "config.py"),
++    encoding="utf-8"
++).read()
++
++check(
++    "APP_VERSION = 3.1.5 (cache-busting)",
++    'APP_VERSION = "3.1.5"' in _cfg,
++)
++
++# 10.10 Páginas de los 4 módulos renderizan con la nueva UX
++for _url, _res_id in [
++    ("/evaluation/", "evaluationResult"),
++    ("/guides/", "guideResult"),
++    ("/rubrics/", "rubricResult"),
++    ("/pie/", "pieResult"),
++]:
++
++    r = client.get(_url)
++
++    check(
++        f"GET {_url} sirve UX unificada",
++        r.status_code == 200
++        and b"generation-markdown" in r.data
++        and b"marked.min.js" in r.data
++        and b"loader-content" in r.data
++        and _res_id.encode() in r.data,
++        f"recibió {r.status_code}"
++    )
++
++
+ # ==========================================================
+ # Reporte final
+ # ==========================================================
+diff --git a/static/css/generation-ui.css b/static/css/generation-ui.css
+new file mode 100644
+index 0000000..756f33c
+--- /dev/null
++++ b/static/css/generation-ui.css
+@@ -0,0 +1,219 @@
++/******************************************************************************
++ * AulaMind Enterprise 3.0
++ * Archivo : static/css/generation-ui.css
++ * Propósito: Estilos compartidos de los módulos de generación IA
++ *            (evaluaciones, guías, rúbricas, PIE):
++ *            - Overlay de carga profesional (tarjeta + spinner + aviso)
++ *            - Contenido markdown renderizado
++ *            - Toast de notificaciones (refuerzo)
++ * Autor   : Biotecno Chile
++ * Versión : 3.1.5
++ ******************************************************************************/
++
++/* ============================================================
++ * OVERLAY DE CARGA
++ * El elemento raíz usa la clase .loader-overlay y se activa
++ * con la clase .active desde JS.
++ * ========================================================== */
++
++.loader-overlay {
++    position: fixed;
++    inset: 0;
++    background: rgba(15, 23, 42, 0.72);
++    backdrop-filter: blur(6px);
++    -webkit-backdrop-filter: blur(6px);
++    display: none;
++    align-items: center;
++    justify-content: center;
++    z-index: 10000;
++    padding: 1rem;
++}
++
++.loader-overlay.active {
++    display: flex;
++}
++
++.loader-content {
++    background: #ffffff;
++    border-radius: 1rem;
++    padding: 2.25rem 2.5rem;
++    max-width: 420px;
++    width: 100%;
++    text-align: center;
++    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
++    display: flex;
++    flex-direction: column;
++    align-items: center;
++    gap: 0.9rem;
++}
++
++.loader-content h3 {
++    margin: 0;
++    font-size: 1.15rem;
++    font-weight: 700;
++    color: #0f172a;
++}
++
++.loader-content p {
++    margin: 0;
++    font-size: 0.9375rem;
++    color: #475569;
++    line-height: 1.5;
++}
++
++.loader-spinner {
++    width: 48px;
++    height: 48px;
++    border: 4px solid #e2e8f0;
++    border-top-color: #2563eb;
++    border-radius: 50%;
++    animation: generation-spin 1s linear infinite;
++}
++
++/* Compatibilidad con markup previo que usa .spinner */
++.loader-overlay .spinner {
++    width: 48px;
++    height: 48px;
++    border: 4px solid #e2e8f0;
++    border-top-color: #2563eb;
++    border-radius: 50%;
++    animation: generation-spin 1s linear infinite;
++}
++
++@keyframes generation-spin {
++    to { transform: rotate(360deg); }
++}
++
++.loader-hint {
++    font-size: 0.8125rem;
++    color: #94a3b8;
++}
++
++/* ============================================================
++ * CONTENIDO MARKDOWN RENDERIZADO
++ * Aplicar la clase .generation-markdown al contenedor del
++ * resultado. Reemplaza la visualización de markdown crudo.
++ * ========================================================== */
++
++.generation-markdown {
++    white-space: normal;
++    font-family: 'Inter', 'Segoe UI', sans-serif;
++    color: #1f2937;
++}
++
++/* Gana a la regla inline .result-box de cada módulo (pre-wrap/monospace) */
++.result-box.generation-markdown {
++    white-space: normal;
++    font-family: 'Inter', 'Segoe UI', sans-serif;
++}
++
++.generation-markdown h1,
++.generation-markdown h2,
++.generation-markdown h3,
++.generation-markdown h4 {
++    color: #0f172a;
++    line-height: 1.3;
++    margin: 1.25rem 0 0.5rem;
++}
++
++.generation-markdown h1 { font-size: 1.45rem; }
++.generation-markdown h2 { font-size: 1.25rem; }
++.generation-markdown h3 { font-size: 1.1rem; }
++.generation-markdown h4 { font-size: 1rem; }
++
++.generation-markdown h1:first-child,
++.generation-markdown h2:first-child,
++.generation-markdown h3:first-child {
++    margin-top: 0;
++}
++
++.generation-markdown p {
++    margin: 0.6rem 0;
++    line-height: 1.65;
++}
++
++.generation-markdown ul,
++.generation-markdown ol {
++    margin: 0.6rem 0;
++    padding-left: 1.5rem;
++    line-height: 1.65;
++}
++
++.generation-markdown li {
++    margin: 0.25rem 0;
++}
++
++.generation-markdown strong {
++    color: #0f172a;
++}
++
++.generation-markdown hr {
++    border: none;
++    border-top: 1px solid #e5e7eb;
++    margin: 1.25rem 0;
++}
++
++.generation-markdown table {
++    width: 100%;
++    border-collapse: collapse;
++    margin: 1rem 0;
++    font-size: 0.9rem;
++}
++
++.generation-markdown th,
++.generation-markdown td {
++    border: 1px solid #d1d5db;
++    padding: 0.5rem 0.75rem;
++    text-align: left;
++    vertical-align: top;
++}
++
++.generation-markdown th {
++    background: #f1f5f9;
++    font-weight: 600;
++    color: #0f172a;
++}
++
++.generation-markdown code {
++    background: #f1f5f9;
++    border-radius: 0.25rem;
++    padding: 0.1rem 0.35rem;
++    font-size: 0.875em;
++}
++
++.generation-markdown blockquote {
++    border-left: 3px solid #2563eb;
++    margin: 0.75rem 0;
++    padding: 0.25rem 0 0.25rem 1rem;
++    color: #475569;
++    background: #f8fafc;
++}
++
++/* ============================================================
++ * TOAST (refuerzo por si el módulo no define estilos inline)
++ * ========================================================== */
++
++.toast {
++    position: fixed;
++    bottom: 2rem;
++    right: 2rem;
++    padding: 1rem 1.5rem;
++    border-radius: 0.75rem;
++    font-weight: 500;
++    font-size: 0.9375rem;
++    font-family: 'Inter', 'Segoe UI', sans-serif;
++    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
++    transform: translateY(120%);
++    opacity: 0;
++    transition: all 0.3s ease;
++    z-index: 10001;
++    pointer-events: none;
++}
++
++.toast.show {
++    transform: translateY(0);
++    opacity: 1;
++}
++
++.toast.success { background: #10b981; color: #ffffff; }
++.toast.error   { background: #ef4444; color: #ffffff; }
+diff --git a/static/js/evaluation.js b/static/js/evaluation.js
+index c162b00..bb23682 100644
+--- a/static/js/evaluation.js
++++ b/static/js/evaluation.js
+@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+     let currentDocument = null;
+ 
++    let lastGeneratedMarkdown = "";
++
+     let exportInfo = {
+ 
+         word : null,
+@@ -78,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+         if(loadingModal){
+ 
+-            loadingModal.style.display = "flex";
++            loadingModal.classList.add("active");
+ 
+         }
+ 
+@@ -88,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+         if(loadingModal){
+ 
+-            loadingModal.style.display = "none";
++            loadingModal.classList.remove("active");
+ 
+         }
+ 
+@@ -122,11 +124,47 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+     }
+ 
++    function renderMarkdown(text){
++
++        const source = String(text ?? "");
++
++        if(
++            window.marked &&
++            typeof window.marked.parse === "function"
++        ){
++
++            try{
++
++                return window.marked.parse(source);
++
++            }
++
++            catch(error){
++
++                console.error(
++                    "Error renderizando markdown:",
++                    error
++                );
++
++            }
++
++        }
++
++        return source
++            .replace(/&/g, "&amp;")
++            .replace(/</g, "&lt;")
++            .replace(/>/g, "&gt;")
++            .replace(/\n/g, "<br>");
++
++    }
++
+     function showResult(content){
+ 
++        lastGeneratedMarkdown = content || "";
++
+         if(result){
+ 
+-            result.textContent = content || "";
++            result.innerHTML = renderMarkdown(lastGeneratedMarkdown);
+ 
+         }
+ 
+@@ -150,13 +188,15 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+         currentDocument = null;
+ 
++        lastGeneratedMarkdown = "";
++
+         exportInfo.word = null;
+ 
+         exportInfo.pdf = null;
+ 
+         if(result){
+ 
+-            result.textContent="";
++            result.innerHTML="";
+ 
+         }
+ 
+@@ -201,6 +241,249 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+     }
+ 
++    /**********************************************************************
++     * CARGA EN CASCADA DEL CURRÍCULO
++     **********************************************************************/
++
++    const API_BASE = "/planning/api/curriculum";
++
++    async function populateSelect(url, selectId, placeholder){
++
++        const select = document.getElementById(selectId);
++
++        if(!select){
++
++            return;
++
++        }
++
++        try{
++
++            const response = await fetch(url);
++
++            const data = await response.json();
++
++            if(!data.success){
++
++                throw new Error(data.message || "Error API");
++
++            }
++
++            select.innerHTML =
++                `<option value="">${placeholder}</option>`;
++
++            const key =
++                selectId === "curso"      ? "courses"    :
++                selectId === "asignatura" ? "subjects"   :
++                selectId === "unidad"     ? "units"      :
++                "objectives";
++
++            const items = data[key];
++
++            if(!items || items.length === 0){
++
++                select.innerHTML =
++                    "<option value=\"\">No hay datos disponibles</option>";
++
++                select.disabled = true;
++
++                return;
++
++            }
++
++            items.forEach((item)=>{
++
++                const opt = document.createElement("option");
++
++                if(typeof item === "object" && item !== null){
++
++                    if(item.code){
++
++                        opt.value = item.code;
++                        opt.textContent =
++                            item.code + " - " + (item.description || "");
++                        opt.title = item.description || item.code;
++
++                    }
++
++                    else if(item.id){
++
++                        opt.value = item.id;
++                        opt.textContent = item.name || item.id;
++
++                    }
++
++                    else if(item.name){
++
++                        opt.value = item.name;
++                        opt.textContent = item.name;
++
++                    }
++
++                    else{
++
++                        opt.value = JSON.stringify(item);
++                        opt.textContent =
++                            item.name || item.id || JSON.stringify(item);
++
++                    }
++
++                }
++
++                else{
++
++                    opt.value = item;
++                    opt.textContent = item;
++
++                }
++
++                select.appendChild(opt);
++
++            });
++
++            select.disabled = false;
++
++        }
++
++        catch(error){
++
++            console.error(
++                "Error cargando " + selectId + ":",
++                error
++            );
++
++            select.innerHTML =
++                "<option value=\"\">Error cargando datos</option>";
++
++            select.disabled = true;
++
++        }
++
++    }
++
++    (async()=>{
++
++        await populateSelect(
++            API_BASE + "/courses",
++            "curso",
++            "Selecciona un curso..."
++        );
++
++    })();
++
++    const cursoSelect = document.getElementById("curso");
++
++    if(cursoSelect){
++
++        cursoSelect.addEventListener("change", async function(){
++
++            const course = this.value;
++
++            const asignatura = document.getElementById("asignatura");
++            const unidad = document.getElementById("unidad");
++            const objetivo = document.getElementById("objetivo");
++
++            asignatura.innerHTML =
++                "<option value=\"\">Selecciona una asignatura...</option>";
++            unidad.innerHTML =
++                "<option value=\"\">Selecciona una unidad...</option>";
++            objetivo.innerHTML =
++                "<option value=\"\">Selecciona un OA...</option>";
++
++            asignatura.disabled = !course;
++            unidad.disabled = true;
++            objetivo.disabled = true;
++
++            if(!course){
++
++                return;
++
++            }
++
++            await populateSelect(
++                API_BASE + "/subjects/" + encodeURIComponent(course),
++                "asignatura",
++                "Selecciona una asignatura..."
++            );
++
++        });
++
++    }
++
++    const asignaturaSelect = document.getElementById("asignatura");
++
++    if(asignaturaSelect){
++
++        asignaturaSelect.addEventListener("change", async function(){
++
++            const course = document.getElementById("curso").value;
++            const subject = this.value;
++
++            const unidad = document.getElementById("unidad");
++            const objetivo = document.getElementById("objetivo");
++
++            unidad.innerHTML =
++                "<option value=\"\">Selecciona una unidad...</option>";
++            objetivo.innerHTML =
++                "<option value=\"\">Selecciona un OA...</option>";
++
++            unidad.disabled = !subject;
++            objetivo.disabled = true;
++
++            if(!subject){
++
++                return;
++
++            }
++
++            await populateSelect(
++                API_BASE + "/units/" +
++                    encodeURIComponent(course) + "/" +
++                    encodeURIComponent(subject),
++                "unidad",
++                "Selecciona una unidad..."
++            );
++
++        });
++
++    }
++
++    const unidadSelect = document.getElementById("unidad");
++
++    if(unidadSelect){
++
++        unidadSelect.addEventListener("change", async function(){
++
++            const course = document.getElementById("curso").value;
++            const subject = document.getElementById("asignatura").value;
++            const unit = this.value;
++
++            const objetivo = document.getElementById("objetivo");
++
++            objetivo.innerHTML =
++                "<option value=\"\">Selecciona un OA...</option>";
++
++            objetivo.disabled = !unit;
++
++            if(!unit){
++
++                return;
++
++            }
++
++            await populateSelect(
++                API_BASE + "/objectives/" +
++                    encodeURIComponent(course) + "/" +
++                    encodeURIComponent(subject) + "/" +
++                    encodeURIComponent(unit),
++                "objetivo",
++                "Selecciona un OA..."
++            );
++
++        });
++
++    }
++
+     /**********************************************************************
+      * GENERAR EVALUACIÓN
+      **********************************************************************/
+@@ -343,25 +626,25 @@ document.addEventListener("DOMContentLoaded", () => {
+                     <td>
+ 
+                         <button
+-                            class="btn-open"
++                            class="btn-action btn-open"
+                             data-id="${document.id}">
+                             Abrir
+                         </button>
+ 
+                         <button
+-                            class="btn-word"
++                            class="btn-action btn-word"
+                             data-id="${document.id}">
+                             Word
+                         </button>
+ 
+                         <button
+-                            class="btn-pdf"
++                            class="btn-action btn-pdf"
+                             data-id="${document.id}">
+                             PDF
+                         </button>
+ 
+                         <button
+-                            class="btn-delete"
++                            class="btn-action delete btn-delete"
+                             data-id="${document.id}">
+                             Eliminar
+                         </button>
+@@ -571,7 +854,7 @@ document.addEventListener("DOMContentLoaded", () => {
+ 
+         }
+ 
+-        const text=result.textContent.trim();
++        const text=(lastGeneratedMarkdown || result.textContent || "").trim();
+ 
+         if(text===""){
+ 
+diff --git a/static/js/guides.js b/static/js/guides.js
+index 98d5640..57b43ea 100644
+--- a/static/js/guides.js
++++ b/static/js/guides.js
+@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ 
+     var currentDocument = null;
+     var exportInfo = { word: null, pdf: null };
++    var lastGeneratedMarkdown = "";
+ 
+     function showLoading() { if(loadingModal) loadingModal.classList.add("active"); }
+     function hideLoading() { if(loadingModal) loadingModal.classList.remove("active"); }
+@@ -39,18 +40,36 @@ document.addEventListener("DOMContentLoaded", function() {
+     }
+ 
+     function showResult(content) {
+-        if (result) result.textContent = content || "";
++        lastGeneratedMarkdown = content || "";
++        if (result) result.innerHTML = renderMarkdown(lastGeneratedMarkdown);
+         if (resultSection) {
+             resultSection.style.display = "block";
+             resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
+         }
+     }
+ 
++    function renderMarkdown(text) {
++        var source = String(text == null ? "" : text);
++        if (window.marked && typeof window.marked.parse === "function") {
++            try {
++                return window.marked.parse(source);
++            } catch (error) {
++                console.error("Error renderizando markdown:", error);
++            }
++        }
++        return source
++            .replace(/&/g, "&amp;")
++            .replace(/</g, "&lt;")
++            .replace(/>/g, "&gt;")
++            .replace(/\n/g, "<br>");
++    }
++
+     function clearResult() {
+         currentDocument = null;
+         exportInfo.word = null;
+         exportInfo.pdf = null;
+-        if (result) result.textContent = "";
++        lastGeneratedMarkdown = "";
++        if (result) result.innerHTML = "";
+     }
+ 
+     async function request(url, options) {
+@@ -283,7 +302,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ 
+     async function copyGuide() {
+         if (!result) return;
+-        var text = result.textContent.trim();
++        var text = (lastGeneratedMarkdown || result.textContent || "").trim();
+         if (!text) { showToast("No existe contenido para copiar.", "error"); return; }
+         try {
+             await navigator.clipboard.writeText(text);
+diff --git a/static/js/pie.js b/static/js/pie.js
+index fb3f882..8d08064 100644
+--- a/static/js/pie.js
++++ b/static/js/pie.js
+@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ 
+     var currentDocument = null;
+     var exportInfo = { word: null, pdf: null };
++    var lastGeneratedMarkdown = "";
+ 
+     function showLoading() { if(loadingModal) loadingModal.classList.add("active"); }
+     function hideLoading() { if(loadingModal) loadingModal.classList.remove("active"); }
+@@ -39,18 +40,36 @@ document.addEventListener("DOMContentLoaded", function() {
+     }
+ 
+     function showResult(content) {
+-        if (result) result.textContent = content || "";
++        lastGeneratedMarkdown = content || "";
++        if (result) result.innerHTML = renderMarkdown(lastGeneratedMarkdown);
+         if (resultSection) {
+             resultSection.style.display = "block";
+             resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
+         }
+     }
+ 
++    function renderMarkdown(text) {
++        var source = String(text == null ? "" : text);
++        if (window.marked && typeof window.marked.parse === "function") {
++            try {
++                return window.marked.parse(source);
++            } catch (error) {
++                console.error("Error renderizando markdown:", error);
++            }
++        }
++        return source
++            .replace(/&/g, "&amp;")
++            .replace(/</g, "&lt;")
++            .replace(/>/g, "&gt;")
++            .replace(/\n/g, "<br>");
++    }
++
+     function clearResult() {
+         currentDocument = null;
+         exportInfo.word = null;
+         exportInfo.pdf = null;
+-        if (result) result.textContent = "";
++        lastGeneratedMarkdown = "";
++        if (result) result.innerHTML = "";
+     }
+ 
+     async function request(url, options) {
+@@ -258,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ 
+     async function copyPie() {
+         if (!result) return;
+-        var text = result.textContent.trim();
++        var text = (lastGeneratedMarkdown || result.textContent || "").trim();
+         if (!text) { showToast("No existe contenido para copiar.", "error"); return; }
+         try {
+             await navigator.clipboard.writeText(text);
+diff --git a/static/js/rubrics.js b/static/js/rubrics.js
+index 406ba4c..f2841ae 100644
+--- a/static/js/rubrics.js
++++ b/static/js/rubrics.js
+@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ 
+     var currentDocument = null;
+     var exportInfo = { word: null, pdf: null };
++    var lastGeneratedMarkdown = "";
+ 
+     function showLoading() { if(loadingModal) loadingModal.classList.add("active"); }
+     function hideLoading() { if(loadingModal) loadingModal.classList.remove("active"); }
+@@ -39,18 +40,36 @@ document.addEventListener("DOMContentLoaded", function() {
+     }
+ 
+     function showResult(content) {
+-        if (result) result.textContent = content || "";
++        lastGeneratedMarkdown = content || "";
++        if (result) result.innerHTML = renderMarkdown(lastGeneratedMarkdown);
+         if (resultSection) {
+             resultSection.style.display = "block";
+             resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
+         }
+     }
+ 
++    function renderMarkdown(text) {
++        var source = String(text == null ? "" : text);
++        if (window.marked && typeof window.marked.parse === "function") {
++            try {
++                return window.marked.parse(source);
++            } catch (error) {
++                console.error("Error renderizando markdown:", error);
++            }
++        }
++        return source
++            .replace(/&/g, "&amp;")
++            .replace(/</g, "&lt;")
++            .replace(/>/g, "&gt;")
++            .replace(/\n/g, "<br>");
++    }
++
+     function clearResult() {
+         currentDocument = null;
+         exportInfo.word = null;
+         exportInfo.pdf = null;
+-        if (result) result.textContent = "";
++        lastGeneratedMarkdown = "";
++        if (result) result.innerHTML = "";
+     }
+ 
+     async function request(url, options) {
+@@ -258,7 +277,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ 
+     async function copyRubric() {
+         if (!result) return;
+-        var text = result.textContent.trim();
++        var text = (lastGeneratedMarkdown || result.textContent || "").trim();
+         if (!text) { showToast("No existe contenido para copiar.", "error"); return; }
+         try {
+             await navigator.clipboard.writeText(text);
+diff --git a/templates/evaluation.html b/templates/evaluation.html
+index 2d21ca6..9f6c7f2 100644
+--- a/templates/evaluation.html
++++ b/templates/evaluation.html
+@@ -1,123 +1,324 @@
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+-<meta charset="UTF-8">
+-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+-<title>Evaluaciones IA | AulaMind Enterprise</title>
+-<link rel="stylesheet" href="{{ url_for('static', filename='css/evaluation.css') }}">
+-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Evaluaciones IA | AulaMind Enterprise</title>
++
++    <link rel="preconnect" href="https://fonts.googleapis.com">
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
++    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/generation-ui.css', v=config.APP_VERSION) }}">
++
++    <style>
++        /* Estilos específicos del módulo Evaluaciones */
++        .evaluation-section { padding: 2rem; max-width: 900px; }
++        .evaluation-card {
++            background: #fff;
++            border-radius: 1rem;
++            padding: 2rem;
++            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
++            border: 1px solid #e5e7eb;
++            margin-bottom: 2rem;
++        }
++        .evaluation-card h2 {
++            font-size: 1.25rem;
++            font-weight: 700;
++            margin-bottom: 1.5rem;
++            color: #1f2937;
++        }
++        .form-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
++            gap: 1rem;
++            margin-bottom: 1.5rem;
++        }
++        .form-group { display: flex; flex-direction: column; }
++        .form-group label {
++            font-size: 0.875rem;
++            font-weight: 600;
++            color: #374151;
++            margin-bottom: 0.375rem;
++        }
++        .form-group input,
++        .form-group select {
++            padding: 0.625rem 0.875rem;
++            border: 1px solid #d1d5db;
++            border-radius: 0.5rem;
++            font-size: 0.9375rem;
++            background: #fff;
++            transition: border-color 0.15s, box-shadow 0.15s;
++        }
++        .form-group input:focus,
++        .form-group select:focus {
++            outline: none;
++            border-color: #2563eb;
++            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
++        }
++        .btn-primary {
++            display: inline-flex;
++            align-items: center;
++            gap: 0.5rem;
++            background: #2563eb;
++            color: #fff;
++            border: none;
++            padding: 0.75rem 1.5rem;
++            border-radius: 0.5rem;
++            font-weight: 600;
++            font-size: 0.9375rem;
++            cursor: pointer;
++            transition: background 0.15s;
++        }
++        .btn-primary:hover { background: #1d4ed8; }
++        .toolbar {
++            display: flex;
++            gap: 0.75rem;
++            margin-bottom: 1rem;
++            flex-wrap: wrap;
++        }
++        .toolbar button {
++            display: inline-flex;
++            align-items: center;
++            gap: 0.375rem;
++            padding: 0.5rem 1rem;
++            border-radius: 0.375rem;
++            font-size: 0.875rem;
++            font-weight: 500;
++            cursor: pointer;
++            border: 1px solid #d1d5db;
++            background: #fff;
++            color: #374151;
++            transition: all 0.15s;
++        }
++        .toolbar button:hover { background: #f3f4f6; }
++        .result-box {
++            background: #f9fafb;
++            border: 1px solid #e5e7eb;
++            border-radius: 0.75rem;
++            padding: 1.5rem;
++            line-height: 1.6;
++            max-height: 600px;
++            overflow-y: auto;
++            font-size: 0.9375rem;
++        }
++        .history-table {
++            width: 100%;
++            border-collapse: collapse;
++            font-size: 0.875rem;
++        }
++        .history-table th {
++            text-align: left;
++            padding: 0.75rem;
++            color: #6b7280;
++            font-weight: 600;
++            border-bottom: 1px solid #e5e7eb;
++            text-transform: uppercase;
++            font-size: 0.75rem;
++            letter-spacing: 0.05em;
++        }
++        .history-table td {
++            padding: 0.875rem 0.75rem;
++            border-bottom: 1px solid #f3f4f6;
++        }
++        .history-table tr:hover td { background: #f9fafb; }
++        .btn-action {
++            padding: 0.375rem 0.75rem;
++            border-radius: 0.375rem;
++            font-size: 0.8125rem;
++            font-weight: 500;
++            cursor: pointer;
++            border: 1px solid #d1d5db;
++            background: #fff;
++            margin-right: 0.25rem;
++            transition: all 0.15s;
++        }
++        .btn-action:hover { background: #f3f4f6; }
++        .btn-action.delete { color: #dc2626; border-color: #fecaca; }
++        .btn-action.delete:hover { background: #fef2f2; }
++        .empty-state { text-align: center; padding: 2rem; color: #9ca3af; }
++    </style>
+ </head>
+ <body>
+-<div class="app">
+-<aside class="sidebar">
+-<h2>AulaMind</h2>
+-{% set active_menu = 'evaluation' %}
+-    {% include 'partials/sidebar_menu.html' %}
+-</aside>
+-
+-<main class="main-content">
+-
+-<header>
+-<h1>Motor de Evaluaciones IA</h1>
+-<p>Genera, administra y exporta evaluaciones.</p>
+-</header>
+-
+-<section class="evaluation-card">
+-<h2>Nueva evaluación</h2>
+-
+-<form id="evaluationForm">
+-    <input type="hidden" id="csrf_token" value="{{ csrf_token() }}">
+-
+-<input id="asignatura" name="asignatura" placeholder="Asignatura" required>
+-<input id="curso" name="curso" placeholder="Curso" required>
+-<input id="unidad" name="unidad" placeholder="Unidad" required>
+-<input id="objetivo" name="objetivo" placeholder="OA" required>
+-<input id="tema" name="tema" placeholder="Tema" required>
+-
+-<select id="tipo" name="tipo">
+-<option>Diagnóstica</option>
+-<option>Formativa</option>
+-<option>Sumativa</option>
+-<option>Control</option>
+-</select>
+-
+-<input id="preguntas" name="preguntas" type="number" value="10">
+-
+-<select id="dificultad" name="dificultad">
+-<option>Básica</option>
+-<option>Intermedia</option>
+-<option>Avanzada</option>
+-</select>
+-
+-<button type="submit">Generar Evaluación</button>
+-
+-</form>
+-
+-</section>
+-
+-<section id="resultSection" style="display:none">
+-
+-<h2>Resultado</h2>
+-
+-<div class="toolbar">
+-
+-<button id="copyEvaluation">Copiar</button>
+-
+-<button id="downloadWord">Word</button>
+-
+-<button id="downloadPdf">PDF</button>
+ 
++<div class="app-layout">
++
++    <!-- SIDEBAR -->
++    <aside class="sidebar">
++        <div class="sidebar-header">
++            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
++            <div>
++                <h2>AulaMind</h2>
++                <span>Enterprise 3.0</span>
++            </div>
++        </div>
++        {% set active_menu = 'evaluation' %}
++        {% include 'partials/sidebar_menu.html' %}
++        <div class="sidebar-footer">
++            <div class="user-card">
++                <div class="avatar"><i class="fa-solid fa-user"></i></div>
++                <div>
++                    <strong>{{ session.get('user_name','Profesor') }}</strong>
++                    <small>{{ 'Administrador' if session.get('role') == 'admin' else 'Docente' }}</small>
++                </div>
++            </div>
++        </div>
++    </aside>
++
++    <!-- CONTENIDO -->
++    <main class="main-content">
++
++        <!-- HEADER -->
++        <header class="topbar">
++            <div>
++                <h1>Motor de Evaluaciones IA</h1>
++                <p>Genera, administra y exporta evaluaciones alineadas al Currículum Nacional.</p>
++            </div>
++            <div class="topbar-actions">
++                <button class="icon-button"><i class="fa-solid fa-bell"></i></button>
++                <button class="icon-button"><i class="fa-solid fa-user"></i></button>
++            </div>
++        </header>
++
++        <section class="evaluation-section">
++
++            <!-- FORMULARIO -->
++            <div class="evaluation-card">
++                <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Nueva evaluación</h2>
++                <form id="evaluationForm">
++                    <!-- CSRF Token para Flask-WTF -->
++                    <input type="hidden" id="csrf_token" value="{{ csrf_token() }}">
++
++                    <div class="form-grid">
++                        <div class="form-group">
++                            <label>Curso <span style="color:#ef4444">*</span></label>
++                            <select id="curso" name="curso" required>
++                                <option value="">Selecciona un curso...</option>
++                            </select>
++                        </div>
++                        <div class="form-group">
++                            <label>Asignatura <span style="color:#ef4444">*</span></label>
++                            <select id="asignatura" name="asignatura" required disabled>
++                                <option value="">Selecciona una asignatura...</option>
++                            </select>
++                        </div>
++                        <div class="form-group">
++                            <label>Unidad <span style="color:#ef4444">*</span></label>
++                            <select id="unidad" name="unidad" required disabled>
++                                <option value="">Selecciona una unidad...</option>
++                            </select>
++                        </div>
++                        <div class="form-group">
++                            <label>Objetivo de Aprendizaje <span style="color:#ef4444">*</span></label>
++                            <select id="objetivo" name="objetivo" required disabled>
++                                <option value="">Selecciona un OA...</option>
++                            </select>
++                        </div>
++                        <div class="form-group" style="grid-column: 1 / -1;">
++                            <label>Tema</label>
++                            <input id="tema" name="tema" placeholder="Ej: Fracciones equivalentes" required>
++                        </div>
++                        <div class="form-group">
++                            <label>Tipo de evaluación</label>
++                            <select id="tipo" name="tipo">
++                                <option>Diagnóstica</option>
++                                <option>Formativa</option>
++                                <option>Sumativa</option>
++                                <option>Control</option>
++                            </select>
++                        </div>
++                        <div class="form-group">
++                            <label>Número de preguntas</label>
++                            <input id="preguntas" name="preguntas" type="number" min="1" max="50" value="10">
++                        </div>
++                        <div class="form-group">
++                            <label>Dificultad</label>
++                            <select id="dificultad" name="dificultad">
++                                <option>Básica</option>
++                                <option>Intermedia</option>
++                                <option>Avanzada</option>
++                            </select>
++                        </div>
++                    </div>
++
++                    <button type="submit" class="btn-primary">
++                        <i class="fa-solid fa-wand-magic-sparkles"></i> Generar Evaluación
++                    </button>
++                </form>
++            </div>
++
++            <!-- RESULTADO -->
++            <div class="evaluation-card" id="resultSection" style="display:none;">
++                <h2><i class="fa-solid fa-file-lines"></i> Resultado</h2>
++                <div class="toolbar">
++                    <button id="copyEvaluation"><i class="fa-solid fa-copy"></i> Copiar</button>
++                    <button id="downloadWord"><i class="fa-solid fa-file-word"></i> Word</button>
++                    <button id="downloadPdf"><i class="fa-solid fa-file-pdf"></i> PDF</button>
++                </div>
++                <div class="result-box generation-markdown" id="evaluationResult"></div>
++            </div>
++
++            <!-- HISTORIAL -->
++            <div class="evaluation-card">
++                <h2><i class="fa-solid fa-clock-rotate-left"></i> Historial de evaluaciones</h2>
++                <table class="history-table" id="historyTable">
++                    <thead>
++                        <tr>
++                            <th>Fecha</th>
++                            <th>Curso</th>
++                            <th>Asignatura</th>
++                            <th>Acciones</th>
++                        </tr>
++                    </thead>
++                    <tbody id="historyBody">
++                        <tr><td colspan="4" class="empty-state">Cargando historial...</td></tr>
++                    </tbody>
++                </table>
++            </div>
++
++        </section>
++
++        <!-- FOOTER -->
++        <footer class="page-footer">
++            <div class="footer-left">
++                <strong>AulaMind Enterprise 3.0</strong>
++                <span>Plataforma Inteligente para Docentes</span>
++            </div>
++            <div class="footer-right">
++                <span>© 2026 Biotecno Chile</span>
++            </div>
++        </footer>
++
++    </main>
+ </div>
+ 
+-<pre id="evaluationResult"></pre>
+-
+-</section>
+-
+-<section class="history">
+-
+-<h2>Historial de evaluaciones</h2>
+-
+-<table id="historyTable">
+-
+-<thead>
+-
+-<tr>
+-<th>Fecha</th>
+-<th>Curso</th>
+-<th>Asignatura</th>
+-<th>Acciones</th>
+-</tr>
+-
+-</thead>
+-
+-<tbody id="historyBody">
+-
+-</tbody>
+-
+-</table>
+-
+-</section>
+-
+-<div id="loadingModal" style="display:none">
+-Generando...
++<!-- LOADER -->
++<div id="loadingModal" class="loader-overlay">
++    <div class="loader-content">
++        <div class="loader-spinner"></div>
++        <h3>Generando tu evaluación...</h3>
++        <p>AulaMind IA está analizando el Currículum Nacional y construyendo tu instrumento de evaluación.</p>
++        <span class="loader-hint">Esto puede tomar hasta 1 minuto. No cierres esta ventana.</span>
++    </div>
+ </div>
+ 
++<!-- TOAST -->
++<div id="toast" class="toast"></div>
++
+ <script>
+ 
+-window.EVALUATION_CONFIG={
++window.EVALUATION_CONFIG = {
+ 
+-generateUrl:"{{ url_for('evaluation.generate') }}",
+-historyUrl:"{{ url_for('evaluation.history') }}"
++    generateUrl: "{{ url_for('evaluation.generate') }}",
++    historyUrl: "{{ url_for('evaluation.history') }}"
+ 
+ };
+ 
+ </script>
+ 
++<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+ <script src="{{ url_for('static', filename='js/evaluation.js', v=config.APP_VERSION) }}"></script>
+ 
+-</main>
+-
+-</div>
+-
+ </body>
+ </html>
+diff --git a/templates/guides.html b/templates/guides.html
+index 5822ab1..4add4a9 100644
+--- a/templates/guides.html
++++ b/templates/guides.html
+@@ -9,7 +9,8 @@
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/generation-ui.css', v=config.APP_VERSION) }}">
+ 
+     <style>
+         /* Estilos específicos del módulo Guías */
+@@ -279,7 +280,7 @@
+                     <button id="downloadWord"><i class="fa-solid fa-file-word"></i> Word</button>
+                     <button id="downloadPdf"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                 </div>
+-                <pre class="result-box" id="guideResult"></pre>
++                <div class="result-box generation-markdown" id="guideResult"></div>
+             </div>
+ 
+             <!-- HISTORIAL -->
+@@ -318,9 +319,12 @@
+ 
+ <!-- LOADER -->
+ <div id="loadingModal" class="loader-overlay">
+-    <div class="spinner"></div>
+-    <h3>AulaMind IA</h3>
+-    <p>Generando la guía...</p>
++    <div class="loader-content">
++        <div class="loader-spinner"></div>
++        <h3>Generando tu guía...</h3>
++        <p>AulaMind IA está analizando el Currículum Nacional y construyendo tu material pedagógico.</p>
++        <span class="loader-hint">Esto puede tomar hasta 1 minuto. No cierres esta ventana.</span>
++    </div>
+ </div>
+ 
+ <!-- TOAST -->
+@@ -332,6 +336,7 @@ window.GUIDE_CONFIG = {
+     historyUrl: "{{ url_for('guides.history') }}"
+ };
+ </script>
++<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+ <script src="{{ url_for('static', filename='js/guides.js', v=config.APP_VERSION) }}"></script>
+ 
+ </body>
+diff --git a/templates/pie.html b/templates/pie.html
+index 80b6dc6..6059e2a 100644
+--- a/templates/pie.html
++++ b/templates/pie.html
+@@ -8,7 +8,8 @@
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/generation-ui.css', v=config.APP_VERSION) }}">
+ 
+     <style>
+         .pie-section { padding: 2rem; max-width: 900px; }
+@@ -306,7 +307,7 @@
+                     <button id="downloadWord"><i class="fa-solid fa-file-word"></i> Word</button>
+                     <button id="downloadPdf"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                 </div>
+-                <pre class="result-box" id="pieResult"></pre>
++                <div class="result-box generation-markdown" id="pieResult"></div>
+             </div>
+ 
+             <div class="pie-card">
+@@ -341,9 +342,12 @@
+ </div>
+ 
+ <div id="loadingModal" class="loader-overlay">
+-    <div class="spinner"></div>
+-    <h3>AulaMind IA</h3>
+-    <p>Generando la adecuación PIE...</p>
++    <div class="loader-content">
++        <div class="loader-spinner"></div>
++        <h3>Generando tu adecuación PIE...</h3>
++        <p>AulaMind IA está analizando el Currículum Nacional y las necesidades educativas descritas.</p>
++        <span class="loader-hint">Esto puede tomar hasta 1 minuto. No cierres esta ventana.</span>
++    </div>
+ </div>
+ 
+ <div id="toast" class="toast"></div>
+@@ -354,6 +358,7 @@ window.PIE_CONFIG = {
+     historyUrl: "{{ url_for('pie.history') }}"
+ };
+ </script>
++<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+ <script src="{{ url_for('static', filename='js/pie.js', v=config.APP_VERSION) }}"></script>
+ 
+ </body>
+diff --git a/templates/rubrics.html b/templates/rubrics.html
+index a369cfb..3e973b3 100644
+--- a/templates/rubrics.html
++++ b/templates/rubrics.html
+@@ -8,7 +8,8 @@
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
++    <link rel="stylesheet" href="{{ url_for('static', filename='css/generation-ui.css', v=config.APP_VERSION) }}">
+ 
+     <style>
+         .rubrics-section { padding: 2rem; max-width: 900px; }
+@@ -274,7 +275,7 @@
+                     <button id="downloadWord"><i class="fa-solid fa-file-word"></i> Word</button>
+                     <button id="downloadPdf"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                 </div>
+-                <pre class="result-box" id="rubricResult"></pre>
++                <div class="result-box generation-markdown" id="rubricResult"></div>
+             </div>
+ 
+             <div class="rubrics-card">
+@@ -309,9 +310,12 @@
+ </div>
+ 
+ <div id="loadingModal" class="loader-overlay">
+-    <div class="spinner"></div>
+-    <h3>AulaMind IA</h3>
+-    <p>Generando la rúbrica...</p>
++    <div class="loader-content">
++        <div class="loader-spinner"></div>
++        <h3>Generando tu rúbrica...</h3>
++        <p>AulaMind IA está analizando el Currículum Nacional y construyendo tu instrumento de evaluación.</p>
++        <span class="loader-hint">Esto puede tomar hasta 1 minuto. No cierres esta ventana.</span>
++    </div>
+ </div>
+ 
+ <div id="toast" class="toast"></div>
+@@ -322,6 +326,7 @@ window.RUBRIC_CONFIG = {
+     historyUrl: "{{ url_for('rubrics.history') }}"
+ };
+ </script>
++<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+ <script src="{{ url_for('static', filename='js/rubrics.js', v=config.APP_VERSION) }}"></script>
+ 
+ </body>
+-- 
+2.39.5
+
