@@ -239,7 +239,29 @@ def api_courses():
 
 @planning.route("/api/curriculum/subjects/<course>", methods=["GET"])
 def api_subjects(course):
-    return jsonify({
+    import os, json
+    subjects = curriculum_service.get_subjects(course)
+    base = os.path.join(os.path.dirname(__file__), "..", "data_curricular")
+    corrected = set()
+    for root, dirs, files in os.walk(base):
+        for fname in files:
+            if not fname.endswith(".json"):
+                continue
+            fpath = os.path.join(root, fname)
+            try:
+                with open(fpath, "r", encoding="utf-8") as fh:
+                    data = json.load(fh)
+                if not isinstance(data, dict):
+                    continue
+                json_course = data.get("curso", "")
+                asig = data.get("asignatura", "").strip()
+                if asig and course.lower() in json_course.lower():
+                    corrected.add(asig)
+            except Exception:
+                pass
+    if corrected:
+        subjects = sorted(corrected)
+        return jsonify({
         "success": True,
         "subjects": curriculum_service.get_subjects(course)
     })
