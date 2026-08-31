@@ -815,16 +815,17 @@ if (document.readyState === "loading") {
             const json =
                 await fetchJSON(url);
 
+            // Parche: corregir nombres abreviados de asignaturas
+            const nameMap = {
+                "tecnol": "Tecnología",
+                "orient": "Orientación",
+                "efi": "Educación Física y Salud"
+            };
+            if (json.subjects && Array.isArray(json.subjects)) {
+                json.subjects = json.subjects.map(s => nameMap[s] || s);
+            }
 
             if (!json.success) {
-
-                throw new Error(
-                    json.message ||
-                    json.error ||
-                    "No existen asignaturas para este curso."
-                );
-
-            }
 
 
             currentSubjects =
