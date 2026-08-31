@@ -49,14 +49,29 @@ curriculum_api = Blueprint(
 
 curriculum = CurriculumService()
 
+
+# ==========================================================
+# MAPEO DE NOMBRES DE ASIGNATURAS (corrección definitiva)
+# ==========================================================
+# El singleton carga los JSONs en memoria al iniciar.
+# Si los JSONs se corrigen pero el proceso no se reinicia,
+# el caché sigue con los nombres viejos.
+# SOLUCIÓN: Mapeo directo en los endpoints.
+# ==========================================================
+
 _SUBJECT_NAME_MAP = {
     "tecnol": "Tecnología",
     "orient": "Orientación",
     "efi": "Educación Física y Salud",
 }
 
+
 def _normalize_subject_names(subjects):
-    return [_SUBJECT_NAME_MAP.get(s, s) for s in subjects]
+    """Reemplaza abreviaturas por nombres oficiales."""
+    return [
+        _SUBJECT_NAME_MAP.get(s, s)
+        for s in subjects
+    ]
 
 
 # ==========================================================
@@ -190,6 +205,8 @@ def subjects(course):
             }), 404
 
         subjects = curriculum.get_subjects(course)
+
+        # Corrección definitiva: nombres oficiales
         subjects = _normalize_subject_names(subjects)
 
         return jsonify({

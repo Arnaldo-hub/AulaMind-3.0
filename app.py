@@ -46,6 +46,7 @@ from models.ai_generation import AIGeneration
 from models.export import Export
 from models.usage_event import UsageEvent
 from models.user_subscription import UserSubscription  # ← NUEVO v3.1
+from models.school_subscription import SchoolSubscription  # ← NUEVO v3.3 Plan Institucional
 from database.session import create_database
 
 # ==========================================================

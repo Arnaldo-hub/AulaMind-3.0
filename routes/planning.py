@@ -232,21 +232,47 @@ def api_courses():
 
     })
 
+
 # ==========================================================
-# API ASIGNATURAS — CORRECCION DEFINITIVA
+# API ASIGNATURAS — CORRECCIÓN DEFINITIVA
+# ==========================================================
+# El singleton curriculum_service carga los JSONs en memoria
+# al iniciar el servidor. Si los JSONs en disco se corrigen
+# pero el proceso no se reinicia, el caché en memoria sigue
+# con los nombres viejos.
+#
+# SOLUCIÓN: Mapeo directo en el endpoint. No depende de
+# archivos en disco ni de caché. Funciona siempre.
 # ==========================================================
 
+# Mapeo global: abreviaturas → nombres oficiales
 _SUBJECT_NAME_MAP = {
     "tecnol": "Tecnología",
-    "orient": "Orientación", 
+    "orient": "Orientación",
     "efi": "Educación Física y Salud",
 }
 
+
 @planning.route("/api/curriculum/subjects/<course>", methods=["GET"])
 def api_subjects(course):
+    """
+    Devuelve asignaturas para un curso.
+    Aplica corrección de nombres abreviados antes de enviar
+    al frontend, garantizando que siempre se muestren los
+    nombres oficiales completos.
+    """
     subjects = curriculum_service.get_subjects(course)
-    corrected = [_SUBJECT_NAME_MAP.get(s, s) for s in subjects]
-    return jsonify({"success": True, "subjects": corrected})
+
+    # Corrección definitiva: reemplazar abreviaturas
+    corrected = [
+        _SUBJECT_NAME_MAP.get(s, s)
+        for s in subjects
+    ]
+
+    return jsonify({
+        "success": True,
+        "subjects": corrected
+    })
 
 # ==========================================================
 # API UNIDADES

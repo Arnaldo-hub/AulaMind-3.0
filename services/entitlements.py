@@ -34,6 +34,7 @@ from flask import current_app
 
 from database.session import SessionLocal
 from models.ai_generation import AIGeneration
+from models.school_subscription import SchoolSubscription
 from models.subscription import Subscription
 from models.user import User
 from models.user_subscription import UserSubscription
@@ -227,41 +228,6 @@ class Entitlements:
 
             now = datetime.utcnow()
 
-            # --------------------------------------------------
-            # Suscripción institucional (colegio) - prioridad 1
-            # --------------------------------------------------
-            if user.school_id:
-                from models.school_subscription import SchoolSubscription
-                school_sub = db.query(SchoolSubscription).filter(
-                    SchoolSubscription.school_id == user.school_id,
-                    SchoolSubscription.status.in_(["trial", "active"]),
-                ).first()
-
-                if school_sub and school_sub.ends_at and school_sub.ends_at > now:
-                    # Verificar tope de generaciones del colegio
-                    if school_sub.generations_used >= school_sub.generations_pool:
-                        return {
-                            "allowed": False,
-                            "reason": "school_quota",
-                            "status": school_sub.status,
-                            "plan_name": "Institucional",
-                            "message": (
-                                "El colegio alcanzó el tope de generaciones "
-                                "del plan institucional. Contacte al administrador."
-                            ),
-                        }
-
-                    return {
-                        "allowed": True,
-                        "reason": "school_subscription",
-                        "status": school_sub.status,
-                        "plan_name": "Institucional",
-                        "ends_at": school_sub.ends_at,
-                        "remaining_generations": (
-                            school_sub.generations_pool - school_sub.generations_used
-                        ),
-                    }
-
             # ----------------------------------------------
             # Plan pagado activo
             # ----------------------------------------------
@@ -380,32 +346,28 @@ class Entitlements:
 
     @staticmethod
     def record_generation(user_id):
+
         db = SessionLocal()
+
         try:
-            user = db.query(User).filter(User.id == str(user_id)).first()
-            if user and user.school_id:
-                from models.school_subscription import SchoolSubscription
-                school_sub = db.query(SchoolSubscription).filter(
-                    SchoolSubscription.school_id == user.school_id,
-                ).first()
-                if school_sub:
-                    school_sub.generations_used = (school_sub.generations_used or 0) + 1
-                    db.commit()
-                    return
 
             sub = db.query(UserSubscription).filter(
                 UserSubscription.user_id == str(user_id)
             ).first()
+
             if sub is not None and sub.status == "trial":
                 sub.generations_used = (sub.generations_used or 0) + 1
                 db.commit()
+
         except Exception:
             db.rollback()
-            logger.exception("No se pudo registrar generacion de %s", user_id)
+            logger.exception(
+                "No se pudo registrar generación de %s", user_id
+            )
+
         finally:
             db.close()
-    
-    
+
     # =====================================================
     # Estado para la página "Mi Plan"
     # =====================================================
