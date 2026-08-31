@@ -49,6 +49,15 @@ curriculum_api = Blueprint(
 
 curriculum = CurriculumService()
 
+_SUBJECT_NAME_MAP = {
+    "tecnol": "Tecnología",
+    "orient": "Orientación",
+    "efi": "Educación Física y Salud",
+}
+
+def _normalize_subject_names(subjects):
+    return [_SUBJECT_NAME_MAP.get(s, s) for s in subjects]
+
 
 # ==========================================================
 # RESPUESTA ERROR
@@ -181,6 +190,7 @@ def subjects(course):
             }), 404
 
         subjects = curriculum.get_subjects(course)
+        subjects = _normalize_subject_names(subjects)
 
         return jsonify({
 
