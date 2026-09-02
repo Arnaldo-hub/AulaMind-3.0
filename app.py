@@ -118,8 +118,6 @@ app.register_blueprint(pie)  # ← NUEVO
 app.register_blueprint(billing)  # ← NUEVO v3.1
 app.register_blueprint(legal)  # ← NUEVO v3.1.4
 app.register_blueprint(payments)  # ← NUEVO v3.2 Mercado Pago
-app.register_blueprint(pie)  # ← NUEVO
-app.register_blueprint(billing)  # ← NUEVO v3.1
 app.register_blueprint(fonoaudiologia)  # ← NUEVO v3.4 Fonoaudiología
 
 # El webhook de Mercado Pago es un POST server-to-server:
