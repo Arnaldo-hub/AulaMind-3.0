@@ -706,8 +706,8 @@ if (document.readyState === "loading") {
                 );
             }
 
-            currentSubjects =
-                sortAlphabetically(
+            currentCourses =
+                sortCourses(
                     json.subjects || []
                 );
 
