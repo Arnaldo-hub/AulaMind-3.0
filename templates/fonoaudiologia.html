@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonoaudiología Escolar | AulaMind Enterprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/generation-ui.css', v=config.APP_VERSION) }}">
+
+    <style>
+        .fono-section { padding: 2rem; max-width: 1100px; }
+        .fono-card {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+        .fono-card h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.375rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.625rem 0.875rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 0.9375rem;
+            background: #fff;
+            transition: border-color 0.15s, box-shadow 0.15s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-success { background: #059669; }
+        .btn-success:hover { background: #047857; }
+        .btn-info { background: #0891b2; }
+        .btn-info:hover { background: #0e7490; }
+        .toolbar {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .toolbar button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #d1d5db;
+            background: #fff;
+            color: #374151;
+            transition: all 0.15s;
+        }
+        .toolbar button:hover { background: #f3f4f6; }
+        .result-box {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            font-family: 'Segoe UI', monospace;
+            white-space: pre-wrap;
+            line-height: 1.6;
+            max-height: 600px;
+            overflow-y: auto;
+            font-size: 0.9375rem;
+        }
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+        .history-table th {
+            text-align: left;
+            padding: 0.75rem;
+            color: #6b7280;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e7eb;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+        .history-table td {
+            padding: 0.875rem 0.75rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .history-table tr:hover td { background: #f9fafb; }
+        .btn-action {
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid #d1d5db;
+            background: #fff;
+            margin-right: 0.25rem;
+            transition: all 0.15s;
+        }
+        .btn-action:hover { background: #f3f4f6; }
+        .btn-action.delete { color: #dc2626; border-color: #fecaca; }
+        .btn-action.delete:hover { background: #fef2f2; }
+        .loader-overlay {
+            position: fixed; inset: 0; background: rgba(255,255,255,0.85);
+            display: none; align-items: center; justify-content: center;
+            z-index: 9999; flex-direction: column; gap: 1rem;
+        }
+        .loader-overlay.active { display: flex; }
+        .spinner {
+            width: 48px; height: 48px;
+            border: 4px solid #e5e7eb;
+            border-top-color: #2563eb;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .toast {
+            position: fixed; bottom: 2rem; right: 2rem;
+            padding: 1rem 1.5rem; border-radius: 0.75rem;
+            font-weight: 500; font-size: 0.9375rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            transform: translateY(120%); opacity: 0;
+            transition: all 0.3s ease; z-index: 10000;
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast.success { background: #10b981; color: #fff; }
+        .toast.error { background: #ef4444; color: #fff; }
+        .empty-state { text-align: center; padding: 2rem; color: #9ca3af; }
+        .badge-type {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-informe { background: #dbeafe; color: #1e40af; }
+        .badge-plan { background: #d1fae5; color: #065f46; }
+        .badge-consejos { background: #cffafe; color: #0e7490; }
+        .tab-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        .tab-nav button {
+            padding: 0.75rem 1.25rem;
+            border: none;
+            background: none;
+            font-weight: 600;
+            color: #6b7280;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+        }
+        .tab-nav button.active {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
+            <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
+        </div>
+        {% set active_menu = 'fonoaudiologia' %}
+        {% include 'partials/sidebar_menu.html' %}
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <strong>{{ session.get('user_name','Profesor') }}</strong>
+                    <small>{{ 'Administrador' if session.get('role') == 'admin' else 'Docente' }}</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>Fonoaudiología Escolar</h1>
+                <p>Informes, planes de intervención y consejos para equipos PIE.</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-button"><i class="fa-solid fa-bell"></i></button>
+                <button class="icon-button"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </header>
+
+        <section class="fono-section">
+
+            <!-- Navegación por tabs -->
+            <div class="tab-nav">
+                <button class="active" onclick="showTab('informe')"><i class="fa-solid fa-file-medical"></i> Informe</button>
+                <button onclick="showTab('plan')"><i class="fa-solid fa-clipboard-list"></i> Plan de Intervención</button>
+                <button onclick="showTab('consejos')"><i class="fa-solid fa-lightbulb"></i> Consejos Docente</button>
+                <button onclick="showTab('historial')"><i class="fa-solid fa-clock-rotate-left"></i> Historial</button>
+            </div>
+
+            <!-- TAB: Informe Fonoaudiológico -->
+            <div id="tab-informe" class="tab-panel active">
+                <div class="fono-card">
+                    <h2><i class="fa-solid fa-file-medical"></i> Nuevo Informe Fonoaudiológico Escolar</h2>
+                    <form id="formInforme">
+                        <input type="hidden" id="csrf_token" value="{{ csrf_token() }}">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nombre estudiante <span style="color:#ef4444">*</span></label>
+                                <input name="nombre" placeholder="Ej: Martina Sánchez" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Curso <span style="color:#ef4444">*</span></label>
+                                <input name="curso" placeholder="Ej: 2° Básico B" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Edad</label>
+                                <input name="edad" placeholder="Ej: 7 años 3 meses">
+                            </div>
+                            <div class="form-group">
+                                <label>Evaluador <span style="color:#ef4444">*</span></label>
+                                <input name="evaluador" placeholder="Ej: Fono. Carla Ruiz" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha evaluación</label>
+                                <input name="fecha" type="date">
+                            </div>
+                            <div class="form-group">
+                                <label>Colegio</label>
+                                <input name="colegio" placeholder="Ej: Escuela Los Alerces">
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>Motivo derivación <span style="color:#ef4444">*</span></label>
+                                <input name="motivo" placeholder="Ej: Dificultades en expresión oral, observadas por la docente" required>
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>Antecedentes relevantes</label>
+                                <textarea name="antecedentes" placeholder="Embarazo, parto, desarrollo psicomotor, hitos del lenguaje, antecedentes familiares..."></textarea>
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>Instrumentos aplicados</label>
+                                <textarea name="instrumentos" placeholder="Ej: EVALÚA 0, TEVI-R, protocolo de observación en aula..."></textarea>
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>Hallazgos observados</label>
+                                <textarea name="hallazgos" placeholder="Describa lo observado en cada área: receptivo, expresivo, pragmático, articulación..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-wand-magic-sparkles"></i> Generar Informe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- TAB: Plan de Intervención -->
+            <div id="tab-plan" class="tab-panel">
+                <div class="fono-card">
+                    <h2><i class="fa-solid fa-clipboard-list"></i> Nuevo Plan de Intervención Comunicacional</h2>
+                    <form id="formPlan">
+                        <input type="hidden" id="csrf_token_plan" value="{{ csrf_token() }}">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nombre estudiante <span style="color:#ef4444">*</span></label>
+                                <input name="nombre" placeholder="Ej: Martina Sánchez" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Curso <span style="color:#ef4444">*</span></label>
+                                <input name="curso" placeholder="Ej: 2° Básico B" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Diagnóstico <span style="color:#ef4444">*</span></label>
+                                <input name="diagnostico" placeholder="Ej: TEL expresivo mixto" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Nivel adecuación PIE</label>
+                                <select name="nivel_pie">
+                                    <option value="Significativa">Significativa</option>
+                                    <option value="Acceso">Acceso</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>Áreas prioritarias <span style="color:#ef4444">*</span></label>
+                                <input name="areas" placeholder="Ej: Lenguaje expresivo, vocabulario, estructuración de oraciones" required>
+                            </div>
+                            <div class="form-group" style="grid-column: 1 / -1;">
+                                <label>Duración / observaciones</label>
+                                <textarea name="duracion" placeholder="Ej: Semestre, 2 sesiones semanales de 30 min"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-success"><i class="fa-solid fa-wand-magic-sparkles"></i> Generar Plan</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- TAB: Consejos Rápidos -->
+            <div id="tab-consejos" class="tab-panel">
+                <div class="fono-card">
+                    <h2><i class="fa-solid fa-lightbulb"></i> Consejos Rápidos para el Docente</h2>
+                    <form id="formConsejos">
+                        <input type="hidden" id="csrf_token_consejos" value="{{ csrf_token() }}">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nombre estudiante <span style="color:#ef4444">*</span></label>
+                                <input name="nombre" placeholder="Ej: Martina Sánchez" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Curso <span style="color:#ef4444">*</span></label>
+                                <input name="curso" placeholder="Ej: 2° Básico B" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Diagnóstico <span style="color:#ef4444">*</span></label>
+                                <input name="diagnostico" placeholder="Ej: TEL, TDAH, TEA..." required>
+                            </div>
+                            <div class="form-group">
+                                <label>Área problemática</label>
+                                <select name="area">
+                                    <option value="Lenguaje expresivo">Lenguaje expresivo</option>
+                                    <option value="Lenguaje receptivo">Lenguaje receptivo</option>
+                                    <option value="Pragmático-social">Pragmático-social</option>
+                                    <option value="Articulación">Articulación</option>
+                                    <option value="Fluidez">Fluidez</option>
+                                    <option value="Lectoescritura">Lectoescritura</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-info"><i class="fa-solid fa-wand-magic-sparkles"></i> Generar 5 Consejos</button>
+                    </form>
+                    <div id="consejosResult" style="margin-top:1.5rem;"></div>
+                </div>
+            </div>
+
+            <!-- TAB: Historial -->
+            <div id="tab-historial" class="tab-panel">
+                <div class="fono-card">
+                    <h2><i class="fa-solid fa-clock-rotate-left"></i> Historial de Documentos</h2>
+                    <div id="historyContainer">
+                        <p class="empty-state">Cargando historial...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resultado de generación (Informe/Plan) -->
+            <div id="resultContainer" style="display:none;">
+                <div class="fono-card">
+                    <div class="toolbar">
+                        <button onclick="copyResult()"><i class="fa-regular fa-copy"></i> Copiar</button>
+                        <button onclick="exportWord()"><i class="fa-solid fa-file-word"></i> Word</button>
+                        <button onclick="exportPDF()"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                        <button onclick="nuevaGeneracion()"><i class="fa-solid fa-plus"></i> Nuevo</button>
+                    </div>
+                    <div id="resultContent" class="result-box"></div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<!-- Loader -->
+<div class="loader-overlay" id="loader">
+    <div class="spinner"></div>
+    <p>Generando documento con IA...</p>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// --- Tabs ---
+function showTab(tabId) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    event.target.classList.add('active');
+    if (tabId === 'historial') loadHistory();
+}
+
+// --- Loader & Toast ---
+function showLoader() { document.getElementById('loader').classList.add('active'); }
+function hideLoader() { document.getElementById('loader').classList.remove('active'); }
+function showToast(msg, type='success') {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast ' + type + ' show';
+    setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+let currentDocumentId = null;
+
+// --- Form Informe ---
+document.getElementById('formInforme').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    showLoader();
+    const data = Object.fromEntries(new FormData(e.target));
+    try {
+        const res = await fetch('/fonoaudiologia/informe', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'X-CSRFToken': data.csrf_token},
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        hideLoader();
+        if (result.success) {
+            currentDocumentId = result.document_id;
+            document.getElementById('resultContent').textContent = result.content;
+            document.getElementById('resultContainer').style.display = 'block';
+            showToast('Informe generado correctamente');
+            window.scrollTo({top: document.getElementById('resultContainer').offsetTop - 20, behavior: 'smooth'});
+        } else {
+            showToast(result.error || 'Error al generar', 'error');
+        }
+    } catch (err) {
+        hideLoader();
+        showToast('Error de conexión', 'error');
+    }
+});
+
+// --- Form Plan ---
+document.getElementById('formPlan').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    showLoader();
+    const data = Object.fromEntries(new FormData(e.target));
+    try {
+        const res = await fetch('/fonoaudiologia/plan', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'X-CSRFToken': data.csrf_token},
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        hideLoader();
+        if (result.success) {
+            currentDocumentId = result.document_id;
+            document.getElementById('resultContent').textContent = result.content;
+            document.getElementById('resultContainer').style.display = 'block';
+            showToast('Plan de intervención generado correctamente');
+            window.scrollTo({top: document.getElementById('resultContainer').offsetTop - 20, behavior: 'smooth'});
+        } else {
+            showToast(result.error || 'Error al generar', 'error');
+        }
+    } catch (err) {
+        hideLoader();
+        showToast('Error de conexión', 'error');
+    }
+});
+
+// --- Form Consejos (síncrono, resultado inline) ---
+document.getElementById('formConsejos').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generando...';
+    btn.disabled = true;
+    const data = Object.fromEntries(new FormData(e.target));
+    try {
+        const res = await fetch('/fonoaudiologia/consejos', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', 'X-CSRFToken': data.csrf_token},
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (result.success) {
+            document.getElementById('consejosResult').innerHTML = '<div class="result-box">' + escapeHtml(result.content) + '</div>';
+            showToast('Consejos generados');
+        } else {
+            showToast(result.error || 'Error', 'error');
+        }
+    } catch (err) {
+        showToast('Error de conexión', 'error');
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+});
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// --- Historial ---
+async function loadHistory() {
+    const container = document.getElementById('historyContainer');
+    container.innerHTML = '<p class="empty-state">Cargando...</p>';
+    try {
+        const res = await fetch('/fonoaudiologia/history');
+        const data = await res.json();
+        if (!data.success || !data.items.length) {
+            container.innerHTML = '<p class="empty-state">Sin documentos aún. Genera tu primer informe o plan.</p>';
+            return;
+        }
+        let html = '<table class="history-table"><thead><tr><th>Tipo</th><th>Título</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody>';
+        for (const item of data.items) {
+            const tipoClass = item.document_type === 'fonoaudiologia_informe' ? 'badge-informe' : (item.document_type === 'fonoaudiologia_plan' ? 'badge-plan' : 'badge-consejos');
+            const tipoLabel = item.document_type === 'fonoaudiologia_informe' ? 'Informe' : (item.document_type === 'fonoaudiologia_plan' ? 'Plan' : 'Consejos');
+            html += `<tr>
+                <td><span class="badge-type ${tipoClass}">${tipoLabel}</span></td>
+                <td>${escapeHtml(item.title || 'Sin título')}</td>
+                <td>${new Date(item.created_at).toLocaleDateString('es-CL')}</td>
+                <td>
+                    <button class="btn-action" onclick="verDocumento('${item.id}')"><i class="fa-solid fa-eye"></i></button>
+                    <button class="btn-action" onclick="eliminarDocumento('${item.id}')"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            </tr>`;
+        }
+        html += '</tbody></table>';
+        container.innerHTML = html;
+    } catch (err) {
+        container.innerHTML = '<p class="empty-state">Error cargando historial</p>';
+    }
+}
+
+async function verDocumento(id) {
+    try {
+        const res = await fetch('/fonoaudiologia/' + id);
+        const data = await res.json();
+        if (data.success) {
+            currentDocumentId = id;
+            document.getElementById('resultContent').textContent = data.document.content;
+            document.getElementById('resultContainer').style.display = 'block';
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    } catch (err) {
+        showToast('Error al cargar documento', 'error');
+    }
+}
+
+async function eliminarDocumento(id) {
+    if (!confirm('¿Eliminar este documento?')) return;
+    try {
+        const res = await fetch('/fonoaudiologia/' + id, {method: 'DELETE'});
+        const data = await res.json();
+        if (data.success) {
+            showToast('Documento eliminado');
+            loadHistory();
+        }
+    } catch (err) {
+        showToast('Error al eliminar', 'error');
+    }
+}
+
+// --- Utilidades ---
+function copyResult() {
+    const text = document.getElementById('resultContent').textContent;
+    navigator.clipboard.writeText(text).then(() => showToast('Copiado al portapapeles'));
+}
+
+function exportWord() {
+    if (!currentDocumentId) return;
+    window.open('/export/word/' + currentDocumentId, '_blank');
+}
+
+function exportPDF() {
+    if (!currentDocumentId) return;
+    window.open('/export/pdf/' + currentDocumentId, '_blank');
+}
+
+function nuevaGeneracion() {
+    document.getElementById('resultContainer').style.display = 'none';
+    currentDocumentId = null;
+    document.getElementById('formInforme').reset();
+    document.getElementById('formPlan').reset();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>

@@ -23,6 +23,7 @@ from routes.export import export
 from routes.guides import guides  # ← NUEVO
 from routes.rubrics import rubrics  # ← NUEVO
 from routes.pie import pie  # ← NUEVO
+from routes.fonoaudiologia import fonoaudiologia
 
 # ==========================================================
 # Base de datos

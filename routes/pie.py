@@ -111,3 +111,51 @@ def search():
     document_type = request.args.get("type")
     items = persistence_service.list_documents(session["user_id"], document_type)
     return jsonify(success=True, items=items)
+
+@pie.route("/from-fonoaudiologia/<document_id>", methods=["POST"])
+@subscription_required
+def create_pie_from_fonoaudiologia(document_id):
+    """
+    Toma un informe fonoaudiológico existente y genera automáticamente
+    una adecuación curricular PIE adaptada a las necesidades comunicacionales.
+    """
+    if "user_id" not in session:
+        return jsonify(success=False, error="No autenticado"), 401
+
+    # Recuperar el informe fonoaudiológico
+    document = persistence_service.get_document(document_id, session["user_id"])
+    if document is None:
+        return jsonify(success=False, error="Documento no encontrado"), 404
+
+    if document.document_type not in ("fonoaudiologia_informe", "fonoaudiologia_plan"):
+        return jsonify(success=False, error="El documento no es un informe fonoaudiológico"), 400
+
+    # Construir payload cruzado con contexto fonoaudiológico
+    payload_cross = {
+        "asignatura": document.subject or "Lenguaje y Comunicación",
+        "curso": document.course or "No especificado",
+        "unidad": "Adecuación derivada de informe fonoaudiológico",
+        "objetivo": "Adaptar currículum a necesidades comunicacionales identificadas",
+        "tema": "Intervención PIE con base fonoaudiológica",
+        "nee": "Necesidades Educativas Especiales asociadas a trastorno del lenguaje",
+        "nivel_adecuacion": "Significativa",
+        "diagnostico": f"Derivado de informe fonoaudiológico: {document.title}",
+        "fortalezas": "Ver informe fonoaudiológico adjunto en sistema",
+        "dificultades": "Ver informe fonoaudiológico adjunto en sistema",
+        "_contexto_fonoaudiologico": document.content[:4000],
+    }
+
+    # Generar PIE (síncrono por ahora, misma lógica que generate actual)
+    result = pie_service.generate(payload_cross)
+    if result.get("success"):
+        Entitlements.record_generation(session["user_id"])
+        document_id_new = persistence_service.save_generated_document(
+            user_id=session["user_id"],
+            school_id=session.get("school_id"),
+            document_type="pie",
+            payload=payload_cross,
+            result=result,
+        )
+        result["document_id"] = document_id_new
+
+    return jsonify(result)

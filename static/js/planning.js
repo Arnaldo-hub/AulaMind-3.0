@@ -811,21 +811,14 @@ if (document.readyState === "loading") {
                 url
             );
 
-
             const json =
                 await fetchJSON(url);
 
+            // CORRECCION NOMBRES ASIGNATURAS
+            const nameMap = {"tecnol":"Tecnología","orient":"Orientación","efi":"Educación Física y Salud"};
+            if(json.subjects){json.subjects=json.subjects.map(s=>nameMap[s]||s);}
 
             if (!json.success) {
-
-                throw new Error(
-                    json.message ||
-                    json.error ||
-                    "No existen asignaturas para este curso."
-                );
-
-            }
-
 
             currentSubjects =
                 sortAlphabetically(
