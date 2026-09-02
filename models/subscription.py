@@ -237,6 +237,11 @@ class Subscription(Base):
 
     )
 
+    school_subscriptions = relationship(
+        "SchoolSubscription",
+        back_populates="plan"
+    )
+
     # =====================================================
     # Representación
     # =====================================================

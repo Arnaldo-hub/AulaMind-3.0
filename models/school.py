@@ -6,13 +6,13 @@ models/school.py
 
 Modelo School
 
-Compatible con:
+Compatible with:
 
 ✓ SQLite
 ✓ PostgreSQL
 ✓ SQLAlchemy 2.x
 
-Autor:
+Author:
 Biotecno Chile
 ===========================================================
 """
@@ -227,11 +227,13 @@ class School(Base):
         cascade="all, delete-orphan"
 
     )
-        subscription = relationship(
+
+    subscription = relationship(
         "SchoolSubscription",
         back_populates="school",
         uselist=False
     )
+
     # =====================================================
     # Representación
     # =====================================================
