@@ -97,7 +97,6 @@ app.register_blueprint(
     dashboard
 )
 
-app.register_blueprint(
     auth,
     url_prefix="/auth"
 )
