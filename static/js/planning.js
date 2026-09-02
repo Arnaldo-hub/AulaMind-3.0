@@ -708,7 +708,8 @@ if (document.readyState === "loading") {
 
             currentSubjects =
                 sortAlphabetically(
-                    json.subjects || []);
+                    json.subjects || []
+                );
 
 
             clearSelect(
