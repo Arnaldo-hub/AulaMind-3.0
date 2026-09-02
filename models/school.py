@@ -227,7 +227,11 @@ class School(Base):
         cascade="all, delete-orphan"
 
     )
-
+        subscription = relationship(
+        "SchoolSubscription",
+        back_populates="school",
+        uselist=False
+    )
     # =====================================================
     # Representación
     # =====================================================
