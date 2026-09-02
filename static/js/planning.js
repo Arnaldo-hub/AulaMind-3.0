@@ -699,18 +699,16 @@ if (document.readyState === "loading") {
 
 
             if (!json.success) {
-
                 throw new Error(
                     json.message ||
                     json.error ||
-                    "No fue posible cargar los cursos."
+                    "No fue posible cargar las asignaturas."
                 );
-
             }
 
-
-            currentCourses =
-                sortCourses(json.courses || []);
+            currentSubjects =
+                sortAlphabetically(
+                    json.subjects || []);
 
 
             clearSelect(
