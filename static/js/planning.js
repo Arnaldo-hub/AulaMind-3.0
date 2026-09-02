@@ -702,13 +702,13 @@ if (document.readyState === "loading") {
                 throw new Error(
                     json.message ||
                     json.error ||
-                    "No fue posible cargar las asignaturas."
+                    "No fue posible cargar los cursos."
                 );
             }
 
             currentCourses =
                 sortCourses(
-                    json.subjects || []
+                    json.courses || []
                 );
 
 
@@ -818,6 +818,12 @@ if (document.readyState === "loading") {
             if(json.subjects){json.subjects=json.subjects.map(s=>nameMap[s]||s);}
 
             if (!json.success) {
+                throw new Error(
+                    json.message ||
+                    json.error ||
+                    "No fue posible cargar las asignaturas."
+                );
+            }
 
             currentSubjects =
                 sortAlphabetically(
