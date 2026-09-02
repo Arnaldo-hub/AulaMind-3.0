@@ -22,6 +22,7 @@ Valores válidos de active_menu:
     <a href="{{ url_for('guides.index') }}"{% if active_menu == 'guides' %} class="active"{% endif %}><i class="fa-solid fa-book"></i><span>Guías</span></a>
     <a href="{{ url_for('rubrics.index') }}"{% if active_menu == 'rubrics' %} class="active"{% endif %}><i class="fa-solid fa-table-list"></i><span>Rúbricas</span></a>
     <a href="{{ url_for('pie.index') }}"{% if active_menu == 'pie' %} class="active"{% endif %}><i class="fa-solid fa-user-group"></i><span>PIE</span></a>
+    <a href="{{ url_for('fonoaudiologia.index') }}"{% if active_menu == 'fonoaudiologia' %} class="active"{% endif %}><i class="fa-solid fa-ear-listen"></i><span>Fonoaudiología</span></a>
     <a href="{{ url_for('analytics.index') }}"{% if active_menu == 'analytics' %} class="active"{% endif %}><i class="fa-solid fa-chart-line"></i><span>Analítica</span></a>
     <a href="{{ url_for('curriculum.index') }}"{% if active_menu == 'curriculum' %} class="active"{% endif %}><i class="fa-solid fa-book-atlas"></i><span>Currículum</span></a>
     {% if session.get('role') == 'admin' %}
