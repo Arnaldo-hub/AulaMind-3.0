@@ -81,23 +81,50 @@ payments = Blueprint(
 @login_required
 def checkout():
     """
-    v3.2: Redirige al Plan Link de Mercado Pago.
+    v3.2: Crea suscripción en MP vía API y redirige al checkout hosted.
     El usuario paga en MP y luego MP redirige a /payments/return.
+    El webhook /payments/webhook activa el plan automáticamente.
     """
-    # URL de retorno después del pago en MP
-    return_url = url_for(
-        "payments.return_page",
-        _external=True,
-        _scheme="https"
-    )
+    user_id = session.get("user_id")
+    if not user_id:
+        return redirect(url_for("auth.login"))
 
-    # Plan Link de Mercado Pago para AulaMind Pro $9.990/mes
-    plan_link = "https://mpago.la/2QapPYJ"
+    db = SessionLocal()
+    try:
+        user = db.query(User).filter(User.id == str(user_id)).first()
+        if not user or not user.email:
+            logger.error("Checkout MP: usuario %s sin email", user_id)
+            return render_template(
+                "payments_return.html",
+                plan={"status": "error"},
+                error="No encontramos tu correo. Contacta soporte."
+            ), 400
 
-    # Redirigir al Plan Link de MP con URL de retorno
-    redirect_url = f"{plan_link}?back_url={return_url}"
-    
-    return redirect(redirect_url)
+        # Crear suscripción en MercadoPago vía API
+        mp_data = MercadoPagoService.create_subscription(
+            user_email=user.email,
+            user_id=user.id,
+        )
+
+        if not mp_data or not mp_data.get("init_point"):
+            logger.error(
+                "Checkout MP: MP no devolvió init_point para user %s",
+                user_id,
+            )
+            return render_template(
+                "payments_return.html",
+                plan={"status": "error"},
+                error=(
+                    "Mercado Pago no está disponible en este momento. "
+                    "Intenta más tarde o activa tu plan por WhatsApp."
+                ),
+            ), 503
+
+        # Redirigir al checkout hosted de MP
+        return redirect(mp_data["init_point"])
+
+    finally:
+        db.close()
 
 
 # ==========================================================
@@ -124,8 +151,13 @@ def return_page():
 # Webhook: la única fuente de verdad
 # ==========================================================
 
-@payments.route("/webhook", methods=["POST"])
+@payments.route("/webhook", methods=["GET", "POST"])
 def webhook():
+
+    # Mercado Pago envía GET al configurar el webhook (challenge).
+    # Respondemos 200 para que MP acepte la URL.
+    if request.method == "GET":
+        return jsonify({"status": "ok"}), 200
 
     # MP envía JSON (v1: {"type", "data": {"id"}}); el
     # formato legado usa query string (?topic=&id=).

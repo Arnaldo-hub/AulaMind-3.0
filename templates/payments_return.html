@@ -17,6 +17,7 @@
         .status-pill.ok { background: #d1fae5; color: #065f46; }
         .status-pill.wait { background: #fef3c7; color: #92400e; }
         .hint { font-size: 0.875rem; color: #6b7280; line-height: 1.5; }
+        .status-pill.error { background: #fee2e2; color: #991b1b; }
     </style>
 </head>
 <body>
@@ -39,15 +40,26 @@
     <section class="right-panel">
         <div class="login-box">
             <div class="logo">💳</div>
-            <h2>¡Gracias por suscribirte!</h2>
 
-            {% if plan.get('status') == 'active' %}
+            {% if error %}
+                <h2>No pudimos procesar tu pago</h2>
+                <span class="status-pill error">❌ Error en el checkout</span>
+                <p class="hint">{{ error }}</p>
+                <a class="login-btn" style="display:block; text-align:center; text-decoration:none; margin-top:1.25rem;"
+                   href="{{ url_for('billing.status') }}">Volver a Mi Plan</a>
+
+            {% elif plan.get('status') == 'active' %}
+                <h2>¡Gracias por suscribirte!</h2>
                 <span class="status-pill ok">✅ Plan Pro activo</span>
                 <p class="hint">
                     Tu suscripción quedó confirmada por Mercado Pago.
                     Ya puedes generar documentos sin límite práctico.
                 </p>
+                <a class="login-btn" style="display:block; text-align:center; text-decoration:none; margin-top:1.25rem;"
+                   href="{{ url_for('billing.status') }}">Ver Mi Plan</a>
+
             {% else %}
+                <h2>¡Gracias por suscribirte!</h2>
                 <span class="status-pill wait">⏳ Confirmando tu pago…</span>
                 <p class="hint">
                     Mercado Pago está procesando tu suscripción.
@@ -56,10 +68,9 @@
                     instantes. Recibirás además un correo de
                     confirmación.
                 </p>
+                <a class="login-btn" style="display:block; text-align:center; text-decoration:none; margin-top:1.25rem;"
+                   href="{{ url_for('billing.status') }}">Ver Mi Plan</a>
             {% endif %}
-
-            <a class="login-btn" style="display:block; text-align:center; text-decoration:none; margin-top:1.25rem;"
-               href="{{ url_for('billing.status') }}">Ver Mi Plan</a>
 
             <div class="links">
                 <a href="{{ url_for('dashboard.home') }}">Volver al panel principal</a>
