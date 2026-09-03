@@ -54,6 +54,7 @@ from models.user import User
 from services.entitlements import Entitlements
 from services.mercadopago_service import MercadoPagoService
 from services.payment_mailer import PaymentMailer
+from security.authorization import login_required  # ← AGREGAR ESTA LÍNEA
 
 logger = logging.getLogger(__name__)
 
