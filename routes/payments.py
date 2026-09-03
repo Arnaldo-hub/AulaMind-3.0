@@ -98,24 +98,6 @@ def checkout():
     
     return redirect(redirect_url)
 
-    result = MercadoPagoService.create_subscription(
-        user_email=session.get("email", ""),
-        user_id=user_id,
-    )
-
-    init_point = (result or {}).get("init_point")
-
-    if not init_point:
-
-        logger.error(
-            "MP no devolvió init_point para usuario %s",
-            user_id,
-        )
-
-        return redirect(url_for("billing.status"))
-
-    return redirect(init_point)
-
 
 # ==========================================================
 # Back URL: el usuario vuelve desde Mercado Pago
