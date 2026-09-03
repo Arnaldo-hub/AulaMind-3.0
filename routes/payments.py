@@ -76,22 +76,27 @@ payments = Blueprint(
 # Checkout: crear suscripción y enviar al usuario a MP
 # ==========================================================
 
-@payments.route("/checkout", methods=["GET"])
+@payments.route("/checkout")
+@login_required
 def checkout():
+    """
+    v3.2: Redirige al Plan Link de Mercado Pago.
+    El usuario paga en MP y luego MP redirige a /payments/return.
+    """
+    # URL de retorno después del pago en MP
+    return_url = url_for(
+        "payments.return_page",
+        _external=True,
+        _scheme="https"
+    )
 
-    # El guardia global ya exige sesión (doble chequeo)
-    user_id = session.get("user_id")
+    # Plan Link de Mercado Pago para AulaMind Pro $9.990/mes
+    plan_link = "https://mpago.la/2QapPYJ"
 
-    if not user_id:
-        return redirect(url_for("auth.login"))
-
-    if not MercadoPagoService.is_configured():
-
-        logger.error(
-            "Checkout invocado sin MERCADOPAGO_ACCESS_TOKEN"
-        )
-
-        return redirect(url_for("billing.status"))
+    # Redirigir al Plan Link de MP con URL de retorno
+    redirect_url = f"{plan_link}?back_url={return_url}"
+    
+    return redirect(redirect_url)
 
     result = MercadoPagoService.create_subscription(
         user_email=session.get("email", ""),
