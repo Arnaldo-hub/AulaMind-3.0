@@ -1,336 +1,379 @@
-"""
-==============================================================
-AulaMind Enterprise 3.0
-routes/curriculum_api.py
---------------------------------------------------------------
-API del Motor Curricular — v3.2.1 EMERGENCIA
-nFiltra asignaturas por curso al vuelo, sin depender del
-servicio en memoria (singleton no se reinicia).
-==============================================================
-"""
+from flask import Blueprint, jsonify, request, g, current_app
+from functools import wraps
+from urllib.parse import unquote
+import os
+import json
 
-from flask import Blueprint, jsonify, request, session
+# Importar la fuente de verdad hardcodeada (NO depende del singleton en memoria)
+from routes.curriculum_data import get_subjects_for_course, COURSE_SUBJECTS
+
+# Importar el servicio SOLO para endpoints que realmente lo necesiten
+# (planning, units, etc. — NO para /subjects)
 from services.curriculum_service import CurriculumService
 
+curriculum_bp = Blueprint('curriculum', __name__)
 
-curriculum_api = Blueprint("curriculum_api", __name__, url_prefix="/api/curriculum")
-curriculum = CurriculumService()
+# =============================================================================
+# Helper: autenticación docente
+# =============================================================================
+def require_teacher(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not g.user or g.user.get('role') not in ['teacher', 'admin']:
+            return jsonify({"success": False, "error": "No autenticado"}), 401
+        return f(*args, **kwargs)
+    return decorated
 
+# =============================================================================
+# ENDPOINT CRÍTICO: /subjects/<course>
+# Este endpoint USA EXCLUSIVAMENTE el módulo curriculum_data.py.
+# NO toca CurriculumService. NO lee JSONs de disco. NO tiene caché en memoria.
+# =============================================================================
+@curriculum_bp.route('/subjects/<path:course_name>', methods=['GET'])
+@require_teacher
+def get_subjects(course_name):
+    """
+    Devuelve la lista de asignaturas para un curso específico.
+    Fuente de verdad: diccionario hardcodeado en curriculum_data.py
+    """
+    # Decodificar URL encoding (ej: 1%C2%B0%20B%C3%A1sico -> 1° Básico)
+    course = unquote(course_name).strip()
 
-# ==========================================================
-# MAPEO OFICIAL DE ASIGNATURAS POR CURSO (v3.2.1)
-# Se aplica en CADA request, independiente del singleton.
-# ==========================================================
+    subjects = get_subjects_for_course(course)
 
-OFFICIAL_SUBJECTS = {
-    "1° Básico": [
-        "Lenguaje y Comunicación", "Matemáticas",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Ciencias Naturales",
-    ],
-    "2° Básico": [
-        "Lenguaje y Comunicación", "Matemáticas",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Ciencias Naturales",
-    ],
-    "3° Básico": [
-        "Lenguaje y Comunicación", "Matemáticas",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Ciencias Naturales",
-    ],
-    "4° Básico": [
-        "Lenguaje y Comunicación", "Matemáticas",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Ciencias Naturales",
-    ],
-    "5° Básico": [
-        "Lenguaje y comunicación", "Matemáticas",
-        "Historia, Geografía y Cs.Sociales", "Artes visuales",
-        "Música", "Ed. física", "Orientación", "Tecnología",
-        "Religión", "Cs. naturales", "Inglés",
-        "Taller de innovación", "Taller",
-    ],
-    "6° Básico": [
-        "Lenguaje y comunicación", "Matemáticas",
-        "Historia, Geografía y Cs.Sociales", "Artes visuales",
-        "Música", "Ed. física", "Orientación", "Tecnología",
-        "Religión", "Cs. naturales", "Inglés",
-        "Taller de innovación", "Taller",
-    ],
-    "7° Básico": [
-        "Lengua y Literatura", "Matemática",
-        "Historia, Geografía y Ciencias Sociales",
-        "Artes Visuales y Música", "Educación Física y Salud",
-        "Orientación", "Tecnología", "Religión", "Inglés",
-        "Ciencias Naturales", "Taller de Innovación", "Talleres",
-    ],
-    "8° Básico": [
-        "Lengua y Literatura", "Matemática",
-        "Historia, Geografía y Ciencias Sociales",
-        "Artes Visuales y Música", "Educación Física y Salud",
-        "Orientación", "Tecnología", "Religión", "Inglés",
-        "Ciencias Naturales", "Taller de Innovación", "Talleres",
-    ],
-    "1° Medio": [
-        "Lengua y Literatura", "Matemática",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Inglés", "Ciencias Naturales",
-    ],
-    "2° Medio": [
-        "Lengua y Literatura", "Matemática",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Inglés", "Ciencias Naturales",
-    ],
-    "3° Medio": [
-        "Lengua y Literatura", "Matemática",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Inglés",
-        "Física", "Química", "Biología",
-    ],
-    "4° Medio": [
-        "Lengua y Literatura", "Matemática",
-        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
-        "Música", "Educación Física y Salud", "Orientación",
-        "Tecnología", "Religión", "Inglés",
-        "Física", "Química", "Biología",
-    ],
-}
+    if subjects is None:
+        return jsonify({
+            "success": False,
+            "error": f"Curso '{course}' no encontrado",
+            "available_courses": list(COURSE_SUBJECTS.keys())
+        }), 404
 
-
-def unauthorized():
-    return jsonify({"success": False, "message": "Debe iniciar sesión."}), 401
-
-
-@curriculum_api.route("/health", methods=["GET"])
-def health():
     return jsonify({
-        "success": True,
-        "service": "Curriculum API",
-        "version": "3.2.1",
-        "status": "running",
-        "curriculum": curriculum.health()
+        "course": course,
+        "subjects": subjects,
+        "total": len(subjects),
+        "success": True
     })
 
 
-@curriculum_api.route("/courses", methods=["GET"])
-def courses():
-    if "user_id" not in session:
-        return unauthorized()
+# =============================================================================
+# ENDPOINT: /courses
+# Devuelve todos los cursos disponibles.
+# =============================================================================
+@curriculum_bp.route('/courses', methods=['GET'])
+@require_teacher
+def get_courses():
+    """Devuelve la lista de cursos del currículum chileno."""
+    courses = list(COURSE_SUBJECTS.keys())
+    return jsonify({
+        "success": True,
+        "courses": courses,
+        "total": len(courses)
+    })
+
+
+# =============================================================================
+# ENDPOINT: /planning/generate
+# Genera una planificación usando el servicio (sí necesita el singleton).
+# =============================================================================
+@curriculum_bp.route('/planning/generate', methods=['POST'])
+@require_teacher
+def generate_planning():
+    """Genera una planificación pedagógica con IA."""
+    data = request.get_json() or {}
+
+    course = data.get('course')
+    subject = data.get('subject')
+    unit = data.get('unit')
+    learning_objective = data.get('learning_objective')
+    duration_hours = data.get('duration_hours', 2)
+    methodology = data.get('methodology', 'clase tradicional')
+    resources = data.get('resources', [])
+    context = data.get('context', '')
+
+    if not all([course, subject, unit, learning_objective]):
+        return jsonify({
+            "success": False,
+            "error": "Faltan campos obligatorios: course, subject, unit, learning_objective"
+        }), 400
+
     try:
-        data = curriculum.get_courses()
-        return jsonify({"success": True, "total": len(data), "courses": data})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
+        service = CurriculumService()
+        result = service.generate_planning(
+            course=course,
+            subject=subject,
+            unit=unit,
+            learning_objective=learning_objective,
+            duration_hours=duration_hours,
+            methodology=methodology,
+            resources=resources,
+            context=context
+        )
+        return jsonify({
+            "success": True,
+            "planning": result
+        })
+    except Exception as e:
+        current_app.logger.error(f"Error generando planificación: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 
-@curriculum_api.route("/subjects/<path:course>", methods=["GET"])
-def subjects(course):
-    if "user_id" not in session:
-        return unauthorized()
+# =============================================================================
+# ENDPOINT: /reload  (POST)
+# Fuerza la recarga del CurriculumService desde los JSONs.
+# Útil si se actualizan los archivos del Mineduc.
+# =============================================================================
+@curriculum_bp.route('/reload', methods=['POST'])
+@require_teacher
+def reload_curriculum():
+    """Fuerza la recarga del servicio de currículum desde los JSONs en disco."""
     try:
-        course = course.strip()
-        if not curriculum.exists_course(course):
-            return jsonify({"success": False, "message": "Curso no encontrado."}), 404
+        service = CurriculumService()
+        # El método correcto es reload(), no refresh()
+        service.reload()
+        return jsonify({
+            "success": True,
+            "message": "Curriculum recargado correctamente"
+        })
+    except Exception as e:
+        current_app.logger.error(f"Error recargando curriculum: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
-        # OBTENER asignaturas del servicio (pueden estar mal)
-        raw_subjects = curriculum.get_subjects(course)
 
-        # FILTRAR con el mapeo oficial (v3.2.1 emergencia)
-        if course in OFFICIAL_SUBJECTS:
-            official = OFFICIAL_SUBJECTS[course]
-            # Solo devolver las que están en la lista oficial
-            filtered = [s for s in raw_subjects if s in official]
-            # Si faltan algunas oficiales, agregarlas
-            for off in official:
-                if off not in filtered:
-                    filtered.append(off)
-            # Ordenar según la lista oficial
-            order = {name: idx for idx, name in enumerate(official)}
-            filtered.sort(key=lambda x: order.get(x, 999))
-            subjects = filtered
-        else:
-            subjects = raw_subjects
+# =============================================================================
+# ENDPOINT: /units/<course>/<subject>
+# Devuelve las unidades de una asignatura para un curso.
+# =============================================================================
+@curriculum_bp.route('/units/<path:course_name>/<path:subject_name>', methods=['GET'])
+@require_teacher
+def get_units(course_name, subject_name):
+    """Devuelve las unidades de una asignatura para un curso específico."""
+    course = unquote(course_name).strip()
+    subject = unquote(subject_name).strip()
+
+    try:
+        service = CurriculumService()
+        units = service.get_units(course=course, subject=subject)
+
+        if units is None:
+            return jsonify({
+                "success": False,
+                "error": f"No se encontraron unidades para {subject} en {course}"
+            }), 404
 
         return jsonify({
             "success": True,
             "course": course,
-            "total": len(subjects),
-            "subjects": subjects
+            "subject": subject,
+            "units": units
         })
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
-
-
-@curriculum_api.route("/units/<path:course>/<path:subject>", methods=["GET"])
-def units(course, subject):
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        course = course.strip()
-        subject = subject.strip()
-        if not curriculum.exists_course(course):
-            return jsonify({"success": False, "message": "Curso no encontrado."}), 404
-        if not curriculum.exists_subject(course, subject):
-            return jsonify({"success": False, "message": "Asignatura no encontrada."}), 404
-        units = curriculum.get_units(course, subject)
+    except Exception as e:
+        current_app.logger.error(f"Error obteniendo unidades: {e}")
         return jsonify({
-            "success": True, "course": course, "subject": subject,
-            "total": len(units), "units": units
-        })
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
+            "success": False,
+            "error": str(e)
+        }), 500
 
 
-@curriculum_api.route("/objectives/<path:course>/<path:subject>/<path:unit>", methods=["GET"])
-def objectives(course, subject, unit):
-    if "user_id" not in session:
-        return unauthorized()
+# =============================================================================
+# ENDPOINT: /objectives/<course>/<subject>/<unit>
+# Devuelve los objetivos de aprendizaje de una unidad.
+# =============================================================================
+@curriculum_bp.route('/objectives/<path:course_name>/<path:subject_name>/<path:unit_name>', methods=['GET'])
+@require_teacher
+def get_objectives(course_name, subject_name, unit_name):
+    """Devuelve los objetivos de aprendizaje de una unidad específica."""
+    course = unquote(course_name).strip()
+    subject = unquote(subject_name).strip()
+    unit = unquote(unit_name).strip()
+
     try:
-        course, subject, unit = course.strip(), subject.strip(), unit.strip()
-        if not curriculum.exists_course(course):
-            return jsonify({"success": False, "message": "Curso no encontrado."}), 404
-        if not curriculum.exists_subject(course, subject):
-            return jsonify({"success": False, "message": "Asignatura no encontrada."}), 404
-        if not curriculum.exists_unit(course, subject, unit):
-            return jsonify({"success": False, "message": "Unidad no encontrada."}), 404
-        objectives = curriculum.get_learning_objectives(course, subject, unit)
-        data = [{"code": oa.get("code", ""), "description": oa.get("description", "")} for oa in objectives]
-        return jsonify({
-            "success": True, "course": course, "subject": subject, "unit": unit,
-            "total": len(data), "objectives": data
-        })
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
-
-
-@curriculum_api.route("/planning-context", methods=["POST"])
-def planning_context():
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        data = request.get_json()
-        context = curriculum.planning_payload(
-            course=data.get("course", "").strip(),
-            subject=data.get("subject", "").strip(),
-            unit=data.get("unit", "").strip(),
-            selected_codes=data.get("learning_objectives", [])
+        service = CurriculumService()
+        objectives = service.get_objectives(
+            course=course,
+            subject=subject,
+            unit=unit
         )
-        return jsonify({"success": True, "data": context})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
 
+        if objectives is None:
+            return jsonify({
+                "success": False,
+                "error": f"No se encontraron objetivos para la unidad '{unit}'"
+            }), 404
 
-@curriculum_api.route("/evaluation-context", methods=["POST"])
-def evaluation_context():
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        data = request.get_json()
-        context = curriculum.evaluation_payload(
-            course=data.get("course", "").strip(),
-            subject=data.get("subject", "").strip(),
-            unit=data.get("unit", "").strip(),
-            selected_codes=data.get("learning_objectives", [])
-        )
-        return jsonify({"success": True, "data": context})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
-
-
-@curriculum_api.route("/prompt", methods=["POST"])
-def prompt():
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        data = request.get_json()
-        prompt = curriculum.build_prompt(
-            course=data.get("course", "").strip(),
-            subject=data.get("subject", "").strip(),
-            unit=data.get("unit", "").strip(),
-            selected_codes=data.get("learning_objectives", [])
-        )
-        return jsonify({"success": True, "prompt": prompt})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
-
-
-@curriculum_api.route("/search", methods=["GET"])
-def search_learning_objectives():
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        text = request.args.get("q", "").strip()
-        if text == "":
-            return jsonify({"success": True, "total": 0, "results": []})
-        results = curriculum.search_learning_objectives(text)
-        return jsonify({"success": True, "query": text, "total": len(results), "results": results})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
-
-
-@curriculum_api.route("/search-units", methods=["GET"])
-def search_units():
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        text = request.args.get("q", "").strip()
-        results = curriculum.search_units(text)
-        return jsonify({"success": True, "query": text, "total": len(results), "results": results})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
-
-
-@curriculum_api.route("/export", methods=["GET"])
-def export_curriculum():
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        data = curriculum.export()
-        return jsonify({"success": True, "data": data})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
-
-
-@curriculum_api.route("/reload", methods=["POST"])
-def reload_curriculum():
-    if "user_id" not in session:
-        return unauthorized()
-    try:
-        curriculum.reload()
         return jsonify({
             "success": True,
-            "message": "Currículum recargado correctamente.",
-            "statistics": curriculum.health()
+            "course": course,
+            "subject": subject,
+            "unit": unit,
+            "objectives": objectives
         })
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
+    except Exception as e:
+        current_app.logger.error(f"Error obteniendo objetivos: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 
-@curriculum_api.route("/info", methods=["GET"])
-def info():
+# =============================================================================
+# ENDPOINT: /indicators/<course>/<subject>/<unit>/<objective>
+# Devuelve los indicadores de evaluación de un objetivo.
+# =============================================================================
+@curriculum_bp.route('/indicators/<path:course_name>/<path:subject_name>/<path:unit_name>/<path:objective_name>', methods=['GET'])
+@require_teacher
+def get_indicators(course_name, subject_name, unit_name, objective_name):
+    """Devuelve los indicadores de evaluación de un objetivo específico."""
+    course = unquote(course_name).strip()
+    subject = unquote(subject_name).strip()
+    unit = unquote(unit_name).strip()
+    objective = unquote(objective_name).strip()
+
     try:
-        return jsonify({"success": True, "service": curriculum.info()})
-    except Exception as ex:
-        return jsonify({"success": False, "message": str(ex)}), 500
+        service = CurriculumService()
+        indicators = service.get_indicators(
+            course=course,
+            subject=subject,
+            unit=unit,
+            objective=objective
+        )
+
+        if indicators is None:
+            return jsonify({
+                "success": False,
+                "error": f"No se encontraron indicadores para el objetivo '{objective}'"
+            }), 404
+
+        return jsonify({
+            "success": True,
+            "course": course,
+            "subject": subject,
+            "unit": unit,
+            "objective": objective,
+            "indicators": indicators
+        })
+    except Exception as e:
+        current_app.logger.error(f"Error obteniendo indicadores: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 
-@curriculum_api.errorhandler(404)
-def not_found(error):
-    return jsonify({"success": False, "message": "Endpoint no encontrado."}), 404
+# =============================================================================
+# ENDPOINT: /evaluate/rubric
+# Genera una rúbrica de evaluación.
+# =============================================================================
+@curriculum_bp.route('/evaluate/rubric', methods=['POST'])
+@require_teacher
+def generate_rubric():
+    """Genera una rúbrica de evaluación para una planificación."""
+    data = request.get_json() or {}
+
+    planning_id = data.get('planning_id')
+    criteria = data.get('criteria', [])
+    levels = data.get('levels', ['Inicial', 'En proceso', 'Satisfactorio', 'Destacado'])
+
+    if not planning_id:
+        return jsonify({
+            "success": False,
+            "error": "Falta planning_id"
+        }), 400
+
+    try:
+        service = CurriculumService()
+        rubric = service.generate_rubric(
+            planning_id=planning_id,
+            criteria=criteria,
+            levels=levels
+        )
+        return jsonify({
+            "success": True,
+            "rubric": rubric
+        })
+    except Exception as e:
+        current_app.logger.error(f"Error generando rúbrica: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 
-@curriculum_api.errorhandler(405)
-def method_not_allowed(error):
-    return jsonify({"success": False, "message": "Método HTTP no permitido."}), 405
+# =============================================================================
+# ENDPOINT: /evaluate/guide
+# Genera una guía de observación.
+# =============================================================================
+@curriculum_bp.route('/evaluate/guide', methods=['POST'])
+@require_teacher
+def generate_guide():
+    """Genera una guía de observación para una planificación."""
+    data = request.get_json() or {}
+
+    planning_id = data.get('planning_id')
+    focus = data.get('focus', 'general')
+
+    if not planning_id:
+        return jsonify({
+            "success": False,
+            "error": "Falta planning_id"
+        }), 400
+
+    try:
+        service = CurriculumService()
+        guide = service.generate_guide(
+            planning_id=planning_id,
+            focus=focus
+        )
+        return jsonify({
+            "success": True,
+            "guide": guide
+        })
+    except Exception as e:
+        current_app.logger.error(f"Error generando guía: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
 
 
-@curriculum_api.errorhandler(Exception)
-def internal_error(error):
-    return jsonify({"success": False, "message": str(error)}), 500
+# =============================================================================
+# ENDPOINT: /evaluate/self-assessment
+# Genera una autoevaluación.
+# =============================================================================
+@curriculum_bp.route('/evaluate/self-assessment', methods=['POST'])
+@require_teacher
+def generate_self_assessment():
+    """Genera una autoevaluación para estudiantes."""
+    data = request.get_json() or {}
+
+    planning_id = data.get('planning_id')
+    format_type = data.get('format', 'cuestionario')
+
+    if not planning_id:
+        return jsonify({
+            "success": False,
+            "error": "Falta planning_id"
+        }), 400
+
+    try:
+        service = CurriculumService()
+        assessment = service.generate_self_assessment(
+            planning_id=planning_id,
+            format_type=format_type
+        )
+        return jsonify({
+            "success": True,
+            "self_assessment": assessment
+        })
+    except Exception as e:
+        current_app.logger.error(f"Error generando autoevaluación: {e}")
+        return jsonify({
+            "success": False,
+            "error": str(e)
+        }), 500
