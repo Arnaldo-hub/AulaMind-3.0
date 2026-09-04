@@ -1,20 +1,4 @@
-{#
-===========================================================
-AulaMind Enterprise 3.0
-partials/sidebar_menu.html
------------------------------------------------------------
-Menú lateral unificado.
-
-Uso:
-    {% set active_menu = 'dashboard' %}
-    {% include 'partials/sidebar_menu.html' %}
-
-Valores válidos de active_menu:
-    dashboard, planning, evaluation, guides, rubrics,
-    pie, analytics, curriculum, admin_users,
-    admin_comercial, plan, profile
-===========================================================
-#}
+{# ... (comentario inicial) ... #}
 <nav class="sidebar-menu">
     <a href="{{ url_for('dashboard.home') }}"{% if active_menu == 'dashboard' %} class="active"{% endif %}><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
     <a href="{{ url_for('planning.index') }}"{% if active_menu == 'planning' %} class="active"{% endif %}><i class="fa-solid fa-calendar-days"></i><span>Planificaciones</span></a>
@@ -26,7 +10,13 @@ Valores válidos de active_menu:
     <a href="{{ url_for('analytics.index') }}"{% if active_menu == 'analytics' %} class="active"{% endif %}><i class="fa-solid fa-chart-line"></i><span>Analítica</span></a>
     <a href="{{ url_for('curriculum.index') }}"{% if active_menu == 'curriculum' %} class="active"{% endif %}><i class="fa-solid fa-book-atlas"></i><span>Currículum</span></a>
     {% if session.get('role') == 'admin' %}
-    <a href="{{ url_for('admin_comercial.comercial_page') }}"{% if active_menu == 'admin_comercial' %} class="active"{% endif %}><i class="fa-solid fa-hand-holding-dollar"></i><span>Comercial</span></a>
+    <a href="{{ url_for('admin_comercial.comercial_page') }}"{% if active_menu == 'admin_comercial' %} class="active"{% endif %}>
+        <i class="fa-solid fa-hand-holding-dollar"></i>
+        <span>Comercial</span>
+        {% if pending_activations_count > 0 %}
+        <span class="nav-badge">{{ pending_activations_count }}</span>
+        {% endif %}
+    </a>
     <a href="{{ url_for('admin_security.users_page') }}"{% if active_menu == 'admin_users' %} class="active"{% endif %}><i class="fa-solid fa-users-gear"></i><span>Usuarios</span></a>
     {% endif %}
     <a href="{{ url_for('billing.status') }}"{% if active_menu == 'plan' %} class="active"{% endif %}><i class="fa-solid fa-gem"></i><span>Mi Plan</span></a>

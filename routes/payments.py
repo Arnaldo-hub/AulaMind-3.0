@@ -4,33 +4,7 @@ AulaMind Enterprise 3.0
 routes/payments.py
 -----------------------------------------------------------
 
-Pagos con Mercado Pago — Suscripciones (v3.2)
-
-Flujo:
-
-1. GET  /payments/checkout  → crea la suscripción en MP
-   y redirige al checkout hosted (init_point). El usuario
-   paga con tarjeta en Mercado Pago.
-2. GET  /payments/return    → back_url: página "estamos
-   confirmando" mientras llega el webhook.
-3. POST /payments/webhook   → notificaciones de MP. Es la
-   ÚNICA vía que activa/extiende planes. Nunca se confía
-   en el body ni en el redirect: se consulta el recurso
-   por id a la API y se actúa sobre el estado confirmado.
-
-Eventos manejados:
-
-- subscription_preapproval (authorized) → activa el plan
-  de inmediato (silencioso, sin correo).
-- subscription_authorized_payment (approved) → activa/
-  renueva el plan y envía confirmación por correo.
-- subscription_authorized_payment (rechazado) → correo
-  de dunning (el acceso expira solo si no se regulariza).
-
-Regla de oro de renovación: Entitlements.activate_paid
-REINICIA la ventana a +31 días desde el cobro, no acumula
-— un webhook duplicado nunca regala días. La tabla
-payment_events asegura idempotencia y deja auditoría.
+Integración con Mercado Pago (v3.2)
 
 Autor:
 Biotecno Chile
@@ -40,7 +14,6 @@ Biotecno Chile
 import logging
 
 from flask import Blueprint
-from flask import current_app
 from flask import jsonify
 from flask import redirect
 from flask import render_template
@@ -49,18 +22,14 @@ from flask import session
 from flask import url_for
 
 from database.session import SessionLocal
+from models.checkout_attempt import CheckoutAttempt
 from models.payment_event import PaymentEvent
 from models.user import User
 from services.entitlements import Entitlements
 from services.mercadopago_service import MercadoPagoService
 from services.payment_mailer import PaymentMailer
-from security.authorization import login_required  # ← AGREGAR ESTA LÍNEA
 
 logger = logging.getLogger(__name__)
-
-# Días de acceso por cobro mensual confirmado
-# (30 del mes + 1 de gracia por desfase del webhook)
-PAID_PERIOD_DAYS = 31
 
 # ==========================================================
 # Blueprint
@@ -68,13 +37,18 @@ PAID_PERIOD_DAYS = 31
 
 payments = Blueprint(
     "payments",
-    __name__,
-    url_prefix="/payments"
+    __name__
 )
+
+# ==========================================================
+# Configuración
+# ==========================================================
+
+PAID_PERIOD_DAYS = 30
 
 
 # ==========================================================
-# Checkout: crear suscripción y enviar al usuario a MP
+# Checkout: crea la suscripción en MP y redirige
 # ==========================================================
 
 @payments.route("/checkout")
@@ -106,49 +80,52 @@ def checkout():
             user_id=user.id,
         )
 
-        if not mp_data or not mp_data.get("init_point"):
-            logger.error(
-                "Checkout MP: MP no devolvió init_point para user %s",
-                user_id,
-            )
-            return render_template(
-                "payments_return.html",
-                plan={"status": "error"},
-                error=(
-                    "Mercado Pago no está disponible en este momento. "
-                    "Intenta más tarde o activa tu plan por WhatsApp."
-                ),
-            ), 503
+        if mp_data and mp_data.get("init_point"):
+            # Guardar el preapproval_id en sesión para poder
+            # verificar el estado al volver de MP (respaldo
+            # si el webhook no llega).
+            session["mp_preapproval_id"] = mp_data.get("id")
+            session.modified = True
 
-        # Redirigir al checkout hosted de MP
-        return redirect(mp_data["init_point"])
+            # Registrar intento de checkout para el panel
+            # de activaciones pendientes.
+            db2 = SessionLocal()
+            try:
+                db2.add(CheckoutAttempt(
+                    user_id=str(user_id),
+                    mp_preapproval_id=mp_data.get("id"),
+                ))
+                db2.commit()
+            except Exception:
+                logger.exception("Error guardando checkout attempt")
+            finally:
+                db2.close()
+
+            # Redirigir al checkout hosted de MP
+            return redirect(mp_data["init_point"])
+
+        # Fallback: si la API falla o no devuelve init_point,
+        # usar el Plan Link de MP como respaldo.
+        logger.warning(
+            "Checkout MP: API falló para user %s, usando Plan Link fallback",
+            user_id,
+        )
+
+        plan_link = "https://mpago.la/2QapPYJ"
+        return_url = url_for(
+            "payments.return_page",
+            _external=True,
+            _scheme="https",
+        )
+        redirect_url = f"{plan_link}?back_url={return_url}"
+        return redirect(redirect_url)
 
     finally:
         db.close()
 
 
 # ==========================================================
-# Back URL: el usuario vuelve desde Mercado Pago
-# ==========================================================
-
-@payments.route("/return", methods=["GET"])
-def return_page():
-
-    user_id = session.get("user_id")
-
-    if not user_id:
-        return redirect(url_for("auth.login"))
-
-    plan = Entitlements.get_status(user_id)
-
-    return render_template(
-        "payments_return.html",
-        plan=plan,
-    )
-
-
-# ==========================================================
-# Webhook: la única fuente de verdad
+# Webhook: Mercado Pago notifica eventos de pago
 # ==========================================================
 
 @payments.route("/webhook", methods=["GET", "POST"])
@@ -163,236 +140,214 @@ def webhook():
     # formato legado usa query string (?topic=&id=).
     body = request.get_json(silent=True) or {}
 
-    event_type = (
-        body.get("type")
-        or request.args.get("topic")
-        or ""
-    )
+    event_type = body.get("type", "")
+    resource_id = body.get("data", {}).get("id")
 
-    data_id = (
-        request.args.get("data.id")
-        or (body.get("data") or {}).get("id")
-        or request.args.get("id")
-        or ""
-    )
+    # Si no hay JSON, intentar query string (legacy)
+    if not resource_id:
+        resource_id = request.args.get("id")
+        event_type = request.args.get("topic", "")
 
-    data_id = str(data_id)
-
-    # 1) Firma: confirma que el POST viene de Mercado Pago
-    if not MercadoPagoService.verify_signature(
-        x_signature=request.headers.get("x-signature", ""),
-        x_request_id=request.headers.get("x-request-id", ""),
-        data_id=data_id,
-    ):
-
-        logger.warning(
-            "Webhook MP con firma inválida (data.id=%s)",
-            data_id,
-        )
-
-        return jsonify({"error": "invalid_signature"}), 401
-
-    if not event_type or not data_id:
+    if not resource_id:
+        logger.warning("Webhook MP: falta resource_id")
         return jsonify({"status": "ignored"}), 200
 
-    # 2) Procesar (siempre 200 para que MP no reintente
-    #    indefinidamente; los errores quedan en log)
-    try:
+    # Verificar firma del webhook (v3.2)
+    if not MercadoPagoService.verify_webhook_signature(
+        request.get_data(as_text=True),
+        request.headers.get("x-signature", ""),
+        request.headers.get("x-request-id", ""),
+    ):
+        logger.warning("Webhook MP con firma inválida")
+        return jsonify({"status": "ignored"}), 200
 
-        action = process_mp_webhook(event_type, data_id)
-
-    except Exception:
-
-        logger.exception(
-            "Webhook MP falló procesando %s %s",
-            event_type,
-            data_id,
-        )
-
-        action = "error"
-
-    return jsonify({"status": action}), 200
-
-
-# ==========================================================
-# Procesamiento de eventos (separado para poder probarlo
-# y para mantener el handler delgado)
-# ==========================================================
-
-def process_mp_webhook(event_type, resource_id):
-
-    event_key = f"{event_type}:{resource_id}"
-
+    # Guardar evento (idempotencia + auditoría)
     db = SessionLocal()
-
     try:
-
-        # ----------------------------------------------
-        # Idempotencia: cada evento se procesa una vez
-        # ----------------------------------------------
-
-        already = db.query(PaymentEvent).filter(
+        existing = db.query(PaymentEvent).filter(
             PaymentEvent.provider == "mercadopago",
-            PaymentEvent.event_key == event_key,
+            PaymentEvent.provider_event_id == str(resource_id),
         ).first()
 
-        if already is not None:
-            return "duplicate"
+        if existing:
+            return jsonify({"status": "duplicate"}), 200
 
-        action = "ignored"
-        user_id = None
-        detail = ""
+        event = PaymentEvent(
+            provider="mercadopago",
+            provider_event_id=str(resource_id),
+            action=event_type,
+            detail=f"type={event_type} id={resource_id}",
+        )
+        db.add(event)
+        db.commit()
+    finally:
+        db.close()
 
-        # ----------------------------------------------
-        # Ciclo de vida de la suscripción
-        # ----------------------------------------------
+    # =====================================================
+    # Procesar evento
+    # =====================================================
 
-        if event_type == "subscription_preapproval":
+    if event_type == "subscription_preapproval":
 
-            preapproval = MercadoPagoService.get_preapproval(
-                resource_id
-            )
+        preapproval = MercadoPagoService.get_preapproval(
+            resource_id
+        )
 
-            if preapproval:
+        if preapproval:
 
-                status = preapproval.get("status", "")
-                user_id = preapproval.get("external_reference")
-                detail = f"status={status}"
+            status = preapproval.get("status", "")
+            # El external_reference ahora tiene formato
+            # "user_id:uuid". Extraemos solo el user_id.
+            raw_ref = preapproval.get("external_reference", "")
+            user_id = raw_ref.split(":")[0] if raw_ref else None
+            detail = f"status={status} ref={raw_ref[:50]}"
 
-                if status == "authorized" and user_id:
+            if status == "authorized" and user_id:
 
-                    # Acceso inmediato al suscribirse. El
-                    # correo lo envía el evento de cobro.
-                    Entitlements.activate_paid(
-                        db,
-                        user_id,
-                        days=PAID_PERIOD_DAYS,
-                        source="mercadopago",
-                    )
+                db = SessionLocal()
+                try:
 
-                    action = "activated"
+                    user = db.query(User).filter(
+                        User.id == str(user_id)
+                    ).first()
 
-                else:
-                    # paused / cancelled / pending: el
-                    # acceso expira solo al cumplirse el
-                    # período ya pagado. Solo dejamos
-                    # registro.
-                    action = "noted"
-
-        # ----------------------------------------------
-        # Cobro recurrente (cada ciclo mensual)
-        # ----------------------------------------------
-
-        elif event_type == "subscription_authorized_payment":
-
-            payment = (
-                MercadoPagoService.get_authorized_payment(
-                    resource_id
-                )
-            )
-
-            if payment:
-
-                status = payment.get("status", "")
-                detail = f"status={status}"
-
-                # Resolver nuestro usuario: primero la
-                # referencia directa; si no viene, la de
-                # la suscripción madre (llave robusta).
-                user_id = payment.get("external_reference")
-
-                if not user_id and payment.get("preapproval_id"):
-
-                    parent = (
-                        MercadoPagoService.get_preapproval(
-                            payment["preapproval_id"]
-                        )
-                    )
-
-                    if parent:
-                        user_id = parent.get(
-                            "external_reference"
-                        )
-
-                if user_id:
-
-                    if status == "approved":
+                    if user:
 
                         Entitlements.activate_paid(
                             db,
-                            user_id,
+                            user.id,
                             days=PAID_PERIOD_DAYS,
                             source="mercadopago",
                         )
 
-                        _notify(
-                            db,
-                            user_id,
-                            PaymentMailer.send_activated,
-                            current_app.config.get(
-                                "PRO_MONTHLY_PRICE_CLP", 9990
-                            ),
+                        # Notificar al admin del nuevo pago
+                        PaymentMailer.send_admin_notification(
+                            user_email=user.email,
+                            user_name=user.name,
+                            amount=9990,
                         )
 
-                        action = "activated"
-
-                    else:
-
-                        # Cobro rechazado: dunning amable.
-                        # MP reintenta solo; el acceso
-                        # expira por tiempo si no paga.
-                        _notify(
-                            db,
+                        logger.info(
+                            "Webhook MP: Plan activado para user %s",
                             user_id,
-                            PaymentMailer.send_payment_failed,
                         )
 
-                        action = "payment_failed"
+                finally:
+                    db.close()
 
-        # ----------------------------------------------
-        # Auditoría
-        # ----------------------------------------------
+    elif event_type == "subscription_authorized_payment":
 
-        db.add(PaymentEvent(
-            provider="mercadopago",
-            event_key=event_key,
-            user_id=str(user_id) if user_id else None,
-            action=action,
-            detail=detail[:490],
-        ))
+        payment = MercadoPagoService.get_authorized_payment(
+            resource_id
+        )
 
-        db.commit()
+        if payment:
 
-        return action
+            status = payment.get("status", "")
+            detail = f"status={status}"
 
-    finally:
+            if status == "approved":
 
-        db.close()
+                # Resolver nuestro usuario: primero la
+                # referencia directa; si no viene, la de
+                # la suscripción madre (llave robusta).
+                raw_ref = payment.get("external_reference", "")
+                user_id = raw_ref.split(":")[0] if raw_ref else None
+
+                if not user_id and payment.get("preapproval_id"):
+
+                    parent = MercadoPagoService.get_preapproval(
+                        payment["preapproval_id"]
+                    )
+
+                    if parent:
+                        raw_ref = parent.get(
+                            "external_reference", ""
+                        )
+                        user_id = raw_ref.split(":")[0] if raw_ref else None
+
+                if user_id:
+
+                    db = SessionLocal()
+                    try:
+
+                        user = db.query(User).filter(
+                            User.id == str(user_id)
+                        ).first()
+
+                        if user:
+
+                            Entitlements.activate_paid(
+                                db,
+                                user.id,
+                                days=PAID_PERIOD_DAYS,
+                                source="mercadopago",
+                            )
+
+                            logger.info(
+                                "Webhook MP: Plan renovado "
+                                "para user %s",
+                                user_id,
+                            )
+
+                    finally:
+                        db.close()
+
+    logger.info("Webhook MP procesado: %s", detail)
+
+    return jsonify({"status": "ok"}), 200
 
 
 # ==========================================================
-# Helper: correo al usuario sin tumbar el webhook
+# Página de retorno después del pago en MP
 # ==========================================================
 
-def _notify(db, user_id, send_fn, *args):
+@payments.route("/return", methods=["GET"])
+def return_page():
 
-    try:
+    user_id = session.get("user_id")
 
-        user = db.query(User).filter(
-            User.id == str(user_id)
-        ).first()
+    if not user_id:
+        return redirect(url_for("auth.login"))
 
-        if user and user.email:
+    # Respaldo: si el webhook no llegó, consultamos directamente
+    # a MP el estado de la suscripción recién creada.
+    preapproval_id = session.pop("mp_preapproval_id", None)
 
-            send_fn(
-                user.email,
-                user.first_name or "docente",
-                *args,
+    if preapproval_id:
+        try:
+            preapproval = MercadoPagoService.get_preapproval(
+                preapproval_id
+            )
+            if preapproval and preapproval.get("status") == "authorized":
+                # Extraer user_id del external_reference (formato user_id:uuid)
+                raw_ref = preapproval.get("external_reference", "")
+                ref_user_id = raw_ref.split(":")[0] if raw_ref else None
+
+                if ref_user_id and str(ref_user_id) == str(user_id):
+                    db = SessionLocal()
+                    try:
+                        Entitlements.activate_paid(
+                            db,
+                            user_id,
+                            days=PAID_PERIOD_DAYS,
+                            source="mercadopago_return",
+                        )
+                        logger.info(
+                            "Plan activado vía return_page para user %s",
+                            user_id,
+                        )
+                    finally:
+                        db.close()
+        except Exception:
+            logger.exception(
+                "Error consultando MP en return_page for user %s",
+                user_id,
             )
 
-    except Exception:
+    plan = Entitlements.get_status(user_id)
 
-        logger.exception(
-            "No se pudo notificar por correo al usuario %s",
-            user_id,
-        )
+    return render_template(
+        "payments_return.html",
+        plan=plan,
+    )

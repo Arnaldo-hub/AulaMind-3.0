@@ -90,6 +90,50 @@ def handle_csrf_error(error):
     }), 400
 
 # ==========================================================
+# CONTEXT PROCESSOR: contador de activaciones pendientes
+# Se inyecta en TODOS los templates (v3.2)
+# ==========================================================
+
+@app.context_processor
+def inject_pending_activations():
+    """
+    Inyecta en TODOS los templates la cantidad de
+    activaciones pendientes para mostrar en el sidebar.
+    """
+    try:
+        from database.session import SessionLocal
+        from models.checkout_attempt import CheckoutAttempt
+        from models.user import User
+        from services.entitlements import Entitlements
+        from datetime import datetime, timedelta
+
+        db = SessionLocal()
+        try:
+            desde = datetime.utcnow() - timedelta(hours=48)
+            attempts = (
+                db.query(CheckoutAttempt)
+                .filter(CheckoutAttempt.created_at >= desde)
+                .all()
+            )
+
+            count = 0
+            for attempt in attempts:
+                user = db.query(User).filter(
+                    User.id == attempt.user_id
+                ).first()
+                if not user:
+                    continue
+                status = Entitlements.get_status(user.id)
+                if status.get("status") != "active":
+                    count += 1
+
+            return {"pending_activations_count": count}
+        finally:
+            db.close()
+    except Exception:
+        return {"pending_activations_count": 0}
+
+# ==========================================================
 # REGISTRAR BLUEPRINTS
 # ==========================================================
 

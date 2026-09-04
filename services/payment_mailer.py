@@ -4,18 +4,7 @@ AulaMind Enterprise 3.0
 services/payment_mailer.py
 -----------------------------------------------------------
 
-Correos del flujo de pagos (v3.2)
-
-- send_activated:      plan Pro activado/renovado
-- send_payment_failed: un cobro mensual fue rechazado
-                       (dunning amable: invita a actualizar
-                       el medio de pago antes de perder
-                       acceso)
-
-Sigue el mismo patrón que PasswordResetMailer: smtplib
-directo con la configuración MAIL_* de la app. Nunca
-tumba el webhook: cualquier falla de envío queda en log
-y devuelve False.
+Envío de correos transaccionales de pagos.
 
 Autor:
 Biotecno Chile
@@ -23,8 +12,6 @@ Biotecno Chile
 """
 
 import logging
-import smtplib
-from email.message import EmailMessage
 
 from flask import current_app
 
@@ -33,122 +20,146 @@ logger = logging.getLogger(__name__)
 
 class PaymentMailer:
 
+    """
+    Envío de correos transaccionales de pagos.
+    """
+
     # =====================================================
-    # Transporte compartido
+    # Envío genérico
     # =====================================================
 
     @staticmethod
-    def _send(email, subject, body):
+    def _send(to_email, subject, body):
 
-        config = current_app.config
-        server = config.get("MAIL_SERVER", "")
+        """
+        Envía un correo simple (texto plano).
 
-        if not server:
-
-            logger.warning(
-                "PaymentMailer sin MAIL_SERVER: correo '%s' "
-                "para %s omitido",
-                subject,
-                email,
-            )
-
-            return False
+        En producción se puede reemplazar por SendGrid,
+        Resend, AWS SES, etc.
+        """
 
         try:
 
-            msg = EmailMessage()
+            import smtplib
+            from email.mime.text import MIMEText
+
+            config = current_app.config
+
+            smtp_host = config.get("SMTP_HOST", "")
+            smtp_port = config.get("SMTP_PORT", 587)
+            smtp_user = config.get("SMTP_USER", "")
+            smtp_pass = config.get("SMTP_PASSWORD", "")
+            sender = config.get("SMTP_FROM", smtp_user)
+
+            if not smtp_host or not smtp_user:
+                logger.warning(
+                    "PaymentMailer: SMTP no configurado, "
+                    "correo simulado: to=%s subject=%s",
+                    to_email,
+                    subject,
+                )
+                return True
+
+            msg = MIMEText(body, "plain", "utf-8")
             msg["Subject"] = subject
-            msg["From"] = config.get("MAIL_FROM")
-            msg["To"] = email
-            msg.set_content(body)
+            msg["From"] = sender
+            msg["To"] = to_email
 
-            smtp_class = (
-                smtplib.SMTP_SSL
-                if config.get("MAIL_USE_SSL", False)
-                else smtplib.SMTP
-            )
+            with smtplib.SMTP(smtp_host, smtp_port) as server:
+                server.starttls()
+                server.login(smtp_user, smtp_pass)
+                server.sendmail(sender, [to_email], msg.as_string())
 
-            with smtp_class(
-                server,
-                config.get("MAIL_PORT", 587),
-                timeout=15,
-            ) as smtp:
-
-                if config.get(
-                    "MAIL_USE_TLS", True
-                ) and not config.get("MAIL_USE_SSL", False):
-
-                    smtp.starttls()
-
-                username = config.get("MAIL_USERNAME", "")
-
-                if username:
-                    smtp.login(
-                        username,
-                        config.get("MAIL_PASSWORD", ""),
-                    )
-
-                smtp.send_message(msg)
+            logger.info("PaymentMailer: correo enviado a %s", to_email)
 
             return True
 
         except Exception:
 
-            logger.exception(
-                "PaymentMailer: no se pudo enviar '%s' a %s",
-                subject,
-                email,
-            )
+            logger.exception("PaymentMailer: error enviando correo")
 
             return False
 
     # =====================================================
-    # Plan activado / renovado
+    # Correos específicos
     # =====================================================
 
     @staticmethod
-    def send_activated(email, name, price_clp):
+    def send_payment_success(user_email, user_name, amount):
 
-        price = f"{int(price_clp):,}".replace(",", ".")
+        """
+        Notifica al usuario que su pago fue exitoso.
+        """
 
-        return PaymentMailer._send(
-            email,
-            "Tu Plan Pro está activo — AulaMind",
-            (
-                f"Hola {name}:\n\n"
-                "Tu suscripción a AulaMind Plan Pro quedó "
-                "activa. Ya puedes generar planificaciones, "
-                "evaluaciones, guías, rúbricas y PIE sin "
-                "límite práctico.\n\n"
-                f"Valor mensual: ${price} CLP, cobrado "
-                "automáticamente por Mercado Pago. Puedes "
-                "cancelar cuando quieras desde tu cuenta de "
-                "Mercado Pago, sin permanencia.\n\n"
-                "Gracias por confiar en AulaMind.\n"
-                "— Equipo AulaMind · aulamind.cl"
-            ),
+        subject = (
+            "¡Gracias por suscribirte a AulaMind Pro!"
         )
 
+        body = (
+            f"Hola {user_name or 'docente'},\n\n"
+            f"Tu suscripción a AulaMind Pro fue confirmada.\n"
+            f"Monto: ${amount:,} CLP\n"
+            f"Periodo: 30 días\n\n"
+            f"Ya puedes generar documentos sin límite.\n"
+            f"https://www.aulamind.cl/dashboard\n\n"
+            f"AulaMind Enterprise 3.0"
+        )
+
+        return PaymentMailer._send(user_email, subject, body)
+
+    @staticmethod
+    def send_payment_failed(user_email, user_name, reason):
+
+        """
+        Notifica al usuario que su pago falló.
+        """
+
+        subject = "Tu pago en AulaMind no pudo procesarse"
+
+        body = (
+            f"Hola {user_name or 'docente'},\n\n"
+            f"Tu intento de pago no pudo completarse: {reason}\n\n"
+            f"Puedes intentar nuevamente desde:"
+            f" https://www.aulamind.cl/plan\n\n"
+            f"Si necesitas ayuda, contáctanos.\n\n"
+            f"AulaMind Enterprise 3.0"
+        )
+
+        return PaymentMailer._send(user_email, subject, body)
+
     # =====================================================
-    # Cobro rechazado (renovación fallida)
+    # Notificación al admin cuando un usuario paga
     # =====================================================
 
     @staticmethod
-    def send_payment_failed(email, name):
+    def send_admin_notification(user_email, user_name, amount):
+        """
+        Envía email al administrador cuando un usuario
+        completa un pago en MercadoPago.
+        """
 
-        return PaymentMailer._send(
-            email,
-            "No pudimos cobrar tu suscripción — AulaMind",
-            (
-                f"Hola {name}:\n\n"
-                "Mercado Pago rechazó el cobro mensual de tu "
-                "Plan Pro. No te preocupes: tu acceso sigue "
-                "activo mientras se reintenta el pago.\n\n"
-                "Para no perder acceso, actualiza tu tarjeta "
-                "desde tu cuenta de Mercado Pago (sección "
-                "Suscripciones).\n\n"
-                "Si necesitas ayuda, responde este correo o "
-                "escríbenos a contacto@aulamind.cl.\n\n"
-                "— Equipo AulaMind · aulamind.cl"
-            ),
+        config = current_app.config
+
+        admin_email = config.get("ADMIN_EMAIL", "")
+        if not admin_email:
+            logger.warning(
+                "PaymentMailer: ADMIN_EMAIL no configurado, "
+                "notificación omitida"
+            )
+            return False
+
+        subject = f"💰 Nuevo pago en AulaMind: {user_email}"
+
+        body = (
+            f"Hola,\n\n"
+            f"Un usuario acaba de pagar en AulaMind:\n\n"
+            f"  Email: {user_email}\n"
+            f"  Nombre: {user_name or 'No disponible'}\n"
+            f"  Monto: ${amount:,} CLP\n\n"
+            f"Recuerda activar su plan desde el Panel Comercial si "
+            f"no se activó automáticamente.\n\n"
+            f"Panel: https://www.aulamind.cl/admin/comercial\n\n"
+            f"AulaMind Enterprise 3.0"
         )
+
+        return PaymentMailer._send(admin_email, subject, body)
