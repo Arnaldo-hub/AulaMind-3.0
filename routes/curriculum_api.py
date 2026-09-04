@@ -314,7 +314,7 @@ def reload_curriculum():
     if "user_id" not in session:
         return unauthorized()
     try:
-        curriculum.refresh()
+        curriculum.reload()
         return jsonify({
             "success": True,
             "message": "Currículum recargado correctamente.",

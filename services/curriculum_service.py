@@ -437,30 +437,196 @@ class CurriculumService:
     # NORMALIZAR NOMBRE DE ASIGNATURA SEGÚN CURSO
     # ======================================================
 
+    # ======================================================
+    # ALIAS DE ASIGNATURAS (mapeo de nombres JSON → oficiales)
+    # ======================================================
+    # Los JSONs tienen nombres inconsistentes. Este diccionario
+    # traduce las variantes comunes al nombre oficial correcto.
+    # ======================================================
+
+    SUBJECT_ALIASES = {
+        # Lenguaje / Lengua
+        "lenguaje y literatura": {
+            "1° Básico": "Lenguaje y Comunicación",
+            "2° Básico": "Lenguaje y Comunicación",
+            "3° Básico": "Lenguaje y Comunicación",
+            "4° Básico": "Lenguaje y Comunicación",
+            "5° Básico": "Lenguaje y comunicación",
+            "6° Básico": "Lenguaje y comunicación",
+            "7° Básico": "Lengua y Literatura",
+            "8° Básico": "Lengua y Literatura",
+            "1° Medio": "Lengua y Literatura",
+            "2° Medio": "Lengua y Literatura",
+            "3° Medio": "Lengua y Literatura",
+            "4° Medio": "Lengua y Literatura",
+        },
+        "lenguaje": {
+            "1° Básico": "Lenguaje y Comunicación",
+            "2° Básico": "Lenguaje y Comunicación",
+            "3° Básico": "Lenguaje y Comunicación",
+            "4° Básico": "Lenguaje y Comunicación",
+            "5° Básico": "Lenguaje y comunicación",
+            "6° Básico": "Lenguaje y comunicación",
+            "7° Básico": "Lengua y Literatura",
+            "8° Básico": "Lengua y Literatura",
+            "1° Medio": "Lengua y Literatura",
+            "2° Medio": "Lengua y Literatura",
+            "3° Medio": "Lengua y Literatura",
+            "4° Medio": "Lengua y Literatura",
+        },
+        "lengua": {
+            "1° Básico": "Lenguaje y Comunicación",
+            "2° Básico": "Lenguaje y Comunicación",
+            "3° Básico": "Lenguaje y Comunicación",
+            "4° Básico": "Lenguaje y Comunicación",
+            "5° Básico": "Lenguaje y comunicación",
+            "6° Básico": "Lenguaje y comunicación",
+            "7° Básico": "Lengua y Literatura",
+            "8° Básico": "Lengua y Literatura",
+            "1° Medio": "Lengua y Literatura",
+            "2° Medio": "Lengua y Literatura",
+            "3° Medio": "Lengua y Literatura",
+            "4° Medio": "Lengua y Literatura",
+        },
+        # Matemáticas
+        "matemática": {
+            "default": "Matemáticas",
+            "7° Básico": "Matemática",
+            "8° Básico": "Matemática",
+            "1° Medio": "Matemática",
+            "2° Medio": "Matemática",
+            "3° Medio": "Matemática",
+            "4° Medio": "Matemática",
+        },
+        "matemáticas": {
+            "default": "Matemáticas",
+            "7° Básico": "Matemática",
+            "8° Básico": "Matemática",
+            "1° Medio": "Matemática",
+            "2° Medio": "Matemática",
+            "3° Medio": "Matemática",
+            "4° Medio": "Matemática",
+        },
+        # Historia
+        "historia, geografía y ciencias sociales": {
+            "default": "Historia, Geografía y Ciencias Sociales",
+        },
+        "historia, geografía y cs.sociales": {
+            "default": "Historia, Geografía y Cs.Sociales",
+        },
+        # Artes
+        "artes visuales": {
+            "default": "Artes Visuales",
+            "7° Básico": "Artes Visuales y Música",
+            "8° Básico": "Artes Visuales y Música",
+        },
+        "música": {
+            "default": "Música",
+            "7° Básico": "Artes Visuales y Música",
+            "8° Básico": "Artes Visuales y Música",
+        },
+        # Ed. Física
+        "educación física y salud": {
+            "default": "Educación Física y Salud",
+            "5° Básico": "Ed. física",
+            "6° Básico": "Ed. física",
+        },
+        "ed. física": {
+            "default": "Educación Física y Salud",
+            "5° Básico": "Ed. física",
+            "6° Básico": "Ed. física",
+        },
+        # Ciencias Naturales
+        "ciencias naturales": {
+            "default": "Ciencias Naturales",
+            "5° Básico": "Cs. naturales",
+            "6° Básico": "Cs. naturales",
+        },
+        "cs. naturales": {
+            "default": "Ciencias Naturales",
+            "5° Básico": "Cs. naturales",
+            "6° Básico": "Cs. naturales",
+        },
+        # Tecnología
+        "tecnología": {
+            "default": "Tecnología",
+        },
+        # Orientación
+        "orientación": {
+            "default": "Orientación",
+        },
+        # Religión
+        "religión": {
+            "default": "Religión",
+        },
+        "religión católica": {
+            "default": "Religión Católica",
+        },
+        "religión evangélica": {
+            "default": "Religión Evangélica",
+        },
+        # Inglés
+        "inglés": {
+            "default": "Inglés",
+        },
+        # Taller
+        "taller de innovación": {
+            "default": "Taller de Innovación",
+            "7° Básico": "Taller de Innovación",
+            "8° Básico": "Taller de Innovación",
+        },
+        "taller": {
+            "default": "Taller",
+            "7° Básico": "Talleres",
+            "8° Básico": "Talleres",
+        },
+        "talleres": {
+            "default": "Talleres",
+            "7° Básico": "Talleres",
+            "8° Básico": "Talleres",
+        },
+        # Lengua y Cultura de los Pueblos Originarios (solo en algunos cursos)
+        "lengua y cultura de los pueblos originarios ancestrales": {
+            "default": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+        },
+    }
+
     def _normalize_subject_name(self, course, subject_raw):
         """
         Normaliza el nombre de una asignatura según el curso.
-        Usa el mapeo oficial para devolver el nombre correcto.
+        Usa el diccionario de alias para traducir nombres del JSON
+        al nombre oficial correcto según el nivel educativo.
         """
         if course not in OFFICIAL_SUBJECTS_BY_COURSE:
             return subject_raw
 
-        official_list = OFFICIAL_SUBJECTS_BY_COURSE[course]
         subject_lower = subject_raw.lower().strip()
 
-        # Buscar coincidencia exacta (ignorando mayúsculas)
+        # 1. Buscar en alias exacto
+        if subject_lower in self.SUBJECT_ALIASES:
+            aliases = self.SUBJECT_ALIASES[subject_lower]
+            if course in aliases:
+                return aliases[course]
+            if "default" in aliases:
+                return aliases["default"]
+
+        # 2. Buscar coincidencia parcial en alias
+        for alias_key, aliases in self.SUBJECT_ALIASES.items():
+            if alias_key in subject_lower or subject_lower in alias_key:
+                if course in aliases:
+                    return aliases[course]
+                if "default" in aliases:
+                    return aliases["default"]
+
+        # 3. Buscar en la lista oficial del curso
+        official_list = OFFICIAL_SUBJECTS_BY_COURSE[course]
         for official in official_list:
             if official.lower() == subject_lower:
                 return official
-
-        # Buscar coincidencia parcial (para casos como "Lenguaje"
-        # que debería ser "Lenguaje y Comunicación")
-        for official in official_list:
             if subject_lower in official.lower() or official.lower() in subject_lower:
                 return official
 
-        # Si no hay coincidencia, la asignatura no pertenece a este curso
-        # según el mapeo oficial (por ejemplo, "Inglés" en 1° Básico)
+        # Si no hay coincidencia, descartar (no pertenece a este curso)
         return None
 
     # ======================================================
