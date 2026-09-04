@@ -3,17 +3,9 @@
 AulaMind Enterprise 3.0
 routes/curriculum_api.py
 --------------------------------------------------------------
-
-API del Motor Curricular
-
-Permite consultar:
-- Cursos
-- Asignaturas
-- Unidades
-- Objetivos de Aprendizaje
-
-Autor:
-Biotecno Chile
+API del Motor Curricular — v3.2.1 EMERGENCIA
+nFiltra asignaturas por curso al vuelo, sin depender del
+servicio en memoria (singleton no se reinicia).
 ==============================================================
 """
 
@@ -21,57 +13,111 @@ from flask import Blueprint, jsonify, request, session
 from services.curriculum_service import CurriculumService
 
 
-# ==========================================================
-# BLUEPRINT
-# ==========================================================
-
 curriculum_api = Blueprint("curriculum_api", __name__, url_prefix="/api/curriculum")
-
-
-# ==========================================================
-# SERVICIO
-# ==========================================================
-
 curriculum = CurriculumService()
 
 
 # ==========================================================
-# RESPUESTA ERROR
+# MAPEO OFICIAL DE ASIGNATURAS POR CURSO (v3.2.1)
+# Se aplica en CADA request, independiente del singleton.
 # ==========================================================
+
+OFFICIAL_SUBJECTS = {
+    "1° Básico": [
+        "Lenguaje y Comunicación", "Matemáticas",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Ciencias Naturales",
+    ],
+    "2° Básico": [
+        "Lenguaje y Comunicación", "Matemáticas",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Ciencias Naturales",
+    ],
+    "3° Básico": [
+        "Lenguaje y Comunicación", "Matemáticas",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Ciencias Naturales",
+    ],
+    "4° Básico": [
+        "Lenguaje y Comunicación", "Matemáticas",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Ciencias Naturales",
+    ],
+    "5° Básico": [
+        "Lenguaje y comunicación", "Matemáticas",
+        "Historia, Geografía y Cs.Sociales", "Artes visuales",
+        "Música", "Ed. física", "Orientación", "Tecnología",
+        "Religión", "Cs. naturales", "Inglés",
+        "Taller de innovación", "Taller",
+    ],
+    "6° Básico": [
+        "Lenguaje y comunicación", "Matemáticas",
+        "Historia, Geografía y Cs.Sociales", "Artes visuales",
+        "Música", "Ed. física", "Orientación", "Tecnología",
+        "Religión", "Cs. naturales", "Inglés",
+        "Taller de innovación", "Taller",
+    ],
+    "7° Básico": [
+        "Lengua y Literatura", "Matemática",
+        "Historia, Geografía y Ciencias Sociales",
+        "Artes Visuales y Música", "Educación Física y Salud",
+        "Orientación", "Tecnología", "Religión", "Inglés",
+        "Ciencias Naturales", "Taller de Innovación", "Talleres",
+    ],
+    "8° Básico": [
+        "Lengua y Literatura", "Matemática",
+        "Historia, Geografía y Ciencias Sociales",
+        "Artes Visuales y Música", "Educación Física y Salud",
+        "Orientación", "Tecnología", "Religión", "Inglés",
+        "Ciencias Naturales", "Taller de Innovación", "Talleres",
+    ],
+    "1° Medio": [
+        "Lengua y Literatura", "Matemática",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Inglés", "Ciencias Naturales",
+    ],
+    "2° Medio": [
+        "Lengua y Literatura", "Matemática",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Inglés", "Ciencias Naturales",
+    ],
+    "3° Medio": [
+        "Lengua y Literatura", "Matemática",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Inglés",
+        "Física", "Química", "Biología",
+    ],
+    "4° Medio": [
+        "Lengua y Literatura", "Matemática",
+        "Historia, Geografía y Ciencias Sociales", "Artes Visuales",
+        "Música", "Educación Física y Salud", "Orientación",
+        "Tecnología", "Religión", "Inglés",
+        "Física", "Química", "Biología",
+    ],
+}
+
 
 def unauthorized():
     return jsonify({"success": False, "message": "Debe iniciar sesión."}), 401
 
-
-# ==========================================================
-# HEALTH
-# ==========================================================
 
 @curriculum_api.route("/health", methods=["GET"])
 def health():
     return jsonify({
         "success": True,
         "service": "Curriculum API",
-        "version": "1.0.0",
+        "version": "3.2.1",
         "status": "running",
         "curriculum": curriculum.health()
     })
 
-
-# ==========================================================
-# ESTADÍSTICAS
-# ==========================================================
-
-@curriculum_api.route("/statistics", methods=["GET"])
-def statistics():
-    if "user_id" not in session:
-        return unauthorized()
-    return jsonify({"success": True, "statistics": curriculum.statistics()})
-
-
-# ==========================================================
-# CURSOS
-# ==========================================================
 
 @curriculum_api.route("/courses", methods=["GET"])
 def courses():
@@ -84,10 +130,6 @@ def courses():
         return jsonify({"success": False, "message": str(ex)}), 500
 
 
-# ==========================================================
-# ASIGNATURAS
-# ==========================================================
-
 @curriculum_api.route("/subjects/<path:course>", methods=["GET"])
 def subjects(course):
     if "user_id" not in session:
@@ -97,7 +139,24 @@ def subjects(course):
         if not curriculum.exists_course(course):
             return jsonify({"success": False, "message": "Curso no encontrado."}), 404
 
-        subjects = curriculum.get_subjects(course)
+        # OBTENER asignaturas del servicio (pueden estar mal)
+        raw_subjects = curriculum.get_subjects(course)
+
+        # FILTRAR con el mapeo oficial (v3.2.1 emergencia)
+        if course in OFFICIAL_SUBJECTS:
+            official = OFFICIAL_SUBJECTS[course]
+            # Solo devolver las que están en la lista oficial
+            filtered = [s for s in raw_subjects if s in official]
+            # Si faltan algunas oficiales, agregarlas
+            for off in official:
+                if off not in filtered:
+                    filtered.append(off)
+            # Ordenar según la lista oficial
+            order = {name: idx for idx, name in enumerate(official)}
+            filtered.sort(key=lambda x: order.get(x, 999))
+            subjects = filtered
+        else:
+            subjects = raw_subjects
 
         return jsonify({
             "success": True,
@@ -108,10 +167,6 @@ def subjects(course):
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# UNIDADES
-# ==========================================================
 
 @curriculum_api.route("/units/<path:course>/<path:subject>", methods=["GET"])
 def units(course, subject):
@@ -124,62 +179,36 @@ def units(course, subject):
             return jsonify({"success": False, "message": "Curso no encontrado."}), 404
         if not curriculum.exists_subject(course, subject):
             return jsonify({"success": False, "message": "Asignatura no encontrada."}), 404
-
         units = curriculum.get_units(course, subject)
         return jsonify({
-            "success": True,
-            "course": course,
-            "subject": subject,
-            "total": len(units),
-            "units": units
+            "success": True, "course": course, "subject": subject,
+            "total": len(units), "units": units
         })
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# OBJETIVOS DE APRENDIZAJE
-# ==========================================================
 
 @curriculum_api.route("/objectives/<path:course>/<path:subject>/<path:unit>", methods=["GET"])
 def objectives(course, subject, unit):
     if "user_id" not in session:
         return unauthorized()
     try:
-        course = course.strip()
-        subject = subject.strip()
-        unit = unit.strip()
+        course, subject, unit = course.strip(), subject.strip(), unit.strip()
         if not curriculum.exists_course(course):
             return jsonify({"success": False, "message": "Curso no encontrado."}), 404
         if not curriculum.exists_subject(course, subject):
             return jsonify({"success": False, "message": "Asignatura no encontrada."}), 404
         if not curriculum.exists_unit(course, subject, unit):
             return jsonify({"success": False, "message": "Unidad no encontrada."}), 404
-
         objectives = curriculum.get_learning_objectives(course, subject, unit)
-        data = []
-        for oa in objectives:
-            data.append({
-                "code": oa.get("codigo", oa.get("code", "")),
-                "title": oa.get("titulo", oa.get("title", "")),
-                "description": oa.get("descripcion", oa.get("description", ""))
-            })
-
+        data = [{"code": oa.get("code", ""), "description": oa.get("description", "")} for oa in objectives]
         return jsonify({
-            "success": True,
-            "course": course,
-            "subject": subject,
-            "unit": unit,
-            "total": len(data),
-            "objectives": data
+            "success": True, "course": course, "subject": subject, "unit": unit,
+            "total": len(data), "objectives": data
         })
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# PLANNING CONTEXT
-# ==========================================================
 
 @curriculum_api.route("/planning-context", methods=["POST"])
 def planning_context():
@@ -187,25 +216,16 @@ def planning_context():
         return unauthorized()
     try:
         data = request.get_json()
-        course = data.get("course", "").strip()
-        subject = data.get("subject", "").strip()
-        unit = data.get("unit", "").strip()
-        selected_codes = data.get("learning_objectives", [])
-
         context = curriculum.planning_payload(
-            course=course,
-            subject=subject,
-            unit=unit,
-            selected_codes=selected_codes
+            course=data.get("course", "").strip(),
+            subject=data.get("subject", "").strip(),
+            unit=data.get("unit", "").strip(),
+            selected_codes=data.get("learning_objectives", [])
         )
         return jsonify({"success": True, "data": context})
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# EVALUATION CONTEXT
-# ==========================================================
 
 @curriculum_api.route("/evaluation-context", methods=["POST"])
 def evaluation_context():
@@ -213,25 +233,16 @@ def evaluation_context():
         return unauthorized()
     try:
         data = request.get_json()
-        course = data.get("course", "").strip()
-        subject = data.get("subject", "").strip()
-        unit = data.get("unit", "").strip()
-        selected_codes = data.get("learning_objectives", [])
-
         context = curriculum.evaluation_payload(
-            course=course,
-            subject=subject,
-            unit=unit,
-            selected_codes=selected_codes
+            course=data.get("course", "").strip(),
+            subject=data.get("subject", "").strip(),
+            unit=data.get("unit", "").strip(),
+            selected_codes=data.get("learning_objectives", [])
         )
         return jsonify({"success": True, "data": context})
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# PROMPT OPENAI
-# ==========================================================
 
 @curriculum_api.route("/prompt", methods=["POST"])
 def prompt():
@@ -239,25 +250,16 @@ def prompt():
         return unauthorized()
     try:
         data = request.get_json()
-        course = data.get("course", "").strip()
-        subject = data.get("subject", "").strip()
-        unit = data.get("unit", "").strip()
-        selected_codes = data.get("learning_objectives", [])
-
         prompt = curriculum.build_prompt(
-            course=course,
-            subject=subject,
-            unit=unit,
-            selected_codes=selected_codes
+            course=data.get("course", "").strip(),
+            subject=data.get("subject", "").strip(),
+            unit=data.get("unit", "").strip(),
+            selected_codes=data.get("learning_objectives", [])
         )
         return jsonify({"success": True, "prompt": prompt})
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# BUSCAR OBJETIVOS DE APRENDIZAJE
-# ==========================================================
 
 @curriculum_api.route("/search", methods=["GET"])
 def search_learning_objectives():
@@ -267,16 +269,11 @@ def search_learning_objectives():
         text = request.args.get("q", "").strip()
         if text == "":
             return jsonify({"success": True, "total": 0, "results": []})
-
         results = curriculum.search_learning_objectives(text)
         return jsonify({"success": True, "query": text, "total": len(results), "results": results})
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# BUSCAR UNIDADES
-# ==========================================================
 
 @curriculum_api.route("/search-units", methods=["GET"])
 def search_units():
@@ -290,10 +287,6 @@ def search_units():
         return jsonify({"success": False, "message": str(ex)}), 500
 
 
-# ==========================================================
-# EXPORTAR CURRÍCULUM
-# ==========================================================
-
 @curriculum_api.route("/export", methods=["GET"])
 def export_curriculum():
     if "user_id" not in session:
@@ -305,10 +298,6 @@ def export_curriculum():
         return jsonify({"success": False, "message": str(ex)}), 500
 
 
-# ==========================================================
-# RECARGAR CURRÍCULUM
-# ==========================================================
-
 @curriculum_api.route("/reload", methods=["POST"])
 def reload_curriculum():
     if "user_id" not in session:
@@ -318,15 +307,11 @@ def reload_curriculum():
         return jsonify({
             "success": True,
             "message": "Currículum recargado correctamente.",
-            "statistics": curriculum.statistics()
+            "statistics": curriculum.health()
         })
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# INFORMACIÓN DEL SERVICIO
-# ==========================================================
 
 @curriculum_api.route("/info", methods=["GET"])
 def info():
@@ -335,10 +320,6 @@ def info():
     except Exception as ex:
         return jsonify({"success": False, "message": str(ex)}), 500
 
-
-# ==========================================================
-# MANEJO GLOBAL DE ERRORES
-# ==========================================================
 
 @curriculum_api.errorhandler(404)
 def not_found(error):
@@ -353,8 +334,3 @@ def method_not_allowed(error):
 @curriculum_api.errorhandler(Exception)
 def internal_error(error):
     return jsonify({"success": False, "message": str(error)}), 500
-
-
-# ==========================================================
-# FIN DEL ARCHIVO
-# ==========================================================
