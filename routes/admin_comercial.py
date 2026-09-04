@@ -13,6 +13,8 @@ Visibilidad comercial de la plataforma para el rol admin:
   uso de trial y origen del alta por usuario.
 • Pipeline de pagos: últimos eventos PaymentEvent
   (Mercado Pago + activaciones manuales).
+• Activaciones pendientes: usuarios que pagaron en MP
+  pero el webhook no activó el plan.
 
 La activación manual de planes reutiliza el endpoint
 existente PUT /admin/api/usuarios/<id>/plan
@@ -25,7 +27,7 @@ Biotecno Chile
 ===========================================================
 """
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from flask import Blueprint
 from flask import jsonify
@@ -33,10 +35,12 @@ from flask import render_template
 from flask import request
 
 from database.session import SessionLocal
+from models.checkout_attempt import CheckoutAttempt
 from models.payment_event import PaymentEvent
 from models.user import User
 from models.user_subscription import UserSubscription
 from security.authorization import role_required
+from services.entitlements import Entitlements
 
 # ==========================================================
 # Blueprint
@@ -177,6 +181,43 @@ def _load_rows(db):
         )
         for u in users
     ], now
+
+
+def _build_stats(db):
+    """KPIs para el template de activaciones."""
+    rows, now = _load_rows(db)
+    month_start = now.replace(
+        day=1, hour=0, minute=0,
+        second=0, microsecond=0
+    )
+    activaciones_mes = db.query(
+        PaymentEvent
+    ).filter(
+        PaymentEvent.action == "activated",
+        PaymentEvent.created_at >= month_start,
+    ).count()
+
+    teachers = [
+        r for r in rows
+        if r["status"] != "admin"
+    ]
+
+    return {
+        "usuarios": len(teachers),
+        "trials": sum(
+            1 for r in teachers
+            if r["status"] == "trial"
+        ),
+        "pro_activos": sum(
+            1 for r in teachers
+            if r["status"] == "active"
+        ),
+        "expirados": sum(
+            1 for r in teachers
+            if r["status"] == "expired"
+        ),
+        "activaciones_mes": activaciones_mes,
+    }
 
 
 # ==========================================================
@@ -344,4 +385,55 @@ def eventos():
 
     finally:
 
+        db.close()
+
+
+# ==========================================================
+# Activaciones pendientes (v3.2)
+# ==========================================================
+
+@admin_comercial.route("/admin/comercial/activaciones-pendientes")
+@role_required("admin")
+def activaciones_pendientes():
+    """
+    v3.2: Muestra usuarios que iniciaron checkout en MP
+    pero cuyo plan no se activó automáticamente.
+    """
+    db = SessionLocal()
+    try:
+        desde = datetime.utcnow() - timedelta(hours=48)
+
+        attempts = (
+            db.query(CheckoutAttempt)
+            .filter(CheckoutAttempt.created_at >= desde)
+            .order_by(CheckoutAttempt.created_at.desc())
+            .all()
+        )
+
+        pendientes = []
+        for attempt in attempts:
+            user = db.query(User).filter(
+                User.id == attempt.user_id
+            ).first()
+
+            if not user:
+                continue
+
+            status = Entitlements.get_status(user.id)
+            if status.get("status") != "active":
+                pendientes.append({
+                    "user_id": user.id,
+                    "email": user.email,
+                    "nombre": user.name or "Sin nombre",
+                    "checkout_at": attempt.created_at,
+                })
+
+        return render_template(
+            "admin_comercial.html",
+            stats=_build_stats(db),
+            tab="activaciones",
+            pendientes=pendientes,
+        )
+
+    finally:
         db.close()

@@ -11,6 +11,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_comercial.css', v=config.APP_VERSION) }}">
+    <style>
+        .tabs-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        .tab-link {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #6b7280;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .tab-link:hover {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        .tab-link.active {
+            background: #2563eb;
+            color: white;
+        }
+        .badge-pendiente {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .btn-activate {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .btn-activate:hover {
+            background: #059669;
+        }
+        .empty-state-ok {
+            text-align: center;
+            padding: 3rem;
+            color: #6b7280;
+        }
+        .empty-state-ok i {
+            font-size: 3rem;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,7 +77,7 @@
             <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
         </div>
         {% set active_menu = 'admin_comercial' %}
-    {% include 'partials/sidebar_menu.html' %}
+        {% include 'partials/sidebar_menu.html' %}
         <div class="sidebar-footer">
             <div class="user-card">
                 <div class="avatar"><i class="fa-solid fa-user"></i></div>
@@ -48,6 +103,22 @@
 
         <section class="admin-section">
 
+            <!-- ============ Tabs de navegación ============ -->
+            <nav class="tabs-nav">
+                <a href="{{ url_for('admin_comercial.comercial_page') }}"
+                   class="tab-link {% if not tab or tab == 'dashboard' %}active{% endif %}">
+                    📊 Dashboard
+                </a>
+                <a href="{{ url_for('admin_comercial.activaciones_pendientes') }}"
+                   class="tab-link {% if tab == 'activaciones' %}active{% endif %}">
+                    ⚡ Activaciones Pendientes
+                    {% if pendientes and pendientes|length > 0 %}
+                    <span class="badge-pendiente">{{ pendientes|length }}</span>
+                    {% endif %}
+                </a>
+            </nav>
+
+            {% if not tab or tab == 'dashboard' %}
             <!-- ============ KPIs ============ -->
             <div class="kpi-grid" id="kpiGrid">
                 <div class="kpi-card">
@@ -159,6 +230,51 @@
                 </div>
 
             </div>
+            {% endif %}
+
+            {% if tab == 'activaciones' %}
+            <!-- ============ Activaciones Pendientes ============ -->
+            <div class="admin-card">
+                <h2><i class="fa-solid fa-bolt"></i> Activaciones Pendientes</h2>
+                <p>Usuarios que iniciaron el pago en MercadoPago (últimas 48h) pero cuyo plan no se activó automáticamente.</p>
+
+                {% if pendientes %}
+                <div class="users-table-wrapper">
+                    <table class="users-table">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Nombre</th>
+                                <th>Fecha de intento</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for p in pendientes %}
+                            <tr>
+                                <td>{{ p.email }}</td>
+                                <td>{{ p.nombre }}</td>
+                                <td>{{ p.checkout_at.strftime('%d/%m/%Y %H:%M') }}</td>
+                                <td>
+                                    <button class="btn-activate"
+                                            onclick="activarPlan('{{ p.user_id }}', '{{ p.email }}')">
+                                        <i class="fa-solid fa-check"></i> Activar Plan Pro
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="empty-state-ok">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h3>¡Todo en orden!</h3>
+                    <p>No hay activaciones pendientes. Todos los pagos se procesaron correctamente.</p>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
 
         </section>
 
@@ -214,6 +330,31 @@ window.COMERCIAL_CONFIG = {
     planUrl: "{{ url_for('admin_security.activate_user_plan', user_id='__ID__') }}",
     csrfToken: "{{ csrf_token() }}"
 };
+
+function activarPlan(userId, email) {
+    if (!confirm('¿Activar Plan Pro por 30 días para ' + email + '?')) {
+        return;
+    }
+    fetch('/admin/users/' + userId + '/plan', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': window.COMERCIAL_CONFIG.csrfToken
+        }
+    })
+    .then(r => r.json())
+    .then(data => {
+        if (data.success) {
+            alert('✅ Plan activado correctamente');
+            location.reload();
+        } else {
+            alert('❌ Error: ' + (data.message || 'No se pudo activar'));
+        }
+    })
+    .catch(err => {
+        alert('❌ Error de red: ' + err);
+    });
+}
 </script>
 <script src="{{ url_for('static', filename='js/admin_comercial.js', v=config.APP_VERSION) }}"></script>
 
