@@ -815,6 +815,7 @@ if (document.readyState === "loading") {
 
             // CORRECCION NOMBRES ASIGNATURAS
             
+            const nameMap = {"tecnol":"Tecnología","orient":"Orientación","efi":"Educación Física y Salud"};
             const selectedCourse = document.getElementById('course')?.value || '';
             const esBasico = /^[1-6]/.test(selectedCourse) && selectedCourse.includes('Básico') && !selectedCourse.includes('Medio');
             if(json.subjects){
@@ -823,14 +824,6 @@ if (document.readyState === "loading") {
                     if(s === "Matemática") return "Matemáticas";
                     return nameMap[s] || s;
                 });
-            }
-
-            if (!json.success) {
-                throw new Error(
-                    json.message ||
-                    json.error ||
-                    "No fue posible cargar las asignaturas."
-                );
             }
 
             currentSubjects =
