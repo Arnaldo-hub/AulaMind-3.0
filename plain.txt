@@ -1,0 +1,7 @@
+FLUJO DE ACTIVACIÓN MANUAL (mientras el webhook no funcione 100%):
+
+1. Recibes email de MP (dinero llegó) o ves evento en Panel Comercial
+2. Entras a https://www.aulamind.cl/admin/comercial
+3. Buscas al usuario en la tabla
+4. Clic en "Activar Plan Pro" → 30 días → Listo
+5. El usuario recibe acceso inmediato

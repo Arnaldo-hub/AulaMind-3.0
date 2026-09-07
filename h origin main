@@ -1,0 +1,44 @@
+[1mdiff --git a/routes/planning.py b/routes/planning.py[m
+[1mindex 5b605b2..a819f1a 100644[m
+[1m--- a/routes/planning.py[m
+[1m+++ b/routes/planning.py[m
+[36m@@ -25,6 +25,7 @@[m [mfrom security.authorization import subscription_required[m
+ from services.entitlements import Entitlements[m
+ from services.planning_service import planning_service[m
+ from services.persistence_service import persistence_service[m
+[32m+[m[32mfrom routes.curriculum_data import get_subjects_for_course[m
+ [m
+ [m
+ # ==========================================================[m
+[36m@@ -257,21 +258,20 @@[m [m_SUBJECT_NAME_MAP = {[m
+ def api_subjects(course):[m
+     """[m
+     Devuelve asignaturas para un curso.[m
+[31m-    Aplica corrección de nombres abreviados antes de enviar[m
+[31m-    al frontend, garantizando que siempre se muestren los[m
+[31m-    nombres oficiales completos.[m
+[32m+[m[32m    Fuente de verdad: curriculum_data.py (hardcodeado, sin caché, sin singleton)[m
+     """[m
+[31m-    subjects = curriculum_service.get_subjects(course)[m
+[31m-[m
+[31m-    # Corrección definitiva: reemplazar abreviaturas[m
+[31m-    corrected = [[m
+[31m-        _SUBJECT_NAME_MAP.get(s, s)[m
+[31m-        for s in subjects[m
+[31m-    ][m
+[32m+[m[32m    subjects = get_subjects_for_course(course)[m
+[32m+[m[41m    [m
+[32m+[m[32m    if subjects is None:[m
+[32m+[m[32m        return jsonify({[m
+[32m+[m[32m            "success": False,[m
+[32m+[m[32m            "error": f"Curso '{course}' no encontrado"[m
+[32m+[m[32m        }), 404[m
+ [m
+     return jsonify({[m
+         "success": True,[m
+[31m-        "subjects": corrected[m
+[32m+[m[32m        "subjects": subjects,[m
+[32m+[m[32m        "total": len(subjects)[m
+     })[m
+ [m
+ # ==========================================================[m
