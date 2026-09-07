@@ -1050,8 +1050,7 @@ LIBRERÍAS
 PLANNING ENGINE
 ===========================================================-->
 
-<script src="{{ url_for('static', filename='js/planning.js', v=config.APP_VERSION) }}"></script>
-
+<script src="{{ url_for('static', filename='js/planning.js') }}?v={{ config.APP_VERSION }}-{{ range(1, 999999) | random }}"></script>
 <!--==========================================================
 SCRIPTS
 ===========================================================-->
