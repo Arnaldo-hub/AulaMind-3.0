@@ -1050,6 +1050,38 @@ LIBRERÍAS
 PLANNING ENGINE
 ===========================================================-->
 
+    <!-- PARCE DEFINITIVO: corrige nombres asignaturas antes de que planning.js los use -->
+    <script>
+    (function(){
+        const originalFetch = window.fetch;
+        window.fetch = function() {
+            return originalFetch.apply(this, arguments).then(function(response){
+                const url = arguments[0];
+                if(typeof url === 'string' && url.includes('/api/curriculum/subjects/')){
+                    const clone = response.clone();
+                    return clone.json().then(function(data){
+                        if(data.subjects){
+                            const curso = document.getElementById('course')?.value || '';
+                            const esBasico = /^[1-6]/.test(curso) && curso.includes('Básico');
+                            data.subjects = data.subjects.map(function(s){
+                                if(esBasico && s === 'Lenguaje y Literatura') return 'Lenguaje y Comunicación';
+                                if(s === 'Matemática') return 'Matemáticas';
+                                return s;
+                            });
+                        }
+                        return new Response(JSON.stringify(data), {
+                            status: response.status,
+                            statusText: response.statusText,
+                            headers: response.headers
+                        });
+                    });
+                }
+                return response;
+            });
+        };
+    })();
+    </script>
+    <!-- FIN PARCE -->
 <script src="{{ url_for('static', filename='js/planning-fix.js') }}?v=3.3.3-fix"></script>
 <!--==========================================================
 SCRIPTS
