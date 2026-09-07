@@ -31,6 +31,16 @@ from services.payment_mailer import PaymentMailer
 
 logger = logging.getLogger(__name__)
 
+from functools import wraps
+
+def login_required(view):
+    @wraps(view)
+    def wrapper(*args, **kwargs):
+        if not session.get("user_id"):
+            return redirect(url_for("auth.login"))
+        return view(*args, **kwargs)
+    return wrapper
+
 # ==========================================================
 # Blueprint
 # ==========================================================
