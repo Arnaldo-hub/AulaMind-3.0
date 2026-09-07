@@ -815,7 +815,14 @@ if (document.readyState === "loading") {
 
             // CORRECCION NOMBRES ASIGNATURAS
             const nameMap = {"tecnol":"Tecnología","orient":"Orientación","efi":"Educación Física y Salud"};
-            if(json.subjects){json.subjects=json.subjects.map(s=>nameMap[s]||s);}
+            const isBasica = ["1° Básico","2° Básico","3° Básico","4° Básico","5° Básico","6° Básico"].includes(courseName);
+            if(json.subjects){
+                json.subjects = json.subjects.map(s => {
+                    if(isBasica && s === "Lenguaje y Literatura") return "Lenguaje y Comunicación";
+                    if(s === "Matemática") return "Matemáticas";
+                    return nameMap[s] || s;
+                });
+            }
 
             if (!json.success) {
                 throw new Error(
