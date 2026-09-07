@@ -815,8 +815,8 @@ if (document.readyState === "loading") {
 
             // CORRECCION NOMBRES ASIGNATURAS
             
-            const basicos = ["1° Básico","2° Básico","3° Básico","4° Básico","5° Básico","6° Básico"];
-            const esBasico = basicos.includes(courseName);
+            const selectedCourse = document.getElementById('course')?.value || '';
+            const esBasico = /^[1-6]/.test(selectedCourse) && selectedCourse.includes('Básico') && !selectedCourse.includes('Medio');
             if(json.subjects){
                 json.subjects = json.subjects.map(s => {
                     if(esBasico && s === "Lenguaje y Literatura") return "Lenguaje y Comunicación";
