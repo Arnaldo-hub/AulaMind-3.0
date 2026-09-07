@@ -10,7 +10,7 @@ from routes.curriculum_data import get_subjects_for_course, COURSE_SUBJECTS
 # Importar el servicio SOLO para endpoints que realmente lo necesiten
 from services.curriculum_service import CurriculumService
 
-curriculum_api = Blueprint('curriculum', __name__)
+curriculum_api = Blueprint('curriculum_api', __name__)
 
 # =============================================================================
 # Helper: autenticación docente
