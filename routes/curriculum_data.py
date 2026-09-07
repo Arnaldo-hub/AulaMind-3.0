@@ -3,6 +3,28 @@
 # Basada en el currículum chileno actual.
 
 COURSE_SUBJECTS = {
+        "NT1": [
+        "Identidad y Autonomía",
+        "Convivencia y Ciudadanía",
+        "Corporalidad y Movimiento",
+        "Lenguaje Verbal",
+        "Lenguajes Artísticos",
+        "Exploración del Entorno Natural",
+        "Comprensión del Entorno Sociocultural",
+        "Pensamiento Matemático",
+        "Inglés"
+    ],
+    "NT2": [
+        "Identidad y Autonomía",
+        "Convivencia y Ciudadanía",
+        "Corporalidad y Movimiento",
+        "Lenguaje Verbal",
+        "Lenguajes Artísticos",
+        "Exploración del Entorno Natural",
+        "Comprensión del Entorno Sociocultural",
+        "Pensamiento Matemático",
+        "Inglés"
+    ],
     "1° Básico": [
         "Artes Visuales",
         "Ciencias Naturales",
