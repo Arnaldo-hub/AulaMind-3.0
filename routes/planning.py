@@ -25,6 +25,7 @@ from security.authorization import subscription_required
 from services.entitlements import Entitlements
 from services.planning_service import planning_service
 from services.persistence_service import persistence_service
+from routes.curriculum_data import get_subjects_for_course
 
 
 # ==========================================================
@@ -257,21 +258,20 @@ _SUBJECT_NAME_MAP = {
 def api_subjects(course):
     """
     Devuelve asignaturas para un curso.
-    Aplica corrección de nombres abreviados antes de enviar
-    al frontend, garantizando que siempre se muestren los
-    nombres oficiales completos.
+    Fuente de verdad: curriculum_data.py (hardcodeado, sin caché, sin singleton)
     """
-    subjects = curriculum_service.get_subjects(course)
-
-    # Corrección definitiva: reemplazar abreviaturas
-    corrected = [
-        _SUBJECT_NAME_MAP.get(s, s)
-        for s in subjects
-    ]
+    subjects = get_subjects_for_course(course)
+    
+    if subjects is None:
+        return jsonify({
+            "success": False,
+            "error": f"Curso '{course}' no encontrado"
+        }), 404
 
     return jsonify({
         "success": True,
-        "subjects": corrected
+        "subjects": subjects,
+        "total": len(subjects)
     })
 
 # ==========================================================
