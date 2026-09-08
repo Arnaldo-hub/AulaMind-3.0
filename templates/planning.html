@@ -267,7 +267,7 @@
                     UNIDAD
                     ======================================-->
 
-                    <div class="form-group">
+                    <div class="form-group" id="group-unidad">
 
                         <label>
 
@@ -592,6 +592,122 @@
                     <div class="planning-grid">
 
                         <!--==================================================
+                        MODALIDAD DE PLANIFICACIÓN (v3.5)
+                        ==================================================-->
+
+                        <div class="form-group">
+
+                            <label for="modalidad_plan">
+
+                                Tipo de Planificación
+
+                            </label>
+
+                            <select
+                                id="modalidad_plan"
+                                name="modalidad_plan"
+                                class="form-control">
+
+                                <option value="unidad" selected>
+
+                                    Planificación por Unidad
+
+                                </option>
+
+                                <option value="anual">
+
+                                    Planificación Anual (carta Gantt)
+
+                                </option>
+
+                                <option value="mensual">
+
+                                    Planificación Mensual
+
+                                </option>
+
+                                <option value="diaria">
+
+                                    Planificación Diaria
+
+                                </option>
+
+                                <option value="invertida">
+
+                                    Planificación Invertida
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!--==================================================
+                        RANGO DE FECHAS (solo modalidad ANUAL)
+                        ==================================================-->
+
+                        <div
+                            class="form-group"
+                            id="group-fechas"
+                            style="display: none;">
+
+                            <label for="fecha_inicio">
+
+                                Fecha de Inicio (año escolar)
+
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fecha_inicio"
+                                name="fecha_inicio"
+                                class="form-control">
+
+                        </div>
+
+                        <div
+                            class="form-group"
+                            id="group-fecha-termino"
+                            style="display: none;">
+
+                            <label for="fecha_termino">
+
+                                Fecha de Término (año escolar)
+
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fecha_termino"
+                                name="fecha_termino"
+                                class="form-control">
+
+                        </div>
+
+                        <!--==================================================
+                        MES (solo modalidad MENSUAL)
+                        ==================================================-->
+
+                        <div
+                            class="form-group"
+                            id="group-mes"
+                            style="display: none;">
+
+                            <label for="mes">
+
+                                Mes a Planificar
+
+                            </label>
+
+                            <input
+                                type="month"
+                                id="mes"
+                                name="mes"
+                                class="form-control">
+
+                        </div>
+
+                        <!--==================================================
                         TEMA
                         ==================================================-->
 
@@ -641,7 +757,7 @@
 
                                 </option>
 
-                                <option value="90">
+                                <option value="90" selected>
 
                                     90 minutos
 
@@ -1024,13 +1140,15 @@ window.AulaMind = {
 
         planning: {
 
-            generate: "/planning/generate"
+            generate: "/planning/generate",
+
+            modalities: "/planning/api/planning/modalities"
 
         }
 
     },
 
-    version: "3.0.0",
+    version: "3.5.0",
 
     company: "Biotecno Chile"
 
@@ -1050,39 +1168,8 @@ LIBRERÍAS
 PLANNING ENGINE
 ===========================================================-->
 
-    <!-- PARCE DEFINITIVO: corrige nombres asignaturas antes de que planning.js los use -->
-    <script>
-    (function(){
-        const originalFetch = window.fetch;
-        window.fetch = function() {
-            return originalFetch.apply(this, arguments).then(function(response){
-                const url = arguments[0];
-                if(typeof url === 'string' && url.includes('/api/curriculum/subjects/')){
-                    const clone = response.clone();
-                    return clone.json().then(function(data){
-                        if(data.subjects){
-                            const curso = document.getElementById('course')?.value || '';
-                            const esBasico = /^[1-6]/.test(curso) && curso.includes('Básico');
-                            data.subjects = data.subjects.map(function(s){
-                                if(esBasico && s === 'Lenguaje y Literatura') return 'Lenguaje y Comunicación';
-                                if(s === 'Matemática') return 'Matemáticas';
-                                return s;
-                            });
-                        }
-                        return new Response(JSON.stringify(data), {
-                            status: response.status,
-                            statusText: response.statusText,
-                            headers: response.headers
-                        });
-                    });
-                }
-                return response;
-            });
-        };
-    })();
-    </script>
-    <!-- FIN PARCE -->
-<script src="{{ url_for('static', filename='js/planning-fix.js') }}?v=3.3.3-fix"></script>
+<script src="{{ url_for('static', filename='js/planning.js', v=config.APP_VERSION) }}"></script>
+
 <!--==========================================================
 SCRIPTS
 ===========================================================-->
@@ -1095,7 +1182,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     console.log("========================================");
 
-    console.log("AulaMind Enterprise 3.0");
+    console.log("AulaMind Enterprise 3.5");
 
     console.log("Planning Engine");
 
@@ -1104,6 +1191,79 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("OpenAI Ready");
 
     console.log("========================================");
+
+    // ==================================================
+    // MODALIDADES DE PLANIFICACIÓN (v3.5)
+    // Muestra/oculta campos condicionales según el tipo
+    // de planificación elegido y garantiza que los
+    // valores viajen en el payload hacia /planning/generate.
+    // ==================================================
+
+    const selectModalidad = document.getElementById("modalidad_plan");
+    const groupFechas     = document.getElementById("group-fechas");
+    const groupFechaTerm  = document.getElementById("group-fecha-termino");
+    const groupMes        = document.getElementById("group-mes");
+    const groupUnidad     = document.getElementById("group-unidad");
+
+    function actualizarCamposModality() {
+
+        const valor = selectModalidad ? selectModalidad.value : "unidad";
+
+        // Anual → rango de fechas obligatorio
+        const mostrarFechas = (valor === "anual");
+        if (groupFechas)    groupFechas.style.display    = mostrarFechas ? "" : "none";
+        if (groupFechaTerm) groupFechaTerm.style.display = mostrarFechas ? "" : "none";
+
+        // Mensual → selector de mes
+        if (groupMes) groupMes.style.display = (valor === "mensual") ? "" : "none";
+
+        // Anual y mensual no exigen unidad: se deja visible
+        // pero no bloqueante (la validación real está en el
+        // servidor según modalidad).
+        if (groupUnidad) {
+            groupUnidad.style.opacity = (valor === "anual" || valor === "mensual") ? "0.6" : "1";
+        }
+
+        // Exponer para planning.js y debugging
+        window.AulaMind.modalidad_plan = valor;
+    }
+
+    if (selectModalidad) {
+        selectModalidad.addEventListener("change", actualizarCamposModality);
+        actualizarCamposModality();
+    }
+
+    // ==================================================
+    // Garantía de envío: si planning.js serializa el
+    // formulario (FormData/serialize), los campos
+    // modalidad_plan, fecha_inicio, fecha_termino y mes
+    // ya viajan por sus atributos name. Este listener en
+    // fase de captura es respaldo defensivo.
+    // ==================================================
+
+    const form = document.getElementById("planningForm");
+
+    if (form) {
+
+        form.addEventListener("submit", function () {
+
+            try {
+
+                const modalidad = document.getElementById("modalidad_plan");
+
+                if (modalidad) {
+                    modalidad.disabled = false;
+                }
+
+            } catch (e) {
+
+                console.warn("modalidad submit hook:", e);
+
+            }
+
+        }, true);
+
+    }
 
 });
 

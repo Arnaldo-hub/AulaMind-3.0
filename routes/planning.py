@@ -1,7 +1,18 @@
 # ==========================================================
 # AulaMind Enterprise 3.0
 # routes/planning.py
-# MÓDULO 1 - PARTE A
+# MÓDULO 1 - PARTE A + v3.5 MODALIDADES
+# ==========================================================
+# Cambios v3.5:
+#   + GET  /planning/api/planning/modalities
+#     Catálogo de las 5 modalidades de planificación.
+#   + POST /planning/generate ahora acepta modalidad_plan
+#     (anual | mensual | diaria | unidad | invertida) y
+#     valida campos según la modalidad elegida.
+#   + GET  /planning/api/curriculum/tp/* (especialidades TP)
+#     Solo activos si existe services/curriculum_tp_service.py.
+#   · Compatibilidad total: sin modalidad_plan opera como
+#     planificación por unidad (comportamiento actual).
 # ==========================================================
 
 from __future__ import annotations
@@ -23,9 +34,24 @@ from flask import (
 from services.curriculum_service import curriculum_service
 from security.authorization import subscription_required
 from services.entitlements import Entitlements
-from services.planning_service import planning_service
+from services.planning_service import (
+    planning_service,
+    PlanningModalities,
+)
 from services.persistence_service import persistence_service
-from routes.curriculum_data import get_subjects_for_course
+
+# ----------------------------------------------------------
+# Especialidades TP (opcional): si el módulo aún no existe
+# en el repo, estos endpoints responden 404 controlado y
+# el resto del blueprint funciona con normalidad.
+# ----------------------------------------------------------
+
+try:
+    from services.curriculum_tp_service import curriculum_tp_service
+    TP_AVAILABLE = True
+except ImportError:
+    curriculum_tp_service = None
+    TP_AVAILABLE = False
 
 
 # ==========================================================
@@ -216,6 +242,24 @@ def info():
 
 
 # ==========================================================
+# API MODALIDADES DE PLANIFICACIÓN (v3.5)
+# ==========================================================
+
+@planning.route("/api/planning/modalities", methods=["GET"])
+def api_planning_modalities():
+    """
+    Devuelve el catálogo de modalidades de planificación
+    soportadas por el motor IA. El frontend usa este
+    endpoint para poblar el selector de tipo de plan.
+    """
+    return success({
+
+        "modalities": PlanningModalities.list()
+
+    })
+
+
+# ==========================================================
 # CONTINÚA EN MÓDULO 1 - PARTE B
 # ==========================================================
 # ==========================================================
@@ -225,11 +269,39 @@ def info():
 @planning.route("/api/curriculum/courses", methods=["GET"])
 def api_courses():
 
+    courses = curriculum_service.get_courses()
+
+    # ------------------------------------------------------
+    # v3.5: fusionar cursos TP si el módulo está disponible.
+    # Los cursos TP se identifican por el sufijo "TP" y se
+    # agregan al final del listado, sin duplicar.
+    # ------------------------------------------------------
+
+    if TP_AVAILABLE and curriculum_tp_service is not None:
+
+        try:
+
+            existing = {c["name"] for c in courses}
+
+            for c in curriculum_tp_service.get_courses():
+
+                if c["name"] not in existing:
+
+                    courses.append(c)
+
+                    existing.add(c["name"])
+
+        except Exception:
+
+            current_app.logger.exception(
+                "No se pudieron fusionar cursos TP."
+            )
+
     return jsonify({
 
         "success": True,
 
-        "courses": curriculum_service.get_courses()
+        "courses": courses
 
     })
 
@@ -258,20 +330,45 @@ _SUBJECT_NAME_MAP = {
 def api_subjects(course):
     """
     Devuelve asignaturas para un curso.
-    Fuente de verdad: curriculum_data.py (hardcodeado, sin caché, sin singleton)
+    Aplica corrección de nombres abreviados antes de enviar
+    al frontend, garantizando que siempre se muestren los
+    nombres oficiales completos.
     """
-    subjects = get_subjects_for_course(course)
-    
-    if subjects is None:
-        return jsonify({
-            "success": False,
-            "error": f"Curso '{course}' no encontrado"
-        }), 404
+    subjects = curriculum_service.get_subjects(course)
+
+    # v3.5: cursos TP consultan al servicio TP
+    if not subjects and TP_AVAILABLE and "TP" in course:
+
+        try:
+
+            return jsonify({
+
+                "success": True,
+
+                "subjects": [
+                    s["name"]
+                    for s in curriculum_tp_service.get_subjects(
+                        course
+                    )
+                ]
+
+            })
+
+        except Exception:
+
+            current_app.logger.exception(
+                "Error consultando asignaturas TP."
+            )
+
+    # Corrección definitiva: reemplazar abreviaturas
+    corrected = [
+        _SUBJECT_NAME_MAP.get(s, s)
+        for s in subjects
+    ]
 
     return jsonify({
         "success": True,
-        "subjects": subjects,
-        "total": len(subjects)
+        "subjects": corrected
     })
 
 # ==========================================================
@@ -280,9 +377,30 @@ def api_subjects(course):
 
 @planning.route("/api/curriculum/units/<course>/<subject>", methods=["GET"])
 def api_units(course, subject):
+
+    units = curriculum_service.get_units(course, subject)
+
+    # v3.5: fallback a TP si el curso es técnico-profesional
+    if not units and TP_AVAILABLE and "TP" in course:
+
+        try:
+
+            units = [
+                u["name"]
+                for u in curriculum_tp_service.get_units(
+                    course, subject
+                )
+            ]
+
+        except Exception:
+
+            current_app.logger.exception(
+                "Error consultando unidades TP."
+            )
+
     return jsonify({
         "success": True,
-        "units": curriculum_service.get_units(course, subject)
+        "units": units
     })
 
 # ==========================================================
@@ -291,10 +409,143 @@ def api_units(course, subject):
 
 @planning.route("/api/curriculum/objectives/<course>/<subject>/<unit>", methods=["GET"])
 def api_objectives(course, subject, unit):
+
+    objectives = (
+        curriculum_service.get_learning_objectives(
+            course, subject, unit
+        )
+    )
+
+    # v3.5: fallback a TP
+    if not objectives and TP_AVAILABLE and "TP" in course:
+
+        try:
+
+            objectives = (
+                curriculum_tp_service.get_objectives(
+                    course, subject, unit
+                )
+            )
+
+        except Exception:
+
+            current_app.logger.exception(
+                "Error consultando OA TP."
+            )
+
     return jsonify({
         "success": True,
-        "objectives": curriculum_service.get_learning_objectives(course, subject, unit)
+        "objectives": objectives
     })
+
+# ==========================================================
+# API ESPECIALIDADES TP EXPLÍCITAS (v3.5)
+# ==========================================================
+
+@planning.route("/api/curriculum/tp/subjects/<course>", methods=["GET"])
+def api_tp_subjects(course):
+    """
+    Asignaturas (especialidades) para un curso TP.
+    Disponible solo si curriculum_tp_service existe.
+    """
+    if not TP_AVAILABLE:
+
+        return error(
+            "Módulo de especialidades TP no disponible.",
+            404
+        )
+
+    try:
+
+        return success({
+
+            "subjects": curriculum_tp_service.get_subjects(
+                course
+            )
+
+        })
+
+    except Exception:
+
+        current_app.logger.exception(
+            "api_tp_subjects falló."
+        )
+
+        return error(
+            "Error consultando especialidades TP.",
+            500
+        )
+
+
+@planning.route("/api/curriculum/tp/units/<course>/<subject>", methods=["GET"])
+def api_tp_units(course, subject):
+    """
+    Unidades (sectores) de una especialidad TP.
+    """
+    if not TP_AVAILABLE:
+
+        return error(
+            "Módulo de especialidades TP no disponible.",
+            404
+        )
+
+    try:
+
+        return success({
+
+            "units": curriculum_tp_service.get_units(
+                course, subject
+            )
+
+        })
+
+    except Exception:
+
+        current_app.logger.exception(
+            "api_tp_units falló."
+        )
+
+        return error(
+            "Error consultando unidades TP.",
+            500
+        )
+
+
+@planning.route("/api/curriculum/tp/objectives/<course>/<subject>/<unit>", methods=["GET"])
+def api_tp_objectives(course, subject, unit):
+    """
+    OA de perfil de egreso de una especialidad TP.
+    """
+    if not TP_AVAILABLE:
+
+        return error(
+            "Módulo de especialidades TP no disponible.",
+            404
+        )
+
+    try:
+
+        return success({
+
+            "objectives": (
+                curriculum_tp_service.get_objectives(
+                    course, subject, unit
+                )
+            )
+
+        })
+
+    except Exception:
+
+        current_app.logger.exception(
+            "api_tp_objectives falló."
+        )
+
+        return error(
+            "Error consultando OA TP.",
+            500
+        )
+
 
 # ==========================================================
 # GENERAR PLANIFICACIÓN IA
@@ -338,6 +589,13 @@ def generate():
             "evaluation": "evaluacion",
             "resources": "recursos",
             "notes": "observaciones",
+            # v3.5: modalidades y fechas
+            "plan_type": "modalidad_plan",
+            "tipo_plan": "modalidad_plan",
+            "planning_type": "modalidad_plan",
+            "start_date": "fecha_inicio",
+            "end_date": "fecha_termino",
+            "month": "mes",
         }
 
         data = dict(raw)
@@ -351,10 +609,31 @@ def generate():
 
                 del data[en]
 
-        required = [
-            "curso",
-            "asignatura",
-            "unidad"
+        # --------------------------------------------------
+        # v3.5: validación según modalidad elegida.
+        #
+        # Sin modalidad_plan → "unidad" (comportamiento
+        # histórico, compatible con frontend actual).
+        # --------------------------------------------------
+
+        modality_id = data.get("modalidad_plan") or "unidad"
+
+        if not PlanningModalities.is_valid(modality_id):
+
+            return error(
+
+                f"Modalidad '{modality_id}' no válida. "
+
+                "Usa: anual, mensual, diaria, unidad o invertida.",
+
+                400
+
+            )
+
+        data["modalidad_plan"] = modality_id
+
+        required = PlanningModalities.get(modality_id)[
+            "required_fields"
         ]
 
         missing = [
@@ -381,10 +660,17 @@ def generate():
         data["objetivos"] = objectives
 
         current_app.logger.info(
-            "Generando planificación %s | %s | %s",
+
+            "Generando planificación [%s] %s | %s | %s",
+
+            modality_id,
+
             data["curso"],
+
             data["asignatura"],
-            data["unidad"]
+
+            data.get("unidad", "")
+
         )
 
         result = planning_service.generate(data)
