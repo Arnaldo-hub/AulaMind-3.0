@@ -671,8 +671,9 @@ class CurriculumService:
             if subject_lower in official.lower() or official.lower() in subject_lower:
                 return official
 
-        # Si no hay coincidencia, descartar (no pertenece a este curso)
-        return None
+        # 4. Si no hay coincidencia, devolver el nombre original
+        # (NO descartar la asignatura)
+        return subject_raw
 
     # ======================================================
     # CURSOS
