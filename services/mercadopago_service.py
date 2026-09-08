@@ -4,7 +4,7 @@ AulaMind Enterprise 3.0
 services/mercadopago_service.py
 -----------------------------------------------------------
 
-Integración Mercado Pago — Suscripciones (v3.2)
+Integración Mercado Pago — Suscripciones (v3.5.2)
 
 Modelo elegido: suscripción SIN plan asociado
 (POST /preapproval con auto_recurring inline). Es el
@@ -21,10 +21,14 @@ Reglas de seguridad implementadas (docs oficiales MP):
    MERCADOPAGO_WEBHOOK_SECRET está configurado.
 3. Idempotencia vía PaymentEvent (la capa de rutas).
 
-FIX v3.5.1: back_url por defecto apuntaba a
-/payments/return (404). Las rutas del blueprint viven en
-raíz (/return), se corrige la URL por defecto. La URL del
-webhook en el dashboard de MP NO cambia.
+HISTORIAL DE FIXES:
+- v3.5.1: back_url por defecto apuntaba a /payments/return
+  (404). Las rutas del blueprint viven en raíz (/return),
+  se corrigió la URL por defecto.
+- v3.5.2: se restaura verify_webhook_signature() (nombre
+  que espera routes/payments.py en main) con la firma
+  oficial MP (raw_body, x-signature, x-request-id). Se
+  mantiene verify_signature() por compatibilidad.
 
 Autor:
 Biotecno Chile
@@ -33,6 +37,7 @@ Biotecno Chile
 
 import hashlib
 import hmac
+import json
 import logging
 
 import requests
@@ -91,10 +96,9 @@ class MercadoPagoService:
 
         price = config.get("PRO_MONTHLY_PRICE_CLP", 9990)
 
-        # FIX v3.5.1: el blueprint de pagos no usa
-        # url_prefix, la ruta real es /return (raíz).
-        # Si se configura MERCADOPAGO_SUCCESS_URL en
-        # Render, esa variable manda sobre este default.
+        # Las rutas del blueprint viven en raíz: la ruta
+        # real es /return. Si se configura la variable
+        # MERCADOPAGO_SUCCESS_URL en Render, esa manda.
         back_url = config.get(
             "MERCADOPAGO_SUCCESS_URL",
             "https://www.aulamind.cl/return",
@@ -201,22 +205,105 @@ class MercadoPagoService:
             return None
 
     # =====================================================
-    # Firma de webhooks (HMAC-SHA256)
+    # Firma de webhooks — versión oficial MP (v3.5.2)
+    # =====================================================
+
+    @staticmethod
+    def verify_webhook_signature(raw_body, x_signature, x_request_id):
+
+        """
+        Valida que el POST venga realmente de Mercado Pago.
+        Es el método que routes/payments.py invoca.
+
+        Manifiesto exacto (docs oficiales MP):
+            id:<data.id>;request-id:<x-request-id>;ts:<ts>;
+
+        - raw_body: cuerpo crudo del request (str).
+        - x_signature: valor del header x-signature.
+        - x_request_id: valor del header x-request-id.
+
+        Devuelve True si no hay secreto configurado (modo
+        permisivo con warning: la consulta por id sigue
+        siendo la barrera real, pero el secreto debe
+        configurarse en producción).
+        """
+
+        secret = current_app.config.get(
+            "MERCADOPAGO_WEBHOOK_SECRET", ""
+        )
+
+        if not secret:
+
+            logger.warning(
+                "MERCADOPAGO_WEBHOOK_SECRET no configurado: "
+                "webhook aceptado sin validar firma"
+            )
+
+            return True
+
+        # data.id se extrae del cuerpo crudo (JSON)
+        data_id = ""
+
+        try:
+
+            parsed = json.loads(raw_body or "{}")
+
+            data_id = str(
+                parsed.get("data", {}).get("id", "")
+            )
+
+        except (ValueError, AttributeError):
+
+            data_id = ""
+
+        if not x_signature or not data_id:
+
+            return False
+
+        parts = {}
+
+        for chunk in x_signature.split(","):
+
+            key, _, value = chunk.strip().partition("=")
+
+            if key:
+                parts[key] = value
+
+        ts = parts.get("ts")
+        received_hash = parts.get("v1")
+
+        if not ts or not received_hash:
+
+            return False
+
+        manifest = (
+            f"id:{data_id};"
+            f"request-id:{x_request_id or ''};"
+            f"ts:{ts};"
+        )
+
+        expected_hash = hmac.new(
+            secret.encode("utf-8"),
+            manifest.encode("utf-8"),
+            hashlib.sha256,
+        ).hexdigest()
+
+        return hmac.compare_digest(
+            expected_hash.lower(),
+            received_hash.lower(),
+        )
+
+    # =====================================================
+    # Firma de webhooks — alias de compatibilidad
     # =====================================================
 
     @staticmethod
     def verify_signature(x_signature, x_request_id, data_id):
 
         """
-        Valida que el POST venga realmente de Mercado Pago.
-
-        Manifiesto exacto (docs oficiales):
-            id:<data.id>;request-id:<x-request-id>;ts:<ts>;
-
-        Devuelve True si no hay secreto configurado (modo
-        permisivo con warning: la consulta por id sigue
-        siendo la barrera real, pero el secreto debe
-        configurarse en producción).
+        Compatibilidad con llamadas antiguas que pasan el
+        data_id directamente en lugar del cuerpo crudo.
+        Reutiliza la misma lógica HMAC del método oficial.
         """
 
         secret = current_app.config.get(

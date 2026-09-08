@@ -197,6 +197,13 @@ def webhook():
     # Procesar evento
     # =====================================================
 
+    # FIX v3.5.2: 'detail' se inicializa aqui. Antes solo se
+    # definia dentro de los if de cada tipo de evento, asi que
+    # cualquier evento no listado (p.ej. 'test', o tipos nuevos
+    # de MP) provocaba NameError en el logger final -> HTTP 500
+    # -> MP reintentaba y marcaba el webhook como fallido.
+    detail = f"type={event_type} id={resource_id}"
+
     if event_type == "subscription_preapproval":
 
         preapproval = MercadoPagoService.get_preapproval(
