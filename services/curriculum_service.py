@@ -371,14 +371,11 @@ class CurriculumService:
 
         for document in self.raw_data:
             try:
-                # =====================================================
-                # FORMATO BÁSICA / MEDIA
-                # =====================================================
                 subject_raw = self.clean(document.get("asignatura"))
                 course_raw = self.clean(document.get("curso"))
                 course = self.normalize_course(course_raw)
 
-                if course and subject_raw:
+                if course == "" or subject_raw == "":
                     # Normalizar nombre de asignatura según el curso
                     subject = self._normalize_subject_name(course, subject_raw)
                     if not subject:
@@ -430,65 +427,6 @@ class CurriculumService:
                                     "description": description
                                 })
                                 total_oa += 1
-
-                    continue
-
-                # =====================================================
-                # FORMATO PARVULARIA (NT1 / NT2)
-                # =====================================================
-                nivel = self.clean(document.get("nivel", ""))
-                ambito = self.clean(document.get("ambito", ""))
-                course = self.normalize_parvularia(nivel)
-
-                if not course or not ambito:
-                    continue
-
-                for nucleo in document.get("nucleos", []):
-                    nucleo_name = self.clean(nucleo.get("nombre", ""))
-                    if not nucleo_name:
-                        continue
-
-                    subject = nucleo_name
-                    total_courses.add(course)
-                    total_subjects.add(subject)
-
-                    # Curso
-                    self.courses[course] = {"id": course, "name": course}
-
-                    # Asignatura (el núcleo)
-                    self.subjects[course][subject] = {
-                        "id": subject,
-                        "name": subject
-                    }
-
-                    # Unidad (el ámbito)
-                    unit_key = ambito
-                    if unit_key not in self.units[course][subject]:
-                        self.units[course][subject][unit_key] = {
-                            "id": unit_key,
-                            "name": unit_key
-                        }
-                        total_units += 1
-
-                    # OA del núcleo
-                    for oa in nucleo.get("oa", []):
-                        code = self.clean(oa.get("codigo"))
-                        description = self.clean(oa.get("descripcion"))
-
-                        if code == "":
-                            continue
-
-                        existing_codes = [
-                            obj.get("code") for obj in
-                            self.learning_objectives[course][subject][unit_key]
-                        ]
-
-                        if code not in existing_codes:
-                            self.learning_objectives[course][subject][unit_key].append({
-                                "code": code,
-                                "description": description
-                            })
-                            total_oa += 1
 
             except Exception as ex:
                 logger.warning(ex)
