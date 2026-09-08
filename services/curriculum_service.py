@@ -319,8 +319,6 @@ class CurriculumService:
     # NORMALIZAR CURSO
     # ======================================================
 
-    @staticmethod
-
     def normalize_parvularia(self, nivel):
         """Extrae NT1 o NT2 del campo nivel de parvularia."""
         nivel = self.clean(nivel).lower()
@@ -330,6 +328,7 @@ class CurriculumService:
             return "NT2"
         return ""
 
+    @staticmethod
     def normalize_course(course):
         if not course:
             return ""
@@ -383,52 +382,52 @@ class CurriculumService:
                 if not subject:
                     continue
 
-                    total_courses.add(course)
-                    total_subjects.add(subject)
+                total_courses.add(course)
+                total_subjects.add(subject)
 
-                    # Curso
-                    self.courses[course] = {"id": course, "name": course}
+                # Curso
+                self.courses[course] = {"id": course, "name": course}
 
-                    # Asignatura
-                    self.subjects[course][subject] = {
-                        "id": subject,
-                        "name": subject
-                    }
+                # Asignatura
+                self.subjects[course][subject] = {
+                    "id": subject,
+                    "name": subject
+                }
 
-                    # Unidades
-                    for unit in document.get("unidades", []):
-                        unit_name = self.clean(unit.get("nombre"))
-                        if unit_name == "":
+                # Unidades
+                for unit in document.get("unidades", []):
+                    unit_name = self.clean(unit.get("nombre"))
+                    if unit_name == "":
+                        continue
+
+                    unit_key = " ".join(unit_name.split())
+
+                    if unit_key not in self.units[course][subject]:
+                        self.units[course][subject][unit_key] = {
+                            "id": unit_key,
+                            "name": unit_key
+                        }
+                        total_units += 1
+
+                    # OA
+                    for oa in unit.get("oa", []):
+                        code = self.clean(oa.get("codigo"))
+                        description = self.clean(oa.get("descripcion"))
+
+                        if code == "":
                             continue
 
-                        unit_key = " ".join(unit_name.split())
+                        existing_codes = [
+                            obj.get("code") for obj in
+                            self.learning_objectives[course][subject][unit_key]
+                        ]
 
-                        if unit_key not in self.units[course][subject]:
-                            self.units[course][subject][unit_key] = {
-                                "id": unit_key,
-                                "name": unit_key
-                            }
-                            total_units += 1
-
-                        # OA
-                        for oa in unit.get("oa", []):
-                            code = self.clean(oa.get("codigo"))
-                            description = self.clean(oa.get("descripcion"))
-
-                            if code == "":
-                                continue
-
-                            existing_codes = [
-                                obj.get("code") for obj in
-                                self.learning_objectives[course][subject][unit_key]
-                            ]
-
-                            if code not in existing_codes:
-                                self.learning_objectives[course][subject][unit_key].append({
-                                    "code": code,
-                                    "description": description
-                                })
-                                total_oa += 1
+                        if code not in existing_codes:
+                            self.learning_objectives[course][subject][unit_key].append({
+                                "code": code,
+                                "description": description
+                            })
+                            total_oa += 1
 
             except Exception as ex:
                 logger.warning(ex)
