@@ -23,7 +23,10 @@ from flask import (
 from services.curriculum_service import curriculum_service
 from security.authorization import subscription_required
 from services.entitlements import Entitlements
-from services.planning_service import planning_service
+from services.planning_service import (
+    planning_service,
+    PlanningModalities,
+)
 from services.persistence_service import persistence_service
 from routes.curriculum_data import get_subjects_for_course
 
@@ -219,6 +222,22 @@ def info():
 # CONTINÚA EN MÓDULO 1 - PARTE B
 # ==========================================================
 # ==========================================================
+# API MODALIDADES DE PLANIFICACIÓN (v3.5 - Capa 1)
+# ==========================================================
+# Catálogo de las 5 modalidades soportadas. El frontend
+# lo usa para poblar el selector. Solo agrega un endpoint;
+# nada existente se modifica.
+# ==========================================================
+
+@planning.route("/api/planning/modalities", methods=["GET"])
+def api_planning_modalities():
+    return jsonify({
+        "success": True,
+        "modalities": PlanningModalities.list()
+    })
+
+
+# ==========================================================
 # API CURSOS
 # ==========================================================
 
@@ -338,6 +357,13 @@ def generate():
             "evaluation": "evaluacion",
             "resources": "recursos",
             "notes": "observaciones",
+            # v3.5 Capa 1: modalidades y fechas
+            "plan_type": "modalidad_plan",
+            "tipo_plan": "modalidad_plan",
+            "planning_type": "modalidad_plan",
+            "start_date": "fecha_inicio",
+            "end_date": "fecha_termino",
+            "month": "mes",
         }
 
         data = dict(raw)
@@ -351,11 +377,23 @@ def generate():
 
                 del data[en]
 
-        required = [
-            "curso",
-            "asignatura",
-            "unidad"
-        ]
+        # v3.5 Capa 1: campos obligatorios según modalidad.
+        # Sin modalidad_plan -> "unidad" (idéntico al
+        # comportamiento histórico: curso+asignatura+unidad).
+        modality_id = data.get("modalidad_plan") or "unidad"
+
+        if not PlanningModalities.is_valid(modality_id):
+            return error(
+                f"Modalidad '{modality_id}' no válida. "
+                "Usa: anual, mensual, diaria, unidad o invertida.",
+                400
+            )
+
+        data["modalidad_plan"] = modality_id
+
+        required = list(
+            PlanningModalities.get(modality_id)["required_fields"]
+        )
 
         missing = [
             field
@@ -381,10 +419,11 @@ def generate():
         data["objetivos"] = objectives
 
         current_app.logger.info(
-            "Generando planificación %s | %s | %s",
+            "Generando planificación [%s] %s | %s | %s",
+            data["modalidad_plan"],
             data["curso"],
             data["asignatura"],
-            data["unidad"]
+            data.get("unidad", "")
         )
 
         result = planning_service.generate(data)

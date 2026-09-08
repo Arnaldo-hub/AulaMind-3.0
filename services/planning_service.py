@@ -27,6 +27,152 @@ from services.openai_service import OpenAIService
 logger = logging.getLogger(__name__)
 
 
+# =====================================================
+# MODALIDADES DE PLANIFICACIÓN (v3.5 - Capa 1)
+# =====================================================
+# Las 5 modalidades son "recetas de prompt" sobre el mismo
+# motor. Si no llega modalidad_plan, todo opera como
+# "unidad" (comportamiento histórico, 100% compatible).
+# =====================================================
+
+class PlanningModalities:
+    """
+    Catálogo central de modalidades de planificación.
+    """
+
+    MODALITIES = {
+        "anual": {
+            "id": "anual",
+            "name": "Planificación Anual",
+            "description": (
+                "Visión completa del año escolar con rango "
+                "de fechas, en formato carta Gantt: unidades "
+                "en el eje vertical, meses en el horizontal."
+            ),
+            "required_fields": [
+                "curso", "asignatura",
+                "fecha_inicio", "fecha_termino",
+            ],
+            "prompt": (
+                "Genera una PLANIFICACIÓN ANUAL en formato "
+                "de carta Gantt para el período "
+                "{fecha_inicio} a {fecha_termino}. Eje "
+                "vertical: unidades del año. Eje horizontal: "
+                "meses. Para cada unidad indica semanas de "
+                "inicio y término, OA asociados, evaluaciones "
+                "programadas y hitos. Cierra con tabla "
+                "markdown: Unidad | OA | Inicio | Término | "
+                "Evaluación. Curso: {curso}. Asignatura: "
+                "{asignatura}."
+            ),
+        },
+        "mensual": {
+            "id": "mensual",
+            "name": "Planificación Mensual",
+            "description": (
+                "Detalle de un mes: semanas, actividades, "
+                "OA trabajados y evaluaciones del mes."
+            ),
+            "required_fields": ["curso", "asignatura", "mes"],
+            "prompt": (
+                "Genera una PLANIFICACIÓN MENSUAL para "
+                "{mes}. Estructura por semanas (Semana 1 a "
+                "4 o 5): aprendizajes esperados, actividades "
+                "principales, OA trabajados, evaluaciones "
+                "formativas y recursos. Cierra con tabla "
+                "resumen: Semana | OA | Actividad central | "
+                "Evaluación. Curso: {curso}. Asignatura: "
+                "{asignatura}."
+            ),
+        },
+        "diaria": {
+            "id": "diaria",
+            "name": "Planificación Diaria",
+            "description": (
+                "Plan de clase diario: inicio, desarrollo, "
+                "cierre, con tiempos y recursos."
+            ),
+            "required_fields": ["curso", "asignatura", "unidad"],
+            "prompt": (
+                "Genera una PLANIFICACIÓN DIARIA de "
+                "{duracion} para el curso {curso}, "
+                "asignatura {asignatura}, unidad {unidad}, "
+                "OA: {objetivos}. Estructura: 1) Inicio "
+                "(actividad de entrada y propósito, 10-15 "
+                "min). 2) Desarrollo (actividades "
+                "secuenciadas con tiempos, estrategias "
+                "didácticas y diferenciación DUA). 3) Cierre "
+                "(metacognición y evaluación formativa, "
+                "10 min). Incluye indicadores de evaluación, "
+                "recursos y tarea."
+            ),
+        },
+        "unidad": {
+            "id": "unidad",
+            "name": "Planificación por Unidad",
+            "description": (
+                "Planificación de una unidad completa: "
+                "sesiones, secuencia didáctica y evaluaciones."
+            ),
+            "required_fields": ["curso", "asignatura", "unidad"],
+            "prompt": (
+                "Genera una PLANIFICACIÓN POR UNIDAD para "
+                "el curso {curso}, asignatura {asignatura}, "
+                "unidad {unidad}, OA: {objetivos}. Incluye: "
+                "propósito de la unidad, mapa de OA, "
+                "secuencia de 6 a 10 sesiones (cada una con "
+                "inicio, desarrollo y cierre), evaluaciones "
+                "formativas y sumativa, y criterios de nivel "
+                "de logro."
+            ),
+        },
+        "invertida": {
+            "id": "invertida",
+            "name": "Planificación Invertida",
+            "description": (
+                "Clase invertida: contenido previo en casa "
+                "y tiempo presencial para práctica."
+            ),
+            "required_fields": ["curso", "asignatura", "unidad"],
+            "prompt": (
+                "Genera una PLANIFICACIÓN DE CLASE "
+                "INVERTIDA para el curso {curso}, asignatura "
+                "{asignatura}, unidad {unidad}, OA: "
+                "{objetivos}. Estructura en 3 fases: 1) "
+                "ANTES DE CLASE (material de estudio "
+                "autónomo: video, lectura o guía, con "
+                "preguntas guía). 2) DURANTE CLASE "
+                "(aplicación: taller, resolución de "
+                "problemas, trabajo colaborativo con "
+                "tiempos). 3) DESPUÉS DE CLASE "
+                "(consolidación: tarea, autoevaluación, "
+                "extensión). Especifica recursos digitales "
+                "por fase y cómo se verifica la fase previa."
+            ),
+        },
+    }
+
+    @classmethod
+    def list(cls):
+        return [
+            {
+                "id": m["id"],
+                "name": m["name"],
+                "description": m["description"],
+                "required_fields": m["required_fields"],
+            }
+            for m in cls.MODALITIES.values()
+        ]
+
+    @classmethod
+    def get(cls, modality_id):
+        return cls.MODALITIES.get(modality_id)
+
+    @classmethod
+    def is_valid(cls, modality_id):
+        return modality_id in cls.MODALITIES
+
+
 class PlanningService:
     """
     Motor principal de generación de planificaciones IA.
@@ -46,11 +192,21 @@ class PlanningService:
     @staticmethod
     def validate(data):
 
-        required = [
-            "curso",
-            "asignatura",
-            "unidad"
-        ]
+        # v3.5 Capa 1: validación según modalidad elegida.
+        # Sin modalidad_plan -> "unidad" (comportamiento
+        # histórico, idéntico al original).
+        modality_id = data.get("modalidad_plan") or "unidad"
+
+        if not PlanningModalities.is_valid(modality_id):
+            return False, (
+                f"Modalidad '{modality_id}' no válida. "
+                "Usa: anual, mensual, diaria, unidad o "
+                "invertida."
+            )
+
+        required = list(
+            PlanningModalities.get(modality_id)["required_fields"]
+        )
 
         for field in required:
 
@@ -95,6 +251,13 @@ class PlanningService:
             "evaluation": "evaluacion",
             "resources": "recursos",
             "notes": "observaciones",
+            # v3.5 Capa 1: modalidades y fechas
+            "plan_type": "modalidad_plan",
+            "tipo_plan": "modalidad_plan",
+            "planning_type": "modalidad_plan",
+            "start_date": "fecha_inicio",
+            "end_date": "fecha_termino",
+            "month": "mes",
         }
 
         for key, value in data.items():
@@ -132,6 +295,17 @@ class PlanningService:
     def build_context(data):
 
         return {
+
+            "modalidad_plan": data.get(
+                "modalidad_plan",
+                "unidad"
+            ),
+
+            "fecha_inicio": data.get("fecha_inicio", ""),
+
+            "fecha_termino": data.get("fecha_termino", ""),
+
+            "mes": data.get("mes", ""),
 
             "curso": data.get("curso", ""),
 
@@ -227,6 +401,38 @@ class PlanningService:
 
     @staticmethod
     def build_prompt(context, objectives):
+
+        # v3.5 Capa 1: si hay modalidad válida distinta del
+        # flujo histórico, se usa su prompt maestro con los
+        # datos del contexto. "unidad" u otra no listada
+        # mantiene el prompt original de siempre.
+        modality_id = context.get("modalidad_plan", "unidad")
+
+        if (
+            PlanningModalities.is_valid(modality_id)
+            and modality_id != "unidad"
+        ):
+
+            prompt = PlanningModalities.get(modality_id)["prompt"]
+
+            replacements = {
+                "curso": context.get("curso", ""),
+                "asignatura": context.get("asignatura", ""),
+                "unidad": context.get("unidad", ""),
+                "objetivos": objectives,
+                "duracion": context.get("duracion", ""),
+                "fecha_inicio": context.get("fecha_inicio", ""),
+                "fecha_termino": context.get("fecha_termino", ""),
+                "mes": context.get("mes", ""),
+            }
+
+            for key, value in replacements.items():
+                prompt = prompt.replace(
+                    "{" + key + "}",
+                    str(value)
+                )
+
+            return prompt
 
         return f"""
 Eres AulaMind Enterprise 3.0.
