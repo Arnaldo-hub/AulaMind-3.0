@@ -21,6 +21,11 @@ Reglas de seguridad implementadas (docs oficiales MP):
    MERCADOPAGO_WEBHOOK_SECRET está configurado.
 3. Idempotencia vía PaymentEvent (la capa de rutas).
 
+FIX v3.5.1: back_url por defecto apuntaba a
+/payments/return (404). Las rutas del blueprint viven en
+raíz (/return), se corrige la URL por defecto. La URL del
+webhook en el dashboard de MP NO cambia.
+
 Autor:
 Biotecno Chile
 ===========================================================
@@ -85,9 +90,14 @@ class MercadoPagoService:
         config = current_app.config
 
         price = config.get("PRO_MONTHLY_PRICE_CLP", 9990)
+
+        # FIX v3.5.1: el blueprint de pagos no usa
+        # url_prefix, la ruta real es /return (raíz).
+        # Si se configura MERCADOPAGO_SUCCESS_URL en
+        # Render, esa variable manda sobre este default.
         back_url = config.get(
             "MERCADOPAGO_SUCCESS_URL",
-            "https://www.aulamind.cl/payments/return",
+            "https://www.aulamind.cl/return",
         )
 
         payload = {
