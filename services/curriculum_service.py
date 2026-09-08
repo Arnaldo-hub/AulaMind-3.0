@@ -376,10 +376,12 @@ class CurriculumService:
                 course = self.normalize_course(course_raw)
 
                 if course == "" or subject_raw == "":
-                    # Normalizar nombre de asignatura según el curso
-                    subject = self._normalize_subject_name(course, subject_raw)
-                    if not subject:
-                        continue
+                    continue
+
+                # Normalizar nombre de asignatura según el curso
+                subject = self._normalize_subject_name(course, subject_raw)
+                if not subject:
+                    continue
 
                     total_courses.add(course)
                     total_subjects.add(subject)
