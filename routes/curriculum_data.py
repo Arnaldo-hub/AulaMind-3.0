@@ -206,10 +206,24 @@ COURSE_SUBJECTS = {
     ]
 }
 
+# FIX v3.5.3: el frontend y el curriculum_service usan
+# números arábigos ("1° Medio") pero este diccionario
+# histórico usa romanos ("I° Medio"). Sin este alias el
+# endpoint /subjects devolvía 404 para todo Enseñanza
+# Media, aunque el curso existiera en el dropdown.
+_COURSE_ALIASES = {
+    "1° Medio": "I° Medio",
+    "2° Medio": "II° Medio",
+    "3° Medio": "III° Medio",
+    "4° Medio": "IV° Medio",
+}
+
+
 def get_subjects_for_course(course_name: str):
     """Devuelve las asignaturas para un curso. No toca el singleton."""
     # Normalizar el nombre del curso (por si viene con espacios raros o sin °)
     normalized = course_name.strip()
+    normalized = _COURSE_ALIASES.get(normalized, normalized)
     subjects = COURSE_SUBJECTS.get(normalized)
     if subjects:
         return sorted(subjects)
