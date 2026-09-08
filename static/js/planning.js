@@ -1861,6 +1861,30 @@ if (document.readyState === "loading") {
             observaciones:
                 observaciones
                     ? observaciones.value.trim()
+                    : "",
+
+            // v3.5 Capa 2: modalidades de planificación.
+            // Si el selector no existe (página sin la Capa 2),
+            // estas claves quedan vacías y el backend opera
+            // como siempre con "unidad".
+            modalidad_plan:
+                document.getElementById("modalidad_plan")
+                    ? document.getElementById("modalidad_plan").value
+                    : "",
+
+            fecha_inicio:
+                document.getElementById("fecha_inicio")
+                    ? document.getElementById("fecha_inicio").value
+                    : "",
+
+            fecha_termino:
+                document.getElementById("fecha_termino")
+                    ? document.getElementById("fecha_termino").value
+                    : "",
+
+            mes:
+                document.getElementById("mes")
+                    ? document.getElementById("mes").value
                     : ""
 
         };

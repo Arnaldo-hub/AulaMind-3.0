@@ -595,6 +595,111 @@
                         TEMA
                         ==================================================-->
 
+                        <!--==================================
+                        MODALIDAD (v3.5 - Capa 2)
+                        ==================================-->
+
+                        <div class="form-group">
+
+                            <label for="modalidad_plan">
+
+                                Tipo de Planificación
+
+                            </label>
+
+                            <select
+                                id="modalidad_plan"
+                                name="modalidad_plan"
+                                class="form-control">
+
+                                <option value="unidad" selected>
+
+                                    Planificación por Unidad
+
+                                </option>
+
+                                <option value="anual">
+
+                                    Planificación Anual (carta Gantt)
+
+                                </option>
+
+                                <option value="mensual">
+
+                                    Planificación Mensual
+
+                                </option>
+
+                                <option value="diaria">
+
+                                    Planificación Diaria
+
+                                </option>
+
+                                <option value="invertida">
+
+                                    Planificación Invertida
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!--==================================
+                        FECHAS (solo ANUAL)
+                        ==================================-->
+
+                        <div
+                            class="form-group"
+                            id="group-fechas"
+                            style="display: none;">
+
+                            <label for="fecha_inicio">
+
+                                Fechas del Año Escolar
+
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fecha_inicio"
+                                name="fecha_inicio"
+                                class="form-control"
+                                title="Inicio">
+
+                            <input
+                                type="date"
+                                id="fecha_termino"
+                                name="fecha_termino"
+                                class="form-control"
+                                title="Término">
+
+                        </div>
+
+                        <!--==================================
+                        MES (solo MENSUAL)
+                        ==================================-->
+
+                        <div
+                            class="form-group"
+                            id="group-mes"
+                            style="display: none;">
+
+                            <label for="mes">
+
+                                Mes a Planificar
+
+                            </label>
+
+                            <input
+                                type="month"
+                                id="mes"
+                                name="mes"
+                                class="form-control">
+
+                        </div>
+
                         <div class="form-group full">
 
                             <label for="tema">
@@ -1104,6 +1209,47 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("OpenAI Ready");
 
     console.log("========================================");
+
+});
+
+</script>
+
+<!--==========================================================
+CAPA 2 — Mostrar/ocultar campos según modalidad elegida
+===========================================================-->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    var sel = document.getElementById("modalidad_plan");
+
+    if (!sel) {
+        return;
+    }
+
+    var gFechas = document.getElementById("group-fechas");
+    var gMes    = document.getElementById("group-mes");
+
+    function actualizar() {
+
+        var v = sel.value;
+
+        if (gFechas) {
+            gFechas.style.display =
+                (v === "anual") ? "" : "none";
+        }
+
+        if (gMes) {
+            gMes.style.display =
+                (v === "mensual") ? "" : "none";
+        }
+
+    }
+
+    sel.addEventListener("change", actualizar);
+
+    actualizar();
 
 });
 
