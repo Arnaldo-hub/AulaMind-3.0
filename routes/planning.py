@@ -29,7 +29,6 @@ from services.planning_service import (
 from services.persistence_service import persistence_service
 from routes.curriculum_data import get_subjects_for_course
 
-
 # ==========================================================
 # BLUEPRINT
 # ==========================================================
@@ -311,14 +310,16 @@ _SUBJECT_NAME_MAP = {
 def api_subjects(course):
     """
     Devuelve asignaturas para un curso.
-    Media, TP y Parvularia desde el servicio (alineado con
+    Media y Parvularia desde el servicio (alineado con
     unidades y OA); básico desde fuente hardcodeada.
     Solo se muestran asignaturas con unidades cargadas.
     """
 
     # v3.5.5: Media y Parvularia (NT1/NT2) desde el servicio.
     # v3.5.6: solo asignaturas CON unidades — las vacías
-    # quedan fuera del dropdown hasta tener contenido.
+    # (electivos del nuevo currículo marcados
+    # PENDIENTE_EXTRACCION_OFICIAL) quedan fuera del
+    # dropdown hasta tener su contenido oficial.
     if "Medio" in course or course in ("NT1", "NT2"):
         service_subjects = curriculum_service.get_subjects(course)
         if service_subjects:

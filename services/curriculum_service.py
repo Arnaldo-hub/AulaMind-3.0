@@ -346,6 +346,14 @@ class CurriculumService:
 
         m = re.search(r"([1-4])\s*°?\s*medio", text)
         if m:
+            # v3.5.7: la Formación Técnico-Profesional es una vía
+            # distinta a la Humanista-Científica. Si el curso trae
+            # marca "tp" (p.ej. "4° medio TP"), se preserva como
+            # curso propio ("4° Medio TP") en vez de colapsar al
+            # Medio común. Los electivos HC ("3° medio HC") siguen
+            # integrados en el Medio común (comportamiento actual).
+            if re.search(r"\btp\b", text):
+                return f"{m.group(1)}° Medio TP"
             return f"{m.group(1)}° Medio"
 
         return ""

@@ -1,0 +1,41 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Electrónica",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar información técnica, planos y diagramas de equipos y sistemas electrónicos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Instalar y montar equipos y sistemas electrónicos de acuerdo con especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Configurar y programar equipos electrónicos y sistemas de control."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Mantener y reparar equipos y sistemas electrónicos, utilizando instrumentos y procedimientos de diagnóstico."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Instalar y mantener sistemas electrónicos de control, automatización e instrumentación."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Verificar parámetros eléctricos y electrónicos mediante instrumentos de medición."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Aplicar procedimientos de seguridad y protección en trabajos con equipos y sistemas electrónicos."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de Formación Diferenciada Técnico-Profesional, MINEDUC (perfil de egreso por especialidad).",
+  "estado_curricular": "COMPLETO — texto verificado legible; corresponde al perfil de egreso de la especialidad."
+}
