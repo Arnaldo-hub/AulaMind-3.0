@@ -254,6 +254,55 @@ def api_courses():
 
 
 # ==========================================================
+# RESOLUTOR DE NOMBRES DE ASIGNATURAS (v3.5.4)
+# ==========================================================
+# El dropdown, las unidades y los OA deben hablar el mismo
+# idioma. Traduce variantes (mayúsculas, acentos, la "s"
+# final que agrega el frontend: "Matemática"->"Matemáticas",
+# y abreviaturas históricas del índice) al nombre EXACTO del
+# curriculum_service.
+# ==========================================================
+
+import unicodedata
+
+
+_SUBJECT_ALIASES = {
+    "Ciencias Naturales": "Cs. naturales",
+    "Educación Física y Salud": "Ed. física",
+}
+
+
+def _norm_subject(s):
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return " ".join(s.lower().split())
+
+
+def _resolve_subject(course, subject):
+    """Nombre canónico de la asignatura en el índice del
+    servicio. Si no hay match, devuelve el original
+    (comportamiento histórico)."""
+    if subject in _SUBJECT_ALIASES:
+        return _SUBJECT_ALIASES[subject]
+    try:
+        service_subjects = curriculum_service.get_subjects(course) or []
+    except Exception:
+        return subject
+    if subject in service_subjects:
+        return subject
+    n = _norm_subject(subject)
+    for s in service_subjects:
+        if _norm_subject(s) == n:
+            return s
+    if n.endswith("s"):
+        n2 = n[:-1]
+        for s in service_subjects:
+            if _norm_subject(s) == n2:
+                return s
+    return subject
+
+
+# ==========================================================
 # API ASIGNATURAS — CORRECCIÓN DEFINITIVA
 # ==========================================================
 # El singleton curriculum_service carga los JSONs en memoria
@@ -279,8 +328,21 @@ def api_subjects(course):
     Devuelve asignaturas para un curso.
     Fuente de verdad: curriculum_data.py (hardcodeado, sin caché, sin singleton)
     """
+    # v3.5.4: Enseñanza Media toma los nombres del
+    # curriculum_service (la MISMA fuente de unidades y OA),
+    # así los tres selectores siempre coinciden. El hardcodeo
+    # histórico queda para básico/NT1/NT2.
+    if "Medio" in course:
+        service_subjects = curriculum_service.get_subjects(course)
+        if service_subjects:
+            return jsonify({
+                "success": True,
+                "subjects": service_subjects,
+                "total": len(service_subjects)
+            })
+
     subjects = get_subjects_for_course(course)
-    
+
     if subjects is None:
         return jsonify({
             "success": False,
@@ -299,6 +361,9 @@ def api_subjects(course):
 
 @planning.route("/api/curriculum/units/<course>/<subject>", methods=["GET"])
 def api_units(course, subject):
+    # v3.5.4: traducir el nombre del dropdown al nombre
+    # canónico del índice (alias/acentos/mayúsculas/s final).
+    subject = _resolve_subject(course, subject)
     return jsonify({
         "success": True,
         "units": curriculum_service.get_units(course, subject)
@@ -310,6 +375,8 @@ def api_units(course, subject):
 
 @planning.route("/api/curriculum/objectives/<course>/<subject>/<unit>", methods=["GET"])
 def api_objectives(course, subject, unit):
+    # v3.5.4: mismo resolvedor que unidades.
+    subject = _resolve_subject(course, subject)
     return jsonify({
         "success": True,
         "objectives": curriculum_service.get_learning_objectives(course, subject, unit)
