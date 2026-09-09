@@ -1,0 +1,64 @@
+{
+  "nivel": "NT2 / Kínder",
+  "nivel_curricular": "NT (Nivel de Transición)",
+  "ambito": "Exploración del entorno natural y social",
+  "nucleos": [
+    {
+      "nombre": "Conocimiento de sí mismo y del entorno",
+      "oa": [
+        {
+          "codigo": "OA 26",
+          "descripcion": "Nombrar y reconocer las partes del cuerpo, sus posibilidades y cuidados, para ir construyendo su identidad y autonomía."
+        },
+        {
+          "codigo": "OA 27",
+          "descripcion": "Reconocer y valorar las características de su identidad personal y social, así como las de otras personas, manifestando respeto y valoración de la diversidad."
+        },
+        {
+          "codigo": "OA 28",
+          "descripcion": "Identificar y describir características de su familia y comunidad (lugares, personas, costumbres), reconociendo que hay diferencias y semejanzas entre ellas."
+        },
+        {
+          "codigo": "OA 29",
+          "descripcion": "Reconocer y valorar las características del lugar donde vive (clima, paisajes, flora, fauna y actividades), mostrando interés por conocer y cuidar su entorno."
+        }
+      ]
+    },
+    {
+      "nombre": "Formación de una actitud científica",
+      "oa": [
+        {
+          "codigo": "OA 30",
+          "descripcion": "Observar y explorar fenómenos y eventos del entorno natural y social, manifestando curiosidad e interés por conocer y describir lo que observa."
+        },
+        {
+          "codigo": "OA 31",
+          "descripcion": "Aplicar habilidades de pensamiento como observación, comparación, relación, clasificación y secuenciación para explorar y conocer su entorno."
+        },
+        {
+          "codigo": "OA 32",
+          "descripcion": "Realizar experimentos sencillos, siguiendo instrucciones y usando materiales del entorno, para comprobar supuestos sobre fenómenos naturales."
+        },
+        {
+          "codigo": "OA 33",
+          "descripcion": "Formular preguntas sobre fenómenos de su interés para obtener información y construir explicaciones sobre el entorno natural y social."
+        }
+      ]
+    },
+    {
+      "nombre": "Prácticas para el cuidado del entorno",
+      "oa": [
+        {
+          "codigo": "OA 34",
+          "descripcion": "Reconocer y aplicar acciones para el cuidado del medio ambiente, como reciclar, reutilizar, ahorrar agua y energía, y cuidar espacios comunes."
+        },
+        {
+          "codigo": "OA 35",
+          "descripcion": "Practicar hábitos de autocuidado e higiene, y adoptar comportamientos que favorezcan la salud propia y la de los demás."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de Educación Parvularia, MINEDUC (vigentes desde 2019) — Nivel de Transición.",
+  "estado_curricular": "COMPLETO — OA del Nivel de Transición; la diferenciación NT1/NT2 se operacionaliza con desempeños del Programa Pedagógico NT1/NT2."
+}

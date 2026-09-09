@@ -328,11 +328,12 @@ def api_subjects(course):
     Devuelve asignaturas para un curso.
     Fuente de verdad: curriculum_data.py (hardcodeado, sin caché, sin singleton)
     """
-    # v3.5.4: Enseñanza Media toma los nombres del
-    # curriculum_service (la MISMA fuente de unidades y OA),
-    # así los tres selectores siempre coinciden. El hardcodeo
-    # histórico queda para básico/NT1/NT2.
-    if "Medio" in course:
+    # v3.5.5: Enseñanza Media y Parvularia (NT1/NT2) toman
+    # los nombres del curriculum_service (la MISMA fuente de
+    # unidades y OA), así los tres selectores siempre
+    # coinciden. El hardcodeo histórico queda para básico
+    # (comportamiento validado por los usuarios).
+    if "Medio" in course or course in ("NT1", "NT2"):
         service_subjects = curriculum_service.get_subjects(course)
         if service_subjects:
             return jsonify({
