@@ -1,0 +1,45 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Acuicultura",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Manejar reproductores de especies hidrobiológicas, aplicando técnicas de cultivo que incluyan alimentación, obtención de gametos, fecundación manipulada y cría de embriones y larvas, de acuerdo a las características de las especies, resguardando parámetros ambientales, de bioseguridad, manejo ético de las especies y prevención de enfermedades transmisibles en ambientes controlados."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Realizar labores de manejo de especies hidrobiológicas, tales como selección, alimentación, desdoble, tratamientos, muestreo, entre otras, de acuerdo al plan de manejo y resguardando parámetros acordes a cada especie."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Realizar labores de cosecha de las especies hidrobiológicas, realizando los procedimientos que corresponda a cada especie y resguardando el cumplimiento de estándares de calidad propios del sector."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Realizar la instalación básica y efectuar labores de mantenimiento primario de equipos de captación de semillas para diferentes especies hidrobiológicas, de acuerdo a especificaciones técnicas y procedimientos establecidos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Realizar tareas subacuáticas en profundidad de hasta 20 metros, para extraer mortalidad desde las unidades de cultivo, instalar y mantener redes, instalar y mantener estructuras subacuáticas, de acuerdo a las orientaciones del supervisor de buceo y aplicando las normativas entregadas por la autoridad marítima."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Utilizar sistemas, equipos y maquinarias propias de las labores de cultivo de especies hidrobiológicas, incluyendo buceo, de manera responsable, siguiendo los manuales e instructivos del fabricante y aplicando normas de seguridad."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Registrar, sistematizar y analizar información obtenida en los distintos procesos acuícolas, ingresándola en los formatos y documentos que corresponda, informando de anomalías de manera oportuna y acorde con los procedimientos establecidos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Aplicar constantemente el manejo ético de las especies, las normas de seguridad, la prevención de riesgos, el cuidado del medio ambiente y los ecosistemas, correspondientes al tipo de faenas y/o al sector productivo, incluyendo las normas emanadas de la autoridad marítima, para prevenir riesgos de accidentes y enfermedades profesionales, y daños ambientales."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

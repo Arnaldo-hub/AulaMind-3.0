@@ -1,0 +1,45 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Explotación Minera",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar planos y mapas de ubicación, de estructura de minas, de labores mineras, de tronaduras, e interpretar simbología asociada a instrucciones técnicas y de seguridad."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Instalar y realizar mantenimiento a elementos de fortificación en minas subterráneas y a cielo abierto, empleando equipos y herramientas, aplicando técnicas y procedimientos relacionados con las estructuras geológicas y métodos de explotación de acuerdo al proyecto minero."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Instalar equipos de ventilación secundaria en minas subterráneas y de drenaje en minas subterráneas y a cielo abierto, empleando máquinas y herramientas de acuerdo a diagramas, instrucciones y procedimientos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Perforar rocas en forma manual y mecánica, y ejecutar actividades de almacenamiento, primado, transporte, carga y conexión de explosivos para el proceso de tronadura, de acuerdo a los diagramas e instrucciones técnicas de perforación, disparo y tronadura."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Aplicar el marco legal minero en las plantas de explotación, considerando las responsabilidades individuales, colectivas y empresariales respecto de la seguridad, prevención de riesgos, respeto al medio ambiente y propiedad minera."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Realizar toma de muestras de mineral en distintos puntos del proceso productivo, reconociendo, clasificando y rotulando las rocas y minerales, de acuerdo al plan de muestreo."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Cubicar los minerales para el carguío, transporte, descarga y regulación del flujo del mineral, de acuerdo al esponjamiento del mineral y según los requerimientos de producción, procedimientos asociados y normativa vigente."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Ejecutar labores de chancado primario de minerales, empleando equipos con sistemas de control y automatización, cumpliendo con los estándares de calidad exigidos por la planta de beneficio y el proceso, de acuerdo a la normativa de seguridad y protección del medio ambiente."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

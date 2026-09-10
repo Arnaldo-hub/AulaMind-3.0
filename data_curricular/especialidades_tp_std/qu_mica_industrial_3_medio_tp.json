@@ -1,0 +1,71 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Química Industrial",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso (Tronco común)",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Ordenar y disponer materias primas, insumos, productos químicos, para ser utilizados en programas de producción de una planta química o para su almacenamiento, aplicando técnicas y protocolos de traslado, rotulación, layout (disposición) y preservación de productos químicos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Medir y registrar con precisión el comportamiento de variables e indicadores de los productos, muestras y procesos productivos, utilizando instrumentos como termómetros, manómetros, pHmetros, higrómetros, analizadores de gases, barómetros, flujómetros, romanas, pesas electrónicas y balanzas, entre otros."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Preparar informes de observaciones y mediciones realizadas acerca del comportamiento de variables e indicadores de los productos, muestras y procesos productivos, describiendo las tendencias, de acuerdo con formatos establecidos, manuales y digitales, para la consideración y aprobación del profesional especialista."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Vigilar constantemente el cumplimiento de estándares de seguridad de las condiciones físicas y de funcionamiento de instalaciones y equipos, de manejo de sustancias y productos químicos, así como de los procedimientos de trabajo que realizan, de acuerdo a normativas nacionales e internacionales."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Planta Química",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Utilizar los equipos de producción de una planta química, siguiendo las instrucciones de producción, monitoreando los instrumentos de medición del proceso de producción, y ajustar parámetros de funcionamiento de equipos de acuerdo con el comportamiento observado."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Tomar y rotular muestras de productos intermedios o finales, utilizando equipos auxiliares y utensilios apropiados, de acuerdo con procedimientos establecidos de trabajo."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Verificar el funcionamiento de equipos y maquinarias de una planta química, detectando pérdidas operacionales, realizando el mantenimiento básico, calibrando equipos e informando, de acuerdo con procedimientos de trabajo."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Laboratorio Químico",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Tomar muestras para análisis químico de materias primas, productos intermedios o finales, de acuerdo a protocolos establecidos y resguardando la integridad y representatividad de la muestra, las normas de seguridad, utilizando equipos auxiliares y materiales apropiados."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Clasificar y rotular muestras e insumos para análisis de laboratorio, resguardando la integridad del material, facilitando su identificación y trazabilidad, de acuerdo con protocolos y procedimientos de trabajo, estándares de calidad normativas nacionales e internacionales y normas de seguridad."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Preparar muestras para ejecución de ensayos de laboratorio, aplicando procedimientos y técnicas según la naturaleza de las muestras y del proceso que se va a realizar."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Medir, registrar y verificar datos de los estados iniciales de las muestras y de los cambios físicos y químicos ocurridos durante los ensayos o análisis, utilizando equipos e instrumentos apropiados y controlando las variables que pudieran afectar o sesgar las observaciones y mediciones."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Mantener y ajustar equipos e instrumentos de preparación y análisis de muestras, según especificaciones técnicas, instrucciones del fabricante y normativa vigente."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

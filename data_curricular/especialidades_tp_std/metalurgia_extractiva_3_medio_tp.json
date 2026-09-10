@@ -1,0 +1,45 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Metalurgia Extractiva",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Aplicar técnicas de chancado, molienda y clasificación hasta la liberación de la partícula, empleando equipos y maquinarias con sistemas de control y automatización, de acuerdo a procedimientos de operación, programas de producción y principios de calidad, de seguridad y resguardo del medio ambiente vigentes."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar técnicas de concentración de minerales metálicos y no metálicos, acondicionándolos previamente con la adición de reactivos según las características químicas de los minerales tratados, hasta la obtención del producto útil, de acuerdo a los requerimientos y estándares de calidad exigidos por la fundición, normas de seguridad y medio ambiente vigentes."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Aplicar técnicas de tratamiento de minerales solubles, metálicos y no metálicos, aplicando principios de disolución, purificación y recuperación, utilizando los materiales e insumos necesarios para este tipo de procesos químicos, de acuerdo a normas de calidad, de seguridad y resguardo del ambiente."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Aplicar técnicas de fundición, tostación y refinación de productos intermedios para la obtención de lingotes, de acuerdo a características físicoquímicas del mineral, principios y normas de calidad, de seguridad y resguardo del ambiente."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Tomar muestras de productos intermedios o finales de procesos productivos en plantas de procesamiento de minerales para su análisis, de acuerdo a requerimientos de control de procesos, protocolos de muestreo y rotulación, y normas de seguridad."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Preparar equipos e instrumentos de laboratorio, muestras de minerales, productos intermedios y finales, pruebas metalúrgicas, análisis químicos para el control de operaciones y determinación de la ley del mineral, de acuerdo a las características geofísicas y químicas de los minerales, asegurando la representatividad de éstos."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Controlar el inventario, pérdidas, recepción de minerales, insumos, materiales, despacho de productos finales y desechos de procesos productivos, registrándolos de acuerdo a formatos establecidos y normativa vigente."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Aplicar el marco legal del trabajo minero en las plantas de procesamiento de minerales, considerando las responsabilidades individuales, colectivas y empresariales con respecto a la seguridad, prevención de riesgos y respeto al medio ambiente."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

@@ -1,0 +1,37 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Asistencia en Geología",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Organizar, instalar y desarmar campamentos en terreno para la obtención de muestras geológicas, de acuerdo a las características del proyecto de prospección, aplicando normas de higiene, seguridad y protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Transportar, instalar, armar y desarmar equipos, instrumentos y accesorios en terreno, necesarios para realizar la obtención de muestras geológicas, de acuerdo a las características del terreno, indicaciones de los fabricantes, normas de seguridad y protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Leer levantamientos topográficos en terreno y faenas, visibilizando los puntos topográficos, ubicando con precisión los sitios y puntos donde deben desarrollarse las faenas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Aplicar técnicas de perforación, sondaje y movimientos de tierra para obtener muestras geológicas, utilizando maquinarias y equipos apropiados, de acuerdo a características del terreno y tipo de muestras, considerando las normas de seguridad y medio ambiente."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Tomar, rotular, envasar y almacenar muestras geológicas, siguiendo los procedimientos e instructivos asociados, registrando y documentando la información del proceso de acuerdo a los requerimientos de organización del data room de cada empresa."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Distinguir macroscópicamente diferentes tipos de minerales para estimar la calidad de estos, considerando su color, textura, dureza y otras características."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}
