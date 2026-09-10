@@ -1,0 +1,41 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Pesquería",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Realizar maniobras de navegación de una embarcación, utilizando cartas náuticas, instrumentos de comunicación, navegación y meteorología que se requieran, aplicando normas de seguridad, prevención de riesgos y cuidado del medio ambiente, así como la normativa de la autoridad marítima nacional e internacional."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Realizar maniobras de pesca artesanal e industrial con distintos sistemas extractivos, según las características de cada especie y faena, manejando tecnología de captura, operando equipos y maquinaria, respetando áreas de manejo y conservación de los recursos hidrobiológicos y las normativas nacionales de pesca, cuidado del medio ambiente y de seguridad."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Recopilar, registrar y dar cuenta de datos e información de las especies marinas y las operaciones de la pesca para fines de investigación pesquera y cumplimiento de las obligaciones pesqueras, de acuerdo a la normativa y los procedimientos entregados por la autoridad pesquera."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Realizar tratamientos de conservación y manipulación de los recursos hidrobiológicos capturados, para mantener la calidad de éstos durante su traslado, desembarque y almacenamiento, aplicando normativas sanitarias y de calidad propias del sector."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Utilizar técnicas de supervivencia en el mar, de primeros auxilios y de combate de incendio a bordo, usando los implementos y equipos correspondientes, de acuerdo a lo indicado en los procedimientos establecidos, aplicando la normativa nacional e internacional vigente para el sector."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Armar, mantener y reparar los implementos y utensilios para la faena extractiva, tanto a bordo como en puerto, utilizando los implementos de seguridad, equipos, herramientas y materiales correspondientes, cumpliendo con los requerimientos legales, de calidad y seguridad exigidos por la autoridad nacional e internacional."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Redactar planes y proyectos de manejo pesquero, así como de desarrollo de la caleta pesquera, con fines de emprendimiento, considerando aspectos como su ordenamiento, sistemas de control de captura, entre otros, y de acuerdo a las orientaciones y normativa de los programas nacionales y regionales de fomento pesquero."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

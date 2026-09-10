@@ -1,0 +1,45 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Instalaciones Sanitarias",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar planos de redes de gas, aguas y evacuación, identificando simbología y nomenclaturas, extrayendo información para realizar mediciones y controles de verificación de distintas magnitudes en la ejecución de trabajos en obras de construcción."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Cubicar digitalmente elementos y materiales, utilizando los programas computacionales apropiados a los requerimientos del proyecto, de acuerdo a longitudes, superficies y volúmenes."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Trazar redes de gas y redes de agua y evacuación en obras de construcción y sistemas públicos de redes, de acuerdo a los planos correspondientes, determinando puntos de referencia (P.R.), fijando niveles y replanteo, utilizando los equipos e instrumentos apropiados, respetando las normas de seguridad, prevención de riesgos y medio ambiente."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Armar e instalar artefactos y redes de gas y de evacuación de gases en baja presión, tanto licuado y natural como de ciudad, en terrenos, casas y edificios, de acuerdo a planos y especificaciones técnicas del proyecto, utilizando maquinarias, equipos y herramientas apropiadas y cumpliendo las normas de la SEC, de seguridad, de prevención de riesgos y medio ambiente."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Mantener y reparar artefactos, redes y empalmes, de gas licuado y de ciudad y de agua potable, utilizando maquinarias, equipos y herramientas apropiadas, de acuerdo a las especificaciones técnicas de los fabricantes, a las normas de la SEC, sanitarias, de seguridad, prevención de riesgos y medio ambiente."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Armar e instalar redes de agua potable de riego agrícola y habitacional y de evacuación en terrenos, casas y edificios, de acuerdo a planos y especificaciones técnicas del proyecto, utilizando maquinarias, equipos y herramientas apropiadas, cumpliendo la normativa sanitaria, de seguridad, prevención de riesgos y medio ambiente."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Instalar artefactos sanitarios, cámaras y empalmes de agua, utilizando maquinarias, equipos y herramientas apropiadas, posibilitando la evacuación de gases y aguas servidas, de acuerdo a las indicaciones de los fabricantes, a las normas de la SISS, de seguridad, prevención de riesgos y medio ambiente."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Verificar el funcionamiento adecuado de equipos, herramientas y maquinarias de la especialidad, de acuerdo a los manuales de funcionamiento de los fabricantes."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

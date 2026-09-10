@@ -1,0 +1,49 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Refrigeración y Climatización",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar planos de redes de cañería y redes de ductos, simbología y especificaciones técnicas de proyectos de refrigeración y climatización, verificando su adecuación a las condiciones reales de la obra que facilitarían u obstaculizarían la realización del proyecto."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Cubicar elementos y materiales, de acuerdo a volúmenes y superficies, para la elaboración de proyectos de refrigeración, climatización, calefacción y ventilación, utilizando programas computacionales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Realizar mediciones y controles de verificación de distintas magnitudes relacionadas con el proyecto, de acuerdo a especificaciones técnicas, normas de seguridad, prevención de riesgos y protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Armar, instalar y aislar redes de ductos y cañerías para el flujo de refrigerantes, aire, agua y fluidos especiales para los sistemas de refrigeración, ventilación, climatización y calefacción, realizando uniones soldadas que aseguren la hermeticidad, de acuerdo a la norma chilena 3241 de buenas prácticas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Instalar equipos y componentes de sistemas de refrigeración, calefacción, climatización y ventilación de energías diversas, incluidos los dispositivos electrónicos de control automático, de acuerdo a las especificaciones técnicas del proyecto y las orientaciones del profesional encargado, considerando la norma chilena 3241 de buenas prácticas."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Cargar fluidos y poner en marcha sistemas de refrigeración, climatización, calefacción y ventilación, considerando las presiones y fuerzas indicadas por los fabricantes, el uso de refrigerantes amigables con el medio ambiente y la norma chilena 3241 de buenas prácticas."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Inspeccionar y diagnosticar fallas del funcionamiento de los sistemas de refrigeración, climatización, calefacción y ventilación, respecto de las especificaciones técnicas del proyecto."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Realizar el mantenimiento preventivo y correctivo de los sistemas de refrigeración, climatización, calefacción y ventilación, considerando los parámetros establecidos en los manuales de los fabricantes."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Recuperar, reciclar y almacenar refrigerantes de los sistemas de refrigeración y climatización, utilizando las herramientas y equipos apropiados para una manipulación adecuada y segura y los contenedores aprobados para la operación, de acuerdo a la norma chilena 3241 de buenas prácticas."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}
