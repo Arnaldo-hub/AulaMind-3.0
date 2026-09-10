@@ -1,0 +1,49 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Tripulación de Naves Mercantes y Especiales",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer e informar los datos de instrumentos y equipos en el área de cubierta y de máquinas, para el desarrollo de la navegación y el funcionamiento de la maquinaria, siguiendo los protocolos y procedimientos que se aplican para cada área y usando el lenguaje técnico propio del sector."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Asistir la operación de sistemas y equipos de la máquina propulsora y de máquinas auxiliares de la nave, verificando el plan de funcionamiento de éstos de acuerdo a la lectura de los instrumentos, siguiendo indicaciones de la señalética y pictogramas, aplicando la normativa nacional e internacional de seguridad y prevención de riesgos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Realizar el mantenimiento básico de equipos y maquinaria principal y auxiliar propios del área de máquinas, de acuerdo a especificaciones técnicas indicadas por los manuales del fabricante y a los planes de mantenimiento establecidos, utilizando los implementos de seguridad, equipos, herramientas y materiales correspondientes y aplicando la normativa nacional e internacional de seguridad, prevención de riesgos y cuidado del medio ambiente que rige al sector."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Poner en funcionamiento y utilizar equipos de maniobra, como huinches, cabrestantes, grúas, plumas, entre otros, de manera manual, neumática y eléctrica, utilizando las técnicas y procedimientos propios de cada equipo, aplicando los procedimientos ISM (Sistema de Gestión de la Seguridad en el barco), siguiendo indicaciones de la señalética y pictogramas y aplicando la normativa nacional e internacional vigente para el sector sobre transporte y manipulación de mercancías peligrosas, según SOLAS, MARPOL e IMDG."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Ejecutar tareas de apoyo al gobierno de la embarcación, tales como paso del piloto automático al gobierno manual y viceversa, lectura de datos y otras, cumpliendo órdenes del oficial a cargo."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Contribuir a la vigilancia y el control de una guardia segura, ya sea en cubierta o en cámara de máquinas, vigilando señales acústicas, luces, objetos y los procesos propios de la guardia en cámara de máquinas, utilizando los sistemas pertinentes de comunicaciones internas y de alarma."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Reponer o reparar partes y piezas de equipos de maniobra de cubierta, sistemas mecánicos, electromecánicos, hidráulicos y neumáticos que hayan sufrido desgaste y deterioro, de acuerdo al manual del fabricante, respetando las normas de seguridad y de protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Utilizar técnicas de supervivencia en el mar, de primeros auxilios, de seguridad de la vida humana y de los bienes en el mar y el puerto, y de combate de incendio a bordo, usando los implementos y equipos correspondientes, de acuerdo a lo indicado en los procedimientos de emergencia establecidos, aplicando la normativa nacional e internacional vigente para el sector."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Comunicar y recibir información en idioma inglés, en forma escrita y hablada, en todos los ámbitos que componen los diferentes departamentos de una nave mercante y con personas de organizaciones externas que lo requieran, de acuerdo a los requerimientos normalizados de la OMI (Organización Marítima Internacional)."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

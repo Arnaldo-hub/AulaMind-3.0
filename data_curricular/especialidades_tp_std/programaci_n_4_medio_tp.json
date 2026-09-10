@@ -1,0 +1,53 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Programación",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Desarrollar programas y rutinas de baja y mediana complejidad que involucren estructuras y bases de datos de acuerdo a los requerimientos de la empresa."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Instalar sistemas de información manufacturados, para obtener información necesaria de acuerdo a los requerimientos de la empresa."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Desarrollar aplicaciones y rutinas para el mantenimiento y actualización de bases de datos de acuerdo a los requerimientos de la empresa."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Construir aplicaciones computacionales basadas en programación orientada a objetos, de manera de cumplir con las exigencias técnicas y de los usuarios."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Desarrollar aplicaciones web acordes a los requerimientos y utilizando los lenguajes de programación disponibles en el mercado, permitiendo la administración y publicación de información en internet."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Implementar planes de mantención preventiva y correctiva de software, de manera de fomentar su productividad."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Dar soporte técnico a usuarios de un sistema computacional en forma local o remota, cumpliendo con las exigencias técnicas y de los usuarios."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Instalar y actualizar elementos de hardware y software en una organización, con el fin de potenciar el rendimiento y/o corregir errores típicos."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Instalar y configurar sistemas operativos en computadores personales con el fin de incorporarlos a una red LAN, cumpliendo con los estándares de calidad y seguridad establecidos."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Instalar software de productividad y programas utilitarios en un equipo personal, de acuerdo a los requerimientos de los usuarios."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

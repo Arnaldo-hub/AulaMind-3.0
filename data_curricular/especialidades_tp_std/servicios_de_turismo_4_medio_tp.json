@@ -1,0 +1,41 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Servicios de Turismo",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Tomar reservas de distintos tipos de servicios y programas turísticos a nivel nacional, ingresando los datos en sistemas digitales, de acuerdo a los requerimientos del turista, a la normativa legal y a los estándares de calidad vigentes."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Atender a los turistas de acuerdo a sus necesidades, deseos y demandas, aplicando un trato amable y técnicas de comunicación efectiva, interactuando en idioma inglés básico cuando fuese necesario, orientando e informando de manera clara y precisa sobre los servicios turísticos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Orientar e informar al turista sobre atractivos turísticos de la zona, seleccionando información relevante sobre aspectos históricos, culturales, geográficos, económicos, de contingencia, sociales, flora y fauna, de acuerdo a las necesidades, deseos y demandas del turista, a los requerimientos sanitarios, disposiciones legales vigentes, medidas de protección del ambiente y del patrimonio nacional según corresponda, respetando los protocolos existentes y utilizando técnicas de comunicación efectiva en español e inglés."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Conducir grupos de turistas a través de las rutas establecidas y en distintos entornos, usando técnicas de comunicación efectiva en inglés o español, la tecnología, implementos y equipos de seguridad, de acuerdo al tipo de programa, con un trato respetuoso, amable y acorde a las características de cada grupo, aplicando normas de cuidado del medio ambiente, de seguridad y prevención de riesgos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Manejar situaciones imprevistas, tales como asistir al turista en caso de pérdidas o robo, enfermedad o accidente, extravío, descontrol conductual por motivos diversos, asegurando el cumplimiento de los protocolos establecidos, resguardando la seguridad individual y del grupo y utilizando técnicas de comunicación efectiva en inglés y español."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Elaborar propuestas de programas turísticos básicos, de acuerdo a los contextos locales, a los atractivos existentes y a las características de los turistas a quienes se orienta, e incorporando información relevante (costos, accesos, transportes, alojamientos, servicios de alimentación, actividades posibles de realizar, entre otros), considerando las normativas y regulaciones vigentes."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Comunicarse en inglés básico con los turistas, atendiendo sus necesidades y requerimientos."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

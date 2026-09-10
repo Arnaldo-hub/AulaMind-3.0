@@ -1,0 +1,53 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Atención de Párvulos",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Realizar y evaluar actividades educativas con párvulos de los distintos niveles, creando ambientes pedagógicos adecuados a sus necesidades y a su desarrollo cognitivo, emocional, social y psicomotor, de acuerdo a las Bases Curriculares de la Educación Parvularia y a las orientaciones e instrumentos recibidos de las educadoras."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Preparar, utilizar y almacenar material didáctico y de ambientación educativa para el apoyo a las actividades con los párvulos, aplicando criterios pedagógicos, estéticos y de equidad en materia de género, etnia y cultura."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Comunicarse en forma efectiva y afectiva con los niños y las niñas, con sus familias o adultos responsables, de manera individual y colectiva, creando ambientes cordiales y de preocupación por el bienestar del párvulo."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Alimentar a niños y niñas menores de seis años, de acuerdo a su edad, a sus requerimientos dietéticos y a los horarios convenidos, favoreciendo una alimentación saludable y la autonomía en la ingesta de alimentos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Mudar a niños y niñas menores de dos años y apoyar a vestirse y desvestirse en forma autónoma a mayores de dos años, resguardando principios de salud, seguridad e higiene de los párvulos y aplicando principios ergonómicos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Promover hábitos de salud, higiene y autocuidado en niños y niñas menores de seis años, utilizando las técnicas señaladas en el manual de salud y en el programa de prevención de riesgos y evacuación de la institución."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Controlar peso y talla de los niños y las niñas, de acuerdo al manual de salud, e informar a los educadores para que estos efectúen las acciones correctivas en caso de que se requiera."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Detectar síntomas de enfermedades más comunes, maltratos y abusos, atender en situación de accidente menor y suministrar medicamentos a niños y niñas menores de seis años, según el manual de salud, primeros auxilios y prescripción médica, además de informar oportunamente a educadoras y personal especializado sobre los hechos acontecidos."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Atender a niños y niñas menores de seis años en las horas de descanso y de recreación, generando alternativas de uso del tiempo libre y propiciando el descanso de cada uno, de acuerdo a las necesidades de cada niño y niña."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Registrar, archivar y mantener actualizados los antecedentes de los niños y las niñas, sus familias o adultos responsables, de manera manual y digital, cumpliendo con los requerimientos institucionales."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}

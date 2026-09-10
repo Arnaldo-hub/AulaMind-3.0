@@ -1,0 +1,49 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Servicios de Hotelería",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Atender clientes de acuerdo a sus necesidades, deseos y demandas, aplicando técnicas de comunicación efectiva, interactuando en idioma inglés básico cuando fuese necesario, orientando e informando de manera clara y precisa sobre los servicios del establecimiento, cumpliendo estándares definidos de presentación y aseo personal."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Orientar e informar al turista sobre atractivos turísticos de la zona y su correspondiente normativa de conservación, seleccionando información relevante sobre aspectos históricos, culturales, geográficos, económicos, de contingencia, requerimientos sanitarios, disposiciones legales vigentes, según corresponda, de acuerdo a las necesidades, deseos y demandas del turista, respetando los protocolos existentes y utilizando técnicas de comunicación efectiva en español e inglés básico."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Realizar reservas, check in y check out de clientes, utilizando software de administración hotelera, de acuerdo a los protocolos e informando con claridad sobre los servicios, condiciones de pago, costos y otros aspectos, aplicando la normativa de protección al consumidor."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Supervisar las actividades de servicio de habitaciones, cuidando que se realicen de acuerdo a los procedimientos y estándares establecidos, y elaborar informes diarios de estado de habitaciones."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Atender el centro de negocios con amabilidad y discreción, en español e inglés básico, para responder a los requerimientos de clientes, utilizando los equipos y sistemas de comunicación, siguiendo los protocolos establecidos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Preparar el cierre de cuenta en los tiempos establecidos, notificando los cobros de cada servicio en las monedas que correspondan, utilizando documentación comercial y registrando toda la información requerida para cada transacción, de acuerdo a normativa tributaria y de protección al consumidor y haciendo uso de las TIC."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Organizar y realizar actividades de animación y recreativas, utilizando técnicas comunicativas y de la especialidad, recursos necesarios de acuerdo a las características y requerimientos de cada grupo de turistas, y aplicando normas de seguridad y prevención de riesgos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Realizar montaje de eventos y servicios, disponiendo los espacios, equipos, implementos y ornamentos de acuerdo a los objetivos y el programa del evento y orientaciones del cliente, y considerando normativa sanitaria, de seguridad y prevención de riesgos."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Comunicarse en inglés básico con los turistas, atendiendo sus necesidades y requerimientos."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente y curriculumnacional.cl."
+}
