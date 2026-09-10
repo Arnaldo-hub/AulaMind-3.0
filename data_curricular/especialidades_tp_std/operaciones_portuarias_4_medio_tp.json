@@ -1,0 +1,29 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Operaciones Portuarias",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Controlar la movilización y distribución de las cargas en el sistema portuario, así como los trámites administrativos, cumpliendo con los cronogramas establecidos para cada área, departamento o función, de acuerdo a la planificación general entregada y la normativa pertinente."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Realizar las operaciones de estiba y desestiba, aplicando los procedimientos y técnicas que corresponda según el tipo de carga, el medio de transporte, el lugar de almacenaje, considerando la simbología, normativa y tratados internacionales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Consolidar y desconsolidar contenedores, de manera manual o mecanizada, considerando distintos aspectos como cubicación, tipo de estiba, características y simbología del contenedor, entre otros, utilizando las técnicas y métodos que corresponda y aplicando la normativa pertinente."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Organizar y almacenar diferentes tipos de cargas, incluyendo mercancías peligrosas y refrigeradas, en bodegas, almacenes y espacios de acopio, utilizando procedimientos manuales y mecanizados, distinguiendo los símbolos y características propias de los distintos tipos de cargas y medios de transporte."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

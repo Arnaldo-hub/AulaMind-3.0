@@ -1,0 +1,37 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Gráfica",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Diagramar y editar imágenes y textos originales, utilizando software gráficos, verificando el cumplimiento de las exigencias del diseño y acorde a los requerimientos técnicos de los diversos procesos en las áreas gráficas establecidos en la orden de trabajo."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Obtener una prueba de color, película, matriz de impresión e impreso digital, aplicando controles de calidad de acuerdo a normas vigentes."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Seleccionar y acondicionar las materias primas e insumos (tintas, tipo y tamaño de sustrato, entre otros) de acuerdo a la orden de trabajo, manuales técnicos del fabricante y estándares de calidad establecidos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Regular máquinas de impresión (tipográficas, offset de pliego y bobinas, flexo- y serigráficas) de acuerdo a la orden de trabajo, manuales técnicos del fabricante, materias primas, insumos y estándares de calidad y seguridad establecidos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Realizar la impresión del producto, controlando la calidad, limpieza y color, así como los ajustes de la máquina impresora y la salida del producto hasta obtener las condiciones exigidas en la orden de trabajo, según estándares establecidos y normas de seguridad."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Realizar la postimpresión de los productos, operando máquinas de terminación y de corte de sustratos, procesando el material impreso para que cumpla con la orden de trabajo, con los estándares de calidad y las normas de seguridad requeridos."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}
