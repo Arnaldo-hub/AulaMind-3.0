@@ -270,6 +270,22 @@ def _norm_subject(s):
     return " ".join(s.lower().split())
 
 
+def _has_usable_content(course, subject):
+    """True si la asignatura tiene al menos una unidad con OA.
+    v3.5.8: el filtro del dropdown exige contenido planificable —
+    una asignatura con unidades vacías (o sin unidades) es un
+    callejón sin salida para el docente."""
+    canonical = _resolve_subject(course, subject)
+    units = curriculum_service.get_units(course, canonical)
+    if not units:
+        return False
+    for u in units:
+        un = u["name"] if isinstance(u, dict) else u
+        if curriculum_service.get_learning_objectives(course, canonical, un):
+            return True
+    return False
+
+
 def _resolve_subject(course, subject):
     """Nombre canónico de la asignatura en el índice del
     servicio. Si no hay match, devuelve el original
@@ -325,7 +341,7 @@ def api_subjects(course):
         if service_subjects:
             with_units = [
                 s for s in service_subjects
-                if curriculum_service.get_units(course, s)
+                if _has_usable_content(course, s)
             ]
             return jsonify({
                 "success": True,
@@ -346,10 +362,17 @@ def api_subjects(course):
         for s in subjects
     ]
 
+    # v3.5.8: igual que Media/NT — solo asignaturas con OA
+    # planificables (oculta p.ej. Religión, que no tiene datos).
+    usable = [
+        s for s in corrected
+        if _has_usable_content(course, s)
+    ]
+
     return jsonify({
         "success": True,
-        "subjects": corrected,
-        "total": len(corrected)
+        "subjects": usable,
+        "total": len(usable)
     })
 
 
@@ -362,9 +385,18 @@ def api_units(course, subject):
     # v3.5.4: traducir el nombre del dropdown al nombre
     # canónico del índice (alias/acentos/mayúsculas/s final).
     subject = _resolve_subject(course, subject)
+    units = curriculum_service.get_units(course, subject)
+    # v3.5.8: solo unidades con OA — una unidad vacía es un
+    # callejón sin salida dentro de la asignatura.
+    units = [
+        u for u in units
+        if curriculum_service.get_learning_objectives(
+            course, subject, u["name"] if isinstance(u, dict) else u
+        )
+    ]
     return jsonify({
         "success": True,
-        "units": curriculum_service.get_units(course, subject)
+        "units": units
     })
 
 
