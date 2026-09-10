@@ -1,0 +1,45 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Vestuario y Confección Textil",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Elaborar diseños básicos de artículos textiles y de vestuario, utilizando herramientas manuales e informáticas de diseño, aplicando cánones de figura humana según sexo y edad, tendencias de la moda e innovaciones con tipos de tela, colores, insumos y productos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Elaborar y transformar moldes para artículos textiles y vestuario de forma manual y digital de acuerdo con fichas técnicas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Marcar y cortar telas en forma manual o con máquina, considerando la ficha técnica, el modelo, tipo de tela, rendimiento, eficiencia del consumo del textil, normas de calidad y seguridad."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Coser, cortar, fusionar, planchar, utilizando diferentes tipos de máquinas, industriales y semiindustriales, de acuerdo con el manual de operaciones y aplicando normas de calidad."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Realizar mantenimiento y regulación de máquinas de coser, de cortar y de planchar para asegurar el funcionamiento óptimo, de acuerdo con instrucciones del fabricante."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Confeccionar artículos textiles y de vestuario de acuerdo con la secuencia de operaciones definidas en la ficha técnica y los insumos requeridos, utilizando la maquinaria apropiada, controlando la calidad y la seguridad durante el proceso."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Ejecutar terminaciones, planchado y empaquetado de artículos textiles y prendas de vestir, utilizando la maquinaria apropiada, seleccionando los insumos y definiendo la secuencia óptima de acuerdo a la ficha técnica."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Realizar el control de calidad de los productos, considerando el formato estándar y las especificaciones técnicas de fabricación."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

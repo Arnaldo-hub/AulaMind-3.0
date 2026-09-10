@@ -1,0 +1,83 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Administración",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar información contable básica acerca de la marcha de la empresa, incluida información sobre importaciones y/o exportaciones, de acuerdo a las normas internacionales de contabilidad (NIC) y de información financiera (NIIF) y a la legislación tributaria vigente."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Elaborar un programa de actividades operativas de un departamento o área de una empresa, de acuerdo a orientaciones de la jefatura y/o del plan estratégico de gestión, considerando recursos humanos, insumos, equipamiento, distribución temporal y proyección de resultados."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Hacer seguimiento y elaborar informes del desarrollo de un programa operativo de un departamento o área de una empresa, sobre la base de evidencias, aplicando técnicas apropiadas, considerando todos los elementos del programa."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Atender a clientes internos y externos de la empresa, de acuerdo a sus necesidades y demandas, aplicando técnicas de relaciones públicas, de comunicación oral y escrita, en forma presencial o a distancia, vía teléfono, fax, correo electrónico u otro medio."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Organizar y ordenar el lugar de trabajo, de acuerdo a técnicas y procedimientos que permitan disponer y recuperar información u objetos de manera oportuna para el desarrollo de las funciones."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Utilizar los equipos y herramientas tecnológicas utilizadas en la gestión administrativa, considerando un uso eficiente de la energía, de los materiales y de los equipos."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Logística",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Controlar la entrada y salida de productos, revisando el stock disponible y confirmando la recepción y despacho de manera computacional y/o manual, utilizando instrumentos de registro apropiados y la normativa vigente."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Controlar las operaciones de almacenamiento y manejo de existencias de acuerdo a métodos establecidos, detectando el estado cualitativo y cuantitativo de los productos, asignando ubicaciones y sistemas de localización inmediata, de manera manual y digital."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Cubicar los productos, materiales e insumos que requieren almacenaje y los espacios de bodegaje, para lograr una disposición eficiente de los primeros y la optimización de los segundos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Informar y comunicar datos de almacenaje y de entrada y salida de productos, mediante diversos sistemas, tales como radiofrecuencia y computación."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Prevenir riesgos de accidentes laborales, mediante la aplicación de normas básicas de seguridad en zonas de almacenamiento y distribución, y el reconocimiento de la rotulación internacional de sustancias peligrosas."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Recursos Humanos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Realizar llenado y tramitación de contratos de trabajo, remuneraciones y finiquito, de acuerdo a la legislación vigente y a las normas internacionales de contabilidad."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Calcular remuneraciones y finiquitos, obligaciones tributarias y previsionales del personal de una empresa, de acuerdo a los contratos de trabajo, la legislación vigente y las normas internacionales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Ingresar, archivar y presentar información sobre bienestar y desarrollo de las personas, ascensos, promociones, transferencias, capacitación, desempeños, evaluaciones, entre otros, para la toma de decisiones de las jefaturas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Ejecutar tareas sistemáticas de descripción de cargos, de reclutamiento e inducción básica de personal, de acuerdo a las necesidades de una empresa, a los procedimientos establecidos y a la normativa vigente."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

@@ -1,0 +1,136 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Construcción",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar diversos tipos de planos (de arquitectura, de cálculo de obra gruesa, obras viales, terminaciones, fundación y estructura), esquemas y manuales de especificaciones técnicas relacionados con la ejecución de las obras."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Realizar mediciones y controles de verificación de distintas magnitudes para la ejecución de trabajos de trazado y de diversas obras de construcción, utilizando los instrumentos correspondientes."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Ejecutar trazados de obras de edificación, obras viales, terminaciones, emplazamiento de obras, fundaciones, estructuras, moldajes y emplazamientos de enfierradura, de acuerdo a planos estructurales o de terminaciones, determinando puntos de referencia, fijando niveles y replanteo, utilizando los equipos e instrumentos correspondientes."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Ejecutar obras de carpintería para la instalación de faenas, utilizando variados elementos de construcción, equipos y herramientas, de acuerdo a trazados establecidos, planos y especificaciones."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Cubicar manual y digitalmente elementos y materiales requeridos para una obra determinada, utilizando los programas computacionales apropiados, de acuerdo a longitudes, superficies y volúmenes."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Utilizar y realizar mantenimiento básico de equipos, herramientas y maquinarias de la especialidad, de acuerdo a los manuales de funcionamiento de los fabricantes."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Preparar muestras de hormigón, suelos y materiales, así como los equipos e instrumentos de laboratorio necesarios para el análisis de la calidad de los productos finales e intermedios, de acuerdo a especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Llevar registros de información acerca de materiales, stocks, horas de equipos y otros elementos de la obra necesarios para el control de gestión, de acuerdo a formatos y procedimientos establecidos."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Leer y aplicar normas y simbología de seguridad y prevención de riesgos relacionados con las diversas faenas que realizan, así como resguardar la normativa correspondiente."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Edificación",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Ejecutar obras de enfierradura para elementos estructurales, fundaciones, sobrecimientos, pilares, cadenas, vigas, losas y muros, de acuerdo a especificaciones técnicas y planos de construcción, utilizando maquinaria, herramientas e instrumentos de medida."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Ejecutar obras de hormigón para fundaciones, sobrecimientos, pilares, vigas, cadenas, losas, muros, con hormigón preparado en obra y premezclado, de acuerdo a especificaciones técnicas y los planos de estructura, utilizando maquinaria, herramientas e instrumentos de medida."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Preparar hormigón en obra, controlando la calidad, el compactado y el curado, de acuerdo al principio de resistencia de los materiales y normas correspondientes."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Ejecutar obras de albañilería estructural y no estructural, aplicando dosificaciones para morteros de acuerdo a planos de construcción y especificaciones técnicas, utilizando maquinaria, herramientas e instrumentos de medida."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Elaborar e instalar moldajes de madera e industrializados, tabiquería y techumbres, de acuerdo a especificaciones técnicas y planos estructurales, utilizando maquinaria, herramientas e instrumentos de medida."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Obras Viales e Infraestructura",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Interpretar planos, especificaciones técnicas y ensayos de laboratorio para verificar el cumplimiento de los estándares de calidad."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Verificar las distintas partidas de proyectos viales de mediana envergadura, de acuerdo a los planos y especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Controlar el movimiento de tierra realizado por máquinas, equipos y herramientas utilizados en el despeje de franjas, cortes y terraplenes en obras de mediana envergadura, de acuerdo a los planos, especificaciones técnicas y regulaciones vigentes."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Verificar las faenas de construcción y colocación de saneamientos, muros de contención, defensas fluviales y de talud en las vías, en obras de mediana envergadura, de acuerdo a planos y especificaciones técnicas, usando instrumental adecuado, considerando el uso de materiales, máquinas, equipos y herramientas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Verificar las faenas de producción, transporte, colocación y compactación en obras de mediana envergadura, de acuerdo al trazado y especificaciones técnicas, considerando el uso de materiales, maquinarias, equipos, instrumentos y herramientas."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Resguardar la seguridad en la vía y el lugar de trabajo mediante la instalación de señalizaciones y dispositivos de seguridad, de acuerdo al manual de carretera, planos de la obra y normas de seguridad, prevención de riesgos y medio ambiente."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Ejecutar tareas propias del programa de conservación y mantenimiento de obras viales de mediana envergadura, tales como toma de muestras a las carpetas de rodado, verificación de desplazamientos de muros, defensas, cortes y terraplenes, según especificaciones técnicas, el manual de carretera, las normas del Laboratorio Nacional de Vialidad y las normas vigentes."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Terminaciones de la Construcción",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Impermeabilizar y aislar superficies de muros, tabiques, pisos, cielos y techumbres, utilizando los materiales, equipos y herramientas apropiados, respetando las indicaciones de los fabricantes de productos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Armar e instalar muebles de cocina, clósets y baños, tabiques, hojas de puertas y ventanas, utilizando las herramientas y equipos apropiados, de acuerdo a trazados, planos de detalles y especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Revestir superficies de pisos, muros y cielos con diferentes productos, adhesivos y técnicas constructivas, utilizando herramientas y equipos apropiados, de acuerdo a las características del proyecto arquitectónico, verificando medidas, horizontalidad y verticalidad."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Instalar protecciones hídricas y cubiertas de diferentes materiales, facilitando la evacuación de las aguas lluvia, de acuerdo a las indicaciones de los fabricantes de los productos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Instalar puertas y ventanas, con su quincallería y vidrios, utilizando las herramientas y equipos apropiados, de acuerdo a trazados, planos de detalles y especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Pintar y colocar papeles en muros y cielos, considerando las características de las superficies y de los materiales a utilizar, de acuerdo a las especificidades del proyecto."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

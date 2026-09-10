@@ -1,0 +1,41 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Contabilidad",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar información contable sobre la marcha de la empresa, de acuerdo a las normas internacionales de contabilidad y a la legislación tributaria."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Procesar información contable sobre la marcha de la empresa, utilizando los sistemas contables de uso frecuente en las empresas y los correspondientes software de la especialidad: cuadrar registros de auxiliares, estructurar plan de cuentas, realizar los asientos de apertura, preparar los análisis de cuentas, participar en la elaboración de balances, efectuar controles de existencia, manejo de efectivo, arqueos de caja, pago de facturas, control de inventarios, control de activo fijo y corrección monetaria, considerando las normas internacionales de contabilidad (NIC) y de información financiera."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Realizar llenado, tramitación y registro de documentación contable, nacional e internacional, de materias tributarias de una empresa, de acuerdo a la legislación vigente y a las normas internacionales de contabilidad, utilizando los formularios correspondientes."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Registrar hechos económicos u operaciones de comercio nacional e internacional, ordenados cronológicamente, en libros y sistemas contables, elaborando los asientos de ajuste y saldos contables correspondientes de una empresa."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Comunicar y presentar información contable básica para usos internos de la empresa, considerando técnicas y formatos establecidos de presentación de la información."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Organizar y ordenar el lugar de trabajo, de acuerdo a técnicas y procedimientos que permitan disponer y recuperar información y/u objetos de manera oportuna para el desarrollo de las funciones."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Atender a clientes internos y externos de la empresa, de acuerdo a sus necesidades y demandas, aplicando técnicas de relaciones públicas, de comunicación oral y escrita, en forma presencial o a distancia, vía teléfono, fax, correo electrónico u otro medio."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

@@ -1,0 +1,37 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Atención de Enfermería",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Aplicar cuidados básicos de enfermería, higiene y confort a personas en distintas etapas del ciclo vital, de acuerdo a principios técnicos y protocolos establecidos, brindando un trato digno, acogedor y coherente con los derechos y deberes del paciente."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Medir, controlar y registrar parámetros de salud de los pacientes, como peso, talla, temperatura, signos vitales y presión arterial, aplicando instrumentos de medición apropiados."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Aplicar estrategias de promoción de salud, prevención de enfermedades, hábitos de alimentación saludable para fomentar una vida adecuada para la familia y comunidad de acuerdo a modelos definidos por las políticas de salud."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Mantener las condiciones sanitarias y de seguridad en las dependencias donde se encuentran las personas bajo su cuidado, de acuerdo a las normas sanitarias y de seguridad vigentes."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Contribuir a la prevención y control de infecciones en las personas bajo su cuidado, aplicando normas de asepsia y antisepsia."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Registrar información en forma digital y manual, relativa al control de salud de las personas bajo su cuidado, y relativa a procedimientos administrativos de ingreso, permanencia y egreso de establecimientos de salud o estadía, resguardando la privacidad de las personas."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}
