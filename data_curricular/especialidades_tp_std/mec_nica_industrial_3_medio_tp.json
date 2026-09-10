@@ -1,0 +1,116 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Mecánica Industrial",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar especificaciones técnicas, planos elaborados con herramientas computacionales, instrumentos análogos y digitales y simbología, relacionados con el trabajo a realizar."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Realizar mediciones y controles de verificación de distintas magnitudes para la ejecución de trabajos de fabricación, mantenimiento y reparación de piezas y partes de conjuntos mecánicos y electromecánicos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Unir y reparar elementos mediante actividades de corte y soldadura en posición plana horizontal y vertical, con equipos de oxígeno y arco manual, soldadura TIG y MIG, utilizando adecuadamente las herramientas, máquinas y elementos de protección personal."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Realizar el mantenimiento preventivo de herramientas mecánicas, hidráulicas, neumáticas, eléctricas y manuales, y de útiles y componentes propios de la especialidad de mecánica industrial, de acuerdo a pautas de mantenimiento y especificaciones del fabricante."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Realizar trabajos de sujeción, pulido y ajuste, utilizando herramientas eléctricas y manuales, considerando las medidas de seguridad y de protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Aplicar constantemente la normativa pertinente de higiene, seguridad industrial y medioambiental correspondiente al tipo de faenas y al sector productivo, para prevenir riesgos de accidentes, enfermedades profesionales, daños ambientales y de los equipos."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Mantenimiento Electromecánico",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Realizar mantenimiento preventivo de la máquina, tanto en funcionamiento como detenida, empleando pautas entregadas por el fabricante y la bitácora de funcionamiento de la máquina, aplicando normativa de seguridad y protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprobar el funcionamiento de partes y componentes, detectando problemas eléctricos y mecánicos de equipos, sistemas mecánicos, electromecánicos, hidráulicos y neumáticos de procesos industriales, mediante el uso de instrumentos y el manual del fabricante."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Instalar componentes, equipos, sistemas eléctricos, electrónicos y automatizados empleados en el control de procesos, utilizando las herramientas, instrumentos y materiales apropiados, considerando los principios y fundamentos de la electricidad, la condición física del lugar, los planos, los elementos de fijación, la conexión y la normativa eléctrica y de seguridad."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Reponer o reparar partes y piezas de equipos, máquinas automáticas y de alta producción, sistemas mecánicos, electromecánicos, hidráulicos y neumáticos de procesos industriales que hayan cumplido su vida útil o que hayan sufrido desgaste y deterioro, de acuerdo al manual del fabricante, respetando las normas de seguridad y de protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Poner en funcionamiento equipos, sistemas mecánicos, electromecánicos, hidráulicos y neumáticos de procesos industriales, realizando las mediciones correspondientes con los instrumentos apropiados, comprobando su correcto funcionamiento, de acuerdo a las tablas de tolerancia establecidas por el fabricante y respetando las normas de seguridad y de protección del medio ambiente."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Máquinas-Herramientas",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Fabricar partes y piezas de conjuntos mecánicos con máquinas-herramientas convencionales, de acuerdo al manual del fabricante, las especificaciones técnicas, los principios de la mecanización, normas de seguridad y de protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Fabricar partes y piezas de conjuntos mecánicos con fresadora universal de acuerdo a las indicaciones del fabricante, las especificaciones técnicas, los principios de la mecanización con fresa, normas de seguridad y de protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Utilizar máquinas rectificadoras y taladradoras para la fabricación o reparación de partes y piezas de conjuntos mecánicos de acuerdo a las indicaciones del fabricante, las especificaciones técnicas, los principios de la mecanización, normas de seguridad y de protección del medio ambiente."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Programar y utilizar máquinas de control numérico (CNC) y manufactura asistida por computación (CAM) para la fabricación de piezas y partes de conjuntos mecánicos, de acuerdo a procedimientos establecidos, las indicaciones del fabricante y las especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Programar y utilizar centros de mecanizado para la fabricación de piezas y partes de conjuntos mecánicos, de acuerdo a las indicaciones del fabricante y las especificaciones técnicas."
+        }
+      ]
+    },
+    {
+      "nombre": "Mención Matricería",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Elaborar, montar y desmontar matrices en máquinas y equipos industriales, para la fabricación de piezas de diferentes materiales, de acuerdo a las especificaciones técnicas y normas de matricería."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Elaborar, montar y desmontar moldes de inyección de diversos materiales en máquinas y equipos industriales, de acuerdo a las especificidades del modelo y de la máquina."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Detectar fallas en matrices y moldes, y controlar la calidad de los procesos, insumos y productos de acuerdo a normas y parámetros establecidos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Ejecutar el mantenimiento preventivo y correctivo, y el retocado de matrices, moldes y útiles de matricería, utilizando productos y máquinas, herramientas y máquinas-herramientas programadas apropiadas, de acuerdo a las características de los materiales y el modelo y muestra."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Dibujar moldes mediante el uso de software de diseño."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Manipular residuos y desechos de las matrices y moldes, aplicando técnicas compatibles con el cuidado del medio ambiente."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

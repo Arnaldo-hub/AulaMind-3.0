@@ -1,0 +1,53 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Montaje Industrial",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar planos técnicos de montaje industrial y sus componentes, simbología, instrumentos análogos y digitales, extrayendo información y realizando mediciones y controles de verificación de distintas magnitudes."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Medir y calcular pendientes, superficies, pesos, fuerzas, tolerancias y rendimientos, necesarios para el montaje de estructuras, aplicando conocimientos básicos de matemática y física, utilizando instrumentos y equipos de metrología."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Trazar el área para las maniobras y la instalación del montaje de estructuras metálicas, hormigones prefabricados, calderería, equipos mecánicos, ductos y cañerías, sistemas eléctricos, de instrumentación y de aislamiento, de acuerdo a planos y procedimientos establecidos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Unir y reparar elementos metálicos del montaje, mediante actividades de corte y soldadura en posición plana horizontal y vertical, utilizando equipos de oxigas y arco manual, soldadura TIG, MIG y MAG, y mediante uniones mecánicas, de acuerdo a las especificaciones técnicas del proyecto y normas de higiene, seguridad industrial y medio ambiente."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Ejecutar tratamientos de protección de componentes del montaje mediante anticorrosivos, pinturas y otros, utilizando materiales, herramientas y equipos apropiados, respetando las normas de higiene, seguridad industrial y medio ambiente."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Utilizar equipos de levante, técnicas de amarras, nudos y estiba para izaje y traslado de piezas, aplicando normas de seguridad y de transporte para maniobras con componentes estáticos."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Fijar en su sitio estructuras metálicas, hormigones prefabricados, calderería, equipos mecánicos, ductos y cañerías, sistemas eléctricos, de instrumentación y de aislamiento, en colaboración con otros, utilizando herramientas y equipos apropiados, de acuerdo a instrucciones y especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Realizar el mantenimiento básico de instrumentos, herramientas, útiles, máquinas, equipos y componentes propios de la especialidad."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Realizar el tratamiento de residuos y desechos del montaje industrial, aplicando técnicas compatibles con el cuidado del medio ambiente."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Calcular y cubicar materiales, insumos y otros elementos, considerando los planos y las especificaciones técnicas del proyecto."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

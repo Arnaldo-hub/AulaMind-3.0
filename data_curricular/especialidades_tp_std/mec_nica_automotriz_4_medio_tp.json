@@ -1,0 +1,45 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Mecánica Automotriz",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Inspeccionar y diagnosticar averías y fallas en el funcionamiento mecánico, eléctrico o electrónico de vehículos motorizados, identificando el o los sistemas y componentes comprometidos, realizando mediciones y controles de verificación de distintas magnitudes mediante instrumentos análogos y digitales, con referencia a las especificaciones técnicas del fabricante."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Leer y utilizar la información contenida en manuales técnicos, planos y diagramas de vehículos motorizados, y normas nacionales e internacionales de emisiones de gases, para resolver diagnósticos o fallas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Realizar mantenimiento básico de diversos sistemas de vehículos automotrices livianos, semipesados y pesados, de acuerdo a pautas de mantenimiento del fabricante, de inspección y diagnóstico de fallas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Reparar y probar el funcionamiento de motores de gasolina, diésel, gas e híbridos, tanto convencionales como de inyección electrónica, y sus sistemas de control de emisiones, conjunto o subconjuntos mecánicos del motor, de lubricación y refrigeración, entre otros, utilizando las herramientas e instrumentos apropiados, de acuerdo a especificaciones técnicas del fabricante."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reparar y probar sistemas hidráulicos y neumáticos responsables de diversas funciones en los vehículos, tales como suspensión, sistema de dirección, frenos y transmisión de potencia manual y automática, utilizando las herramientas e instrumentos apropiados, de acuerdo a especificaciones técnicas del fabricante y estándares internacionales."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Reemplazar y probar sistemas eléctricos y electrónicos de los vehículos automotrices, tales como sistemas de carga, de arranque, de encendido, de alumbrado y señalización, de cierre centralizado, según indicaciones del fabricante y estándares internacionales."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Montar y desmontar sistemas de seguridad y de confortabilidad, tales como cinturones de seguridad, airbag, alarmas, aire acondicionado, sistema de audio, de acuerdo a las instrucciones del fabricante y la normativa vigente."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Manipular residuos y desechos del mantenimiento de vehículos motorizados, aplicando técnicas compatibles con el cuidado del medio ambiente."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

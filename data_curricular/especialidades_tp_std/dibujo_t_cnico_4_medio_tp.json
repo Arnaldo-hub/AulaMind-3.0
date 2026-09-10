@@ -1,0 +1,49 @@
+{
+  "curso": "4° Medio TP",
+  "asignatura": "Dibujo Técnico",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar información técnica consignada en manuales, planos, croquis, informes, instrucciones entregados por los usuarios, detectando errores y relevando los datos necesarios para desarrollar proyectos de dibujo técnico en general."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Dibujar manualmente planos de levantamiento de arquitectura e ingeniería de obras civiles, y croquis de piezas y conjuntos mecánicos, de acuerdo a la información técnica levantada y especificaciones del mandante."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Dibujar de manera gráfica digital los planos de proyectos arquitectónicos de viviendas y urbanismo, en diferentes plantas, fachadas y secciones, con los niveles de detalle requeridos, conforme a las reglamentaciones vigentes, que permitan la elaboración de expedientes de obras municipales."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Dibujar en forma gráfica digital los proyectos de instalaciones de redes interiores de alcantarillado, agua potable, electricidad y gas de viviendas, según las normativas vigentes."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Dibujar en forma gráfica digital piezas, partes y objetos mecánicos, tales como elementos que conforman herramientas o ensamblan una máquina, detallando con claridad las características esenciales para su comprensión y fabricación, conforme a normas y criterios técnicos establecidos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Dibujar en forma gráfica digital planos de montaje industrial, así como los elementos que conforman proyectos estructurales de ingeniería de obras civiles en madera, hormigón, albañilerías y acero conforme a normativas, manuales y catálogos de fabricación estandarizados."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Generar dibujos digitales en 3D que permitan la representación volumétrica de objetos, elementos, maquetas y detalles constructivos de proyectos arquitectónicos y de ingeniería de obras civiles, aplicando texturas, renderizados, iluminación y animación audiovisuales."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Imprimir y reproducir las representaciones gráficas digitales elaboradas, definiendo los parámetros de los equipos de impresión y reproducción para garantizar reproducciones ajustadas a estándares de calidad."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Cubicar manual y digitalmente, volúmenes, superficies, elementos, materiales, considerando diversos sistemas de medida, utilizando los programas computacionales apropiados a los requerimientos del proyecto."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}

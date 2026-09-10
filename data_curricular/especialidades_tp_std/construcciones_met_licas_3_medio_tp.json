@@ -1,0 +1,49 @@
+{
+  "curso": "3° Medio TP",
+  "asignatura": "Construcciones Metálicas",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Leer y utilizar planos técnicos de estructuras metálicas y sus componentes, simbología, instrumentos análogos y digitales, extrayendo información y realizando mediciones y controles de verificación de distintas magnitudes."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Trazar piezas y partes de construcciones metálicas, para orientar la ejecución de trabajos de fabricación, mantenimiento y reparación, incluyendo uso de herramientas computacionales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Fabricar, unir y reparar elementos de construcciones metálicas, mediante actividades de corte y soldadura en posición plana horizontal y vertical, utilizando equipos de oxigas y arco manual, soldadura TIG, MIG y MAG, uniones mecánicas, de acuerdo a las especificaciones técnicas del proyecto y normas de higiene, seguridad industrial y medio ambiente."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Mecanizar y conformar partes, piezas y estructuras de construcciones metálicas de menor tamaño, con máquinas y herramientas, incluyendo taladrado, esmerilado, aserrado, plegado, cilindrado, doblado y forjadura, de acuerdo a los planos y a las especificaciones técnicas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Armar y montar en obra o taller, elementos, subconjuntos y estructuras de construcciones metálicas livianas para instalaciones industriales, tales como galpones, edificios, entre otras, de acuerdo a las especificaciones técnicas del proyecto."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Realizar el mantenimiento básico de instrumentos, herramientas, útiles, máquinas, equipos y componentes propios de la especialidad de construcciones metálicas."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Ejecutar tratamientos de protección de elementos de construcciones metálicas, mediante anticorrosivos, pinturas y otros, utilizando materiales, herramientas y equipos apropiados y respetando las normas de higiene, seguridad industrial y medio ambiente."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Realizar el tratamiento de residuos y desechos de las construcciones metálicas, aplicando técnicas compatibles con el cuidado del medio ambiente."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Calcular y cubicar materiales, insumos y otros elementos de construcciones metálicas, considerando los planos y las especificaciones técnicas de la obra."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Formación Diferenciada Técnico-Profesional, MINEDUC 2013 (D.S. N° 452/2013), texto oficial del documento fuente.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC 2013, transcrito y verificado contra el documento fuente (bases-curriculares-tp-final-2013)."
+}
