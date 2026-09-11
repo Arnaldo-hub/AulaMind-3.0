@@ -1,0 +1,46 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Comprensión histórica del presente",
+  "unidades": [
+    {
+      "nombre": "Conocimiento y comprensión histórica",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar diversas perspectivas historiográficas sobre cambios recientes en la sociedad chilena y su impacto a nivel local, considerando procesos de democratización como el fortalecimiento de la sociedad civil y el respeto a los derechos humanos, la búsqueda de la disminución de la desigualdad y la inclusión creciente de nuevos grupos y movimientos sociales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Analizar diversas perspectivas historiográficas sobre procesos de la historia reciente, considerando la importancia del conocimiento histórico en la sociedad y el protagonismo de individuos y grupos en cuanto sujetos históricos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Elaborar preguntas y explicaciones históricas a partir de problemas o tópicos del presente en el contexto local y nacional, considerando categorías y metodologías propias de la disciplina."
+        }
+      ]
+    },
+    {
+      "nombre": "Habilidades de investigación social",
+      "oa": [
+        {
+          "codigo": "OA a",
+          "descripcion": "Investigar sobre la realidad considerando: formulación de preguntas o problemas de investigación a partir de la observación de fenómenos; levantamiento de información a partir de métodos y técnicas propias de historia, geografía, economía y otras ciencias sociales; análisis crítico de las evidencias y evaluación de su validez, considerando su uso ético para respaldar opiniones; definición del marco teórico, del estado de la cuestión y de los conceptos disciplinares del tema por investigar; análisis de las propias conclusiones en relación con los supuestos iniciales."
+        },
+        {
+          "codigo": "OA b",
+          "descripcion": "Hacer conexiones entre fenómenos, acontecimientos y/o procesos de la realidad, considerando conceptos como multidimensionalidad, multicausalidad y multiescalaridad, temporalidad, y variables y patrones."
+        },
+        {
+          "codigo": "OA c",
+          "descripcion": "Elaborar interpretaciones y argumentos, basados en fuentes variadas y pertinentes, haciendo uso ético de la información."
+        },
+        {
+          "codigo": "OA d",
+          "descripcion": "Analizar interpretaciones y perspectivas de diversas fuentes, considerando propósito, intencionalidad, enfoque y contexto del autor, y las preguntas que intenta responder."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de curriculumnacional.cl."
+}

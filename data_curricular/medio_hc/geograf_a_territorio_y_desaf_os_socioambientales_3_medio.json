@@ -1,0 +1,21 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Geografía, territorio y desafíos socioambientales",
+  "unidades": [
+    {
+      "nombre": "Objetivos de aprendizaje",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Explicar el espacio geográfico como una construcción social producto de las interacciones entre los grupos humanos y el medio, que influyen en las múltiples dimensiones de la vida en sociedad."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Recoger, sistematizar y comunicar información sobre procesos y dinámicas espaciales, mediante el uso de estrategias y metodologías propias de la geografía, tales como interpretación y análisis de cartografía, georreferenciación y uso de imágenes, estadísticas e información geográfica, trabajo de campo, entrevistas, encuestas, mapeos participativos, escalas de percepción, entre otros."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "PARCIAL — OA 1 y OA 6 oficiales completos; OA 2-5 pendientes de extracción. Fuente: Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019), texto oficial curriculumnacional.cl."
+}

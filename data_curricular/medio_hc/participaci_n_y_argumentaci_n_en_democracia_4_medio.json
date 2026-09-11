@@ -1,0 +1,41 @@
+{
+  "curso": "4° Medio",
+  "asignatura": "Participación y argumentación en democracia",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Construir colectivamente conclusiones, soluciones, preguntas, hipótesis o acuerdos o que surjan de discusiones argumentadas y razonadas, en torno a temas controversiales de la vida y la sociedad actual."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Dialogar argumentativamente, privilegiando el componente racional de la argumentación, estableciendo relaciones lógicas válidas y extrayendo conclusiones razonadas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Evaluar diversas formas en que se legitima el conocimiento contenido en los discursos (investigación científica, autoridad, experiencia personal, entre otras), a partir del análisis crítico de sus modos de generación y su aceptabilidad, suficiencia y pertinencia al ámbito de participación, a la comunidad discursiva, al tema y a los propósitos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Elaborar argumentos, basándose en evidencias o información pública legitimada, pertinentes al tema o problema analizado."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Utilizar formas de argumentación y de legitimación del conocimiento pertinentes al ámbito de participación, a la comunidad discursiva y a los propósitos de sus argumentaciones."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Evaluar críticamente argumentaciones surgidas en distintos ámbitos de la sociedad, enfocándose en los alcances que tienen en la comunidad, su pertinencia al tema analizado y al propósito perseguido, la legitimidad de las evidencias proporcionadas y las relaciones lógicas establecidas."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Construir una postura personal sobre diversos temas controversiales y problemáticas de la sociedad, a partir de sus investigaciones y de la evaluación y confrontación de argumentaciones y evidencias en torno a estos."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de curriculumnacional.cl."
+}

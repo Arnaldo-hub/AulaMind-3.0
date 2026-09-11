@@ -1,0 +1,45 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Economía y sociedad",
+  "unidades": [
+    {
+      "nombre": "Perfil de egreso",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Explicar la economía como una ciencia social que estudia las decisiones que toman las personas en su vida cotidiana, así como la familia, el sector privado y el Estado para enfrentar la escasez, considerando su método científico (supuestos y experiencias económicas), principios fundamentales y el análisis positivo y normativo."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Analizar críticamente la manera en que los economistas estudian la toma de decisiones de los agentes, considerando incentivos, escasez, costos y beneficios marginales y sociales y los aportes de la economía del comportamiento."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Investigar la interacción entre consumidores y productores en el mercado, considerando factores como la oferta, la demanda, la elasticidad, la inflación, la fijación de precios y el rol del Estado."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Investigar los distintos sistemas económicos, de mercado, mixto y centralizado, considerando las teorías que los sustentan, las maneras como resuelven el problema económico y las relaciones que establecen entre los distintos agentes económicos y algunas experiencias de su implementación."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Analizar críticamente las imperfecciones inherentes del mercado como monopolios, oligopolios, colusión, competencia monopolística y externalidades negativas considerando la dimensión ética y el rol del Estado como un ente regulador."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar el comercio internacional considerando ventajas comparativas, términos de intercambio, alianzas y tratados a las que subscriben los países, el impacto en las economías locales y nacionales y los desafíos que enfrentan al insertarse en el mercado global."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Explicar políticas económicas relacionadas al crecimiento y desarrollo en Chile en el contexto de la necesidad pública a la que responden, aplicando conceptos de la macroeconomía."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Investigar desafíos actuales que enfrentan distintas economías desarrolladas y en vías de desarrollo para alcanzar el bienestar del individuo y la sociedad, en relación con el crecimiento económico, la interdependencia, la promoción de una economía sustentable y la equidad."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de curriculumnacional.cl."
+}
