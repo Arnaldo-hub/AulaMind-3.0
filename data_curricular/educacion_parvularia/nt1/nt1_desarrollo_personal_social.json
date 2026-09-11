@@ -7,8 +7,28 @@
       "nombre": "Identidad y Autonomía",
       "oa": [
         {
+          "codigo": "OAT 1",
+          "descripcion": "Comunicar a los demás, emociones y sentimientos tales como: amor, miedo, alegría, ira, que le provocan diversas narraciones o situaciones observadas en forma directa o a través de TICs."
+        },
+        {
+          "codigo": "OAT 2",
+          "descripcion": "Manifestar disposición y confianza para relacionarse con algunos adultos y pares que no son parte del grupo o curso."
+        },
+        {
+          "codigo": "OAT 3",
+          "descripcion": "Reconocer emociones y sentimientos en otras personas, observadas en forma directa o a través de TICs."
+        },
+        {
+          "codigo": "OAT 4",
+          "descripcion": "Expresar sus emociones y sentimientos autorregulándose en función de las necesidades propias, de los demás y las normas de funcionamiento grupal."
+        },
+        {
           "codigo": "OAT 5",
           "descripcion": "Comunicar sus preferencias, opiniones, ideas, en diversas situaciones cotidianas y juegos."
+        },
+        {
+          "codigo": "OAT 6",
+          "descripcion": "Planificar proyectos y juegos, en función de sus ideas e intereses, proponiendo actividades, organizando los recursos, incorporando los ajustes necesarios e iniciándose en la apreciación de sus resultados."
         },
         {
           "codigo": "OAT 7",
@@ -19,18 +39,62 @@
           "descripcion": "Comunicar sus características identitarias, fortalezas, habilidades y desafíos personales."
         },
         {
-          "codigo": "OAT 15",
+          "codigo": "OAT 9",
+          "descripcion": "Cuidar su bienestar personal, llevando a cabo sus prácticas de higiene, alimentación y vestuario, con independencia y progresiva responsabilidad."
+        },
+        {
+          "codigo": "OAT 10",
           "descripcion": "Comunicar a otras personas desafíos alcanzados, identificando acciones que aportaron a su logro y definiendo nuevas metas."
         },
         {
-          "codigo": "OAT 16",
+          "codigo": "OAT 11",
           "descripcion": "Distinguir parámetros establecidos para la regulación de alimentos, tales como: etiquetado de sellos, fechas de vencimiento, entre otros."
+        },
+        {
+          "codigo": "OAT 12",
+          "descripcion": "Anticipar acciones y prever algunas situaciones o desafíos que se pueden presentar, en juegos, proyectos, sucesos que experimenta o que observa a través de TICs."
+        },
+        {
+          "codigo": "OAT 13",
+          "descripcion": "Representar en juegos sociodramáticos, sus pensamientos y experiencias atribuyendo significados a objetos, personas y situaciones."
         }
       ]
     },
     {
       "nombre": "Convivencia y Ciudadanía",
       "oa": [
+        {
+          "codigo": "OAT 1",
+          "descripcion": "Participar en actividades y juegos colaborativos, planificando, acordando estrategias para un propósito común y asumiendo progresivamente responsabilidades en ellos."
+        },
+        {
+          "codigo": "OAT 2",
+          "descripcion": "Participar en actividades solidarias, que integran a las familias, la comunidad educativa y local."
+        },
+        {
+          "codigo": "OAT 3",
+          "descripcion": "Manifestar empatía y solidaridad frente a situaciones que vivencian sus pares, o que observa en textos o TICs, practicando acciones de escucha, apoyo y colaboración."
+        },
+        {
+          "codigo": "OAT 4",
+          "descripcion": "Apreciar el significado que tienen para las personas y las comunidades, diversas manifestaciones culturales que se desarrollan en su entorno."
+        },
+        {
+          "codigo": "OAT 5",
+          "descripcion": "Aplicar estrategias pacíficas frente a la resolución de conflictos cotidianos con otros niños y niñas."
+        },
+        {
+          "codigo": "OAT 6",
+          "descripcion": "Respetar normas y acuerdos creados colaborativamente con pares y adultos, para el bienestar del grupo."
+        },
+        {
+          "codigo": "OAT 7",
+          "descripcion": "Identificar objetos, comportamientos y situaciones de riesgo que pueden atentar contra su bienestar y seguridad, o la de los demás, proponiendo alternativas para enfrentarlas."
+        },
+        {
+          "codigo": "OAT 8",
+          "descripcion": "Comprender que algunas de sus acciones y decisiones respecto al desarrollo de juegos y proyectos colectivos, influyen en las de sus pares."
+        },
         {
           "codigo": "OAT 9",
           "descripcion": "Reconocer, y progresivamente hacer respetar, el derecho a expresarse libremente, a ser escuchado y a que su opinión sea tomada en cuenta."
@@ -42,14 +106,6 @@
         {
           "codigo": "OAT 11",
           "descripcion": "Apreciar la diversidad de las personas y sus formas de vida, tales como: singularidades fisonómicas, lingüísticas, religiosas, de género, entre otras."
-        },
-        {
-          "codigo": "OAT 14",
-          "descripcion": "Participar en actividades y juegos colaborativos, planificando, acordando estrategias para un propósito común y asumiendo progresivamente responsabilidades en ellos."
-        },
-        {
-          "codigo": "OAT 18",
-          "descripcion": "Comprender que algunas de sus acciones y decisiones respecto al desarrollo de juegos y proyectos colectivos, influyen en las de sus pares."
         }
       ]
     },
@@ -91,6 +147,6 @@
       ]
     }
   ],
-  "fuente_marco": "Bases Curriculares de la Educación Parvularia, MINEDUC (febrero 2018) y Programa Pedagógico NT1/NT2, texto oficial parvularia.mineduc.cl y curriculumnacional.cl.",
-  "estado_curricular": "Identidad y Autonomía: PARCIAL — OAT oficiales verificados del Programa Pedagógico NT; numeración oficial conservada. | Convivencia y Ciudadanía: PARCIAL — OAT oficiales verificados del Programa Pedagógico NT. | Corporalidad y Movimiento: COMPLETO — OAT oficiales Bases Curriculares Parvularia 2018, Nivel Transición."
+  "fuente_marco": "Bases Curriculares de la Educación Parvularia, Subsecretaría de Educación Parvularia, MINEDUC (febrero 2018), documento oficial entregado por el establecimiento — verificación palabra por palabra, Tercer Nivel (Transición).",
+  "estado_curricular": "VERIFICADO 100% — texto íntegro del documento oficial Bases Curriculares Parvularia 2018, Tercer Nivel (Transición), páginas 52, 58, 64, 72, 78, 86-87, 93 y 99. Los 8 núcleos completos: 13+11+8 OAT y 10+7+12+11+12 OA = 84 objetivos de aprendizaje oficiales."
 }

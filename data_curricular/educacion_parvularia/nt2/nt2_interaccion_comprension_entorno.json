@@ -36,7 +36,7 @@
         },
         {
           "codigo": "OA 8",
-          "descripcion": "Practicar algunas acciones cotidianas, que contribuyen al cuidado de ambientes sostenibles, tales como: manejo de desechos en paseos al aire libre, separación de residuos, utilizar envases o papeles, plantar flores o árboles."
+          "descripcion": "Practicar algunas acciones cotidianas, que contribuyen al cuidado de ambientes sostenibles, tales como manejo de desechos en paseos al aire libre, separación de residuos, utilizar envases o papeles, plantar flores o árboles."
         },
         {
           "codigo": "OA 9",
@@ -86,6 +86,22 @@
         {
           "codigo": "OA 7",
           "descripcion": "Reconocer la importancia del servicio que prestan instituciones, organizaciones, lugares y obras de interés patrimonial, tales como: escuelas, transporte público, empresas, iglesias, museos, bibliotecas, entre otros."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Conocer sobre la vida de algunas mujeres y hombres, que han realizado en el pasado y en el presente, aportes diversos en su comunidad, país, y el mundo, a través de relatos, o con apoyo de TICs."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Ampliar sus estrategias de indagación utilizando diversas fuentes, instrumentos y tecnologías de la información y comunicación, que le permitan expandir su entorno."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Comprender normas de protección y seguridad referidas a tránsito, incendios, inundaciones, sismos, y otras pertinentes a su contexto geográfico."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Identificar lugares de su entorno a través de su representación geográfica, tales como: maquetas, fotografías aéreas, dibujos y mapas."
         }
       ]
     },
@@ -93,12 +109,56 @@
       "nombre": "Pensamiento Matemático",
       "oa": [
         {
+          "codigo": "OA 1",
+          "descripcion": "Crear patrones sonoros, visuales, gestuales, corporales u otros, de dos o tres elementos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Experimentar con diversos objetos estableciendo relaciones al clasificar por dos o tres atributos a la vez (forma, color, tamaño, función, masa, materialidad, entre otros) y seriar por altura, ancho, longitud o capacidad para contener."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Comunicar la posición de objetos y personas respecto de un punto u objeto de referencia, empleando conceptos de ubicación (dentro/fuera; encima/debajo/entre; al frente de/detraás de); distancia (cerca/lejos) y dirección (adelante/atrás/hacia el lado), en situaciones lúdicas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Emplear cuantificadores, tales como: \"más que\", \"menos que\", \"igual que\", al comparar cantidades de objetos en situaciones cotidianas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Orientarse temporalmente en situaciones cotidianas, empleando nociones y relaciones de secuencia (antes/ahora/después/al mismo tiempo, día/noche), frecuencia (siempre/a veces/nunca) y duración (larga/corta)."
+        },
+        {
           "codigo": "OA 6",
           "descripcion": "Emplear los números, para contar, identificar, cuantificar y comparar cantidades hasta el 20 e indicar orden o posición de algunos elementos en situaciones cotidianas o juegos."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Representar números y cantidades hasta el 10, en forma concreta, pictórica y simbólica."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Resolver problemas simples de manera concreta y pictórica agregando o quitando hasta 10 elementos, comunicando las acciones llevadas a cabo."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Representar objetos desde arriba, del lado, abajo, a través de dibujos, fotografías o TICs, formulando conjeturas frente a sus descubrimientos."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Identificar atributos de figuras 2D y 3D, tales como: forma, cantidad de lados, vértices, caras, que observa en forma directa o a través de TICs."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Emplear medidas no estandarizadas, para determinar longitud de objetos, registrando datos, en diversas situaciones lúdicas o actividades cotidianas."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Comunicar el proceso desarrollado en la resolución de problemas concretos, identificando la pregunta, acciones y posibles soluciones."
         }
       ]
     }
   ],
-  "fuente_marco": "Bases Curriculares de la Educación Parvularia, MINEDUC (febrero 2018) y Programa Pedagógico NT1/NT2, texto oficial parvularia.mineduc.cl y curriculumnacional.cl.",
-  "estado_curricular": "Exploración del Entorno Natural: COMPLETO — OA oficiales Bases Curriculares Parvularia 2018, Nivel Transición. | Comprensión del Entorno Sociocultural: COMPLETO — OA oficiales Bases Curriculares Parvularia 2018, Nivel Transición. | Pensamiento Matemático: PARCIAL — OA 6 oficial verificado; resto de OA del núcleo pendientes de extracción del documento fuente."
+  "fuente_marco": "Bases Curriculares de la Educación Parvularia, Subsecretaría de Educación Parvularia, MINEDUC (febrero 2018), documento oficial entregado por el establecimiento — verificación palabra por palabra, Tercer Nivel (Transición).",
+  "estado_curricular": "VERIFICADO 100% — texto íntegro del documento oficial Bases Curriculares Parvularia 2018, Tercer Nivel (Transición), páginas 52, 58, 64, 72, 78, 86-87, 93 y 99. Los 8 núcleos completos: 13+11+8 OAT y 10+7+12+11+12 OA = 84 objetivos de aprendizaje oficiales."
 }

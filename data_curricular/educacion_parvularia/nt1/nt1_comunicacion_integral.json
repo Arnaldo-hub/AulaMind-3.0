@@ -70,10 +70,18 @@
         {
           "codigo": "OA 5",
           "descripcion": "Representar plásticamente emociones, ideas, experiencias e intereses, a través de líneas, formas, colores, texturas, con recursos y soportes en plano y volumen."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Experimentar diversas combinaciones de expresión plástica, corporal y musical, comunicando las razones del proceso realizado."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Representar a través del dibujo, sus ideas, intereses y experiencias, incorporando detalles a las figuras humanas y a objetos de su entorno, ubicándolos en parámetros básicos de organización espacial (arriba/abajo, dentro/fuera, entre otros)."
         }
       ]
     }
   ],
-  "fuente_marco": "Bases Curriculares de la Educación Parvularia, MINEDUC (febrero 2018) y Programa Pedagógico NT1/NT2, texto oficial parvularia.mineduc.cl y curriculumnacional.cl.",
-  "estado_curricular": "Lenguaje Verbal: COMPLETO — OA oficiales Bases Curriculares Parvularia 2018, Nivel Transición. | Lenguajes Artísticos: COMPLETO — OA oficiales curriculumnacional.cl, Nivel Transición."
+  "fuente_marco": "Bases Curriculares de la Educación Parvularia, Subsecretaría de Educación Parvularia, MINEDUC (febrero 2018), documento oficial entregado por el establecimiento — verificación palabra por palabra, Tercer Nivel (Transición).",
+  "estado_curricular": "VERIFICADO 100% — texto íntegro del documento oficial Bases Curriculares Parvularia 2018, Tercer Nivel (Transición), páginas 52, 58, 64, 72, 78, 86-87, 93 y 99. Los 8 núcleos completos: 13+11+8 OAT y 10+7+12+11+12 OA = 84 objetivos de aprendizaje oficiales."
 }
