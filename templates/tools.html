@@ -75,6 +75,15 @@
                     </span>
                 </button>
                 {% endfor %}
+                {% if images_enabled %}
+                <button class="tpl-chip" data-template="imagen" data-placeholder="Describe la imagen que necesitas, ej: lámina de un bosque chileno para niños de 1° básico">
+                    <i class="fa-solid fa-image"></i>
+                    <span>
+                        <span class="tpl-name">Crear Imagen</span><br>
+                        <span class="tpl-desc">Ilustración IA (máx. {{ images_limit }}/día)</span>
+                    </span>
+                </button>
+                {% endif %}
             </div>
 
             <div class="chat-box">
@@ -123,9 +132,57 @@
         return div;
     }
 
+    function sendImage(text) {
+        busy = true;
+        addMsg(text, "user");
+        input.value = "";
+        var thinking = addMsg("Generando imagen... puede tomar hasta 1 minuto.", "ai");
+
+        fetch("{{ url_for('tools.api_image') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": document.getElementById("csrf_token").value
+            },
+            body: JSON.stringify({ prompt: text })
+        })
+        .then(function (r) {
+            return r.json().then(function (d) { return { ok: r.ok, data: d }; });
+        })
+        .then(function (res) {
+            thinking.remove();
+            if (res.ok && res.data.success) {
+                var wrap = document.createElement("div");
+                wrap.className = "msg msg-ai";
+                var img = document.createElement("img");
+                img.src = res.data.image;
+                img.style.maxWidth = "100%";
+                img.style.borderRadius = "10px";
+                wrap.appendChild(img);
+                var hint = document.createElement("div");
+                hint.style.fontSize = "12px";
+                hint.style.marginTop = "8px";
+                hint.style.color = "#64748b";
+                hint.textContent = "Imagen " + res.data.used_today + " de " + res.data.limit + " de hoy. Clic derecho → Guardar imagen para descargarla.";
+                wrap.appendChild(hint);
+                box.appendChild(wrap);
+                box.scrollTop = box.scrollHeight;
+            } else {
+                addMsg("Error: " + (res.data.error || "sin detalle"), "ai");
+                Swal.fire("Atención", res.data.error || "No se pudo generar la imagen.", "warning");
+            }
+        })
+        .catch(function () {
+            thinking.remove();
+            addMsg("Error de conexión. Intenta de nuevo.", "ai");
+        })
+        .finally(function () { busy = false; });
+    }
+
     function send() {
         var text = input.value.trim();
         if (!text || busy) { return; }
+        if (currentTemplate === "imagen") { sendImage(text); return; }
         busy = true;
         addMsg(text, "user");
         input.value = "";

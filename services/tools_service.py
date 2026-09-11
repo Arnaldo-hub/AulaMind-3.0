@@ -19,6 +19,7 @@ Biotecno Chile
 """
 
 import logging
+import os
 
 from services.openai_service import OpenAIService
 
@@ -197,6 +198,86 @@ class ToolsService:
             "openai": self.ai.available(),
         }
 
+
+
+
+# ==========================================================
+# FASE 2: Generación de imágenes (v3.6)
+# Apagada por defecto. Prender en Render con:
+#   IMAGES_ENABLED=true
+#   IMAGES_DAILY_LIMIT=5          (tope por usuario/día)
+#   OPENAI_IMAGE_MODEL=gpt-image-1
+# ==========================================================
+
+IMAGES_ENABLED = os.getenv("IMAGES_ENABLED", "false").lower() == "true"
+IMAGES_DAILY_LIMIT = int(os.getenv("IMAGES_DAILY_LIMIT", "5"))
+OPENAI_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1")
+
+
+def generate_image(prompt):
+    """
+    Genera una imagen con la API de imágenes de OpenAI.
+    Devuelve {"success": True, "b64": str} o {"success": False, "error": str}.
+    Nunca lanza excepción hacia el route.
+    """
+    prompt = (prompt or "").strip()
+
+    if not IMAGES_ENABLED:
+        return {
+            "success": False,
+            "error": "La generación de imágenes no está habilitada.",
+        }
+
+    if not prompt:
+        return {
+            "success": False,
+            "error": "Describe la imagen que necesitas.",
+        }
+
+    if len(prompt) > 1000:
+        return {
+            "success": False,
+            "error": "Descripción demasiado larga (máx. 1000 caracteres).",
+        }
+
+    ai = OpenAIService()
+
+    if not ai.available():
+        return {
+            "success": False,
+            "error": "OPENAI_API_KEY no configurada.",
+        }
+
+    try:
+        response = ai.client.images.generate(
+            model=OPENAI_IMAGE_MODEL,
+            prompt=(
+                "Ilustración profesional, apropiada para educación "
+                "infantil y contexto escolar chileno, sin texto ni "
+                "marcas de agua: " + prompt
+            ),
+            size="1024x1024",
+        )
+
+        item = response.data[0]
+
+        if getattr(item, "b64_json", None):
+            return {"success": True, "b64": item.b64_json}
+
+        if getattr(item, "url", None):
+            return {"success": True, "url": item.url}
+
+        return {
+            "success": False,
+            "error": "La IA no devolvió la imagen. Intenta de nuevo.",
+        }
+
+    except Exception as e:
+        logger.exception("[tools] error generando imagen")
+        return {
+            "success": False,
+            "error": f"No se pudo generar la imagen: {e}",
+        }
 
 # Singleton de proceso
 tools_service = ToolsService()

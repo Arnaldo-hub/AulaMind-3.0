@@ -36,7 +36,15 @@ from flask import (
 from extensions import limiter
 from security.authorization import subscription_required
 from services.entitlements import Entitlements
+from database.session import SessionLocal
+from models.ai_generation import AIGeneration
 from services.tools_service import tools_service
+from services.tools_service import (
+    generate_image,
+    IMAGES_ENABLED,
+    IMAGES_DAILY_LIMIT,
+    OPENAI_IMAGE_MODEL,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -77,6 +85,8 @@ def index():
         "tools.html",
         title="Herramientas IA",
         templates=tools_service.list_templates(),
+        images_enabled=IMAGES_ENABLED,
+        images_limit=IMAGES_DAILY_LIMIT,
         app_name=current_app.config.get("APP_NAME", "AulaMind Enterprise"),
         version=current_app.config.get("APP_VERSION", "3.0.0"),
     )
@@ -256,6 +266,98 @@ def build_pdf(title, content):
     buffer.seek(0)
     return buffer
 
+
+
+
+# ==========================================================
+# FASE 2: GENERACIÓN DE IMÁGENES (v3.6)
+# Límite diario por usuario configurable (default 5/día).
+# ==========================================================
+
+def images_used_today(user_id):
+    """Cuenta imágenes generadas hoy por el usuario (auditoría)."""
+    db = SessionLocal()
+    try:
+        start = datetime.now().replace(
+            hour=0, minute=0, second=0, microsecond=0
+        )
+        return db.query(AIGeneration).filter(
+            AIGeneration.user_id == str(user_id),
+            AIGeneration.feature == "herramientas_ia_image",
+            AIGeneration.created_at >= start,
+        ).count()
+    finally:
+        db.close()
+
+
+@tools.route("/api/image", methods=["POST"])
+@login_required
+@subscription_required
+@limiter.limit("10 per minute")
+def api_image():
+    try:
+        data = request.get_json(silent=True) or {}
+        prompt = str(data.get("prompt", "")).strip()
+
+        if not IMAGES_ENABLED:
+            return jsonify({
+                "success": False,
+                "error": ("La generación de imágenes no está habilitada "
+                          "en este momento."),
+            }), 403
+
+        user_id = session.get("user_id")
+        used = images_used_today(user_id)
+
+        if used >= IMAGES_DAILY_LIMIT:
+            return jsonify({
+                "success": False,
+                "error": (f"Usaste tus {IMAGES_DAILY_LIMIT} imágenes de "
+                          f"hoy. Vuelve mañana."),
+            }), 429
+
+        result = generate_image(prompt)
+
+        if not result.get("success"):
+            err = result.get("error", "")
+            if "no configurada" in err or "no está habilitada" in err:
+                return jsonify(result), 503
+            return jsonify(result), 400
+
+        # Consumo: cada imagen cuenta como 1 generación del plan
+        Entitlements.record_generation(user_id)
+
+        try:
+            db = SessionLocal()
+            db.add(AIGeneration(
+                user_id=str(user_id),
+                feature="herramientas_ia_image",
+                model=OPENAI_IMAGE_MODEL,
+                success=True,
+            ))
+            db.commit()
+            db.close()
+        except Exception:
+            logger.exception("[tools] no se pudo auditar imagen")
+
+        payload = {
+            "success": True,
+            "used_today": used + 1,
+            "limit": IMAGES_DAILY_LIMIT,
+        }
+        if result.get("b64"):
+            payload["image"] = "data:image/png;base64," + result["b64"]
+        else:
+            payload["image"] = result["url"]
+
+        return jsonify(payload)
+
+    except Exception:
+        logger.exception("Error inesperado en Tools.api_image()")
+        return jsonify({
+            "success": False,
+            "error": "Error interno al generar la imagen.",
+        }), 500
 
 # ==========================================================
 # HEALTH
