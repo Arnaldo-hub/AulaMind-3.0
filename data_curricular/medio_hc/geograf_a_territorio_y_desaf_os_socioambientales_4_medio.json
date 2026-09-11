@@ -3,11 +3,27 @@
   "asignatura": "Geografía, territorio y desafíos socioambientales",
   "unidades": [
     {
-      "nombre": "Objetivos de aprendizaje",
+      "nombre": "Conocimiento y comprensión",
       "oa": [
         {
           "codigo": "OA 1",
           "descripcion": "Explicar el espacio geográfico como una construcción social producto de las interacciones entre los grupos humanos y el medio, que influyen en las múltiples dimensiones de la vida en sociedad."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Reconocer las dinámicas físico-naturales que configuran el territorio nacional, considerando la interdependencia y fragilidad de los ambientes, y su importancia para la vida en sociedad."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar las decisiones políticas, económicas y sociales que se toman en torno a los espacios geográficos locales y nacionales, considerando los distintos actores que participan de ellas y el impacto que tienen en el entorno natural."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Evaluar la organización territorial y ambiental del país y los instrumentos de planificación que la regulan, considerando criterios tales como accesibilidad, conectividad, conservación, preservación, reducción de riesgos, sustentabilidad ambiental y justicia socio-espacial."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reconocer el carácter social del riesgo de desastres que caracteriza a la geografía de Chile, considerando los diferentes usos del espacio y sus condiciones territoriales y ambientales."
         },
         {
           "codigo": "OA 6",
@@ -16,6 +32,6 @@
       ]
     }
   ],
-  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019), texto oficial curriculumnacional.cl.",
-  "estado_curricular": "PARCIAL — OA 1 y OA 6 oficiales completos; OA 2-5 pendientes de extracción. Fuente: Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019), texto oficial curriculumnacional.cl."
+  "fuente_marco": "Bases Curriculares 3° y 4° Medio, MINEDUC (D.S. N° 193/2019), texto íntegro verificado palabra por palabra contra el documento oficial entregado por el establecimiento.",
+  "estado_curricular": "VERIFICADO 100% contra D.S. N° 193/2019 oficial (documento entregado por el establecimiento)."
 }

@@ -3,7 +3,7 @@
   "asignatura": "Ciencias para la Ciudadanía",
   "unidades": [
     {
-      "nombre": "Conocimiento y comprensión",
+      "nombre": "Módulo: Bienestar y Salud",
       "oa": [
         {
           "codigo": "OA 1",
@@ -15,7 +15,58 @@
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Analizar, a partir de evidencias, situaciones de transmisión de agentes infecciosos a nivel nacional y mundial (como virus de influenza, VIH-Sida, hanta, hepatitis B, sarampión, entre otros), y evaluar críticamente posibles medidas de prevención como el uso de vacunas."
+          "descripcion": "Analizar, a partir de evidencias, situaciones de transmisión de agentes infecciosos a nivel nacional y mundial (como virus de influenza, VIH-sida, hanta, hepatitis B, sarampión, entre otros), y evaluar críticamente posibles medidas de prevención como el uso de vacunas."
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo: Seguridad, Prevención y Autocuidado",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Investigar sustancias químicas de uso cotidiano en el hogar y el trabajo (medicamentos, detergentes y plaguicidas, entre otros), analizando su composición, reactividad, riesgos potenciales y medidas de seguridad asociadas (manipulación, almacenaje y eliminación)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Diseñar, evaluar y mejorar soluciones que permitan reducir las amenazas existentes en el hogar y en el mundo del trabajo (en sistemas eléctricos y de calefacción, y exposición a radiaciones, entre otros) para disminuir posibles riesgos en el bienestar de las personas y el cuidado del ambiente."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar, a partir de modelos, riesgos de origen natural o provocados por la acción humana en su contexto local (como aludes, incendios, sismos de alta magnitud, erupciones volcánicas, tsunamis e inundaciones, entre otros) y evaluar las capacidades existentes en la escuela y la comunidad para la prevención, la mitigación y la adaptación frente a sus consecuencias."
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo: Ambiente y Sostenibilidad",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Investigar el ciclo de vida de productos de uso cotidiano y proponer, basados en evidencia, estrategias de consumo sostenible para prevenir y mitigar impactos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Diseñar proyectos locales, basados en evidencia científica, para la protección y utilización sostenible de recursos naturales de Chile, considerando eficiencia energética, reducción de emisiones, tratamiento de recursos hídricos, conservación de ecosistemas o gestión de residuos, entre otros."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Modelar los efectos del cambio climático en diversos ecosistemas y sus componentes biológicos, físicos y químicos, y evaluar posibles soluciones para su mitigación."
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo: Tecnología y Sociedad",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Diseñar proyectos tecnológicos que permitan resolver problemas personales y/o locales de diversos ámbitos de la vida (como vivienda y transporte, entre otros)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Explicar, basados en investigaciones y modelos, cómo los avances tecnológicos (en robótica, telecomunicaciones, astronomía, física cuántica, entre otros) han permitido al ser humano ampliar sus capacidades sensoriales y su comprensión de fenómenos relacionados con la materia, los seres vivos y el entorno."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Evaluar alcances y limitaciones de la tecnología y sus aplicaciones, argumentando riesgos y beneficios desde una perspectiva de salud, ética, social, económica y ambiental."
         }
       ]
     },
@@ -61,6 +112,6 @@
       ]
     }
   ],
-  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019 y actualizaciones), texto oficial curriculumnacional.cl.",
-  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de programas de estudio curriculumnacional.cl."
+  "fuente_marco": "Bases Curriculares 3° y 4° Medio, MINEDUC (D.S. N° 193/2019), texto íntegro verificado palabra por palabra contra el documento oficial entregado por el establecimiento.",
+  "estado_curricular": "VERIFICADO 100% contra D.S. N° 193/2019 oficial (documento entregado por el establecimiento)."
 }

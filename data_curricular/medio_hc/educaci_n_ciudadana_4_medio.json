@@ -3,27 +3,43 @@
   "asignatura": "Educación Ciudadana",
   "unidades": [
     {
-      "nombre": "Perfil de egreso",
+      "nombre": "Objetivos de Aprendizaje (4° Medio)",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Evaluar las características y funcionamiento de la institucionalidad democrática, las formas de representación y su impacto en la distribución del poder en la sociedad, a luz del bien común, la cohesión y la justicia social."
+          "descripcion": "Evaluar las características y el funcionamiento de la institucionalidad democrática, las formas de representación y su impacto en la distribución del poder en la sociedad, a la luz del bien común, la cohesión y justicia social."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Participar de forma responsable y ética en la búsqueda de estrategias y soluciones a desafíos, problemas y conflictos en diversas escalas, que impliquen armonizar desarrollo, democracia, equidad y sustentabilidad."
+          "descripcion": "Participar de forma corresponsable y ética en la búsqueda de estrategias y soluciones a desafíos, problemas y conflictos en diversas escalas, que impliquen armonizar desarrollo, democracia, equidad y sustentabilidad."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar el impacto de diversos modelos de desarrollo y las políticas económicas en la vida cotidiana y en el cambio climático, en función de la sustentabilidad y del aseguramiento de una vida digna y justa para todos y todas con condiciones para el desarrollo personal y colectivo."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comprender la importancia de los derechos laborales en Chile, considerando las principales tendencias globales y nacionales, la evolución de los mecanismos institucionales que buscan resguardarlos y los aportes de los movimientos y organizaciones sociales a su fortalecimiento."
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Relacionar de manera fundamentada los conceptos libertad, igualdad y solidaridad, con desafíos y problemas de la democracia como la desigualdad y superación de la pobreza, la equidad de género, la inclusión, la diversidad étnica, cultural y sexual, entre otras."
+          "descripcion": "Relacionar de manera fundamentada los conceptos libertad, igualdad y solidaridad, con desafíos y problemas de la democracia como la desigualdad y superación de la pobreza, la equidad de género, la inclusión, la diversidad étnica, cultural y sexual, entre otros."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Evaluar oportunidades y riesgos de los medios de comunicación masiva y del uso de las nuevas tecnologías de la información en el marco de una sociedad democrática, reflexionando personal y grupalmente sobre sus implicancias en la participación ciudadana y en el resguardo de la vida privada."
         },
         {
           "codigo": "OA 7",
           "descripcion": "Proponer formas de organización del territorio y del espacio público que promuevan la acción colectiva, la interculturalidad, la inclusión de la diversidad y el mejoramiento de la vida comunitaria."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Tomar decisiones fundadas en principios éticos, valores y virtudes públicas en las prácticas ciudadanas, resguardando la dignidad del otro y la vida en democracia."
         }
       ]
     }
   ],
-  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019 y actualizaciones), texto oficial curriculumnacional.cl.",
-  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de programas de estudio curriculumnacional.cl."
+  "fuente_marco": "Bases Curriculares 3° y 4° Medio, MINEDUC (D.S. N° 193/2019), texto íntegro verificado palabra por palabra contra el documento oficial entregado por el establecimiento.",
+  "estado_curricular": "VERIFICADO 100% contra D.S. N° 193/2019 oficial (documento entregado por el establecimiento). OA específicos del nivel (la asignatura es progresiva)."
 }
