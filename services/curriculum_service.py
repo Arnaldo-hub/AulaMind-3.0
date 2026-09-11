@@ -498,6 +498,15 @@ class CurriculumService:
     # ======================================================
 
     SUBJECT_ALIASES = {
+        # Física — electivo HC del nuevo currículo. Sin este alias, la
+        # regla de substring la absorbe dentro de "Educación Física y
+        # Salud" (contiene la palabra "física") y contamina ambas
+        # asignaturas en 3°/4° Medio.
+        "física": {
+            "default": "Física",
+            "3° Medio": "Física",
+            "4° Medio": "Física",
+        },
         # Biología — electivos del nuevo currículo (D.S. 193/2019).
         # Deben evaluarse ANTES que la regla de substring: "Biología de
         # los Ecosistemas" contiene "Biología" y colapsaría al nombre
