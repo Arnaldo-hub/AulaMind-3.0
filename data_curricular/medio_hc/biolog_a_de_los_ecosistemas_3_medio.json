@@ -1,0 +1,33 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Biología de los Ecosistemas",
+  "unidades": [
+    {
+      "nombre": "Conocimiento y comprensión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Explicar el estado de la biodiversidad actual a partir de teorías y evidencias científicas sobre el origen de la vida, la evolución y la intervención humana."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprender la relación entre la biodiversidad, el funcionamiento de los sistemas naturales y la provisión de servicios que estos brindan al bienestar de las personas y la sociedad, considerando aspectos de bioenergética, dinámica de poblaciones, y flujos de materia y energía como factores explicativos subyacentes."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Explicar los efectos del cambio climático sobre la biodiversidad, la productividad biológica y la resiliencia de los ecosistemas, así como sus consecuencias sobre los recursos naturales, las personas y el desarrollo sostenible."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Investigar y comunicar cómo la sociedad, mediante la ciencia y la tecnología, puede prevenir, mitigar o reparar los efectos del cambio climático sobre los componentes y procesos biológicos de los sistemas naturales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Valorar la importancia de la integración de los conocimientos de la biología con otras ciencias para el análisis y la propuesta de soluciones a problemas actuales presentes en sistemas naturales, considerando las implicancias éticas, sociales y ambientales."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 193/2019), texto oficial curriculumnacional.cl y LeyChile.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de las Bases Curriculares 3° y 4° Medio (documento fuente oficial)."
+}

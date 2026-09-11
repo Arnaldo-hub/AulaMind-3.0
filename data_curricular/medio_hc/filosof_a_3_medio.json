@@ -61,6 +61,35 @@
           "descripcion": "Elaborar visiones personales a partir de las perspectivas de diversos filósofos pensando con apertura a distintos contextos, asumiendo riesgos y responsabilidades. (Pensamiento crítico)"
         }
       ]
+    },
+    {
+      "nombre": "Conocimiento y comprensión (3° Medio)",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Describir las características del quehacer filosófico, considerando el problema de su origen y sentido, e identificando algunas de sus grandes preguntas y temas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Analizar y fundamentar diversas perspectivas filosóficas, considerando posibles relaciones con la cotidianidad, así como normas, valores, creencias y visiones de mundo de los pensadores que las desarrollaron."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Formular preguntas filosóficas referidas al ser y la naturaleza de la realidad que sean significativas para su vida, considerando conceptos y teorías ontológicas fundamentales."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Formular preguntas filosóficas referidas al conocimiento, la ciencia y la verdad que sean significativas para su vida, considerando conceptos y teorías epistemológicas fundamentales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Dialogar sobre grandes problemas de la ontología y/o la epistemología, confrontando diversas perspectivas filosóficas y fundamentando visiones personales."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Aplicar principios y herramientas elementales de argumentación en el diálogo, la escritura y diferentes contextos, considerando la consistencia y rigurosidad lógica, la identificación de razonamientos válidos e inválidos y métodos de razonamiento filosófico."
+        }
+      ]
     }
   ],
   "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019 y actualizaciones), texto oficial curriculumnacional.cl.",

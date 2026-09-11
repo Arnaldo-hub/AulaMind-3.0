@@ -1,0 +1,41 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Biología Celular y Molecular",
+  "unidades": [
+    {
+      "nombre": "Conocimiento y comprensión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Investigar el desarrollo del conocimiento de biología celular y molecular a lo largo de la historia y su relación con diversas disciplinas como la Química, la Física y la Matemática, entre otras."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Explicar la estructura y organización de la célula, basada en biomoléculas, membranas y organelos, su reproducción, mantención y recambio, en procesos de metabolismo, motilidad y comunicación, como fundamento de la continuidad y evolución del fenómeno de la vida."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar críticamente el significado biológico del dogma central de la biología molecular en relación con el flujo de la información genética en células desde el ADN al ARN y a las proteínas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Describir, sobre la base de evidencia, los mecanismos de regulación génica y explicar su relación con los procesos de diferenciación y proliferación celular en respuesta a estímulos ambientales, el envejecimiento y las enfermedades como el cáncer."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explicar las relaciones entre estructuras y funciones de proteínas en procesos como la actividad enzimática, flujo de iones a través de membranas y cambios conformacionales en procesos de motilidad celular y contracción muscular."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar el desarrollo del conocimiento de biología celular y molecular en Chile y el mundo, considerando diversas líneas de investigación y la relación entre ciencia, tecnología y sociedad."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Analizar aplicaciones biotecnológicas en diversas áreas, como tratamientos para el cáncer, preservación y uso de células madre, y producción de organismos transgénicos, entre otros, y evaluar sus implicancias éticas, sociales y legales."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 193/2019), texto oficial curriculumnacional.cl y LeyChile.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de las Bases Curriculares 3° y 4° Medio (documento fuente oficial)."
+}

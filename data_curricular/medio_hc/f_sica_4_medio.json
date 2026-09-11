@@ -1,0 +1,37 @@
+{
+  "curso": "4° Medio",
+  "asignatura": "Física",
+  "unidades": [
+    {
+      "nombre": "Conocimiento y comprensión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar, con base en datos científicos actuales e históricos, el fenómeno del cambio climático global, considerando los patrones observados, sus causas probables, efectos actuales y posibles consecuencias futuras sobre la Tierra, los sistemas naturales y la sociedad."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprender, basándose en el estudio historiográfico, las explicaciones científicas sobre el origen y la evolución del universo."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar el movimiento de cuerpos bajo la acción de una fuerza central en diversas situaciones cotidianas o fenómenos naturales, con base en conceptos y modelos de la mecánica clásica."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Evaluar la contribución de la física moderna y sus teorías estructuradoras (como relatividad y mecánica cuántica) al debate sobre la naturaleza de la realidad, así como su impacto sobre la sociedad, la tecnología y los sistemas naturales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Investigar y aplicar conocimientos de la física (como mecánica de fluidos, electromagnetismo y termodinámica) para la comprensión de fenómenos y procesos que ocurren en sistemas naturales, tales como los océanos, el interior de la Tierra, la atmósfera, las aguas dulces y los suelos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Valorar la importancia de la integración de los conocimientos de la física con otras ciencias para el análisis y la propuesta de soluciones a problemas actuales, considerando las implicancias éticas, sociales y ambientales."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 193/2019), texto oficial curriculumnacional.cl y LeyChile.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de las Bases Curriculares 3° y 4° Medio (documento fuente oficial)."
+}

@@ -1,0 +1,33 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Ciencias de la Salud",
+  "unidades": [
+    {
+      "nombre": "Conocimiento y comprensión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar desde una perspectiva sistémica problemas complejos en materia de salud pública que afectan a la sociedad a escala local y global, tales como transmisión de infecciones, consumo de drogas, infecciones de transmisión sexual, desequilibrios alimentarios y enfermedades profesionales/laborales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Explicar cómo la interacción entre genoma y ambiente determina patologías y condiciones de la salud humana."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar relaciones causales entre los estilos de vida y la salud humana integral a través de sus efectos sobre el metabolismo, la energética celular, la fisiología y la conducta."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Investigar y comunicar la relación entre la calidad del aire, las aguas y los suelos con la salud humana, así como los mecanismos biológicos subyacentes."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar cómo el desarrollo científico y tecnológico, a través de innovaciones en biotecnología, nanomedicina, medicina nuclear, imagenología y farmacología, entre otras, influyen en la calidad de vida de las personas."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 193/2019), texto oficial curriculumnacional.cl y LeyChile.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de las Bases Curriculares 3° y 4° Medio (documento fuente oficial)."
+}

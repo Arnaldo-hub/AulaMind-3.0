@@ -61,6 +61,31 @@
           "descripcion": "Elaborar visiones personales a partir de las perspectivas de diversos filósofos pensando con apertura a distintos contextos, asumiendo riesgos y responsabilidades. (Pensamiento crítico)"
         }
       ]
+    },
+    {
+      "nombre": "Conocimiento y comprensión (4° Medio)",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Explicar los alcances, límites y fines del quehacer filosófico, considerando sus aportes al conocimiento y la acción, así como su relación con otras disciplinas y formas del saber."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Formular preguntas filosóficas referidas a la praxis que sean significativas para su vida, considerando teorías éticas fundamentales y conceptos como la justicia, la libertad y la igualdad."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Dialogar sobre problemas contemporáneos de la ética y la política, confrontando diversas perspectivas filosóficas y fundamentando visiones personales."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Evaluar diferentes tipos de argumentos presentes en textos filosóficos y fundamentar su validez o carácter falaz, considerando referentes teóricos, empíricos y del sentido común para apoyar o refutar una tesis."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar el impacto de ideas filosóficas relacionadas con la ontología, la epistemología y la ética en cuestiones actuales de la cultura, el mundo laboral, la tecnología, la política, las artes, entre otras posibilidades, utilizando diferentes formas de expresión y representación de ideas."
+        }
+      ]
     }
   ],
   "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019 y actualizaciones), texto oficial curriculumnacional.cl.",

@@ -498,6 +498,21 @@ class CurriculumService:
     # ======================================================
 
     SUBJECT_ALIASES = {
+        # Biología — electivos del nuevo currículo (D.S. 193/2019).
+        # Deben evaluarse ANTES que la regla de substring: "Biología de
+        # los Ecosistemas" contiene "Biología" y colapsaría al nombre
+        # genérico del currículo antiguo, fusionando dos asignaturas
+        # distintas en una sola.
+        "biología de los ecosistemas": {
+            "default": "Biología de los Ecosistemas",
+            "3° Medio": "Biología de los Ecosistemas",
+            "4° Medio": "Biología de los Ecosistemas",
+        },
+        "biología celular y molecular": {
+            "default": "Biología Celular y Molecular",
+            "3° Medio": "Biología Celular y Molecular",
+            "4° Medio": "Biología Celular y Molecular",
+        },
         # Lenguaje / Lengua
         "lenguaje y literatura": {
             "1° Básico": "Lenguaje y Comunicación",
