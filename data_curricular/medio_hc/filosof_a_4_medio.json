@@ -1,0 +1,68 @@
+{
+  "curso": "4° Medio",
+  "asignatura": "Filosofía",
+  "unidades": [
+    {
+      "nombre": "Módulo 1 — La filosofía es una actividad de búsqueda racional inherente al ser humano",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar problemas presentes en textos filosóficos, considerando conceptos, métodos de razonamiento e implicancias para la vida cotidiana pensando con flexibilidad para reelaborar las propias ideas y puntos de vista. (Pensamiento analítico)"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Elaborar preguntas a partir del análisis de conceptos y teorías filosóficas para pensar con autorreflexión y autonomía. (Pensamiento analítico)"
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo 2 — La filosofía es una guía para la reflexión crítica acerca de la realidad, el hombre y el mundo en que vivimos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar problemas presentes en textos filosóficos, considerando conceptos, métodos de razonamiento e implicancias para la vida cotidiana pensando con flexibilidad para reelaborar las propias ideas y puntos de vista. (Pensamiento analítico)"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Elaborar preguntas a partir del análisis de conceptos y teorías filosóficas para pensar con autorreflexión y autonomía. (Pensamiento analítico)"
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo 3 — El problema filosófico ético moral: problemas actuales y perspectivas ético-morales",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar problemas presentes en textos filosóficos, considerando conceptos, métodos de razonamiento e implicancias para la vida cotidiana pensando con flexibilidad para reelaborar las propias ideas y puntos de vista. (Pensamiento analítico)"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Participar en diálogos sobre problemas filosóficos pertinentes para sus contextos, aplicando principios y herramientas de argumentación con empatía hacia otros. (Pensamiento crítico)"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Elaborar visiones personales a partir de las perspectivas de diversos filósofos pensando con apertura a distintos contextos, asumiendo riesgos y responsabilidades. (Pensamiento crítico)"
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo 4 — El ejercicio filosófico nos permite construir visiones de mundo",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar problemas presentes en textos filosóficos, considerando conceptos, métodos de razonamiento e implicancias para la vida cotidiana pensando con flexibilidad para reelaborar las propias ideas y puntos de vista. (Pensamiento analítico)"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Elaborar preguntas a partir del análisis de conceptos y teorías filosóficas para pensar con autorreflexión y autonomía. (Pensamiento analítico)"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Elaborar visiones personales a partir de las perspectivas de diversos filósofos pensando con apertura a distintos contextos, asumiendo riesgos y responsabilidades. (Pensamiento crítico)"
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019 y actualizaciones), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de programas de estudio curriculumnacional.cl."
+}

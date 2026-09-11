@@ -1,0 +1,66 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Ciencias para la Ciudadanía",
+  "unidades": [
+    {
+      "nombre": "Conocimiento y comprensión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar, sobre la base de la investigación, factores biológicos, ambientales y sociales que influyen en la salud humana (como la nutrición, el consumo de alimentos transgénicos, la actividad física, el estrés, el consumo de alcohol y drogas, y la exposición a rayos UV, plaguicidas, patógenos y elementos contaminantes, entre otros)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Investigar y comparar diversas medicinas (incluyendo la convencional, la tradicional de nuestros pueblos originarios y la complementaria alternativa), considerando su origen, conocimientos y prácticas para la resolución de problemas de salud cotidianos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar, a partir de evidencias, situaciones de transmisión de agentes infecciosos a nivel nacional y mundial (como virus de influenza, VIH-Sida, hanta, hepatitis B, sarampión, entre otros), y evaluar críticamente posibles medidas de prevención como el uso de vacunas."
+        }
+      ]
+    },
+    {
+      "nombre": "Habilidades científicas",
+      "oa": [
+        {
+          "codigo": "OA a",
+          "descripcion": "Formular preguntas y problemas sobre tópicos científicos de interés, a partir de la observación de fenómenos y/o la exploración de diversas fuentes."
+        },
+        {
+          "codigo": "OA b",
+          "descripcion": "Planificar y desarrollar investigaciones que permitan recoger evidencias y contrastar hipótesis, con apoyo de herramientas tecnológicas y matemáticas."
+        },
+        {
+          "codigo": "OA c",
+          "descripcion": "Describir patrones, tendencias y relaciones entre datos, información y variables."
+        },
+        {
+          "codigo": "OA d",
+          "descripcion": "Analizar las relaciones entre las partes de un sistema en fenómenos y problemas de interés, a partir de tablas, gráficos, diagramas y modelos."
+        },
+        {
+          "codigo": "OA e",
+          "descripcion": "Construir, usar y comunicar argumentos científicos."
+        },
+        {
+          "codigo": "OA f",
+          "descripcion": "Desarrollar y usar modelos basados en evidencia, para predecir y explicar mecanismos y fenómenos naturales."
+        },
+        {
+          "codigo": "OA g",
+          "descripcion": "Diseñar proyectos para encontrar soluciones a problemas, usando la imaginación y la creatividad."
+        },
+        {
+          "codigo": "OA h",
+          "descripcion": "Evaluar la validez de información proveniente de diversas fuentes, distinguiendo entre evidencia científica e interpretación, y analizar sus alcances y limitaciones."
+        },
+        {
+          "codigo": "OA i",
+          "descripcion": "Analizar críticamente implicancias sociales, económicas, éticas y ambientales de problemas relacionados con controversias públicas que involucran ciencia y tecnología."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019 y actualizaciones), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de programas de estudio curriculumnacional.cl."
+}
