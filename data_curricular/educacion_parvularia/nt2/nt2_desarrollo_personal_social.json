@@ -1,0 +1,96 @@
+{
+  "nivel": "NT2 / Kínder",
+  "nivel_curricular": "NT (Nivel de Transición)",
+  "ambito": "Desarrollo Personal y Social",
+  "nucleos": [
+    {
+      "nombre": "Identidad y Autonomía",
+      "oa": [
+        {
+          "codigo": "OAT 5",
+          "descripcion": "Comunicar sus preferencias, opiniones, ideas, en diversas situaciones cotidianas y juegos."
+        },
+        {
+          "codigo": "OAT 7",
+          "descripcion": "Comunicar rasgos de su identidad de género, roles (nieta/o, vecino/a, entre otros), sentido de pertenencia y cualidades personales."
+        },
+        {
+          "codigo": "OAT 8",
+          "descripcion": "Comunicar sus características identitarias, fortalezas, habilidades y desafíos personales."
+        },
+        {
+          "codigo": "OAT 15",
+          "descripcion": "Comunicar a otras personas desafíos alcanzados, identificando acciones que aportaron a su logro y definiendo nuevas metas."
+        },
+        {
+          "codigo": "OAT 16",
+          "descripcion": "Distinguir parámetros establecidos para la regulación de alimentos, tales como: etiquetado de sellos, fechas de vencimiento, entre otros."
+        }
+      ]
+    },
+    {
+      "nombre": "Convivencia y Ciudadanía",
+      "oa": [
+        {
+          "codigo": "OAT 9",
+          "descripcion": "Reconocer, y progresivamente hacer respetar, el derecho a expresarse libremente, a ser escuchado y a que su opinión sea tomada en cuenta."
+        },
+        {
+          "codigo": "OAT 10",
+          "descripcion": "Reconocer progresivamente requerimientos esenciales de las prácticas de convivencia democrática, tales como: escucha de opiniones divergentes, el respeto por los demás, de los turnos, de los acuerdos de las mayorías."
+        },
+        {
+          "codigo": "OAT 11",
+          "descripcion": "Apreciar la diversidad de las personas y sus formas de vida, tales como: singularidades fisonómicas, lingüísticas, religiosas, de género, entre otras."
+        },
+        {
+          "codigo": "OAT 14",
+          "descripcion": "Participar en actividades y juegos colaborativos, planificando, acordando estrategias para un propósito común y asumiendo progresivamente responsabilidades en ellos."
+        },
+        {
+          "codigo": "OAT 18",
+          "descripcion": "Comprender que algunas de sus acciones y decisiones respecto al desarrollo de juegos y proyectos colectivos, influyen en las de sus pares."
+        }
+      ]
+    },
+    {
+      "nombre": "Corporalidad y Movimiento",
+      "oa": [
+        {
+          "codigo": "OAT 1",
+          "descripcion": "Manifestar iniciativa para resguardar el autocuidado de su cuerpo y su confortabilidad, en función de su propio bienestar."
+        },
+        {
+          "codigo": "OAT 2",
+          "descripcion": "Apreciar sus características corporales, manifestando interés y cuidado por su bienestar y apariencia personal."
+        },
+        {
+          "codigo": "OAT 3",
+          "descripcion": "Tomar conciencia de su cuerpo, de algunas de sus características internas (tales como: ritmo cardíaco, de respiración), de su esquema y progresivamente de su tono corporal y lateralidad, por medio de juegos."
+        },
+        {
+          "codigo": "OAT 4",
+          "descripcion": "Comunicar nuevas posibilidades de acción logradas a través de su cuerpo en situaciones cotidianas y de juego, empleando vocabulario preciso."
+        },
+        {
+          "codigo": "OAT 5",
+          "descripcion": "Comunicar el bienestar que le produce el movimiento, al ejercitar y recrear su cuerpo en forma habitual, con y sin implementos u obstáculos."
+        },
+        {
+          "codigo": "OAT 6",
+          "descripcion": "Coordinar con precisión y eficiencia sus habilidades psicomotrices finas en función de sus intereses de exploración y juego."
+        },
+        {
+          "codigo": "OAT 7",
+          "descripcion": "Resolver desafíos prácticos manteniendo control, equilibrio y coordinación al combinar diversos movimientos, posturas y desplazamientos tales como: lanzar y recibir, desplazarse en planos inclinados, seguir ritmos, en una variedad de juegos."
+        },
+        {
+          "codigo": "OAT 8",
+          "descripcion": "Coordinar sus habilidades psicomotoras practicando posturas y movimientos de fuerza, resistencia y tracción tales como: tirar la cuerda, transportar objetos, utilizar implementos, en situaciones cotidianas y de juego."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Educación Parvularia, MINEDUC (febrero 2018) y Programa Pedagógico NT1/NT2, texto oficial parvularia.mineduc.cl y curriculumnacional.cl.",
+  "estado_curricular": "Identidad y Autonomía: PARCIAL — OAT oficiales verificados del Programa Pedagógico NT; numeración oficial conservada. | Convivencia y Ciudadanía: PARCIAL — OAT oficiales verificados del Programa Pedagógico NT. | Corporalidad y Movimiento: COMPLETO — OAT oficiales Bases Curriculares Parvularia 2018, Nivel Transición."
+}

@@ -1,0 +1,104 @@
+{
+  "nivel": "NT2 / Kínder",
+  "nivel_curricular": "NT (Nivel de Transición)",
+  "ambito": "Interacción y Comprensión del Entorno",
+  "nucleos": [
+    {
+      "nombre": "Exploración del Entorno Natural",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Manifestar interés y asombro al ampliar información sobre cambios que ocurren en el entorno natural, a las personas, animales, plantas, lugares y cuerpos celestes, utilizando diversas fuentes y procedimientos."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Formular conjeturas y predicciones acerca de las causas o consecuencias de fenómenos naturales que observa, a partir de sus conocimientos y experiencias previas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Reconocer la importancia del agua y la energía solar para la vida humana, los animales y las plantas, a partir de experiencias directas o TICs."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comunicar propiedades básicas de los objetos y elementos naturales que explora, tales como: transparencia/opacidad, flexibilidad/rigidez, rugosidad/lisura, relacionándolos con posibles usos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explorar los cambios o efectos que se producen en los materiales al aplicarles fuerza, calor o agua."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Establecer relaciones de semejanzas y diferencias de animales y plantas, a partir de algunas características (tamaño, color, textura y morfología), sus necesidades básicas (formas de alimentación y abrigo), y los lugares que habitan, al observarlos en forma directa, en libros ilustrados o en TICs."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Describir semejanzas y diferencias respecto a características, necesidades básicas y cambios que ocurren en el proceso de crecimiento, en personas, animales y plantas."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Practicar algunas acciones cotidianas, que contribuyen al cuidado de ambientes sostenibles, tales como: manejo de desechos en paseos al aire libre, separación de residuos, utilizar envases o papeles, plantar flores o árboles."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Comunicar sus observaciones, los instrumentos utilizados y los hallazgos obtenidos en experiencias de indagación en el entorno natural, mediante relatos, representaciones gráficas o fotografías."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Formular conjeturas a partir de los cambios observados en mezclas y disoluciones, estableciendo relaciones de posible causalidad y comunicándolas a través de diferentes medios."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Identificar las condiciones que caracterizan los ambientes saludables, tales como: aire y agua limpia, combustión natural, reciclaje, reutilización y reducción de basura, tomando conciencia progresiva de cómo estas contribuyen a su salud."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Comprender que la acción humana puede aportar al desarrollo de ambientes sostenibles y también al deterioro de estos."
+        }
+      ]
+    },
+    {
+      "nombre": "Comprensión del Entorno Sociocultural",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender los roles que desarrollan miembros de su familia y de su comunidad, y su aporte para el bienestar común."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Apreciar diversas formas de vida de comunidades, del país y del mundo, en el pasado y en el presente, tales como: viviendas, paisajes, alimentación, costumbres, identificando mediante diversas fuentes de documentación gráfica y audiovisual, sus características relevantes."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Comparar características de diseño, funcionamiento, utilidad, precaución de uso e impacto en el entorno, de diferentes objetos tecnológicos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Formular interpretaciones respecto de las necesidades y situaciones que dieron origen a creaciones e inventos, tales como: refrigerador, radio, avión, naves espaciales, cámara fotográfica, entre otros."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Comunicar algunos relatos sociales sobre hechos significativos del pasado de su comunidad y país, apoyándose en recursos tales como: fotografías, videos, utensilios u objetos representativos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Reconocer diversas acciones para el cuidado del patrimonio cultural material (construcciones, obras de carácter arqueológico, lugares) e inmaterial (tradiciones, celebraciones), de su comunidad local."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Reconocer la importancia del servicio que prestan instituciones, organizaciones, lugares y obras de interés patrimonial, tales como: escuelas, transporte público, empresas, iglesias, museos, bibliotecas, entre otros."
+        }
+      ]
+    },
+    {
+      "nombre": "Pensamiento Matemático",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Emplear los números, para contar, identificar, cuantificar y comparar cantidades hasta el 20 e indicar orden o posición de algunos elementos en situaciones cotidianas o juegos."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Educación Parvularia, MINEDUC (febrero 2018) y Programa Pedagógico NT1/NT2, texto oficial parvularia.mineduc.cl y curriculumnacional.cl.",
+  "estado_curricular": "Exploración del Entorno Natural: COMPLETO — OA oficiales Bases Curriculares Parvularia 2018, Nivel Transición. | Comprensión del Entorno Sociocultural: COMPLETO — OA oficiales Bases Curriculares Parvularia 2018, Nivel Transición. | Pensamiento Matemático: PARCIAL — OA 6 oficial verificado; resto de OA del núcleo pendientes de extracción del documento fuente."
+}

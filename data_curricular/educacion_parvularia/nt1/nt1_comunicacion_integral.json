@@ -1,0 +1,79 @@
+{
+  "nivel": "NT1 / Prekínder",
+  "nivel_curricular": "NT (Nivel de Transición)",
+  "ambito": "Comunicación Integral",
+  "nucleos": [
+    {
+      "nombre": "Lenguaje Verbal",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Expresarse oralmente en forma clara y comprensible, empleando estructuras oracionales completas, conjugaciones verbales adecuadas y precisas con los tiempos, personas e intenciones comunicativas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprender textos orales como preguntas, explicaciones, relatos, instrucciones y algunos conceptos abstractos en distintas situaciones comunicativas, identificando la intencionalidad comunicativa de diversos interlocutores."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Descubrir en contextos lúdicos, atributos fonológicos de palabras conocidas, tales como conteo de palabras, segmentación y conteo de sílabas, identificación de sonidos finales e iniciales."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comunicar oralmente temas de su interés, empleando un vocabulario variado e incorporando palabras nuevas y pertinentes a las distintas situaciones comunicativas e interlocutores."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Manifestar interés por descubrir el contenido y algunos propósitos de diferentes textos escritos (manipulando, explorando, realizando descripciones y conjeturas) a través del contacto cotidiano con algunos de ellos, o del uso de TICs."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Comprender contenidos explícitos de textos literarios y no literarios, a partir de la escucha atenta, describiendo información y realizando progresivamente inferencias y predicciones."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Reconocer palabras que se encuentran en diversos soportes asociando algunos fonemas a sus correspondientes grafemas."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Representar gráficamente algunos trazos, letras, signos, palabras significativas y mensajes simples legibles, utilizando diferentes recursos y soportes en situaciones auténticas."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Comunicar mensajes simples en la lengua indígena pertinente a la comunidad donde habita."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Reconocer algunas palabras o mensajes sencillos de lenguas maternas de sus pares, distintas al castellano."
+        }
+      ]
+    },
+    {
+      "nombre": "Lenguajes Artísticos",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Apreciar producciones artísticas de diversos contextos (en forma directa o a través de medios tecnológicos), describiendo y comparando algunas características visuales, musicales o escénicas (desplazamiento, ritmo, carácter expresivo, colorido, formas, diseño, entre otros)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comunicar sus impresiones, emociones e ideas respecto de diversas obras de arte, producciones propias y de sus pares (artesanías, piezas musicales, obras plásticas y escénicas, entre otras)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Interpretar canciones y juegos musicales, utilizando de manera integrada diversos recursos tales como, la voz, el cuerpo, instrumentos musicales y objetos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Expresar corporalmente sensaciones, emociones e ideas a partir de la improvisación de escenas dramáticas, juegos teatrales, mímica y danza."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Representar plásticamente emociones, ideas, experiencias e intereses, a través de líneas, formas, colores, texturas, con recursos y soportes en plano y volumen."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares de la Educación Parvularia, MINEDUC (febrero 2018) y Programa Pedagógico NT1/NT2, texto oficial parvularia.mineduc.cl y curriculumnacional.cl.",
+  "estado_curricular": "Lenguaje Verbal: COMPLETO — OA oficiales Bases Curriculares Parvularia 2018, Nivel Transición. | Lenguajes Artísticos: COMPLETO — OA oficiales curriculumnacional.cl, Nivel Transición."
+}
