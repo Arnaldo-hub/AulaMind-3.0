@@ -1,6 +1,7 @@
 from openai import OpenAI
 
 from config import Config
+from services.format_rules import clean_ai_text, with_format_rules
 
 
 class OpenAIService:
@@ -59,7 +60,7 @@ class OpenAIService:
 
                         "role": "system",
 
-                        "content": system_prompt
+                        "content": with_format_rules(system_prompt)
 
                     },
 
@@ -79,7 +80,7 @@ class OpenAIService:
 
                 "success": True,
 
-                "content": response.output_text
+                "content": clean_ai_text(response.output_text)
 
             }
 
