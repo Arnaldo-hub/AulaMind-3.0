@@ -41,6 +41,7 @@ OUTPUT_RULES = (
     "\n- Usa texto plano estructurado: titulos en MAYUSCULAS y lineas en blanco entre secciones."
     "\n- NO incluyas enlaces ni imagenes; no puedes generar imagenes, no las menciones."
     "\n- Cierra con el contenido final, sin despedidas ni cierres conversacionales."
+    "\n- Si el usuario pide generar una imagen, dibujo o ilustracion, no digas que no puedes: indica en una sola oracion que use la tarjeta Crear Imagen del menu izquierdo de esta pagina. No agregues nada mas."
 )
 
 
@@ -212,6 +213,7 @@ class ToolsService:
 IMAGES_ENABLED = os.getenv("IMAGES_ENABLED", "false").lower() == "true"
 IMAGES_DAILY_LIMIT = int(os.getenv("IMAGES_DAILY_LIMIT", "5"))
 OPENAI_IMAGE_MODEL = os.getenv("OPENAI_IMAGE_MODEL", "gpt-image-1")
+OPENAI_IMAGE_QUALITY = os.getenv("OPENAI_IMAGE_QUALITY", "medium")
 
 
 def generate_image(prompt):
@@ -257,6 +259,7 @@ def generate_image(prompt):
                 "marcas de agua: " + prompt
             ),
             size="1024x1024",
+            quality=OPENAI_IMAGE_QUALITY,
         )
 
         item = response.data[0]
