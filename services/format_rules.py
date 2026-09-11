@@ -88,6 +88,8 @@ def clean_ai_text(text):
     # dobles guiones sueltos como separador (-- o -- al final)
     text = re.sub(r"(?m)^\s*--+\s*$", "", text)
     text = re.sub(r"--+(\s*\n)", r"\1", text)
+    # doble guion al final absoluto del texto
+    text = re.sub(r"--+\s*$", "", text)
 
     # backticks de codigo
     text = text.replace("`", "")
