@@ -24,6 +24,7 @@ from routes.guides import guides  # ← NUEVO
 from routes.rubrics import rubrics  # ← NUEVO
 from routes.pie import pie  # ← NUEVO
 from routes.fonoaudiologia import fonoaudiologia
+from routes.tools import tools  # ← NUEVO v3.5 Herramientas IA
 
 # ==========================================================
 # Base de datos
@@ -163,6 +164,7 @@ app.register_blueprint(billing)  # ← NUEVO v3.1
 app.register_blueprint(legal)  # ← NUEVO v3.1.4
 app.register_blueprint(payments)  # ← NUEVO v3.2 Mercado Pago
 app.register_blueprint(fonoaudiologia)  # ← NUEVO v3.4 Fonoaudiología
+app.register_blueprint(tools)  # ← NUEVO v3.5 Herramientas IA
 
 # El webhook de Mercado Pago es un POST server-to-server:
 # no lleva token CSRF de sesión. Se exime SOLO este
