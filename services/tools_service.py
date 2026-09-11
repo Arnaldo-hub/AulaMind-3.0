@@ -25,6 +25,24 @@ from services.openai_service import OpenAIService
 logger = logging.getLogger(__name__)
 
 
+# ==========================================================
+# Reglas de formato profesional (v3.5.1)
+# Aplicadas a TODAS las plantillas. Evitan cierres con
+# preguntas, markdown crudo y links de imágenes falsos.
+# ==========================================================
+
+OUTPUT_RULES = (
+    "\n\nREGLAS DE FORMATO Y ENTREGA (obligatorias):"
+    "\n- Entrega SOLO lo solicitado, completo y terminado."
+    "\n- NO agregues preguntas al final ni ofertas de ayuda adicional."
+    "\n- NO preguntes si desea ajustes, otra version o algo mas."
+    "\n- NO uses sintaxis markdown (sin ##, **, --- ni viñetas con asterisco)."
+    "\n- Usa texto plano estructurado: titulos en MAYUSCULAS y lineas en blanco entre secciones."
+    "\n- NO incluyas enlaces ni imagenes; no puedes generar imagenes, no las menciones."
+    "\n- Cierra con el contenido final, sin despedidas ni cierres conversacionales."
+)
+
+
 class ToolsService:
     """
     Motor de las Herramientas IA de apoyo.
@@ -166,7 +184,7 @@ class ToolsService:
         )
 
         return self.ai.generate(
-            system_prompt=template["system"],
+            system_prompt=template["system"] + OUTPUT_RULES,
             user_prompt=str(message).strip(),
         )
 
