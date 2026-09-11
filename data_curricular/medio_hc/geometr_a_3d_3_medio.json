@@ -1,0 +1,33 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Geometría 3D",
+  "unidades": [
+    {
+      "nombre": "Conocimiento y comprensión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Resolver problemas de geometría plana y del espacio, aplicando conceptos y propiedades de cuerpos geométricos 2D y 3D y sus proyecciones."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Resolver problemas utilizando congruencia, semejanza y transformaciones isométricas de cuerpos en el espacio, en diversos contextos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Aplicar el teorema de Pitágoras y sus relaciones métricas en el plano y en el espacio para resolver problemas en contextos significativos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Determinar áreas y volúmenes de cuerpos geométricos 3D generados por traslación o rotación de figuras 2D, en la resolución de problemas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Resolver problemas de geometría analítica en el espacio, aplicando distintas representaciones y operaciones con vectores en 3D."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 193/2019), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de las Bases Curriculares 3° y 4° Medio y curriculumnacional.cl."
+}
