@@ -67,7 +67,10 @@ SYSTEM_PROMPT = (
     "conservando su etiqueta exacta. "
     "4) Las descripciones deben ser prácticas, con pasos "
     "concretos para el aula chilena, en español. "
-    "5) Recursos y evaluación: breves y concretos por momento."
+    "5) Recursos y evaluación: breves y concretos por momento. "
+    "6) Si se indica un Objetivo de Aprendizaje (OA) del "
+    "Currículum Nacional, alinea el objetivo de la clase y las "
+    "actividades a ese OA."
 )
 
 USER_PROMPT_TEMPLATE = (
@@ -75,6 +78,8 @@ USER_PROMPT_TEMPLATE = (
     "- Asignatura: {asignatura}\n"
     "- Curso: {curso}\n"
     "- Unidad/Tema: {unidad}\n"
+    "- Objetivo de Aprendizaje (OA) del Currículum Nacional "
+    "seleccionado: {oa}\n"
     "- Objetivo de la clase (OAT), si el docente lo indicó: "
     "{oat}\n"
     "- Duración de la clase: {duracion}\n\n"
@@ -101,6 +106,7 @@ def generate_diaria(data):
     asignatura = (data.get("asignatura") or "").strip()
     curso = (data.get("curso") or "").strip()
     unidad = (data.get("unidad") or "").strip()
+    oa = (data.get("oa") or "").strip() or "No seleccionado"
     oat = (data.get("oat") or "").strip() or "No indicado"
     duracion = (data.get("duracion") or "").strip() or "90 minutos"
 
@@ -121,6 +127,7 @@ def generate_diaria(data):
         asignatura=asignatura,
         curso=curso,
         unidad=unidad,
+        oa=oa,
         oat=oat,
         duracion=duracion,
         momentos="\n".join(

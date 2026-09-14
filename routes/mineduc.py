@@ -63,6 +63,7 @@ def api_diaria():
     asignatura = str(payload.get("asignatura", "")).strip()
     curso = str(payload.get("curso", "")).strip()
     unidad = str(payload.get("unidad", "")).strip()
+    oa = str(payload.get("oa", "")).strip()   # OA del currículum seleccionado
     oat = str(payload.get("oat", "")).strip()
     duracion = str(payload.get("duracion", "")).strip() or "90 minutos"
     fecha = str(payload.get("fecha", "")).strip() \
@@ -84,6 +85,7 @@ def api_diaria():
         "asignatura": asignatura,
         "curso": curso,
         "unidad": unidad,
+        "oa": oa,
         "oat": oat,
         "duracion": duracion,
     })
