@@ -110,12 +110,39 @@ class PersistenceService:
                 )
             ) or 0
 
+            # v3.9.1: las planificaciones incluyen los 5 formatos
+            # oficiales MINEDUC (mineduc_*)
+            mineduc_count = sum(
+                v for k, v in counts.items()
+                if k.startswith("mineduc_")
+            )
+
+            # asistentes IA: chats e imagenes de Herramientas IA
+            ia_rows = db.execute(
+                select(
+                    AIGeneration.feature,
+                    func.count(AIGeneration.id)
+                )
+                .where(
+                    AIGeneration.user_id == str(user_id),
+                    AIGeneration.success == True  # noqa: E712
+                )
+                .group_by(AIGeneration.feature)
+            ).all()
+            ia_counts = dict(ia_rows)
+
             return {
-                "planning_count": counts.get("planning", 0),
+                "planning_count": counts.get("planning", 0)
+                                  + mineduc_count,
+                "mineduc_count": mineduc_count,
                 "evaluation_count": counts.get("evaluation", 0),
                 "guide_count": counts.get("guide", 0),
                 "rubric_count": counts.get("rubric", 0),
                 "export_count": export_count,
+                "ia_chats_count": ia_counts.get(
+                    "herramientas_ia_chat", 0),
+                "ia_images_count": ia_counts.get(
+                    "herramientas_ia_image", 0),
                 "total_documents": total,
                 "time_saved_hours": round(total * 1.5, 1),
             }

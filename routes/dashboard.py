@@ -53,9 +53,12 @@ def home():
         persistence_service.dashboard_stats(user_id)
         if user_id else {
             "planning_count": 0,
+            "mineduc_count": 0,
             "evaluation_count": 0,
             "guide_count": 0,
             "rubric_count": 0,
+            "ia_chats_count": 0,
+            "ia_images_count": 0,
             "total_documents": 0,
             "time_saved_hours": 0,
         }
@@ -103,6 +106,38 @@ _ACTIVITY_META = {
         "icon": "fa-book-open",
         "color": "purple",
         "endpoint": "guides.index",
+    },
+
+    # v3.9.1: formatos oficiales MINEDUC en la actividad reciente
+    "mineduc_diaria": {
+        "label": "Planificación MINEDUC",
+        "icon": "fa-file-invoice",
+        "color": "blue",
+        "endpoint": "mineduc.index",
+    },
+    "mineduc_unidad": {
+        "label": "Planificación MINEDUC",
+        "icon": "fa-file-invoice",
+        "color": "blue",
+        "endpoint": "mineduc.index",
+    },
+    "mineduc_mensual": {
+        "label": "Planificación MINEDUC",
+        "icon": "fa-file-invoice",
+        "color": "blue",
+        "endpoint": "mineduc.index",
+    },
+    "mineduc_anual": {
+        "label": "Planificación MINEDUC",
+        "icon": "fa-file-invoice",
+        "color": "blue",
+        "endpoint": "mineduc.index",
+    },
+    "mineduc_invertida": {
+        "label": "Planificación MINEDUC",
+        "icon": "fa-file-invoice",
+        "color": "blue",
+        "endpoint": "mineduc.index",
     },
 
     "rubric": {

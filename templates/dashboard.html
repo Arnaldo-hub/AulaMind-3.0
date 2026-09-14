@@ -175,17 +175,18 @@
 
             <h2>
 
-                Crea planificaciones, evaluaciones y recursos
-                pedagógicos con Inteligencia Artificial.
+                Planificaciones en los formatos oficiales del
+                Ministerio de Educación, evaluaciones y clases
+                con Inteligencia Artificial.
 
             </h2>
 
             <p>
 
-                AulaMind automatiza el trabajo administrativo del docente,
-                genera planificaciones alineadas al currículum nacional,
-                crea evaluaciones, guías, rúbricas y recursos educativos
-                en cuestión de segundos.
+                AulaMind genera planificaciones en los 5 formatos
+                oficiales MINEDUC alineadas al Currículum Nacional,
+                preparaciones de clase, evaluaciones, guías, rúbricas
+                e imágenes educativas en segundos.
 
             </p>
 
@@ -193,13 +194,13 @@
 
                 <a
 
-                    href="{{ url_for('planning.index') }}"
+                    href="{{ url_for('mineduc.index') }}"
 
                     class="btn-primary">
 
-                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <i class="fa-solid fa-file-invoice"></i>
 
-                    Nueva Planificación
+                    Nueva planificación MINEDUC
 
                 </a>
 
@@ -275,13 +276,13 @@
 
                     <span>
 
-                        Tiempo Ahorrado
+                        Asistentes IA
 
                     </span>
 
                     <h3>
 
-                        {{ stats.time_saved_hours }} h
+                        {{ stats.ia_chats_count }}
 
                     </h3>
 
@@ -370,6 +371,52 @@
 
             <div class="module-icon blue">
 
+                <i class="fa-solid fa-file-invoice"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Planificación MINEDUC
+
+                    <span style="font-size:.65rem;background:#16a34a;color:#fff;padding:.15rem .5rem;border-radius:999px;vertical-align:middle;">
+
+                        Formatos oficiales
+
+                    </span>
+
+                </h3>
+
+                <p>
+
+                    Los 5 formatos oficiales del Ministerio de Educación:
+                    diaria, unidad, mensual, anual Gantt e invertida,
+                    alineados al Currículum Nacional.
+
+                </p>
+
+            </div>
+
+            <a
+
+                href="{{ url_for('mineduc.index') }}"
+
+                class="module-button">
+
+                Abrir módulo
+
+            </a>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
+            <div class="module-icon blue">
+
                 <i class="fa-solid fa-book-open"></i>
 
             </div>
@@ -378,13 +425,13 @@
 
                 <h3>
 
-                    Planificaciones
+                    Preparación de Clase
 
                 </h3>
 
                 <p>
 
-                    Genera planificaciones completas alineadas al
+                    Genera clases completas alineadas al
                     currículum nacional mediante Inteligencia Artificial.
 
                 </p>
@@ -531,6 +578,85 @@
 
         <article class="module-card">
 
+            <div class="module-icon purple">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Herramientas IA
+
+                </h3>
+
+                <p>
+
+                    Asistente libre con plantillas para asistentes
+                    de la educación: textos, cuentos, actividades,
+                    imágenes IA y descarga en PDF.
+
+                </p>
+
+            </div>
+
+            <a
+
+                href="{{ url_for('tools.index') }}"
+
+                class="module-button">
+
+                Abrir módulo
+
+            </a>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
+            <div class="module-icon orange">
+
+                <i class="fa-solid fa-ear-listen"></i>
+
+            </div>
+
+            <div class="module-content">
+
+                <h3>
+
+                    Fonoaudiología
+
+                </h3>
+
+                <p>
+
+                    Adaptaciones curriculares y apoyo para estudiantes
+                    con NEE relacionadas a comunicación y lenguaje.
+
+                </p>
+
+            </div>
+
+            <a
+
+                href="{{ url_for('fonoaudiologia.index') }}"
+
+                class="module-button">
+
+                Abrir módulo
+
+            </a>
+
+        </article>
+
+        <!-- ================================================= -->
+
+        <article class="module-card">
+
             <div class="module-icon cyan">
 
                 <i class="fa-solid fa-chart-column"></i>
@@ -618,13 +744,13 @@
 
             <span>
 
-                Tiempo ahorrado
+                Asistentes IA
 
             </span>
 
             <h2>
 
-                {{ stats.time_saved_hours }} h
+                {{ stats.ia_chats_count }}
 
             </h2>
 
