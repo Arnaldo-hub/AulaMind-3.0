@@ -4,21 +4,23 @@ AulaMind Enterprise 3.0
 routes/mineduc.py
 -----------------------------------------------------------
 
-Planificación MINEDUC (v3.8 Fase 1) — Formato oficial
-Planificación Diaria / Clase a Clase.
+Planificación MINEDUC (v3.9) — 5 formatos oficiales:
+unidad, anual (Gantt), mensual, diaria, invertida.
 
 Rutas:
-  GET  /mineduc              → página del generador
-  POST /mineduc/api/diaria   → genera plan (JSON estructurado)
-  POST /mineduc/pdf          → PDF oficial con tablas reales
+  GET  /mineduc                 → página del generador
+  GET  /mineduc/health          → estado del servicio
+  POST /mineduc/api/generate    → genera cualquier formato
+  POST /mineduc/api/diaria      → alias de generate (tipo=diaria)
+  POST /mineduc/pdf             → PDF oficial (por tipo)
 
 Autor:
 Biotecno Chile
 ===========================================================
 """
 
+import json
 import logging
-import uuid
 from datetime import datetime
 
 from flask import (Blueprint, Response, jsonify, redirect,
@@ -31,7 +33,7 @@ from models.ai_generation import AIGeneration
 from models.document import Document
 from security.authorization import subscription_required
 from services.entitlements import Entitlements
-from services.mineduc_service import build_diaria_pdf, generate_diaria
+from services.mineduc_service import NOMBRES_TIPOS, TIPOS, build_pdf, generate
 
 logger = logging.getLogger(__name__)
 
@@ -47,48 +49,43 @@ def index():
 
 @mineduc.route("/health")
 def health():
-    return jsonify(status="ok", service="mineduc", phase="1",
-                   format="diaria")
+    return jsonify(status="ok", service="mineduc", version="3.9",
+                   formatos=TIPOS)
 
 
-@mineduc.route("/api/diaria", methods=["POST"])
-@subscription_required
-@limiter.limit("12 per minute")
-def api_diaria():
-    if "user_id" not in session:
-        return jsonify(success=False, error="No autenticado"), 401
-
+def _generar(tipo):
+    """Lógica común de generación para los 5 formatos."""
     payload = request.get_json(silent=True) or {}
 
     asignatura = str(payload.get("asignatura", "")).strip()
     curso = str(payload.get("curso", "")).strip()
     unidad = str(payload.get("unidad", "")).strip()
-    oa = str(payload.get("oa", "")).strip()   # OA del currículum seleccionado
+    oa = str(payload.get("oa", "")).strip()
     oat = str(payload.get("oat", "")).strip()
     duracion = str(payload.get("duracion", "")).strip() or "90 minutos"
     fecha = str(payload.get("fecha", "")).strip() \
         or datetime.now().strftime("%d-%m-%Y")
     curso_hora = str(payload.get("curso_hora", "")).strip() \
         or f"{curso} / 1 hora pedagógica"
+    mes = str(payload.get("mes", "")).strip()
+    anio = str(payload.get("anio", "")).strip()
 
-    # validación básica de largos
-    for valor, nombre in ((asignatura, "asignatura"),
-                          (curso, "curso"), (unidad, "unidad")):
+    for valor, nombre in ((asignatura, "asignatura"), (curso, "curso")):
         if not valor:
             return jsonify(success=False,
-                           error=f"El campo '{nombre}' es obligatorio."), 400
+                           error=f"El campo '{nombre}' es "
+                                 f"obligatorio."), 400
         if len(valor) > 300:
             return jsonify(success=False,
-                           error=f"'{nombre}' demasiado largo."), 400
+                           error=f"'{nombre}' demasiado "
+                                 f"largo."), 400
 
-    result = generate_diaria({
-        "asignatura": asignatura,
-        "curso": curso,
-        "unidad": unidad,
-        "oa": oa,
-        "oat": oat,
-        "duracion": duracion,
-    })
+    data = {
+        "asignatura": asignatura, "curso": curso, "unidad": unidad,
+        "oa": oa, "oat": oat, "duracion": duracion, "mes": mes,
+        "anio": anio,
+    }
+    result = generate(tipo, data)
 
     if not result.get("success"):
         err = result.get("error", "")
@@ -98,24 +95,24 @@ def api_diaria():
 
     user_id = str(session["user_id"])
 
-    # persistir como documento (JSON) para historial y PDF
     meta = {
+        "tipo": tipo,
+        "nombre_tipo": NOMBRES_TIPOS[tipo],
         "asignatura": asignatura, "curso": curso, "unidad": unidad,
-        "oat": oat, "duracion": duracion, "fecha": fecha,
-        "curso_hora": curso_hora,
+        "oa": oa, "oat": oat, "duracion": duracion, "fecha": fecha,
+        "curso_hora": curso_hora, "mes": mes, "anio": anio,
+        "profesor": session.get("user_name", ""),
     }
     document_id = None
     try:
         db = SessionLocal()
         doc = Document(
             user_id=user_id,
-            document_type="mineduc_diaria",
-            title=f"Planificación Diaria MINEDUC - {asignatura} "
-                  f"{curso} - {fecha}",
-            content=__import__("json").dumps(
-                {"meta": meta, "plan": result["data"]},
-                ensure_ascii=False
-            ),
+            document_type=f"mineduc_{tipo}",
+            title=f"{NOMBRES_TIPOS[tipo]} - {asignatura} {curso}"
+                  + (f" - {mes}" if tipo == "mensual" and mes else ""),
+            content=json.dumps({"meta": meta, "plan": result["data"]},
+                               ensure_ascii=False),
         )
         db.add(doc)
         db.commit()
@@ -124,13 +121,12 @@ def api_diaria():
     except Exception:
         logger.exception("[mineduc] no se pudo guardar documento")
 
-    # consumo + auditoría
     Entitlements.record_generation(user_id)
     try:
         db = SessionLocal()
         db.add(AIGeneration(
             user_id=user_id,
-            feature="mineduc_diaria",
+            feature=f"mineduc_{tipo}",
             model=Config.OPENAI_MODEL,
             success=True,
             latency_ms=result.get("latency_ms"),
@@ -140,12 +136,27 @@ def api_diaria():
     except Exception:
         logger.exception("[mineduc] no se pudo auditar")
 
-    return jsonify(
-        success=True,
-        meta=meta,
-        plan=result["data"],
-        document_id=document_id,
-    )
+    return jsonify(success=True, meta=meta, plan=result["data"],
+                   document_id=document_id)
+
+
+@mineduc.route("/api/generate", methods=["POST"])
+@subscription_required
+@limiter.limit("12 per minute")
+def api_generate():
+    if "user_id" not in session:
+        return jsonify(success=False, error="No autenticado"), 401
+    tipo = str((request.get_json(silent=True) or {}).get("tipo", "")).strip()
+    return _generar(tipo)
+
+
+@mineduc.route("/api/diaria", methods=["POST"])
+@subscription_required
+@limiter.limit("12 per minute")
+def api_diaria():
+    if "user_id" not in session:
+        return jsonify(success=False, error="No autenticado"), 401
+    return _generar("diaria")
 
 
 @mineduc.route("/pdf", methods=["POST"])
@@ -153,14 +164,12 @@ def pdf():
     if "user_id" not in session:
         return jsonify(success=False, error="No autenticado"), 401
 
-    import json as _json
     payload = request.get_json(silent=True) or {}
     document_id = payload.get("document_id")
 
     meta = payload.get("meta") or {}
     plan = payload.get("plan")
 
-    # modo documento guardado: leer de BD
     if document_id and not plan:
         try:
             db = SessionLocal()
@@ -172,7 +181,7 @@ def pdf():
             if not doc:
                 return jsonify(success=False,
                                error="Documento no encontrado."), 404
-            data = _json.loads(doc.content)
+            data = json.loads(doc.content)
             meta = data.get("meta", {})
             plan = data.get("plan")
         except Exception:
@@ -180,21 +189,28 @@ def pdf():
             return jsonify(success=False,
                            error="No se pudo leer el documento."), 500
 
+    tipo = meta.get("tipo", "diaria")
+    if tipo not in TIPOS:
+        return jsonify(success=False, error="Tipo de documento "
+                                            "inválido."), 400
+
     if not isinstance(plan, dict) or not plan.get("filas"):
-        return jsonify(success=False,
-                       error="Sin contenido para PDF."), 400
+        return jsonify(success=False, error="Sin contenido para "
+                                            "PDF."), 400
 
     try:
-        buf = build_diaria_pdf(meta, plan)
+        buf = build_pdf(tipo, meta, plan)
     except Exception:
         logger.exception("[mineduc] error generando PDF")
         return jsonify(success=False,
                        error="No se pudo generar el PDF."), 500
 
-    nombre = (meta.get("asignatura", "planificacion") or "planificacion")
+    nombre = (meta.get("asignatura", "planificacion")
+              or "planificacion")
     return Response(
         buf.getvalue(),
         mimetype="application/pdf",
         headers={"Content-Disposition":
-                 f'attachment; filename="mineduc_diaria_{nombre[:40]}.pdf"'},
+                 f'attachment; filename="mineduc_{tipo}_'
+                 f'{nombre[:35]}.pdf"'},
     )

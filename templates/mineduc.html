@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
     <style>
-        .mn-wrap { padding: 2rem; max-width: 1100px; margin: 0 auto; }
+        .mn-wrap { padding: 2rem; max-width: 1150px; margin: 0 auto; }
         .mn-card { background: #fff; border: 1px solid #e5e7eb; border-radius: .9rem; padding: 1.5rem; margin-bottom: 1.25rem; }
         .mn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .9rem; }
         .mn-field label { display: block; font-size: .8rem; font-weight: 600; color: #374151; margin-bottom: .3rem; }
@@ -27,6 +27,7 @@
         .mn-err { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; border-radius: .5rem; padding: .6rem .9rem; margin-top: .8rem; font-size: .85rem; display: none; }
         .mn-actions { margin-top: 1rem; display: flex; gap: .6rem; flex-wrap: wrap; }
         .mn-oa-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: .5rem; padding: .7rem .9rem; font-size: .82rem; color: #166534; margin-top: .4rem; display: none; }
+        .x-gantt { text-align: center; font-weight: 700; color: #1d4ed8; }
     </style>
 </head>
 <body>
@@ -53,14 +54,24 @@
         <header class="topbar">
             <div>
                 <h1>Planificación MINEDUC</h1>
-                <p>Formato oficial Ministerio de Educación de Chile — alineada al Currículum Nacional.</p>
+                <p>Formatos oficiales del Ministerio de Educación de Chile — alineados al Currículum Nacional.</p>
             </div>
         </header>
 
         <div class="mn-wrap">
             <div class="mn-card">
-                <span class="mn-badge">Fase 1 · Planificación Diaria / Clase a Clase</span>
+                <span class="mn-badge">5 formatos oficiales</span>
                 <div class="mn-grid">
+                    <div class="mn-field">
+                        <label>Tipo de planificación *</label>
+                        <select id="fTipo">
+                            <option value="diaria" selected>Planificación Diaria / Clase a Clase</option>
+                            <option value="unidad">Planificación por Unidad Didáctica</option>
+                            <option value="mensual">Planificación Mensual</option>
+                            <option value="anual">Planificación Anual (Carta Gantt)</option>
+                            <option value="invertida">Planificación Invertida (Flipped Classroom)</option>
+                        </select>
+                    </div>
                     <div class="mn-field">
                         <label>Curso *</label>
                         <select id="fCurso"><option value="">Cargando cursos...</option></select>
@@ -73,30 +84,41 @@
                         <label>Unidad / Tema *</label>
                         <select id="fUnidad" disabled><option value="">Seleccione una asignatura primero</option></select>
                     </div>
+                </div>
+
+                <div class="mn-grid" style="margin-top:.9rem;">
                     <div class="mn-field">
                         <label>Objetivo de Aprendizaje (OA) del Currículum</label>
                         <select id="fOA" disabled><option value="">Seleccione una unidad primero</option></select>
+                    </div>
+                    <div class="mn-field">
+                        <label>Fecha</label>
+                        <input id="fFecha" type="date">
+                    </div>
+                    <div class="mn-field">
+                        <label id="lblMes">Mes</label>
+                        <input id="fMes" type="text" placeholder="Ej: Abril">
+                    </div>
+                    <div class="mn-field">
+                        <label>Año</label>
+                        <input id="fAnio" type="number" placeholder="2026">
                     </div>
                 </div>
                 <div class="mn-oa-box" id="oaInfo"></div>
 
                 <div class="mn-grid" style="margin-top:.9rem;">
                     <div class="mn-field">
-                        <label>Fecha</label>
-                        <input id="fFecha" type="date">
-                    </div>
-                    <div class="mn-field">
                         <label>Curso/Hora</label>
                         <input id="fCursoHora" type="text" placeholder="Ej: 1° Medio / 2ª hora">
                     </div>
                     <div class="mn-field">
-                        <label>Duración de la clase</label>
-                        <input id="fDuracion" type="text" placeholder="90 minutos">
+                        <label>Duración</label>
+                        <input id="fDuracion" type="text" placeholder="90 minutos / 4 semanas">
                     </div>
                 </div>
 
                 <div class="mn-field" style="margin-top:.9rem;">
-                    <label>Objetivo de la Clase (OAT) — se rellena solo con el OA seleccionado; puedes ajustarlo</label>
+                    <label>Objetivo de la Clase (OAT) — se rellena con el OA seleccionado; puedes ajustarlo</label>
                     <textarea id="fOat" rows="2" placeholder="Selecciona un OA arriba y se completará automáticamente..."></textarea>
                 </div>
 
@@ -107,19 +129,9 @@
             </div>
 
             <div class="mn-card" id="resultado" style="display:none;">
-                <span class="mn-badge">Vista previa · Formato oficial MINEDUC</span>
-                <div class="mn-obj"><strong>Objetivo de la Clase (OAT):</strong> <span id="rObjetivo"></span></div>
-                <table class="mn-table">
-                    <thead>
-                        <tr>
-                            <th style="width:22%;">Momento de la Clase</th>
-                            <th style="width:38%;">Descripción de Actividades</th>
-                            <th style="width:20%;">Recursos</th>
-                            <th style="width:20%;">Evaluación</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rFilas"></tbody>
-                </table>
+                <span class="mn-badge" id="rBadge">Vista previa</span>
+                <div id="rExtra"></div>
+                <div id="rTabla"></div>
                 <div class="mn-actions">
                     <button class="mn-btn sec" onclick="descargarPdf()"><i class="fa-solid fa-file-pdf"></i> Descargar PDF oficial</button>
                 </div>
@@ -137,6 +149,7 @@ const API = {
     units: "/planning/api/curriculum/units/",
     objectives: "/planning/api/curriculum/objectives/"
 };
+const MESES = ["Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 let ultimo = null;
 
 function mostrarError(msg) {
@@ -181,44 +194,36 @@ document.getElementById('fCurso').addEventListener('change', async function () {
         const r = await fetch(API.subjects + encodeURIComponent(curso));
         const d = await r.json();
         llenarSelect('fAsignatura', d.subjects || [], 'Seleccione una asignatura...');
-    } catch (e) {
-        selA.innerHTML = '<option value="">Error cargando asignaturas</option>';
-    }
+    } catch (e) { selA.innerHTML = '<option value="">Error cargando asignaturas</option>'; }
 });
 
 document.getElementById('fAsignatura').addEventListener('change', async function () {
     const curso = document.getElementById('fCurso').value;
-    const asig = this.value;
     const selU = document.getElementById('fUnidad');
     const selO = document.getElementById('fOA');
     selO.innerHTML = '<option value="">Seleccione una unidad primero</option>'; selO.disabled = true;
     document.getElementById('oaInfo').style.display = 'none';
-    if (!asig) { selU.disabled = true; return; }
+    if (!this.value) { selU.disabled = true; return; }
     selU.innerHTML = '<option value="">Cargando...</option>'; selU.disabled = false;
     try {
-        const r = await fetch(API.units + encodeURIComponent(curso) + '/' + encodeURIComponent(asig));
+        const r = await fetch(API.units + encodeURIComponent(curso) + '/' + encodeURIComponent(this.value));
         const d = await r.json();
         llenarSelect('fUnidad', d.units || [], 'Seleccione una unidad...');
-    } catch (e) {
-        selU.innerHTML = '<option value="">Error cargando unidades</option>';
-    }
+    } catch (e) { selU.innerHTML = '<option value="">Error cargando unidades</option>'; }
 });
 
 document.getElementById('fUnidad').addEventListener('change', async function () {
     const curso = document.getElementById('fCurso').value;
     const asig = document.getElementById('fAsignatura').value;
-    const unidad = this.value;
     const selO = document.getElementById('fOA');
     document.getElementById('oaInfo').style.display = 'none';
-    if (!unidad) { selO.disabled = true; return; }
+    if (!this.value) { selO.disabled = true; return; }
     selO.innerHTML = '<option value="">Cargando...</option>'; selO.disabled = false;
     try {
-        const r = await fetch(API.objectives + encodeURIComponent(curso) + '/' + encodeURIComponent(asig) + '/' + encodeURIComponent(unidad));
+        const r = await fetch(API.objectives + encodeURIComponent(curso) + '/' + encodeURIComponent(asig) + '/' + encodeURIComponent(this.value));
         const d = await r.json();
         llenarSelect('fOA', d.objectives || [], 'Seleccione un OA (opcional)...');
-    } catch (e) {
-        selO.innerHTML = '<option value="">Error cargando OA</option>';
-    }
+    } catch (e) { selO.innerHTML = '<option value="">Error cargando OA</option>'; }
 });
 
 document.getElementById('fOA').addEventListener('change', function () {
@@ -228,15 +233,75 @@ document.getElementById('fOA').addEventListener('change', function () {
         info.textContent = 'OA seleccionado: ' + this.value;
         info.style.display = 'block';
         if (!oat.value.trim()) oat.value = this.value;
-    } else {
-        info.style.display = 'none';
-    }
+    } else { info.style.display = 'none'; }
 });
 
-document.addEventListener('DOMContentLoaded', cargarCursos);
+// visibilidad de campos segun tipo
+document.getElementById('fTipo').addEventListener('change', function () {
+    const t = this.value;
+    document.getElementById('lblMes').parentElement.style.display = (t === 'mensual' || t === 'anual') ? '' : 'none';
+    document.getElementById('fCursoHora').parentElement.style.display = (t === 'diaria') ? '' : 'none';
+    document.getElementById('fFecha').parentElement.style.display = (t === 'diaria') ? '' : 'none';
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    cargarCursos();
+    document.getElementById('lblMes').parentElement.style.display = 'none';
+    document.getElementById('fCursoHora').parentElement.style.display = '';
+    document.getElementById('fFecha').parentElement.style.display = '';
+});
+
+function esc(s) { return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function renderResultado(tipo, meta, plan) {
+    document.getElementById('rBadge').textContent = 'Vista previa · ' + meta.nombre_tipo;
+    const extra = document.getElementById('rExtra');
+    const tabla = document.getElementById('rTabla');
+    extra.innerHTML = ''; tabla.innerHTML = '';
+
+    if (tipo === 'diaria') {
+        extra.innerHTML = '<div class="mn-obj"><strong>Objetivo de la Clase (OAT):</strong> ' + esc(plan.objetivo) + '</div>';
+        let h = '<table class="mn-table"><thead><tr><th style="width:22%;">Momento de la Clase</th><th style="width:38%;">Descripción de Actividades</th><th style="width:20%;">Recursos</th><th style="width:20%;">Evaluación</th></tr></thead><tbody>';
+        plan.filas.forEach(f => { h += '<tr><td><strong>' + esc(f.momento) + '</strong></td><td>' + esc(f.descripcion) + '</td><td>' + esc(f.recursos) + '</td><td>' + esc(f.evaluacion) + '</td></tr>'; });
+        tabla.innerHTML = h + '</tbody></table>';
+
+    } else if (tipo === 'unidad') {
+        extra.innerHTML = '<div class="mn-obj"><strong>Unidad:</strong> ' + esc(plan.nombre_unidad) + ' &nbsp;|&nbsp; <strong>Duración:</strong> ' + esc(plan.duracion) + '</div>';
+        let h = '<table class="mn-table"><thead><tr><th>Objetivos de Aprendizaje (OA)</th><th>Indicadores de Evaluación</th><th>Estrategias Didácticas/Actividades</th><th>Recursos</th></tr></thead><tbody>';
+        plan.filas.forEach(f => { h += '<tr><td>' + esc(f.oa) + '</td><td>' + esc(f.indicadores) + '</td><td>' + esc(f.estrategias) + '</td><td>' + esc(f.recursos) + '</td></tr>'; });
+        tabla.innerHTML = h + '</tbody></table>';
+
+    } else if (tipo === 'mensual') {
+        extra.innerHTML = '<div class="mn-obj"><strong>Mes:</strong> ' + esc(meta.mes) + ' &nbsp;|&nbsp; <strong>Curso:</strong> ' + esc(meta.curso) + '</div>';
+        let h = '<table class="mn-table"><thead><tr><th style="width:14%;">Semana</th><th>Objetivos de Aprendizaje (OA)</th><th>Contenidos/Habilidades</th><th>Evaluaciones/Evidencias</th></tr></thead><tbody>';
+        plan.filas.forEach(f => { h += '<tr><td><strong>' + esc(f.semana) + '</strong></td><td>' + esc(f.oa) + '</td><td>' + esc(f.contenidos) + '</td><td>' + esc(f.evaluacion) + '</td></tr>'; });
+        tabla.innerHTML = h + '</tbody></table>';
+
+    } else if (tipo === 'anual') {
+        let h = '<div style="overflow-x:auto;"><table class="mn-table"><thead><tr><th style="width:28%;">Unidades/Meses</th>';
+        MESES.forEach(m => h += '<th style="text-align:center;">' + m + '</th>');
+        h += '</tr></thead><tbody>';
+        plan.filas.forEach(f => {
+            h += '<tr><td>' + esc(f.unidad) + '</td>';
+            MESES.forEach(m => h += '<td class="x-gantt">' + (f.meses.indexOf(m) >= 0 ? 'X' : '') + '</td>');
+            h += '</tr>';
+        });
+        tabla.innerHTML = h + '</tbody></table></div>';
+
+    } else if (tipo === 'invertida') {
+        extra.innerHTML = '<div class="mn-obj"><strong>Meta de Aprendizaje:</strong> ' + esc(plan.meta) + '</div>';
+        let h = '<table class="mn-table"><thead><tr><th style="width:26%;">Fase del Aprendizaje</th><th>Estrategias/Actividades del Estudiante</th><th>Rol del Docente/Apoyo</th><th>Recursos/Evidencia</th></tr></thead><tbody>';
+        plan.filas.forEach(f => { h += '<tr><td><strong>' + esc(f.fase) + '</strong></td><td>' + esc(f.actividades) + '</td><td>' + esc(f.rol_docente) + '</td><td>' + esc(f.recursos) + '</td></tr>'; });
+        tabla.innerHTML = h + '</tbody></table>';
+    }
+    document.getElementById('resultado').style.display = 'block';
+    document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+}
 
 function generar() {
+    const tipo = document.getElementById('fTipo').value;
     const payload = {
+        tipo: tipo,
         curso: document.getElementById('fCurso').value,
         asignatura: document.getElementById('fAsignatura').value,
         unidad: document.getElementById('fUnidad').value,
@@ -244,17 +309,18 @@ function generar() {
         oat: document.getElementById('fOat').value.trim(),
         duracion: document.getElementById('fDuracion').value.trim(),
         fecha: document.getElementById('fFecha').value,
-        curso_hora: document.getElementById('fCursoHora').value.trim()
+        curso_hora: document.getElementById('fCursoHora').value.trim(),
+        mes: document.getElementById('fMes').value.trim(),
+        anio: document.getElementById('fAnio').value
     };
-    if (!payload.curso || !payload.asignatura || !payload.unidad) {
-        mostrarError('Selecciona curso, asignatura y unidad/tema.');
-        return;
-    }
+    if (!payload.curso || !payload.asignatura) { mostrarError('Selecciona curso y asignatura.'); return; }
+    if (['diaria', 'invertida', 'unidad'].indexOf(tipo) >= 0 && !payload.unidad) { mostrarError('Selecciona la unidad/tema.'); return; }
+
     const btn = document.getElementById('btnGen');
     btn.disabled = true;
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generando...';
 
-    fetch("{{ url_for('mineduc.api_diaria') }}", {
+    fetch("{{ url_for('mineduc.api_generate') }}", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-CSRFToken': CSRF },
         body: JSON.stringify(payload)
@@ -264,24 +330,9 @@ function generar() {
         return { ok: r.ok, data: d };
     }))
     .then(res => {
-        if (!res.ok || !res.data.success) {
-            mostrarError(res.data.error || 'Error al generar.');
-            return;
-        }
+        if (!res.ok || !res.data.success) { mostrarError(res.data.error || 'Error al generar.'); return; }
         ultimo = res.data;
-        document.getElementById('rObjetivo').textContent = res.data.plan.objetivo;
-        const tbody = document.getElementById('rFilas');
-        tbody.innerHTML = '';
-        res.data.plan.filas.forEach(f => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = '<td><strong>' + f.momento + '</strong></td>' +
-                           '<td>' + f.descripcion + '</td>' +
-                           '<td>' + f.recursos + '</td>' +
-                           '<td>' + f.evaluacion + '</td>';
-            tbody.appendChild(tr);
-        });
-        document.getElementById('resultado').style.display = 'block';
-        document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+        renderResultado(tipo, res.data.meta, res.data.plan);
     })
     .catch(() => mostrarError('Error de conexión. Intenta de nuevo.'))
     .finally(() => {
@@ -301,7 +352,7 @@ function descargarPdf() {
     .then(b => {
         const a = document.createElement('a');
         a.href = URL.createObjectURL(b);
-        a.download = 'planificacion_diaria_mineduc.pdf';
+        a.download = 'planificacion_mineduc.pdf';
         a.click();
         URL.revokeObjectURL(a.href);
     })
