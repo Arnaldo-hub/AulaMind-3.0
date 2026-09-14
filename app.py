@@ -85,10 +85,24 @@ limiter.init_app(app)
 
 @app.errorhandler(CSRFError)
 def handle_csrf_error(error):
-    return jsonify({
-        "error": "csrf_invalid",
-        "message": "La solicitud expiró o no es válida. Recarga la página e inténtalo nuevamente."
-    }), 400
+    # v3.7.2: las APIs y peticiones ajax reciben JSON;
+    # los formularios de pagina vuelven al login con un
+    # mensaje amigable en lugar del JSON crudo.
+    is_api = (
+        request.path.startswith("/api/")
+        or request.headers.get("X-Requested-With") == "XMLHttpRequest"
+        or "application/json" in (request.headers.get("Accept") or "")
+    )
+
+    if is_api:
+        return jsonify({
+            "error": "csrf_invalid",
+            "message": "La solicitud expiró o no es válida. Recarga la página e inténtalo nuevamente."
+        }), 400
+
+    from flask import flash
+    flash("Tu sesión expiró por seguridad. Ingresa nuevamente.", "warning")
+    return redirect(url_for("auth.login"))
 
 # ==========================================================
 # CONTEXT PROCESSOR: contador de activaciones pendientes
