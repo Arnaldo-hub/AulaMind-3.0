@@ -10,7 +10,11 @@
     <a href="{{ url_for('pie.index') }}"{% if active_menu == 'pie' %} class="active"{% endif %}><i class="fa-solid fa-user-group"></i><span>PIE</span></a>
     <a href="{{ url_for('fonoaudiologia.index') }}"{% if active_menu == 'fonoaudiologia' %} class="active"{% endif %}><i class="fa-solid fa-ear-listen"></i><span>Fonoaudiología</span></a>
     <a href="{{ url_for('tools.index') }}"{% if active_menu == 'tools' %} class="active"{% endif %}><i class="fa-solid fa-wand-magic-sparkles"></i><span>Herramientas IA</span></a>
+{% if session.get('role') == 'admin' %}
+    {% if session.get('role') == 'admin' %}
     <a href="{{ url_for('analytics.index') }}"{% if active_menu == 'analytics' %} class="active"{% endif %}><i class="fa-solid fa-chart-line"></i><span>Analítica</span></a>
+    {% endif %}
+{% endif %}
     <a href="{{ url_for('curriculum.index') }}"{% if active_menu == 'curriculum' %} class="active"{% endif %}><i class="fa-solid fa-book-atlas"></i><span>Currículum</span></a>
     {% if session.get('role') == 'admin' %}
     <a href="{{ url_for('admin_comercial.comercial_page') }}"{% if active_menu == 'admin_comercial' %} class="active"{% endif %}>

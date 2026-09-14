@@ -61,6 +61,10 @@ def _to_dict(obj):
 
 @analytics.route("/")
 def index():
+    # v3.9.2: vista de operacion interna - solo administradores
+    if session.get("role") != "admin":
+        return redirect(url_for("dashboard.home"))
+
     """
     Dashboard analítico completo.
     """

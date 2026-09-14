@@ -204,6 +204,7 @@
 
                 </a>
 
+                {% if session.get('role') == 'admin' %}
                 <a
 
                     href="{{ url_for('analytics.index') }}"
@@ -215,6 +216,7 @@
                     Ver analítica
 
                 </a>
+                {% endif %}
 
             </div>
 
@@ -655,6 +657,7 @@
 
         <!-- ================================================= -->
 
+        {% if session.get('role') == 'admin' %}
         <article class="module-card">
 
             <div class="module-icon cyan">
@@ -683,6 +686,7 @@
             <a href="{{ url_for('analytics.index') }}" class="btn-module">Ver analítica</a>
 
         </article>
+        {% endif %}
 
     </section>
 

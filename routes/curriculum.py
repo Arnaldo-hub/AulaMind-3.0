@@ -45,6 +45,7 @@ from werkzeug.utils import secure_filename
 from services.curriculum_loader import CurriculumLoader
 
 from database.session import SessionLocal
+from services.curriculum_service import curriculum_service
 
 from models.course import Course
 from models.subject import Subject
@@ -128,17 +129,18 @@ def index():
 
         )
 
-    courses = db.query(Course).count()
-
-    subjects = db.query(Subject).count()
-
-    units = db.query(Unit).count()
-
-    learning_objectives = db.query(
-
-        LearningObjective
-
-    ).count()
+    # v3.9.2: contadores reales desde el CurriculumService en
+    # memoria (las tablas Course/Subject/Unit/OA de BD estan
+    # vacias; ahi vive el Curriculo Nacional oficial)
+    try:
+        stats_srv = curriculum_service.full_statistics()
+        courses = stats_srv.get("courses", 0)
+        subjects = stats_srv.get("subjects", 0)
+        units = stats_srv.get("units", 0)
+        learning_objectives = stats_srv.get("learning_objectives", 0)
+    except Exception:
+        courses = subjects = 0
+        units = learning_objectives = 0
 
     return render_template(
 
