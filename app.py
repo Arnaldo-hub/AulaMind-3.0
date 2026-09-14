@@ -25,6 +25,7 @@ from routes.rubrics import rubrics  # ← NUEVO
 from routes.pie import pie  # ← NUEVO
 from routes.fonoaudiologia import fonoaudiologia
 from routes.tools import tools  # ← NUEVO v3.5 Herramientas IA
+from routes.mineduc import mineduc  # ← NUEVO v3.8 Planificación MINEDUC
 
 # ==========================================================
 # Base de datos
@@ -90,7 +91,9 @@ def handle_csrf_error(error):
     # mensaje amigable en lugar del JSON crudo.
     is_api = (
         request.path.startswith("/api/")
+        or "/api/" in request.path
         or request.headers.get("X-Requested-With") == "XMLHttpRequest"
+        or "application/json" in (request.headers.get("Content-Type") or "")
         or "application/json" in (request.headers.get("Accept") or "")
     )
 
@@ -179,6 +182,7 @@ app.register_blueprint(legal)  # ← NUEVO v3.1.4
 app.register_blueprint(payments)  # ← NUEVO v3.2 Mercado Pago
 app.register_blueprint(fonoaudiologia)  # ← NUEVO v3.4 Fonoaudiología
 app.register_blueprint(tools)  # ← NUEVO v3.5 Herramientas IA
+app.register_blueprint(mineduc)  # ← NUEVO v3.8 Planificación MINEDUC
 
 # El webhook de Mercado Pago es un POST server-to-server:
 # no lleva token CSRF de sesión. Se exime SOLO este

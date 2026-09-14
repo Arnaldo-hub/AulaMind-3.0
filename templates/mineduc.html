@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificación MINEDUC | AulaMind Enterprise</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
+    <style>
+        .mn-wrap { padding: 2rem; max-width: 1100px; margin: 0 auto; }
+        .mn-card { background: #fff; border: 1px solid #e5e7eb; border-radius: .9rem; padding: 1.5rem; margin-bottom: 1.25rem; }
+        .mn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: .9rem; }
+        .mn-field label { display: block; font-size: .8rem; font-weight: 600; color: #374151; margin-bottom: .3rem; }
+        .mn-field input, .mn-field textarea { width: 100%; padding: .6rem .8rem; border: 1px solid #d1d5db; border-radius: .5rem; font-family: inherit; font-size: .9rem; box-sizing: border-box; }
+        .mn-btn { display: inline-block; padding: .7rem 1.6rem; border: none; border-radius: .55rem; background: #2563eb; color: #fff; font-weight: 600; font-size: .95rem; cursor: pointer; }
+        .mn-btn:disabled { opacity: .5; cursor: not-allowed; }
+        .mn-btn.sec { background: #fff; color: #2563eb; border: 1px solid #2563eb; }
+        .mn-badge { display: inline-block; background: #eff6ff; color: #1d4ed8; font-size: .72rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; margin-bottom: .8rem; }
+        .mn-table { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: .5rem; }
+        .mn-table th, .mn-table td { border: 1px solid #cbd5e1; padding: .6rem .7rem; vertical-align: top; text-align: left; }
+        .mn-table th { background: #dbeafe; font-weight: 700; }
+        .mn-obj { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: .5rem; padding: .8rem 1rem; font-size: .9rem; margin-bottom: 1rem; }
+        .mn-err { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; border-radius: .5rem; padding: .6rem .9rem; margin-top: .8rem; font-size: .85rem; display: none; }
+        .mn-actions { margin-top: 1rem; display: flex; gap: .6rem; }
+    </style>
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
+            <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
+        </div>
+        {% set active_menu = 'mineduc' %}
+        {% include 'partials/sidebar_menu.html' %}
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <strong>{{ session.get('user_name','Usuario') }}</strong>
+                    <small>{{ 'Administrador' if session.get('role') == 'admin' else 'Docente' }}</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>Planificación MINEDUC</h1>
+                <p>Formato oficial Ministerio de Educación de Chile.</p>
+            </div>
+        </header>
+
+        <div class="mn-wrap">
+            <div class="mn-card">
+                <span class="mn-badge">Fase 1 · Planificación Diaria / Clase a Clase</span>
+                <div class="mn-grid">
+                    <div class="mn-field">
+                        <label>Asignatura *</label>
+                        <input id="fAsignatura" type="text" placeholder="Ej: Matemática">
+                    </div>
+                    <div class="mn-field">
+                        <label>Curso *</label>
+                        <input id="fCurso" type="text" placeholder="Ej: 1° Medio">
+                    </div>
+                    <div class="mn-field">
+                        <label>Fecha</label>
+                        <input id="fFecha" type="date">
+                    </div>
+                    <div class="mn-field">
+                        <label>Curso/Hora</label>
+                        <input id="fCursoHora" type="text" placeholder="Ej: 1° Medio / 2ª hora">
+                    </div>
+                    <div class="mn-field">
+                        <label>Unidad / Tema *</label>
+                        <input id="fUnidad" type="text" placeholder="Ej: Álgebra y funciones">
+                    </div>
+                    <div class="mn-field">
+                        <label>Duración</label>
+                        <input id="fDuracion" type="text" placeholder="90 minutos">
+                    </div>
+                </div>
+                <div class="mn-field" style="margin-top:.9rem;">
+                    <label>Objetivo de la Clase (OAT) — opcional, si lo dejas vacío la IA lo propone</label>
+                    <textarea id="fOat" rows="2" placeholder="Ej: Comprender el concepto de homotecia..."></textarea>
+                </div>
+                <div class="mn-actions">
+                    <button class="mn-btn" id="btnGen" onclick="generar()"><i class="fa-solid fa-wand-magic-sparkles"></i> Generar planificación oficial</button>
+                </div>
+                <div class="mn-err" id="errBox"></div>
+            </div>
+
+            <div class="mn-card" id="resultado" style="display:none;">
+                <span class="mn-badge">Vista previa · Formato oficial</span>
+                <div class="mn-obj"><strong>Objetivo de la Clase (OAT):</strong> <span id="rObjetivo"></span></div>
+                <table class="mn-table">
+                    <thead>
+                        <tr>
+                            <th style="width:22%;">Momento de la Clase</th>
+                            <th style="width:38%;">Descripción de Actividades</th>
+                            <th style="width:20%;">Recursos</th>
+                            <th style="width:20%;">Evaluación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rFilas"></tbody>
+                </table>
+                <div class="mn-actions">
+                    <button class="mn-btn sec" onclick="descargarPdf()"><i class="fa-solid fa-file-pdf"></i> Descargar PDF oficial</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+const CSRF = document.querySelector('meta[name="csrf-token"]').content;
+let ultimo = null; // {meta, plan, document_id}
+
+function mostrarError(msg) {
+    const e = document.getElementById('errBox');
+    e.textContent = msg;
+    e.style.display = 'block';
+    setTimeout(() => e.style.display = 'none', 7000);
+}
+
+function generar() {
+    const payload = {
+        asignatura: document.getElementById('fAsignatura').value.trim(),
+        curso: document.getElementById('fCurso').value.trim(),
+        unidad: document.getElementById('fUnidad').value.trim(),
+        oat: document.getElementById('fOat').value.trim(),
+        duracion: document.getElementById('fDuracion').value.trim(),
+        fecha: document.getElementById('fFecha').value,
+        curso_hora: document.getElementById('fCursoHora').value.trim()
+    };
+    if (!payload.asignatura || !payload.curso || !payload.unidad) {
+        mostrarError('Completa asignatura, curso y unidad/tema.');
+        return;
+    }
+    const btn = document.getElementById('btnGen');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generando...';
+
+    fetch("{{ url_for('mineduc.api_diaria') }}", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-CSRFToken': CSRF },
+        body: JSON.stringify(payload)
+    })
+    .then(r => r.text().then(t => {
+        let d; try { d = JSON.parse(t); } catch (e) { d = { error: 'Respuesta inesperada del servidor (HTTP ' + r.status + ').' }; }
+        return { ok: r.ok, data: d };
+    }))
+    .then(res => {
+        if (!res.ok || !res.data.success) {
+            mostrarError(res.data.error || 'Error al generar.');
+            return;
+        }
+        ultimo = res.data;
+        document.getElementById('rObjetivo').textContent = res.data.plan.objetivo;
+        const tbody = document.getElementById('rFilas');
+        tbody.innerHTML = '';
+        res.data.plan.filas.forEach(f => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = '<td><strong>' + f.momento + '</strong></td>' +
+                           '<td>' + f.descripcion + '</td>' +
+                           '<td>' + f.recursos + '</td>' +
+                           '<td>' + f.evaluacion + '</td>';
+            tbody.appendChild(tr);
+        });
+        document.getElementById('resultado').style.display = 'block';
+        document.getElementById('resultado').scrollIntoView({ behavior: 'smooth' });
+    })
+    .catch(() => mostrarError('Error de conexión. Intenta de nuevo.'))
+    .finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Generar planificación oficial';
+    });
+}
+
+function descargarPdf() {
+    if (!ultimo) return;
+    fetch("{{ url_for('mineduc.pdf') }}", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-CSRFToken': CSRF },
+        body: JSON.stringify({ document_id: ultimo.document_id })
+    })
+    .then(r => { if (!r.ok) throw 0; return r.blob(); })
+    .then(b => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(b);
+        a.download = 'planificacion_diaria_mineduc.pdf';
+        a.click();
+        URL.revokeObjectURL(a.href);
+    })
+    .catch(() => Swal.fire('Atención', 'No se pudo generar el PDF.', 'warning'));
+}
+</script>
+</body>
+</html>

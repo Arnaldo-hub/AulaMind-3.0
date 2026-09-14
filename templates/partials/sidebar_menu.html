@@ -1,7 +1,9 @@
 {# ... (comentario inicial) ... #}
 <nav class="sidebar-menu">
     <a href="{{ url_for('dashboard.home') }}"{% if active_menu == 'dashboard' %} class="active"{% endif %}><i class="fa-solid fa-house"></i><span>Panel Principal</span></a>
-    <a href="{{ url_for('planning.index') }}"{% if active_menu == 'planning' %} class="active"{% endif %}><i class="fa-solid fa-calendar-days"></i><span>Planificaciones</span></a>
+    {# v3.8: formato oficial MINEDUC (nuevo) + renombre del formato libre #}
+    <a href="{{ url_for('mineduc.index') }}"{% if active_menu == 'mineduc' %} class="active"{% endif %}><i class="fa-solid fa-file-invoice"></i><span>Planificación MINEDUC</span></a>
+    <a href="{{ url_for('planning.index') }}"{% if active_menu == 'planning' %} class="active"{% endif %}><i class="fa-solid fa-calendar-days"></i><span>Preparación de Clase</span></a>
     <a href="{{ url_for('evaluation.index') }}"{% if active_menu == 'evaluation' %} class="active"{% endif %}><i class="fa-solid fa-file-circle-check"></i><span>Evaluaciones</span></a>
     <a href="{{ url_for('guides.index') }}"{% if active_menu == 'guides' %} class="active"{% endif %}><i class="fa-solid fa-book"></i><span>Guías</span></a>
     <a href="{{ url_for('rubrics.index') }}"{% if active_menu == 'rubrics' %} class="active"{% endif %}><i class="fa-solid fa-table-list"></i><span>Rúbricas</span></a>
