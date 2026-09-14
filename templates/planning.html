@@ -405,40 +405,15 @@
                         MODALIDAD (v3.5 - Capa 2)
                         ==================================-->
 
-                        <div class="form-group">
-
-                            <label for="modalidad_plan">
-
-                                Tipo de Clase
-
-                            </label>
-
-                            <select
-                                id="modalidad_plan"
-                                name="modalidad_plan"
-                                class="form-control">
-
-                                <option value="anual">
-
-                                    Planificación Anual (carta Gantt)
-
-                                </option>
-
-                                <option value="mensual" selected>
-
-                                    Planificación Mensual
-
-                                </option>
-
-                                <option value="invertida">
-
-                                    Planificación Invertida
-
-                                </option>
-
-                            </select>
-
-                        </div>
+                        {# v3.8.5: selector Tipo de Clase eliminado.
+                           La preparacion de clase siempre genera en
+                           modalidad diaria (clase a clase), valor fijo
+                           oculto para el backend. #}
+                        <input
+                            type="hidden"
+                            id="modalidad_plan"
+                            name="modalidad_plan"
+                            value="diaria">
 
                         <!--==================================
                         FECHAS (solo ANUAL)
