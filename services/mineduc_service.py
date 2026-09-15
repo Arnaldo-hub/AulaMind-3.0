@@ -105,7 +105,18 @@ def _prompt(tipo, data):
                 '"filas": [{"momento": "etiqueta", "descripcion": '
                 '"...", "recursos": "...", "evaluacion": "..."}]}. '
                 "Una fila por cada momento oficial, conservando su "
-                "etiqueta exacta. Descripciones con pasos concretos.",
+                "etiqueta exacta. REGLAS PEDAGOGICAS OBLIGATORIAS: "
+                "a) El objetivo sigue la estructura Accion (verbo "
+                "medible) + Contenido + Contexto. "
+                "b) Inicio: activar conocimientos previos Y "
+                "comunicar explicitamente el objetivo y como seran "
+                "evaluados. "
+                "c) Desarrollo: tres fases en orden - presentacion "
+                "o modelado del docente, practica guiada, practica "
+                "independiente (sola o en grupos). "
+                "d) Cierre: sintesis de conceptos clave mas "
+                "evaluacion formativa rapida (ticket de salida o "
+                "equivalente).",
                 base + "Momentos oficiales:\n" + "\n".join(
                     f"  {i+1}. {m}" for i, m in enumerate(MOMENTOS_DIARIA))
                 + "\n\nDevuelve SOLO el JSON.")
@@ -117,7 +128,16 @@ def _prompt(tipo, data):
                 "\"duracion\": \"...\", \"filas\": [{\"oa\": \"...\", "
                 "\"indicadores\": \"...\", \"estrategias\": \"...\", "
                 "\"recursos\": \"...\"}]}. Genera entre 3 y 5 filas, "
-                "una por OA a trabajar en la unidad.",
+                "una por OA a trabajar en la unidad. REGLAS "
+                "PEDAGOGICAS OBLIGATORIAS: "
+                "a) Duracion tipica de 6 a 8 semanas. "
+                "b) En estrategias, integra las habilidades "
+                "(saber hacer) y actitudes (saber ser) asociadas "
+                "al OA. "
+                "c) Logica de diseno: define primero como "
+                "evaluaras (formativa y sumativa: instrumento y "
+                "momento) y luego las estrategias; refleja ese "
+                "orden en los textos.",
                 base + f"- Duración de la unidad: {dur}\n\n"
                 "Devuelve SOLO el JSON.")
 
@@ -128,9 +148,21 @@ def _prompt(tipo, data):
                 "\"meses\": [\"Mar\", \"May\"]}]}. En 'meses' incluye "
                 "SOLO los códigos de mes en que se imparte cada "
                 "unidad, elegidos de esta lista exacta: "
-                + ", ".join(MESES_GANTT) + ". Genera entre 4 y 8 "
-                "unidades con progresión lógica durante el año.",
-                base + "- Duración: 1 año escolar\n\n"
+                + ", ".join(MESES_GANTT) + ". REGLAS PEDAGOGICAS "
+                "OBLIGATORIAS: "
+                "a) Genera entre 4 y 6 unidades, numero sugerido "
+                "por el MINEDUC para el año escolar. "
+                "b) Asegura la cobertura curricular: ningun OA "
+                "central de la asignatura puede quedar fuera del "
+                "mapeo; cada unidad debe nombrar los OA que cubre. "
+                "c) Calendariza con el calendario escolar real: "
+                "respeta feriados, las vacaciones de invierno en "
+                "Jul y las semanas de evaluacion y retroalimentacion "
+                "(no inicies una unidad nueva en esas semanas). "
+                "d) La progresion entre unidades debe ser logica "
+                "(de lo mas basico a lo mas complejo).",
+                base + "- Duración: 1 año escolar\n"
+                f"- Anio escolar: {data.get('anio') or 'en curso'}\n\n"
                 "Devuelve SOLO el JSON.")
 
     if tipo == "mensual":
@@ -139,7 +171,17 @@ def _prompt(tipo, data):
                 "{\"filas\": [{\"semana\": \"etiqueta\", \"oa\": "
                 "\"...\", \"contenidos\": \"...\", \"evaluacion\": "
                 "\"...\"}]}. Una fila por cada semana oficial, "
-                "conservando la etiqueta exacta.",
+                "conservando la etiqueta exacta. REGLAS "
+                "PEDAGOGICAS OBLIGATORIAS: "
+                "a) En 'oa' escribe el micro-objetivo o meta de "
+                "aprendizaje especifica de esa semana (acotado y "
+                "medible), no el OA completo. "
+                "b) En 'evaluacion' describe la evidencia concreta "
+                "que entregaran los estudiantes: producto, ticket "
+                "de salida o tarea especifica. "
+                "c) La suma de las 4 semanas debe cubrir el tramo "
+                "de la unidad correspondiente a este mes, sin "
+                "saltos ni repeticiones.",
                 base + f"- Mes: {data.get('mes', '')}\n"
                 "Semanas oficiales:\n" + "\n".join(
                     f"  {i+1}. {s}" for i, s in enumerate(SEMANAS_MENSUAL))
@@ -152,7 +194,21 @@ def _prompt(tipo, data):
                 "\"filas\": [{\"fase\": \"etiqueta\", \"actividades\": "
                 "\"...\", \"rol_docente\": \"...\", \"recursos\": "
                 "\"...\"}]}. Una fila por fase oficial, conservando "
-                "la etiqueta exacta.",
+                "la etiqueta exacta. REGLAS PEDAGOGICAS "
+                "OBLIGATORIAS: "
+                "a) Antes de la clase: recurso de estudio "
+                "autonomo de maximo 5 a 7 minutos (video corto, "
+                "infografia o lectura) mas una tarea de "
+                "verificacion breve que asegure que revisaron el "
+                "material. "
+                "b) Durante la clase: primeros 10 minutos para "
+                "resolver dudas detectadas en la tarea previa; "
+                "resto con actividades de alta demanda cognitiva "
+                "(debate, problemas complejos, proyectos, casos); "
+                "el docente es facilitador. "
+                "c) Despues de la clase: actividad de extension o "
+                "metacognicion (foro, bitacora, transferencia a "
+                "un contexto nuevo).",
                 base + "Fases oficiales:\n" + "\n".join(
                     f"  {i+1}. {f}" for i, f in enumerate(FASES_INVERTIDA))
                 + "\n\nDevuelve SOLO el JSON.")
