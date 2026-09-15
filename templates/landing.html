@@ -8,7 +8,7 @@
 
     <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="AulaMind Enterprise 3.0">
+    <meta property="og:site_name" content="AulaMind">
     <meta property="og:title" content="AulaMind | Documentos pedagógicos con IA para docentes de Chile">
     <meta property="og:description" content="Planificaciones, evaluaciones, guías, rúbricas y PIE alineadas al currículum MINEDUC en minutos. Prueba gratis 3 días, sin tarjeta.">
     <meta property="og:url" content="https://www.aulamind.cl/">
@@ -208,7 +208,7 @@
     <div class="navbar-inner">
         <a class="brand" href="/">
             <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind">
-            <span>AulaMind <small>Enterprise 3.0</small></span>
+            <span>AulaMind</span>
         </a>
         <div class="nav-actions">
             <a href="{{ url_for('auth.login') }}" class="btn btn-outline">
@@ -225,10 +225,11 @@
 <section class="hero">
     <div class="container">
         <span class="hero-badge"><i class="fa-solid fa-flag"></i> Hecho para docentes de Chile</span>
-        <h1>Planifica, evalúa y documenta en minutos, no en horas</h1>
+        <h1>Planificaciones en formatos oficiales MINEDUC, en minutos, no en horas</h1>
         <p>
-            AulaMind genera planificaciones, evaluaciones, guías de trabajo, rúbricas y
-            documentos PIE alineados al currículum MINEDUC, con inteligencia artificial.
+            AulaMind genera tus planificaciones en los 5 formatos oficiales del Ministerio
+            de Educación, más evaluaciones, clases, guías y recursos con inteligencia
+            artificial — todo alineado al Currículum Nacional.
         </p>
         <div class="hero-ctas">
             <a href="{{ url_for('auth.register') }}" class="btn btn-white btn-lg">
@@ -247,13 +248,18 @@
     <div class="container">
         <h2 class="section-title">Todo lo que un docente necesita</h2>
         <p class="section-sub">
-            Cinco herramientas conectadas al currículum nacional, listas para usar en tu sala de clases.
+            Nueve herramientas conectadas al Currículum Nacional, listas para usar en tu sala de clases.
         </p>
         <div class="feature-grid">
+            <div class="feature-card" style="border:2px solid #2563eb;">
+                <div class="feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                <h3>Planificación MINEDUC <span style="font-size:.6rem;background:#16a34a;color:#fff;padding:.15rem .5rem;border-radius:999px;vertical-align:middle;">FORMATOS OFICIALES</span></h3>
+                <p>Los 5 formatos del Ministerio de Educación: diaria, unidad didáctica, mensual, anual (carta Gantt) e invertida. Descarga en PDF listo para entregar.</p>
+            </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-calendar-days"></i></div>
-                <h3>Planificaciones</h3>
-                <p>Planificaciones de clase y unidades completas, alineadas a objetivos de aprendizaje MINEDUC.</p>
+                <h3>Preparación de Clase</h3>
+                <p>Clases completas alineadas a objetivos de aprendizaje MINEDUC, generadas en segundos.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-file-circle-check"></i></div>
@@ -276,9 +282,19 @@
                 <p>Documentos para Programa de Integración Escolar, con estrategias de apoyo diferenciadas.</p>
             </div>
             <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Herramientas IA</h3>
+                <p>Asistente inteligente para apoyo docente: textos, cuentos, actividades e imágenes IA, con descarga en PDF.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-ear-listen"></i></div>
+                <h3>Fonoaudiología</h3>
+                <p>Adaptaciones y apoyo para estudiantes con necesidades de comunicación y lenguaje.</p>
+            </div>
+            <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-book-atlas"></i></div>
-                <h3>Currículum MINEDUC</h3>
-                <p>Motor curricular integrado: cada documento nace alineado a las bases curriculares vigentes.</p>
+                <h3>Currículum Nacional</h3>
+                <p>Motor curricular real: 16 cursos, 89 asignaturas y 3.417 OA vigentes. Cada documento nace alineado.</p>
             </div>
         </div>
     </div>
@@ -358,7 +374,7 @@
 <!-- ==================== FOOTER ==================== -->
 <footer class="site-footer">
     <div class="container">
-        <p><strong>AulaMind Enterprise 3.0</strong> · Plataforma Inteligente para Docentes</p>
+        <p><strong>AulaMind</strong> · Inteligencia artificial para docentes de Chile</p>
         <p>© 2026 Biotecno Chile · <a href="mailto:contacto@aulamind.cl" style="color:#9ca3af;">contacto@aulamind.cl</a></p>
         <p style="margin-top:8px;">
             <a href="{{ url_for('legal.terms') }}" style="color:#9ca3af;">Términos y Condiciones</a>
