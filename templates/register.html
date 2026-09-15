@@ -13,6 +13,15 @@
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/login.css') }}">
 
+    <style>
+        .pwd-wrap { position: relative; }
+        .pwd-wrap input { padding-right: 2.6rem; }
+        .pwd-toggle { position: absolute; right: .6rem; top: 50%;
+            transform: translateY(-50%); border: none; background: none;
+            cursor: pointer; font-size: 1.05rem; color: #64748b;
+            padding: .2rem; line-height: 1; }
+        .pwd-toggle:hover { color: #2563eb; }
+    </style>
 </head>
 
 <body>
@@ -221,7 +230,7 @@
 
                     </label>
 
-                    <input
+                    <div class="pwd-wrap"><input id="pwd_reg_1"
 
                         type="password"
 
@@ -231,7 +240,7 @@
 
                         required
 
-                    >
+                    ><button type="button" class="pwd-toggle" onclick="togglePwd('pwd_reg_1', this)" title="Mostrar u ocultar contrase&#241;a">&#128065;</button></div>
 
                 </div>
 
@@ -243,7 +252,7 @@
 
                     </label>
 
-                    <input
+                    <div class="pwd-wrap"><input id="pwd_reg_2"
 
                         type="password"
 
@@ -253,7 +262,7 @@
 
                         required
 
-                    >
+                    ><button type="button" class="pwd-toggle" onclick="togglePwd('pwd_reg_2', this)" title="Mostrar u ocultar contrase&#241;a">&#128065;</button></div>
 
                 </div>
 
@@ -358,6 +367,15 @@
 
 <script src="{{ url_for('static', filename='js/login.js', v=config.APP_VERSION) }}"></script>
 
+
+    <script>
+    function togglePwd(id, btn) {
+        var i = document.getElementById(id);
+        if (!i) return;
+        if (i.type === "password") { i.type = "text"; btn.textContent = "\u{1F648}"; }
+        else { i.type = "password"; btn.textContent = "\u{1F441}"; }
+    }
+    </script>
 </body>
 
 </html>
