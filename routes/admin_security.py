@@ -96,16 +96,24 @@ def _plan_label(db, user):
         plan_name = (cat.name or "").lower()
 
     now = datetime.utcnow()
-    vigente = sub.ends_at is None or sub.ends_at >= now
+    status = (getattr(sub, "status", None) or "").lower()
 
-    if not vigente:
+    # Estados que significan "suscripcion valida en el tiempo"
+    VIGENTES = {"active", "trial", "trialing"}
+    SUSPENDIDOS = {"suspended", "canceled", "cancelled"}
+
+    # 1) Caducidad por tiempo manda sobre todo
+    if sub.ends_at is not None and sub.ends_at < now:
         if "pro" in plan_name:
             return {"text": "Plan expirado", "kind": "expired"}
         return {"text": "Trial expirado", "kind": "expired"}
 
-    if sub.status != "active":
+    # 2) Suscripcion explicitamente suspendida/cancelada
+    if status in SUSPENDIDOS:
         return {"text": "Suspendido", "kind": "expired"}
 
+    # 3) Vigente (active, trial, trialing o estado desconocido
+    #    con fecha futura: se trata como usable)
     if "pro" in plan_name:
         return {"text": "Plan Pro", "kind": "pro"}
 
