@@ -119,6 +119,19 @@ class Config:
     MAIL_PASSWORD = os.getenv("MAIL_PASSWORD", "")
     MAIL_FROM = os.getenv("MAIL_FROM", MAIL_USERNAME or "no-reply@aulamind.local")
 
+    # =====================================================
+    # Puentes SMTP_* (v3.9.6)
+    # PaymentMailer lee SMTP_* de app.config, pero hasta
+    # ahora solo existian MAIL_*: ningun correo salia real
+    # (todo quedaba simulado). Estos alias lo reparan.
+    # =====================================================
+    SMTP_HOST = MAIL_SERVER
+    SMTP_PORT = MAIL_PORT
+    SMTP_USER = MAIL_USERNAME
+    SMTP_PASSWORD = MAIL_PASSWORD
+    SMTP_FROM = os.getenv("SMTP_FROM") or MAIL_FROM
+    ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "contacto@aulamind.cl")
+
     if MAIL_USE_TLS and MAIL_USE_SSL:
         raise RuntimeError("MAIL_USE_TLS y MAIL_USE_SSL no pueden estar activos simultáneamente.")
 

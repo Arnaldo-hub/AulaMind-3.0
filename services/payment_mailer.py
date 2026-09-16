@@ -29,7 +29,7 @@ class PaymentMailer:
     # =====================================================
 
     @staticmethod
-    def _send(to_email, subject, body):
+    def _send(to_email, subject, body, cc=None):
 
         """
         Envía un correo simple (texto plano).
@@ -65,10 +65,17 @@ class PaymentMailer:
             msg["From"] = sender
             msg["To"] = to_email
 
+            destinatarios = [to_email]
+            if cc:
+                msg["Cc"] = cc
+                destinatarios.append(cc)
+
             with smtplib.SMTP(smtp_host, smtp_port) as server:
                 server.starttls()
                 server.login(smtp_user, smtp_pass)
-                server.sendmail(sender, [to_email], msg.as_string())
+                server.sendmail(
+                    sender, destinatarios, msg.as_string()
+                )
 
             logger.info("PaymentMailer: correo enviado a %s", to_email)
 
@@ -163,3 +170,54 @@ class PaymentMailer:
         )
 
         return PaymentMailer._send(admin_email, subject, body)
+
+    # =====================================================
+    # Notificación al admin cuando un usuario se registra
+    # =====================================================
+
+    @staticmethod
+    def send_admin_registration_notification(user_email, user_name):
+        """
+        v3.9.6: avisa al administrador de cada cuenta nueva.
+
+        Destinatario: ADMIN_EMAIL (o contacto@aulamind.cl por
+        defecto). Nunca lanza excepción hacia el llamador:
+        el registro del usuario no debe fallar por un correo.
+        """
+        try:
+            from datetime import datetime
+
+            config = current_app.config
+
+            admin_email = (
+                config.get("ADMIN_EMAIL")
+                or "contacto@aulamind.cl"
+            )
+
+            ahora = datetime.now().strftime("%d-%m-%Y %H:%M")
+
+            subject = f"Nuevo registro en AulaMind: {user_email}"
+
+            body = (
+                "Hola,\n\n"
+                "Se acaba de registrar un nuevo usuario:\n\n"
+                f"  Nombre: {user_name or 'No disponible'}\n"
+                f"  Email: {user_email}\n"
+                f"  Fecha: {ahora}\n"
+                "  Plan: Trial (3 días)\n\n"
+                "Panel Comercial:\n"
+                "https://www.aulamind.cl/admin/comercial\n\n"
+                "AulaMind"
+            )
+
+            return PaymentMailer._send(
+                admin_email, subject, body
+            )
+
+        except Exception:
+
+            logger.exception(
+                "PaymentMailer: error notificando registro"
+            )
+
+            return False

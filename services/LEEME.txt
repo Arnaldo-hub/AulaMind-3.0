@@ -1,0 +1,19 @@
+HERRAMIENTAS IA v3.5.1 - Fix formato profesional
+=================================================
+Archivo a reemplazar: services/tools_service.py
+
+Cambio: constante OUTPUT_RULES inyectada en el system prompt
+de las 5 plantillas. El asistente ahora:
+- Entrega SOLO lo solicitado, sin preguntas ni ofertas al final
+- No usa markdown crudo (##, **, ---) -> texto plano estructurado
+- No inventa links de imagenes (generacion de imagenes = Fase 2)
+
+Verificado E2E: compila, app bootea, guardias 302, validaciones,
+PDF real %PDF, endpoints sin BuildError.
+
+Instalacion:
+1. Copia services/tools_service.py sobre el existente
+2. python -m py_compile services/tools_service.py
+3. git add services/tools_service.py
+4. git commit -m "fix: formato profesional Herramientas IA v3.5.1"
+5. git push origin main

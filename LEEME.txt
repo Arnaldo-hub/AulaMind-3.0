@@ -1,0 +1,42 @@
+AULAMIND v3.9.6 - Columna Plan + Notificacion de registro + SMTP real
+=====================================================================
+Archivos a reemplazar (7):
+  config.py                    (puentes SMTP_* -> antes NINGUN correo salia)
+  routes/admin_security.py     (columna Plan en panel Usuarios)
+  routes/auth.py               (hook notificacion de registro)
+  services/payment_mailer.py   (notificacion SOLO a contacto@aulamind.cl)
+  templates/admin_users.html   (th Plan + badges de color)
+  templates/register.html      (marca sin "Enterprise")
+  static/js/admin_users.js     (badge Plan en cada fila)
+
+INCLUYE FIX CRITICO: config.py definia MAIL_* pero PaymentMailer
+leia SMTP_* de app.config -> nunca conectaban y TODO correo
+quedaba simulado (password reset y avisos de pago incluidos).
+Los puentes SMTP_* lo reparan. Para que los correos salgan de
+verdad, configurar en Render:
+  MAIL_SERVER / MAIL_PORT / MAIL_USERNAME / MAIL_PASSWORD / MAIL_FROM
+  ADMIN_EMAIL=contacto@aulamind.cl (ya tiene este valor por defecto)
+
+Columna Plan (panel Usuarios): Plan Pro (verde) / Trial (X dias)
+(azul) / Trial expirado (rojo) / Sin plan (gris) / Admin.
+Lee UserSubscription + catalogo Subscription.
+
+Notificacion de registro: correo a contacto@aulamind.cl con
+nombre, email y fecha del nuevo usuario. Nunca bloquea el
+registro (try/except total).
+
+Verificado E2E:
+  - 5/5 etiquetas de plan correctas (Pro/Trial vigente/
+    expirado/sin plan/Admin)
+  - registro crea usuario (302) y dispara correo admin
+  - destinatario exacto: contacto@aulamind.cl, sin copia
+  - SMTP real invocado (host/port/auth correctos)
+  - trial mailer al usuario: fallo aislado, no bloquea
+  - register.html sin "Enterprise"
+
+Instalacion:
+1. Copia los 7 archivos segun su ruta
+2. python -m py_compile config.py routes/admin_security.py routes/auth.py services/payment_mailer.py
+3. git add -A
+4. git commit -m "feat: columna Plan, notificacion registro y fix SMTP v3.9.6"
+5. git push origin main

@@ -215,6 +215,36 @@ def register():
 
         Entitlements.create_trial(db, usuario)
 
+        # v3.9.6: avisar al admin de la nueva cuenta.
+        # Nunca debe bloquear el registro: try/except total.
+        try:
+
+            from services.payment_mailer import PaymentMailer
+
+            nombre_completo = (
+
+                f"{first_name} {last_name}"
+
+            ).strip()
+
+            PaymentMailer.send_admin_registration_notification(
+
+                email,
+
+                nombre_completo
+
+            )
+
+        except Exception:
+
+            import logging
+
+            logging.getLogger(__name__).exception(
+
+                "No se pudo notificar el registro a admin"
+
+            )
+
         flash(
 
             "Cuenta creada. Tienes 3 días de prueba gratis: inicia sesión.",

@@ -175,11 +175,22 @@ Módulo M-09: Administración de Usuarios (CRUD AJAX)
                     "</div>" +
                 "</td>" +
                 "<td>" + roleBadge(user) + "</td>" +
+                "<td>" + planBadge(user) + "</td>" +
                 "<td>" + statusBadge(user) + "</td>" +
                 "<td>" + formatDate(user.last_login) + "</td>" +
                 "<td>" + actionButtons(user) + "</td>";
             tableBody.appendChild(tr);
         });
+    }
+
+    // Badge del plan de suscripcion (columna Plan)
+    function planBadge(user) {
+        const plan = user.plan || { text: "Sin plan", kind: "none" };
+        return (
+            '<span class="badge badge-plan-' + plan.kind + '">' +
+            escapeHtml(plan.text) +
+            "</span>"
+        );
     }
 
     // ======================================================

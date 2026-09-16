@@ -63,7 +63,59 @@ EMAIL_RE = re.compile(
 # Helpers
 # ==========================================================
 
-def _serialize_user(user):
+def _plan_label(db, user):
+    """
+    Etiqueta de suscripcion real para el panel Usuarios.
+    Lee UserSubscription (v3.1) + catalogo Subscription.
+    Devuelve {"text": ..., "kind": ...} con kind en
+    pro / trial / expired / none para el color del badge.
+    """
+    from datetime import datetime
+
+    from models.subscription import Subscription
+    from models.user_subscription import UserSubscription
+
+    if getattr(user, "role", None) == "admin":
+        return {"text": "Admin", "kind": "pro"}
+
+    sub = (
+        db.query(UserSubscription)
+        .filter(UserSubscription.user_id == str(user.id))
+        .order_by(UserSubscription.created_at.desc())
+        .first()
+    )
+
+    if sub is None:
+        return {"text": "Sin plan", "kind": "none"}
+
+    plan_name = ""
+    cat = db.query(Subscription).filter(
+        Subscription.id == sub.subscription_id
+    ).first()
+    if cat is not None:
+        plan_name = (cat.name or "").lower()
+
+    now = datetime.utcnow()
+    vigente = sub.ends_at is None or sub.ends_at >= now
+
+    if not vigente:
+        if "pro" in plan_name:
+            return {"text": "Plan expirado", "kind": "expired"}
+        return {"text": "Trial expirado", "kind": "expired"}
+
+    if sub.status != "active":
+        return {"text": "Suspendido", "kind": "expired"}
+
+    if "pro" in plan_name:
+        return {"text": "Plan Pro", "kind": "pro"}
+
+    dias = 0
+    if sub.ends_at is not None:
+        dias = max((sub.ends_at - now).days, 1)
+    return {"text": f"Trial ({dias} días)", "kind": "trial"}
+
+
+def _serialize_user(user, plan_label=None):
 
     data = user.to_dict()
 
@@ -82,6 +134,11 @@ def _serialize_user(user):
         if user.last_login else None
 
     )
+
+    data["plan"] = plan_label or {
+        "text": "Sin plan",
+        "kind": "none",
+    }
 
     return data
 
@@ -260,7 +317,13 @@ def list_users():
 
             total=len(users),
 
-            items=[_serialize_user(u) for u in users]
+            items=[
+
+                _serialize_user(u, _plan_label(db, u))
+
+                for u in users
+
+            ]
 
         )
 
