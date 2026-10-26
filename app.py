@@ -24,6 +24,9 @@ from routes.guides import guides  # ← NUEVO
 from routes.rubrics import rubrics  # ← NUEVO
 from routes.pie import pie  # ← NUEVO
 from routes.fonoaudiologia import fonoaudiologia
+from routes.tools import tools  # ← NUEVO v3.5 Herramientas IA
+from routes.mineduc import mineduc  # ← NUEVO v3.8 Planificación MINEDUC
+from routes.ayuda import ayuda  # ← NUEVO v3.10.1 Centro de Ayuda
 
 # ==========================================================
 # Base de datos
@@ -84,10 +87,70 @@ limiter.init_app(app)
 
 @app.errorhandler(CSRFError)
 def handle_csrf_error(error):
-    return jsonify({
-        "error": "csrf_invalid",
-        "message": "La solicitud expiró o no es válida. Recarga la página e inténtalo nuevamente."
-    }), 400
+    # v3.7.2: las APIs y peticiones ajax reciben JSON;
+    # los formularios de pagina vuelven al login con un
+    # mensaje amigable en lugar del JSON crudo.
+    is_api = (
+        request.path.startswith("/api/")
+        or "/api/" in request.path
+        or request.headers.get("X-Requested-With") == "XMLHttpRequest"
+        or "application/json" in (request.headers.get("Content-Type") or "")
+        or "application/json" in (request.headers.get("Accept") or "")
+    )
+
+    if is_api:
+        return jsonify({
+            "error": "csrf_invalid",
+            "message": "La solicitud expiró o no es válida. Recarga la página e inténtalo nuevamente."
+        }), 400
+
+    from flask import flash
+    flash("Tu sesión expiró por seguridad. Ingresa nuevamente.", "warning")
+    return redirect(url_for("auth.login"))
+
+# ==========================================================
+# CONTEXT PROCESSOR: contador de activaciones pendientes
+# Se inyecta en TODOS los templates (v3.2)
+# ==========================================================
+
+@app.context_processor
+def inject_pending_activations():
+    """
+    Inyecta en TODOS los templates la cantidad de
+    activaciones pendientes para mostrar en el sidebar.
+    """
+    try:
+        from database.session import SessionLocal
+        from models.checkout_attempt import CheckoutAttempt
+        from models.user import User
+        from services.entitlements import Entitlements
+        from datetime import datetime, timedelta
+
+        db = SessionLocal()
+        try:
+            desde = datetime.utcnow() - timedelta(hours=48)
+            attempts = (
+                db.query(CheckoutAttempt)
+                .filter(CheckoutAttempt.created_at >= desde)
+                .all()
+            )
+
+            count = 0
+            for attempt in attempts:
+                user = db.query(User).filter(
+                    User.id == attempt.user_id
+                ).first()
+                if not user:
+                    continue
+                status = Entitlements.get_status(user.id)
+                if status.get("status") != "active":
+                    count += 1
+
+            return {"pending_activations_count": count}
+        finally:
+            db.close()
+    except Exception:
+        return {"pending_activations_count": 0}
 
 # ==========================================================
 # REGISTRAR BLUEPRINTS
@@ -119,6 +182,9 @@ app.register_blueprint(billing)  # ← NUEVO v3.1
 app.register_blueprint(legal)  # ← NUEVO v3.1.4
 app.register_blueprint(payments)  # ← NUEVO v3.2 Mercado Pago
 app.register_blueprint(fonoaudiologia)  # ← NUEVO v3.4 Fonoaudiología
+app.register_blueprint(tools)  # ← NUEVO v3.5 Herramientas IA
+app.register_blueprint(mineduc)  # ← NUEVO v3.8 Planificación MINEDUC
+app.register_blueprint(ayuda)  # ← NUEVO v3.10.1 Centro de Ayuda
 
 # El webhook de Mercado Pago es un POST server-to-server:
 # no lleva token CSRF de sesión. Se exime SOLO este

@@ -1,0 +1,38 @@
+AULAMIND v3.10.1 - Centro de Ayuda dentro de la app
+====================================================
+Archivos a reemplazar (5):
+  routes/ayuda.py                      (NUEVO)
+  templates/ayuda.html                 (NUEVO)
+  templates/partials/sidebar_menu.html (REEMPLAZAR - entrada Ayuda + dedupe)
+  templates/dashboard.html             (REEMPLAZAR - banner bienvenida)
+  app.py                               (REEMPLAZAR - registra blueprint)
+
+Que incluye:
+1. Centro de Ayuda (/ayuda): buscador en vivo, 12 secciones en
+   acordeones (primeros pasos, planificacion MINEDUC 5 formatos,
+   preparacion de clase, evaluaciones, guias, rubricas, PIE,
+   fonoaudiologia, herramientas IA + imagenes, mi plan, mi perfil,
+   FAQ) y tarjeta de contacto (correo + WhatsApp).
+2. Entrada "Ayuda" en el menu lateral para todos los usuarios.
+3. Banner de bienvenida en el dashboard (una vez por navegador,
+   cerrable, enlaza a la guia).
+
+IMPORTANTE: en templates/ayuda.html hay un TODO para reemplazar
+el numero de WhatsApp de soporte (buscar "56900000000").
+
+Verificacion: 17 checks estaticos OK (compilacion, endpoints,
+balance Jinja en los 3 templates tocados, estructura).
+El E2E runtime quedo pendiente por perdida de red del entorno
+de pruebas; hacer smoke test en produccion al desplegar:
+  1. Entrar con tu usuario: menu lateral aparece "Ayuda"
+  2. Clic en Ayuda: carga la pagina con buscador y acordeones
+  3. Buscar "imagen": filtra y abre la seccion correspondiente
+  4. Dashboard muestra el banner la primera vez y se cierra
+
+Instalacion:
+1. Copia los 5 archivos segun su ruta
+2. python -m py_compile app.py routes/ayuda.py
+3. git add routes/ayuda.py templates/ayuda.html templates/partials/sidebar_menu.html templates/dashboard.html app.py
+4. git commit -m "feat: centro de ayuda v3.10.1"
+5. git push origin main
+6. Verifica: https://github.com/Arnaldo-hub/AulaMind-3.0/blob/main/routes/ayuda.py
