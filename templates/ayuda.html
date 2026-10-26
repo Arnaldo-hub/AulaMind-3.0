@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Ayuda | AulaMind</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css', v=config.APP_VERSION) }}">
+    <style>
+        .ay-wrap { padding: 2rem; max-width: 1000px; margin: 0 auto; }
+        .ay-search { display: flex; align-items: center; gap: .6rem; background: #fff;
+            border: 1px solid #d1d5db; border-radius: .7rem; padding: .8rem 1rem; margin-bottom: 1.4rem; }
+        .ay-search input { flex: 1; border: none; outline: none; font-size: 1rem; font-family: inherit; }
+        .ay-contact { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: .8rem;
+            padding: 1.1rem 1.4rem; margin-bottom: 1.6rem; display: flex; align-items: center;
+            gap: 1rem; flex-wrap: wrap; }
+        .ay-contact strong { color: #1d4ed8; }
+        .ay-btn { display: inline-flex; align-items: center; gap: .45rem; padding: .55rem 1.1rem;
+            border-radius: .55rem; text-decoration: none; font-size: .88rem; font-weight: 600; }
+        .ay-btn.mail { background: #2563eb; color: #fff; }
+        .ay-btn.wsp { background: #16a34a; color: #fff; }
+        .ay-sec { background: #fff; border: 1px solid #e5e7eb; border-radius: .8rem;
+            margin-bottom: .7rem; overflow: hidden; }
+        .ay-sec > summary { list-style: none; cursor: pointer; padding: 1rem 1.2rem;
+            font-weight: 600; font-size: .95rem; color: #111827; display: flex;
+            align-items: center; gap: .7rem; user-select: none; }
+        .ay-sec > summary::-webkit-details-marker { display: none; }
+        .ay-sec > summary .chev { margin-left: auto; color: #9ca3af; transition: transform .15s; }
+        .ay-sec[open] > summary .chev { transform: rotate(90deg); }
+        .ay-sec .ay-body { padding: 0 1.2rem 1.1rem 3.2rem; font-size: .9rem; color: #374151; line-height: 1.6; }
+        .ay-body ol, .ay-body ul { padding-left: 1.2rem; margin: .4rem 0 .7rem; }
+        .ay-body li { margin-bottom: .3rem; }
+        .ay-body .tip { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: .5rem;
+            padding: .55rem .8rem; margin-top: .6rem; font-size: .85rem; color: #166534; }
+        .ay-hidden { display: none; }
+        .ay-none { text-align: center; color: #6b7280; padding: 2rem 0; display: none; }
+        .ay-badge { background: #dbeafe; color: #1d4ed8; font-size: .68rem; font-weight: 600;
+            padding: .15rem .55rem; border-radius: 999px; }
+    </style>
+</head>
+<body>
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="AulaMind" class="sidebar-logo">
+            <div><h2>AulaMind</h2><span>Enterprise 3.0</span></div>
+        </div>
+        {% set active_menu = 'ayuda' %}
+        {% include 'partials/sidebar_menu.html' %}
+        <div class="sidebar-footer">
+            <div class="user-card">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <strong>{{ session.get('user_name','Usuario') }}</strong>
+                    <small>{{ 'Administrador' if session.get('role') == 'admin' else 'Docente' }}</small>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1>Centro de Ayuda</h1>
+                <p>Todo lo que necesitas para sacar el máximo provecho a AulaMind.</p>
+            </div>
+        </header>
+
+        <div class="ay-wrap">
+            <div class="ay-contact">
+                <i class="fa-solid fa-headset" style="font-size:1.6rem;color:#1d4ed8;"></i>
+                <div style="flex:1;min-width:220px;">
+                    <strong>¿No encontraste tu respuesta?</strong><br>
+                    <span style="font-size:.88rem;">Nuestro equipo te ayuda por correo o WhatsApp, normalmente el mismo día.</span>
+                </div>
+                <a class="ay-btn mail" href="mailto:contacto@aulamind.cl?subject=Ayuda%20AulaMind">
+                    <i class="fa-solid fa-envelope"></i> contacto@aulamind.cl
+                </a>
+                <!-- TODO: reemplazar 56900000000 por el numero real de WhatsApp de soporte -->
+                <a class="ay-btn wsp" href="https://wa.me/56900000000?text=Hola%2C%20necesito%20ayuda%20con%20AulaMind" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+
+            <div class="ay-search">
+                <i class="fa-solid fa-magnifying-glass" style="color:#9ca3af;"></i>
+                <input id="aySearch" type="text" placeholder="Busca en la ayuda… ej: planificación, imágenes, contraseña, OA">
+            </div>
+            <div class="ay-none" id="ayNone">Sin resultados para tu búsqueda. Escríbenos y te respondemos.</div>
+
+            <!-- ============ 1. PRIMEROS PASOS ============ -->
+            <details class="ay-sec" open>
+                <summary><i class="fa-solid fa-flag" style="color:#2563eb;"></i> Primeros pasos: cuenta y acceso <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Entra a <strong>www.aulamind.cl</strong> y pulsa <strong>"Comenzar prueba gratis"</strong>.</li>
+                        <li>Completa tu nombre, correo y contraseña (mínimo 10 caracteres, con mayúscula y número).</li>
+                        <li>Si olvidas tu clave: en el login, <strong>"¿Olvidaste tu contraseña?"</strong> te envía un correo para restablecerla (revisa spam).</li>
+                    </ol>
+                    <div class="tip">Tu prueba incluye <strong>10 generaciones</strong> durante <strong>3 días</strong>, sin pedir tarjeta.</div>
+                </div>
+            </details>
+
+            <!-- ============ 2. PLANIFICACION MINEDUC ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-file-invoice" style="color:#2563eb;"></i> Planificación MINEDUC <span class="ay-badge">5 formatos</span> <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <p>Genera planificaciones en los formatos basados en las orientaciones del Ministerio de Educación, alineadas al Currículum Nacional real (16 cursos, 89 asignaturas, 3.417 OA).</p>
+                    <ol>
+                        <li>Menú lateral → <strong>Planificación MINEDUC</strong>.</li>
+                        <li>Elige el <strong>tipo de planificación</strong>: diaria, unidad, mensual, anual Gantt o invertida.</li>
+                        <li>Selecciona <strong>Curso → Asignatura → Unidad</strong> (los datos reales del currículo).</li>
+                        <li>Opcional: elige el <strong>OA</strong> — el objetivo se rellena automáticamente y puedes ajustarlo.</li>
+                        <li>Completa fecha, curso/hora o mes según el formato.</li>
+                        <li>Pulsa <strong>"Generar planificación oficial"</strong> (20–40 segundos).</li>
+                        <li>Revisa la vista previa y descarga el <strong>PDF oficial</strong>.</li>
+                    </ol>
+                    <ul>
+                        <li><strong>Diaria:</strong> objetivo + tabla Inicio / Desarrollo / Cierre.</li>
+                        <li><strong>Unidad didáctica:</strong> tabla por OA con indicadores, estrategias y recursos.</li>
+                        <li><strong>Mensual:</strong> 4 semanas con micro-objetivos y evidencias.</li>
+                        <li><strong>Anual:</strong> carta Gantt con los 10 meses (Mar–Dic), en hoja horizontal.</li>
+                        <li><strong>Invertida:</strong> fases antes / durante / después de la clase.</li>
+                    </ul>
+                    <div class="tip">Consejo: si el resultado no es lo que esperabas, genera de nuevo con un objetivo más específico. La diaria es el formato más usado; la Gantt anual es la que más impresiona a UTP.</div>
+                </div>
+            </details>
+
+            <!-- ============ 3. PREPARACION DE CLASE ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-calendar-days" style="color:#2563eb;"></i> Preparación de Clase <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>Preparación de Clase</strong>.</li>
+                        <li>Selecciona <strong>Curso → Asignatura → Unidad</strong> y marca el o los <strong>OA</strong>.</li>
+                        <li>Pulsa <strong>Generar</strong> y espera el resultado.</li>
+                        <li>Descarga en <strong>PDF o Word</strong> (Word te permite editar a mano después).</li>
+                    </ol>
+                    <div class="tip">Ideal para ideas de clase rápidas cuando no necesitas el formato oficial estricto.</div>
+                </div>
+            </details>
+
+            <!-- ============ 4. EVALUACIONES ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-clipboard-check" style="color:#2563eb;"></i> Evaluaciones <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>Evaluaciones</strong>.</li>
+                        <li>Selecciona curso, asignatura, unidad y OA.</li>
+                        <li>Define el <strong>tipo de evaluación</strong> (control, prueba…) y el <strong>puntaje total</strong>.</li>
+                        <li>Genera: preguntas numeradas con alternativas y puntaje por pregunta.</li>
+                        <li>Descarga en <strong>PDF o Word</strong>.</li>
+                    </ol>
+                    <div class="tip">Revísala siempre antes de aplicarla: tú tienes la última palabra pedagógica.</div>
+                </div>
+            </details>
+
+            <!-- ============ 5. GUIAS ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-book" style="color:#2563eb;"></i> Guías de trabajo <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>Guías</strong>.</li>
+                        <li>Selecciona curso, asignatura, unidad y OA.</li>
+                        <li>Genera y descarga: material de apoyo listo para imprimir (guías de ejercicios, fichas).</li>
+                    </ol>
+                </div>
+            </details>
+
+            <!-- ============ 6. RUBRICAS ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-table-list" style="color:#2563eb;"></i> Rúbricas <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>Rúbricas</strong>.</li>
+                        <li>Indica la actividad, curso y asignatura a evaluar.</li>
+                        <li>Genera: criterios con descriptores por nivel de logro.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <!-- ============ 7. PIE ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-people-group" style="color:#2563eb;"></i> PIE (Programa de Integración Escolar) <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>PIE</strong>.</li>
+                        <li>Ingresa los datos del estudiante y su necesidad educativa.</li>
+                        <li>Selecciona el tipo de documento: informe o adaptación curricular.</li>
+                        <li>Genera y descarga.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <!-- ============ 8. FONOAUDIOLOGIA ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-ear-listen" style="color:#2563eb;"></i> Fonoaudiología <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>Fonoaudiología</strong>.</li>
+                        <li>Ingresa los datos del estudiante y el diagnóstico u observación.</li>
+                        <li>Selecciona el tipo de documento (adaptaciones, informes de apoyo).</li>
+                        <li>Genera y descarga.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <!-- ============ 9. HERRAMIENTAS IA ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-wand-magic-sparkles" style="color:#2563eb;"></i> Herramientas IA (asistente + imágenes) <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <p>Asistente de IA de uso libre, pensado especialmente para <strong>asistentes de la educación</strong>.</p>
+                    <ol>
+                        <li>Menú lateral → <strong>Herramientas IA</strong>.</li>
+                        <li>Elige una tarjeta: Asistente Libre, Crear un Cuento, Redactar Texto, Ideas de Actividades o Apoyo y Organización.</li>
+                        <li>Escribe tu solicitud y pulsa <strong>Enviar</strong> (o Enter).</li>
+                        <li>Descarga la respuesta en <strong>PDF</strong> con el botón inferior.</li>
+                    </ol>
+                    <p><strong>Crear Imagen</strong> (máximo 5 por día):</p>
+                    <ol>
+                        <li>Clic en la tarjeta <strong>Crear Imagen</strong> y describe la imagen con detalle.</li>
+                        <li>Espera 20–60 segundos; la imagen aparece con el contador del día.</li>
+                        <li>Guarda con <strong>clic derecho → "Guardar imagen como…"</strong>.</li>
+                    </ol>
+                    <div class="tip">Para láminas de colorear agrega siempre: "lámina para colorear, líneas gruesas, fondo blanco". Si pides imágenes en el chat de texto, el asistente te derivará a la tarjeta Crear Imagen.</div>
+                </div>
+            </details>
+
+            <!-- ============ 10. MI PLAN ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-credit-card" style="color:#2563eb;"></i> Mi Plan (suscripción y pagos) <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>Mi Plan</strong>.</li>
+                        <li>Verás tus días restantes de prueba o tu Plan Pro activo.</li>
+                        <li>Para contratar el Plan Pro ($9.990/mes): elige el plan y paga con <strong>Mercado Pago</strong> (débito, crédito o transferencia). Se activa al instante.</li>
+                    </ol>
+                    <div class="tip">¿Tu prueba terminó? Puedes entrar a tu cuenta y ver tus documentos, pero necesitas el Plan Pro para generar nuevos.</div>
+                </div>
+            </details>
+
+            <!-- ============ 11. MI PERFIL ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-user-gear" style="color:#2563eb;"></i> Mi Perfil <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ol>
+                        <li>Menú lateral → <strong>Mi Perfil</strong>.</li>
+                        <li>Actualiza tu nombre, correo o contraseña.</li>
+                        <li>Guarda los cambios.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <!-- ============ 12. PREGUNTAS FRECUENTES ============ -->
+            <details class="ay-sec">
+                <summary><i class="fa-solid fa-circle-question" style="color:#2563eb;"></i> Preguntas frecuentes <i class="fa-solid fa-chevron-right chev"></i></summary>
+                <div class="ay-body">
+                    <ul>
+                        <li><strong>¿Los documentos los hace una persona?</strong> No, los genera inteligencia artificial con las Bases Curriculares chilenas. Revísalos siempre antes de usarlos.</li>
+                        <li><strong>¿Puedo editar un documento?</strong> Sí: descárgalo en Word (donde el módulo lo permita), o genera de nuevo con instrucciones más específicas.</li>
+                        <li><strong>¿Mis documentos se guardan?</strong> Sí, aparecen en "Actividad reciente" del Panel Principal.</li>
+                        <li><strong>¿Sirve para todos los cursos?</strong> Del Prekínder a 4° Medio, en las asignaturas del currículo cargado. Si una asignatura tiene pocos OA, la data está en crecimiento — avísanos y la priorizamos.</li>
+                        <li><strong>¿Es un producto del MINEDUC?</strong> No. AulaMind es privada; sus formatos están <em>basados en las orientaciones</em> del Ministerio de Educación y alineados al Currículum Nacional.</li>
+                        <li><strong>¿Puedo pedir más días de prueba?</strong> Escríbenos y lo evaluamos caso a caso.</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+    </main>
+</div>
+
+<script>
+// Buscador en vivo sobre las secciones de ayuda
+(function () {
+    var input = document.getElementById("aySearch");
+    var secs = Array.prototype.slice.call(document.querySelectorAll(".ay-sec"));
+    var none = document.getElementById("ayNone");
+
+    input.addEventListener("input", function () {
+        var q = this.value.trim().toLowerCase();
+        var visible = 0;
+        secs.forEach(function (s) {
+            var hay = q === "" || s.textContent.toLowerCase().indexOf(q) !== -1;
+            s.classList.toggle("ay-hidden", !hay);
+            if (hay) {
+                visible++;
+                if (q !== "") { s.open = true; }
+            }
+        });
+        none.style.display = visible === 0 ? "block" : "none";
+    });
+})();
+</script>
+</body>
+</html>

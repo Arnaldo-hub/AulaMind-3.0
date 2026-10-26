@@ -11,9 +11,7 @@
     <a href="{{ url_for('fonoaudiologia.index') }}"{% if active_menu == 'fonoaudiologia' %} class="active"{% endif %}><i class="fa-solid fa-ear-listen"></i><span>Fonoaudiología</span></a>
     <a href="{{ url_for('tools.index') }}"{% if active_menu == 'tools' %} class="active"{% endif %}><i class="fa-solid fa-wand-magic-sparkles"></i><span>Herramientas IA</span></a>
 {% if session.get('role') == 'admin' %}
-    {% if session.get('role') == 'admin' %}
     <a href="{{ url_for('analytics.index') }}"{% if active_menu == 'analytics' %} class="active"{% endif %}><i class="fa-solid fa-chart-line"></i><span>Analítica</span></a>
-    {% endif %}
 {% endif %}
     <a href="{{ url_for('curriculum.index') }}"{% if active_menu == 'curriculum' %} class="active"{% endif %}><i class="fa-solid fa-book-atlas"></i><span>Currículum</span></a>
     {% if session.get('role') == 'admin' %}
@@ -28,4 +26,6 @@
     {% endif %}
     <a href="{{ url_for('billing.status') }}"{% if active_menu == 'plan' %} class="active"{% endif %}><i class="fa-solid fa-gem"></i><span>Mi Plan</span></a>
     <a href="{{ url_for('auth.profile') }}"{% if active_menu == 'profile' %} class="active"{% endif %}><i class="fa-solid fa-circle-user"></i><span>Mi Perfil</span></a>
+    {# v3.10.1 Centro de Ayuda (todos los usuarios) #}
+    <a href="{{ url_for('ayuda.index') }}"{% if active_menu == 'ayuda' %} class="active"{% endif %}><i class="fa-solid fa-circle-question"></i><span>Ayuda</span></a>
 </nav>

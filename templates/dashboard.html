@@ -105,6 +105,15 @@
     <!-- HEADER -->
     <!-- ============================================ -->
 
+    {# v3.10.1 Banner bienvenida: se muestra una vez por navegador (localStorage) #}
+    <div id="ayBanner" style="display:none;margin:1.25rem 1.5rem 0;background:#eff6ff;border:1px solid #bfdbfe;border-radius:.8rem;padding:.9rem 1.2rem;align-items:center;gap:.9rem;flex-wrap:wrap;">
+        <i class="fa-solid fa-circle-question" style="font-size:1.3rem;color:#1d4ed8;"></i>
+        <span style="flex:1;min-width:220px;font-size:.92rem;">¿Primera vez en AulaMind? La guía rápida te toma <strong>3 minutos</strong>.</span>
+        <a href="{{ url_for('ayuda.index') }}" style="background:#2563eb;color:#fff;padding:.5rem 1rem;border-radius:.5rem;text-decoration:none;font-size:.85rem;font-weight:600;">Ver guía rápida</a>
+        <button onclick="document.getElementById('ayBanner').style.display='none';try{localStorage.setItem('ayBanner','1')}catch(e){}" style="border:none;background:none;color:#64748b;cursor:pointer;font-size:1.4rem;line-height:1;" title="Cerrar">&times;</button>
+    </div>
+    <script>try{if(!localStorage.getItem('ayBanner')){var b=document.getElementById('ayBanner');if(b){b.style.display='flex';}}}catch(e){}</script>
+
     <header class="topbar">
 
         <div class="topbar-left">
