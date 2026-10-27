@@ -257,7 +257,7 @@
                 <div class="fono-card">
                     <h2><i class="fa-solid fa-file-medical"></i> Nuevo Informe Fonoaudiológico Escolar</h2>
                     <form id="formInforme">
-                        <input type="hidden" id="csrf_token" value="{{ csrf_token() }}">
+                        <input type="hidden" id="csrf_token" name="csrf_token" value="{{ csrf_token() }}">
                         <div class="form-grid">
                             <div class="form-group">
                                 <label>Nombre estudiante <span style="color:#ef4444">*</span></label>
@@ -310,7 +310,7 @@
                 <div class="fono-card">
                     <h2><i class="fa-solid fa-clipboard-list"></i> Nuevo Plan de Intervención Comunicacional</h2>
                     <form id="formPlan">
-                        <input type="hidden" id="csrf_token_plan" value="{{ csrf_token() }}">
+                        <input type="hidden" id="csrf_token_plan" name="csrf_token" value="{{ csrf_token() }}">
                         <div class="form-grid">
                             <div class="form-group">
                                 <label>Nombre estudiante <span style="color:#ef4444">*</span></label>
@@ -350,7 +350,7 @@
                 <div class="fono-card">
                     <h2><i class="fa-solid fa-lightbulb"></i> Consejos Rápidos para el Docente</h2>
                     <form id="formConsejos">
-                        <input type="hidden" id="csrf_token_consejos" value="{{ csrf_token() }}">
+                        <input type="hidden" id="csrf_token_consejos" name="csrf_token" value="{{ csrf_token() }}">
                         <div class="form-grid">
                             <div class="form-group">
                                 <label>Nombre estudiante <span style="color:#ef4444">*</span></label>
@@ -460,7 +460,7 @@ document.getElementById('formInforme').addEventListener('submit', async (e) => {
             showToast('Informe generado correctamente');
             window.scrollTo({top: document.getElementById('resultContainer').offsetTop - 20, behavior: 'smooth'});
         } else {
-            showToast(result.error || 'Error al generar', 'error');
+            showToast(result.message || result.error || 'Error al generar. Si persiste, recarga la página.', 'error');
         }
     } catch (err) {
         hideLoader();
@@ -488,7 +488,7 @@ document.getElementById('formPlan').addEventListener('submit', async (e) => {
             showToast('Plan de intervención generado correctamente');
             window.scrollTo({top: document.getElementById('resultContainer').offsetTop - 20, behavior: 'smooth'});
         } else {
-            showToast(result.error || 'Error al generar', 'error');
+            showToast(result.message || result.error || 'Error al generar. Si persiste, recarga la página.', 'error');
         }
     } catch (err) {
         hideLoader();
@@ -515,7 +515,7 @@ document.getElementById('formConsejos').addEventListener('submit', async (e) => 
             document.getElementById('consejosResult').innerHTML = '<div class="result-box">' + escapeHtml(result.content) + '</div>';
             showToast('Consejos generados');
         } else {
-            showToast(result.error || 'Error', 'error');
+            showToast(result.message || result.error || 'Error al generar. Si persiste, recarga la página.', 'error');
         }
     } catch (err) {
         showToast('Error de conexión', 'error');
