@@ -1,128 +1,129 @@
 {
   "asignatura": "Historia, Geografía y Ciencias Sociales",
-  "curso": "HIST 5° básico",
+  "curso": "5° básico",
+  "fuente": "Curriculum 5to.pdf — Programa de Estudio, MINEDUC; OA pp. 48–50; visión global pp. 51–55.",
   "unidades": [
     {
-      "nombre": "Unidad 1 — Historia y sociedad, Geografía y territorio",
+      "nombre": "Unidad 1 — Geografía de Chile: zonas naturales, recursos y riesgos",
       "oa": [
         {
           "codigo": "OA 9",
-          "descripcion": "OA 9 y 10 de Geografía). orientadas al desarrollo de las habilidades perti- nentes a cada nivel. En otras palabras, el docente Pero sin duda, es el eje de Formación Ciudadana, debe seleccionar, modificar y adecuar las activi- y en particular los"
+          "descripcion": "Caracterizar las grandes zonas de Chile y sus paisajes (Norte Grande, Norte Chico, Zona Central, Zona Sur y Zona Austral), considerando ubicación, clima (temperatura y precipitaciones), relieve, hidrografía, población y recursos naturales, entre otros."
         },
         {
           "codigo": "OA 10",
-          "descripcion": "OA 10 y 11 de Geo- establecimiento. Asimismo, los Programas buscan grafía; en 3º básico los"
+          "descripcion": "Reconocer y ubicar en mapas recursos naturales significativos de Chile, como cobre, hierro, recursos marítimos y forestales, entre otros; diferenciar recursos renovables y no renovables y explicar la importancia de cuidarlos en el marco de un desarrollo sostenible."
         },
         {
           "codigo": "OA 11",
-          "descripcion": "OA 11 Analizar y dar ejemplos de diversas"
+          "descripcion": "Analizar y dar ejemplos de diversas maneras en las que el trabajo de las personas, sus ideas y proyectos potencian y dan valor a los recursos naturales (por ejemplo: tecnología de riego, elaboración de vinos, uso de madera en la construcción, nuevas formas de explotación sustentable)."
         },
         {
           "codigo": "OA 12",
-          "descripcion": "OA 12 Investigar, describir y ubicar los riesgos colonias americanas de la metrópoli, naturales que afectan a su localidad, el rol de la Iglesia católica y el surgi- como sismos, maremotos, inundacio- miento de una sociedad mestiza. nes, derrumbes y volcanismo,Historia, Geografíay Ciencias Sociales"
+          "descripcion": "Investigar, describir y ubicar los riesgos naturales que afectan a su localidad, como sismos, maremotos, inundaciones, derrumbes y volcanismo,"
         },
         {
           "codigo": "OA 16",
-          "descripcion": "OA 16 Demostrar"
+          "descripcion": "Demostrar actitudes cívicas con acciones en su vida diaria, como: • actuar con honestidad y responsabilidad (ejemplos: respetar los acuerdos establecidos, respetar la autoría de música y películas, evitar el plagio escolar, etc.) • respetar a todas las personas (ejemplos: no discriminar por condiciones físicas, sociales, culturales o étnicas, escuchar respetuosamente opiniones distintas, respetar espacios y propiedad de los demás, etc.) • contribuir a la buena convivencia (ejemplos: buscar soluciones pacíficas para resolver problemas, mostrar empatía con los demás, etc.) • cuidar y valorar el patrimonio y el medioambiente (ejemplos: realizar campañas de información y cuidado de nuestro patrimonio, usar la energía de manera eficiente, etc.)"
         },
         {
           "codigo": "OA 22",
-          "descripcion": "OA 22 Informarse y opinar sobre temas sobre temas de la asignatura u otros. relevantes y de su interés en el país y del mundo (política, medioambiente,"
+          "descripcion": "Informarse y opinar sobre temas relevantes y de su interés en el país y del mundo (política, medioambiente, deporte, arte y música, entre otros) por medio de periódicos y TIC."
         }
       ]
     },
     {
-      "nombre": "Unidad 2 — Historia y sociedad",
+      "nombre": "Unidad 2 — Descubrimiento y conquista de América y Chile",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "OA 1 y 2 de Historia con los"
+          "descripcion": "Explicar los viajes de descubrimiento de Cristóbal Colón, de Hernando de Magallanes y de algún otro explorador, considerando sus objetivos, las rutas recorridas, los avances tecnológicos que facilitaron la navegación, las dificultades y los desafíos que enfrentaron las tripulaciones y el contexto europeo general en que se desarrollaron."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "OA 2 y 3 de Historia con los proporcionar distintos modelos de"
+          "descripcion": "Describir el proceso de conquista de América y de Chile, incluyendo a los principales actores (Corona española, Iglesia Católica y hombres y mujeres protagonistas, entre otros), algunas expediciones y conflictos bélicos, y la fundación de ciudades como expresión de la voluntad de los españoles de quedarse y expandirse, y reconocer en este proceso el surgimiento de una nueva sociedad."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "OA 3 de Aprendizaje a trabajar. Entre paréntesis Distinguir los diversos aportes a ú Nombran palabras de uso común en el idioma español la sociedad chilena provenien- usado en Chile, provenientes de las lenguas de los pueblos se especifica el número correspondiente al te de los pueblos originarios originarios. (palabras, alimentos, tradicio- nes, costumbres, etc.) y de los ú Señalannas explicandoejemplossu designificado.toponimia nacional en lenguas indíge- objetivo en la Base Curricular. españoles (idioma, religión, ú Nombran o ilustran plantas de origen indígena señalando alimentos, costumbres, etc.) sus utilidades. y reconocer nuestra sociedad ú Distinguen ingredientes de la comida tradicional chilena como mestiza. provenientes de las tradiciones indígena y española. ú Reconocen el legado indígena y español en diversas expre-"
+          "descripcion": "Analizar el impacto y las consecuencias que tuvo el proceso de conquista para Europa y para América, considerando diversos ámbitos."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "OA 4 Reconocer y dar ejemplos de la ú Explican que la sociedad chilena es diversa ya que se ha permite al docente evaluar el logro del ob- influencia y aportes de inmi- conformado a partir del aporte de inmigrantes de diversas naciones a lo largo del tiempo. grantes de distintas naciones jetivo. Son de carácter sugerido, por lo que Nombran colonias extranjeras residentes en Chile. europeas, orientales, árabes y ú latinoamericanas a la diversi- dad de la sociedad chilena, a lo ú Identificanen Chile. ejemplos de comidas extranjeras de uso común el docente puede complementarlos. Cada largo de su historia. ú Distinguen expresiones artísticas (música, arquitectura, etc.) procedentes de naciones extranjeras que se han integrado a Objetivo de Aprendizaje cuenta con varios la sociedad chilena. ú Identifican personas de origen extranjero que han aportado indicadores, dado que existen múltiples en diversos ámbitos de la cultura chilena. desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo apren- dizaje no tienen el mismo nivel de dificultad. Se espera que exista una secuencia cogniti- va, que comience desde habilidades básicas y termine en habilidades superiores. Adicio- nalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independiente de su nivel de dificultad. Ú2626"
+          "descripcion": "Investigar sobre los efectos de la conquista sobre los pueblos indígenas americanos, utilizando fuentes dadas por el docente."
         },
         {
           "codigo": "OA 16",
-          "descripcion": "OA 16 Demostrar"
+          "descripcion": "Demostrar actitudes cívicas con acciones en su vida diaria, como: • actuar con honestidad y responsabilidad (ejemplos: respetar los acuerdos establecidos, respetar la autoría de música y películas, evitar el plagio escolar, etc.) • respetar a todas las personas (ejemplos: no discriminar por condiciones físicas, sociales, culturales o étnicas, escuchar respetuosamente opiniones distintas, respetar espacios y propiedad de los demás, etc.) • contribuir a la buena convivencia (ejemplos: buscar soluciones pacíficas para resolver problemas, mostrar empatía con los demás, etc.) • cuidar y valorar el patrimonio y el medioambiente (ejemplos: realizar campañas de información y cuidado de nuestro patrimonio, usar la energía de manera eficiente, etc.)"
         }
       ]
     },
     {
-      "nombre": "Unidad 3 — Historia y sociedad, Economía y desarrollo",
+      "nombre": "Unidad 3 — La sociedad colonial en América y Chile",
       "oa": [
         {
           "codigo": "OA 5",
-          "descripcion": "OA 5 Describir algunas dimensiones de la maneras en las que el trabajo de las vida colonial en Chile, como organiza- personas, sus ideas y proyectos poten- ción de la sociedad y grupos sociales, cian y dan valor a los recursos natura- oficios y"
+          "descripcion": "Describir algunas dimensiones de la vida colonial en Chile, como organización de la sociedad y grupos sociales, oficios y actividades económicas, costumbres y vida cotidiana, arte y celebraciones."
         },
         {
           "codigo": "OA 6",
-          "descripcion": "OA 6 de estudio, si no ser una guía al docente Leer y dibujar planos Lectura y dibujo de planos simples de su entorno, utilizando puntos de 1 para diseñar sus propias"
+          "descripcion": "Explicar aspectos centrales de la Colonia, como la dependencia de las colonias americanas de la metrópoli, el rol de la Iglesia Católica y el surgimiento de una sociedad mestiza."
         },
         {
           "codigo": "OA 7",
-          "descripcion": "OA 7 Explicar y dar ejemplos de las distintas"
+          "descripcion": "Explicar y dar ejemplos de las distintas formas en las que españoles y mapuches se relacionaron en el periodo colonial, considerando resistencia mapuche y guerra de Arauco, mestizaje, formas de trabajo (como encomienda"
         },
         {
           "codigo": "OA 8",
-          "descripcion": "OA 8 Identificar, en su entorno o en fo- tografías, elementos del patrimonio"
+          "descripcion": "Identificar, en su entorno o en fotografías, elementos del patrimonio colonial de Chile que siguen presentes hoy, como edificios, obras de arte y costumbres, entre otros."
         },
         {
           "codigo": "OA 20",
-          "descripcion": "OA 20 Opinar y argumentar con fundamentos"
+          "descripcion": "Opinar y argumentar con fundamentos sobre temas de la asignatura u otros."
         }
       ]
     },
     {
-      "nombre": "Unidad 4 — Geografía y territorio, Formación ciudadana",
+      "nombre": "Unidad 4 — Derechos humanos, ciudadanía y participación",
       "oa": [
         {
           "codigo": "OA 13",
-          "descripcion": "OA 13 sobre la ubicación relativa de algunos objetos en el plano, como Selección de habilidades posibles de desa- Mantener una conducta ¿qué¿qué hayestádelantemás cercade olamásventana?,lejos de¿quéalgúnhaypuntocerca dede referencia?,la puerta?, etc. honesta en la vida cotidia- ú Los alumnos responden las preguntas aplicando categorías de rrollar en la actividad. Estas habilidades se na, en los juegos y en el ubicación relativa como delante, detrás, arriba, abajo, izquier- trabajo escolar, hablando da, derecha, lejos, cerca. con la verdad, respetando ú Posteriormente, los estudiantes reciben una hoja de trabajo. derivan de los OA de las Bases Curriculares las reglas de los juegos sin De manera individual, elaboran un plano de su sala de clases, hacer trampa, y recono- desarrollan una simbología pertinente y luego describen la ciendo sus errores y sus ubicación relativa de 2 ó 3 objetos. acciones, entre otros. ú Una vez finalizados los trabajos, los estudiantes los comparten con el curso, comprobando la correcta ubicación de los ele- Relación con otras asignaturas"
+          "descripcion": "Reconocer que todas las personas son sujetos de derecho, que deben ser respetados por los pares, la comunidad y el Estado, y que esos derechos no dependen de características individuales, como etnia, sexo, lugar de nacimiento u otras."
         },
         {
           "codigo": "OA 14",
-          "descripcion": "OA 14 Reconocer que los derechos generan medioambiente (ejemplos: realizar deberes y responsabilidades en las campañas de información y cuidado personas y en el Estado, lo que, por de nuestro patrimonio, usar la ener- ejemplo, se manifiesta en que: gía de manera eficiente, etc.) ú las personas deben respetar los derechos de los demás"
+          "descripcion": "Reconocer que los derechos generan deberes y responsabilidades en las personas y en el Estado, lo que, por ejemplo, se manifiesta en que: • las personas deben respetar los derechos de los demás • todas las personas deben respetar las leyes • el Estado debe asegurar que las personas puedan ejercer sus derechos (a la educación, a la protección de la salud, a la libertad de expresión, a la propiedad privada y a la igualdad ante la ley, entre otros) • el Estado debe asegurar los derechos de las personas a participar en la vida pública, como el derecho a formar organizaciones de participación social (fundaciones, juntas de vecinos, etc.), a participar en partidos políticos y el derecho a sufragio, entre otros"
         },
         {
           "codigo": "OA 15",
-          "descripcion": "OA 15 Reconocer que hay logros y beneficios te, entre otros, y ateniéndose a un que dependen del esfuerzo, el mérito plan y a un presupuesto. y el comportamiento de cada persona (como las calificaciones, los premios"
+          "descripcion": "Reconocer que hay logros y beneficios que dependen del esfuerzo, el mérito"
         },
         {
           "codigo": "OA 16",
-          "descripcion": "OA 16 Demostrar"
+          "descripcion": "Demostrar actitudes cívicas con acciones en su vida diaria, como: • actuar con honestidad y responsabilidad (ejemplos: respetar los acuerdos establecidos, respetar la autoría de música y películas, evitar el plagio escolar, etc.) • respetar a todas las personas (ejemplos: no discriminar por condiciones físicas, sociales, culturales o étnicas, escuchar respetuosamente opiniones distintas, respetar espacios y propiedad de los demás, etc.) • contribuir a la buena convivencia (ejemplos: buscar soluciones pacíficas para resolver problemas, mostrar empatía con los demás, etc.) • cuidar y valorar el patrimonio y el medioambiente (ejemplos: realizar campañas de información y cuidado de nuestro patrimonio, usar la energía de manera eficiente, etc.)"
         },
         {
           "codigo": "OA 17",
-          "descripcion": "OA 17 Participar en su comunidad, tomando ú todas las personas deben respetar parte en elecciones para una directiva las leyes de curso, asignando roles y funciones ú el Estado debe asegurar que las per- a cada cargo, y demostrando que sonas puedan ejercer sus derechos entienden las responsabilidades que (a la educación, a la protección de lleva consigo el desempeño de un car- la salud, a la libertad de expresión, a go y la importancia de elegir personas la propiedad privada y a la igualdad que se estimen idóneas, para man- ante la ley, entre otros) tener una buena convivencia y una ú el Estado debe asegurar los dere- organización del curso que permita el chos de las personas a participar en trabajo escolar. la vida pública, como el derecho a formar organizaciones de participa-"
+          "descripcion": "Participar en su comunidad, tomando parte en elecciones para una directiva de curso, asignando roles y funciones"
         },
         {
           "codigo": "OA 18",
-          "descripcion": "OA 18 Diseñar y participar en un proyecto ción social (fundaciones, juntas de que solucione un problema de la vecinos, etc.), a participar en parti- comunidad escolar, considerando dos políticos y el derecho a sufragio, temas como voluntariado, gasto entre otros excesivo de agua y electricidad en la escuela, y cuidado del medioambien-"
+          "descripcion": "Diseñar y participar en un proyecto que solucione un problema de la comunidad escolar, considerando temas como voluntariado, gasto excesivo de agua y electricidad en la escuela, y cuidado del medioambiente, entre otros, y ateniéndose a un plan y a un presupuesto."
         },
         {
           "codigo": "OA 19",
-          "descripcion": "OA 19 Explicar formas en que un grupo de deportivos, los premios por compañe- personas puede organizarse para rismo, el aprecio y reconocimiento por resolver problemas, mejorar su calidad parte de sus pares, el liderazgo). de vida y la de otros y lograr metas comunes; por ejemplo, fundaciones,"
+          "descripcion": "Explicar formas en que un grupo de personas puede organizarse para resolver problemas, mejorar su calidad de vida y la de otros y lograr metas comunes; por ejemplo, fundaciones, voluntariado, empresas, agrupaciones"
         },
         {
           "codigo": "OA 20",
-          "descripcion": "OA 20 Opinar y argumentar con fundamentos"
+          "descripcion": "Opinar y argumentar con fundamentos sobre temas de la asignatura u otros."
         },
         {
           "codigo": "OA 21",
-          "descripcion": "OA 21 Evaluar posibles soluciones frente a deporte, arte y música, entre otros) un problema o proyecto y justificar su por medio de periódicos y TIC. elección."
+          "descripcion": "Evaluar posibles soluciones frente a un problema o proyecto y justificar su elección."
         },
         {
           "codigo": "OA 22",
-          "descripcion": "OA 22 Informarse y opinar sobre temas sobre temas de la asignatura u otros. relevantes y de su interés en el país y del mundo (política, medioambiente,"
+          "descripcion": "Informarse y opinar sobre temas relevantes y de su interés en el país y del mundo (política, medioambiente, deporte, arte y música, entre otros) por medio de periódicos y TIC."
         }
       ]
     }
