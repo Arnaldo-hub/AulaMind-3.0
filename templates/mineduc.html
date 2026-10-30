@@ -170,6 +170,39 @@ function llenarSelect(id, items, placeholder) {
         items.map(i => '<option value="' + nombreDe(i).replace(/"/g, '&quot;') + '">' + nombreDe(i) + '</option>').join('');
 }
 
+// Los OA llegan como { code, description }. El desplegable muestra solo
+// el código; el valor conserva el texto completo para OAT y planificación.
+function llenarSelectOA(items) {
+    const sel = document.getElementById('fOA');
+    sel.innerHTML = '';
+
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = 'Seleccione un OA (opcional)...';
+    sel.appendChild(placeholder);
+
+    items.forEach((item, index) => {
+        let code = '';
+        let description = '';
+
+        if (typeof item === 'string') {
+            const match = item.match(/^\s*(OA(?:H|A)?\s*[\w-]+)\s*(?:[—–-]\s*)?(.*)$/i);
+            code = match ? match[1] : item;
+            description = match ? match[2] : '';
+        } else {
+            code = item.code || item.codigo || item.name || item.title || ('OA ' + (index + 1));
+            description = item.description || item.descripcion || item.text || '';
+        }
+
+        const fullText = description ? code + ' — ' + description : code;
+        const option = document.createElement('option');
+        option.value = fullText;
+        option.textContent = code;
+        option.title = description;
+        sel.appendChild(option);
+    });
+}
+
 async function cargarCursos() {
     try {
         const r = await fetch(API.courses);
@@ -222,7 +255,7 @@ document.getElementById('fUnidad').addEventListener('change', async function () 
     try {
         const r = await fetch(API.objectives + encodeURIComponent(curso) + '/' + encodeURIComponent(asig) + '/' + encodeURIComponent(this.value));
         const d = await r.json();
-        llenarSelect('fOA', d.objectives || [], 'Seleccione un OA (opcional)...');
+        llenarSelectOA(d.objectives || []);
     } catch (e) { selO.innerHTML = '<option value="">Error cargando OA</option>'; }
 });
 
