@@ -1,56 +1,63 @@
 {
   "asignatura": "Orientación",
   "curso": "ORIENT 3° BAS",
+  "fuente": "Programa Orientación(1).pdf",
   "unidades": [
     {
-      "nombre": "Unidad 1 — Crecimiento personal, identidad y bienestar",
+      "nombre": "Unidad 1",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "OA 1 Observar, describir y valorar sus caracte- cia y discriminación, ya sea por etnia, rísticas, habilidades y fortalezas (en lo fa- género, religión, nacionalidad, etc. miliar, afectivo, académico y social, entre › respetar el derecho de todos a expre- otros) y proponerse acciones concretas sar opiniones y ser diferente para los aspectos que requiera superar. › prestar ayuda especialmente a quien lo necesite"
+          "descripcion": "Observar, describir y valorar sus características, habilidades y fortalezas (en lo familiar, afectivo, académico y social, entre otros) y proponerse acciones concretas para los aspectos que requiera superar."
         },
-        {
-          "codigo": "OA 2",
-          "descripcion": "OA 2 Identificar emociones ex- 1 perimentadas por ellos y Los estudiantes escuchan un breve relato en el que se refleje por los demás (por ejem- claramente una determinada emoción; por ejemplo: “Marcela es-"
-        }
-      ]
-    },
-    {
-      "nombre": "Unidad 2 — Relaciones interpersonales, convivencia y buen trato",
-      "oa": [
-        {
-          "codigo": "OA 6",
-          "descripcion": "OA 6 Resolver conflictos entre pares en forma cional (por ejemplo, esperar un tiempo, guiada y aplicar estrategias diversas de escuchar al otro y considerar su impacto resolución de problemas, tales como en los demás). escuchar, describir los sentimientos del otro y buscar un acuerdo que satisfaga a"
-        }
-      ]
-    },
-    {
-      "nombre": "Unidad 3 — Participación, hábitos de estudio y desarrollo de metas",
-      "oa": [
         {
           "codigo": "OA 3",
-          "descripcion": "OA 3 al cual están asociados, y permiten al Observar, describir y valorar › Dibujan y nombran situaciones en las que reciben y dan las expresiones de afecto y cariño en su ámbito familiar. cariño, que dan y reciben, en › Identifican prácticas de cuidado familiar como formas de profesor evaluar el logro del objetivo. los ámbitos familiar, escolar y expresar cariño y aprecio hacia ellos. social (por ejemplo, compartir › Proponen formas de dar cariño y agradecer a los miembros Cada Objetivo de Aprendizaje cuenta tiempo, escuchar a los demás, de su familia y en el contexto escolar. dar y recibir ayuda). › Identifican formas en que dan y reciben cariño en el esta- con varios indicadores y la totalidad de blecimiento. › Proponen formas de expresar afecto y cariño a sus pares y los indicadores dan cuenta del apren- en su entorno escolar. dizaje. Al ser de carácter sugerido, puede especificarse con mayor detalle en cada aprendizaje qué es lo que se espera del estudiante.28"
-        },
-        {
-          "codigo": "OA 8",
-          "descripcion": "OA 8 Manifestar hábitos y"
-        }
-      ]
-    },
-    {
-      "nombre": "Unidad 4 — Autocuidado, vida saludable y proyecto personal",
-      "oa": [
-        {
-          "codigo": "OA 4",
-          "descripcion": "OA 4 Identificar y practicar en forma autóno- › proponiendo y aceptando iniciativas y ma conductas protectoras y de autocui- asumiendo responsabilidades dado en relación a: › respetando los derechos de los demás › rutinas de higiene en la distribución de roles y responsa- ›"
-        },
-        {
-          "codigo": "OA 5",
-          "descripcion": "OA 5 Manifestar"
+          "descripcion": "Reconocer y valorar la sexualidad como expresión de amor, vínculo e intimidad entre dos personas y como gestora de su propia vida."
         },
         {
           "codigo": "OA 7",
-          "descripcion": "OA 7 explicitan los"
+          "descripcion": "Participar en forma guiada en la comunidad escolar y en la organización del curso: • proponiendo y aceptando iniciativas y asumiendo responsabilidades • respetando los derechos de los demás en la distribución de roles y responsabilidades"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Manifestar actitudes de solidaridad y respeto, que favorezcan la convivencia, como: • actuar en forma empática (poniéndose en el lugar del otro) • utilizar un buen trato (por ejemplo, saludar, despedirse, pedir por favor) • evitar y rechazar toda forma de violencia y discriminación, ya sea por etnia, género, religión, nacionalidad, etc. • respetar el derecho de todos a expresar opiniones y ser diferente • prestar ayuda, especialmente a quien lo necesite • respetar el ambiente de aprendizaje"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Manifestar hábitos y actitudes de esfuerzo e interés que favorezcan el aprendizaje, como: • asistir puntualmente a clases y cumplir a tiempo con los trabajos pedidos • organizar su tiempo y sus útiles • respetar el estudio y el trabajo de otros • evitar el plagio y la copia • preguntar y buscar información sobre temas de su interés • desarrollar actividades en relación a sus propios intereses"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Identificar y practicar en forma autónoma conductas protectoras y de autocuidado en relación a: • rutinas de higiene • actividades de descanso, recreación y actividad física • hábitos de alimentación • resguardo del cuerpo y la intimidad • la entrega de información personal • situaciones de potencial abuso • consumo de drogas"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Identificar y aceptar sus propias emociones y las de los demás, y practicar estrategias personales de manejo emocional (por ejemplo, esperar un tiempo, escuchar al otro y considerar su impacto en los demás)."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Resolver conflictos entre pares en forma guiada y aplicar estrategias diversas de resolución de problemas, tales como escuchar, describir los sentimientos del otro y buscar un acuerdo que satisfaga a ambas partes."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Participar en forma guiada en la comunidad escolar y en la organización del curso: • proponiendo y aceptando iniciativas y asumiendo responsabilidades • respetando los derechos de los demás en la distribución de roles y responsabilidades"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Manifestar actitudes de solidaridad y respeto, que favorezcan la convivencia, como: • actuar en forma empática (poniéndose en el lugar del otro) • utilizar un buen trato (por ejemplo, saludar, despedirse, pedir por favor) • evitar y rechazar toda forma de violencia y discriminación, ya sea por etnia, género, religión, nacionalidad, etc. • respetar el derecho de todos a expresar opiniones y ser diferente • prestar ayuda, especialmente a quien lo necesite • respetar el ambiente de aprendizaje"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Manifestar hábitos y actitudes de esfuerzo e interés que favorezcan el aprendizaje, como: • asistir puntualmente a clases y cumplir a tiempo con los trabajos pedidos • organizar su tiempo y sus útiles • respetar el estudio y el trabajo de otros • evitar el plagio y la copia • preguntar y buscar información sobre temas de su interés • desarrollar actividades en relación a sus propios intereses"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Identificar y practicar en forma autónoma conductas protectoras y de autocuidado en relación a: • rutinas de higiene • actividades de descanso, recreación y actividad física • hábitos de alimentación • resguardo del cuerpo y la intimidad • la entrega de información personal • situaciones de potencial abuso • consumo de drogas"
         }
       ]
     }
