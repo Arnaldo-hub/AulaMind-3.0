@@ -1,49 +1,30 @@
 {
   "asignatura": "Lenguaje y Literatura",
   "curso": "Leng 5° básico",
+  "fuente": "Lenguaje 5.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Lectura y comprensión, Escritura y producción de textos, Comunicación oral",
       "oa": [
         {
           "codigo": "OA 3",
-          "descripcion": "OA 3 buscan favorecer el desarrollo integral ú Relacionan situaciones de la vida cotidiana con versos de los Leer y familiarizarse con un am- de los estudiantes. En cada unidad se textos leídos en clases o independientemente. plio repertorio de literatura para aumentar su conocimiento del ú Mencionan poemas que han leído. mundo, desarrollar su imagina- ú Relacionan aspectos de un poema leído y comentado en explicitan los"
-        },
-        {
-          "codigo": "OA 6",
-          "descripcion": "OA 6 Leer independientemente y compren- ú leyendas der textos no literarios (cartas, biogra- ú mitos fías, relatos históricos, libros y artículos ú novelas informativos, noticias, etc.) para ampliar ú historietas su conocimiento del mundo y formarse ú otros una opinión: ú extrayendo información explícita e"
+          "descripcion": "Leer y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo, desarrollar su imaginación y reconocer su valor social y cultural; por ejemplo: • cuentos folclóricos y de autor • historietas • otros"
         },
         {
           "codigo": "OA 4",
-          "descripcion": "OA 4 Analizar aspectos relevantes de na- implícita ú rraciones leídas para profundizar su haciendo inferencias a partir de la comprensión: información del texto y de sus expe- ú interpretando el lenguaje figurado riencias y conocimientos presente en el texto Ú46"
+          "descripcion": "Analizar aspectos relevantes de narraciones leídas para profundizar su comprensión: • interpretando el lenguaje figurado presente en el texto • expresando opiniones sobre las actitudes y acciones de los personajes y fundamentándolas con ejemplos del texto • determinando las consecuencias de hechos o acciones • describiendo el ambiente y las costumbres representadas en el texto • explicando las características físicas y sicológicas de los personajes que son relevantes para el desarrollo de la historia • comparando textos de autores diferentes y justificando su preferencia por alguno"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer independientemente y comprender textos no literarios (cartas, biografías, relatos históricos, libros y artículos informativos, noticias, etc.) para ampliar su conocimiento del mundo y formarse una opinión: • extrayendo información explícita e implícita • haciendo inferencias a partir de la información del texto y de sus experiencias y conocimientos • relacionando la información de imágenes, gráficos, tablas, mapas o diagramas, con el texto en el cual están insertos • interpretando expresiones en lenguaje figurado • comparando información • formulando una opinión sobre algún aspecto de la lectura • fundamentando su opinión con información del texto o sus conocimientos previos"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "OA 2 Comprender textos aplicando estra- son relevantes para el desarrollo de la tegias de comprensión lectora; por historia ú ejemplo: comparando textos de autores dife- ú relacionar la información del texto rentes y justificando su preferencia con sus experiencias y conocimientos por alguno ú releer lo que no fue comprendido ú formular preguntas sobre lo leído y"
+          "descripcion": "Comprender textos aplicando estrategias de comprensión lectora; por ejemplo: • relacionar la información del texto con sus experiencias y conocimientos • releer lo que no fue comprendido • formular preguntas sobre lo leído y responderlas"
         },
         {
           "codigo": "OA 7",
-          "descripcion": "OA 7 Evaluar críticamente la información tengan una estructura clara ú presente en textos de diversa proce- utilicen conectores adecuados ú dencia: incluyan descripciones y diálogo (si es ú determinando quién es el emisor, pertinente) para desarrollar la trama, cuál es su propósito y a quién dirige los personajes y el ambiente el mensaje ú evaluando si un texto entrega sufi-"
-        },
-        {
-          "codigo": "OA 11",
-          "descripcion": "OA 11 Buscar y seleccionar la información satisfacer un propósito y transmitir más relevante sobre un tema en inter- sus ideas con claridad. Durante este net, libros, diarios, revistas, enciclope- proceso: ú dias, atlas, etc., para llevar a cabo una desarrollan las ideas agregando infor- investigación. mación ú emplean un vocabulario preciso y"
-        },
-        {
-          "codigo": "OA 24",
-          "descripcion": "OA 24 Comprender textos orales (explicacio- nes, instrucciones, noticias, documen-"
-        },
-        {
-          "codigo": "OA 15",
-          "descripcion": "OA 15 Escribir artículos informativos para ciente información para responder comunicar información sobre un tema: ú una determinada pregunta o cumplir presentando el tema en una oración ú un propósito desarrollando una idea central por párrafo ú"
-        },
-        {
-          "codigo": "OA 17",
-          "descripcion": "OA 17 Planificar sus textos: ú para satisfacer diversos propósitos estableciendo propósito y destinatario ú (seleccionar textos, investigar sobre generando ideas a partir de sus co- un tema, informarse sobre actualidad, nocimientos e investigación ú etc.), adecuando su comportamiento organizando las ideas que compon- y cuidando el material para permitir el drán su escrito trabajo y la lectura de los demás."
-        },
-        {
-          "codigo": "OA 18",
-          "descripcion": "OA 18 Escribir, revisar y editar sus textos para"
+          "descripcion": "Evaluar críticamente la información presente en textos de diversa procedencia: • determinando quién es el emisor, cuál es su propósito y a quién dirige el mensaje • evaluando si un texto entrega suficiente información para responder una determinada pregunta o cumplir un propósito"
         }
       ]
     },
@@ -51,44 +32,32 @@
       "nombre": "Unidad 2 — Lectura y comprensión, Escritura y producción de textos, Comunicación oral",
       "oa": [
         {
-          "codigo": "OA 14",
-          "descripcion": "OA 14 Escribir creativamente narraciones mientos previos (relatos de experiencias personales, noticias, cuentos, etc.) que: ú"
-        },
-        {
           "codigo": "OA 3",
-          "descripcion": "OA 3 buscan favorecer el desarrollo integral ú Relacionan situaciones de la vida cotidiana con versos de los Leer y familiarizarse con un am- de los estudiantes. En cada unidad se textos leídos en clases o independientemente. plio repertorio de literatura para aumentar su conocimiento del ú Mencionan poemas que han leído. mundo, desarrollar su imagina- ú Relacionan aspectos de un poema leído y comentado en explicitan los"
-        },
-        {
-          "codigo": "OA 20",
-          "descripcion": "OA 20 Distinguir matices entre sinónimos al ú historia leer, hablar y escribir para ampliar su describiendo a los personajes según comprensión y capacidad expresiva. su manera de hablar y de compor- tarse"
+          "descripcion": "Leer y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo, desarrollar su imaginación y reconocer su valor social y cultural; por ejemplo: • poemas • cuentos folclóricos y de autor • fábulas • leyendas • mitos • otros"
         },
         {
           "codigo": "OA 4",
-          "descripcion": "OA 4 Analizar aspectos relevantes de na- implícita ú rraciones leídas para profundizar su haciendo inferencias a partir de la comprensión: información del texto y de sus expe- ú interpretando el lenguaje figurado riencias y conocimientos presente en el texto Ú46"
-        },
-        {
-          "codigo": "OA 18",
-          "descripcion": "OA 18 Escribir, revisar y editar sus textos para"
-        },
-        {
-          "codigo": "OA 21",
-          "descripcion": "OA 21 Conjugar correctamente los verbos regulares al utilizarlos en sus produc-"
+          "descripcion": "Analizar aspectos relevantes de narraciones leídas para profundizar su comprensión: • interpretando el lenguaje figurado presente en el texto • expresando opiniones sobre las actitudes y acciones de los personajes y fundamentándolas con ejemplos del texto • determinando las consecuencias de hechos o acciones • describiendo el ambiente y las costumbres representadas en el texto • explicando las características físicas y sicológicas de los personajes que son relevantes para el desarrollo de la historia • comparando textos de autores diferentes y justificando su preferencia por alguno"
         },
         {
           "codigo": "OA 5",
-          "descripcion": "OA 5"
+          "descripcion": "Analizar aspectos relevantes de diversos poemas para profundizar su comprensión: • explicando cómo el lenguaje poético que emplea el autor apela a los sentidos, sugiere estados de ánimo y crea imágenes en el lector • identificando personificaciones y comparaciones y explicando su significado dentro del poema • distinguiendo los elementos formales de la poesía (rima asonante y consonante, verso y estrofa)"
         },
         {
-          "codigo": "OA 22",
-          "descripcion": "OA 22 Escribir correctamente para facilitar la úú aceptando sugerencias comprensión por parte del lector, apli- haciendo comentarios en los mo- cando las reglas ortográficas aprendi- mentos adecuados ú das en años anteriores, además de: mostrando acuerdo o desacuerdo ú uso de c-s-z con respeto ú ú raya para indicar diálogo fundamentando su postura ú acento diacrítico y dierético ú coma en frases explicativas"
+          "codigo": "OA 14",
+          "descripcion": "Escribir creativamente narraciones (relatos de experiencias personales, noticias, cuentos, etc.) que: • tengan una estructura clara • utilicen conectores adecuados • incluyan descripciones y diálogo (si es pertinente) para desarrollar la trama, los personajes y el ambiente"
         },
         {
-          "codigo": "OA 26",
-          "descripcion": "OA 26 Dialogar para compartir y desarrollar ciones escritas. ideas y buscar acuerdos: ú manteniendo el foco en un tema"
+          "codigo": "OA 20",
+          "descripcion": "Distinguir matices entre sinónimos al leer, hablar y escribir para ampliar su comprensión y capacidad expresiva."
         },
         {
-          "codigo": "OA 30",
-          "descripcion": "OA 30 Producir textos orales planificados de ú conjugando correctamente los ver- diverso tipo para desarrollar su capaci- bos dad expresiva: ú ú pronunciando claramente y usando poemas ú un volumen audible, entonación, narraciones (contar una historia, des- pausas y énfasis adecuados cribir una actividad, relatar noticias, ú usando gestos y posturas acordes a la testimonios, etc.) ú situación dramatizaciones ú usando material de apoyo (power point, papelógrafo, objetos, etc.) de manera efectiva"
+          "codigo": "OA 18",
+          "descripcion": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: • desarrollan las ideas agregando información • emplean un vocabulario preciso y variado, y un registro adecuado • releen a medida que escriben • aseguran la coherencia y agregan conectores • editan, en forma independiente, aspectos de ortografía y presentación • utilizan las herramientas del procesador de textos para buscar sinónimos, corregir ortografía y gramática, y dar formato (cuando escriben en computador)"
+        },
+        {
+          "codigo": "OA 21",
+          "descripcion": "Conjugar correctamente los verbos regulares al utilizarlos en sus producciones escritas."
         }
       ]
     },
@@ -97,39 +66,27 @@
       "oa": [
         {
           "codigo": "OA 3",
-          "descripcion": "OA 3 buscan favorecer el desarrollo integral ú Relacionan situaciones de la vida cotidiana con versos de los Leer y familiarizarse con un am- de los estudiantes. En cada unidad se textos leídos en clases o independientemente. plio repertorio de literatura para aumentar su conocimiento del ú Mencionan poemas que han leído. mundo, desarrollar su imagina- ú Relacionan aspectos de un poema leído y comentado en explicitan los"
-        },
-        {
-          "codigo": "OA 18",
-          "descripcion": "OA 18 Escribir, revisar y editar sus textos para"
-        },
-        {
-          "codigo": "OA 22",
-          "descripcion": "OA 22 Escribir correctamente para facilitar la úú aceptando sugerencias comprensión por parte del lector, apli- haciendo comentarios en los mo- cando las reglas ortográficas aprendi- mentos adecuados ú das en años anteriores, además de: mostrando acuerdo o desacuerdo ú uso de c-s-z con respeto ú ú raya para indicar diálogo fundamentando su postura ú acento diacrítico y dierético ú coma en frases explicativas"
+          "descripcion": "Leer y familiarizarse con un amplio repertorio de literatura para aumentar su conocimiento del mundo, desarrollar su imaginación y reconocer su valor social y cultural; por ejemplo: • novelas • otros"
         },
         {
           "codigo": "OA 4",
-          "descripcion": "OA 4 Analizar aspectos relevantes de na- implícita ú rraciones leídas para profundizar su haciendo inferencias a partir de la comprensión: información del texto y de sus expe- ú interpretando el lenguaje figurado riencias y conocimientos presente en el texto Ú46"
+          "descripcion": "Analizar aspectos relevantes de narraciones leídas para profundizar su comprensión: • interpretando el lenguaje figurado presente en el texto • expresando opiniones sobre las actitudes y acciones de los personajes y fundamentándolas con ejemplos del texto • determinando las consecuencias de hechos o acciones • describiendo el ambiente y las costumbres representadas en el texto • explicando las características físicas y sicológicas de los personajes que son relevantes para el desarrollo de la historia • comparando textos de autores diferentes y justificando su preferencia por alguno"
         },
         {
           "codigo": "OA 16",
-          "descripcion": "OA 16 Escribir frecuentemente para com- investigación, recordar detalles, etc. partir impresiones sobre sus lecturas, desarrollando un tema relevante del"
+          "descripcion": "Escribir frecuentemente para compartir impresiones sobre sus lecturas, desarrollando un tema relevante del texto leído y fundamentando sus comentarios con ejemplos."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: • desarrollan las ideas agregando información • emplean un vocabulario preciso y variado, y un registro adecuado • releen a medida que escriben • aseguran la coherencia y agregan conectores • editan, en forma independiente, aspectos de ortografía y presentación • utilizan las herramientas del procesador de textos para buscar sinónimos, corregir ortografía y gramática, y dar formato (cuando escriben en computador)"
+        },
+        {
+          "codigo": "OA 22",
+          "descripcion": "Escribir correctamente para facilitar la comprensión por parte del lector, aplicando las reglas ortográficas aprendidas en años anteriores, además de: • uso de c-s-z • acento diacrítico y dierético"
         },
         {
           "codigo": "OA 24",
-          "descripcion": "OA 24 Comprender textos orales (explicacio- nes, instrucciones, noticias, documen-"
-        },
-        {
-          "codigo": "OA 25",
-          "descripcion": "OA 25 Apreciar obras de teatro, películas o de textos escuchados o leídos. representaciones: ú discutiendo aspectos relevantes de la"
-        },
-        {
-          "codigo": "OA 26",
-          "descripcion": "OA 26 Dialogar para compartir y desarrollar ciones escritas. ideas y buscar acuerdos: ú manteniendo el foco en un tema"
-        },
-        {
-          "codigo": "OA 30",
-          "descripcion": "OA 30 Producir textos orales planificados de ú conjugando correctamente los ver- diverso tipo para desarrollar su capaci- bos dad expresiva: ú ú pronunciando claramente y usando poemas ú un volumen audible, entonación, narraciones (contar una historia, des- pausas y énfasis adecuados cribir una actividad, relatar noticias, ú usando gestos y posturas acordes a la testimonios, etc.) ú situación dramatizaciones ú usando material de apoyo (power point, papelógrafo, objetos, etc.) de manera efectiva"
+          "descripcion": "Comprender textos orales (explicaciones, instrucciones, noticias, documentales, entrevistas, testimonios, relatos, etc.) para obtener información y desarrollar su curiosidad por el mundo: • relacionando las ideas escuchadas con sus experiencias personales y sus conocimientos previos • extrayendo y registrando la información relevante • formulando preguntas al profesor o a los compañeros para comprender o elaborar una idea, o aclarar el significado de una palabra • comparando información dentro del texto o con otros textos • formulando y fundamentando una opinión sobre lo escuchado"
         }
       ]
     },
@@ -137,76 +94,32 @@
       "nombre": "Unidad 4 — Lectura y comprensión, Escritura y producción de textos, Comunicación oral",
       "oa": [
         {
-          "codigo": "OA 8",
-          "descripcion": "OA 8 Sintetizar y registrar las ideas princi- agregando las fuentes utilizadas pales de textos leídos para satisfacer propósitos como estudiar, hacer una"
-        },
-        {
-          "codigo": "OA 15",
-          "descripcion": "OA 15 Escribir artículos informativos para ciente información para responder comunicar información sobre un tema: ú una determinada pregunta o cumplir presentando el tema en una oración ú un propósito desarrollando una idea central por párrafo ú"
-        },
-        {
           "codigo": "OA 6",
-          "descripcion": "OA 6 Leer independientemente y compren- ú leyendas der textos no literarios (cartas, biogra- ú mitos fías, relatos históricos, libros y artículos ú novelas informativos, noticias, etc.) para ampliar ú historietas su conocimiento del mundo y formarse ú otros una opinión: ú extrayendo información explícita e"
-        },
-        {
-          "codigo": "OA 17",
-          "descripcion": "OA 17 Planificar sus textos: ú para satisfacer diversos propósitos estableciendo propósito y destinatario ú (seleccionar textos, investigar sobre generando ideas a partir de sus co- un tema, informarse sobre actualidad, nocimientos e investigación ú etc.), adecuando su comportamiento organizando las ideas que compon- y cuidando el material para permitir el drán su escrito trabajo y la lectura de los demás."
+          "descripcion": "Leer independientemente y comprender textos no literarios (cartas, biografías, relatos históricos, libros y artículos informativos, noticias, etc.) para ampliar su conocimiento del mundo y formarse una opinión: • extrayendo información explícita e implícita • haciendo inferencias a partir de la información del texto y de sus experiencias y conocimientos • relacionando la información de imágenes, gráficos, tablas, mapas o diagramas, con el texto en el cual están insertos • interpretando expresiones en lenguaje figurado • comparando información • formulando una opinión sobre algún aspecto de la lectura • fundamentando su opinión con información del texto o sus conocimientos previos"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "OA 2 Comprender textos aplicando estra- son relevantes para el desarrollo de la tegias de comprensión lectora; por historia ú ejemplo: comparando textos de autores dife- ú relacionar la información del texto rentes y justificando su preferencia con sus experiencias y conocimientos por alguno ú releer lo que no fue comprendido ú formular preguntas sobre lo leído y"
-        },
-        {
-          "codigo": "OA 18",
-          "descripcion": "OA 18 Escribir, revisar y editar sus textos para"
+          "descripcion": "Comprender textos aplicando estrategias de comprensión lectora; por ejemplo: • relacionar la información del texto con sus experiencias y conocimientos • identificar las ideas más importantes de acuerdo con el propósito del lector • organizar la información en esquemas o mapas conceptuales"
         },
         {
           "codigo": "OA 7",
-          "descripcion": "OA 7 Evaluar críticamente la información tengan una estructura clara ú presente en textos de diversa proce- utilicen conectores adecuados ú dencia: incluyan descripciones y diálogo (si es ú determinando quién es el emisor, pertinente) para desarrollar la trama, cuál es su propósito y a quién dirige los personajes y el ambiente el mensaje ú evaluando si un texto entrega sufi-"
+          "descripcion": "Evaluar críticamente la información presente en textos de diversa procedencia: • determinando quién es el emisor, cuál es su propósito y a quién dirige el mensaje • evaluando si un texto entrega suficiente información para responder una determinada pregunta o cumplir un propósito"
         },
         {
-          "codigo": "OA 24",
-          "descripcion": "OA 24 Comprender textos orales (explicacio- nes, instrucciones, noticias, documen-"
+          "codigo": "OA 8",
+          "descripcion": "Sintetizar y registrar las ideas principales de textos leídos para satisfacer propósitos como estudiar, hacer una investigación, recordar detalles, etc."
         },
         {
-          "codigo": "OA 28",
-          "descripcion": "OA 28 Expresarse de manera clara y efectiva tales, entrevistas, testimonios, relatos, en exposiciones orales para comunicar etc.) para obtener información y desa- temas de su interés: ú rrollar su curiosidad por el mundo: presentando las ideas de manera ú relacionando las ideas escuchadas coherente y cohesiva ú con sus experiencias personales y sus fundamentando sus planteamientos conocimientos previos con ejemplos y datos ú ú extrayendo y registrando la informa- organizando las ideas en introduc- ción relevante ción, desarrollo y cierre Ú48"
+          "codigo": "OA 15",
+          "descripcion": "Escribir artículos informativos para comunicar información sobre un tema: • presentando el tema en una oración • desarrollando una idea central por párrafo • agregando las fuentes utilizadas"
         },
         {
-          "codigo": "OA 9",
-          "descripcion": "OA 9 Desarrollar el gusto por la lectura, le- texto leído y fundamentando sus yendo habitualmente diversos textos. comentarios con ejemplos."
+          "codigo": "OA 17",
+          "descripcion": "Planificar sus textos: • estableciendo propósito y destinatario • generando ideas a partir de sus conocimientos e investigación • organizando las ideas que compondrán su escrito"
         },
         {
-          "codigo": "OA 23",
-          "descripcion": "OA 23) Incorporar de manera pertinente en sus inter- _ venciones orales el vocabulario nuevo extraído de Leer de manera fluida textos variados apropiados textos escuchados o leídos. a su edad: ("
-        },
-        {
-          "codigo": "OA 1",
-          "descripcion": "OA 1 Leer de manera fluida textos variados tudes y acciones de los personajes y apropiados a su edad: fundamentándolas con ejemplos del ú pronunciando las palabras con preci- texto ú sión determinando las consecuencias de ú respetando la prosodia indicada por hechos y acciones ú todos los signos de puntuación describiendo el ambiente y las cos- ú decodificando de manera automática tumbres representadas en el texto ú la mayoría de las palabras del texto explicando las características físicas y sicológicas de los personajes que"
-        },
-        {
-          "codigo": "OA 10",
-          "descripcion": "OA 10 Asistir habitualmente a la biblioteca"
-        },
-        {
-          "codigo": "OA 12",
-          "descripcion": "OA 12 Aplicar estrategias para determinar el variado, y un registro adecuado ú significado de palabras nuevas: releen a medida que escriben ú ú claves del texto (para determinar aseguran la coherencia y agregan qué acepción es pertinente según el conectores contexto)Lenguaje y Comunicación"
-        },
-        {
-          "codigo": "OA 13",
-          "descripcion": "OA 13 Escribir frecuentemente, para desarro- ú comparando información llar la creatividad y expresar sus ideas, ú formulando una opinión sobre algún textos como poemas, diarios de vida, aspecto de la lectura cuentos, anécdotas, cartas, blogs, etc. ú fundamentando su opinión con información del texto o sus conoci-"
-        },
-        {
-          "codigo": "OA 19",
-          "descripcion": "OA 19 Incorporar de manera pertinente en la escritura el vocabulario nuevo extraído"
-        },
-        {
-          "codigo": "OA 29",
-          "descripcion": "OA 29 Incorporar de manera pertinente en preciso y un registro formal, adecua- sus intervenciones orales el vocabula- do a la situación comunicativa rio nuevo extraído de textos escucha- ú reemplazando algunas construccio- dos o leídos. nes sintácticas familiares por otras más variadas"
-        },
-        {
-          "codigo": "OA 27",
-          "descripcion": "OA 27 Interactuar de acuerdo con las convenciones sociales en diferentes COMUNICACIÓN ORAL situaciones: úOA 23 Comprender y disfrutar versiones presentarse a sí mismo y a otros ú completas de obras de la literatura, saludar ú narradas o leídas por un adulto, como: preguntar ú ú cuentos folclóricos y de autor expresar opiniones, sentimientos e ú poemas ideas ú ú mitos y leyendas otras situaciones que requieran el ú capítulos de novelas uso de fórmulas de cortesía como por favor, gracias, perdón, permiso"
+          "codigo": "OA 18",
+          "descripcion": "Escribir, revisar y editar sus textos para satisfacer un propósito y transmitir sus ideas con claridad. Durante este proceso: • desarrollan las ideas agregando información • emplean un vocabulario preciso y variado, y un registro adecuado • releen a medida que escriben • aseguran la coherencia y agregan conectores • editan, en forma independiente, aspectos de ortografía y presentación • utilizan las herramientas del procesador de textos para buscar sinónimos, corregir ortografía y gramática, y dar formato (cuando escriben en computador)"
         }
       ]
     }
