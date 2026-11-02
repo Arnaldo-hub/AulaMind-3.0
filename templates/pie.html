@@ -33,7 +33,9 @@
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
-        .form-group { display: flex; flex-direction: column; }
+        .form-grid > * { min-width: 0; }
+        .form-group { display: flex; flex-direction: column; min-width: 0; }
+        .curriculum-select { grid-column: 1 / -1; }
         .form-group label {
             font-size: 0.875rem;
             font-weight: 600;
@@ -62,19 +64,128 @@
             min-height: 80px;
         }
         .form-group select {
+            box-sizing: border-box;
             width: 100%;
+            max-width: 100%;
             min-width: 0;
             text-overflow: ellipsis;
         }
+        .objective-picker {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+        }
+        .objective-trigger {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            width: 100%;
+            min-height: 43px;
+            padding: 0.625rem 0.875rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            background: #fff;
+            color: #1f2937;
+            font: inherit;
+            font-size: 0.9375rem;
+            text-align: left;
+            cursor: pointer;
+        }
+        .objective-trigger:disabled {
+            background: #f3f4f6;
+            color: #6b7280;
+            cursor: not-allowed;
+        }
+        .objective-trigger:focus-visible,
+        .objective-list:focus-visible {
+            outline: 3px solid rgba(37,99,235,0.22);
+            outline-offset: 2px;
+            border-color: #2563eb;
+        }
+        .objective-menu {
+            position: static;
+            width: 100%;
+            margin-top: 0.375rem;
+            overflow: hidden;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            background: #fff;
+            box-shadow: 0 6px 16px rgba(15,23,42,0.10);
+        }
+        .objective-menu[hidden] { display: none; }
+        .objective-list {
+            max-height: 240px;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+        .objective-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+        }
+        .objective-option:last-child { border-bottom: 0; }
+        .objective-option:hover,
+        .objective-option.active {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+        .objective-option[aria-selected="true"]::after {
+            content: "Seleccionado";
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .objective-picker-help {
+            display: block;
+            margin-top: 0.5rem;
+            color: #64748b;
+            font-size: 0.8125rem;
+            line-height: 1.45;
+        }
+        .unit-detail,
         .objective-detail {
             grid-column: 1 / -1;
-            padding: 0.875rem 1rem;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 100%;
+            overflow-wrap: anywhere;
+        }
+        .unit-detail {
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            background: #f8fafc;
+            color: #334155;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .objective-detail {
+            padding: 1rem 1.125rem;
             border: 1px solid #bfdbfe;
             border-radius: 0.5rem;
             background: #eff6ff;
             color: #1e3a8a;
+            font-size: 0.9375rem;
+            line-height: 1.65;
+        }
+        .objective-detail-code {
+            display: block;
+            margin-bottom: 0.375rem;
+            color: #1d4ed8;
             font-size: 0.875rem;
-            line-height: 1.55;
+        }
+        .objective-detail p {
+            margin: 0;
             white-space: pre-wrap;
             overflow-wrap: anywhere;
         }
@@ -125,6 +236,11 @@
             max-height: 600px;
             overflow-y: auto;
             font-size: 0.9375rem;
+        }
+        .history-table-wrap {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
         }
         .history-table {
             width: 100%;
@@ -242,17 +358,40 @@
                                 <option value="">Selecciona una asignatura...</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Unidad <span style="color:#ef4444">*</span></label>
+                        <div class="form-group curriculum-select">
+                            <label for="unidad">Unidad <span style="color:#ef4444">*</span></label>
                             <select id="unidad" name="unidad" required disabled>
                                 <option value="">Selecciona una unidad...</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Objetivo de Aprendizaje <span style="color:#ef4444">*</span></label>
-                            <select id="objetivo" name="objetivo" required disabled>
+                        <div id="unidadDetalle" class="unit-detail" style="display:none;" aria-live="polite"></div>
+                        <div class="form-group curriculum-select">
+                            <label id="objetivoLabel">Objetivo de Aprendizaje <span style="color:#ef4444">*</span></label>
+                            <div class="objective-picker" id="objetivoPicker">
+                                <button type="button"
+                                        id="objetivoTrigger"
+                                        class="objective-trigger"
+                                        aria-haspopup="listbox"
+                                        aria-expanded="false"
+                                        aria-controls="objetivoLista"
+                                        aria-labelledby="objetivoLabel objetivoTriggerText"
+                                        aria-required="true"
+                                        disabled>
+                                    <span id="objetivoTriggerText">Selecciona un OA/AE...</span>
+                                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div id="objetivoMenu" class="objective-menu" hidden>
+                                    <div id="objetivoLista"
+                                         class="objective-list"
+                                         role="listbox"
+                                         aria-labelledby="objetivoLabel"
+                                         tabindex="0"></div>
+                                </div>
+                            </div>
+                            <select id="objetivo" name="objetivo" disabled hidden aria-hidden="true" tabindex="-1">
                                 <option value="">Selecciona un OA/AE...</option>
                             </select>
+                            <small class="objective-picker-help">Pasa el mouse sobre un código para leer su descripción. También puedes usar las flechas del teclado.</small>
                         </div>
                         <div id="objetivoDetalle" class="objective-detail" style="display:none;" aria-live="polite"></div>
                         <div class="form-group" style="grid-column: 1 / -1;">
@@ -330,19 +469,21 @@
 
             <div class="pie-card">
                 <h2><i class="fa-solid fa-clock-rotate-left"></i> Historial de adecuaciones PIE</h2>
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Curso</th>
-                            <th>Asignatura</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="historyBody">
-                        <tr><td colspan="4" class="empty-state">Cargando historial...</td></tr>
-                    </tbody>
-                </table>
+                <div class="history-table-wrap">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Curso</th>
+                                <th>Asignatura</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyBody">
+                            <tr><td colspan="4" class="empty-state">Cargando historial...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </section>
@@ -377,7 +518,7 @@ window.PIE_CONFIG = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="{{ url_for('static', filename='js/pie.js', v='pie-curriculum-20261103') }}"></script>
+<script src="{{ url_for('static', filename='js/pie.js', v='pie-curriculum-20261103-v3') }}"></script>
 
 </body>
 </html>
