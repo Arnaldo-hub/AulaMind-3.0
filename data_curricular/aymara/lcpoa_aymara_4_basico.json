@@ -1,0 +1,100 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Aymara",
+  "curso": "4° básico",
+  "fuente": "Propuesta Pueblos Originarios.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Disfrutar y comprender relatos orales fundacionales o cosmogónicos del pueblo que corresponda, comprendiendo conceptos en lengua indígena o en castellano, culturalmente significativos, valorando la cosmovisión que presentan."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Disfrutar y comprender relatos orales fundacionales o cosmogónicos del pueblo que corresponda, comprendiendo conceptos y/o expresiones en lengua indígena o en castellano, culturalmente significativas, valorando la cosmovisión que presentan y expresando opiniones fundamentadas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Disfrutar y comprender relatos orales fundacionales o cosmogónicos en lengua indígena del pueblo que corresponda, valorando la cosmovisión y expresando opiniones fundamentadas, utilizando la lengua que corresponda."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comunicar oralmente algunas ideas y comentarios referidos a distintos aspectos de la cosmovisión del pueblo, en diálogos, conversaciones o exposiciones, utilizando algunas palabras en lengua indígena o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Comunicar oralmente algunas ideas y comentarios referidos a distintos aspectos de la cosmovisión del pueblo, en diálogos, conversaciones o exposiciones, utilizando palabras y/o expresiones en lengua indígena o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Expresar oralmente en lengua indígena algunas ideas y comentarios en diálogos, conversaciones o exposiciones, referidos a distintos aspectos de la cosmovisión del pueblo indígena que corresponda."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3",
+      "oa": [
+        {
+          "codigo": "OA 7",
+          "descripcion": "Comprender textos breves que incluyan algunas palabras en lengua indígena o en castellano, culturalmente significativas, planteando y fundamentando opiniones respecto de su contenido cultural."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Desarrollar la escritura para transmitir mensajes que incluyan algunas palabras en lengua indígena o en castellano, culturalmente significativas, en diversas situaciones del medio natural, social y cultural."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Comprender textos breves que incluyan palabras o expresiones en lengua indígena, o en castellano, culturalmente significativas, planteando y fundamentando opiniones respecto de su contenido cultural."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Desarrollar la escritura para transmitir mensajes que incluyan expresiones o frases en lengua indígena o en castellano, culturalmente significativas, en diversas situaciones del medio natural, social y cultural."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Comprender textos propios de su cultura, escritos en lengua indígena, planteando y fundamentando opiniones respecto de su contenido cultural, utilizando la lengua que corresponda."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Desarrollar la escritura en lengua indígena para transmitir mensajes de diversas situaciones del medio natural, social y cultural, incorporando palabras que sirvan para indicar acciones."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4",
+      "oa": [
+        {
+          "codigo": "OA 13",
+          "descripcion": "Reconocer la presencia de la lengua indígena en expresiones artísticas – textiles, musicales, literarias, entre otros contextos–, valorando su importancia para la identidad del pueblo que corresponda."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para contar y registrar experiencias cotidianas y significativas de la vida familiar y comunitaria, incorporando algunas palabras en lengua indígena o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Reconocer y representar expresiones de la lengua indígena en contextos artísticos y de producción ancestral (textilería, alfarería, entre otros), valorando su importancia para la identidad del pueblo que corresponda."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para contar y registrar experiencias cotidianas y significativas de la vida familiar y comunitaria, incorporando expresiones o frases en lengua indígena o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "Valorar y comunicar el sentido e importancia de las distintas expresiones de la lengua indígena, en sus diferentes contextos de uso de la vida familiar y comunitaria, estableciendo relaciones con la cosmovisión del pueblo que corresponda."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para contar y registrar experiencias cotidianas y significativas de la vida familiar y comunitaria en lengua indígena."
+        }
+      ]
+    }
+  ]
+}

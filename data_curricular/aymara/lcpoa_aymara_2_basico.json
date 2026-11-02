@@ -2,25 +2,34 @@
   "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
   "pueblo": "Aymara",
   "curso": "2° básico",
+  "fuente": "Programa Pueblos originarios.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Jallupacha: relatos, territorio, ceremonias y patrimonio aymara",
       "oa": [
         {
-          "codigo": "LC02-U1-LS01",
-          "descripcion": "Disfrutar y comprender relatos orales breves, propios de la tradición de los pueblos, reconociendo algunas palabras en lengua indígena o en castellano culturalmente significativas y valorando su importancia."
+          "codigo": "OA 1",
+          "descripcion": "Disfrutar y comprender relatos orales breves, propios de la tradición de los pueblos, reconociendo algunas palabras en lengua indígena o en castellano, culturalmente significativas, valorando la importancia que tienen estos para los pueblos a los que pertenecen."
         },
         {
-          "codigo": "LC02-U1-T01",
+          "codigo": "OA 2",
+          "descripcion": "Disfrutar y comprender relatos orales breves, propios de la tradición de los pueblos, reconociendo palabras y/o expresiones en lengua indígena o en castellano, culturalmente significativas, valorando la importancia que tienen estos para los pueblos a los que pertenecen."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Disfrutar y comprender relatos orales breves, en lengua indígena, propios de la tradición de los pueblos, valorando la importancia que tienen estos para los pueblos a los que pertenecen."
+        },
+        {
+          "codigo": "OA 4",
           "descripcion": "Reconocer espacios significativos presentes en el territorio, valorando la importancia que tienen en la visión de mundo de cada pueblo indígena."
         },
         {
-          "codigo": "LC02-U1-C01",
-          "descripcion": "Conocer eventos socioculturales y ceremoniales propios del pueblo indígena, considerando sus convenciones sociales, momentos y espacios rituales."
+          "codigo": "OA 5",
+          "descripcion": "Conocer eventos socioculturales y ceremoniales propios del pueblo indígena que corresponda, considerando sus convenciones sociales, momentos y espacios rituales."
         },
         {
-          "codigo": "LC02-U1-P01",
-          "descripcion": "Reconocer diversas expresiones del patrimonio cultural de su comunidad, territorio y pueblo indígena."
+          "codigo": "OA 6",
+          "descripcion": "Reconocer diversas expresiones del patrimonio cultural de su comunidad, territorio y pueblo indígena que corresponda, como manifestaciones propias, relativas a: comidas, ceremonias, sitios arqueológicos, espacios naturales, entre otras."
         }
       ]
     },
@@ -28,19 +37,27 @@
       "nombre": "Unidad 2 — Yapuchasiña, alax pacha y mara t’aqa: agricultura, cosmos y cambio de ciclo",
       "oa": [
         {
-          "codigo": "LC02-U2-LS01",
+          "codigo": "OA 7",
           "descripcion": "Interactuar con textos escritos en castellano que incluyan algunas palabras en lengua indígena o de culturas originarias afines, comprendiendo diferentes aspectos de su contenido."
         },
         {
-          "codigo": "LC02-U2-T01",
-          "descripcion": "Conocer aspectos centrales de la historia de la comunidad o localidad, rescatando elementos tanto del pasado como del presente del pueblo indígena."
+          "codigo": "OA 8",
+          "descripcion": "Interactuar con textos escritos en castellano que incluyan palabras o expresiones en lengua indígena, comprendiendo diferentes aspectos de su contenido."
         },
         {
-          "codigo": "LC02-U2-C01",
-          "descripcion": "Comprender los valores sociocomunitarios presentes en las relaciones de convivencia familiar y comunitaria, como reciprocidad, respeto y ayuda mutua."
+          "codigo": "OA 9",
+          "descripcion": "Interactuar con textos escritos en lengua indígena, con temáticas propias del pueblo que corresponda, comprendiendo diferentes aspectos de su contenido."
         },
         {
-          "codigo": "LC02-U2-P01",
+          "codigo": "OA 10",
+          "descripcion": "Conocer aspectos centrales de la historia de la comunidad o localidad, rescatando elementos tanto del pasado como del presente del pueblo indígena que corresponda."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Comprender los valores sociocomunitarios presentes en las relaciones de convivencia familiar y comunitaria (reciprocidad, respeto, ayuda mutua, entre otros)."
+        },
+        {
+          "codigo": "OA 12",
           "descripcion": "Comprender la importancia de la relación entre el ser humano, la naturaleza y el cosmos, considerando la perspectiva indígena de la ciencia."
         }
       ]
@@ -49,20 +66,28 @@
       "nombre": "Unidad 3 — Markasax uñt’aña, Pachamama y actividades de invierno",
       "oa": [
         {
-          "codigo": "LC02-U3-LS01",
+          "codigo": "OA 13",
           "descripcion": "Experimentar con la escritura de palabras en lengua indígena o en castellano, considerando elementos significativos propios de la cultura."
         },
         {
-          "codigo": "LC02-U3-T01",
+          "codigo": "OA 14",
+          "descripcion": "Experimentar con la escritura de palabras y frases en lengua indígena, considerando elementos significativos propios de la cultura."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Experimentar con la escritura de palabras, frases y oraciones simples en lengua indígena, considerando elementos significativos propios de la cultura que corresponda."
+        },
+        {
+          "codigo": "OA 16",
           "descripcion": "Valorar diferentes aspectos de la cultura indígena, comprendiendo que ello contribuye a la construcción de la identidad de las personas y pueblos."
         },
         {
-          "codigo": "LC02-U3-C01",
-          "descripcion": "Comprender el significado cultural de principios que permiten una interacción armónica en la vida familiar y comunitaria aymara, como respeto, reciprocidad y complementariedad."
+          "codigo": "OA 17",
+          "descripcion": "Comprender la presencia de elementos espirituales, naturales y cósmicos (divinidades /deidades, entes tutelares, medicina ancestral, el mar, el cielo, los astros, entre otros), en el contexto familiar y comunitario."
         },
         {
-          "codigo": "LC02-U3-P01",
-          "descripcion": "Comprender la importancia de la relación entre el ser humano, la naturaleza y el cosmos desde la visión de la ciencia y la cultura aymara."
+          "codigo": "OA 18",
+          "descripcion": "Realizar diversas expresiones de arte propias del pueblo indígena de forma significativa, respetando las convenciones sociales, los momentos y espacios pertinentes."
         }
       ]
     },
@@ -70,24 +95,40 @@
       "nombre": "Unidad 4 — Mensajes de la naturaleza, costumbres, ganadería y agricultura",
       "oa": [
         {
-          "codigo": "LC02-U4-LS01",
-          "descripcion": "Describir oralmente el medio natural y los mensajes que entrega la naturaleza, utilizando algunas palabras en lengua indígena o en castellano culturalmente significativas."
+          "codigo": "OA 19",
+          "descripcion": "Describir oralmente el medio natural y los mensajes que entrega la naturaleza, utilizando algunas palabras en lengua indígena o en castellano, culturalmente significativas."
         },
         {
-          "codigo": "LC02-U4-LS02",
-          "descripcion": "Utilizar recursos tecnológicos disponibles para escuchar y ver aspectos propios de la cultura aymara."
+          "codigo": "OA 20",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para escuchar y ver aspectos propios de la cultura que corresponda."
         },
         {
-          "codigo": "LC02-U4-T01",
-          "descripcion": "Reconocer elementos culturales e identitarios del pueblo aymara, asociándolos a lugares del territorio."
+          "codigo": "OA 21",
+          "descripcion": "Describir oralmente el medio natural y los mensajes que entrega la naturaleza, utilizando algunas palabras o expresiones en lengua indígena o en castellano, culturalmente significativas."
         },
         {
-          "codigo": "LC02-U4-C01",
-          "descripcion": "Reconocer creencias vinculadas con elementos naturales y espirituales en el entorno familiar y comunitario."
+          "codigo": "OA 22",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para escuchar, ver y transcribir palabras y/o frases en lengua indígena, referidas a aspectos propios de la cultura."
         },
         {
-          "codigo": "LC02-U4-P01",
-          "descripcion": "Reconocer y valorar procesos de creación de expresiones artísticas del pueblo aymara y su relación con convenciones sociales, momentos y espacios propios."
+          "codigo": "OA 23",
+          "descripcion": "Utilizar en diálogos, conversaciones o exposiciones breves, palabras o expresiones en lengua indígena para realizar descripciones del medio natural y explicar los mensajes que entrega la naturaleza."
+        },
+        {
+          "codigo": "OA 24",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para escuchar, ver y transcribir palabras, frases y oraciones simples en la lengua indígena que corresponda."
+        },
+        {
+          "codigo": "OA 25",
+          "descripcion": "Comprender aspectos de la cultura indígena (territorio, lengua e historia) que contribuyen a la construcción de la identidad de las personas y pueblos."
+        },
+        {
+          "codigo": "OA 26",
+          "descripcion": "Comprender la relación que se establece entre los pueblos indígenas y la naturaleza, que permite desarrollar actividades productivas propias de cada cultura."
+        },
+        {
+          "codigo": "OA 27",
+          "descripcion": "Experimentar con técnicas y actividades de producción propias del pueblo indígena, considerando su vinculación con los valores culturales del pueblo que corresponda (reciprocidad, respeto, ayuda mutua, entre otros)."
         }
       ]
     }
