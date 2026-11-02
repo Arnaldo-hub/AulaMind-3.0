@@ -1,0 +1,84 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Kawésqar",
+  "curso": "3° básico",
+  "fuente": "Programa Pueblos Originarios(1).pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Disfrutar y comprender textos orales breves, propios de la tradición de los pueblos, reconociendo algunas palabras en lengua indígena o en castellano, culturalmente significativas, estableciendo relaciones con sus propios conocimientos y los de otros."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Disfrutar y comprender textos orales breves, propios de la tradición de los pueblos reconociendo expresiones y/o frases en lengua indígena o en castellano, culturalmente significativas, estableciendo relaciones con sus propios conocimientos y los de otros."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Comprender aspectos centrales de la historia del pueblo indígena, valorando la importancia que tiene para la comprensión de su presente y la construcción de su futuro."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comunicar oralmente algunas ideas y/o sentimientos en situaciones de la vida personal, familiar o comunitaria, en diálogos, dramatizaciones, conversaciones o exposiciones, utilizando algunas palabras en lengua indígena o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Comunicar oralmente algunas ideas y/o sentimientos en situaciones de la vida personal, familiar o comunitaria, en diálogos, dramatizaciones, conversaciones o exposiciones, utilizando palabras y/o expresiones en lengua indígena, o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Comprender la interrelación que establece el pueblo indígena que corresponda entre el territorio y la vida espiritual, festividades, actividades productivas y otras, que sean significativas para la comunidad."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3",
+      "oa": [
+        {
+          "codigo": "OA 7",
+          "descripcion": "Comprender textos breves que incluyan algunas palabras en lengua indígena o en castellano, culturalmente significativas, relacionando información del texto con sus propios conocimientos, experiencias, emociones y sentimientos."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para expresar ideas, hechos o sentimientos, a partir de creaciones audiovisuales o escritas, referidas a elementos de la cultura indígena, que contengan algunas palabras en lengua indígena o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Comprender textos breves que incluyan palabras o expresiones en lengua indígena o en castellano, culturalmente significativas, relacionando información del texto con sus propios conocimientos, experiencias, emociones y sentimientos."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para expresar ideas, hechos o sentimientos, a partir de creaciones audiovisuales o escritas, referidas a elementos de la cultura indígena, que contengan palabras o expresiones en lengua indígena o en castellano, culturalmente significativas."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Valorar que los pueblos indígenas poseen una cultura y forma de ver el mundo que continúa enriqueciendo la cultura de su localidad y del país."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4",
+      "oa": [
+        {
+          "codigo": "OA 12",
+          "descripcion": "Experimentar con la escritura de palabras en lengua indígena o en castellano, culturalmente significativas, que sirvan para nombrar y caracterizar."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Experimentar con la escritura de palabras y frases simples en lengua indígena o en castellano, culturalmente significativas, que sirvan para nombrar y caracterizar."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Comprender la interrelación que establece el pueblo indígena que corresponda entre el territorio y la vida espiritual, festividades, actividades productivas y otras, que sean significativas para la comunidad."
+        }
+      ]
+    }
+  ]
+}
