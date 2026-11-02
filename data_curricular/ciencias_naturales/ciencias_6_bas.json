@@ -1,33 +1,34 @@
 {
   "asignatura": "Ciencias Naturales",
   "curso": "Ciencias 6° bás",
+  "fuente": "Programa Ciencias Naturales(5).pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Ciencias de la vida, Materia y energía",
       "oa": [
         {
           "codigo": "OA 16",
-          "descripcion": "OA 16 Describir las características de las ca- pas de la Tierra (atmósfera, litósfera e hidrósfera) que posibilitan el desa- rrollo de la vida y proveen recursos para el ser humano, y proponer me- didas de protección de dichas capas."
+          "descripcion": "Describir las características de las capas de la Tierra (atmósfera, litósfera e hidrósfera) que posibilitan el desarrollo de la vida y proveen recursos para el ser humano, y proponer medidas de protección de dichas capas."
         },
         {
           "codigo": "OA 17",
-          "descripcion": "OA 17 Investigar experimentalmente la experimental, los cambios de estado formación del suelo, sus propiedades de la materia, como fusión, evapo- (como color, textura y capacidad de ración, ebullición, condensación, retención de agua) y la importancia solidificación y sublimación. de protegerlo de la contaminación, comunicando sus resultados."
+          "descripcion": "Investigar experimentalmente la formación del suelo, sus propiedades (como color, textura y capacidad de retención de agua) y la importancia de protegerlo de la contaminación, comunicando sus resultados."
         },
         {
           "codigo": "OA 18",
-          "descripcion": "OA 18 Explicar las consecuencias de la ma de energía y la temperatura es una erosión sobre la superficie de la medida de lo caliente de un objeto. Tierra, identificando los agentes que la provocan, como el viento, el agua"
+          "descripcion": "Explicar las consecuencias de la erosión sobre la superficie de la Tierra, identificando los agentes que la provocan, como el viento, el agua y las actividades humanas."
         },
         {
           "codigo": "OA 1",
-          "descripcion": "OA 1 Explicar, a partir de una investigación civos de algunas drogas para la salud, experimental, los requerimientos de proponiendo conductas de protección. agua, dióxido de carbono y energía lumínica para la producción de azúcar CIENCIAS FÍSICAS Y QUÍMICAS y liberación de oxígeno en la foto-"
+          "descripcion": "Explicar, a partir de una investigación experimental, los requerimientos de agua, dióxido de carbono y energía lumínica para la producción de azúcar y liberación de oxígeno en la fotosíntesis, comunicando sus resultados y los aportes de científicos en este campo a través del tiempo."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "OA 2 Representar, por medio de modelos, mente del Sol, dando ejemplos de ello. la transferencia de energía y materia desde los organismos fotosintéticos a"
+          "descripcion": "Representar, por medio de modelos, la transferencia de energía y materia desde los organismos fotosintéticos a otros seres vivos por medio de cadenas y redes alimentarias en diferentes ecosistemas."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "OA 3 Analizar los efectos de la actividad"
+          "descripcion": "Analizar los efectos de la actividad humana sobre las redes alimentarias."
         }
       ]
     },
@@ -36,19 +37,19 @@
       "oa": [
         {
           "codigo": "OA 4",
-          "descripcion": "OA 4 Identificar y describir las funciones de temperatura. las principales estructuras del sistema reproductor humano femenino y"
+          "descripcion": "Identificar y describir las funciones de las principales estructuras del sistema reproductor humano femenino y masculino."
         },
         {
           "codigo": "OA 5",
-          "descripcion": "OA 5 Describir y comparar los cambios que responsable de la energía. se producen en la pubertad en muje- res y hombres, reconociéndola, como"
+          "descripcion": "Describir y comparar los cambios que se producen en la pubertad en mujeres y hombres, reconociéndola como una etapa del desarrollo humano."
         },
         {
           "codigo": "OA 6",
-          "descripcion": "OA 6 laciones simples y breves, en relación con › Identifican la ubicación de los órganos de los sentidos. ubicación y la función de los › Describen los usos de los sentidos en la vida diaria. sentidos proponiendo medidas › Recrean situaciones donde el uso de los sentidos nos pre- el objetivo de aprendizaje al cual están para protegerlos y para vienen de situaciones de riesgos en el hogar, las calles y la prevenir situaciones de riesgo. escuela. asociados, y permiten al profesor evaluar › Mencionan incapacidades producto de la falta de algún sentido. › Dan ejemplo de"
+          "descripcion": "Reconocer los beneficios de realizar actividad física en forma regular y de cuidar la higiene corporal en el período de la pubertad."
         },
         {
           "codigo": "OA 7",
-          "descripcion": "OA 7 de Aprendizaje a trabajar. Entre paréntesis Describir, dar ejemplos y › Dibujan"
+          "descripcion": "Investigar y comunicar los efectos nocivos de algunas drogas para la salud, proponiendo conductas de protección."
         }
       ]
     },
@@ -57,19 +58,19 @@
       "oa": [
         {
           "codigo": "OA 8",
-          "descripcion": "OA 8 Explicar que la energía es necesaria síntesis, comunicando sus resultados para que los objetos cambien y los y los aportes de científicos en este seres vivos realicen sus procesos vitales campo a través del tiempo. y que la mayoría de los recursos ener- géticos proviene directa o indirecta-"
+          "descripcion": "Explicar que la energía es necesaria para que los objetos cambien y los seres vivos realicen sus procesos vitales y que la mayoría de los recursos energéticos proviene directa o indirectamente del Sol, dando ejemplos de ello."
         },
         {
           "codigo": "OA 9",
-          "descripcion": "OA 9 Investigar en forma experimental la otros seres vivos por medio de cade- transformación de la energía de una nas y redes alimentarias en diferentes forma a otra, dando ejemplos y comu- ecosistemas. nicando sus conclusiones."
+          "descripcion": "Investigar en forma experimental la transformación de la energía de una forma a otra, dando ejemplos y comunicando sus conclusiones."
         },
         {
           "codigo": "OA 10",
-          "descripcion": "OA 10 Demostrar, por medio de la inves- humana sobre las redes alimentarias. tigación experimental, que el calor fluye de un objeto caliente a uno frío Cuerpo humano y salud hasta que ambos alcanzan la misma"
+          "descripcion": "Demostrar, por medio de la investigación experimental, que el calor fluye de un objeto caliente a uno frío hasta que ambos alcanzan la misma temperatura."
         },
         {
           "codigo": "OA 11",
-          "descripcion": "OA 11 Clasificar los recursos naturales ener- masculino. géticos en no renovables y renova- bles y proponer medidas para el uso"
+          "descripcion": "Clasificar los recursos naturales energéticos en no renovables y renovables y proponer medidas para el uso responsable de la energía."
         }
       ]
     },
@@ -78,19 +79,19 @@
       "oa": [
         {
           "codigo": "OA 12",
-          "descripcion": "OA 12 Explicar, a partir de modelos, que la una etapa del desarrollo humano. materia está formada por partículas en movimiento en sus estados sólido,"
+          "descripcion": "Explicar, a partir de modelos, que la materia está formada por partículas en movimiento en sus estados sólido, líquido y gaseoso."
         },
         {
           "codigo": "OA 13",
-          "descripcion": "OA 13 Demostrar, mediante la investigación"
+          "descripcion": "Demostrar, mediante la investigación experimental, los cambios de estado de la materia, como fusión, evaporación, ebullición, condensación, solidificación y sublimación."
         },
         {
           "codigo": "OA 14",
-          "descripcion": "OA 14 Diferenciar entre calor y temperatura, considerando que el calor es una for-"
+          "descripcion": "Diferenciar entre calor y temperatura, considerando que el calor es una forma de energía y la temperatura es una medida de lo caliente de un objeto."
         },
         {
           "codigo": "OA 15",
-          "descripcion": "OA 15 Medir e interpretar la información y las"
+          "descripcion": "Medir e interpretar la información obtenida al calentar y enfriar el agua, considerando las transformaciones de un estado a otro."
         }
       ]
     }

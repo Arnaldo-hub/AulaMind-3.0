@@ -1,27 +1,28 @@
 {
   "asignatura": "Ciencias Naturales",
   "curso": "1° básico",
+  "fuente": "Programa Ciencias Naturales.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Hábitos saludables y uso de los sentidos",
       "oa": [
         {
+          "codigo": "OA 7",
+          "descripcion": "Describir, dar ejemplos y practicar hábitos de vida saludable para mantener el cuerpo sano y prevenir enfermedades (actividad física, aseo del cuerpo, lavado de alimentos y alimentación saludable, entre otros)."
+        },
+        {
           "codigo": "OA 6",
           "descripcion": "Identificar y describir la ubicación y la función de los sentidos proponiendo medidas para protegerlos y para prevenir situaciones de riesgo."
         },
         {
-          "codigo": "OA 7",
-          "descripcion": "Describir, dar ejemplos y practicar hábitos de vida saludable para mantener el cuerpo sano y prevenir enfermedades (actividad física, aseo del cuerpo, lavado de alimentos y alimentación saludable, entre otros)."
+          "codigo": "OA 1",
+          "descripcion": "Reconocer y observar, por medio de la exploración, que los seres vivos crecen, responden a estímulos del medio, se reproducen y necesitan agua, alimento y aire para vivir, comparándolos con las cosas no vivas."
         }
       ]
     },
     {
       "nombre": "Unidad 2 — Características de los seres vivos",
       "oa": [
-        {
-          "codigo": "OA 1",
-          "descripcion": "Reconocer y observar, por medio de la exploración, que los seres vivos crecen, responden a estímulos del medio, se reproducen y necesitan agua, alimento y aire para vivir, comparándolos con las cosas no vivas."
-        },
         {
           "codigo": "OA 2",
           "descripcion": "Observar y comparar animales de acuerdo a características como tamaño, cubierta corporal, estructuras de desplazamiento y hábitat, entre otras."
@@ -36,7 +37,7 @@
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Reconocer y comparar diversas plantas y animales de nuestro país, considerando las características observables, y proponiendo medidas para su cuidado."
+          "descripcion": "Reconocer y comparar diversas plantas y animales de nuestro país, considerando las características observables, proponiendo medidas para su cuidado."
         }
       ]
     },
@@ -45,7 +46,7 @@
       "oa": [
         {
           "codigo": "OA 8",
-          "descripcion": "Explorar y describir los diferentes tipos de materiales en diversos objetos, clasificándolos según sus propiedades (goma-flexible, plástico-impermeable) e identificando su uso en la vida cotidiana."
+          "descripcion": "Explorar y describir los diferentes tipos de materiales en diversos objetos, clasificándolos según sus propiedades (goma-flexible, plásticoimpermeable) e identificando su uso en la vida cotidiana."
         },
         {
           "codigo": "OA 9",

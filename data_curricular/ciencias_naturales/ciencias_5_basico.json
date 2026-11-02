@@ -1,21 +1,22 @@
 {
   "asignatura": "Ciencias Naturales",
   "curso": "5° básico",
+  "fuente": "Programa Ciencias Naturales(4).pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — El agua y los océanos",
       "oa": [
         {
           "codigo": "OA 12",
-          "descripcion": "Describir la distribución del agua dulce y salada en la Tierra y comparar sus volúmenes, reconociendo la escasez relativa de agua dulce."
+          "descripcion": "Describir la distribución del agua dulce y salada en la Tierra, considerando océanos, glaciares, ríos y lagos, aguas subterráneas, nubes, vapor de agua, etc. y comparar sus volúmenes, reconociendo la escasez relativa de agua dulce."
         },
         {
           "codigo": "OA 13",
-          "descripcion": "Analizar y describir las características de los océanos y lagos, considerando variaciones con la profundidad, diversidad de flora y fauna y movimiento de las aguas."
+          "descripcion": "Describir las características de los océanos y lagos: • variación de temperatura, luminosidad y presión en relación a la profundidad • diversidad de flora y fauna • movimiento de las aguas, como olas, mareas, corrientes (El Niño y Humboldt)"
         },
         {
           "codigo": "OA 14",
-          "descripcion": "Investigar y explicar efectos positivos y negativos de la actividad humana en océanos, lagos, ríos y glaciares, proponiendo acciones de protección de las reservas hídricas en Chile."
+          "descripcion": "Investigar y explicar efectos positivos y negativos de la actividad humana en los océanos, lagos, ríos, glaciares, entre otros, proponiendo acciones de protección de las reservas hídricas en Chile y comunicando sus resultados."
         }
       ]
     },
@@ -28,15 +29,15 @@
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Identificar y describir por medio de modelos las estructuras básicas del sistema digestivo y sus funciones en la digestión, absorción de alimentos y eliminación de desechos."
+          "descripcion": "Identificar y describir por medio de modelos las estructuras básicas del sistema digestivo (boca, esófago, estómago, hígado, intestino delgado, intestino grueso) y sus funciones en la digestión, la absorción de alimentos y la eliminación de desechos."
         },
         {
-          "codigo": "OA 3",
-          "descripcion": "Explicar por medio de modelos la respiración e identificar las estructuras básicas del sistema respiratorio."
+          "codigo": "OA 5",
+          "descripcion": "Analizar el consumo de alimento diario (variedad, tamaño y frecuencia de porciones) reconociendo los alimentos para el crecimiento, la reparación, el desarrollo y el movimiento del cuerpo."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Explicar la función de transporte del sistema circulatorio, identificando sus estructuras básicas: corazón, vasos sanguíneos y sangre."
+          "descripcion": "Explicar la función de transporte del sistema circulatorio (sustancias alimenticias y oxígeno y dióxido de carbono), identificando sus estructuras básicas (corazón, vasos sanguíneos y sangre)."
         }
       ]
     },
@@ -44,16 +45,16 @@
       "nombre": "Unidad 3 — Vida saludable y prevención",
       "oa": [
         {
-          "codigo": "OA 5",
-          "descripcion": "Analizar el consumo de alimento diario, reconociendo los alimentos para el crecimiento, reparación, desarrollo y movimiento del cuerpo."
+          "codigo": "OA 3",
+          "descripcion": "Explicar por medio de modelos la respiración (inspiración-espiración-intercambio de oxígeno y dióxido de carbono), identificando las estructuras básicas del sistema respiratorio (nariz, tráquea, bronquios, alveolos, pulmones)."
         },
         {
           "codigo": "OA 6",
-          "descripcion": "Investigar en diversas fuentes y comunicar los efectos nocivos que produce el cigarrillo en los sistemas respiratorio y circulatorio."
+          "descripcion": "Investigar en diversas fuentes y comunicar los efectos nocivos que produce el cigarrillo (humo del tabaco) en el sistema respiratorio y circulatorio."
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Investigar e identificar microorganismos beneficiosos y dañinos para la salud, y proponer medidas de cuidado e higiene del cuerpo."
+          "descripcion": "Investigar e identificar algunos microorganismos beneficiosos y dañinos para la salud (bacterias, virus y hongos), y proponer medidas de cuidado e higiene del cuerpo."
         }
       ]
     },
@@ -62,15 +63,15 @@
       "oa": [
         {
           "codigo": "OA 8",
-          "descripcion": "Reconocer los cambios que experimenta la energía eléctrica al pasar de una forma a otra e investigar aportes de científicos en su estudio."
+          "descripcion": "Reconocer los cambios que experimenta la energía eléctrica al pasar de una forma a otra (eléctrica a calórica, sonora, lumínica etc.) e investigar los principales aportes de científicos en su estudio a través del tiempo."
         },
         {
           "codigo": "OA 9",
-          "descripcion": "Construir un circuito eléctrico simple, usarlo para resolver problemas cotidianos y explicar su funcionamiento."
+          "descripcion": "Construir un circuito eléctrico simple (cable, ampolleta, interruptor y pila) usarlo para resolver problemas cotidianos y explicar su funcionamiento."
         },
         {
           "codigo": "OA 10",
-          "descripcion": "Observar y distinguir materiales conductores y aisladores de electricidad, relacionándolos con la manipulación segura de artefactos y circuitos."
+          "descripcion": "Observar y distinguir, por medio de la investigación experimental, los materiales conductores (cobre y aluminio) y aisladores (plásticos y goma) de electricidad, relacionándolos con la manipulación segura de artefactos tecnológicos y circuitos eléctricos domiciliarios."
         },
         {
           "codigo": "OA 11",

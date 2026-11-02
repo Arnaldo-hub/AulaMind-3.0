@@ -1,6 +1,7 @@
 {
   "asignatura": "Ciencias Naturales",
   "curso": "4° básico",
+  "fuente": "Programa Ciencias Naturales(3).pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Propiedades de la materia",
@@ -15,15 +16,15 @@
         },
         {
           "codigo": "OA 11",
-          "descripcion": "Medir la masa, el volumen y la temperatura de la materia en estados sólido, líquido y gaseoso, utilizando instrumentos y unidades de medida apropiados."
+          "descripcion": "Medir la masa, el volumen y la temperatura de la materia (sólido, líquido y gaseoso), utilizando instrumentos y unidades de medida apropiados."
         },
         {
           "codigo": "OA 12",
-          "descripcion": "Demostrar, por medio de la investigación experimental, los efectos de la aplicación de fuerzas sobre objetos, considerando cambios en la forma, rapidez y dirección del movimiento."
+          "descripcion": "Demostrar, por medio de la investigación experimental, los efectos de la aplicación de fuerzas sobre objetos, considerando cambios en la forma, la rapidez y la dirección del movimiento, entre otros."
         },
         {
           "codigo": "OA 13",
-          "descripcion": "Identificar, por medio de la investigación experimental, diferentes tipos de fuerzas y sus efectos en situaciones concretas: roce, peso o gravedad y fuerza magnética."
+          "descripcion": "Identificar, por medio de la investigación experimental, diferentes tipos de fuerzas y sus efectos, en situaciones concretas: • fuerza de roce (arrastrando objetos) • peso (fuerza de gravedad) • fuerza magnética (en imanes)"
         },
         {
           "codigo": "OA 14",
@@ -36,11 +37,11 @@
       "oa": [
         {
           "codigo": "OA 15",
-          "descripcion": "Describir, por medio de modelos, que la Tierra tiene una estructura de capas (corteza, manto y núcleo) con características distintivas en composición, rigidez y temperatura."
+          "descripcion": "Describir por medio de modelos, que la Tierra tiene una estructura de capas (corteza, manto y núcleo) con características distintivas en cuanto a su composición, rigidez y temperatura."
         },
         {
           "codigo": "OA 16",
-          "descripcion": "Explicar los cambios de la superficie de la Tierra a partir de la interacción de sus capas y los movimientos de las placas tectónicas, como sismos, tsunamis y erupciones volcánicas."
+          "descripcion": "Explicar los cambios de la superficie de la Tierra a partir de la interacción de sus capas y los movimientos de las placas tectónicas (sismos, tsunamis y erupciones volcánicas)."
         },
         {
           "codigo": "OA 17",
@@ -53,19 +54,19 @@
       "oa": [
         {
           "codigo": "OA 5",
-          "descripcion": "Identificar y describir, usando modelos, estructuras del sistema esquelético y algunas de sus funciones, como protección, soporte y movimiento."
+          "descripcion": "Identificar y describir, usando modelos, estructuras del sistema esquelético y algunas de sus funciones como protección (costillas y cráneo), soporte (vértebras y columna vertebral) y movimiento (pelvis y fémur)."
         },
         {
           "codigo": "OA 6",
-          "descripcion": "Explicar, con apoyo de modelos, el movimiento del cuerpo, considerando la acción coordinada de músculos, huesos, tendones y articulaciones, y describir beneficios de la actividad física."
+          "descripcion": "Explicar, con apoyo de modelos, el movimiento del cuerpo, considerando la acción coordinada de músculos, huesos, tendones y articulación (ejemplo: brazo y pierna), y describir los beneficios de la actividad física para el sistema músculoesquelético."
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Identificar estructuras del sistema nervioso y describir algunas de sus funciones, como conducción de información y elaboración y control."
+          "descripcion": "Identificar estructuras del sistema nervioso y describir algunas de sus funciones, como conducción de información (médula espinal y nervios) y elaboración y control (cerebro)."
         },
         {
           "codigo": "OA 8",
-          "descripcion": "Investigar en diversas fuentes y comunicar los efectos que produce el consumo excesivo de alcohol en la salud humana."
+          "descripcion": "Investigar en diversas fuentes y comunicar los efectos que produce el consumo excesivo de alcohol en la salud humana (como descoordinación, confusión, lentitud, entre otras)."
         }
       ]
     },
@@ -74,19 +75,19 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Reconocer, por medio de la exploración, que un ecosistema está compuesto por elementos vivos y no vivos que interactúan entre sí."
+          "descripcion": "Reconocer, por medio de la exploración, que un ecosistema está compuesto por elementos vivos (animales, plantas, etc.) y no vivos (piedras, aguas, tierra, etc.) que interactúan entre sí."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Observar y comparar adaptaciones de plantas y animales para sobrevivir en los ecosistemas en relación con su estructura y conducta."
+          "descripcion": "Observar y comparar adaptaciones de plantas y animales para sobrevivir en los ecosistemas en relación con su estructura y conducta; por ejemplo: cubierta corporal, camuflaje, tipo de hoja, hibernación, entre otras."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Dar ejemplos de cadenas alimentarias, identificando la función de organismos productores, consumidores y descomponedores en diferentes ecosistemas de Chile."
+          "descripcion": "Dar ejemplos de cadenas alimentarias, identificando la función de los organismos productores, consumidores y descomponedores, en diferentes ecosistemas de Chile."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Analizar los efectos de la actividad humana en ecosistemas de Chile, proponiendo medidas para protegerlos."
+          "descripcion": "Analizar los efectos de la actividad humana en ecosistemas de Chile, proponiendo medidas para protegerlos (parques nacionales, vedas, entre otras)."
         }
       ]
     }

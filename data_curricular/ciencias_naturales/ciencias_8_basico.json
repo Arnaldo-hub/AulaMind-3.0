@@ -1,21 +1,22 @@
 {
   "asignatura": "Ciencias Naturales",
   "curso": "8° básico",
+  "fuente": "Programa Ciencias Naturales(7).pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Biología: Nutrición y salud",
       "oa": [
         {
           "codigo": "OA 5",
-          "descripcion": "Explicar, basados en evidencias, la interacción de sistemas del cuerpo humano y su contribución al equilibrio del organismo."
+          "descripcion": "Explicar, basados en evidencias, la interacción de sistemas del cuerpo humano, organizados por estructuras especializadas que contribuyen a su equilibrio, considerando: > La digestión de los alimentos por medio de la acción de enzimas digestivas y su absorción o paso a la sangre. > El rol del sistema circulatorio en el transporte de sustancias como nutrientes, gases, desechos metabólicos y anticuerpos. > El proceso de ventilación pulmonar e intercambio gaseoso a nivel alveolar. > El rol del sistema excretor en relación con la filtración de la sangre, la regulación de la cantidad de agua en el cuerpo y la eliminación de desechos. > La prevención de enfermedades debido al consumo excesivo de sustancias como tabaco, alcohol, grasas y sodio, que se relacionan con estos sistemas."
         },
         {
           "codigo": "OA 6",
-          "descripcion": "Investigar experimentalmente y explicar las características de los nutrientes en los alimentos y sus efectos para la salud humana."
+          "descripcion": "Investigar experimentalmente y explicar las características de los nutrientes (carbohidratos, proteínas, grasas, vitaminas, minerales y agua) en los alimentos y sus efectos para la salud humana."
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Analizar y evaluar factores que contribuyen a mantener un cuerpo saludable, proponiendo un plan de alimentación balanceada, ejercicio regular y prevención del consumo de sustancias."
+          "descripcion": "Analizar y evaluar, basados en evidencias los factores que contribuyen a mantener un cuerpo saludable, proponiendo un plan que considere: > Una alimentación balanceada. > Un ejercicio físico regular. > Evitar consumo de alcohol, tabaco y drogas."
         }
       ]
     },
@@ -24,19 +25,19 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Explicar que los modelos de la célula han evolucionado sobre la base de evidencias aportadas por diversos científicos."
+          "descripcion": "Explicar que los modelos de la célula han evolucionado sobre la base de evidencias, como las aportadas por científicos como Hooke, Leeuwenhoek, Virchow, Schleiden y Schwann."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Desarrollar modelos que expliquen la relación entre la función de una célula y sus partes, considerando estructuras, células eucariontes y procariontes y tipos celulares."
+          "descripcion": "Desarrollar modelos que expliquen la relación entre la función de una célula y sus partes, considerando: > Sus estructuras (núcleo, citoplasma, membrana celular, pared celular, vacuolas, mitocondria, cloroplastos, entre otros). > Células eucariontes (animal y vegetal) y procariontes. > Tipos celulares (como intestinal, muscular, nervioso, pancreático)."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Explicar, por medio de la experimentación, mecanismos de intercambio de partículas entre la célula y su ambiente por difusión y osmosis."
+          "descripcion": "Describir, por medio de la experimentación, los mecanismos de intercambio de partículas entre la célula (en animales y plantas) y su ambiente por difusión y osmosis."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Crear modelos que expliquen que las plantas tienen estructuras especializadas para responder a estímulos del medioambiente, considerando transporte de sustancias e intercambio de gases."
+          "descripcion": "Crear modelos que expliquen que las plantas tienen estructuras especializadas para responder a estímulos del medioambiente, similares a las del cuerpo humano, considerando los procesos de transporte de sustancia e intercambio de gases."
         }
       ]
     },
@@ -45,19 +46,19 @@
       "oa": [
         {
           "codigo": "OA 8",
-          "descripcion": "Analizar las fuerzas eléctricas, considerando tipos de electricidad, métodos de electrización, experimentación, riesgos cotidianos y posibles soluciones."
+          "descripcion": "Analizar las fuerzas eléctricas, considerando: > Los tipos de electricidad. > Los métodos de electrización (fricción, contacto e inducción). > La planificación, conducción y evaluación de experimentos para evidenciar las interacciones eléctricas. > La evaluación de los riesgos en la vida cotidiana y las posibles soluciones."
         },
         {
           "codigo": "OA 9",
-          "descripcion": "Investigar, explicar y evaluar tecnologías que permiten la generación de energía eléctrica."
+          "descripcion": "Investigar, explicar y evaluar las tecnologías que permiten la generación de energía eléctrica, como ocurre en pilas o baterías, en paneles fotovoltaicos y en generadores (eólicos, hidroeléctricos o nucleares, entre otros)."
         },
         {
           "codigo": "OA 10",
-          "descripcion": "Analizar un circuito eléctrico domiciliario y comparar experimentalmente circuitos en serie y paralelo considerando variables eléctricas y eficiencia energética."
+          "descripcion": "Analizar un circuito eléctrico domiciliario y comparar experimentalmente los circuitos eléctricos en serie y en paralelo, en relación con la: > Energía eléctrica. > Diferencia de potencial. > Intensidad de corriente. > Potencia eléctrica. > Resistencia eléctrica. > Eficiencia energética."
         },
         {
           "codigo": "OA 11",
-          "descripcion": "Desarrollar modelos e investigaciones experimentales que expliquen el calor como transferencia de energía térmica, su propagación, efectos, medición y aplicaciones tecnológicas."
+          "descripcion": "Desarrollar modelos e investigaciones experimentales que expliquen el calor como un proceso de transferencia de energía térmica entre dos o más cuerpos que están a diferentes temperaturas, o entre una fuente térmica y un objeto, considerando: > Las formas en que se propaga (conducción, convección y radiación). > Los efectos que produce (cambio de temperatura, deformación y cambio de estado, entre otros). > La cantidad de calor cedida y absorbida en un proceso térmico. > Objetos tecnológicos que protegen de altas o bajas temperaturas a seres vivos y objetos. > Su diferencia con la temperatura (a nivel de sus partículas). > Mediciones de temperatura, usando termómetro y variadas escalas, como Celsius, Kelvin y Fahrenheit, entre otras."
         }
       ]
     },
@@ -66,7 +67,7 @@
       "oa": [
         {
           "codigo": "OA 12",
-          "descripcion": "Investigar y analizar cómo ha evolucionado el conocimiento de la constitución de la materia, considerando la teoría atómica y los modelos atómicos."
+          "descripcion": "Investigar y analizar cómo ha evolucionado el conocimiento de la constitución de la materia, considerando los aportes y las evidencias de: > La teoría atómica de Dalton. > Los modelos atómicos desarrollados por Thomson, Rutherford y Bohr, entre otros."
         },
         {
           "codigo": "OA 13",
@@ -74,11 +75,11 @@
         },
         {
           "codigo": "OA 14",
-          "descripcion": "Usar la tabla periódica como modelo para predecir propiedades relativas de los elementos químicos basadas en patrones de sus átomos."
+          "descripcion": "Usar la tabla periódica como un modelo para predecir las propiedades relativas de los elementos químicos basados en los patrones de sus átomos, considerando: > El número atómico. > La masa atómica. > La conductividad eléctrica. > La conductividad térmica. > El brillo. > Los enlaces que se pueden formar."
         },
         {
           "codigo": "OA 15",
-          "descripcion": "Investigar y argumentar, basándose en evidencias, que existen elementos químicos frecuentes en la Tierra que son comunes en los seres vivos y soporte para la vida."
+          "descripcion": "Investigar y argumentar, en base a evidencias, que existen algunos elementos químicos más frecuentes en la Tierra que son comunes en los seres vivos y son soporte para la vida, como el carbono, el hidrógeno, el oxígeno y el nitrógeno."
         }
       ]
     }

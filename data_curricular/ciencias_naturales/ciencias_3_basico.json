@@ -1,6 +1,7 @@
 {
   "asignatura": "Ciencias Naturales",
   "curso": "3° básico",
+  "fuente": "Programa Ciencias Naturales(2).pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — La luz y el sonido",
@@ -32,7 +33,7 @@
         },
         {
           "codigo": "OA 13",
-          "descripcion": "Diseñar y construir modelos tecnológicos para explicar eventos del sistema solar, como la sucesión de las fases de la Luna y los eclipses de Luna y de Sol, entre otros."
+          "descripcion": "Diseñar y construir modelos tecnológicos para explicar eventos del sistema solar, como la sucesión de las fases de la Luna y los eclipses de Luna y Sol, entre otros."
         }
       ]
     },
@@ -53,7 +54,7 @@
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Describir la importancia de las plantas para los seres vivos, el ser humano y el medio ambiente (por ejemplo: alimentación, aire para respirar, productos derivados, ornamentación, uso medicinal) proponiendo y comunicando medidas de cuidado."
+          "descripcion": "Describir la importancia de las plantas para los seres vivos, el ser humano y el medio-ambiente (por ejemplo: alimentación, aire para respirar, productos derivados, ornamentación, uso medicinal) proponiendo y comunicando medidas de cuidado."
         },
         {
           "codigo": "OA 5",
