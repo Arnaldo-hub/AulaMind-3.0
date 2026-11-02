@@ -1,0 +1,119 @@
+{
+  "asignatura": "Historia, Geografía y Ciencias Sociales",
+  "curso": "4° básico",
+  "fuente": "Programa Historia GCS(1).pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1",
+      "oa": [
+        {
+          "codigo": "OA 6",
+          "descripcion": "Ubicar lugares en un mapa, utilizando coordenadas geográficas como referencia (paralelos y meridianos)."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Describir distintos paisajes del continente americano, considerando climas, ríos, población, idiomas, países y grandes ciudades, entre otros, y utilizando vocabulario geográfico adecuado."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Distinguir recursos naturales renovables y no renovables, reconocer el carácter limitado de los recursos naturales y la necesidad de cuidarlos, e identificar recursos presentes en objetos y bienes cotidianos."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reconocer y ubicar los principales recursos naturales de América, considerando su distribución geográfica y su uso, y reconociendo la importancia de cuidarlos en el marco de un desarrollo sostenible."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "Opinar y argumentar con fundamentos sobre temas de la asignatura u otros."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Comparar, mediante la observación en imágenes, mapas y otras fuentes, paisajes de su región con paisajes de América, distinguiendo distintas formas de adaptación y transformación de la población a su ambiente natural."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Demostrar respeto por todas las personas mediante acciones en su vida diaria, sin discriminar por condiciones físicas, sociales, económicas, étnicas o culturales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Describir la civilización maya, considerando ubicación geográfica, organización política, actividades económicas, formas de cultivo y alimentos, organización de la sociedad, roles y oficios de hombres y mujeres, religión y ritos, desarrollo de la astronomía y la matemática, sistemas de escritura, guerras y sacrificios humanos, construcciones, costumbres y vida cotidiana, entre otros."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Describir la civilización azteca, considerando ubicación geográfica, organización política y extensión, la ciudad de Tenochtitlán, formas de cultivo y alimentos, religión y ritos, avances tecnológicos, organización de la sociedad, roles y oficios de hombres y mujeres, construcciones, costumbres y vida cotidiana, entre otros."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Investigar en diversas fuentes (imágenes, medios audiovisuales, TIC, gráficos, textos y otras) sobre algunos temas relacionados con el presente de los pueblos indígenas americanos; por ejemplo, el protagonismo que tienen hoy, la influencia de las civilizaciones maya, azteca e inca sobre la cultura y la sociedad de los países actuales, situados donde ellas se desarrollaron, y su influencia en las comidas y en la lengua que empleamos en la actualidad, entre otros."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, evitando la copia y el plagio y reconociendo sus errores y sus acciones, entre otros."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Describir la civilización inca, considerando ubicación geográfica, organización política, sistema de caminos y correos, religión y ritos, avances tecnológicos, organización de la sociedad, roles y oficios de hombres y mujeres, formas de cultivo y alimentos, construcciones, costumbres y vida cotidiana, entre otros."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar y comparar las principales características de las civilizaciones americanas (mayas, aztecas e incas)."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Investigar en diversas fuentes (imágenes, medios audiovisuales, TIC, gráficos, textos y otras) sobre algunos temas relacionados con el presente de los pueblos indígenas americanos; por ejemplo, el protagonismo que tienen hoy, la influencia de las civilizaciones maya, azteca e inca sobre la cultura y la sociedad de los países actuales, situados donde ellas se desarrollaron, y su influencia en las comidas y en la lengua que empleamos en la actualidad, entre otros."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, evitando la copia y el plagio y reconociendo sus errores y sus acciones, entre otros."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "Distinguir algunos actores de la organización política y democrática de Chile, como Presidente, ministros, senadores, diputados y alcaldes, considerando las instituciones en las que ejercen y cómo son nombrados o elegidos."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Reconocer sus principales derechos en situaciones de la vida cotidiana, como el derecho a la educación, a contar con alimentación, vivienda, recreo y servicios médicos adecuados, a expresarse, a ser protegido contra el abandono y la crueldad, y a no trabajar antes de la edad apropiada; y dar ejemplos de cómo se pueden ejercer y proteger esos derechos."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "Resolver conflictos, aplicando estrategias como determinar la causa del problema, proponer posibles soluciones, dialogar, buscar un punto de vista común y votar, entre otras, demostrando respeto y empatía por las partes involucradas para mejorar la convivencia en el curso y en la comunidad escolar."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, evitando la copia y el plagio y reconociendo sus errores y sus acciones, entre otros."
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Participar en su comunidad, tomando parte en elecciones para una directiva del curso, asignando roles y funciones a cada cargo, y considerando la importancia de mantener una buena convivencia y una organización del curso que favorezca el trabajo escolar."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Demostrar respeto por todas las personas mediante acciones en su vida diaria, sin discriminar por condiciones físicas, sociales, económicas, étnicas o culturales."
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "Diseñar y participar activamente en un proyecto grupal que solucione un problema de la comunidad escolar; por ejemplo, reciclaje de la basura, exceso de ruido, organización de turnos, leer o entretener a alumnos más pequeños, etc."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "Opinar y argumentar con fundamentos sobre temas de la asignatura u otros."
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "asignatura": "Historia, Geografía y Ciencias Sociales",
   "curso": "2° básico",
+  "fuente": "Programa Historia GCS.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Ubicación espacial, planos y Chile",
@@ -11,11 +12,27 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Ubicar Chile, Santiago, la propia región y su capital en el globo terráqueo o en mapas, y describir la ubicación relativa de países limítrofes y de otros países de América del Sur."
+          "descripcion": "Ubicar Chile, Santiago, la propia región y su capital en el globo terráqueo o en mapas, y describir la ubicación relativa de países limítrofes y de otros países de América del Sur, utilizando los puntos cardinales."
         },
         {
           "codigo": "OA 8",
-          "descripcion": "Clasificar y caracterizar algunos paisajes de Chile según su ubicación en la zona norte, centro y sur, observando imágenes y utilizando diversas fuentes."
+          "descripcion": "Clasificar y caracterizar algunos paisajes de Chile según su ubicación en la zona norte, centro y sur del país, observando imágenes, utilizando diversas fuentes y un vocabulario geográfico adecuado (océano, río, cordillera de los Andes y de la Costa, desierto, valle, costa, volcán, archipiélago, isla, fiordo, lago, ciudad y pueblo, entre otros)."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, y reconociendo sus errores y sus acciones, entre otros."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Conocer, proponer, aplicar y explicar la importancia de algunas normas necesarias para: • cuidarse, cuidar a otros y evitar situaciones de riesgo (como seguridad vial, vías de evacuación, adaptaciones para discapacitados, zonas de silencio, etc.) • organizar un ambiente propicio al aprendizaje y acogedor para todos (por ejemplo, respetar los turnos, cuidar el espacio y las pertenencias comunes y de sus pares, etc.) • cuidar el patrimonio y el medioambiente"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Identificar la labor que cumplen en beneficio de la comunidad servicios como los medios de transporte y de comunicación y el mercado, y algunas instituciones encargadas de proteger nuestro patrimonio cultural y natural."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "Practicar y proponer acciones para cuidar y respetar los espacios públicos dentro y fuera de la escuela (como baños, patios, salas de clase, plazas, parques, playas y calles, entre otros), reconociendo que pertenecen y benefician a todos y que, por lo tanto, su cuidado es responsabilidad de todos los miembros de la comunidad."
         }
       ]
     },
@@ -24,11 +41,27 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Describir los modos de vida de algunos pueblos originarios de Chile en el período precolombino, incluyendo ubicación geográfica, medio natural, vida nómada o sedentaria, roles, herramientas, actividades, vivienda y costumbres."
+          "descripcion": "Describir los modos de vida de algunos pueblos originarios de Chile en el periodo precolombino, incluyendo ubicación geográfica, medio natural en que habitaban, vida nómada o sedentaria, roles de hombres y mujeres, herramientas y tecnología, principales actividades, vivienda, costumbres, idioma, creencias, alimentación y fiestas, entre otros."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Comparar el modo de vida y expresiones culturales de algunos pueblos indígenas presentes en Chile actual con respecto al período precolombino, identificando aspectos de su cultura que se han mantenido hasta el presente."
+          "descripcion": "Comparar el modo de vida y expresiones culturales de algunos pueblos indígenas presentes en Chile actual (como Mapuche, Aimara o Rapa Nui) con respecto al periodo precolombino, identificando aspectos de su cultura que se han mantenido hasta el presente y aspectos que han cambiado."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Ubicar en mapas las zonas habitadas por algunos pueblos originarios de Chile, distinguiendo zonas norte, centro y sur."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Relacionar las principales características geográficas (disponibilidad de agua, temperatura y vegetación) de las zonas habitadas por algunos pueblos originarios de Chile, con los recursos que utilizaron para satisfacer sus necesidades de alimentación, abrigo y vivienda."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Mostrar actitudes y realizar acciones concretas en su entorno cercano (familia, escuela y comunidad) que reflejen: • respeto al otro (interactuar con cortesía, cuidar espacios comunes, respetar propiedad de los demás) • responsabilidad (ejemplos: cumplir con sus deberes escolares, asumir encargos en el hogar y dentro de la sala de clases, etc.) • tolerancia (ejemplos: respetar opiniones diversas, no discriminar a otros por su aspecto o costumbres) • empatía (ejemplos: integrar a los demás en sus juegos y actividades, ayudar a los otros, etc.)"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, y reconociendo sus errores y sus acciones, entre otros."
         }
       ]
     },
@@ -37,15 +70,19 @@
       "oa": [
         {
           "codigo": "OA 3",
-          "descripcion": "Distinguir los diversos aportes a la sociedad chilena provenientes de los pueblos originarios y de los españoles y reconocer nuestra sociedad como mestiza."
+          "descripcion": "Distinguir los diversos aportes a la sociedad chilena proveniente de los pueblos originarios (palabras, alimentos, tradiciones, costumbres, etc.) y de los españoles (idioma, religión, alimentos, costumbres, etc.) y reconocer nuestra sociedad como mestiza."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Reconocer y dar ejemplos de la influencia y aportes de inmigrantes de distintas naciones europeas, orientales, árabes y latinoamericanas a la diversidad de la sociedad chilena."
+          "descripcion": "Reconocer y dar ejemplos de la influencia y aportes de inmigrantes de distintas naciones europeas, orientales, árabes y latinoamericanas a la diversidad de la sociedad chilena, a lo largo de su historia."
         },
         {
-          "codigo": "OA 5",
-          "descripcion": "Reconocer diversas expresiones del patrimonio cultural del país y de su región, tales como manifestaciones artísticas, tradiciones, costumbres y sitios históricos."
+          "codigo": "OA 12",
+          "descripcion": "Mostrar actitudes y realizar acciones concretas en su entorno cercano (familia, escuela y comunidad) que reflejen: • respeto al otro (interactuar con cortesía, cuidar espacios comunes, respetar propiedad de los demás) • responsabilidad (ejemplos: cumplir con sus deberes escolares, asumir encargos en el hogar y dentro de la sala de clases, etc.) • tolerancia (ejemplos: respetar opiniones diversas, no discriminar a otros por su aspecto o costumbres) • empatía (ejemplos: integrar a los demás en sus juegos y actividades, ayudar a los otros, etc.)"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, y reconociendo sus errores y sus acciones, entre otros."
         }
       ]
     },
@@ -53,20 +90,24 @@
       "nombre": "Unidad 4 — Vida en comunidad, normas y servicios",
       "oa": [
         {
-          "codigo": "OA 12",
-          "descripcion": "Mostrar actitudes y realizar acciones concretas en su entorno cercano que reflejen respeto al otro, responsabilidad, tolerancia y empatía."
+          "codigo": "OA 5",
+          "descripcion": "Reconocer diversas expresiones del patrimonio cultural del país y de su región, tales como manifestaciones artísticas, tradiciones folclóricas, leyendas y tradiciones orales, costumbres familiares, creencias, idioma, construcciones, comidas típicas, fiestas, monumentos y sitios históricos."
         },
         {
-          "codigo": "OA 13",
-          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar."
+          "codigo": "OA 9",
+          "descripcion": "Reconocer diversas expresiones del patrimonio natural de Chile y de su región, como paisajes, flora y fauna característica y parques nacionales, entre otros."
         },
         {
           "codigo": "OA 14",
-          "descripcion": "Conocer, proponer, aplicar y explicar la importancia de algunas normas necesarias para cuidarse, cuidar a otros y evitar situaciones de riesgo."
+          "descripcion": "Conocer, proponer, aplicar y explicar la importancia de algunas normas necesarias para: • cuidarse, cuidar a otros y evitar situaciones de riesgo (como seguridad vial, vías de evacuación, adaptaciones para discapacitados, zonas de silencio, etc.) • organizar un ambiente propicio al aprendizaje y acogedor para todos (por ejemplo, respetar los turnos, cuidar el espacio y las pertenencias comunes y de sus pares , etc.) • cuidar el patrimonio y el medioambiente"
         },
         {
           "codigo": "OA 15",
-          "descripcion": "Identificar la labor que cumplen en beneficio de la comunidad servicios como medios de transporte y comunicación, mercado, escuela, hospital, bomberos y carabineros."
+          "descripcion": "Identificar la labor que cumplen en beneficio de la comunidad servicios como los medios de transporte y de comunicación y el mercado, y algunas instituciones encargadas de proteger nuestro patrimonio cultural y natural."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "Practicar y proponer acciones para cuidar y respetar los espacios públicos dentro y fuera de la escuela (como baños, patios, salas de clase, plazas, parques, playas y calles, entre otros), reconociendo que pertenecen y benefician a todos y que, por lo tanto, su cuidado es responsabilidad de todos los miembros de la comunidad."
         }
       ]
     }

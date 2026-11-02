@@ -1,84 +1,101 @@
 {
   "asignatura": "Historia, Geografía y Ciencias Sociales",
   "curso": "2° medio",
+  "fuente": "Programa Historia GCS 6 2M (Decreto).pdf",
   "unidades": [
     {
-      "nombre": "Unidad 1 — Crisis, totalitarismos y Segunda Guerra Mundial",
+      "nombre": "Unidad 1 — Crisis, totalitarismo y guerra en la primera mitad del siglo XX: los desafíos para el Estado y la democracia en Chile y el mundo",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Relacionar la transformación cultural del período de entreguerras con la ruptura de cánones culturales y estéticos tradicionales y la masificación de la cultura."
+          "descripcion": "Relacionar la transformación cultural del período de entreguerras con la ruptura de los cánones culturales y estéticos tradicionales, y reconocer cómo se manifestó en las vanguardias artísticas (por ejemplo, el dadaísmo, el surrealismo, el jazz, la moda, entre otros) y en la aparición de una cultura de masas (cine, radio, publicidad, prensa, deporte)."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Analizar la crisis del Estado liberal decimonónico a comienzos del siglo XX, considerando la Gran Depresión y el surgimiento de modelos políticos y económicos alternativos."
+          "descripcion": "Analizar la crisis del Estado liberal decimonónico a comienzos del siglo XX, considerando la Gran Depresión de 1929 y el surgimiento de distintos modelos políticos y económicos en Europa, Estados Unidos y América Latina, como los totalitarismos y su oposición a la democracia liberal (por ejemplo, nazismo, comunismo y fascismo), el populismo latinoamericano y los inicios del Estado de Bienestar."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Analizar la Segunda Guerra Mundial considerando causas, fases, dimensión planetaria, ideologías, violación de derechos humanos y efectos sobre el orden internacional."
-        }
-      ]
-    },
-    {
-      "nombre": "Unidad 2 — Guerra Fría, descolonización y transformaciones globales",
-      "oa": [
+          "descripcion": "Analizar la Segunda Guerra Mundial considerando la fragilidad del orden mundial de entreguerras, el enfrentamiento ideológico entre los regímenes de Hitler, Stalin y las democracias occidentales, el horror de la población por los genocidios como el exterminio judío, los desplazamientos forzados de personas, los bombardeos y la alta cifra de víctimas civiles, la extensión planetaria del conflicto y el potencial destructivo de la bomba atómica."
+        },
         {
           "codigo": "OA 4",
-          "descripcion": "Evaluar las consecuencias de la Segunda Guerra Mundial considerando surgimiento de Estados Unidos y la URSS como superpotencias, pérdida de hegemonía europea, ONU y Declaración Universal de Derechos Humanos."
-        },
-        {
-          "codigo": "OA 5",
-          "descripcion": "Analizar la Guerra Fría como confrontación ideológica sin guerra directa entre las superpotencias, considerando dimensiones políticas, económicas, tecnológicas y culturales."
-        },
-        {
-          "codigo": "OA 6",
-          "descripcion": "Analizar el proceso de descolonización de Asia y África y sus consecuencias políticas y económicas."
-        },
-        {
-          "codigo": "OA 7",
-          "descripcion": "Evaluar cómo la movilización social y cultural de la década de 1960 transformó la sociedad occidental, considerando movimientos juveniles, feminismo y defensa de derechos civiles."
+          "descripcion": "Evaluar las consecuencias de la Segunda Guerra Mundial, considerando el surgimiento de Estados Unidos y la URSS como superpotencias y la pérdida de hegemonía de Europa, el inicio del proceso de descolonización, los acuerdos de las conferencias de paz y la creación de un nuevo marco regulador de las relaciones internacionales reflejado en la ONU y en la Declaración Universal de Derechos Humanos."
         }
       ]
     },
     {
-      "nombre": "Unidad 3 — Chile en el siglo XX: democratización, crisis y dictadura",
+      "nombre": "Unidad 2 — El mundo bipolar: proyectos políticos, transformaciones estructurales y quiebre de la democracia en Chile",
       "oa": [
         {
           "codigo": "OA 8",
-          "descripcion": "Analizar la evolución de la economía y sociedad chilena durante el siglo XX, considerando industrialización, urbanización, ampliación de derechos sociales y transformaciones demográficas."
+          "descripcion": "Analizar la Guerra Fría como la confrontación ideológica de dos proyectos antagónicos que, bajo la amenaza del enfrentamiento nuclear, se manifestó en distintos escenarios locales, y dar ejemplos de cómo afectó diversas esferas, como la política, la cultura, el deporte y las ciencias."
         },
         {
           "codigo": "OA 9",
-          "descripcion": "Reconocer las transformaciones estructurales de mediados del siglo XX en Chile y su impacto en la sociedad."
+          "descripcion": "Reconocer las transformaciones que experimentó la sociedad occidental en diversos ámbitos durante la Guerra Fría, como el crecimiento económico y el auge del Estado de Bienestar, la expansión del consumo y de los medios de comunicación de masas, la ampliación de los derechos civiles de grupos marginados, el desarrollo tecnológico, entre otros."
         },
         {
           "codigo": "OA 10",
-          "descripcion": "Caracterizar el contexto de movilización social y polarización política que precedió al quiebre democrático de 1973."
+          "descripcion": "Caracterizar el contexto de movilización social en América Latina como un escenario de tensión permanente entre revolución y reforma, considerando la Revolución cubana, la influencia de Estados Unidos, los golpes de Estado, las dictaduras militares (por ejemplo, Argentina, Chile, Brasil, Uruguay y Paraguay, entre otros) y la violación de los derechos humanos."
         },
         {
           "codigo": "OA 11",
-          "descripcion": "Analizar las principales transformaciones políticas, económicas y sociales del régimen militar, considerando violaciones a los derechos humanos y cambios institucionales."
+          "descripcion": "Analizar los principales procesos que marcaron el fin de la Guerra Fría, considerando la crisis de la URSS y el derrumbe del comunismo, las transformaciones geopolíticas, el auge del neoliberalismo y la aceleración de la globalización (por ejemplo, la internacionalización de la economía, la revolución tecnológica, la sociedad de la información)."
         },
         {
           "codigo": "OA 12",
-          "descripcion": "Caracterizar el proceso de recuperación de la democracia y los principales desafíos políticos, sociales y económicos de Chile desde 1990."
+          "descripcion": "Caracterizar la extendida pobreza y precariedad de la sociedad chilena de mediados del siglo XX (magros indicadores sociodemográficos, bajo poder adquisitivo y de acceso al crédito, desnutrición y marginalidad) y evaluar el impacto que generó en esta sociedad la migración del campo a la ciudad (por ejemplo, el progresivo crecimiento de la población urbana, la segregación urbana y la escasez de viviendas). IE Reconocen las características del proceso de migración campo-ciudad producido en Chile a mediados del siglo pasado, considerando fuentes orales y escritas."
         }
       ]
     },
     {
-      "nombre": "Unidad 4 — Formación ciudadana y desafíos del mundo contemporáneo",
+      "nombre": "Unidad 3 — Dictadura militar, transición política y los desafíos de la democracia en Chile",
       "oa": [
         {
+          "codigo": "OA 16",
+          "descripcion": "Explicar que durante la dictadura militar se suprimió el Estado de derecho y se violaron sistemáticamente los derechos humanos, reconociendo que hubo instituciones civiles y religiosas que procuraron la defensa de las víctimas."
+        },
+        {
+          "codigo": "OA 17",
+          "descripcion": "Caracterizar el modelo económico neoliberal implementado en Chile durante el régimen o dictadura militar, considerando aspectos como la transformación del rol del Estado y la disminución del gasto social, la supremacía del libre mercado como asignador de recursos, la apertura comercial y la disponibilidad de bienes, la política de privatizaciones e incentivo a la empresa privada y el cambio en las relaciones y derechos laborales, y evaluar sus consecuencias sociales en el corto y largo plazo."
+        },
+        {
+          "codigo": "OA 18",
+          "descripcion": "Analizar la nueva institucionalidad política creada por la Constitución de 1980, considerando los artículos transitorios, el cuórum calificado, la función tutelar de las Fuerzas Armadas, los senadores designados y el Consejo de Seguridad del Estado, y evaluar cambios y continuidades con el presente."
+        },
+        {
+          "codigo": "OA 19",
+          "descripcion": "Explicar los factores que incidieron en el proceso de recuperación de la democracia durante la década de 1980, considerando la crisis económica, el surgimiento de protestas, la rearticulación del mundo político y el rol mediador de la Iglesia Católica, de organismos de defensa de derechos humanos y de la comunidad internacional."
+        },
+        {
           "codigo": "OA 20",
-          "descripcion": "Analizar el funcionamiento de la democracia y los desafíos de la participación ciudadana en el contexto contemporáneo."
+          "descripcion": "Analizar la transición a la democracia como un proceso marcado por el plebiscito de 1988, la búsqueda de acuerdos entre el gobierno y la oposición, las reformas constitucionales, las tensiones cívico-militares, el consenso generado en torno a la democracia representativa como sistema político y la reivindicación de los derechos humanos mediante diversas políticas de reparación."
         },
         {
           "codigo": "OA 21",
-          "descripcion": "Analizar problemas y desafíos vinculados con desigualdad, diversidad, derechos humanos y sustentabilidad."
-        },
+          "descripcion": "Analizar la sociedad chilena posterior a la recuperación de la democracia, considerando la estructura social, la disponibilidad y el acceso a bienes, la infraestructura, los medios y las tecnologías de comunicación, el sistema educacional, el mercado del trabajo y la demanda de derechos de grupos históricamente discriminados, entre otros."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Formación ciudadana: Estado de derecho, sociedad y diversidad",
+      "oa": [
         {
           "codigo": "OA 22",
-          "descripcion": "Evaluar formas de participación y acción ciudadana en una sociedad democrática, considerando medios institucionales y comunitarios."
+          "descripcion": "Analizar el concepto de derechos humanos, considerando características como su universalidad, indivisibilidad, interdependencia e imprescriptibilidad y la institucionalidad creada para resguardarlos a nivel nacional e internacional, reconociendo, en este contexto, los derechos vinculados a los grupos de especial protección."
+        },
+        {
+          "codigo": "OA 23",
+          "descripcion": "Explicar los elementos que constituyen un Estado de derecho, como la Constitución, la división de los poderes del Estado, el respeto a los derechos humanos, entre otros; analizar su importancia para la gobernabilidad, la representación, la participación ciudadana y la convivencia pacífica; y debatir sobre su perfeccionamiento, defensa y riesgos a los que está expuesto."
+        },
+        {
+          "codigo": "OA 24",
+          "descripcion": "Analizar y debatir sobre los desafíos pendientes para el país, por ejemplo, reducir la pobreza y la desigualdad, garantizar los derechos de los grupos discriminados, lograr un desarrollo sustentable, perfeccionar el sistema político y fortalecer la relación con los países vecinos, y reconocer los deberes del Estado y la responsabilidad de todos los miembros de la sociedad para avanzar en ellos."
+        },
+        {
+          "codigo": "OA 25",
+          "descripcion": "Reconocer la diversidad inherente a las sociedades como manifestación de la libertad y de la dignidad humana, y evaluar las oportunidades y desafíos que un mundo globalizado entrega para evitar toda forma de discriminación, sea por raza o etnia, nacionalidad, situación socioeconómica, religión o creencia, género, orientación sexual o discapacidad, entre otras."
         }
       ]
     }

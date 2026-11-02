@@ -1,13 +1,22 @@
 {
   "asignatura": "Historia, Geografía y Ciencias Sociales",
   "curso": "3° básico",
+  "fuente": "Programa Historia GCS 3.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Orientación espacial y zonas climáticas",
       "oa": [
         {
           "codigo": "OA 6",
-          "descripcion": "Ubicar personas, lugares y elementos en una cuadrícula utilizando líneas de referencia y puntos cardinales."
+          "descripcion": "Ubicar personas, lugares y elementos en una cuadrícula, utilizando líneas de referencia y puntos cardinales."
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Asumir sus deberes y sus responsabilidades como estudiante y en situaciones de la vida cotidiana, como cumplir con sus deberes escolares, colaborar en el orden y en la limpieza de los espacios que comparte con su familia, su escuela y su comunidad, cuidar sus pertenencias y las de los demás, preocuparse de su salud e higiene y ayudar en su casa."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa y reconociendo sus errores y sus acciones, entre otros."
         },
         {
           "codigo": "OA 7",
@@ -15,7 +24,7 @@
         },
         {
           "codigo": "OA 8",
-          "descripcion": "Identificar y ubicar en mapas las principales zonas climáticas del mundo y dar ejemplos de distintos paisajes asociados a ellas."
+          "descripcion": "Identificar y ubicar en mapas las principales zonas climáticas del mundo, y dar ejemplos de distintos paisajes que pueden encontrarse en estas zonas y de cómo las personas han elaborado diferentes estrategias para habitarlos."
         }
       ]
     },
@@ -23,16 +32,36 @@
       "nombre": "Unidad 2 — La civilización griega",
       "oa": [
         {
+          "codigo": "OA 9",
+          "descripcion": "Caracterizar el entorno geográfico de las civilizaciones estudiadas, utilizando vocabulario geográfico adecuado (continente, valle, montaña, océano, río, archipiélago, mares, península, ciudad, construcciones y monumentos, entre otros)."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Reconocer algunos factores geográficos que influyeron en el desarrollo de las civilizaciones estudiadas (ubicación, relieve y clima, recursos naturales disponibles, importancia del mar Egeo y sus islas para Grecia e importancia del mar Mediterráneo para Roma, entre otros)."
+        },
+        {
           "codigo": "OA 1",
-          "descripcion": "Reconocer aspectos de la vida cotidiana de la civilización griega de la Antigüedad e identificar elementos de continuidad y cambio entre modos de vida del pasado y del presente."
+          "descripcion": "Reconocer aspectos de la vida cotidiana de la civilización griega de la Antigüedad e identificar algunos elementos de su legado a sociedades y culturas del presente; entre ellos, la organización democrática, el desarrollo de la historia, el teatro como forma de expresión, el arte y la escultura, la arquitectura, la mitología, la geometría y la filosofía, la creación del alfabeto y los juegos olímpicos."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Comparar modos de vida de la Antigüedad con el propio, considerando costumbres, trabajos y oficios, creencias, vestimentas y características de las ciudades."
+          "descripcion": "Comparar modos de vida de la Antigüedad con el propio, considerando costumbres, trabajos y oficios, creencias, vestimentas y características de las ciudades, entre otros."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa y reconociendo sus errores y sus acciones, entre otros."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Mostrar actitudes y realizar acciones concretas en su entorno cercano (familia, escuela y comunidad) que reflejen valores y virtudes ciudadanas, como: • la tolerancia y el respeto al otro (ejemplos: respetar las opiniones distintas a las propias, mostrar disposición al diálogo, respetar expresiones de diversidad, como diferentes costumbres, creencias, origen étnico, nacionalidad, etc.) • la empatía (ejemplos: demostrar cortesía con los demás, escuchar al otro, ayudar a quien lo necesite, etc.)"
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Investigar sobre algún tema de su interés con relación a las civilizaciones estudiadas, comunicando sus resultados."
+          "descripcion": "Investigar sobre algún tema de su interés con relación a las civilizaciones estudiadas (como los héroes, los dioses, las ciudades, las viviendas, la vestimenta, las herramientas tecnológicas y la esclavitud, entre otros) por medio de diferentes fuentes (libros, fuentes gráficas, TIC) y comunicar lo aprendido."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "Participar responsable y activamente en su hogar (encargos, celebraciones, cuidado de las cosas) y en la escuela (campañas solidarias, celebraciones, deportes y juegos), cumpliendo compromisos y responsabilidades adquiridas."
         }
       ]
     },
@@ -40,12 +69,36 @@
       "nombre": "Unidad 3 — La civilización romana",
       "oa": [
         {
+          "codigo": "OA 9",
+          "descripcion": "Caracterizar el entorno geográfico de las civilizaciones estudiadas, utilizando vocabulario geográfico adecuado (continente, valle, montaña, océano, río, archipiélago, mares, península, ciudad, construcciones y monumentos, entre otros)."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Reconocer algunos factores geográficos que influyeron en el desarrollo de las civilizaciones estudiadas (ubicación, relieve y clima, recursos naturales disponibles, importancia del mar Egeo y sus islas para Grecia e importancia del mar Mediterráneo para Roma, entre otros)."
+        },
+        {
           "codigo": "OA 2",
-          "descripcion": "Reconocer aspectos de la vida cotidiana de la civilización romana de la Antigüedad e identificar elementos de continuidad y cambio entre modos de vida del pasado y del presente."
+          "descripcion": "Reconocer aspectos de la vida cotidiana de la civilización romana de la Antigüedad e identificar algunos elementos de su legado a sociedades y culturas del presente; entre ellos, el idioma, el derecho y las leyes, el arte y las obras arquitectónicas."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comparar modos de vida de la Antigüedad con el propio, considerando costumbres, trabajos y oficios, creencias, vestimentas y características de las ciudades, entre otros."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Investigar sobre algún tema de su interés con relación a las civilizaciones estudiadas (como los héroes, los dioses, las ciudades, las viviendas, la vestimenta, las herramientas tecnológicas y la esclavitud, entre otros) por medio de diferentes fuentes (libros, fuentes gráficas, TIC) y comunicar lo aprendido."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Explicar, con ejemplos concretos, cómo diferentes culturas y pueblos han enfrentado de distintas maneras el desafío de desarrollarse y satisfacer las necesidades comunes a todos los seres humanos."
+          "descripcion": "Explicar, a través de ejemplos concretos, cómo diferentes culturas y pueblos (como griegos y romanos de la Antigüedad) han enfrentado de distintas maneras el desafío de desarrollarse y satisfacer las necesidades comunes a todos los seres humanos."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "Participar responsable y activamente en su hogar (encargos, celebraciones, cuidado de las cosas) y en la escuela (campañas solidarias, celebraciones, deportes y juegos), cumpliendo compromisos y responsabilidades adquiridas."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana, en los juegos y en el trabajo escolar, hablando con la verdad, respetando las reglas de los juegos sin hacer trampa, y reconociendo sus errores y sus acciones, entre otros."
         }
       ]
     },
@@ -54,23 +107,31 @@
       "oa": [
         {
           "codigo": "OA 11",
-          "descripcion": "Asumir sus deberes y responsabilidades como estudiante y en situaciones de la vida cotidiana."
-        },
-        {
-          "codigo": "OA 12",
-          "descripcion": "Mostrar actitudes y realizar acciones concretas que reflejen respeto al otro, tolerancia, empatía y responsabilidad."
-        },
-        {
-          "codigo": "OA 13",
-          "descripcion": "Mantener una conducta honesta en la vida cotidiana, juegos y trabajo escolar."
+          "descripcion": "Asumir sus deberes y sus responsabilidades como estudiante y en situaciones de la vida cotidiana, como cumplir con sus deberes escolares, colaborar en el orden y en la limpieza de los espacios que comparte con su familia, su escuela y su comunidad, cuidar sus pertenencias y las de los demás, preocuparse de su salud e higiene y ayudar en su casa."
         },
         {
           "codigo": "OA 14",
-          "descripcion": "Reconocer que los niños tienen derechos que les permiten recibir cuidado y protección y asumir responsabilidades acordes a su edad."
+          "descripcion": "Reconocer que los niños tienen derechos que les permiten recibir un cuidado especial por parte de la sociedad con el fin de que puedan aprender, crecer y desarrollarse, y dar ejemplos de cómo la sociedad les garantiza estos derechos."
+        },
+        {
+          "codigo": "OA 16",
+          "descripcion": "Participar responsable y activamente en su hogar (encargos, celebraciones, cuidado de las cosas) y en la escuela (campañas solidarias, celebraciones, deportes y juegos), cumpliendo compromisos y responsabilidades adquiridas."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Mostrar actitudes y realizar acciones concretas en su entorno cercano (familia, escuela y comunidad) que reflejen valores y virtudes ciudadanas, como: • la tolerancia y el respeto al otro (ejemplos: respetar las opiniones distintas a las propias, mostrar disposición al diálogo, respetar expresiones de diversidad, como diferentes costumbres, creencias, origen étnico, nacionalidad, etc.) • la empatía (ejemplos: demostrar cortesía con los demás, escuchar al otro, ayudar a quien lo necesite, etc.)"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Mantener una conducta honesta en la vida cotidiana y en el trabajo escolar, hablando con la verdad, asumiendo sus responsabilidades, respetando a sus pares y manteniendo los compromisos adquiridos."
         },
         {
           "codigo": "OA 15",
-          "descripcion": "Investigar y comunicar sus resultados sobre instituciones públicas y privadas que satisfacen necesidades y ayudan a la comunidad."
+          "descripcion": "Investigar y comunicar sus resultados sobre algunas instituciones públicas y privadas (como Junaeb, Sernac, SII, BancoEstado, universidades, Hogar de Cristo y fundaciones, entre otras), identificando el servicio que prestan en la comunidad y los diferentes trabajos que realizan las personas que se desempeñan en ellas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Investigar sobre algún tema de su interés con relación a las civilizaciones estudiadas (como los héroes, los dioses, las ciudades, las viviendas, la vestimenta, las herramientas tecnológicas y la esclavitud, entre otros) por medio de diferentes fuentes (libros, fuentes gráficas, TIC) y comunicar lo aprendido."
         }
       ]
     }
