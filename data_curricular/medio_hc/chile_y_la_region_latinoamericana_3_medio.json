@@ -1,0 +1,75 @@
+{
+  "asignatura": "Chile y la Región Latinoamericana",
+  "curso": "3° medio",
+  "fuente": "Programa Electivo Chile y Región Latinoamericana.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Evaluación crítica de los procesos políticos de la historia reciente latinoamericana",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar procesos sociales y culturales recientes de Chile y América Latina tales como migraciones, cambios demográficos y urbanización, considerando avances y desafíos comunes en materia de equidad, diversidad e interculturalidad."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Explicar procesos comunes de los Estados latinoamericanos en la historia política reciente, incluyendo la relación entre el poder civil y las fuerzas armadas, transiciones, la defensa y promoción de los derechos humanos y el fortalecimiento de las democracias."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar las oportunidades que ofrece a los Estados de América Latina la integración y la cooperación internacional, examinando la conformación de bloques económicos y los tratados y acuerdos en materia de economía, derechos humanos, educación, género, salud, y ciencia."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — ¿Cómo enfrentar los desafíos medioambientales en América Latina?",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar, a partir de la investigación, el estado del medioambiente en Chile y América Latina, incluyendo efectos de distintas actividades humanas y acciones emprendidas por los Estados de la región para avanzar en sustentabilidad."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar las oportunidades que ofrece a los Estados de América Latina la integración y la cooperación internacional, examinando la conformación de bloques económicos y los tratados y acuerdos en materia de economía, derechos humanos, educación, género, salud, y ciencia."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Participar en forma colaborativa en el diseño de propuestas para dar solución a problemas presentes a nivel local relacionadas con temas abordados en el nivel."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Diagnosticando el presente de los pueblos indígenas en Chile y América Latina",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar procesos sociales y culturales recientes de Chile y América Latina tales como migraciones, cambios demográficos y urbanización, considerando avances y desafíos comunes en materia de equidad, diversidad e interculturalidad."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar, a partir de distintas interpretaciones y perspectivas, el presente de distintos pueblos indígenas de Chile y Latinoamérica, considerando su cultura, los procesos históricos recientes y los avances y desafíos en su relación con los Estados nacionales de la región."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Participar en forma colaborativa en el diseño de propuestas para dar solución a problemas presentes a nivel local relacionadas con temas abordados en el nivel."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — ¿Cómo enfrentar los desafíos de los Estados de América Latina?",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar procesos sociales y culturales recientes de Chile y América Latina tales como migraciones, cambios demográficos y urbanización, considerando avances y desafíos comunes en materia de equidad, diversidad e interculturalidad."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Investigar cómo en América Latina los Estados responden a desafíos económicos y sociales, como pobreza, desigualdad, crecimiento económico, desarrollo social y diversificación de la matriz productiva, aplicando conceptos de la economía e información de fuentes e indicadores económicos (PIB, distribución del ingreso, empleo y producción, entre otros)."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Participar en forma colaborativa en el diseño de propuestas para dar solución a problemas presentes a nivel local relacionadas con temas abordados en el nivel."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "asignatura": "Mundo Global",
+  "curso": "3° medio",
+  "fuente": "Mundo global Electivo 3° y 4°.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Los procesos migratorios presentan desafíos al Estado-nación e inciden en su transformación",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar procesos migratorios contemporáneos en distintas regiones del mundo considerando múltiples causas, principales características, impactos en la sociedad de origen y de destino, y los desafíos para las sociedades y los Estados nacionales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explicar, por medio de la investigación, transformaciones del Estado-nación en la actualidad, en relación con aspectos como la ciudadanía en un mundo cada vez más interconectado, la internacionalización de la economía y la relación con otros Estados y organismos intergubernamentales."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Participar en forma colaborativa en el diseño de propuestas para dar solución a problemas presentes a nivel local relacionadas con temas abordados en el nivel."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Los conflictos internacionales y su impacto en la economía en múltiples escalas",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Investigar algunos aspectos de la economía global actual como cambios en la producción y en el mercado del trabajo, el rol del comercio mundial y del mercado financiero, y nuevas formas de consumo, aplicando conceptos de la economía (escasez, oferta y demanda, precio, balanza comercial, entre otros)."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Analizar algunos conflictos internacionales que involucran a Estados nacionales, sociedades o grupos, explicando sus contextos, posibilidades de resolución y aplicando conceptos de la ciencia política como poder, soberanía, ideología, derechos humanos, opinión pública entre otro."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Las decisiones económicas y las acciones de distintos actores provocan el cambio climático",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Investigar algunos aspectos de la economía global actual como cambios en la producción y en el mercado del trabajo, el rol del comercio mundial y del mercado financiero, y nuevas formas de consumo, aplicando conceptos de la economía (escasez, oferta y demanda, precio, balanza comercial, entre otros)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Explicar el cambio climático como fenómeno global, incluyendo controversias sobre sus múltiples causas, los grados de responsabilidad de distintos actores y sus principales consecuencias para la población."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Explicar, por medio de la investigación, transformaciones del Estado-nación en la actualidad, en relación con aspectos como la ciudadanía en un mundo cada vez más interconectado, la internacionalización de la economía y la relación con otros Estados y organismos intergubernamentales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Cambio climático y desastres socionaturales: la necesidad de replantear la relación entre ser humano y medio",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Explicar el cambio climático como fenómeno global, incluyendo controversias sobre sus múltiples causas, los grados de responsabilidad de distintos actores y sus principales consecuencias para la población."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar, por medio de la investigación, desastres socionaturales, considerando amenazas naturales, el papel de la sociedad y el Estado en la prevención y gestión del riesgo, factores que inciden en la vulnerabilidad de la población y avances de Chile y otros países en la materia."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Participar en forma colaborativa en el diseño de propuestas para dar solución a problemas presentes a nivel local relacionadas con temas abordados en el nivel."
+        }
+      ]
+    }
+  ]
+}

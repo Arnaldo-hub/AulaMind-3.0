@@ -1,0 +1,59 @@
+{
+  "asignatura": "Teatro",
+  "curso": "3° medio",
+  "fuente": "Teatro 3° y 4° Electivo.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Descubriendo nuestra expresividad",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Experimentar las posibilidades expresivas y comunicativas del cuerpo, el gesto y la voz en juegos dramáticos e improvisaciones grupales e individuales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente procesos y resultados de obras teatrales, tanto de artistas nacionales y extranjeros como propias y de sus pares, considerando criterios estéticos y propósitos expresivos, y dando cuenta de una postura personal fundada y respetuosa."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Dramatizando",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear ejercicios de expresión dramática, individuales y colectivos, a partir de la observación de situaciones y la imaginación, utilizando diversos recursos y elementos del lenguaje teatral (expresión, dramatización, trabajo en equipo y puesta en escena, entre otros)."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente procesos y resultados de obras teatrales, tanto de artistas nacionales y extranjeros como propias y de sus pares, considerando criterios estéticos y propósitos expresivos, y dando cuenta de una postura personal fundada y respetuosa."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Interpretando obras teatrales",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Interpretar obras teatrales que expresen los temas de interés de los estudiantes, utilizando para la construcción de personajes y situaciones dramáticas elementos del lenguaje teatral, habilidades actorales, recursos de la puesta en escena, medios y tecnologías actuales, y considerando un público específico."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Inferir propósitos expresivos de obras teatrales y textos dramáticos de diversos estilos, géneros y orígenes a partir de criterios estéticos (elementos del lenguaje teatral como uso expresivo del gesto y la voz, recursos de la puesta en escena, ideas, emociones y sensaciones que generan, entre otros) y aspectos de la época, el entorno y el contexto."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Difundiendo nuestras obras a otros",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente procesos y resultados de obras teatrales, tanto de artistas nacionales y extranjeros como propias y de sus pares, considerando criterios estéticos y propósitos expresivos, y dando cuenta de una postura personal fundada y respetuosa."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Diseñar y gestionar colaborativamente procesos de difusión de obras e interpretaciones teatrales, empleando una diversidad de medios o TIC."
+        }
+      ]
+    }
+  ]
+}

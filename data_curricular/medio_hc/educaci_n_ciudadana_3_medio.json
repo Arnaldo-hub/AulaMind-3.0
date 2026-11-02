@@ -1,0 +1,69 @@
+{
+  "curso": "3° Medio",
+  "asignatura": "Educación Ciudadana",
+  "fuente_marco": "Bases Curriculares 3° y 4° Medio, MINEDUC (D.S. N° 193/2019), texto íntegro verificado palabra por palabra contra el documento oficial entregado por el establecimiento.",
+  "estado_curricular": "VERIFICADO 100% contra D.S. N° 193/2019 oficial (documento entregado por el establecimiento). OA específicos del nivel (la asignatura es progresiva).",
+  "fuente": "Programa Educación Ciudadana 3°.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — ESTADO, DEMOCRACIA Y CIUDADANÍA",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Identificar los fundamentos, atributos y dimensiones de la democracia y ciudadanía, considerando las libertades fundamentales de las personas como un principio de estas y reconociendo sus implicancias en los deberes del Estado y en los derechos y responsabilidades ciudadanas."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Reflexionar personal y grupalmente sobre riesgos para la democracia en Chile y el mundo, tales como el fenómeno de la desafección política, la desigualdad, la corrupción, el narcotráfico, la violencia, entre otros."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Reflexionar personal y grupalmente sobre diversas formas de participación y su aporte al fortalecimiento del bien común, considerando experiencias personales, fenómenos sociales contemporáneos y las perspectivas del republicanismo, el liberalismo, y el comunitarismo."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Participar en distintas instancias escolares de ejercicio democrático, reconociendo la necesidad de organizar socialmente la vida en comunidad, a fin de fortalecer una sana convivencia que resguarde las libertades fundamentales y el bien común."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — JUSTICIA Y DERECHOS HUMANOS",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Investigar, a partir de casos de interés público, los mecanismos de acceso a la justicia y las principales características del sistema judicial, para fortalecer estrategias de resguardo de las libertades fundamentales, los propios derechos y los de la comunidad."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Promover el reconocimiento, defensa y exigibilidad de los derechos humanos en la vida cotidiana, considerando los principios de universalidad, indivisibilidad, inalienabilidad, igualdad y no discriminación que los sustentan."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — PARTICIPACIÓN Y ORGANIZACIÓN TERRITORIAL EN DEMOCRACIA",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Reflexionar personal y grupalmente sobre riesgos para la democracia en Chile y el mundo, tales como el fenómeno de la desafección política, la desigualdad, la corrupción, el narcotráfico, la violencia, entre otros."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Distinguir relaciones políticas, económicas y socioculturales que configuran el territorio en distintas escalas, proponiendo alternativas para avanzar en justicia social y ambiental."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Participar en distintas instancias escolares de ejercicio democrático, reconociendo la necesidad de organizar socialmente la vida en comunidad, a fin de fortalecer una sana convivencia que resguarde las libertades fundamentales y el bien común."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — RELACIONES ENTRE ESTADO Y MERCADO",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Evaluar las relaciones entre el Estado y el mercado, considerando temas como sueldos justos, productividad, carga tributaria, comercio justo, probidad, desarrollo sustentable, riqueza y pobreza."
+        }
+      ]
+    }
+  ]
+}

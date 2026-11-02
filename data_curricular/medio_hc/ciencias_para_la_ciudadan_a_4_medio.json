@@ -1,0 +1,118 @@
+{
+  "curso": "4° Medio",
+  "asignatura": "Ciencias para la Ciudadanía",
+  "unidades": [
+    {
+      "nombre": "Módulo: Bienestar y Salud",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Analizar, sobre la base de la investigación, factores biológicos, ambientales y sociales que influyen en la salud humana (como la nutrición, el consumo de alimentos transgénicos, la actividad física, el estrés, el consumo de alcohol y drogas, y la exposición a rayos UV, plaguicidas, patógenos y elementos contaminantes, entre otros)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Investigar y comparar diversas medicinas (incluyendo la convencional, la tradicional de nuestros pueblos originarios y la complementaria alternativa), considerando su origen, conocimientos y prácticas para la resolución de problemas de salud cotidianos."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar, a partir de evidencias, situaciones de transmisión de agentes infecciosos a nivel nacional y mundial (como virus de influenza, VIH-sida, hanta, hepatitis B, sarampión, entre otros), y evaluar críticamente posibles medidas de prevención como el uso de vacunas."
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo: Seguridad, Prevención y Autocuidado",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Investigar sustancias químicas de uso cotidiano en el hogar y el trabajo (medicamentos, detergentes y plaguicidas, entre otros), analizando su composición, reactividad, riesgos potenciales y medidas de seguridad asociadas (manipulación, almacenaje y eliminación)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Diseñar, evaluar y mejorar soluciones que permitan reducir las amenazas existentes en el hogar y en el mundo del trabajo (en sistemas eléctricos y de calefacción, y exposición a radiaciones, entre otros) para disminuir posibles riesgos en el bienestar de las personas y el cuidado del ambiente."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Analizar, a partir de modelos, riesgos de origen natural o provocados por la acción humana en su contexto local (como aludes, incendios, sismos de alta magnitud, erupciones volcánicas, tsunamis e inundaciones, entre otros) y evaluar las capacidades existentes en la escuela y la comunidad para la prevención, la mitigación y la adaptación frente a sus consecuencias."
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo: Ambiente y Sostenibilidad",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Investigar el ciclo de vida de productos de uso cotidiano y proponer, basados en evidencia, estrategias de consumo sostenible para prevenir y mitigar impactos ambientales."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Diseñar proyectos locales, basados en evidencia científica, para la protección y utilización sostenible de recursos naturales de Chile, considerando eficiencia energética, reducción de emisiones, tratamiento de recursos hídricos, conservación de ecosistemas o gestión de residuos, entre otros."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Modelar los efectos del cambio climático en diversos ecosistemas y sus componentes biológicos, físicos y químicos, y evaluar posibles soluciones para su mitigación."
+        }
+      ]
+    },
+    {
+      "nombre": "Módulo: Tecnología y Sociedad",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Diseñar proyectos tecnológicos que permitan resolver problemas personales y/o locales de diversos ámbitos de la vida (como vivienda y transporte, entre otros)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Explicar, basados en investigaciones y modelos, cómo los avances tecnológicos (en robótica, telecomunicaciones, astronomía, física cuántica, entre otros) han permitido al ser humano ampliar sus capacidades sensoriales y su comprensión de fenómenos relacionados con la materia, los seres vivos y el entorno."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Evaluar alcances y limitaciones de la tecnología y sus aplicaciones, argumentando riesgos y beneficios desde una perspectiva de salud, ética, social, económica y ambiental."
+        }
+      ]
+    },
+    {
+      "nombre": "Habilidades científicas",
+      "oa": [
+        {
+          "codigo": "OA a",
+          "descripcion": "Formular preguntas y problemas sobre tópicos científicos de interés, a partir de la observación de fenómenos y/o la exploración de diversas fuentes."
+        },
+        {
+          "codigo": "OA b",
+          "descripcion": "Planificar y desarrollar investigaciones que permitan recoger evidencias y contrastar hipótesis, con apoyo de herramientas tecnológicas y matemáticas."
+        },
+        {
+          "codigo": "OA c",
+          "descripcion": "Describir patrones, tendencias y relaciones entre datos, información y variables."
+        },
+        {
+          "codigo": "OA d",
+          "descripcion": "Analizar las relaciones entre las partes de un sistema en fenómenos y problemas de interés, a partir de tablas, gráficos, diagramas y modelos."
+        },
+        {
+          "codigo": "OA e",
+          "descripcion": "Construir, usar y comunicar argumentos científicos."
+        },
+        {
+          "codigo": "OA f",
+          "descripcion": "Desarrollar y usar modelos basados en evidencia, para predecir y explicar mecanismos y fenómenos naturales."
+        },
+        {
+          "codigo": "OA g",
+          "descripcion": "Diseñar proyectos para encontrar soluciones a problemas, usando la imaginación y la creatividad."
+        },
+        {
+          "codigo": "OA h",
+          "descripcion": "Evaluar la validez de información proveniente de diversas fuentes, distinguiendo entre evidencia científica e interpretación, y analizar sus alcances y limitaciones."
+        },
+        {
+          "codigo": "OA i",
+          "descripcion": "Analizar críticamente implicancias sociales, económicas, éticas y ambientales de problemas relacionados con controversias públicas que involucran ciencia y tecnología."
+        }
+      ]
+    }
+  ],
+  "fuente_marco": "Bases Curriculares 3° y 4° Medio, MINEDUC (D.S. N° 193/2019), texto íntegro verificado palabra por palabra contra el documento oficial entregado por el establecimiento.",
+  "estado_curricular": "VERIFICADO 100% contra D.S. N° 193/2019 oficial (documento entregado por el establecimiento).",
+  "fuente": "Ambiente y Sostenibilidad.pdf"
+}

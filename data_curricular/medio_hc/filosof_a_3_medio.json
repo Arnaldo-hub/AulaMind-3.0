@@ -1,0 +1,59 @@
+{
+  "curso": "3° medio",
+  "asignatura": "Filosofía",
+  "fuente_marco": "Bases Curriculares y Programas de Estudio 3°-4° Medio, MINEDUC (D.S. N° 12/2019 y actualizaciones), texto oficial curriculumnacional.cl.",
+  "estado_curricular": "COMPLETO — texto oficial MINEDUC, transcrito de programas de estudio curriculumnacional.cl.",
+  "fuente": "Programa Filosofía 3° y 4°.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades",
+      "oa": [
+        {
+          "codigo": "OA a",
+          "descripcion": "Formular preguntas significativas para su vida a partir del análisis de conceptos y teorías filosóficas, poniendo en duda aquello que aparece como “cierto” o “dado” y proyectando diversas respuestas posibles."
+        },
+        {
+          "codigo": "OA b",
+          "descripcion": "Analizar y fundamentar problemas presentes en textos filosóficos, considerando sus supuestos, conceptos, métodos de razonamiento e implicancias en la vida cotidiana."
+        },
+        {
+          "codigo": "OA c",
+          "descripcion": "Participar en diálogos sobre grandes problemas de la filosofía pertinentes para sus contextos, sostenidos a partir de argumentos de los distintos participantes, utilizando métodos de razonamiento filosófico y valorando la controversia y la diversidad como factores fundamentales para el desarrollo del pensamiento."
+        },
+        {
+          "codigo": "OA d",
+          "descripcion": "Elaborar visiones personales respecto de problemas filosóficos a partir de las perspectivas de diversos filósofos, siendo capaces tanto de reconstruir sus fundamentos como de cuestionarlos y plantear nuevos puntos de vista."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Conocimiento y comprensión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Describir las características del quehacer filosófico, considerando el problema de su origen y sentido, e identificando algunas de sus grandes preguntas y temas."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Analizar y fundamentar diversas perspectivas filosóficas, considerando posibles relaciones con la cotidianidad, así como normas, valores, creencias y visiones de mundo de los pensadores que las desarrollaron."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Formular preguntas filosóficas referidas al ser y la naturaleza de la realidad que sean significativas para su vida, considerando conceptos y teorías ontológicas fundamentales."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Formular preguntas filosóficas referidas al conocimiento, la ciencia y la verdad que sean significativas para su vida, considerando conceptos y teorías epistemológicas fundamentales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Dialogar sobre grandes problemas de la ontología y/o la epistemología, confrontando diversas perspectivas filosóficas y fundamentando visiones personales."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Aplicar principios y herramientas elementales de argumentación en el diálogo, la escritura y diferentes contextos, considerando la consistencia y rigurosidad lógica, la identificación de razonamientos válidos e inválidos y métodos de razonamiento filosófico."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "asignatura": "Danza",
+  "curso": "3° medio",
+  "fuente": "Danza  3° y 4° Electivo.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Cuerpo, movimiento consciente y expresión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Experimentar el cuerpo y sus posibilidades de movimiento de manera consciente y expresiva, utilizando los diversos recursos y elementos del lenguaje de la danza."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar y comunicar ideas, sensaciones, emociones, temas, vinculando diversos elementos y recursos del lenguaje de la danza (aspectos técnicos, espacio, tiempo, energía, entre otros)."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar propósitos expresivos de obras de danza a partir de criterios estéticos (lenguaje de la danza, puesta en escena, emociones, sensaciones e ideas que generan, entre otros) y aspectos contextuales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Creación y expresión",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Experimentar el cuerpo y sus posibilidades de movimiento de manera consciente y expresiva, utilizando los diversos recursos y elementos del lenguaje de la danza."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Expresar y comunicar ideas, sensaciones, emociones, temas, vinculando diversos elementos y recursos del lenguaje de la danza (aspectos técnicos, espacio, tiempo, energía, entre otros)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear obras y proyectos de danza individuales y colectivos, considerando temas de interés, recursos del lenguaje de la danza y elementos de la puesta en escena."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Danza, creación y contextos",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Interpretar propósitos expresivos de obras de danza a partir de criterios estéticos (lenguaje de la danza, puesta en escena, emociones, sensaciones e ideas que generan, entre otros) y aspectos contextuales"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Crear obras y proyectos de danza individuales y colectivos, considerando temas de interés, recursos del lenguaje de la danza y elementos de la puesta en escena."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente procesos y resultados de obras y proyectos de danza propios y de sus pares, considerando criterios estéticos y propósitos expresivos, y dando cuenta de una postura personal fundada y respetuosa."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Difundiendo nuestras obras",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente procesos y resultados de obras y proyectos de danza propios y de sus pares, considerando criterios estéticos y propósitos expresivos, y dando cuenta de una postura personal fundada y respetuosa."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Diseñar y gestionar colaborativamente procesos de difusión de obras y proyectos propios de danza, empleando una diversidad de medios o TIC."
+        }
+      ]
+    }
+  ]
+}
