@@ -1,7 +1,6 @@
 # ==========================================================
 # AulaMind Enterprise 3.0
 # routes/planning.py
-# MÓDULO 1 - PARTE A
 # ==========================================================
 
 from __future__ import annotations
@@ -23,9 +22,12 @@ from flask import (
 from services.curriculum_service import curriculum_service
 from security.authorization import subscription_required
 from services.entitlements import Entitlements
-from services.planning_service import planning_service
+from services.planning_service import (
+    planning_service,
+    PlanningModalities,
+)
 from services.persistence_service import persistence_service
-
+from routes.curriculum_data import get_subjects_for_course
 
 # ==========================================================
 # BLUEPRINT
@@ -94,7 +96,6 @@ def error(message, status=400):
         "success": False,
         "message": message
     }), status
-
 
 
 # ==========================================================
@@ -215,8 +216,17 @@ def info():
 
 
 # ==========================================================
-# CONTINÚA EN MÓDULO 1 - PARTE B
+# API MODALIDADES DE PLANIFICACIÓN (v3.5 - Capa 1)
 # ==========================================================
+
+@planning.route("/api/planning/modalities", methods=["GET"])
+def api_planning_modalities():
+    return jsonify({
+        "success": True,
+        "modalities": PlanningModalities.list()
+    })
+
+
 # ==========================================================
 # API CURSOS
 # ==========================================================
@@ -224,25 +234,90 @@ def info():
 @planning.route("/api/curriculum/courses", methods=["GET"])
 def api_courses():
 
+    courses = curriculum_service.get_courses()
+
     return jsonify({
 
         "success": True,
 
-        "courses": curriculum_service.get_courses()
+        "courses": courses
 
     })
 
 
 # ==========================================================
-# API ASIGNATURAS — CORRECCIÓN DEFINITIVA
+# RESOLUTOR DE NOMBRES DE ASIGNATURAS (v3.5.4)
 # ==========================================================
-# El singleton curriculum_service carga los JSONs en memoria
-# al iniciar el servidor. Si los JSONs en disco se corrigen
-# pero el proceso no se reinicia, el caché en memoria sigue
-# con los nombres viejos.
-#
-# SOLUCIÓN: Mapeo directo en el endpoint. No depende de
-# archivos en disco ni de caché. Funciona siempre.
+# El dropdown, las unidades y los OA deben hablar el mismo
+# idioma. Traduce variantes (mayúsculas, acentos, la "s"
+# final que agrega el frontend: "Matemática"->"Matemáticas",
+# y abreviaturas históricas del índice) al nombre EXACTO del
+# curriculum_service.
+# ==========================================================
+
+import unicodedata
+
+
+_SUBJECT_ALIASES = {
+    "Ciencias Naturales": "Cs. naturales",
+    "Educación Física y Salud": "Ed. física",
+}
+
+
+def _norm_subject(s):
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return " ".join(s.lower().split())
+
+
+def _has_usable_content(course, subject):
+    """True si la asignatura tiene al menos una unidad con OA.
+    v3.5.8: el filtro del dropdown exige contenido planificable —
+    una asignatura con unidades vacías (o sin unidades) es un
+    callejón sin salida para el docente."""
+    canonical = _resolve_subject(course, subject)
+    units = curriculum_service.get_units(course, canonical)
+    if not units:
+        return False
+    for u in units:
+        un = u["name"] if isinstance(u, dict) else u
+        if curriculum_service.get_learning_objectives(course, canonical, un):
+            return True
+    return False
+
+
+def _resolve_subject(course, subject):
+    """Nombre canónico de la asignatura en el índice del
+    servicio. Si no hay match, devuelve el original
+    (comportamiento histórico)."""
+    try:
+        service_subjects = curriculum_service.get_subjects(course) or []
+    except Exception:
+        return subject
+    # v3.5.9: el alias solo aplica si el nombre destino EXISTE en
+    # este curso. Antes se aplicaba siempre, lo que rompía medio:
+    # "Educación Física y Salud" -> "Ed. física" (que solo existe
+    # en básico) y la asignatura desaparecía del dropdown.
+    if subject in _SUBJECT_ALIASES:
+        target = _SUBJECT_ALIASES[subject]
+        if target in service_subjects:
+            return target
+    if subject in service_subjects:
+        return subject
+    n = _norm_subject(subject)
+    for s in service_subjects:
+        if _norm_subject(s) == n:
+            return s
+    if n.endswith("s"):
+        n2 = n[:-1]
+        for s in service_subjects:
+            if _norm_subject(s) == n2:
+                return s
+    return subject
+
+
+# ==========================================================
+# API ASIGNATURAS — CORRECCIÓN DEFINITIVA
 # ==========================================================
 
 # Mapeo global: abreviaturas → nombres oficiales
@@ -256,23 +331,53 @@ _SUBJECT_NAME_MAP = {
 @planning.route("/api/curriculum/subjects/<course>", methods=["GET"])
 def api_subjects(course):
     """
-    Devuelve asignaturas para un curso.
-    Aplica corrección de nombres abreviados antes de enviar
-    al frontend, garantizando que siempre se muestren los
-    nombres oficiales completos.
+    Devuelve todas las asignaturas con contenido planificable.
+    La fuente primaria es CurriculumService para que PIE y
+    Planificaciones compartan cursos, asignaturas, unidades y OA/AE.
+    La lista histórica queda solo como respaldo si no hay servicio.
     """
-    subjects = curriculum_service.get_subjects(course)
 
-    # Corrección definitiva: reemplazar abreviaturas
+    # Incluye contenido nuevo aunque no esté en la lista fija histórica
+    # (por ejemplo, Inglés de 1° a 4° básico). Oculta únicamente
+    # asignaturas sin unidades u objetivos utilizables.
+    service_subjects = curriculum_service.get_subjects(course)
+    if service_subjects:
+        usable = [
+            s for s in service_subjects
+            if _has_usable_content(course, s)
+        ]
+        return jsonify({
+            "success": True,
+            "subjects": usable,
+            "total": len(usable)
+        })
+
+    subjects = get_subjects_for_course(course)
+
+    if subjects is None:
+        return jsonify({
+            "success": False,
+            "error": f"Curso '{course}' no encontrado"
+        }), 404
+
     corrected = [
         _SUBJECT_NAME_MAP.get(s, s)
         for s in subjects
     ]
 
+    # v3.5.8: igual que Media/NT — solo asignaturas con OA
+    # planificables (oculta p.ej. Religión, que no tiene datos).
+    usable = [
+        s for s in corrected
+        if _has_usable_content(course, s)
+    ]
+
     return jsonify({
         "success": True,
-        "subjects": corrected
+        "subjects": usable,
+        "total": len(usable)
     })
+
 
 # ==========================================================
 # API UNIDADES
@@ -280,10 +385,23 @@ def api_subjects(course):
 
 @planning.route("/api/curriculum/units/<course>/<subject>", methods=["GET"])
 def api_units(course, subject):
+    # v3.5.4: traducir el nombre del dropdown al nombre
+    # canónico del índice (alias/acentos/mayúsculas/s final).
+    subject = _resolve_subject(course, subject)
+    units = curriculum_service.get_units(course, subject)
+    # v3.5.8: solo unidades con OA — una unidad vacía es un
+    # callejón sin salida dentro de la asignatura.
+    units = [
+        u for u in units
+        if curriculum_service.get_learning_objectives(
+            course, subject, u["name"] if isinstance(u, dict) else u
+        )
+    ]
     return jsonify({
         "success": True,
-        "units": curriculum_service.get_units(course, subject)
+        "units": units
     })
+
 
 # ==========================================================
 # API OA
@@ -291,10 +409,13 @@ def api_units(course, subject):
 
 @planning.route("/api/curriculum/objectives/<course>/<subject>/<unit>", methods=["GET"])
 def api_objectives(course, subject, unit):
+    # v3.5.4: mismo resolvedor que unidades.
+    subject = _resolve_subject(course, subject)
     return jsonify({
         "success": True,
         "objectives": curriculum_service.get_learning_objectives(course, subject, unit)
     })
+
 
 # ==========================================================
 # GENERAR PLANIFICACIÓN IA
@@ -315,15 +436,6 @@ def generate():
                 400
             )
 
-        # --------------------------------------------------
-        # Normalizar aliases inglés → español.
-        #
-        # planning.js envía las claves en español
-        # (curso, asignatura, unidad, objetivos...), que
-        # son las que entiende PlanningService. Se aceptan
-        # también las variantes en inglés por compatibilidad.
-        # --------------------------------------------------
-
         aliases = {
             "course": "curso",
             "subject": "asignatura",
@@ -338,6 +450,13 @@ def generate():
             "evaluation": "evaluacion",
             "resources": "recursos",
             "notes": "observaciones",
+            # v3.5 Capa 1: modalidades y fechas
+            "plan_type": "modalidad_plan",
+            "tipo_plan": "modalidad_plan",
+            "planning_type": "modalidad_plan",
+            "start_date": "fecha_inicio",
+            "end_date": "fecha_termino",
+            "month": "mes",
         }
 
         data = dict(raw)
@@ -351,10 +470,25 @@ def generate():
 
                 del data[en]
 
-        required = [
-            "curso",
-            "asignatura",
-            "unidad"
+        # v3.5 Capa 1: validación según modalidad elegida.
+        modality_id = data.get("modalidad_plan") or "unidad"
+
+        if not PlanningModalities.is_valid(modality_id):
+
+            return error(
+
+                f"Modalidad '{modality_id}' no válida. "
+
+                "Usa: anual, mensual, diaria, unidad o invertida.",
+
+                400
+
+            )
+
+        data["modalidad_plan"] = modality_id
+
+        required = PlanningModalities.get(modality_id)[
+            "required_fields"
         ]
 
         missing = [
@@ -381,10 +515,17 @@ def generate():
         data["objetivos"] = objectives
 
         current_app.logger.info(
-            "Generando planificación %s | %s | %s",
+
+            "Generando planificación [%s] %s | %s | %s",
+
+            data["modalidad_plan"],
+
             data["curso"],
+
             data["asignatura"],
-            data["unidad"]
+
+            data.get("unidad", "")
+
         )
 
         result = planning_service.generate(data)
@@ -398,7 +539,6 @@ def generate():
 
         if result.get("success"):
 
-            # Consumir una generación del trial (si aplica)
             Entitlements.record_generation(
                 session.get("user_id")
             )
