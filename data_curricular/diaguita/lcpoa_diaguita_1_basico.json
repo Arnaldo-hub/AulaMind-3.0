@@ -2,25 +2,30 @@
   "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
   "pueblo": "Diaguita",
   "curso": "1° básico",
+  "fuente": "Programa Pueblos Originarios.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Relatos, memoria familiar y territorio Diaguita",
       "oa": [
         {
-          "codigo": "LC01-U1-LS01",
-          "descripcion": "Disfrutar y comprender relatos breves que forman parte de la tradición oral del pueblo, reconociendo palabras y expresiones culturalmente significativas."
+          "codigo": "OA 1",
+          "descripcion": "Conocer y disfrutar textos orales breves (canciones, poemas, adivinanzas, trabalenguas u otros juegos lingüísticos), propios de la tradición de los pueblos indígenas, estableciendo relaciones con sus propias experiencias y demostrando su comprensión, a partir de la expresión oral, corporal y/o gestual."
         },
         {
-          "codigo": "LC01-U1-T01",
-          "descripcion": "Reconocer lugares y espacios significativos del territorio Diaguita, vinculándolos con experiencias familiares y comunitarias."
+          "codigo": "OA 2",
+          "descripcion": "Relacionar con sus propios conocimientos y experiencias, información cultural significativa de los pueblos, en relatos que escuchan o les son leídos, que incluyan algunas palabras en lengua indígena, o en castellano, según sea el caso."
         },
         {
-          "codigo": "LC01-U1-C01",
-          "descripcion": "Reconocer formas de convivencia y participación familiar y comunitaria basadas en el respeto, la colaboración y la reciprocidad."
+          "codigo": "OA 3",
+          "descripcion": "Describir características significativas del territorio ancestral del pueblo indígena que corresponda."
         },
         {
-          "codigo": "LC01-U1-P01",
-          "descripcion": "Reconocer expresiones del patrimonio cultural y natural presentes en la familia, comunidad y territorio."
+          "codigo": "OA 4",
+          "descripcion": "Comprender la relación del ser humano con la naturaleza, considerando la importancia que tiene para los pueblos indígenas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Conocer el patrimonio cultural de su comunidad, territorio y pueblo indígena que corresponda."
         }
       ]
     },
@@ -28,20 +33,24 @@
       "nombre": "Unidad 2 — Naturaleza, agricultura y vida comunitaria",
       "oa": [
         {
-          "codigo": "LC01-U2-LS01",
-          "descripcion": "Escuchar y comunicar experiencias relacionadas con actividades familiares y comunitarias, incorporando palabras culturalmente significativas."
+          "codigo": "OA 6",
+          "descripcion": "Reconocer en el contexto, sonidos propios de la lengua indígena, considerando ámbitos del repertorio lingüístico, como por ejemplo: toponimia, partes del cuerpo, alimentación, colores, números, elementos de la naturaleza, entre otros."
         },
         {
-          "codigo": "LC01-U2-T01",
-          "descripcion": "Reconocer prácticas de ocupación, cuidado y conocimiento del territorio vinculadas con la memoria del pueblo Diaguita."
+          "codigo": "OA 7",
+          "descripcion": "Utilizar recursos tecnológicos disponibles (TIC) para conocer sonidos propios de la lengua y símbolos de la escritura ancestral, según el pueblo indígena que corresponda o de culturas originarias afines."
         },
         {
-          "codigo": "LC01-U2-C01",
-          "descripcion": "Valorar prácticas de cooperación, intercambio, respeto y ayuda mutua presentes en la vida comunitaria."
+          "codigo": "OA 8",
+          "descripcion": "Comprender que los pueblos indígenas poseen un territorio y una historia que le otorgan identidad."
         },
         {
-          "codigo": "LC01-U2-P01",
-          "descripcion": "Comprender la relación entre las personas, el agua, la tierra, las plantas y otros elementos de la naturaleza desde conocimientos culturales del pueblo Diaguita."
+          "codigo": "OA 9",
+          "descripcion": "Reconocer que la naturaleza entrega mensajes sobre la cosmovisión que son relevantes para los pueblos indígenas."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Comprender la relación entre el ser humano, la naturaleza y el cosmos, considerando la perspectiva indígena de la ciencia (astros, medicina ancestral, navegación, entre otros)."
         }
       ]
     },
@@ -49,20 +58,20 @@
       "nombre": "Unidad 3 — Alfarería, diseños, saberes y patrimonio Diaguita",
       "oa": [
         {
-          "codigo": "LC01-U3-LS01",
-          "descripcion": "Comprender y comunicar mensajes sencillos relacionados con saberes, oficios y prácticas culturales de la comunidad."
+          "codigo": "OA 11",
+          "descripcion": "Conocer palabras culturalmente significativas de la vida cotidiana, de la toponimia y la antroponimia del pueblo indígena que corresponda.."
         },
         {
-          "codigo": "LC01-U3-T01",
-          "descripcion": "Reconocer conocimientos transmitidos por personas mayores y su importancia para la memoria e identidad del pueblo Diaguita."
+          "codigo": "OA 12",
+          "descripcion": "Comprender que los pueblos indígenas poseen un territorio y una historia que le otorgan identidad.."
         },
         {
-          "codigo": "LC01-U3-C01",
-          "descripcion": "Reconocer valores comunitarios presentes en actividades productivas, celebraciones y prácticas familiares."
+          "codigo": "OA 13",
+          "descripcion": "Conocer eventos socioculturales y ceremoniales propios del pueblo indígena que corresponda."
         },
         {
-          "codigo": "LC01-U3-P01",
-          "descripcion": "Valorar técnicas, diseños, oficios y expresiones artísticas tradicionales como parte del patrimonio material e inmaterial del pueblo Diaguita."
+          "codigo": "OA 14",
+          "descripcion": "Conocer las principales técnicas y actividades de producción e intercambio del pueblo indígena, considerando tiempo del año, lugar geográfico y procesos productivos (preparación natural de insumos, proceso productivo, distribución, consumo, entre otros)."
         }
       ]
     },
@@ -70,20 +79,20 @@
       "nombre": "Unidad 4 — Celebraciones, identidad y continuidad cultural",
       "oa": [
         {
-          "codigo": "LC01-U4-LS01",
-          "descripcion": "Expresar oralmente ideas y experiencias sobre celebraciones y prácticas culturales del entorno familiar y comunitario."
+          "codigo": "OA 15",
+          "descripcion": "Valorar el significado y la importancia cultural de diferentes símbolos de la escritura ancestral, según el pueblo indígena que corresponda."
         },
         {
-          "codigo": "LC01-U4-T01",
-          "descripcion": "Reconocer elementos culturales que aportan a la identidad y al sentido de pertenencia al pueblo Diaguita."
+          "codigo": "OA 16",
+          "descripcion": "Comprender la importancia de la memoria familiar de los pueblos indígenas en la transmisión del conocimiento y la cultura."
         },
         {
-          "codigo": "LC01-U4-C01",
-          "descripcion": "Reconocer dimensiones espirituales, ceremoniales y comunitarias en la relación con la naturaleza y el territorio."
+          "codigo": "OA 17",
+          "descripcion": "Identificar los valores y principios personales y familiares de acuerdo a cada contexto cultural."
         },
         {
-          "codigo": "LC01-U4-P01",
-          "descripcion": "Participar en experiencias de creación y apreciación vinculadas con expresiones culturales y patrimoniales del pueblo Diaguita."
+          "codigo": "OA 18",
+          "descripcion": "Practicar expresiones de arte propias del pueblo indígena, considerando los aspectos más relevantes para la cultura."
         }
       ]
     }
