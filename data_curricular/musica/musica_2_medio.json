@@ -1,9 +1,10 @@
 {
   "asignatura": "Música",
   "curso": "2° medio",
+  "fuente": "Programa Música(4).pdf",
   "unidades": [
     {
-      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "nombre": "Unidad 1 — música y tradición",
       "oa": [
         {
           "codigo": "OA 1",
@@ -15,16 +16,16 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos. MÚSICA | Programa de Estudio | 2° medio 63 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación dentro de las unidades son sugerencias para los y las docentes. El objetivo es entregar recursos que enriquezcan su labor –pudiendo estos ser adaptados a cada contexto– además de enfatizar algunos aspectos del trabajo de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y crecimiento musical de alumnos y alumnas en todos los ejes. La propuesta de unidades puede ser reordenada dentro del año lectivo en función"
+          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos."
         }
       ]
     },
     {
-      "nombre": "Unidad 2 — Interpretar y crear música",
+      "nombre": "Unidad 2 — música y cultura",
       "oa": [
         {
           "codigo": "OA 2",
-          "descripcion": "Contrastar músicas con características similares, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos y contextos como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 2° medio EJE INTERPRETAR Y CREAR"
+          "descripcion": "Contrastar músicas con características similares, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos y contextos como en su relación con el propósito expresivo."
         },
         {
           "codigo": "OA 4",
@@ -32,7 +33,7 @@
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Improvisar y crear música con fluidez e innovación, dando énfasis a arreglos de canciones y secciones musicales, sobre la base de proposiciones dadas o rasgos estilísticos y formales acordados. EJE REFLEXIONAR Y RELACIONAR"
+          "descripcion": "Improvisar y crear música con fluidez e innovación, dando énfasis a arreglos de canciones y secciones musicales, sobre la base de proposiciones dadas o rasgos estilísticos y formales acordados."
         },
         {
           "codigo": "OA 6",
@@ -40,12 +41,12 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos. MÚSICA | Programa de Estudio | 2° medio 63 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación dentro de las unidades son sugerencias para los y las docentes. El objetivo es entregar recursos que enriquezcan su labor –pudiendo estos ser adaptados a cada contexto– además de enfatizar algunos aspectos del trabajo de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y crecimiento musical de alumnos y alumnas en todos los ejes. La propuesta de unidades puede ser reordenada dentro del año lectivo en función"
+          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos."
         }
       ]
     },
     {
-      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "nombre": "Unidad 3 — música y otras artes",
       "oa": [
         {
           "codigo": "OA 1",
@@ -53,7 +54,7 @@
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Contrastar músicas con características similares, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos y contextos como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 2° medio EJE INTERPRETAR Y CREAR"
+          "descripcion": "Contrastar músicas con características similares, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos y contextos como en su relación con el propósito expresivo."
         },
         {
           "codigo": "OA 3",
@@ -61,16 +62,16 @@
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Improvisar y crear música con fluidez e innovación, dando énfasis a arreglos de canciones y secciones musicales, sobre la base de proposiciones dadas o rasgos estilísticos y formales acordados. EJE REFLEXIONAR Y RELACIONAR"
+          "descripcion": "Improvisar y crear música con fluidez e innovación, dando énfasis a arreglos de canciones y secciones musicales, sobre la base de proposiciones dadas o rasgos estilísticos y formales acordados."
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos. MÚSICA | Programa de Estudio | 2° medio 63 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación dentro de las unidades son sugerencias para los y las docentes. El objetivo es entregar recursos que enriquezcan su labor –pudiendo estos ser adaptados a cada contexto– además de enfatizar algunos aspectos del trabajo de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y crecimiento musical de alumnos y alumnas en todos los ejes. La propuesta de unidades puede ser reordenada dentro del año lectivo en función"
+          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos."
         }
       ]
     },
     {
-      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "nombre": "Unidad 4 — compartiendo nuestras músicas",
       "oa": [
         {
           "codigo": "OA 1",
@@ -82,7 +83,7 @@
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Improvisar y crear música con fluidez e innovación, dando énfasis a arreglos de canciones y secciones musicales, sobre la base de proposiciones dadas o rasgos estilísticos y formales acordados. EJE REFLEXIONAR Y RELACIONAR"
+          "descripcion": "Improvisar y crear música con fluidez e innovación, dando énfasis a arreglos de canciones y secciones musicales, sobre la base de proposiciones dadas o rasgos estilísticos y formales acordados."
         },
         {
           "codigo": "OA 6",
@@ -90,15 +91,7 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos. MÚSICA | Programa de Estudio | 2° medio 63 Visión global de los Objetivos de Aprendizaje del año La organización de los OA y su ubicación dentro de las unidades son sugerencias para los y las docentes. El objetivo es entregar recursos que enriquezcan su labor –pudiendo estos ser adaptados a cada contexto– además de enfatizar algunos aspectos del trabajo de modo que se evidencie un progreso. Lo primordial es lograr el aprendizaje y crecimiento musical de alumnos y alumnas en todos los ejes. La propuesta de unidades puede ser reordenada dentro del año lectivo en función"
-        },
-        {
-          "codigo": "OA 3",
-          "descripcion": "Cantar y tocar repertorio diverso sobre la base de una selección personal, desarrollando habilidades tales como manejo de estilo, fluidez, capacidad de proponer y dirigir, identificación de voces y funciones en un grupo, entre otras."
-        },
-        {
-          "codigo": "OA 2",
-          "descripcion": "Contrastar músicas con características similares, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos y contextos como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 2° medio EJE INTERPRETAR Y CREAR"
+          "descripcion": "Valorar críticamente el rol de los medios de registro y transmisión en la evolución de la música en diferentes periodos y espacios históricos."
         }
       ]
     }

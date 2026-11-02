@@ -1,9 +1,10 @@
 {
   "asignatura": "Música",
   "curso": "1° medio",
+  "fuente": "Programa música.pdf",
   "unidades": [
     {
-      "nombre": "Unidad 1 — Escuchar, apreciar y experimentar con la música",
+      "nombre": "Unidad 1 — lo que la música nos muestra",
       "oa": [
         {
           "codigo": "OA 1",
@@ -15,32 +16,16 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "otros recursos, o ser una guía para que el profesor Evaluar la relevancia de la música, destacando el singular sentido que esta o la profesora diseñe sus cumple en la construcción y preservación de identidades y culturas. propias actividades. ® Relación con otras 1. Los y las estudiantes escuchan y observan obras de teatro musicalizadas, asignaturas: como por ejemplo La pérgola de las flores, de I. Aguirre y F. Flores del Campo. Indica que la actividad se Comentan lo que ocurre musicalmente en ellas y reflexionan respecto de qué relaciona con Objetivos se necesitará para montar una obra de esas características. Para ello, estudian"
-        },
-        {
-          "codigo": "OA 4",
-          "descripcion": "Interpretar repertorio diverso a una y más voces, con precisión técnica y fluidez, utilizando diversos medios de registro y transmisión en la gestión y presentación de su quehacer musical."
-        },
-        {
-          "codigo": "OA 5",
-          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
-        },
-        {
-          "codigo": "OA 2",
-          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
-        },
-        {
-          "codigo": "OA 6",
-          "descripcion": "Analizar fortalezas y áreas de crecimiento personal en la audición, interpretación, creación y reflexión, y su influencia en el trabajo musical propio y colectivo, proponiendo alternativas de desarrollo."
+          "descripcion": "Evaluar la relevancia de la música, destacando el singular sentido que esta cumple en la construcción y preservación de identidades y culturas."
         }
       ]
     },
     {
-      "nombre": "Unidad 2 — Interpretar y crear música",
+      "nombre": "Unidad 2 — lo que la música nos cuenta",
       "oa": [
         {
           "codigo": "OA 2",
-          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
+          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos como en su relación con el propósito expresivo."
         },
         {
           "codigo": "OA 4",
@@ -48,7 +33,7 @@
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
+          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales."
         },
         {
           "codigo": "OA 6",
@@ -56,12 +41,12 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "otros recursos, o ser una guía para que el profesor Evaluar la relevancia de la música, destacando el singular sentido que esta o la profesora diseñe sus cumple en la construcción y preservación de identidades y culturas. propias actividades. ® Relación con otras 1. Los y las estudiantes escuchan y observan obras de teatro musicalizadas, asignaturas: como por ejemplo La pérgola de las flores, de I. Aguirre y F. Flores del Campo. Indica que la actividad se Comentan lo que ocurre musicalmente en ellas y reflexionan respecto de qué relaciona con Objetivos se necesitará para montar una obra de esas características. Para ello, estudian"
+          "descripcion": "Evaluar la relevancia de la música, destacando el singular sentido que esta cumple en la construcción y preservación de identidades y culturas."
         }
       ]
     },
     {
-      "nombre": "Unidad 3 — Música, cultura y contexto",
+      "nombre": "Unidad 3 — la música nos identifica",
       "oa": [
         {
           "codigo": "OA 1",
@@ -69,7 +54,7 @@
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
+          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos como en su relación con el propósito expresivo."
         },
         {
           "codigo": "OA 3",
@@ -77,12 +62,12 @@
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
+          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales."
         }
       ]
     },
     {
-      "nombre": "Unidad 4 — Presentar, compartir y reflexionar sobre la experiencia musical",
+      "nombre": "Unidad 4 — compartiendo nuestras músicas",
       "oa": [
         {
           "codigo": "OA 1",
@@ -94,7 +79,7 @@
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales. EJE REFLEXIONAR Y RELACIONAR"
+          "descripcion": "Improvisar y crear música dando énfasis a la experimentación con el material sonoro, arreglos de canciones y secciones musicales, basándose en ideas musicales y extramusicales."
         },
         {
           "codigo": "OA 6",
@@ -102,15 +87,7 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "otros recursos, o ser una guía para que el profesor Evaluar la relevancia de la música, destacando el singular sentido que esta o la profesora diseñe sus cumple en la construcción y preservación de identidades y culturas. propias actividades. ® Relación con otras 1. Los y las estudiantes escuchan y observan obras de teatro musicalizadas, asignaturas: como por ejemplo La pérgola de las flores, de I. Aguirre y F. Flores del Campo. Indica que la actividad se Comentan lo que ocurre musicalmente en ellas y reflexionan respecto de qué relaciona con Objetivos se necesitará para montar una obra de esas características. Para ello, estudian"
-        },
-        {
-          "codigo": "OA 3",
-          "descripcion": "Cantar y tocar repertorio diverso y relacionado con la música escuchada, desarrollando habilidades tales como conocimiento de estilo, identificación de voces en un grupo, transmisión del propósito expresivo, laboriosidad y compromiso, entre otras."
-        },
-        {
-          "codigo": "OA 2",
-          "descripcion": "Comparar músicas con características diferentes, basándose tanto en elementos del lenguaje musical y en los procedimientos compositivos, como en su relación con el propósito expresivo. 62 MÚSICA | Programa de Estudio | 1° medio EJE INTERPRETAR Y CREAR"
+          "descripcion": "Evaluar la relevancia de la música, destacando el singular sentido que esta cumple en la construcción y preservación de identidades y culturas."
         }
       ]
     }

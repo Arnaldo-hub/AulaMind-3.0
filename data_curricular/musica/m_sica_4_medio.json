@@ -1,0 +1,83 @@
+{
+  "asignatura": "Música",
+  "curso": "4° Medio",
+  "fuente": "Música 3° y 4° Electivo.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — DESCUBRIENDO LA MÚSICA EN LA VIDA",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Experimentar con diversos estilos musicales contemporáneos, utilizando diferentes recursos de producción musical (voz, objetos sonoros, instrumentos musicales y tecnologías)."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar propósitos expresivos de obras musicales de diferentes estilos, a partir de criterios estéticos (lenguaje musical, aspectos técnicos, emociones, sensaciones e ideas que genera, entre otros), utilizando conceptos disciplinarios."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Argumentar juicios estéticos de obras musicales de diferentes estilos, considerando criterios estéticos, propósitos expresivos y aspectos contextuales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — MÚSICA Y TECNOLOGÍAS",
+      "oa": [
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear música para expresar emociones e ideas, tomando riesgos creativos al seleccionar recursos de producción y al aplicar elementos del lenguaje musical (ritmo, armonía, duración, tono, entre otros)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Interpretar repertorio personal y de música de diferentes estilos, en forma individual o en conjunto, considerando elementos característicos del estilo, y un trabajo técnico coherente con los propósitos expresivos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar propósitos expresivos de obras musicales de diferentes estilos, a partir de criterios estéticos (lenguaje musical, aspectos técnicos, emociones, sensaciones e ideas que genera, entre otros), utilizando conceptos disciplinarios."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Evaluar críticamente procesos y resultados de obras musicales, personales y de sus pares, considerando criterios estéticos, aspectos técnicos y propósitos expresivos, dando cuenta de una postura personal fundada y respetuosa."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — HACIENDO MÚSICA",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Experimentar con diversos estilos musicales contemporáneos, utilizando diferentes recursos de producción musical (voz, objetos sonoros, instrumentos musicales y tecnologías)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Crear música para expresar emociones e ideas, tomando riesgos creativos al seleccionar recursos de producción y al aplicar elementos del lenguaje musical (ritmo, armonía, duración, tono, entre otros)."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Interpretar repertorio personal y de música de diferentes estilos, en forma individual o en conjunto, considerando elementos característicos del estilo, y un trabajo técnico coherente con los propósitos expresivos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar propósitos expresivos de obras musicales de diferentes estilos, a partir de criterios estéticos (lenguaje musical, aspectos técnicos, emociones, sensaciones e ideas que genera, entre otros), utilizando conceptos disciplinarios."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — COMPARTIENDO NUESTRA MÚSICA",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Interpretar repertorio personal y de música de diferentes estilos, en forma individual o en conjunto, considerando elementos característicos del estilo, y un trabajo técnico coherente con los propósitos expresivos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Evaluar críticamente procesos y resultados de obras musicales, personales y de sus pares, considerando criterios estéticos, aspectos técnicos y propósitos expresivos, dando cuenta de una postura personal fundada y respetuosa."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Diseñar y gestionar colaborativamente proyectos de difusión de obras e interpretaciones musicales propias, empleando diversidad de medios o TIC."
+        }
+      ]
+    }
+  ]
+}

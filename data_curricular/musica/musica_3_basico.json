@@ -1,21 +1,22 @@
 {
   "asignatura": "Música",
   "curso": "3° básico",
+  "fuente": "Música 3.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Tradición folclórica de Chile y otros países",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Escuchar cualidades del sonido (altura, timbre, intensidad, duración) y elementos del lenguaje musical (pulsos, acentos, patrones, reiteraciones, contrastes, variaciones, dinámica, tempo, preguntas-respuestas, secciones, A-AB-ABA) y representarlos de distintas formas."
+          "descripcion": "Escuchar cualidades del sonido (altura, timbre, intensidad, duración) y elementos del lenguaje musical (pulsos, acentos, patrones, reiteraciones, contrastes, variaciones, dinámica, tempo, preguntas-respuestas, secciones, A-AB-ABA), y representarlos de distintas formas."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada, usando diversos medios expresivos (verbal, corporal, musical, visual)."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas poniendo énfasis en: • tradición escrita (docta) - música inspirada en raíces folclóricas de Chile y el mundo (por ejemplo, Chile en cuatro cuerdas de G. Soublette, Danzas eslavas de A. Dvorak) - música descriptiva (por ejemplo, El carnaval de los animales de C. Saint-Saëns, extractos de La suite Gran Cañón de F. Gofré) • tradición oral (folclor, música de pueblos originarios) - canciones, bailes, festividades, tradiciones de Chile y del mundo (por ejemplo, El chuico y la damajuana de V. Parra, música de la Tirana, El pavo) • popular (jazz, rock, fusión, etc.) - fusión con raíces folclóricas (por ejemplo, Los Jaivas y Congreso) *"
         },
         {
           "codigo": "OA 4",
@@ -23,7 +24,7 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Identificar y describir experiencias musicales y sonoras en su propia vida y en la sociedad (celebraciones, reuniones, festividades, situaciones cotidianas, otros)."
+          "descripcion": "Identificar y describir experiencias musicales y sonoras en su propia vida y en la sociedad (celebraciones, reuniones, festividades, situaciones cotidianas u otros)."
         }
       ]
     },
@@ -32,11 +33,11 @@
       "oa": [
         {
           "codigo": "OA 2",
-          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada, usando diversos medios expresivos (verbal, corporal, musical, visual)."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas poniendo énfasis en: • tradición escrita (docta) - música inspirada en raíces folclóricas de Chile y el mundo (por ejemplo, Chile en cuatro cuerdas de G. Soublette, Danzas eslavas de A. Dvorak) - música descriptiva (por ejemplo, El carnaval de los animales de C. Saint-Saëns, extractos de La suite Gran Cañón de F. Gofré) • tradición oral (folclor, música de pueblos originarios) - canciones, bailes, festividades, tradiciones de Chile y del mundo (por ejemplo, El chuico y la damajuana de V. Parra, música de la Tirana, El pavo) • popular (jazz, rock, fusión, etc.) - fusión con raíces folclóricas (por ejemplo, Los Jaivas y Congreso) *"
         },
         {
           "codigo": "OA 4",
@@ -52,7 +53,7 @@
         },
         {
           "codigo": "OA 7",
-          "descripcion": "Identificar y describir experiencias musicales y sonoras en su propia vida y en la sociedad (celebraciones, reuniones, festividades, situaciones cotidianas, otros)."
+          "descripcion": "Identificar y describir experiencias musicales y sonoras en su propia vida y en la sociedad (celebraciones, reuniones, festividades, situaciones cotidianas u otros)."
         }
       ]
     },
@@ -61,15 +62,15 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Escuchar cualidades del sonido (altura, timbre, intensidad, duración) y elementos del lenguaje musical (pulsos, acentos, patrones, reiteraciones, contrastes, variaciones, dinámica, tempo, preguntas-respuestas, secciones, A-AB-ABA) y representarlos de distintas formas."
+          "descripcion": "Escuchar cualidades del sonido (altura, timbre, intensidad, duración) y elementos del lenguaje musical (pulsos, acentos, patrones, reiteraciones, contrastes, variaciones, dinámica, tempo, preguntasrespuestas, secciones, A-AB-ABA), y representarlos de distintas formas."
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada, usando diversos medios expresivos (verbal, corporal, musical, visual)."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas poniendo énfasis en: • tradición escrita (docta) - música inspirada en raíces folclóricas de Chile y el mundo (por ejemplo, Chile en cuatro cuerdas de G. Soublette, Danzas eslavas de A. Dvorak) - música descriptiva (por ejemplo, El carnaval de los animales de C. Saint-Saëns, extractos de La suite Gran Cañón de F. Gofré) • tradición oral (folclor, música de pueblos originarios) - canciones, bailes, festividades, tradiciones de Chile y del mundo (por ejemplo, El chuico y la damajuana de V. Parra, música de la Tirana, El pavo) • popular (jazz, rock, fusión, etc.) - fusión con raíces folclóricas (por ejemplo, Los Jaivas y Congreso) *"
         },
         {
           "codigo": "OA 4",
@@ -90,11 +91,11 @@
       "oa": [
         {
           "codigo": "OA 2",
-          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada usando diversos medios expresivos (verbal, corporal, musical, visual)."
+          "descripcion": "Expresar, mostrando grados crecientes de elaboración, sensaciones, emociones e ideas que les sugiere la música escuchada, usando diversos medios expresivos (verbal, corporal, musical, visual)."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas, poniendo énfasis en tradición escrita, tradición oral y música popular, escuchando apreciativamente al menos 20 músicas variadas de corta duración."
+          "descripcion": "Escuchar música en forma abundante de diversos contextos y culturas poniendo énfasis en: • tradición escrita (docta) - música inspirada en raíces folclóricas de Chile y el mundo (por ejemplo, Chile en cuatro cuerdas de G. Soublette, Danzas eslavas de A. Dvorak) - música descriptiva (por ejemplo, El carnaval de los animales de C. Saint-Saëns, extractos de La suite Gran Cañón de F. Gofré) • tradición oral (folclor, música de pueblos originarios) - canciones, bailes, festividades, tradiciones de Chile y del mundo (por ejemplo, El chuico y la damajuana de V. Parra, música de la Tirana, El pavo) • popular (jazz, rock, fusión, etc.) - fusión con raíces folclóricas (por ejemplo, Los Jaivas y Congreso) *"
         },
         {
           "codigo": "OA 4",
