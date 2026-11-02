@@ -1,0 +1,84 @@
+{
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "pueblo": "Colla",
+  "curso": "6° básico",
+  "fuente": "Programa Pueblos Originarios(2).pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Describir oralmente diferentes aspectos socioculturales y espirituales de los distintos pueblos indígenas en Chile y de otras culturas significativas para su contexto, en diálogos, conversaciones o exposiciones, incorporando vocabulario pertinente en lengua indígena o en castellano, culturalmente significativo."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Disfrutar y comprender diferentes historias y experiencias, relacionadas con algún evento sociocultural o espiritual de otros pueblos y culturas significativas para su contexto, reflexionando y expresando opiniones sobre las distintas cosmovisiones, utilizando lenguajes artísticos propios del pueblo indígena que corresponda."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Problematizar la relación entre la cultura global, la cultura de los pueblos indígenas y la de otras culturas presentes en el entorno local y nacional, desde la perspectiva de la interculturalidad."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Valorar la importancia de las actividades espirituales y socioculturales de distintos pueblos indígenas en Chile y de otras culturas significativas para su contexto, como una forma de mantener el equilibrio entre el ser humano, la naturaleza y el cosmos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2",
+      "oa": [
+        {
+          "codigo": "OA 5",
+          "descripcion": "Comprender textos orales y escritos propios de otras culturas, interpretando elementos significativos presentes en ellos, vinculándolos con su propia experiencia y conocimientos, e incorporando vocabulario pertinente en lengua indígena o en castellano, culturalmente significativo."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Valorar la memoria histórica de los pueblos indígenas, como portadoras de una visión del pasado que puede ayudar a problematizar la historia nacional."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Valorar las distintas formas de concepción de mundo de los diferentes pueblos indígenas en Chile y de otras culturas significativas para su contexto, considerando las significaciones propias que explican y le dan sentido en cada cultura."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3",
+      "oa": [
+        {
+          "codigo": "OA 8",
+          "descripcion": "Escribir oraciones y textos breves en castellano, incorporando conceptos en lengua indígena, en diversas situaciones comunicativas (ceremonias, rogativas, salidas a terreno, entre otras)."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Problematizar la relación entre la cultura global, la cultura de los pueblos indígenas y la de otras culturas presentes en el entorno local y nacional, desde la perspectiva de la interculturalidad."
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Valorar la importancia de la formación de una persona íntegra según la concepción de cada pueblo indígena en tensión con otros sistemas de valores presentes en la sociedad global."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4",
+      "oa": [
+        {
+          "codigo": "OA 11",
+          "descripcion": "Explicar el sentido de la revitalización y/o fortalecimiento de su lengua para su propia identidad, reconociendo distintos préstamos lingüísticos de uso cotidiano."
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Producir creaciones audiovisuales o escritas, en castellano, incorporando palabras en lengua indígena, utilizando recursos tecnológicos (TIC) disponibles, para contar o referirse a situaciones personales, familiares o comunitarias."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Reflexionar sobre los distintos procesos que han afectado el territorio de los pueblos indígenas, comprendiendo sus consecuencias sobre la situación actual de los distintos pueblos."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Analizar la importancia de la relación armónica, física y espiritual de uno mismo y la naturaleza, considerando la visión de otros pueblos indígenas."
+        }
+      ]
+    }
+  ]
+}
