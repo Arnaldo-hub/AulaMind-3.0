@@ -1,48 +1,93 @@
 {
   "asignatura": "Tecnología",
   "curso": "tecnol 7° básico",
+  "fuente": "Programa Tecnología(4).pdf",
   "unidades": [
     {
-      "nombre": "Unidad 1 — Necesidades, problemas y diseño de soluciones tecnológicas",
+      "nombre": "Unidad 1 — planteamiento del problema e identificación de necesidades",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "OA 1 Son los OA especificados en Identificar necesidades personales o grupales del entorno cercano que impliquen las Bases Curriculares. En soluciones de reparación, adaptación o mejora, reflexionando acerca de sus posibles ocasiones, un OA puede ser aportes. abordado por un conjunto de"
+          "descripcion": "Identificar necesidades personales o grupales del entorno cercano que impliquen soluciones de reparación, adaptación o mejora, reflexionando acerca de sus posibles aportes."
         },
         {
-          "codigo": "OA 2",
-          "descripcion": "OA 2 actividad puede corresponder Diseñar e implementar soluciones que respondan a las necesidades de reparación, a más de un OA. adaptación o mejora de objetos o entornos, haciendo uso eficiente de recursos materiales, energéticos y digitales."
-        }
-      ]
-    },
-    {
-      "nombre": "Unidad 2 — Elaboración y construcción de objetos tecnológicos",
-      "oa": [
+          "codigo": "OA 4",
+          "descripcion": "Comunicar el diseño, la planificación u otros procesos de la resolución de necesidades de reparación, adaptación o mejora de objetos o entornos, utilizando herramientas TIC, considerando el objetivo, la audiencia y aspectos éticos."
+        },
         {
           "codigo": "OA 5",
-          "descripcion": "OA 5 Contrastar soluciones tecnológicas existentes de reparación, adaptación o mejora, identificando las necesidades a las que respondieron y el contexto en que fueron desarrolladas. Actividad 2"
-        }
-      ]
-    },
-    {
-      "nombre": "Unidad 3 — Evaluación, funcionamiento y mejora de soluciones",
-      "oa": [
-        {
-          "codigo": "OA 3",
-          "descripcion": "OA 3 >> Evalúan la funcionalidad de la solución implementada a partir conocimientos, habilidades de las decisiones tomadas en el diseño. Evaluar soluciones y"
-        }
-      ]
-    },
-    {
-      "nombre": "Unidad 4 — Tecnología, información, comunicación e impacto",
-      "oa": [
-        {
-          "codigo": "OA 4",
-          "descripcion": "OA 4 >> Comparan las características de diversos presentadores en línea"
+          "descripcion": "Contrastar soluciones tecnológicas existentes de reparación, adaptación o mejora identificando las necesidades a las que respondieron y el contexto en que fueron desarrolladas."
         },
         {
           "codigo": "OA 6",
-          "descripcion": "OA 6 Caracterizar algunos de los efectos que han tenido las soluciones tecnológicas existentes de reparación, adaptación o mejora, considerando aspectos sociales y ambientales. 52 TECNOLOGÍA |"
+          "descripcion": "Caracterizar algunos de los efectos que han tenido las soluciones tecnológicas existentes de reparación, adaptación o mejora, considerando aspectos sociales y ambientales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — establecimiento del diseño solución",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Identificar necesidades personales o grupales del entorno cercano que impliquen soluciones de reparación, adaptación o mejora, reflexionando acerca de sus posibles aportes."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Diseñar e implementar soluciones que respondan a las necesidades de reparación, adaptación o mejora de objetos o entornos, haciendo uso eficiente de recursos materiales, energéticos y digitales."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comunicar el diseño, la planificación u otros procesos de la resolución de necesidades de reparación, adaptación o mejora de objetos o entornos, utilizando herramientas TIC, considerando el objetivo, la audiencia y aspectos éticos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Contrastar soluciones tecnológicas existentes de reparación, adaptación o mejora identificando las necesidades a las que respondieron y el contexto en que fueron desarrolladas."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — planificación y elaboración de la solución",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Identificar necesidades personales o grupales del entorno cercano que impliquen soluciones de reparación, adaptación o mejora, reflexionando acerca de sus posibles aportes."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Diseñar e implementar soluciones que respondan a las necesidades de reparación, adaptación o mejora de objetos o entornos, haciendo uso eficiente de recursos materiales, energéticos y digitales."
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Evaluar soluciones implementadas como respuesta a las necesidades de reparación, adaptación o mejora de objetos o entornos, aplicando criterios propios y técnicos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comunicar el diseño, la planificación u otros procesos de la resolución de necesidades de reparación, adaptación o mejora de objetos o entornos, utilizando herramientas TIC, considerando el objetivo, la audiencia y aspectos éticos."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Caracterizar algunos de los efectos que han tenido las soluciones tecnológicas existentes de reparación, adaptación o mejora, considerando aspectos sociales y ambientales."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — evaluación y funcionamiento de la solución",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Evaluar soluciones implementadas como respuesta a las necesidades de reparación, adaptación o mejora de objetos o entornos, aplicando criterios propios y técnicos."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Comunicar el diseño, la planificación u otros procesos de la resolución de necesidades de reparación, adaptación o mejora de objetos o entornos, utilizando herramientas TIC, considerando el objetivo, la audiencia y aspectos éticos."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Contrastar soluciones tecnológicas existentes de reparación, adaptación o mejora identificando las necesidades a las que respondieron y el contexto en que fueron desarrolladas."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Caracterizar algunos de los efectos que han tenido las soluciones tecnológicas existentes de reparación, adaptación o mejora, considerando aspectos sociales y ambientales."
         }
       ]
     }
