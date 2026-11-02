@@ -61,6 +61,23 @@
             resize: vertical;
             min-height: 80px;
         }
+        .form-group select {
+            width: 100%;
+            min-width: 0;
+            text-overflow: ellipsis;
+        }
+        .objective-detail {
+            grid-column: 1 / -1;
+            padding: 0.875rem 1rem;
+            border: 1px solid #bfdbfe;
+            border-radius: 0.5rem;
+            background: #eff6ff;
+            color: #1e3a8a;
+            font-size: 0.875rem;
+            line-height: 1.55;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
         .btn-primary {
             display: inline-flex;
             align-items: center;
@@ -234,9 +251,10 @@
                         <div class="form-group">
                             <label>Objetivo de Aprendizaje <span style="color:#ef4444">*</span></label>
                             <select id="objetivo" name="objetivo" required disabled>
-                                <option value="">Selecciona un OA...</option>
+                                <option value="">Selecciona un OA/AE...</option>
                             </select>
                         </div>
+                        <div id="objetivoDetalle" class="objective-detail" style="display:none;" aria-live="polite"></div>
                         <div class="form-group" style="grid-column: 1 / -1;">
                             <label>Tema</label>
                             <input id="tema" name="tema" placeholder="Ej: Comprensión lectora" required>
@@ -359,7 +377,7 @@ window.PIE_CONFIG = {
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="{{ url_for('static', filename='js/pie.js', v=config.APP_VERSION) }}"></script>
+<script src="{{ url_for('static', filename='js/pie.js', v='pie-curriculum-20261103') }}"></script>
 
 </body>
 </html>
