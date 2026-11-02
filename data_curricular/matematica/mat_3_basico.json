@@ -1,37 +1,38 @@
 {
   "asignatura": "Matemática",
   "curso": "Mat 3° básico",
+  "fuente": "Matemática 3.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Números y operaciones, Datos y probabilidades",
       "oa": [
         {
-          "codigo": "OA 5",
-          "descripcion": "OA 5 Identificar y describir las unidades, hasta 10x10: decenas y centenas en números del 0 › representando y explicando la al 1 000, representando las cantida- división como repartición y agrupa- des de acuerdo a su valor posicional, ción en partes iguales, con material con material concreto, pictórico y concreto y pictórico simbólico. › creando y resolviendo problemas en contextos que incluyan la repartición"
-        },
-        {
           "codigo": "OA 1",
-          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+          "descripcion": "Contar números del 0 al 1 000 de 5 en 5, de 10 en 10, de 100 en 100: • empezando por cualquier número menor que 1 000 • de 3 en 3, de 4 en 4, … , empezando por cualquier múltiplo del número correspondiente"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+          "descripcion": "Leer números hasta 1 000 y representarlos en forma concreta, pictórica y simbólica."
         },
         {
           "codigo": "OA 3",
-          "descripcion": "OA 3 Comparar y ordenar números natu- progresiva: rales hasta 1 000, utilizando la recta › usando representaciones concretas numérica o la tabla posicional de y pictóricas manera manual y/o por medio de › expresando una multiplicación como software educativo. una adición de sumandos iguales › usando la distributividad como"
-        },
-        {
-          "codigo": "OA 6",
-          "descripcion": "OA 6 Demostrar que comprenden la adi- y la agrupación ción y la sustracción de números del 0 › expresando la división como una al 1 000: sustracción repetida › usando estrategias personales con y › describiendo y aplicando la relación sin material concreto inversa entre la división y la multipli- › creando y resolviendo problemas de cación adición y sustracción que involucren › aplicando los resultados de las tablas operaciones combinadas, en forma de multiplicación hasta 10x10, sin concreta, pictórica y simbólica, de realizar cálculos manera manual y/o por medio de software educativoMatemática"
+          "descripcion": "Comparar y ordenar números hasta 1 000, utilizando la recta numérica o la tabla posicional de manera manual y/o por medio de software educativo."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "OA 4 Describir y aplicar estrategias1 de estrategia para construir las tablas cálculo mental para las adiciones y hasta el 10 sustracciones hasta 100: › aplicando los resultados de las tablas › por descomposición de multiplicación hasta 10x10, sin › completar hasta la decena más realizar cálculos cercana › resolviendo problemas que involu- › usar dobles cren las tablas aprendidas hasta el 10 › sumar en vez de restar › aplicar la asociatividad2"
+          "descripcion": "Describir y aplicar estrategias de cálculo mental para las adiciones y las sustracciones hasta 100: • por descomposición • completar hasta la decena más cercana • usar dobles • sumar en vez de restar • aplicar la asociatividad"
         },
         {
           "codigo": "OA 7",
-          "descripcion": "OA 7 Demostrar que comprenden la rela- por cualquier múltiplo del número ción entre la adición y la sustracción, correspondiente usando la “familia de operaciones” en cálculos aritméticos y en la resolución"
+          "descripcion": "Demostrar que comprenden la relación entre la adición y la sustracción, usando la “familia de operaciones” en cálculos aritméticos y en la resolución de problemas."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Identificar y describir las unidades, decenas y centenas en números del 0 al 1 000, representando las cantidades de acuerdo a su valor posicional, con material concreto, pictórico y simbólico."
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Demostrar que comprenden la adición y la sustracción de números hasta 1 000: • usando estrategias personales con y sin el uso de material concreto • creando y resolviendo problemas de adición y sustracción que involucren operaciones combinadas, en forma concreta, pictórica y simbólica, de manera manual y/o por medio de software educativo • aplicando los algoritmos con y sin reserva, progresivamente, en la adición de hasta cuatro sumandos y en la sustracción de hasta un sustraendo"
         }
       ]
     },
@@ -40,31 +41,31 @@
       "oa": [
         {
           "codigo": "OA 13",
-          "descripcion": "OA 13 Resolver ecuaciones de un paso que involucren adiciones y sustracciones y"
+          "descripcion": "Resolver ecuaciones de un paso, que involucren adiciones y sustracciones y un símbolo geométrico que represente un número desconocido, en forma pictórica y simbólica del 0 al 100."
         },
         {
           "codigo": "OA 15",
-          "descripcion": "OA 15 Demostrar que comprenden la cotidiano, usando referentes relación que existe entre figuras 3D y › midiendo y registrando el peso de figuras 2D: objetos en números y en fracciones › construyendo una figura 3D a partir de uso común, en el contexto de la de una red (plantilla) resolución de problemas › desplegando la figura 3D DATOS Y PROBABILIDADES"
-        },
-        {
-          "codigo": "OA 8",
-          "descripcion": "OA 8 Demostrar que comprenden las tablas de multiplicar hasta 10 de manera"
+          "descripcion": "Demostrar que comprenden la relación que existe entre figuras 3D y figuras 2D: • construyendo una figura 3D a partir de una red (plantilla) • desplegando la figura 3D"
         },
         {
           "codigo": "OA 16",
-          "descripcion": "OA 16 Describir cubos, paralelepípedos,"
+          "descripcion": "Describir cubos, paralelepípedos, esferas, conos, cilindros y pirámides de acuerdo a la forma de sus caras y el número de aristas y vértices."
         },
         {
           "codigo": "OA 21",
-          "descripcion": "OA 21 Demostrar que comprenden el perímetro de una figura regular e PATRONES Y ÁLGEBRA irregular:"
-        },
-        {
-          "codigo": "OA 9",
-          "descripcion": "OA 9 Demostrar que comprenden la divi- sión en el contexto de las tablas3 de"
+          "descripcion": "Demostrar que comprenden el perímetro de una figura regular e irregular: • midiendo y registrando el perímetro de figuras del entorno en el contexto de la resolución de problemas • determinando el perímetro de un cuadrado y un rectángulo"
         },
         {
           "codigo": "OA 12",
-          "descripcion": "OA 12 Generar, describir y registrar patrones › midiendo y registrando el perímetro numéricos, usando una variedad de es- de figuras del entorno en el contexto trategias en tablas del 100, de manera de la resolución de problemas manual y/o con software educativo. › determinando el perímetro de un cuadrado y de un rectángulo"
+          "descripcion": "Generar, describir y registrar patrones numéricos, usando una variedad de estrategias en tablas del 100, de manera manual y/o con software educativo."
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Demostrar que comprenden las tablas de multiplicar hasta 10 de manera progresiva: • usando representaciones concretas y pictóricas • expresando una multiplicación como una adición de sumandos iguales • usando la distributividad como estrategia para construir las tablas hasta el 10 • aplicando los resultados de las tablas de multiplicación hasta 10 x 10, sin realizar cálculos • resolviendo problemas que involucren las tablas aprendidas hasta el 10"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Demostrar que comprenden la división en el contexto de las tablas hasta 10 x 10: • representando y explicando la división como repartición y agrupación en partes iguales, con material concreto y pictórico • creando y resolviendo problemas en contextos que incluyan la repartición y la agrupación • expresando la división como una sustracción repetida • describiendo y aplicando la relación inversa entre la división y la multiplicación, aplicando los resultados de las tablas de multiplicación de las tablas hasta 10 x 10, sin realizar cálculos"
         }
       ]
     },
@@ -72,40 +73,40 @@
       "nombre": "Unidad 3 — Números y operaciones, Álgebra y funciones, Geometría",
       "oa": [
         {
-          "codigo": "OA 19",
-          "descripcion": "OA 19 Leer e interpretar líneas de tiempo y nera concreta, pictórica, simbólica, calendarios. de forma manual y/o con software educativo"
-        },
-        {
           "codigo": "OA 12",
-          "descripcion": "OA 12 Generar, describir y registrar patrones › midiendo y registrando el perímetro numéricos, usando una variedad de es- de figuras del entorno en el contexto trategias en tablas del 100, de manera de la resolución de problemas manual y/o con software educativo. › determinando el perímetro de un cuadrado y de un rectángulo"
-        },
-        {
-          "codigo": "OA 20",
-          "descripcion": "OA 20 Leer y registrar el tiempo en horas, › describiendo situaciones, en las medias horas, cuartos de hora y minu- cuales se puede usar fracciones tos en relojes análogos y digitales. › comparando fracciones de un mismo todo, de igual denominador"
-        },
-        {
-          "codigo": "OA 23",
-          "descripcion": "OA 23 Realizar encuestas y clasificar y orga- esferas, conos, cilindros y pirámides nizar los datos obtenidos en tablas y de acuerdo a la forma de sus caras y el visualizarlos en gráficos de barra. número de aristas y vértices."
-        },
-        {
-          "codigo": "OA 26",
-          "descripcion": "OA 26 Representar datos usando diagramas mas y gráficos de barra simple con de puntos. escala, en base a información recolec- tada o dada."
+          "descripcion": "Generar, describir y registrar patrones numéricos, usando una variedad de estrategias en tablas del 100, de manera manual y/o con software educativo."
         },
         {
           "codigo": "OA 8",
-          "descripcion": "OA 8 Demostrar que comprenden las tablas de multiplicar hasta 10 de manera"
-        },
-        {
-          "codigo": "OA 25",
-          "descripcion": "OA 25 Construir, leer e interpretar pictogra-"
-        },
-        {
-          "codigo": "OA 24",
-          "descripcion": "OA 24 Registrar y ordenar datos obtenidos"
+          "descripcion": "Demostrar que comprenden las tablas de multiplicar del 7 y 9 de manera progresiva: • usando representaciones concretas y pictóricas • expresando una multiplicación como una adición de sumandos iguales • usando la distributividad como estrategia para construir las tablas del 7 y el 9 • aplicando los resultados de las tablas de multiplicación del 7 y el 9, sin realizar cálculos • resolviendo problemas que involucren las tablas aprendidas hasta el 10"
         },
         {
           "codigo": "OA 9",
-          "descripcion": "OA 9 Demostrar que comprenden la divi- sión en el contexto de las tablas3 de"
+          "descripcion": "Demostrar que comprenden la división en el contexto de las tablas del 7 y el 9: • representando y explicando la división como repartición y agrupación en partes iguales, con material concreto y pictórico • creando y resolviendo problemas en contextos que incluyan la repartición y la agrupación • expresando la división como una sustracción repetida • describiendo y aplicando la relación inversa entre la división y la multiplicación • aplicando los resultados de las tablas de multiplicación hasta 10x10, sin realizar cálculos"
+        },
+        {
+          "codigo": "OA 19",
+          "descripcion": "Leer e interpretar líneas de tiempo y calendarios."
+        },
+        {
+          "codigo": "OA 20",
+          "descripcion": "Leer y registrar el tiempo en horas, medias horas, cuartos de hora y minutos en relojes análogos y digitales."
+        },
+        {
+          "codigo": "OA 23",
+          "descripcion": "Realizar encuestas y clasificar y organizar los datos obtenidos en tablas y gráficos de barra."
+        },
+        {
+          "codigo": "OA 26",
+          "descripcion": "Representar datos, usando diagramas de puntos."
+        },
+        {
+          "codigo": "OA 25",
+          "descripcion": "Construir, leer e interpretar pictogramas y gráficos de barra con escala, en base a información recolectada o dada."
+        },
+        {
+          "codigo": "OA 24",
+          "descripcion": "Registrar y ordenar datos obtenidos de juegos aleatorios con dados y monedas, encontrando el menor, el mayor y estimando el punto medio entre ambos."
         }
       ]
     },
@@ -114,55 +115,27 @@
       "oa": [
         {
           "codigo": "OA 17",
-          "descripcion": "OA 17 Reconocer en el entorno figuras 2D que de juegos aleatorios con dados y están trasladadas, reflejadas y rotadas. monedas, encontrando el menor, el mayor y estimando el punto medio entre ambos.44"
+          "descripcion": "Reconocer en el entorno figuras 2D que están trasladadas, reflejadas y rotadas."
         },
         {
           "codigo": "OA 18",
-          "descripcion": "OA 18 Demostrar que comprenden el con- textos cotidianos, que incluyan dinero cepto de ángulo: e involucren las cuatro operaciones › identificando ejemplos de ángulos (no combinadas). en el entorno › estimando la medida de ángulos,"
-        },
-        {
-          "codigo": "OA 22",
-          "descripcion": "OA 22 Demostrar que comprenden la medi- un símbolo geométrico que represen- ción del peso (g y kg): te un número desconocido, en forma › comparando y ordenando dos o más pictórica y simbólica del 0 al 100. objetos a partir de su peso de mane- ra informal GEOMETRÍA › usando modelos para explicar la"
-        },
-        {
-          "codigo": "OA 10",
-          "descripcion": "OA 10 Resolver problemas rutinarios en con-"
-        },
-        {
-          "codigo": "OA 14",
-          "descripcion": "OA 14 Describir la localización de un objeto relación que existe entre gramos y en un mapa simple o cuadrícula. kilogramos › estimando el peso de objetos de uso"
+          "descripcion": "Demostrar que comprenden el concepto de ángulo: • identificando ejemplos de ángulos en el entorno • estimando la medida de ángulos, usando como referente ángulos de 45º y de 90º"
         },
         {
           "codigo": "OA 11",
-          "descripcion": "OA 11 Demostrar que comprenden las frac- usando como referente ángulos de ciones de uso común: 1/4, 1/3, 1/2, 45º y de 90º 2/3, 3/4: › explicando que una fracción repre- MEDICIÓN senta la parte de un todo , de ma-"
+          "descripcion": "Demostrar que comprenden las fracciones de uso común: 1/4 , 1/3 , 1/2 , 2/3 , 3/4: • explicando que una fracción representa la parte de un todo, de manera concreta, pictórica y simbólica, de forma manual y/o con software educativo • describiendo situaciones en las cuales se puede usar fracciones • comparando fracciones de un mismo todo, de igual denominador"
         },
         {
-          "codigo": "OA 1",
-          "descripcion": "OA 1 desarrollo integral de los estudiantes. En Representar y describir › Expresan números en palabras y cifras cada unidad se explicitan los Objetivos de números del 0 al 10 000: › Representan en números cantidades dadas en billetes o › contándolos de 10 en 10, de monedas. 100 en 100, de 1 000 en 1 000 › Ordenan cantidades de dinero dado en billetes o en mone- Aprendizaje a trabajar. › leyéndolos y escribiéndolos das de $10, $100, $1 000 y de $10 000. › representándolos en forma › Descomponen cantidades de dinero en valores de $1, $10, concreta, pictórica y $100 y $1 000. Por ejemplo, simbólica $5 647 = $5 000 + 600 + 40 + 7 › comparándolos y › Leen y escriben números presentados en la tabla posicional."
+          "codigo": "OA 22",
+          "descripcion": "Demostrar que comprenden la medición del peso (g y kg): • comparando y ordenando dos o más objetos a partir de su peso, de manera informal • usando modelos para explicar la relación que existe entre gramos y kilogramos • estimando el peso de objetos de uso cotidiano, usando referentes • midiendo y registrando el peso de objetos en números y en fracciones de uso común en el contexto de la resolución de problemas"
         },
         {
-          "codigo": "OA 2",
-          "descripcion": "OA 2 del objetivo. Son de carácter sugerido, por Describir y aplicar estrategias › Aplican la descomposición y el conteo en el cálculo mental, de cálculo mental para multiplicar números hasta 10 por 10. › conteo hacia delante y atrás › Multiplican en el cálculo por 4, doblando el primer factor, lo que el docente puede complementarlos. › doblar y dividir por 2 por ejemplo 2 · (2 · 6) = 2 · 12. › por descomposición › Multiplican en el cálculo mental números doblando y divi- Cada Objetivo de Aprendizaje cuenta con › usar el doble del doble para diendo por 2, por ejemplo: 25 · 6 = 50 · 3. determinar las multiplica- ciones hasta 10 x 10 y sus varios indicadores, dado que existen múl- divisiones correspondientes tiples desempeños que pueden demostrar que un aprendizaje ha sido adquirido. Los indicadores referentes a un solo aprendizaje no tienen el mismo nivel de di- ficultad. Se espera que exista una secuencia cognitiva, que comience desde habilidades básicas y termine en habilidades supe- riores. Adicionalmente, dan espacio para diversas formas de aprendizaje y distintas metodologías, independientemente de su nivel de dificultad.26"
+          "codigo": "OA 10",
+          "descripcion": "Resolver problemas rutinarios en contextos cotidianos, que incluyan dinero e involucren las cuatro operaciones (no combinadas)."
         },
         {
-          "codigo": "OA 3",
-          "descripcion": "OA 3 Comparar y ordenar números natu- progresiva: rales hasta 1 000, utilizando la recta › usando representaciones concretas numérica o la tabla posicional de y pictóricas manera manual y/o por medio de › expresando una multiplicación como software educativo. una adición de sumandos iguales › usando la distributividad como"
-        },
-        {
-          "codigo": "OA 4",
-          "descripcion": "OA 4 Describir y aplicar estrategias1 de estrategia para construir las tablas cálculo mental para las adiciones y hasta el 10 sustracciones hasta 100: › aplicando los resultados de las tablas › por descomposición de multiplicación hasta 10x10, sin › completar hasta la decena más realizar cálculos cercana › resolviendo problemas que involu- › usar dobles cren las tablas aprendidas hasta el 10 › sumar en vez de restar › aplicar la asociatividad2"
-        },
-        {
-          "codigo": "OA 7",
-          "descripcion": "OA 7 Demostrar que comprenden la rela- por cualquier múltiplo del número ción entre la adición y la sustracción, correspondiente usando la “familia de operaciones” en cálculos aritméticos y en la resolución"
-        },
-        {
-          "codigo": "OA 5",
-          "descripcion": "OA 5 Identificar y describir las unidades, hasta 10x10: decenas y centenas en números del 0 › representando y explicando la al 1 000, representando las cantida- división como repartición y agrupa- des de acuerdo a su valor posicional, ción en partes iguales, con material con material concreto, pictórico y concreto y pictórico simbólico. › creando y resolviendo problemas en contextos que incluyan la repartición"
-        },
-        {
-          "codigo": "OA 6",
-          "descripcion": "OA 6 Demostrar que comprenden la adi- y la agrupación ción y la sustracción de números del 0 › expresando la división como una al 1 000: sustracción repetida › usando estrategias personales con y › describiendo y aplicando la relación sin material concreto inversa entre la división y la multipli- › creando y resolviendo problemas de cación adición y sustracción que involucren › aplicando los resultados de las tablas operaciones combinadas, en forma de multiplicación hasta 10x10, sin concreta, pictórica y simbólica, de realizar cálculos manera manual y/o por medio de software educativoMatemática"
+          "codigo": "OA 14",
+          "descripcion": "Describir la localización de un objeto en un mapa simple o cuadrícula."
         }
       ]
     }
