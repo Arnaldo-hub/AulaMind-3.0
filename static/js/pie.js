@@ -153,10 +153,6 @@ document.addEventListener("DOMContentLoaded", function() {
         detail.style.display = "none";
     }
 
-    function clearObjectiveDetail() {
-        clearDetail("objetivoDetalle");
-    }
-
     function clearUnitDetail() {
         clearDetail("unidadDetalle");
     }
@@ -169,32 +165,6 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
         detail.textContent = unitName;
-        detail.style.display = "block";
-    }
-
-    function showObjectiveDetail(select) {
-        var detail = document.getElementById("objetivoDetalle");
-        if (!detail) return;
-        var option = select.selectedOptions[0];
-        if (!select.value || !option) {
-            clearObjectiveDetail();
-            return;
-        }
-
-        var code = option.dataset.code || "";
-        var description = option.dataset.description || "";
-        detail.replaceChildren();
-
-        if (code) {
-            var codeElement = document.createElement("strong");
-            codeElement.className = "objective-detail-code";
-            codeElement.textContent = code;
-            detail.appendChild(codeElement);
-        }
-
-        var descriptionElement = document.createElement("p");
-        descriptionElement.textContent = description || select.value;
-        detail.appendChild(descriptionElement);
         detail.style.display = "block";
     }
 
@@ -213,7 +183,6 @@ document.addEventListener("DOMContentLoaded", function() {
             unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
             objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
             clearUnitDetail();
-            clearObjectiveDetail();
             asignatura.disabled = !course;
             unidad.disabled = true;
             objetivo.disabled = true;
@@ -232,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function() {
             unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
             objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
             clearUnitDetail();
-            clearObjectiveDetail();
             unidad.disabled = !subject;
             objetivo.disabled = true;
             if (!subject) return;
@@ -248,18 +216,10 @@ document.addEventListener("DOMContentLoaded", function() {
             var unit = this.value;
             var objetivo = document.getElementById("objetivo");
             objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
-            clearObjectiveDetail();
             showUnitDetail(unit);
             objetivo.disabled = !unit;
             if (!unit) return;
             await populateSelect(API_BASE + "/objectives/" + encodeURIComponent(course) + "/" + encodeURIComponent(subject) + "/" + encodeURIComponent(unit), "objetivo", "Selecciona un OA/AE...");
-        });
-    }
-
-    var objetivoSelect = document.getElementById("objetivo");
-    if (objetivoSelect) {
-        objetivoSelect.addEventListener("change", function() {
-            showObjectiveDetail(this);
         });
     }
 
