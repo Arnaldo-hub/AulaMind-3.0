@@ -106,9 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 var opt = document.createElement("option");
                 if (typeof item === "object" && item !== null) {
                     if (item.code) {
-                        opt.value = item.code;
-                        opt.textContent = item.code + " - " + (item.description || "");
-                        opt.title = item.description || item.code;
+                        var description = item.description || "";
+                        opt.value = description ? item.code + " — " + description : item.code;
+                        opt.textContent = item.code;
+                        opt.title = description || item.code;
                     } else if (item.id) {
                         opt.value = item.id;
                         opt.textContent = item.name || item.id;
@@ -133,6 +134,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function clearObjectiveDetail() {
+        var detail = document.getElementById("objetivoDetalle");
+        if (!detail) return;
+        detail.textContent = "";
+        detail.style.display = "none";
+    }
+
     (async function() { 
         await populateSelect(API_BASE + "/courses", "curso", "Selecciona un curso..."); 
     })();
@@ -146,7 +154,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var objetivo = document.getElementById("objetivo");
             asignatura.innerHTML = "<option value=\"\">Selecciona una asignatura...</option>";
             unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
-            objetivo.innerHTML = "<option value=\"\">Selecciona un OA...</option>";
+            objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
+            clearObjectiveDetail();
             asignatura.disabled = !course;
             unidad.disabled = true;
             objetivo.disabled = true;
@@ -163,7 +172,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var unidad = document.getElementById("unidad");
             var objetivo = document.getElementById("objetivo");
             unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
-            objetivo.innerHTML = "<option value=\"\">Selecciona un OA...</option>";
+            objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
+            clearObjectiveDetail();
             unidad.disabled = !subject;
             objetivo.disabled = true;
             if (!subject) return;
@@ -178,10 +188,25 @@ document.addEventListener("DOMContentLoaded", function() {
             var subject = document.getElementById("asignatura").value;
             var unit = this.value;
             var objetivo = document.getElementById("objetivo");
-            objetivo.innerHTML = "<option value=\"\">Selecciona un OA...</option>";
+            objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
+            clearObjectiveDetail();
             objetivo.disabled = !unit;
             if (!unit) return;
-            await populateSelect(API_BASE + "/objectives/" + encodeURIComponent(course) + "/" + encodeURIComponent(subject) + "/" + encodeURIComponent(unit), "objetivo", "Selecciona un OA...");
+            await populateSelect(API_BASE + "/objectives/" + encodeURIComponent(course) + "/" + encodeURIComponent(subject) + "/" + encodeURIComponent(unit), "objetivo", "Selecciona un OA/AE...");
+        });
+    }
+
+    var objetivoSelect = document.getElementById("objetivo");
+    if (objetivoSelect) {
+        objetivoSelect.addEventListener("change", function() {
+            var detail = document.getElementById("objetivoDetalle");
+            if (!detail) return;
+            if (!this.value) {
+                clearObjectiveDetail();
+                return;
+            }
+            detail.textContent = this.value;
+            detail.style.display = "block";
         });
     }
 
