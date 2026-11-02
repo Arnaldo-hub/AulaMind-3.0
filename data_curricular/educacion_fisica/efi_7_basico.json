@@ -1,13 +1,22 @@
 {
   "asignatura": "Educación Física y Salud",
   "curso": "EFI 7° básico",
+  "fuente": "Programa Ed. Física y Salud.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Habilidades motrices y control corporal",
       "oa": [
         {
-          "codigo": "OA 1",
-          "descripcion": "OA 1 >>Corren de manera continua, aprendizaje de la unidad, manteniendo el control de su Aplicar, combinar y ajustar las con foco en algunos de los cuerpo. indicadores. Los ejemplos habilidades motrices específicas van acompañados de de locomoción, manipulación y >>Ejecutan secuencias de movimientos criterios de"
+          "codigo": "OA 3",
+          "descripcion": "Desarrollar la resistencia cardiovascular, la fuerza muscular, la velocidad y la flexibilidad para alcanzar una condición física saludable, considerando: • Frecuencia. • Intensidad. • Tiempo de duración. • Tipo de ejercicio (correr, andar en bicicleta, realizar trabajo de fuerza, ejercicios de flexibilidad, entre otros)."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Practicar regularmente una variedad de actividades físicas alternativas y/o deportivas en diferentes entornos, aplicando conductas de autocuidado y seguridad, como realizar al menos 30 minutos diarios de actividades físicas de su interés, evitar el consumo de drogas, tabaco y alcohol, ejecutar un calentamiento, aplicar reglas y medidas de seguridad, hidratarse con agua de forma permanente, entre otras."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Participar en una variedad actividades físicas y/o deportivas de su interés y que se desarrollan en su comunidad escolar y/o en su entorno; por ejemplo: • Integrarse en talleres de actividades físicas y/o deportivas extraprogramáticas en su comunidad y/o entorno. • Asumir variados roles en la participación y promoción de una vida activa. • Utilizar los entornos cercanos para realizar alguna actividad física y/o deportiva (plazas, parques, entre otros)."
         }
       ]
     },
@@ -15,8 +24,8 @@
       "nombre": "Unidad 2 — Condición física y vida activa",
       "oa": [
         {
-          "codigo": "OA 13",
-          "descripcion": "OA 13 de 7° básico."
+          "codigo": "OA 1",
+          "descripcion": "Aplicar, combinar y ajustar las habilidades motrices específicas de locomoción, manipulación y estabilidad en, al menos: • Un deporte individual (atletismo, gimnasia artística, entre otros). • Un deporte de oposición (tenis, bádminton, entre otros). • Un deporte de colaboración (escalada, vóleibol duplas, entre otros). • Un deporte de oposición/colaboración (básquetbol, hándbol, hockey, entre otros). • Una danza (folclórica, moderna, entre otras)."
         }
       ]
     },
@@ -24,8 +33,8 @@
       "nombre": "Unidad 3 — Juegos, deportes y estrategias",
       "oa": [
         {
-          "codigo": "OA 2",
-          "descripcion": "OA 2 2. Seleccionar y aplicar estrategias y tácticas específicas para la resolución de problemas durante la práctica de juegos o deportes; por ejemplo: ubicar la pelota lejos de un contrincante, utilizar los espacios para recibir un objeto sin oponentes, aplicar un sistema de juego (uno contra uno, tres contra tres, entre otros), entre otros. VIDA ACTIVA SALUDABLE"
+          "codigo": "OA 1",
+          "descripcion": "Aplicar, combinar y ajustar las habilidades motrices específicas de locomoción, manipulación y estabilidad en, al menos: • Un deporte individual (atletismo, gimnasia artística, entre otros). • Un deporte de oposición (tenis, bádminton, entre otros). • Un deporte de colaboración (escalada, vóleibol duplas, entre otros). • Un deporte de oposición/colaboración (básquetbol, hándbol, hockey, entre otros). • Una danza (folclórica, moderna, entre otras)."
         }
       ]
     },
@@ -33,20 +42,8 @@
       "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
       "oa": [
         {
-          "codigo": "OA 3",
-          "descripcion": "OA 3 >>Ejecutan un test para valorar su condición"
-        },
-        {
-          "codigo": "OA 4",
-          "descripcion": "OA 4 >> Ejecutan un calentamiento para preparar al estudiante, en relación con el Objetivo de Aprendizaje organismo antes de cualquier esfuerzo físico mayor. Practicar regularmente una variedad al cual está asociado. de"
-        },
-        {
-          "codigo": "OA 5",
-          "descripcion": "OA 5 Participar en una variedad"
-        },
-        {
-          "codigo": "OA 9",
-          "descripcion": "OA 9 de 7° básico."
+          "codigo": "OA 1",
+          "descripcion": "Aplicar, combinar y ajustar las habilidades motrices específicas de locomoción, manipulación y estabilidad en, al menos: • Un deporte individual (atletismo, gimnasia artística, entre otros). • Un deporte de oposición (tenis, bádminton, entre otros). • Un deporte de colaboración (escalada, vóleibol duplas, entre otros). • Un deporte de oposición/colaboración (básquetbol, hándbol, hockey, entre otros). • Una danza (folclórica, moderna, entre otras)."
         }
       ]
     }

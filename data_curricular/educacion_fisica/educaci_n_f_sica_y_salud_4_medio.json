@@ -1,0 +1,59 @@
+{
+  "asignatura": "Educación Física y Salud",
+  "curso": "4° Medio",
+  "fuente": "Ed Fisica y Salud 1- 3°4°M.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — HABILIDADES MOTRICES ESPECIALIZADAS, SUS ESTRATEGIAS Y TÁCTICAS",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Aplicar individual y colectivamente las habilidades motrices especializadas de manera creativa y segura, en una variedad de actividades físicas que sean de sus intereses y en diferentes entornos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Evaluar el impacto de las estrategias y tácticas individuales y colectivas utilizadas para la resolución de problemas en el juego, el deporte y la recreación, asumiendo distintos roles y tareas"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — PLANES DE ENTRENAMIENTO PARA LA CONDICIÓN FÍSICA",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Diseñar y aplicar un plan de entrenamiento para mejorar su rendimiento físico considerando sus características personales y funcionales."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "Aplicar individual y colectivamente las habilidades motrices especializadas de manera creativa y segura, en una variedad de actividades físicas que sean de sus intereses y en diferentes entornos"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — PROGRAMAS Y PROYECTOS DEPORTIVOS, RECREATIVOS Y SOCIO- CULTURALES",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Promover el bienestar, el autocuidado, la vida activa y la alimentación saludable en su comunidad, valorando la diversidad de las personas a través de la aplicación de programas y proyectos deportivos, recreativos y socioculturales."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "Aplicar individual y colectivamente las habilidades motrices especializadas de manera creativa y segura, en una variedad de actividades físicas que sean de sus intereses y en diferentes entornos"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — COMUNIDADES ACTIVAS",
+      "oa": [
+        {
+          "codigo": "OA 4",
+          "descripcion": "Promover el bienestar, el autocuidado, la vida activa y la alimentación saludable en su comunidad, valorando la diversidad de las personas a través de la aplicación de programas y proyectos deportivos, recreativos y socioculturales."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Analizar cómo los factores sociales, culturales, económicos y tecnológicos favorecen el desarrollo de oportunidades para la adquisición de un estilo de vida activo saludable a nivel local, regional y global."
+        }
+      ]
+    }
+  ]
+}

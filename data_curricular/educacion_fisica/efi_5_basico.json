@@ -1,13 +1,22 @@
 {
   "asignatura": "Educación Física y Salud",
   "curso": "EFI 5° básico",
+  "fuente": "Programa de Ed. Física y salud.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Habilidades motrices y control corporal",
       "oa": [
         {
-          "codigo": "OA 11",
-          "descripcion": "OA 11 explicitan los"
+          "codigo": "OA 8",
+          "descripcion": "Determinar la intensidad del esfuerzo físico de forma manual, mediante el pulso o utilizando escalas de percepción de esfuerzo."
+        },
+        {
+          "codigo": "OA 1",
+          "descripcion": "Demostrar la aplicación de las habilidades motrices básicas adquiridas, en una variedad de actividades deportivas; por ejemplo: realizar un giro sobre una viga de equilibrio, lanzar un balón hacia la portería y correr una distancia determinada (por ejemplo: 50 o 100 metros)."
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Ejecutar juegos colectivos y deportes, creando tácticas y estrategias y demostrando formas para resolver un problema en relación con el espacio, el objeto y los adversarios; por ejemplo: dar tres pases en cinco segundos o dar tres pasos y dar un pase a un compañero."
         }
       ]
     },
@@ -15,8 +24,20 @@
       "nombre": "Unidad 2 — Condición física y vida activa",
       "oa": [
         {
+          "codigo": "OA 11",
+          "descripcion": "Practicar actividades físicas, demostrando comportamientos seguros como: • realizar un calentamiento mediante un juego • escuchar y seguir instrucciones • utilizar implementos bajo supervisión • mantener su posición dentro de los límites establecidos para la actividad"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Practicar deportes individuales y colectivos con reglas y espacios adaptados en los que aplican estrategias defensivas y ofensivas; por ejemplo: reducir y ampliar espacios, obtener y mantener la posesión del balón y transportar el balón de forma controlada."
+        },
+        {
           "codigo": "OA 2",
-          "descripcion": "OA 2 Ejecutar juegos colectivos y depor- de resistencia cardiovascular, fuerza, tes, creando tácticas y estrategias y flexibilidad y velocidad, estableciendo demostrando formas para resolver un metas de superación personal. problema en relación con el espacio, el objeto y los adversarios; por ejem-"
+          "descripcion": "Ejecutar juegos colectivos y deportes, creando tácticas y estrategias y demostrando formas para resolver un problema en relación con el espacio, el objeto y los adversarios; por ejemplo: dar tres pases en cinco segundos o dar tres pasos y dar un pase a un compañero."
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Practicar actividades físicas en forma segura, demostrando la adquisición de hábitos de higiene, posturales y de vida saludable, como utilizar una ropa distinta para la clase, mantener una correcta postura, utilizar protectores solares e hidratarse con agua antes, durante y después de la clase."
         }
       ]
     },
@@ -24,8 +45,12 @@
       "nombre": "Unidad 3 — Juegos, deportes y estrategias",
       "oa": [
         {
-          "codigo": "OA 3",
-          "descripcion": "OA 3 Practicar deportes individuales y colec- integrar talleres deportivos. tivos con reglas y espacios adaptados en los que aplican estrategias defensi-"
+          "codigo": "OA 5",
+          "descripcion": "Demostrar la correcta ejecución de una danza nacional, utilizando pasos básicos y música folclórica de forma individual o grupal; por ejemplo: danzas de la zona norte, central, sur e Isla de Pascua."
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Practicar y planificar de forma regular actividades físicas y/o deportivas de intensidad moderada a vigorosa, como planificar un partido, participar en una caminata o corrida familiar e integrar talleres deportivos."
         }
       ]
     },
@@ -33,36 +58,16 @@
       "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
       "oa": [
         {
-          "codigo": "OA 1",
-          "descripcion": "OA 1 Demostrar la aplicación de las habilida- danzas de la zona norte, central, sur e des motrices básicas adquiridas, en una Isla de Pascua. variedad de"
+          "codigo": "OA 3",
+          "descripcion": "Practicar deportes individuales y colectivos con reglas y espacios adaptados en los que aplican estrategias defensivas y ofensivas; por ejemplo: reducir y ampliar espacios, obtener y mantener la posesión del balón y transportar el balón de forma controlada."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "OA 4 Ejecutar"
-        },
-        {
-          "codigo": "OA 5",
-          "descripcion": "OA 5 Demostrar la correcta ejecución de colectivos, demostrando responsabi- una danza nacional, utilizando pasos lidad, liderazgo y respeto al participar; básicos y música folclórica de forma por ejemplo: conversar y plantearEducación Física y Salud"
-        },
-        {
-          "codigo": "OA 6",
-          "descripcion": "OA 6 Ejecutar"
-        },
-        {
-          "codigo": "OA 7",
-          "descripcion": "OA 7 Practicar y planificar de forma regular plo: dar tres pases en cinco segundos"
-        },
-        {
-          "codigo": "OA 8",
-          "descripcion": "OA 8 jetivo de Aprendizaje cuenta con varios Reconocer las sensaciones y › Identifican las distintas respuestas corporales provocadas indicadores y la totalidad de los indica- respuestas corporales provoca- por la actividad física, como aumento del ritmo de la respi- das por la práctica de actividad ración, sudor y dificultad al hablar. física, como cambios del color › Identifican, guiados por el docente, qué tipo de actividad dores dan cuenta del aprendizaje. Al ser de la piel, sudor, agitación, ritmo física (baja, moderada o intensa) incrementa más los latidos de respiración, cansancio y difi- del corazón. de carácter sugerido, puede especificar- cultad al hablar. › Identifican las partes del cuerpo que usaron durante la acti- vidad. se con mayor detalle en cada aprendiza- je qué se espera del estudiante.28"
-        },
-        {
-          "codigo": "OA 9",
-          "descripcion": "OA 9 Practicar"
+          "descripcion": "Ejecutar actividades físicas y/o deportivas, utilizando diferentes entornos y aplicando medidas para conservar limpios y ordenados los espacios; por ejemplo: • caminatas recreativas urbanas • bailes recreativos • cicletadas • juegos de balón en plazas y parques"
         },
         {
           "codigo": "OA 10",
-          "descripcion": "OA 10 Practicar"
+          "descripcion": "Practicar actividades físicas y/o juegos colectivos, demostrando responsabilidad, liderazgo y respeto al participar; por ejemplo: conversar y plantear"
         }
       ]
     }
