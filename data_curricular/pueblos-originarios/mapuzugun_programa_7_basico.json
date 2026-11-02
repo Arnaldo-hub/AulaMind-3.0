@@ -1,59 +1,90 @@
 {
-  "area": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
-  "archivo_fuente": "mapuzugun_programa 7° básico.json",
-  "cursos": [
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "curso": "7° básico",
+  "pueblo": "Mapuzugun",
+  "fuente": "Programa lengua Indígena.pdf",
+  "unidades": [
     {
-      "curso": "1° Básico",
-      "nombre_asignatura": "mapuzugun_programa 7° básico",
-      "programa": "MINEDUC",
-      "unidades": [
+      "nombre": "Unidad 1",
+      "oa": [
         {
-          "nombre": "Unidad 1",
-          "semestre": 1,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 1",
+          "descripcion": "Analizar piam y epew, leídos y/o escuchados en mapuzugun, presentes en el territorio local, considerando aspectos tales como: hechos, espacios, actitudes de los personajes, aspectos socioculturales, principios y valores mapuche."
         },
         {
-          "nombre": "Unidad 2",
-          "semestre": 1,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 2",
+          "descripcion": "Argumentar acerca de la importancia de los relatos mapuche, leídos y/o escuchados, considerando los elementos de la historia local, comunitaria y cultural, y sus aportes a la vida de la sociedad actual."
         },
         {
-          "nombre": "Unidad 3",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 3",
+          "descripcion": "Establecer la relación existente entre los diversos ül (canto mapuche) y su propia historia territorial."
         },
         {
-          "nombre": "Unidad 4",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 4",
+          "descripcion": "Comparar relatos tradicionales y actuales propios, referidos a la realidad mapuche de diferentes fütal mapu (identidades territoriales)."
         },
         {
-          "nombre": "UNIDAD 1",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 5",
+          "descripcion": "Reproducir relatos escuchados y/o leídos propios de la historia local, comunitaria y cultural mapuche."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2",
+      "oa": [
+        {
+          "codigo": "AE 6",
+          "descripcion": "Distinguir un discurso formal de gillañ zugun (discurso de casamiento) de un re pewünzugun (discurso informal cotidiano), presentes en diferentes contextos territoriales y socioculturales."
         },
         {
-          "nombre": "UNIDAD 2",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 7",
+          "descripcion": "Reproducir discursos informales en mapuzugun presentes en situaciones cotidianas mapuche."
         },
         {
-          "nombre": "UNIDAD 3",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 8",
+          "descripcion": "Reproducir discursos formales en mapuzugun, considerando aspectos estructurales de orden sociocultural y sociopolítico."
         },
         {
-          "nombre": "UNIDAD 4",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 9",
+          "descripcion": "Escribir textos en mapuzugun referidos a experiencias familiares y comunitarias que se dan en el propio territorio."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3",
+      "oa": [
+        {
+          "codigo": "AE 10",
+          "descripcion": "Comprender la forma adecuada para expresarse oralmente en mapuzugun, de acuerdo al contexto y propósito específico de la situación comunicativa de un werkünzugu (mensaje)."
+        },
+        {
+          "codigo": "AE 11",
+          "descripcion": "Explicar las relaciones de encuentros y desencuentros entre el pueblo Mapuche y el pueblo chileno, a partir del malón de 1881 y sus diversas consecuencias."
+        },
+        {
+          "codigo": "AE 12",
+          "descripcion": "Analizar situaciones comunicativas referidas a la salud y su proceso de interculturalización, que ocurren en la actualidad, en los distintos espacios territoriales."
+        },
+        {
+          "codigo": "AE 13",
+          "descripcion": "Producir diálogos en mapuzugun, utilizando un vocabulario preciso y pertinente a la situación comunicativa, sobre situaciones actuales e históricas, tales como: palin zugu (juego mapuche), wiñotuchi anhtü (ceremonia religiosa mapuche referida a la nueva salida del sol) y nhüyünh zugu (movimientos telúricos)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4",
+      "oa": [
+        {
+          "codigo": "AE 14",
+          "descripcion": "Argumentar sobre la importancia y valor que tiene la lengua mapuzugun, como expresión de la cultura que simboliza a través de un pillamtun (canto ritual)."
+        },
+        {
+          "codigo": "AE 15",
+          "descripcion": "Analizar la relación existente entre el mapuzugun y la cosmovisión mapuche, considerando cómo el reñmawen zugu (denominaciones de parentesco) expresa aspectos de la cultura."
+        },
+        {
+          "codigo": "AE 16",
+          "descripcion": "Elaborar textos escritos pertenecientes a la tradición oral, utilizando como referente los distintos dichos, refranes, relatos, cantos, entre otros, existentes en la cultura mapuche."
         }
       ]
     }

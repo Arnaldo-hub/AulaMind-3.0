@@ -1,59 +1,78 @@
 {
-  "area": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
-  "archivo_fuente": "programa lengua indígena 8° básico - lengua indígena quechua_0.json",
-  "cursos": [
+  "asignatura": "Lengua y Cultura de los Pueblos Originarios Ancestrales",
+  "curso": "8° básico",
+  "pueblo": "Quechua",
+  "fuente": "Programa Lengua Indígena 8° Básico - Lengua Indígena Quechua_0.pdf",
+  "unidades": [
     {
-      "curso": "1° Básico",
-      "nombre_asignatura": "programa lengua indígena 8° básico - lengua indígena quechua_0",
-      "programa": "MINEDUC",
-      "unidades": [
+      "nombre": "Unidad 1",
+      "oa": [
         {
-          "nombre": "Unidad 1",
-          "semestre": 1,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 1",
+          "descripcion": "Analizar los relatos leídos y/o escuchados de la cultura quechua, considerando las significaciones culturales que estos expresan."
         },
         {
-          "nombre": "Unidad 2",
-          "semestre": 1,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 2",
+          "descripcion": "Relacionar situaciones interculturales presentes en los relatos leídos y/o escuchados con la propia experiencia."
         },
         {
-          "nombre": "Unidad 3",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 3",
+          "descripcion": "Indagar diferentes fuentes, tradicionales y actuales, para recopilar textos propios de la tradición oral del pueblo quechua."
         },
         {
-          "nombre": "Unidad 4",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 4",
+          "descripcion": "Producir textos orales referidos a la cultura y tradición oral del pueblo quechua, considerando saberes y aspectos simbólicos propios."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2",
+      "oa": [
+        {
+          "codigo": "AE 5",
+          "descripcion": "Producir prácticas culturales y discursivas propias del pueblo quechua, utilizando expresiones, frases y oraciones en lengua quechua, con entonación, expresividad y postura corporal adecuadas."
         },
         {
-          "nombre": "UNIDAD 1",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 6",
+          "descripcion": "Analizar textos leídos relacionados con el contexto social indígena actual, considerando aspectos propios de la cultura y cosmovisión presentes en ellos."
         },
         {
-          "nombre": "UNIDAD 2",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 7",
+          "descripcion": "Comparar los textos leídos, relacionados con el contexto social indígena actual, con sus propios conocimientos y experiencias sobre los temas y contenidos que estos presentan."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3",
+      "oa": [
+        {
+          "codigo": "AE 8",
+          "descripcion": "Producir textos orales utilizando un vocabulario preciso y pertinente a la situación comunicativa que dé cuenta de experiencias personales, locales, comunitarias y/o culturales quechua."
         },
         {
-          "nombre": "UNIDAD 3",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 9",
+          "descripcion": "Comprender que la interculturalidad se logra mediante la interacción entre culturas distintas, valorando la existencia de la diversidad lingüística y cultural."
         },
         {
-          "nombre": "UNIDAD 4",
-          "semestre": 2,
-          "proposito": "Unidad curricular detectada automáticamente desde documentos oficiales MINEDUC.",
-          "oa": []
+          "codigo": "AE 10",
+          "descripcion": "Elaborar textos escritos acerca de la importancia del valor de la cultura y la lengua quechua en un contexto intercultural."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4",
+      "oa": [
+        {
+          "codigo": "AE 11",
+          "descripcion": "Argumentar en diálogos, conversaciones y/o debates sobre la importancia y valor que tiene la lengua quechua, como expresión de la cultura que simboliza."
+        },
+        {
+          "codigo": "AE 12",
+          "descripcion": "Analizar el valor de la existencia de distintas lenguas indígenas y su aporte para el patrimonio cultural."
+        },
+        {
+          "codigo": "AE 13",
+          "descripcion": "Analizar el aporte de los textos escritos por autores quechua contemporáneos a la interculturalidad y a la valoración y preservación de las lenguas y culturas originarias."
         }
       ]
     }
