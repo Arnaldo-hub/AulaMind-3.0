@@ -1,60 +1,43 @@
-AULAMIND ENTERPRISE 3.0 — SELECTOR OA/AE INTERACTIVO PARA PIE
-Fecha del paquete: 3 de noviembre de 2026
+AULAMIND ENTERPRISE 3.0 — PIE CON OA/AE IGUAL A PLANIFICACIÓN
+Fecha: 3 de noviembre de 2026
 
 IMPORTANTE
-Este paquete reemplaza a “aulamind_correccion_pie_curricular.zip” y a “aulamind_mejora_presentacion_pie.zip”. No apliques los tres: utiliza solamente esta versión, que ya incorpora las correcciones anteriores.
+Este paquete reemplaza todos los paquetes PIE anteriores. No combines versiones. Utiliza solamente estos archivos.
 
-COMPORTAMIENTO SOLICITADO
-- La lista desplegada muestra solamente los códigos: OA 1, OA 2, OA 3, etc.; también admite AE.
-- Al pasar el mouse sobre un código, el rectángulo azul muestra su código y descripción oficial completa.
-- La lista y el rectángulo no se superponen: ambos permanecen visibles durante la revisión.
-- Al hacer clic, el código queda seleccionado y visible en el campo.
+COMPORTAMIENTO FINAL
+- Selector nativo, igual que en Planificación MINEDUC.
+- La lista muestra solamente el número o código: OA 1, OA 2, OA 3, etc.; también admite AE.
+- Cada opción contiene su descripción en el atributo title. Al ubicar el mouse sobre una opción, el navegador muestra la descripción en una ventana emergente.
+- Al seleccionar, el campo muestra únicamente el código.
 - El formulario envía “código — descripción completa” al generador PIE.
-- También funciona con teclado: flechas para revisar, Enter para seleccionar y Escape para cerrar.
-- Ya no se utiliza el desplegable nativo que mostraba descripciones gigantes ni tooltips poco fiables.
+- No existe selector personalizado ni rectángulo inferior de descripción.
+- La descripción nunca se utiliza como texto visible de la opción, evitando el desbordamiento de las capturas.
 
-ARCHIVOS INCLUIDOS
-1. routes/planning.py
-   Mantiene el catálogo curricular compartido entre PIE y Planificaciones.
+ARCHIVOS
+- routes/planning.py: catálogo curricular compartido entre PIE y Planificaciones.
+- static/js/pie.js: códigos visibles, descripción emergente por opción y valor completo.
+- templates/pie.html: selector nativo y nueva versión pie-curriculum-20261103-v4 para renovar la caché.
 
-2. static/js/pie.js
-   Implementa el selector OA/AE personalizado, la vista previa al pasar el mouse, la selección con mouse y teclado, la limpieza al cambiar de unidad y el envío del objetivo completo.
+INSTALACIÓN
+1. Respalda los archivos actuales.
+2. Descomprime el ZIP.
+3. Copia routes/planning.py, static/js/pie.js y templates/pie.html a la raíz del repositorio, conservando las carpetas y reemplazando los archivos.
+4. Ejecuta la aplicación y abre /pie.
 
-3. templates/pie.html
-   Contiene el botón selector, la lista de códigos, el rectángulo de descripción y los estilos que impiden el desbordamiento. Renueva pie.js a la versión pie-curriculum-20261103-v3.
+PRUEBA
+1. Selecciona 4° Medio → Ciencias de la Salud → Conocimiento y comprensión.
+2. Abre Objetivo de Aprendizaje: deben verse solamente OA 1, OA 2, OA 3, OA 4 y OA 5.
+3. Ubica el mouse sobre cada OA: debe aparecer su propia descripción en una ventana emergente, igual que en Planificación.
+4. Selecciona un OA y verifica que el campo muestre solamente su código.
+5. Si todavía aparece el diseño anterior, actualiza la página para cargar pie.js versión 4.
 
-NO SE MODIFICÓ
-Ningún JSON ni descripción curricular. Tampoco se modificaron base de datos, usuarios, autenticación, planes, persistencia, historial, exportación, variables de entorno, GitHub, Render o producción.
-
-INSTALACIÓN LOCAL
-1. Cierra la aplicación local.
-2. Respalda los tres archivos actuales.
-3. Descomprime este ZIP.
-4. Copia routes/planning.py, static/js/pie.js y templates/pie.html a la raíz del repositorio, conservando las carpetas y reemplazando los archivos.
-5. Ejecuta la aplicación y abre /pie.
-
-PRUEBA PRINCIPAL
-1. Selecciona 4° Medio.
-2. Selecciona Ciencias de la Salud.
-3. Selecciona Conocimiento y comprensión.
-4. Abre Objetivo de Aprendizaje: deben aparecer solamente OA 1, OA 2, OA 3, OA 4 y OA 5.
-5. Pasa el mouse sobre OA 2: el rectángulo debe mostrar el código OA 2 y su descripción, sin textos gigantes ni contenido fuera de pantalla.
-6. Prueba los demás códigos y verifica que cada uno muestre su propia descripción.
-7. Selecciona uno con clic y confirma que el campo conserva el código.
-8. Repite usando flechas y Enter.
-
-OTRAS COMPROBACIONES
-- Cambiar de unidad limpia la selección y descripción anterior.
-- Duplicados exactos se omiten; unidades distintas que solo comparten número no se fusionan.
-- No hay desbordamiento horizontal en 375, 768, 1024 y 1440 píxeles.
-- El valor FormData conserva código y descripción completa.
+VALIDACIÓN
+Se comprobó en navegador el caso indicado, la asociación de cada código con su descripción, el valor completo enviado por FormData y la ausencia de desbordamiento horizontal. No se modificaron JSON ni descripciones curriculares.
 
 DESPUÉS DE REVISAR
 git status
 git add routes/planning.py static/js/pie.js templates/pie.html
-git commit -m "Agrega selector interactivo de OA/AE en PIE"
+git commit -m "Iguala selector OA/AE de PIE con Planificación"
 git push
-
-Confirma antes del push que solo se incluyan los tres archivos. Luego despliega en Render y repite la prueba principal en /pie. Si se ve la versión anterior, actualiza la página; el script tiene una nueva versión para renovar la caché.
 
 GitHub, Render y producción no han sido modificados ni verificados con este paquete.
