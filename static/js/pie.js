@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 select.disabled = true;
                 return;
             }
+            var seenOptions = new Set();
             items.forEach(function(item) {
                 var opt = document.createElement("option");
                 if (typeof item === "object" && item !== null) {
@@ -110,12 +111,16 @@ document.addEventListener("DOMContentLoaded", function() {
                         opt.value = description ? item.code + " — " + description : item.code;
                         opt.textContent = item.code;
                         opt.title = description || item.code;
+                        opt.dataset.code = item.code;
+                        opt.dataset.description = description;
                     } else if (item.id) {
                         opt.value = item.id;
                         opt.textContent = item.name || item.id;
+                        opt.title = item.name || item.id;
                     } else if (item.name) {
                         opt.value = item.name;
                         opt.textContent = item.name;
+                        opt.title = item.name;
                     } else {
                         opt.value = JSON.stringify(item);
                         opt.textContent = item.name || item.id || JSON.stringify(item);
@@ -123,7 +128,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     opt.value = item;
                     opt.textContent = item;
+                    opt.title = String(item);
                 }
+
+                // Evita solamente duplicados exactos. No fusiona unidades
+                // con el mismo número pero distinto título u objetivos.
+                var optionKey = opt.value + "\n" + opt.textContent;
+                if (seenOptions.has(optionKey)) return;
+                seenOptions.add(optionKey);
                 select.appendChild(opt);
             });
             select.disabled = false;
@@ -134,11 +146,56 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function clearDetail(detailId) {
+        var detail = document.getElementById(detailId);
+        if (!detail) return;
+        detail.replaceChildren();
+        detail.style.display = "none";
+    }
+
     function clearObjectiveDetail() {
+        clearDetail("objetivoDetalle");
+    }
+
+    function clearUnitDetail() {
+        clearDetail("unidadDetalle");
+    }
+
+    function showUnitDetail(unitName) {
+        var detail = document.getElementById("unidadDetalle");
+        if (!detail) return;
+        if (!unitName) {
+            clearUnitDetail();
+            return;
+        }
+        detail.textContent = unitName;
+        detail.style.display = "block";
+    }
+
+    function showObjectiveDetail(select) {
         var detail = document.getElementById("objetivoDetalle");
         if (!detail) return;
-        detail.textContent = "";
-        detail.style.display = "none";
+        var option = select.selectedOptions[0];
+        if (!select.value || !option) {
+            clearObjectiveDetail();
+            return;
+        }
+
+        var code = option.dataset.code || "";
+        var description = option.dataset.description || "";
+        detail.replaceChildren();
+
+        if (code) {
+            var codeElement = document.createElement("strong");
+            codeElement.className = "objective-detail-code";
+            codeElement.textContent = code;
+            detail.appendChild(codeElement);
+        }
+
+        var descriptionElement = document.createElement("p");
+        descriptionElement.textContent = description || select.value;
+        detail.appendChild(descriptionElement);
+        detail.style.display = "block";
     }
 
     (async function() { 
@@ -155,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function() {
             asignatura.innerHTML = "<option value=\"\">Selecciona una asignatura...</option>";
             unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
             objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
+            clearUnitDetail();
             clearObjectiveDetail();
             asignatura.disabled = !course;
             unidad.disabled = true;
@@ -173,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var objetivo = document.getElementById("objetivo");
             unidad.innerHTML = "<option value=\"\">Selecciona una unidad...</option>";
             objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
+            clearUnitDetail();
             clearObjectiveDetail();
             unidad.disabled = !subject;
             objetivo.disabled = true;
@@ -190,6 +249,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var objetivo = document.getElementById("objetivo");
             objetivo.innerHTML = "<option value=\"\">Selecciona un OA/AE...</option>";
             clearObjectiveDetail();
+            showUnitDetail(unit);
             objetivo.disabled = !unit;
             if (!unit) return;
             await populateSelect(API_BASE + "/objectives/" + encodeURIComponent(course) + "/" + encodeURIComponent(subject) + "/" + encodeURIComponent(unit), "objetivo", "Selecciona un OA/AE...");
@@ -199,14 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var objetivoSelect = document.getElementById("objetivo");
     if (objetivoSelect) {
         objetivoSelect.addEventListener("change", function() {
-            var detail = document.getElementById("objetivoDetalle");
-            if (!detail) return;
-            if (!this.value) {
-                clearObjectiveDetail();
-                return;
-            }
-            detail.textContent = this.value;
-            detail.style.display = "block";
+            showObjectiveDetail(this);
         });
     }
 
