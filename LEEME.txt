@@ -1,76 +1,81 @@
-AULAMIND ENTERPRISE 3.0 — CORRECCIÓN CURRICULAR DEL MÓDULO PIE
+AULAMIND ENTERPRISE 3.0 — MEJORA DE PRESENTACIÓN CURRICULAR PIE
 Fecha del paquete: 3 de noviembre de 2026
 
 PROPÓSITO
-Corregir el módulo Adecuaciones Curriculares PIE para que disponga del mismo catálogo curricular que Planificaciones y para que el selector de objetivos sea legible.
+Mejorar la lectura de unidades y OA/AE en Adecuaciones Curriculares PIE, evitar opciones exactamente duplicadas y mantener el mismo catálogo curricular que utiliza Planificaciones.
 
-ALCANCE DEL PAQUETE
-Contiene solamente estos tres archivos de aplicación:
+IMPORTANTE
+Este paquete reemplaza al paquete anterior “aulamind_correccion_pie_curricular.zip”. No es necesario aplicar ambos: ya incorpora sus tres archivos y agrega las mejoras de presentación solicitadas con la nueva captura.
+
+ARCHIVOS INCLUIDOS
 
 1. routes/planning.py
-   - El endpoint compartido de asignaturas consulta primero CurriculumService en todos los niveles.
-   - La lista histórica de asignaturas queda únicamente como respaldo.
-   - Solo se exponen asignaturas con contenido curricular utilizable.
-   - PIE y Planificaciones reciben cursos, asignaturas, unidades y OA/AE desde la misma API.
+   - PIE y Planificaciones comparten cursos, asignaturas, unidades y OA/AE.
+   - CurriculumService es la fuente primaria de asignaturas en todos los niveles.
+   - La lista histórica queda solo como respaldo.
+   - Permite mostrar contenido nuevo, incluido Inglés de 1° a 4° básico.
 
 2. static/js/pie.js
-   - El desplegable muestra solamente el código del OA/AE.
+   - Elimina solamente opciones duplicadas exactas.
+   - No fusiona unidades que comparten número pero tienen distinto título, programa u objetivos.
+   - El selector de OA/AE muestra solamente el código.
+   - El nombre completo de la unidad aparece en un recuadro independiente.
+   - El código y la descripción del objetivo se presentan por separado y con saltos de línea legibles.
    - El valor enviado por el formulario conserva “código — descripción completa”.
-   - Al seleccionar un objetivo, su texto completo aparece en un recuadro legible.
-   - Al cambiar curso, asignatura o unidad, se limpia el detalle anterior.
+   - Al cambiar curso, asignatura o unidad, se limpian los detalles que ya no corresponden.
 
 3. templates/pie.html
-   - Ajusta el ancho del selector para evitar desbordamientos.
-   - Agrega el recuadro de descripción completa del objetivo.
-   - Renueva la versión de pie.js para impedir que el navegador reutilice el script anterior.
+   - Unidad y OA/AE ocupan todo el ancho disponible del formulario.
+   - Agrega recuadros de lectura para la unidad y el objetivo seleccionados.
+   - Evita desbordamiento horizontal de los selectores y descripciones.
+   - El historial puede desplazarse dentro de su propio recuadro en pantallas angostas, sin ensanchar toda la página.
+   - Renueva la versión de pie.js para evitar que el navegador utilice el script anterior.
 
-No se incluyen JSON curriculares, templates/mineduc.html ni cambios de base de datos, autenticación, usuarios, planes, persistencia, exportación, variables de entorno o configuración de Render.
+NO SE MODIFICÓ
+- Ningún JSON ni descripción curricular oficial.
+- Base de datos, autenticación, usuarios, planes o persistencia.
+- Generación, historial o exportación de adecuaciones.
+- Variables de entorno, GitHub, Render o producción.
 
 REQUISITO PREVIO
-Aplicar este paquete sobre una copia del repositorio que ya contenga la actualización curricular integral entregada anteriormente. Si esa actualización todavía no está aplicada, debe incorporarse primero; este paquete PIE no vuelve a incluir sus 129 archivos JSON ni el selector de Planificaciones.
+Aplicar sobre una copia del repositorio que ya contenga la actualización curricular integral. Este paquete no vuelve a incluir los archivos JSON de esa entrega.
 
-INSTALACIÓN PARA REVISIÓN LOCAL
+INSTALACIÓN LOCAL
 1. Cerrar la aplicación local si está ejecutándose.
-2. Hacer una copia de seguridad de los tres archivos actuales del repositorio.
-3. Descomprimir este ZIP.
-4. Copiar routes/planning.py, static/js/pie.js y templates/pie.html a la raíz del repositorio, conservando exactamente sus carpetas y reemplazando los archivos correspondientes.
-5. Ejecutar la aplicación localmente con el procedimiento habitual del proyecto.
-6. Abrir el módulo PIE y revisar las pruebas indicadas abajo.
+2. Respaldar los tres archivos actuales.
+3. Descomprimir el ZIP.
+4. Copiar routes/planning.py, static/js/pie.js y templates/pie.html a la raíz del repositorio, conservando sus carpetas y reemplazando los archivos correspondientes.
+5. Ejecutar la aplicación con el procedimiento habitual y abrir /pie.
 
-PRUEBAS RECOMENDADAS EN /pie
-1. Comprobar que el listado de cursos y asignaturas coincide con el disponible en Planificaciones.
-2. Revisar especialmente Inglés de 1° a 4° básico.
-3. Recorrer varias unidades y confirmar que aparecen sus OA/AE.
-4. Seleccionar un OA y comprobar que:
-   - El desplegable muestra el código, sin extenderse con toda la descripción.
-   - El recuadro inferior presenta el código y la descripción completa.
-   - El texto puede leerse sin cortes ni desbordamiento horizontal.
-5. Repetir la prueba con un AE de Lengua Indígena y confirmar que sigue identificado como AE.
-6. Cambiar de unidad, asignatura y curso; el recuadro de descripción debe limpiarse.
-7. Generar una adecuación de prueba y confirmar que el objetivo utilizado contiene código y descripción completa.
-8. Revisar brevemente Planificaciones para confirmar que su carga curricular sigue funcionando.
+PRUEBAS RECOMENDADAS
+1. Seleccionar 2° Básico, Matemáticas y Unidad 2.
+2. Confirmar que el nombre completo de la unidad aparece debajo del selector.
+3. Abrir el selector OA/AE y comprobar que sus opciones muestran solo códigos, sin descripciones desbordadas ni franjas de texto.
+4. Seleccionar un OA y comprobar que el código y la descripción completa aparecen en el recuadro azul.
+5. Cambiar de unidad y verificar que el objetivo anterior se limpie.
+6. Revisar 5° Básico, Lengua y Cultura de los Pueblos Originarios Ancestrales: las unidades con el mismo número pero distinto programa deben permanecer separadas.
+7. Repetir la selección con un AE de Lengua Indígena y confirmar que conserva su condición de AE.
+8. Generar una adecuación de prueba y confirmar que utiliza el objetivo con su descripción completa.
+9. Revisar Planificaciones para confirmar que el catálogo compartido sigue funcionando.
 
-VALIDACIONES REALIZADAS EN ESTE PAQUETE
-- Sintaxis de routes/planning.py y static/js/pie.js: correcta.
-- Integración del selector PIE: correcta.
-- API curricular compartida entre PIE y Planificaciones: correcta.
-- Catálogo validado: 16 cursos, 231 relaciones curso–asignatura, 695 unidades con objetivos y 3.768 OA/AE únicos.
-- Inglés de 1° a 4° básico: disponible en el endpoint.
-- Selector PIE: códigos visibles y descripciones completas conservadas en el valor.
+VALIDACIÓN REALIZADA
+- Sintaxis de Python y JavaScript: correcta.
+- Prueba en navegador con la plantilla, el JavaScript y datos curriculares reales: correcta.
+- Duplicados exactos de unidades y objetivos: eliminados en la presentación.
+- Unidades distintas que comparten número: conservadas sin fusionar.
+- Descripción completa en el valor enviado por FormData: confirmada.
+- Sin desbordamiento horizontal en anchos de 375, 768, 1024 y 1440 píxeles.
+- Sin errores de JavaScript durante el flujo probado.
+- Catálogo revisado: 16 cursos, 231 relaciones curso–asignatura, 695 unidades con objetivos y 3.768 OA/AE únicos.
 
-GIT Y RENDER
-GitHub, Render y producción no han sido modificados ni verificados con este paquete. Después de revisar localmente y si todo funciona correctamente:
+SUBIR A GITHUB DESPUÉS DE REVISAR
+En la raíz del repositorio:
 
-1. Ejecutar en la raíz del repositorio:
-   git status
-   git add routes/planning.py static/js/pie.js templates/pie.html
-   git commit -m "Corrige catálogo curricular y selector OA/AE en PIE"
-   git push
+git status
+git add routes/planning.py static/js/pie.js templates/pie.html
+git commit -m "Mejora presentación de unidades y OA/AE en PIE"
+git push
 
-2. Confirmar que solo se hayan incluido los tres archivos previstos antes de hacer push.
-3. Desplegar en Render mediante el procedimiento habitual.
-4. Cuando termine el despliegue, abrir /pie en producción y repetir las pruebas principales.
-5. Si el navegador conserva el diseño anterior, actualizar la página. La nueva URL versionada de pie.js está preparada para renovar la caché.
+Antes de hacer push, confirmar que solo se incluyan los tres archivos previstos. Después, desplegar en Render con el procedimiento habitual y repetir las pruebas en /pie. Si el navegador muestra el diseño anterior, actualizar la página; la nueva versión del script fuerza la renovación de caché.
 
-SEGURIDAD Y ALCANCE
-No se solicitan contraseñas, claves de API ni datos privados. No se han modificado directamente GitHub, Render o producción. Las descripciones curriculares no fueron alteradas en esta corrección.
+GitHub, Render y producción no han sido modificados ni verificados con este paquete. No se solicitan contraseñas, claves de API ni datos privados.
