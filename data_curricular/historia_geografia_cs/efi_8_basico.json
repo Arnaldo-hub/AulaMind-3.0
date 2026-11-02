@@ -1,0 +1,51 @@
+{
+  "asignatura": "Educación Física y Salud",
+  "curso": "EFI 8° básico",
+  "fuente": "Programa Ed.Física y Salud.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — Habilidades motrices y control corporal",
+      "oa": [
+        {
+          "codigo": "OA 3",
+          "descripcion": "Desarrollar la resistencia cardiovascular, la fuerza muscular, la velocidad y la flexibilidad para alcanzar una condición física saludable, considerando: • Frecuencia. • Intensidad. • Tiempo de duración y recuperación. • Progresión. • Tipo de ejercicio (correr, andar en bicicleta, realizar trabajo de fuerza, ejercicios de flexibilidad, entre otros)."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Practicar regularmente una variedad de actividades físicas alternativas y/o deportivas en diferentes entornos, aplicando conductas de autocuidado y seguridad, como realizar al menos 30 minutos diarios de actividades físicas de su interés, evitar el consumo de drogas, tabaco y alcohol, ejecutar un calentamiento, aplicar reglas y medidas de seguridad, hidratarse con agua de forma permanente, entre otras."
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Promover y participar en una variedad de actividades físicas y/o deportivas de su interés y que se desarrollan en su comunidad escolar y/o en su entorno; por ejemplo: • Promover la práctica regular de actividad física y deportiva. • Participar en la organización de una variedad de actividades físicas y/o deportivas que sean de interés personal y de la comunidad. • Utilizar estrategias para promover la práctica regular de actividad física; por ejemplo: elaborar afiches o diarios murales, entre otros."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — Condición física y vida activa",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Seleccionar, combinar y aplicar con mayor dominio las habilidades motrices específicas de locomoción, manipulación y estabilidad en, al menos: • Un deporte individual (atletismo, gimnasia artística, entre otros). • Un deporte de oposición (tenis, bádminton, entre otros). • Un deporte de colaboración (escalada, vóleibol duplas, entre otros). • Un deporte de oposición/colaboración (básquetbol, hándbol, hockey, entre otros). • Una danza (folclórica, moderna, entre otras)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — Juegos, deportes y estrategias",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Seleccionar, combinar y aplicar con mayor dominio las habilidades motrices específicas de locomoción, manipulación y estabilidad en, al menos: • Un deporte individual (atletismo, gimnasia artística, entre otros). • Un deporte de oposición (tenis, bádminton, entre otros). • Un deporte de colaboración (escalada, vóleibol duplas, entre otros). • Un deporte de oposición/colaboración (básquetbol, hándbol, hockey, entre otros). • Una danza (folclórica, moderna, entre otras)."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Vida saludable, seguridad y convivencia",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Seleccionar, combinar y aplicar con mayor dominio las habilidades motrices específicas de locomoción, manipulación y estabilidad en, al menos: • Un deporte individual (atletismo, gimnasia artística, entre otros). • Un deporte de oposición (tenis, bádminton, entre otros). • Un deporte de colaboración (escalada, vóleibol duplas, entre otros). • Un deporte de oposición/colaboración (básquetbol, hándbol, hockey, entre otros). • Una danza (folclórica, moderna, entre otras)."
+        }
+      ]
+    }
+  ]
+}
