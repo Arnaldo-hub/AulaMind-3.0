@@ -1,29 +1,26 @@
 {
   "asignatura": "Artes Visuales",
   "curso": "4° básico",
+  "fuente": "Art. Visuales 4.pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — El arte de los pueblos originarios americanos",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del entorno natural, cultural y artístico."
+          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del: • entorno natural: naturaleza y paisaje americano • entorno cultural: América y sus tradiciones (cultura precolombina, tradiciones y artesanía americana) • entorno artístico: arte precolombino y de movimientos artísticos como muralismo mexicano, naif y surrealismo en Chile, Latinoamérica y en el resto del mundo"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Aplicar elementos del lenguaje visual en sus trabajos de arte, con diversos propósitos expresivos y creativos."
+          "descripcion": "Aplicar elementos del lenguaje visual (incluidos los de niveles anteriores) en sus trabajos de arte, con diversos propósitos expresivos y creativos: • líneas de contorno • color (tono y matiz) • forma (figurativa y no figurativa)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural, cultural y artístico, demostrando manejo de materiales, herramientas y procedimientos."
+          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural y artístico, demostrando manejo de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas, textiles e imágenes digitales • herramientas para dibujar, pintar, cortar, unir, modelar y tecnológicas (pincel, tijera, mirete, computador, cámara fotográfica, entre otras) • procedimientos de dibujo, pintura, grabado, escultura, técnicas mixtas, artesanía, fotografía, entre otros"
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan."
-        },
-        {
-          "codigo": "OA 5",
-          "descripcion": "Describir fortalezas y aspectos a mejorar en el trabajo de arte personal y de sus pares, aplicando criterios de uso de materiales, procedimientos técnicos y propósito expresivo."
+          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan.*"
         }
       ]
     },
@@ -32,19 +29,19 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del entorno natural, cultural y artístico."
+          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del: • entorno natural: naturaleza y paisaje americano • entorno cultural: América y sus tradiciones (cultura precolombina, tradiciones y artesanía americana) • entorno artístico: arte precolombino y de movimientos artísticos como muralismo mexicano, naif y surrealismo en Chile, Latinoamérica y en el resto del mundo"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Aplicar elementos del lenguaje visual en sus trabajos de arte, con diversos propósitos expresivos y creativos."
+          "descripcion": "Aplicar elementos del lenguaje visual (incluidos los de niveles anteriores) en sus trabajos de arte, con diversos propósitos expresivos y creativos: • líneas de contorno • color (tono y matiz) • forma (figurativa y no figurativa)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural, cultural y artístico, demostrando manejo de materiales, herramientas y procedimientos."
+          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural y artístico, demostrando manejo de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas, textiles e imágenes digitales • herramientas para dibujar, pintar, cortar, unir, modelar y tecnológicas (pincel, tijera, mirete, computador, cámara fotográfica, entre otras) • procedimientos de dibujo, pintura, grabado, escultura, técnicas mixtas, artesanía, fotografía, entre otros"
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan."
+          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan.*"
         }
       ]
     },
@@ -53,19 +50,23 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación de la naturaleza y paisaje americano."
+          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del: • entorno natural: naturaleza y paisaje americano • entorno cultural: América y sus tradiciones (cultura precolombina, tradiciones y artesanía americana) • entorno artístico: arte precolombino y de movimientos artísticos como muralismo mexicano, naif y surrealismo en Chile, Latinoamérica y en el resto del mundo"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Aplicar elementos del lenguaje visual, como líneas, formas, colores y texturas, con propósitos expresivos."
+          "descripcion": "Aplicar elementos del lenguaje visual (incluidos los de niveles anteriores) en sus trabajos de arte, con diversos propósitos expresivos y creativos: • líneas de contorno • color (tono y matiz) • forma (figurativa y no figurativa)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear trabajos de arte demostrando manejo de materiales, herramientas y procedimientos de dibujo, pintura, grabado, escultura y técnicas mixtas."
+          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural y artístico, demostrando manejo de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas, textiles e imágenes digitales • herramientas para dibujar, pintar, cortar, unir, modelar y tecnológicas (pincel, tijera, mirete, computador, cámara fotográfica, entre otras) • procedimientos de dibujo, pintura, grabado, escultura, técnicas mixtas, artesanía, fotografía, entre otros"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan.*"
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Describir fortalezas y aspectos a mejorar en trabajos propios y de sus pares usando criterios artísticos."
+          "descripcion": "Describir fortalezas y aspectos a mejorar en el trabajo de arte personal y de sus pares, aplicando criterios de manejo de materiales, procedimientos técnicos y propósito expresivo."
         }
       ]
     },
@@ -74,19 +75,23 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte basados en referentes culturales y artísticos de América."
+          "descripcion": "Crear trabajos de arte con un propósito expresivo personal y basados en la observación del: • entorno natural: naturaleza y paisaje americano • entorno cultural: América y sus tradiciones (cultura precolombina, tradiciones y artesanía americana) • entorno artístico: arte precolombino y de movimientos artísticos como muralismo mexicano, naif y surrealismo en Chile, Latinoamérica y en el resto del mundo"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Aplicar elementos del lenguaje visual (incluidos los de niveles anteriores) en sus trabajos de arte, con diversos propósitos expresivos y creativos: • líneas de contorno • color (tono y matiz) • forma (figurativa y no figurativa)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear trabajos de arte a partir de experiencias e intereses, utilizando diversos medios y procedimientos."
+          "descripcion": "Crear trabajos de arte a partir de experiencias, intereses y temas del entorno natural y artístico, demostrando manejo de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas, textiles e imágenes digitales • herramientas para dibujar, pintar, cortar, unir, modelar y tecnológicas (pincel, tijera, mirete, computador, cámara fotográfica, entre otras) • procedimientos de dibujo, pintura, grabado, escultura, técnicas mixtas, artesanía, fotografía, entre otros"
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Describir observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando ideas y sentimientos."
+          "descripcion": "Describir sus observaciones de obras de arte y objetos, usando elementos del lenguaje visual y expresando lo que sienten y piensan.*"
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Evaluar fortalezas y aspectos a mejorar en trabajos personales y de sus pares."
+          "descripcion": "Describir fortalezas y aspectos a mejorar en el trabajo de arte personal y de sus pares, aplicando criterios de manejo de materiales, procedimientos técnicos y propósito expresivo."
         }
       ]
     }

@@ -1,25 +1,30 @@
 {
   "asignatura": "Artes Visuales",
   "curso": "6° básico",
+  "fuente": "Programa Artes Visuales(3).pdf",
   "unidades": [
     {
       "nombre": "Unidad 1 — Arte contemporáneo y creación visual",
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte y diseños a partir de sus propias ideas y de la observación del entorno cultural y artístico."
+          "descripcion": "Crear trabajos de arte y diseños a partir de sus propias ideas y de la observación del: • entorno cultural: el hombre contemporáneo y la ciudad • entorno artístico: el arte contemporáneo, el arte en el espacio público (murales y esculturas)"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Aplicar y combinar elementos del lenguaje visual en trabajos de arte y diseño con diferentes propósitos expresivos y creativos."
+          "descripcion": "Aplicar y combinar elementos del lenguaje visual (incluidos los de niveles anteriores) en trabajos de arte y diseño con diferentes propósitos expresivos, comunicativos y creativos: • color (gamas y contrastes) • volumen (lleno y vacío)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear trabajos de arte y diseños a partir de diferentes desafíos y temas del entorno cultural y artístico, demostrando dominio en el uso de materiales, herramientas y procedimientos."
+          "descripcion": "Crear trabajos de arte y diseños a partir de diferentes desafíos y temas del entorno cultural y artístico, demostrando dominio en el uso de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas e imágenes digitales • herramientas para dibujar, pintar, cortar unir, modelar y tecnológicas (rodillos de grabado, sierra de calar, mirete, cámara de video y proyector multimedia, entre otros) • procedimientos de pintura, grabado, escultura, instalación, técnicas mixtas, arte digital, fotografía, video, murales, entre otros."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Analizar e interpretar obras de arte y objetos en relación con la aplicación del lenguaje visual, contextos, materiales, estilos y propósitos expresivos."
+          "descripcion": "Analizar e interpretar obras de arte y objetos en relación con la aplicación del lenguaje visual, contextos, materiales, estilos u otros.*"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente trabajos de arte y diseño personales y de sus pares considerando: • expresión de emociones y problemáticas sociales • uso de materiales y procedimientos • aplicación de elementos del lenguaje visual • propósitos expresivos"
         }
       ]
     },
@@ -28,19 +33,23 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte y diseños a partir de ideas propias y de la observación del entorno cultural y artístico."
+          "descripcion": "Crear trabajos de arte y diseños a partir de sus propias ideas y de la observación del: • entorno cultural: el hombre contemporáneo y la ciudad • entorno artístico: el arte contemporáneo, el arte en el espacio público (murales y esculturas)"
         },
         {
           "codigo": "OA 2",
-          "descripcion": "Aplicar y combinar elementos del lenguaje visual con propósitos expresivos y creativos."
+          "descripcion": "Aplicar y combinar elementos del lenguaje visual (incluidos los de niveles anteriores) en trabajos de arte y diseño con diferentes propósitos expresivos, comunicativos y creativos: • color (gamas y contrastes) • volumen (lleno y vacío)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear diseños respondiendo a desafíos, demostrando dominio de materiales, herramientas y procedimientos."
+          "descripcion": "Crear trabajos de arte y diseños a partir de diferentes desafíos y temas del entorno cultural y artístico, demostrando dominio en el uso de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas e imágenes digitales • herramientas para dibujar, pintar, cortar unir, modelar y tecnológicas (rodillos de grabado, sierra de calar, mirete, cámara de video y proyector multimedia, entre otros) • procedimientos de pintura, grabado, escultura, instalación, técnicas mixtas, arte digital, fotografía, video, murales, entre otros."
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Analizar e interpretar obras de arte y objetos en relación con la aplicación del lenguaje visual, contextos, materiales, estilos u otros.*"
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Evaluar críticamente trabajos de arte y diseños personales y de sus pares considerando criterios técnicos y expresivos."
+          "descripcion": "Evaluar críticamente trabajos de arte y diseño personales y de sus pares considerando: • expresión de emociones y problemáticas sociales • uso de materiales y procedimientos • aplicación de elementos del lenguaje visual • propósitos expresivos"
         }
       ]
     },
@@ -49,19 +58,19 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte y diseños a partir de la observación de imágenes, medios contemporáneos y referentes artísticos."
-        },
-        {
-          "codigo": "OA 2",
-          "descripcion": "Aplicar elementos del lenguaje visual en producciones fotográficas y digitales."
+          "descripcion": "Crear trabajos de arte y diseños a partir de sus propias ideas y de la observación del: • entorno cultural: el hombre contemporáneo y la ciudad • entorno artístico: el arte contemporáneo, el arte en el espacio público (murales y esculturas)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear trabajos utilizando procedimientos de fotografía, imagen digital y técnicas mixtas."
+          "descripcion": "Crear trabajos de arte y diseños a partir de diferentes desafíos y temas del entorno cultural y artístico, demostrando dominio en el uso de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas e imágenes digitales • herramientas para dibujar, pintar, cortar unir, modelar y tecnológicas (rodillos de grabado, sierra de calar, mirete, cámara de video y proyector multimedia, entre otros) • procedimientos de pintura, grabado, escultura, instalación, técnicas mixtas, arte digital, fotografía, video, murales, entre otros."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Analizar e interpretar obras e imágenes considerando lenguaje visual, contexto, materiales y propósito expresivo."
+          "descripcion": "Analizar e interpretar obras de arte y objetos en relación con la aplicación del lenguaje visual, contextos, materiales, estilos u otros.*"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Evaluar críticamente trabajos de arte y diseño personales y de sus pares considerando: • expresión de emociones y problemáticas sociales • uso de materiales y procedimientos • aplicación de elementos del lenguaje visual • propósitos expresivos"
         }
       ]
     },
@@ -70,19 +79,19 @@
       "oa": [
         {
           "codigo": "OA 1",
-          "descripcion": "Crear trabajos de arte a partir del entorno cultural, artístico y patrimonial."
+          "descripcion": "Crear trabajos de arte y diseños a partir de sus propias ideas y de la observación del: • entorno cultural: el hombre contemporáneo y la ciudad • entorno artístico: el arte contemporáneo, el arte en el espacio público (murales y esculturas)"
         },
         {
           "codigo": "OA 3",
-          "descripcion": "Crear obras tridimensionales demostrando manejo de materiales, herramientas y procedimientos."
+          "descripcion": "Crear trabajos de arte y diseños a partir de diferentes desafíos y temas del entorno cultural y artístico, demostrando dominio en el uso de: • materiales de modelado, de reciclaje, naturales, papeles, cartones, pegamentos, lápices, pinturas e imágenes digitales • herramientas para dibujar, pintar, cortar unir, modelar y tecnológicas (rodillos de grabado, sierra de calar, mirete, cámara de video y proyector multimedia, entre otros) • procedimientos de pintura, grabado, escultura, instalación, técnicas mixtas, arte digital, fotografía, video, murales, entre otros."
         },
         {
           "codigo": "OA 4",
-          "descripcion": "Analizar e interpretar obras de arte considerando contexto, estilo, materiales y propósito expresivo."
+          "descripcion": "Analizar e interpretar obras de arte y objetos en relación con la aplicación del lenguaje visual, contextos, materiales, estilos u otros.*"
         },
         {
           "codigo": "OA 5",
-          "descripcion": "Evaluar críticamente trabajos personales y de sus pares utilizando criterios técnicos y expresivos."
+          "descripcion": "Evaluar críticamente trabajos de arte y diseño personales y de sus pares considerando: • expresión de emociones y problemáticas sociales • uso de materiales y procedimientos • aplicación de elementos del lenguaje visual • propósitos expresivos"
         }
       ]
     }
