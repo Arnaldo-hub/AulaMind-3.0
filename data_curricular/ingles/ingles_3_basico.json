@@ -1,0 +1,267 @@
+{
+  "asignatura": "Inglés",
+  "curso": "3° básico",
+  "fuente": "Propuesta Inglés.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — My clothes",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, como: o rimas y chants o canciones o cuentos o diálogos o textos informativos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "• Comprender textos orales relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • información personal • la vestimenta Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "• Demostrar comprensión de textos orales, identificando: o ideas generales e información explícita relacionada con personajes, objetos y lugares o palabras de vocabulario aprendido y expresiones de uso frecuente o sonidos propios del inglés que pueden interferir con la comprensión Sonidos: • sonidos /b/,/v/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones sobre la base de conocimientos previos o relacionar texto con imágenes o focalizar atención en palabras clave o visualizar diferentes aspectos del texto o verificar predicciones"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o ilustraciones y representaciones (maquetas, figuras, modelos) o mímica y acciones o dramatizaciones o frases u oraciones escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, canciones, invitaciones, tarjetas de saludo, menús, instrucciones, diálogos y textos informativos, en formato digital o impreso, identificando o ideas generales o información explícita asociada a personajes y sus acciones, objetos y lugares vocabulario aprendido, palabras conocidas y expresiones de uso frecuente (por ejemplo: When’s your birthday? I love pizza)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "• Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • información personal • la vestimenta Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o visualizar diferentes aspectos del texto o releer, leer a otros en voz alta, recontar con ayuda o verificar predicciones"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de o ilustraciones y representaciones (maquetas, figuras, modelos) o dramatizaciones o palabras y frases escrita"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "• Reproducir chants, canciones rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés Sonidos: • sonidos /b/,/v/"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples acerca de temas conocidos o de otras asignaturas o usando el apoyo de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso frecuente (por ejemplo: My surname is…; I’m…years old)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "• Expresarse oralmente (en diálogos o exposiciones preparadas) para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s…; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; Where is the ball? It’s next to the table • expresar cantidades en números hasta el treinta; por ejemplo: There are twenty pencils • expresarse y preguntar acerca de gustos, habilidades y la vestimenta; por ejemplo: Do you like soup? Yes, I do; I like apples and bananas; Can you jump? Yes, I can; What’s he wearing? He’s wearing a jacket • preguntar y decir horas exactas; por ejemplo: What time is it? It’s 7:00 o’clock."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: completar o responder preguntas), de acuerdo a un modelo y con apoyo de imágenes y vocabulario dado, textos tales como oraciones, invitaciones y diálogos de dos o tres intercambios acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "• Escribir para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s …; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; The giraffe is tall; The book is next to the table • expresar gustos, habilidades, características de la vestimenta; por ejemplo: I like fruit and salad; I can jump; the tiger can’t fly; He’s wearing a green jacket • decir horas exactas; por ejemplo: It’s 7:00 o’clock • expresar cantidades en números hasta el treinta; por ejemplo: I’m ten years old; I have two dogs"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Planificar, escribir, revisar y publicar textos muy breves y simples recurriendo a apoyo del docente, de imágenes, organizadores gráficos, modelos, diccionario de imágenes (picture dictionary) y de herramientas como el procesador de textos, para demostrar conocimiento y uso del vocabulario y expresiones de uso frecuente aprendidos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — The natural world",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, como: o rimas y chants o canciones o cuentos o diálogos o textos informativos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "• Comprender textos orales relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • los animales Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "• Demostrar comprensión de textos orales, identificando: o ideas generales e información explícita relacionada con personajes, objetos y lugares o palabras de vocabulario aprendido y expresiones de uso frecuente o sonidos propios del inglés que pueden interferir con la comprensión Sonidos: • sonidos /d/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones sobre la base de conocimientos previos o relacionar texto con imágenes o focalizar atención en palabras clave o visualizar diferentes aspectos del texto o verificar predicciones"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o ilustraciones y representaciones (maquetas, figuras, modelos) o mímica y acciones o dramatizaciones o frases u oraciones escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, canciones, invitaciones, tarjetas de saludo, menús, instrucciones, diálogos y textos informativos, en formato digital o impreso, identificando o ideas generales o información explícita asociada a personajes y sus acciones, objetos y lugares vocabulario aprendido, palabras conocidas y expresiones de uso frecuente (por ejemplo: When’s your birthday? I love pizza)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "• Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • los animales Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o visualizar diferentes aspectos del texto o releer, leer a otros en voz alta, recontar con ayuda o verificar predicciones"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de o ilustraciones y representaciones (maquetas, figuras, modelos) o dramatizaciones o palabras y frases escrita"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "• Reproducir chants, canciones rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés Sonidos: • sonidos /d/"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples acerca de temas conocidos o de otras asignaturas o usando el apoyo de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso frecuente (por ejemplo: My surname is…; I’m…years old)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "• Expresarse oralmente (en diálogos o exposiciones preparadas) para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s…; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; Where is the ball? It’s next to the table • expresar cantidades en números hasta el treinta; por ejemplo: There are twenty pencils • expresarse y preguntar acerca de gustos, habilidades y la vestimenta; por ejemplo: Do you like soup? Yes, I do; I like apples and bananas; Can you jump? Yes, I can; What’s he wearing? He’s wearing a jacket • preguntar y decir horas exactas; por ejemplo: What time is it? It’s 7:00 o’clock."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: completar o responder preguntas), de acuerdo a un modelo y con apoyo de imágenes y vocabulario dado, textos tales como oraciones, invitaciones y diálogos de dos o tres intercambios acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "• Escribir para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s …; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; The giraffe is tall; The book is next to the table • expresar gustos, habilidades, características de la vestimenta; por ejemplo: I like fruit and salad; I can jump; the tiger can’t fly; He’s wearing a green jacket • decir horas exactas; por ejemplo: It’s 7:00 o’clock • expresar cantidades en números hasta el treinta; por ejemplo: I’m ten years old; I have two dogs"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Planificar, escribir, revisar y publicar textos muy breves y simples recurriendo a apoyo del docente, de imágenes, organizadores gráficos, modelos, diccionario de imágenes (picture dictionary) y de herramientas como el procesador de textos, para demostrar conocimiento y uso del vocabulario y expresiones de uso frecuente aprendidos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — My house",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, como: o rimas y chants o canciones o cuentos o diálogos o textos informativos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "• Comprender textos orales relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • la casa Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "• Demostrar comprensión de textos orales, identificando: o ideas generales e información explícita relacionada con personajes, objetos y lugares o palabras de vocabulario aprendido y expresiones de uso frecuente o sonidos propios del inglés que pueden interferir con la comprensión Sonidos: • sonidos /r/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones sobre la base de conocimientos previos o relacionar texto con imágenes o focalizar atención en palabras clave o visualizar diferentes aspectos del texto o verificar predicciones"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o ilustraciones y representaciones (maquetas, figuras, modelos) o mímica y acciones o dramatizaciones o frases u oraciones escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, canciones, invitaciones, tarjetas de saludo, menús, instrucciones, diálogos y textos informativos, en formato digital o impreso, identificando o ideas generales o información explícita asociada a personajes y sus acciones, objetos y lugares vocabulario aprendido, palabras conocidas y expresiones de uso frecuente (por ejemplo: When’s your birthday? I love pizza)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "• Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • la casa Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o visualizar diferentes aspectos del texto o releer, leer a otros en voz alta, recontar con ayuda o verificar predicciones"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de o ilustraciones y representaciones (maquetas, figuras, modelos) o dramatizaciones o palabras y frases escrita"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "• Reproducir chants, canciones rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés Sonidos: • sonidos /r/"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples acerca de temas conocidos o de otras asignaturas o usando el apoyo de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso frecuente (por ejemplo: My surname is…; I’m…years old)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "• Expresarse oralmente (en diálogos o exposiciones preparadas) para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s…; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; Where is the ball? It’s next to the table • expresar cantidades en números hasta el treinta; por ejemplo: There are twenty pencils • expresarse y preguntar acerca de gustos, habilidades y la vestimenta; por ejemplo: Do you like soup? Yes, I do; I like apples and bananas; Can you jump? Yes, I can; What’s he wearing? He’s wearing a jacket • preguntar y decir horas exactas; por ejemplo: What time is it? It’s 7:00 o’clock."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: completar o responder preguntas), de acuerdo a un modelo y con apoyo de imágenes y vocabulario dado, textos tales como oraciones, invitaciones y diálogos de dos o tres intercambios acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "• Escribir para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s …; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; The giraffe is tall; The book is next to the table • expresar gustos, habilidades, características de la vestimenta; por ejemplo: I like fruit and salad; I can jump; the tiger can’t fly; He’s wearing a green jacket • decir horas exactas; por ejemplo: It’s 7:00 o’clock • expresar cantidades en números hasta el treinta; por ejemplo: I’m ten years old; I have two dogs"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Planificar, escribir, revisar y publicar textos muy breves y simples recurriendo a apoyo del docente, de imágenes, organizadores gráficos, modelos, diccionario de imágenes (picture dictionary) y de herramientas como el procesador de textos, para demostrar conocimiento y uso del vocabulario y expresiones de uso frecuente aprendidos."
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Food",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, como: o rimas y chants o canciones o cuentos o diálogos o textos informativos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "• Comprender textos orales relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • la comida Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "• Demostrar comprensión de textos orales, identificando: o ideas generales e información explícita relacionada con personajes, objetos y lugares o palabras de vocabulario aprendido y expresiones de uso frecuente o sonidos propios del inglés que pueden interferir con la comprensión Sonidos: • sonidos /t/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones sobre la base de conocimientos previos o relacionar texto con imágenes o focalizar atención en palabras clave o visualizar diferentes aspectos del texto o verificar predicciones"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o ilustraciones y representaciones (maquetas, figuras, modelos) o mímica y acciones o dramatizaciones o frases u oraciones escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, canciones, invitaciones, tarjetas de saludo, menús, instrucciones, diálogos y textos informativos, en formato digital o impreso, identificando o ideas generales o información explícita asociada a personajes y sus acciones, objetos y lugares vocabulario aprendido, palabras conocidas y expresiones de uso frecuente (por ejemplo: When’s your birthday? I love pizza)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "• Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos: • la comida Funciones: • compartir información personal • describir • expresar cantidades en números hasta el treinta • dar información y preguntar acerca de gustos, habilidades, la vestimenta • preguntar y expresar horas exactas"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión, por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o visualizar diferentes aspectos del texto o releer, leer a otros en voz alta, recontar con ayuda o verificar predicciones"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de o ilustraciones y representaciones (maquetas, figuras, modelos) o dramatizaciones o palabras y frases escrita"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "• Reproducir chants, canciones rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés Sonidos: • sonidos /t/"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples acerca de temas conocidos o de otras asignaturas o usando el apoyo de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso frecuente (por ejemplo: My surname is…; I’m…years old)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "• Expresarse oralmente (en diálogos o exposiciones preparadas) para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s…; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; Where is the ball? It’s next to the table • expresar cantidades en números hasta el treinta; por ejemplo: There are twenty pencils • expresarse y preguntar acerca de gustos, habilidades y la vestimenta; por ejemplo: Do you like soup? Yes, I do; I like apples and bananas; Can you jump? Yes, I can; What’s he wearing? He’s wearing a jacket • preguntar y decir horas exactas; por ejemplo: What time is it? It’s 7:00 o’clock."
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: completar o responder preguntas), de acuerdo a un modelo y con apoyo de imágenes y vocabulario dado, textos tales como oraciones, invitaciones y diálogos de dos o tres intercambios acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "• Escribir para: Funciones: • compartir información personal; por ejemplo: What’s your surname? It’s …; I have a dog • describir y hacer referencia a ubicación de objetos; por ejemplo: It has a long tail; It’s big; The giraffe is tall; The book is next to the table • expresar gustos, habilidades, características de la vestimenta; por ejemplo: I like fruit and salad; I can jump; the tiger can’t fly; He’s wearing a green jacket • decir horas exactas; por ejemplo: It’s 7:00 o’clock • expresar cantidades en números hasta el treinta; por ejemplo: I’m ten years old; I have two dogs"
+        },
+        {
+          "codigo": "OA 15",
+          "descripcion": "Planificar, escribir, revisar y publicar textos muy breves y simples recurriendo a apoyo del docente, de imágenes, organizadores gráficos, modelos, diccionario de imágenes (picture dictionary) y de herramientas como el procesador de textos, para demostrar conocimiento y uso del vocabulario y expresiones de uso frecuente aprendidos."
+        }
+      ]
+    }
+  ]
+}

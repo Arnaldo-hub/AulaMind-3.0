@@ -1,0 +1,251 @@
+{
+  "asignatura": "Inglés",
+  "curso": "2° básico",
+  "fuente": "Propuesta curricular Inglés 2° básico.pdf",
+  "unidades": [
+    {
+      "nombre": "Unidad 1 — At the zoo",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, breves y simples, como: o rimas y chants o canciones o cuentos o diálogos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprender textos orales relacionados con temas conocidos o de otras asignaturas que contengan las siguientes funciones: Temas conocidos:  La escuela  Animales salvajes Funciones:  seguir y dar instrucciones  presentarse y presentar a otros; por ejemplo: Hi, I’m…; This is…  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte; por ejemplo: it can run; it can’t jump  describir animales y objetos en un lugar; por ejemplo: it’s fast and small; it’s black and white  describir acciones que suceden al momento de hablar  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Demostrar comprensión de textos orales: o identificando personajes, objetos y animales o siguiendo instrucciones simples o identificando palabras, expresiones de uso muy frecuente y vocabulario aprendido Sonidos: identificando sonidos propios del inglés que pueden interferir en la comprensión, como /s/- /z/, /w/-/th/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o hacer conexiones con conocimientos previos o relacionar el texto con imágenes o focalizar la atención en palabras clave"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o dibujos y representaciones (figuras) o mímicas y acciones o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, tarjetas de saludo, instrucciones y textos informativos, identificando: o ideas generales del texto o personajes y acciones o vocabulario aprendido, palabras conocidas y expresiones de uso muy frecuente (I want...; Here!)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos:  La escuela  Animales salvajes Funciones:  seguir y dar instrucciones  presentarse y presentar a otros; por ejemplo: This is Pedro  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte  describir animales y objetos en un lugar; por ejemplo: fast/slow; it can/can’t fly  describir acciones que suceden al momento de hablar; por ejemplo: run, climb, swim, jump, talk  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o relacionar el texto con las imágenes que lo acompañan o releer o leer a otros en voz alta, dibujar o recontar con ayuda"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones por medio de: o ilustraciones y representaciones (figuras) o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Reproducir chants, rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés: Sonidos: identificar los sonidos /w/, /th/ en particular"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples, acerca de temas conocidos o de otras asignaturas: o usando apoyo del docente y de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso muy frecuente (Por ejemplo: How do you say…? I’m…)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Expresarse oralmente con el apoyo del docente para: Funciones:  compartir información personal; por ejemplo: I’m…; this is Pedro; I’m cold/hungry; He/she is sleepy  expresar habilidad y cantidades hasta el veinte; por ejemplo: They can/can’t fly; twelve chairs  identificar y describir animales, comida, ocupaciones y lugares (en la escuela); por ejemplo: library, playground; monkeys are big/fast; it is big/brown; they can/can’t fly  expresar prohibición  solicitar y dar información sobre comida y ubicación de objetos; por ejemplo: Are they…? Yes, they are/No they aren’t; What is it?  describir acciones que ocurren al momento de hablar"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: copiar o completar) palabras y oraciones simples de acuerdo a un modelo, acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Escribir, sobre la base de imágenes, para: Funciones:  identificar animales, acciones, objetos y partes de la casa, ocupaciones, lugares, comida; por ejemplo: a lion / parrots; they swim: gym / library  expresar sentimientos  expresar cantidades en números hasta el veinte  describir ubicación de objetos y acciones que ocurren al momento de hablar"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 2 — My house",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, breves y simples, como: o rimas y chants o canciones o cuentos o diálogos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprender textos orales relacionados con temas conocidos o de otras asignaturas que contengan las siguientes funciones: Temas conocidos:  Partes de la casa y muebles  Figuras geométricas Funciones:  seguir y dar instrucciones; por ejemplo: stop and look, don’t run  presentarse y presentar a otros  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte  describir animales y objetos en un lugar; por ejemplo: there is a big sofa and a lamp; it’s a triangle  describir acciones que suceden al momento de hablar  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos; por ejemplo: Where is the cat? It’ s in the box"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Demostrar comprensión de textos orales: o identificando personajes, objetos y animales o siguiendo instrucciones simples o identificando palabras, expresiones de uso muy frecuente y vocabulario aprendido Sonidos: identificando sonidos propios del inglés que pueden interferir en la comprensión, como /s/- /z/, /w/-/th/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o hacer conexiones con conocimientos previos o relacionar el texto con imágenes o focalizar la atención en palabras clave"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o dibujos y representaciones (figuras) o mímicas y acciones o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, tarjetas de saludo, instrucciones y textos informativos, identificando: o ideas generales del texto o personajes y acciones o vocabulario aprendido, palabras conocidas y expresiones de uso muy frecuente (I want...; Here!)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos:  Partes de la casa y muebles  Figuras geométricas Funciones:  seguir y dar instrucciones; por ejemplo: stop and look, don’t run  presentarse y presentar a otros; por ejemplo: I live in…; My phone number is…  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte  describir animales y objetos en un lugar; por ejemplo: in/on/under; there is/are…; it’s tidy /messy/clean  describir acciones que suceden al momento de hablar  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos; por ejemplo: Where is mother? She isn’t in the kitchen"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o relacionar el texto con las imágenes que lo acompañan o releer o leer a otros en voz alta, dibujar o recontar con ayuda"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones por medio de: o ilustraciones y representaciones (figuras) o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Reproducir chants, rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés: Sonidos: identificar los sonidos /w/, /th/ en particular"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples, acerca de temas conocidos o de otras asignaturas: o usando apoyo del docente y de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso muy frecuente (Por ejemplo: How do you say…? I’m…)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Expresarse oralmente con el apoyo del docente para: Funciones:  compartir información personal; por ejemplo: Where do you live? What’s your phone number?  expresar habilidad y cantidades hasta el veinte; por ejemplo: twelve chairs  identificar y describir animales, comida, ocupaciones y lugares; por ejemplo: bedroom, dirty, there is/are  expresar prohibición; por ejemplo: don’t jump  solicitar y dar información sobre comida y ubicación de objetos  describir acciones que ocurren al momento de hablar"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: copiar o completar) palabras y oraciones simples de acuerdo a un modelo, acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Escribir, sobre la base de imágenes, para: Funciones:  identificar animales, acciones, objetos y partes de la casa, ocupaciones, lugares, comida; por ejemplo: lamp; kitchen  expresar sentimientos  expresar cantidades en números hasta el veinte  describir ubicación de objetos y acciones que ocurren al momento de hablar; por ejemplo: there is a lamp, there are chairs; clean; on/in/under the…"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 3 — I want to be a…",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, breves y simples, como: o rimas y chants o canciones o cuentos o diálogos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprender textos orales relacionados con temas conocidos o de otras asignaturas que contengan las siguientes funciones: Temas conocidos:  Ocupaciones  Lugares en la ciudad Funciones:  seguir y dar instrucciones  presentarse y presentar a otros  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte  describir animales y objetos en un lugar  describir acciones que suceden al momento de hablar; por ejemplo: He is reading; she is eating  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos; por ejemplo: Who is he? He is a doctor; Where do you work? At the hospital"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Demostrar comprensión de textos orales: o identificando personajes, objetos y animales o siguiendo instrucciones simples o identificando palabras, expresiones de uso muy frecuente y vocabulario aprendido Sonidos: identificando sonidos propios del inglés que pueden interferir en la comprensión, como /s/- /z/, /w/-/th/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o hacer conexiones con conocimientos previos o relacionar el texto con imágenes o focalizar la atención en palabras clave"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o dibujos y representaciones (figuras) o mímicas y acciones o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, tarjetas de saludo, instrucciones y textos informativos, identificando: o ideas generales del texto o personajes y acciones o vocabulario aprendido, palabras conocidas y expresiones de uso muy frecuente (I want...; Here!)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos:  Ocupaciones  Lugares en la ciudad Funciones:  seguir y dar instrucciones  presentarse y presentar a otros  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte  describir animales y objetos en un lugar  describir acciones que suceden al momento de hablar; por ejemplo: He is reading; They are eating  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos; por ejemplo: Who is he? He is a doctor; he is in the hospital"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o relacionar el texto con las imágenes que lo acompañan o releer o leer a otros en voz alta, dibujar o recontar con ayuda"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones por medio de: o ilustraciones y representaciones (figuras) o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Reproducir chants, rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés: Sonidos: identificar los sonidos /s/-/z/ en particular"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples, acerca de temas conocidos o de otras asignaturas: o usando apoyo del docente y de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso muy frecuente (Por ejemplo: How do you say…? I’m…)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Expresarse oralmente con el apoyo del docente para: Funciones:  compartir información personal  expresar habilidad y cantidades hasta el veinte; por ejemplo: twelve chairs  identificar y describir animales, comida, ocupaciones y lugares; por ejemplo: Who is she? She is a vet, he isn’t a doctor  expresar prohibición  solicitar y dar información sobre comida y ubicación de objetos  describir acciones que ocurren al momento de hablar; por ejemplo: He is sleeping/playing"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: copiar o completar) palabras y oraciones simples de acuerdo a un modelo, acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Escribir, sobre la base de imágenes, para: Funciones:  identificar animales, acciones, objetos y partes de la casa, ocupaciones, lugares, comida; por ejemplo: vet; hospital  expresar sentimientos  expresar cantidades en números hasta el veinte  describir ubicación de objetos y acciones que ocurren al momento de hablar; por ejemplo: is/are sleeping"
+        }
+      ]
+    },
+    {
+      "nombre": "Unidad 4 — Delicious food",
+      "oa": [
+        {
+          "codigo": "OA 1",
+          "descripcion": "Comprender textos leídos por un adulto o en formato audiovisual, breves y simples, como: o rimas y chants o canciones o cuentos o diálogos"
+        },
+        {
+          "codigo": "OA 2",
+          "descripcion": "Comprender textos orales relacionados con temas conocidos o de otras asignaturas que contengan las siguientes funciones: Temas conocidos:  Comida  Celebraciones (Easter) Funciones:  seguir y dar instrucciones  presentarse y presentar a otros  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte; por ejemplo: I’m happy/sad/angry /scared  describir animales y objetos en un lugar  describir acciones que suceden al momento de hablar  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos; por ejemplo: What do you want? I want an apple; Where is…? Here/there /behind the…"
+        },
+        {
+          "codigo": "OA 3",
+          "descripcion": "Demostrar comprensión de textos orales: o identificando personajes, objetos y animales o siguiendo instrucciones simples o identificando palabras, expresiones de uso muy frecuente y vocabulario aprendido Sonidos: identificando sonidos propios del inglés que pueden interferir en la comprensión, como /s/- /z/, /w/-/th/"
+        },
+        {
+          "codigo": "OA 4",
+          "descripcion": "Escuchar textos orales y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o hacer conexiones con conocimientos previos o relacionar el texto con imágenes o focalizar la atención en palabras clave"
+        },
+        {
+          "codigo": "OA 5",
+          "descripcion": "Reaccionar a lo escuchado, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones, por medio de: o dibujos y representaciones (figuras) o mímicas y acciones o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 6",
+          "descripcion": "Leer y demostrar comprensión de textos como cuentos, rimas, chants, tarjetas de saludo, instrucciones y textos informativos, identificando: o ideas generales del texto o personajes y acciones o vocabulario aprendido, palabras conocidas y expresiones de uso muy frecuente (I want...; Here!)"
+        },
+        {
+          "codigo": "OA 7",
+          "descripcion": "Leer y demostrar comprensión de textos relacionados con temas conocidos o de otras asignaturas y con las siguientes funciones: Temas conocidos:  Comida  Celebraciones (Easter) Funciones:  seguir y dar instrucciones  presentarse y presentar a otros  expresar habilidad, sentimientos, posesión y cantidades hasta el veinte; por ejemplo: I’m hungry/sad, etc.  describir animales y objetos en un lugar  describir acciones que suceden al momento de hablar  solicitar y dar información sobre ocupaciones, comida y ubicación de personas y objetos; por ejemplo: I want apples, please; behind the bush"
+        },
+        {
+          "codigo": "OA 8",
+          "descripcion": "Leer y aplicar estrategias para apoyar la comprensión; por ejemplo: o hacer predicciones o establecer relaciones con conocimientos previos o relacionar el texto con las imágenes que lo acompañan o releer o leer a otros en voz alta, dibujar o recontar con ayuda"
+        },
+        {
+          "codigo": "OA 9",
+          "descripcion": "Reaccionar a lo leído, estableciendo relaciones con experiencias personales y/o expresando preferencias, sentimientos u opiniones por medio de: o ilustraciones y representaciones (figuras) o dramatizaciones o palabras o frases escritas"
+        },
+        {
+          "codigo": "OA 10",
+          "descripcion": "Reproducir chants, rimas y diálogos muy breves y simples para familiarizarse con los sonidos propios del inglés: Sonidos: identificar los sonidos /s/-/z/ en particular"
+        },
+        {
+          "codigo": "OA 11",
+          "descripcion": "Participar en diálogos, interacciones de la clase y exposiciones muy breves y simples, acerca de temas conocidos o de otras asignaturas: o usando apoyo del docente y de objetos, gestos e imágenes impresas o en formato digital o usando vocabulario aprendido y expresiones de uso muy frecuente (Por ejemplo: How do you say…? I’m…)"
+        },
+        {
+          "codigo": "OA 12",
+          "descripcion": "Expresarse oralmente con el apoyo del docente para: Funciones:  compartir información personal  expresar habilidad y cantidades hasta el veinte; por ejemplo: twelve chairs  identificar y describir animales, comida, ocupaciones y lugares; por ejemplo: What do you want? I want…; it’s cold/hot  expresar prohibición  solicitar y dar información sobre comida y ubicación de objetos; por ejemplo: behind, here/there; I want a…; It’s cold/hot  describir acciones que ocurren al momento de hablar"
+        },
+        {
+          "codigo": "OA 13",
+          "descripcion": "Escribir (por ejemplo: copiar o completar) palabras y oraciones simples de acuerdo a un modelo, acerca de temas conocidos o de otras asignaturas."
+        },
+        {
+          "codigo": "OA 14",
+          "descripcion": "Escribir, sobre la base de imágenes, para: Funciones:  identificar animales, acciones, objetos y partes de la casa, ocupaciones, lugares, comida; por ejemplo: eggs, milk; it’s hot/cold  expresar sentimientos; por ejemplo: I’m hungry/bored expresar cantidades en números hasta el veinte  describir ubicación de objetos y acciones que ocurren al momento de hablar; por ejemplo: behind the bench; here/there"
+        }
+      ]
+    }
+  ]
+}
